@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>​
+<personalInformation>
+    <person>
+        <name>Mudit Khanna</name>
+        <interests>
+            <interest>Programming</interest>
+            <interest>Cricket</interest>
+        </interests>​
+        <hobbies>
+            <hobby>Photography</hobby>
+            <hobby>Writing</hobby>
+        </hobbies>
+    </person>
+</personalInformation>
+

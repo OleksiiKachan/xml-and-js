@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="form.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <form>
+          <label for="email">Your Email*: </label>
+          <input type="text" name="email" id="email" required />
+          <br />
+          <label for="date">Date of Visit: </label>
+          <input type="date" name="date" id="date" />
+          <br />
+          <label for="comments">Your Comment:</label>
+          <br />
+          <textarea
+            name="comments"
+            id="comments"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <br />
+          <button onclick="submitFeedback()">Send Your Feedback</button>
+        </form>
+      </div>
+      <div id="emailDisplay"></div>
+      <div id="dateDisplay"></div>
+      <div id="commentsDisplay"></div>
+    </main>
+    <script src="form.js"></script>
+  </body>
+</html>

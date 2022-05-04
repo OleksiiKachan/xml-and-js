@@ -1,0 +1,9 @@
+button,
+div {
+  margin-top: 0.5rem;
+}
+
+div {
+  font-size: 2rem;
+  font-weight: bold;
+}
