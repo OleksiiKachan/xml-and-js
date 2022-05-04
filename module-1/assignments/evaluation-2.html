@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluation 2</title>
+    <style>
+        .mainForm {
+            border: 2px black solid;
+            padding: 5px;
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainForm">
+        <form action="">
+            <label for="email">Your Email *: </label>
+            <input id="email" type="email"><br><br>
+            <label for="dateVisit">Date of Visit: </label>
+            <input id="date" type="date"><br><br>
+            <label for="comment">Your Comment: </label><br>
+            <textarea name="" id="comment" cols="50" rows="5"></textarea><br><br>
+            <input type="button" id="submit" value="Send your Feedback">
+        </form>
+        <div class="formContent">
+            <!-- content created by script -->
+        </div>
+    </div>
+
+    <script>
+        const submit = document.querySelector("#submit");
+        submit.addEventListener("click", () => {
+            let email = document.querySelector("#email").value;
+            let date = document.querySelector("#date").value;
+            let comment = document.querySelector("#comment").value;
+            
+            let formContent = document.querySelector(".formContent");
+            formContent.innerHTML = `
+                <p>Email: ${email}<p>
+                <p>Date: ${date}<p>
+                <p>Comment: ${comment}<p>
+            `;
+        });
+    </script>
+
+</body>
+</html>
