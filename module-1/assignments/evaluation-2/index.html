@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Feedback</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <main>
+            <form id="feedBackForm">
+                <label for="email">Your Email <sup>*</sup>:</label>
+                <input type="email" name="email" id="emailTxt" required> <br /> 
+
+                <label for="visitDate">Date of Visit:</label>
+                <input type="text" name="visitDate" id="visitDate" placeholder="mm/dd/yyyy"><br />
+
+                <label for="comments">Your Comment:</label><br />
+                <textarea name="comments" id="comments"></textarea><br />
+
+                <button onclick="displayFeedback(event)">Send your Feedback</button>
+
+                <div id="feedBackDisplay"></div>
+            </div>
+        </main>
+    </body>
+    <script src="main.js"></script>
+</html>

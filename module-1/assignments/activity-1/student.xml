@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<students>
+  <student>
+    <name>Mira</name>
+    <country>India</country>
+    <hobbies>Cooking, Travelling</hobbies>
+  </student>
+</students>
