@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<peoples>
+    <people>
+        <number>1</number>
+        <name>Darshan </name>
+        <hobbies>
+            <hobby1>Cricket</hobby1>
+            <hobby2>BasketBall</hobby2>
+            <hobby3>FootBall</hobby3>
+        </hobbies>    
+    </people>
+    <people>
+        <number>2</number>
+        <name>Jay </name>
+        <hobbies>
+            <hobby1>Soccer</hobby1>
+            <hobby2>BaseBall</hobby2>
+            <hobby3>Archery</hobby3>
+        </hobbies>    
+    </people>
+</peoples>
