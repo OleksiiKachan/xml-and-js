@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employeedata>
+<empno=1001>
+<empname>Alex</empname> 
+<Salary>3000</Salary>
+</empno>
+
+<empno=1002>
+<empname>Alex</empname> 
+<Salary>4000</Salary>
+</empno>
+<empno=1003>
+<empname>Alex</empname> 
+<Salary>3500</Salary>
+</empno>

@@ -1,0 +1,34 @@
+<?xml version="1.0 encoding="utf-8?>
+<myself>
+<name>Vishal Kumar</name>
+<myhobby>
+1.Chess
+2.Running
+3.Chess and Video Games
+4.Dog Walking
+5.Reading 
+</myhobby>
+</myself>
+
+-------------------------------------------
+<?xml version="1.0 encoding="utf-8?>
+<persons>
+<name>Rahul </name>
+<hobby>chess </hobby>
+<name> Krishna</name>
+<hobby>football </hobby>
+<name> Molly</name>
+<hobby>cricket </hobby>
+<name>Mikesh </name>
+<hobby>writing </hobby>
+<name> Dhanush</name>
+<hobby> coding</hobby>
+<name>James </name>
+<hobby>Kabadi</hobby>
+<name> Sita</name>
+<hobby> Drama</hobby>
+<name>Koyal </name>
+<hobby>Dancing </hobby>
+<name>james </name>
+<hobby>vlogging </hobby>
+</persons>
