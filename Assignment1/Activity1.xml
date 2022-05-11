@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>​
+<myMessage>​
+  <myMessage>
+    <name>Viraj</name>
+    <hobby>Computer gaming</hobby>
+  </myMessage>
+  <myMessage>
+    <name>Darshan</name>
+    <hobby>cricket</hobby>
+  </myMessage>
+  <myMessage>
+    <name>Mohit</name>
+    <hobby>Acting</hobby>
+  </myMessage>
+  <myMessage>
+    <name>Daniel</name>
+    <hobby>Coding</hobby>
+  </myMessage>
+  <myMessage>
+    <name>Vishal</name>
+    <hobby>Basketball</hobby>
+  </myMessage>
+  <myMessage>
+    <name>den</name>
+    <hobby>Indoor games</hobby>
+  </myMessage>
+  <myMessage>
+    <name>Mike</name>
+    <hobby>Singing</hobby>
+  </myMessage>
+  <myMessage>
+    <name>Lisa</name>
+    <hobby>Gardening</hobby>
+  </myMessage>
+  <myMessage>
+    <name>William</name>
+    <hobby>Football</hobby>
+  </myMessage>
+  <myMessage>
+    <name>Modi</name>
+    <hobby>Politics</hobby>
+  </myMessage>
+  <myMessage>
+    <name>Rahul</name>
+    <hobby>Entertaining</hobby>
+  </myMessage>​
+</myMessage>
