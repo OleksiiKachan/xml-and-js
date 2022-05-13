@@ -14,10 +14,7 @@
 
 ![image info](../assets/xml4.jpg)
 
-
-
     Now.All Errors were sloved and finally file was displayed.There are still some missing tags that i will figure out.
-
 
 
 2. In this document, CDATA(Character Data) is used so that parser does not parse in the document and it will not be treated as markup and entities will not be expanded.
@@ -26,9 +23,11 @@
 
 
 
-4. Prolog - <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-   Document Body - In XML file,all tags are called document body.
-   Epilog - <?xml-stylesheet type="text/css" href="style.css"?>
+4.  Prolog - <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+    Document Body - In XML file,all tags are called document body.
+
+    Epilog - <?xml-stylesheet type="text/css" href="style.css"?>
 
 
 
