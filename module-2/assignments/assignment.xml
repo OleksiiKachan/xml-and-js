@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+
+<!--Inline DTD-->
+<!DOCTYPE menuInfo
+[
+  <!ELEMENT menuInfo (title,summary,effectiveDate,menu+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT summary (#PCDATA)>
+  <!ELEMENT effectiveDate (#PCDATA)>
+  <!ELEMENT menu (category,menuItem)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT menuItem (itemName,description,price,indicator+)>
+  <!ELEMENT itemName (originalName,oldName)>
+  <!ELEMENT originalName (#PCDATA)>
+  <!ELEMENT oldName (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT indicator (#PCDATA)>
+]>
+
+
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -8,7 +29,7 @@
     up just the way you like them!!
     ]]>
   </summary>
-  <effective Date>03/12/2016</effective Date>
+  <effectiveDate>03/12/2016</effectiveDate>
   <menu>
     <category>Traditional Favorites</category>
     <menuItem>
@@ -25,10 +46,16 @@
         ]]>
       </description>
       <price>7.95</price>
+      <indicator>&#9829;</indicator>  <!-- heart healthy -->
+      <indicator>&#9830;</indicator>  <!-- low-sodium -->
+      <indicator>&#9824;</indicator>  <!-- vegan -->  
     </menuItem>
+  </menu>
+  <menu>
+    <category>Healthy Sampler</category>
     <menuItem>
       <itemName>
-        <originalName> Fresh Mornin' Sampler </originalname>
+        <originalName> Fresh Mornin' Sampler </originalName>
         <oldName> Mornin' Sampler </oldName>
       </itemName>
       <description>
@@ -48,7 +75,8 @@
     <category>Lite and Quick</category>
     <menuItem>
       <itemName>
-        <name> Oatmeal Breakfast </originalName>
+        <originalName> Oatmeal Breakfast </originalName>
+        <oldName>Mornig Breakfast</oldName>
       </itemName>
       <description>
         <![CDATA[
@@ -63,6 +91,9 @@
       <indicator>&#9830;</indicator>  <!-- low-sodium -->
       <indicator>&#9824;</indicator>  <!-- vegan -->  
     </menuItem>
+  </menu>
+  <menu>
+    <category>Heavy Meal</category>
     <menuItem>
       <itemName>
         <originalName> Chester's Meat Platter </originalName>
@@ -76,7 +107,11 @@
         ]]>
       </description>
       <price>12.95</price>
+      <indicator>&#9829;</indicator>  <!-- heart healthy -->
+      <indicator>&#9830;</indicator>  <!-- low-sodium -->
       <indicator>&#9832;</indicator>  <!-- Low-carb -->
     </menuItem>
   </menu>
 </menuInfo>
+<!-- Darshankumar Patel-->
+<!--N01496781-->
