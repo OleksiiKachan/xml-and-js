@@ -1,0 +1,47 @@
+originalName {
+  font-size: 20px;
+  color: darkblue;
+  font-weight: bold;
+}
+category,
+summary,
+effectiveDate,
+description,
+menuItem,
+price {
+  display: block;
+  margin: 1em 0 1em 0;
+  font-size: 25px;
+}
+effectiveDate {
+  font-weight: bold;
+}
+summary,
+oldName,
+description {
+  font-style: italic;
+}
+menuInfo {
+  margin: 2em;
+}
+title {
+  font-size: 40px;
+  font-weight: bold;
+}
+category {
+  color: darkblue;
+  font-weight: bold;
+}
+oldName {
+  font-size: 20px;
+}
+description {
+  font-size: 20px;
+}
+price {
+  font-size: 20px;
+  font-weight: bold;
+}
+indicator {
+  color: red;
+}
