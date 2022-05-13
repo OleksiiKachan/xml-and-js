@@ -1,0 +1,16 @@
+originalName {
+    font-size:medium;
+}
+
+category{
+    display: block;
+}
+
+menuInfo{
+    background-color: azure;
+}
+
+title, summary, effectiveDate, originalName, oldName, description, price{
+    display: block;
+}
+
