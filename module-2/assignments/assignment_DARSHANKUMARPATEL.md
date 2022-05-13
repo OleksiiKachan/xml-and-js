@@ -30,5 +30,5 @@
 5. 
     ![image info](../assets/xml5.jpg)
 
-7. 
+6-7. 
     ![image info](../assets/xml7.jpg)
