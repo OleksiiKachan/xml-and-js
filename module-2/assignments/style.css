@@ -1,0 +1,19 @@
+originalName {
+    font-size: large;
+    font-weight: bold;
+}
+
+category {
+    display: block;
+    background-color: orange;
+    color: white;
+    font-size: larger;
+}
+
+menuItem {
+    display: block;
+}
+
+description {
+    display: block;
+}
