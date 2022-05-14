@@ -1,0 +1,25 @@
+Line 11 each value has to be one attribute type
+Line 31 originalName 
+Line 51 name
+
+
+CDATA can be used for writing some special characters like &, >, <, etc. which characters need escaping from parsing
+
+
+
+
+Prologs
+xml declaration : 
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+Comments :
+<!-- heart healthy -->
+<!-- low-sodium -->
+<!-- vegan -->  
+<!-- Low-carb -->
+
+
+Body
+from starting of root element <menuInfo> to ending of that element </menuInfo> is considered as body
+
+epilog
+there is no epilog in this document
