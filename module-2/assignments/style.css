@@ -1,0 +1,13 @@
+orginalName{
+    font-size: 10px;
+}
+category{
+    display: block;
+}
+title{
+    font-weight: bold;
+    font-size: 25px;
+}
+menuItem{
+    background-color: aqua;
+}
