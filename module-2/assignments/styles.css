@@ -1,0 +1,16 @@
+originalName {
+  font-size: 1.5rem;
+}
+
+category,
+menuItem {
+  display: block;
+}
+
+category {
+  font-size: 3rem;
+}
+
+indicator {
+  color: dodgerblue;
+}
