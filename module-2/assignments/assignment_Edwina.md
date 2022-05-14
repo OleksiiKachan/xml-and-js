@@ -4,4 +4,4 @@ the third error is at line 51 opening and ending tag mismatch ![image info](../a
 The CDATA in the document is used so that the XML parser interprets it only as a character data and not as a markup 
 line 1 in the document contains the prolog.the document body begins in line 2 where you have the <menuInfo> and ends on line 99. there are no processing instructions in the document but when i include the css style sheet, that would serve as the processing instruction which can also serve as an epilog. line 100-101 which was just added to the document is also an epilog. 
 there were no erros found ![image info](../assignments/assets/validate%20vs%20well-formed.png) ![image info](../assignments/assets/validation.png)
-the final image after adding the css ![image info](../assignments/assets/finalresult.png)
+the final image after adding the css ![image info](../assignments/assets/finalresult.p ng)
