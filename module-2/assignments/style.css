@@ -1,8 +1,8 @@
 originalName{
     font-size: 30;
 }
-category::before{
-
+category{
+    display: block;
 }
 title{
     color: blue;
