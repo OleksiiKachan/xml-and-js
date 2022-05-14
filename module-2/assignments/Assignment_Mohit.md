@@ -46,4 +46,4 @@
 
 
 - [x] Q-7: 
-![image info](../assets/capture7.1.png.png)
+![image info](../assets/capture7.1.png)
