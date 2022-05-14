@@ -34,7 +34,7 @@ comments are written in <!-- comment--> tag like html ![image info](../assets/3-
 
 
 
-- [x] Q-6: ![image info](../assets/6-1.PNG)
+- [x] Q-6: ![image info](../assets/6-1.png)
 
 
 - [x] Q-7: ![image info](../assets/7-1.PNG)
