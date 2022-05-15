@@ -1,14 +1,72 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml-stylesheet href="style.css" ?>
+
+<!--DTD-->
+<!DOCTYPE menuInfo [
+<!ELEMENT menuInfo (title,summary,effectiveDate,menu+)>
+<!ATTLIST menuInfo
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT title (#PCDATA)>
+<!ATTLIST title
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT summary (#PCDATA)>
+<!ATTLIST summary
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT effectiveDate (#PCDATA)>
+<!ATTLIST effectiveDate
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT menu (category,menuItem+)>
+<!ATTLIST menu
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT category (#PCDATA)>
+<!ATTLIST category
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT menuItem (itemName,description,price,indicator*)>
+<!ATTLIST menuItem
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT itemName (originalName,oldName?)>
+<!ATTLIST itemName
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT description (#PCDATA)>
+<!ATTLIST description
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT indicator (#PCDATA)>
+<!ATTLIST indicator
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT originalName (#PCDATA)>
+<!ATTLIST originalName
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT oldName (#PCDATA)>
+<!ATTLIST oldName
+  xmlns CDATA #FIXED ''>
+]>
+
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
     <![CDATA[
     If you've been craving an authentic homestyle country breakfast,
-    look no further than Chester's!  We've got your breakfast favorites served
+    look no further than Chester's!
+    We've got your breakfast favorites served
     up just the way you like them!!
     ]]>
   </summary>
-  <effective Date>03/12/2016</effective Date>
+  <effectiveDate>03/12/2016</effectiveDate>
   <menu>
     <category>Traditional Favorites</category>
     <menuItem>
@@ -28,7 +86,7 @@
     </menuItem>
     <menuItem>
       <itemName>
-        <originalName> Fresh Mornin' Sampler </originalname>
+        <originalName> Fresh Mornin' Sampler </originalName>
         <oldName> Mornin' Sampler </oldName>
       </itemName>
       <description>
@@ -48,7 +106,7 @@
     <category>Lite and Quick</category>
     <menuItem>
       <itemName>
-        <name> Oatmeal Breakfast </originalName>
+        <originalName> Oatmeal Breakfast </originalName>
       </itemName>
       <description>
         <![CDATA[
@@ -80,3 +138,5 @@
     </menuItem>
   </menu>
 </menuInfo>
+<!--NAME: Ishita Bhawra-->
+<!--HUMBER ID: N01499969-->
