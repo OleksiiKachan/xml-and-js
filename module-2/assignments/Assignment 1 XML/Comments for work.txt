@@ -1,0 +1,64 @@
+Open module-2/assignments/assignment.xml in your browser. Are there any errors? 
+
+Explain the error and fix it.
+
+There were errors in closing tags which has been fixed, few tags were needed to be corrected as per tree structure 
+made changes and found effective data format needed to fixed 
+
+
+What is the use of CDATA block in this document?
+
+This Block element will act as character data and not a markup language 
+We can add any data in CDATA
+It helps in adding data to XML file and respectively transfer better data exchanges
+
+Add comment line to the end of file which contains you name and student id.
+
+Added  Name and Student ID at the end of XML file
+
+Added the respective details at end of the file 
+
+Identify prolog, document body, and epilog in the document. Are there any processing instructions?
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?> prolog
+
+It is providing the instructions about standalone and this is prolog
+
+The messages below the prolog identifies to be the document body
+
+Epilog are those endings of the XML file (>)
+
+Add inline DTD for this document.
+
+Added in XML file
+
+Verify that file is well-formed and valid.
+
+Verified and Validated but issue in validation
+so it is not fully validated
+
+Create style.css file and link it to the file. Add the following styles to the .css:
+
+Created main.css and added
+
+Change font-size of originalName
+Done added in main.css
+
+
+
+Display each category on the new line
+
+
+Add any other css-rule
+effectiveDate {
+    background: #800;
+
+}
+
+added effective date color
+
+Create module-2/assignments/assignment_YOURNAME.md and add your theory answers. Add screenshots of each step to the file (Refer module-1/assignments/evaluation-1.md on how to add image to md file)
+
+Screenshots of the steps
+
+as follows 

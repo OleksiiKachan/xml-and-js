@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="menuInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="summary" type="xs:string" />
+        <xs:element name="effectiveDate" type="xs:date" />
+        <xs:element maxOccurs="unbounded" name="menu">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="category" type="xs:string" />
+              <xs:element maxOccurs="unbounded" name="menuItem">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="itemName">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="originalName" type="xs:string" />
+                          <xs:element minOccurs="0" name="oldName" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="description" type="xs:string" />
+                    <xs:element name="price" type="xs:decimal" />
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="indicator" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
