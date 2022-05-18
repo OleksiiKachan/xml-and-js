@@ -24,17 +24,3 @@
   </list:personList>
 </list:employeeList>
 ```
-
-Resolve naming collision by adding namepsaces
-
-- `employeeList` and `personList` - list schema
-- `empId` and second `name` - employee schema
-- first `name` - department schema
-
----
-
-- list schema - urn:corp:list
-- employee schema - urn:corp:emp
-- department schema - urn:corp:dep
-
-Save file as `module-3/asssignments/activity-1.xml`
