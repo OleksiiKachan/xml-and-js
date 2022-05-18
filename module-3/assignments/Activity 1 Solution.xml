@@ -1,0 +1,28 @@
+<!--Vishal Kumar, N01496099-->
+
+<root xmlns:emp="urn:corp:list" xmlns:em="urn:corp:emp" xmlns="urn:corp:dep">
+    <emp:employeeList xmlns:emp="urn:corp:list">
+        <emp:personList>
+            <em:empID xmlns:em="urn:corp:emp">E0000001</em:empID>
+            <dep:name xmlns:dep="urn:corp:dep">Sales</dep:name>
+            <em:name>John Smith</em:name>
+        </emp:personList>
+        <emp:personList>
+            <empID>E0000002</empID>
+            <dep:name xmlns:dep="urn:corp:dep">Development</dep:name>
+            <em:name>Ichiro Tanaka</em:name>
+        </emp:personList>
+        <emp:personList>
+            <em:empID>E0000003</em:empID>
+            <dep:name xmlns:dep="urn:corp:dep">Development</dep:name>
+            <em:name>
+                Jiro Suzuki
+                </em:name>
+        </emp:personList>
+        <emp:personList>
+            <em:empID>E0000004</em:empID>
+            <dep:name xmlns:dep="urn:corp:dep">Administrative</dep:name>
+            <em:name>Saburo Takahashi</em:name>
+        </emp:personList>
+    </emp:employeeList>
+</root>
