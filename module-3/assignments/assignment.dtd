@@ -1,0 +1,13 @@
+<!ELEMENT catalog (product)>
+<!ELEMENT product (catalog_item+)>
+<!ATTLIST product product_id ID #REQUIRED>
+<!ATTLIST product description CDATA #REQUIRED>
+<!ATTLIST product product_image CDATA #REQUIRED>
+<!ELEMENT catalog_item (item_number, price, size+)>
+<!ATTLIST catalog_item gender (Men |Women) #REQUIRED>
+<!ELEMENT item_number (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT size (color_swatch+)>
+<!ATTLIST size description (Small |Medium |Large |ExtraLarge) #REQUIRED>
+<!ELEMENT color_swatch (#PCDATA)>
+<!ATTLIST color_swatch image (red_cardigan.jpg |navy_cardigan.jpg |burgundy_cardigan.jpg |black_cardigan.jpg) #REQUIRED>
