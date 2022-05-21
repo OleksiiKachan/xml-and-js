@@ -1,0 +1,3 @@
+![image info](../assests/DTD%20validation.png) ![image info](../assests/DTD%20creation.png) 
+![image info](../assests/Screen%20Shot%202022-05-21%20at%207.11.43%20PM.png) ![image info](../assests/Screen%20Shot%202022-05-21%20at%207.12.50%20PM.png)
+My thought process for both declaration was focused more on understanding why i was getting errors while validating both declarations, and also focused on solving the errors so i had to go back to watch the example that was done in class and also go through the slides to correct the errors. 
