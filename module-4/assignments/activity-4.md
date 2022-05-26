@@ -10,7 +10,7 @@
 **Columns**: Product name, Manufacturer id, Description, USD price
 
 **Condition**: shippable items
-
+ 
 ## Table 2
 
 **Columns**: Product name, Description, USD price, Euro price
