@@ -9,13 +9,9 @@
 
 Create an unordered list. Inside the list, for each catalog_item, create a li to include item details.
 
-Grab the item number. 
+Grab the item number. The xpath = `//catalog/product/catalog_item/item_number`
 
-The xpath = `//catalog/product/catalog_item/item_number`
-
-Grab the price. 
-
-The xpath = `//catalog/product/catalog_item/price`
+Grab the price. The xpath = `//catalog/product/catalog_item/price`
 
 To display all sizes and their colors, go through each size to grab the description attribute, and then move under one level to go over each color_swatch to get the color. 
 
@@ -28,13 +24,9 @@ The xpath to the color = `//catalog/product/catalog_item/size/color_swatch`
 
 ### 3. Create h3 product ID and p product description. 
 
-For product ID, use xpath to grab the attribute product_id from product tag.
+For product ID, use xpath to grab the attribute product_id from product tag. Full xpath = `//catalog/product/@product_id`
 
-Full xpath = `//catalog/product/@product_id`
-
-For product description, grab the attribute description from product tag. 
-
-Full xpath = `//catalog/product/@description`
+For product description, grab the attribute description from product tag. Full xpath = `//catalog/product/@description`
 
 ![image info](../assets/product_id_and_desc.png)
 
