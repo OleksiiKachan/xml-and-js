@@ -7,7 +7,7 @@
 
 2. Create main title "Catalog", and a list displaying each item details.
 
-Create an unordered list. Inside the list, for each catalog_item, create a <li> to include item details.
+Create an unordered list. Inside the list, for each catalog_item, create a li to include item details.
 
 Grab the item number. The xpath = //catalog/product/catalog_item/item_number
 
@@ -42,19 +42,19 @@ First, we are only writing one row, so we need a for-each tag so the browser wil
 
 For item number, we select the item_number under catalog_item. Full xpath = //catalog/product/catalog_item/item_number
 
-**Apparently xsl will automatically add a / in the beginner of the select content.**
+**Note:** Apparently xsl will automatically add a / in the beginner of the select content.
 
 For price, we select the price tag under catalog_item. Full xpath = //catalog/product/catalog_item/price
 
 For gender, we want to output different text based on the attribute, so here I use xsl:choose (case switch) statement. When the attribute gender equals to Women, output W, and when it's Men, output M. Here I assume the xml will always provide the gender as either Women or Men.
 The xpath to gender attribute = //catalog/product/catalog_item/@gender
 
-**The "test" tests the attribute content against the condition and gives a boolean result**
+**Note:** The "test" tests the attribute content against the condition and gives a boolean result
 
 ![image info](../assets/table_number_price_gender.png)
 
 
-6. Next, is to create content for the small size column. To create a subtable, add <table> inside <td>.
+6. Next, is to create content for the small size column. To create a subtable, add table inside td.
 
 Then, to iterate through each color_swatch under size attribute filtered to Small. Full xpath = //catalog/product/catalog_item/size[@description='Small']/color_swatch
 
