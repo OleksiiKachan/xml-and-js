@@ -9,9 +9,13 @@
 
 Create an unordered list. Inside the list, for each catalog_item, create a li to include item details.
 
-Grab the item number. The xpath = //catalog/product/catalog_item/item_number
+Grab the item number. 
 
-Grab the price. The xpath = //catalog/product/catalog_item/price
+The xpath = //catalog/product/catalog_item/item_number
+
+Grab the price. 
+
+The xpath = //catalog/product/catalog_item/price
 
 To display all sizes and their colors, go through each size to grab the description attribute, and then move under one level to go over each color_swatch to get the color. 
 
@@ -24,9 +28,13 @@ The xpath to the color = //catalog/product/catalog_item/size/color_swatch
 
 3. Create h3 product ID and p product description. 
 
-For product ID, use xpath to grab the attribute product_id from product tag. Full xpath = //catalog/product/@product_id
+For product ID, use xpath to grab the attribute product_id from product tag.
 
-For product description, grab the attribute description from product tag. Full xpath = //catalog/product/@description
+Full xpath = //catalog/product/@product_id
+
+For product description, grab the attribute description from product tag. 
+
+Full xpath = //catalog/product/@description
 
 ![image info](../assets/product_id_and_desc.png)
 
@@ -56,10 +64,14 @@ The xpath to gender attribute = //catalog/product/catalog_item/@gender
 
 6. Next, is to create content for the small size column. To create a subtable, add table inside td.
 
-Then, to iterate through each color_swatch under size attribute filtered to Small. Full xpath = //catalog/product/catalog_item/size[@description='Small']/color_swatch
+Then, to iterate through each color_swatch under size attribute filtered to Small. 
+
+Full xpath = //catalog/product/catalog_item/size[@description='Small']/color_swatch
 
 For each color_swatch, grab the text of the tag and the content inside image attribute.
+
 Full xpath to text = //catalog/product/catalog_item/size[@description='Small']/color_swatch/text()
+
 Full xpath to image attribute = //catalog/product/catalog_item/size[@description='Small']/color_swatch/@image
 
 ![image info](../assets/subtable_template.png)
