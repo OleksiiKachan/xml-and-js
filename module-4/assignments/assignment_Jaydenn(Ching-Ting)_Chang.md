@@ -1,11 +1,11 @@
 # Assignment
 
-1. Link xml to the xsl file
+### 1. Link xml to the xsl file
 
 ![image info](../assets/link_xml_xsl.png)
 
 
-2. Create main title "Catalog", and a list displaying each item details.
+### 2. Create main title "Catalog", and a list displaying each item details.
 
 Create an unordered list. Inside the list, for each catalog_item, create a li to include item details.
 
@@ -26,7 +26,7 @@ The xpath to the color = //catalog/product/catalog_item/size/color_swatch
 ![image info](../assets/catalog_list.png)
 
 
-3. Create h3 product ID and p product description. 
+### 3. Create h3 product ID and p product description. 
 
 For product ID, use xpath to grab the attribute product_id from product tag.
 
@@ -39,12 +39,12 @@ Full xpath = //catalog/product/@description
 ![image info](../assets/product_id_and_desc.png)
 
 
-4. Create a table, and add table headers.
+### 4. Create a table, and add table headers.
 
 ![image info](../assets/add_table_header.png)
 
 
-5. Create the row for the first three column: item_number, price, and gender.
+### 5. Create the row for the first three column: item_number, price, and gender.
 
 First, we are only writing one row, so we need a for-each tag so the browser will go through each catelog_item under product tag.
 
@@ -62,7 +62,7 @@ The xpath to gender attribute = //catalog/product/catalog_item/@gender
 ![image info](../assets/table_number_price_gender.png)
 
 
-6. Next, is to create content for the small size column. To create a subtable, add table inside td.
+### 6. Next, is to create content for the small size column. To create a subtable, add table inside td.
 
 Then, to iterate through each color_swatch under size attribute filtered to Small. 
 
@@ -77,13 +77,13 @@ Full xpath to image attribute = //catalog/product/catalog_item/size[@description
 ![image info](../assets/subtable_template.png)
 
 
-7. Apply the same contents to medium, large, and extra large sizes.
+### 7. Apply the same contents to medium, large, and extra large sizes.
 
 Change the test condition  respectively.  
 
 ![image info](../assets/subtable_rest_sizes.png)
 
 
-8. The output.
+### 8. The output.
 
 ![image info](../assets/result.png)
