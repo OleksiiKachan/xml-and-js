@@ -8,27 +8,27 @@
 
 - main title is "Catalog"
 - use html list tag to display catalog
-![image info](../Assets/1.jpg)
+1.  ![image info](../Assets/1.jpg)
 
 - render each item as `<article>` inside list item tag
-![image info](../Assets/2.jpg)
+2.  ![image info](../Assets/2.jpg)
 
 - display product id as h3
-![image info](../Assets/3.jpg)
+3.  ![image info](../Assets/3.jpg)
 
 - display product description as paragraph
-![image info](../Assets/4.jpg)
+4.  ![image info](../Assets/4.jpg)
 
 - render table of catalog items with columns: item number, price, gender, small, medium, large, extra large (if column item is not present in item, then display empty cell)
-![image info](../Assets/5.jpg)
+5.  ![image info](../Assets/5.jpg)
 
 - for gender column render M for Men, W for Women
-![image info](../Assets/6.jpg)
+6.  ![image info](../Assets/6.jpg)
 
 - inside size columns (small, medium, large, and extra large) display subtable with 2 columns: color and image
-![image info](../Assets/7.jpg)
+7.  ![image info](../Assets/7.jpg)
 
-![image info](../Assets/8.jpg)
+8.  ![image info](../Assets/8.jpg)
 
 
 
