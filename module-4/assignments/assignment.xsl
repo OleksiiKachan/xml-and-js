@@ -69,7 +69,6 @@
                     <!-- display product description as paragraph-->
                     <xsl:value-of select="catalog/product/@description" />
                 </p>
-
                 <table>
                     <tr bgcolor="#cd8932">
                         <th>Item number</th>
