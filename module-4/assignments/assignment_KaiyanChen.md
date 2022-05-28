@@ -18,3 +18,6 @@
 
 7. create subtable inside `<th>` of each size column, using `<xsl:for-each>` to select the corresponding data(color and image), and set the width to 100px
 ![image info](../assignments/screenshots/Assignement_Size.png)
+
+8. Output
+![image info](../assignments/screenshots/Output.png)
