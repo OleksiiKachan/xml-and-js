@@ -40,12 +40,9 @@
                              render each item as `<article>` inside list item tag-->
                                 Item Number:
                                 <xsl:value-of select="item_number" />
-                                <br />
                                 Price:
                                 <xsl:value-of select="price" />
-                                <br />
                                 Sizes:
-                                <br />
                                 <xsl:for-each select="size">
                                     <ol>
                                         <li>
