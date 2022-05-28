@@ -49,7 +49,7 @@
                                             <xsl:value-of select="@description" />
                                             Colors:
                                             <xsl:for-each select="color_swatch">
-                                                <xsl:value-of select="text()" />
+                                                <xsl:value-of select="text" />
                                             </xsl:for-each> <!-- render table of catalog items with columns: item number, price, gender, small, medium, large, extra large (if column item is not present in item, then display empty cell)-->
                                         </li>
                                     </ol>
@@ -70,7 +70,7 @@
                     <xsl:value-of select="catalog/product/@description" />
                 </p>
 
-                <table border="3">
+                <table>
                     <tr bgcolor="#cd8932">
                         <th>Item number</th>
                         <th>Price</th>
@@ -80,14 +80,13 @@
                         <th>Large</th>
                         <th>Extra Large</th>
                     </tr>
-
                     <xsl:for-each select="catalog/product/catalog_item">
                         <tr>
                             <td>
                                 <xsl:value-of select="item_number" />
                             </td>
                             <td>
-                                <xsl:value-of select="price" />
+                                <xsl:value-of select="price" /> <!-- render table of catalog items with columns: item number, price, gender, small, medium, large, extra large (if column item is not present in item, then display empty cell)-->
                             </td>
 
                             <td>
@@ -130,7 +129,6 @@
                                 <table>
                                     <xsl:for-each select="size[@description='Large']/color_swatch">
                                         <tr>
-
                                             <td>
                                                 <xsl:value-of select="@image" />
                                             </td>
