@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<table id="people">
+    <th>FULL NAME</th>
+        </table>
+        <script>
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () 
+            {
+                if (this.readyState == 4 && this.status == 200) 
+                {
+                displayData(this.responseXML);
+                }
+            };
+            xhttp.open("GET", "people.xml", true);
+            xhttp.send();
+            function displayData(xmlDoc) 
+            {
+                const x = xmlDoc.getElementsByTagName("person");
+                const table = document.getElementById("people");
+                const peopleTableHeader = table.appendChild
+                for (let i = 0; i < x.length; i++)
+                {
+                    const person = x[i];
+                    const parsedPerson = parsePerson(person);
+                    const personRow = createPerson(parsedPerson);
+                    table.appendChild(personRow);
+                }
+            }
+            function createPerson(person)
+            {
+                const content = `<tr><td>${person.firstname} ${person.lastname}</td></tr>`;
+                return stringToNode(content);
+            }
+            function stringToNode(html)
+            {
+                const template = document.createElement("template");
+                template.innerHTML = html.trim();
+                return template.content.firstChild;
+            }
+            function parsePerson(xml) 
+            {
+                const firstname = xml.getElementsByTagName("firstname")[0].childNodes[0].nodeValue;
+                const lastname = xml.getElementsByTagName("lastname")[0].childNodes[0].nodeValue;
+                return {firstname,lastname};
+            }
+
+          
+        </script>
+</body>
+</html>
