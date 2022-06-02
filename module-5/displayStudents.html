@@ -13,17 +13,23 @@
       xhttp.send();
 
       function displayData(xml) {
+        // select ol from html
         const listElement = document.getElementById(`students`);
-
+        
         const xmlDoc = xml.responseXML;
+        // parse xml to get students
         const studentNodes = xmlDoc.getElementsByTagName("student");
 
+        // loop
         for (let index = 0; index < studentNodes.length; index++) {
           const student = studentNodes[index];
 
+          // create li element for each
           const listItem = document.createElement(`li`);
 
           const title = document.createElement(`h2`);
+
+          // add li to ol
           title.appendChild(
             document.createTextNode(
               student.getElementsByTagName("firstname")[0].childNodes[0]
