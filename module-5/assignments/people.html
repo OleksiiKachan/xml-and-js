@@ -28,13 +28,14 @@
         const xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                displayData(this.responseXML);
+                displayData(this);
             }
         };
 
         xhttp.open("GET", "people.xml", true);
         xhttp.send();
 
+        // turns string content into a node, then to line 70
         function stringToNode(html) {
             const template = document.createElement(`template`);
             html = html.trim();
@@ -42,13 +43,19 @@
             return template.content.firstChild;
         }
 
-        function displayData(xmlDoc) {
+        function displayData(xml) {
+            // select table from html
             const listElement = document.getElementById(`people`);
 
+            // parse xml to get all persons
+            const xmlDoc = xml.responseXML; 
             const personNodes = xmlDoc.getElementsByTagName(`person`);
 
+            // loop through each person
             for (let index = 0; index < personNodes.length; index++) {
+                // get one person tag at a time
                 const personNode = personNodes[index];
+                // create a node with that person node's data
                 const listItem = stringToNode(`   
                     <tr>
                         <td>
@@ -60,12 +67,10 @@
                         </td>
                     </tr>
                 `);
+                // append the node to the table in html
                 listElement.appendChild(listItem);
-            }
-            
+            }            
         }
-
-
     </script>
 </body>
 </html>
