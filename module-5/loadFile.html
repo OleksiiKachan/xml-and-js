@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <p id="text"></p>
+    <p id="last_name"></p>
 
     <script>
       const xhttp = new XMLHttpRequest();
@@ -10,12 +10,12 @@
           displayData(this);
         }
       };
-      xhttp.open("GET", "customers.xml", true);
+      xhttp.open("GET", "people.xml", true);
       xhttp.send();
 
       function displayData(xml) {
         const xmlDoc = xml.responseXML;
-        document.getElementById("text").innerHTML =
+        document.getElementById("").innerHTML =
           xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
       }
     </script>
