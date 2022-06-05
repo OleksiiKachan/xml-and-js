@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <h1>CUSTOMER INFO</h1>
+    <table id="customers">
+        <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>NAME</th>
+            <th>ADDRESS</th>
+            <th>PHONE</th>
+            <th>E-MAIL</th>
+            <th>ORDER-ID</th>
+            <th>ORDER-BY</th>
+            <th>DATE</th>
+            <th>PRICE</th>
+            <th>QUANTITY</th>
+        </tr>
+    </table>
+<script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                displayData(this.responseXML);
+            }
+        };
+
+        xhttp.open("GET", "../customers.xml", true);
+        xhttp.send();
+        function stringToNode(html) {
+            const template = document.createElement(`template`);
+            html = html.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+        }
+        function displayData(xmlDoc) {
+            const listElement = document.getElementById(`customers`);
+            const nodes = xmlDoc.getElementsByTagName(`customer`);
+
+            for (let i = 0; i < nodes.length; i++) {
+                const customerNode = nodes[i];
+                function node(node)
+                    {
+                        if(!node){
+                            return "-------------------";} 
+                        else {
+                            return node.childNodes[0].nodeValue;}
+                    }
+                const listItem = stringToNode(`
+                    <tr>
+                        <td>${customerNode.getAttribute(`custID`)}     </td>
+                        <td>${customerNode.getElementsByTagName(`name`)[0].getAttribute(`title`)} </td>
+                        <td>${node(customerNode.getElementsByTagName(`name`)[0])} </td>
+                        <td>${node(customerNode.getElementsByTagName(`address`)[0])}</td>
+                        <td>${node(customerNode.getElementsByTagName(`phone`)[0])}</td>
+                        <td>${node(customerNode.getElementsByTagName(`email`)[0])}</td>
+                        <td>${customerNode.getElementsByTagName(`order`)[0].getAttribute(`orderID`)}</td>
+                        <td>${customerNode.getElementsByTagName(`order`)[0].getAttribute(`orderBy`)}</td>
+                        <td>${node(customerNode.getElementsByTagName(`orderDate`)[0])}</td>
+                        <td>${node(customerNode.getElementsByTagName(`itemPrice`)[0])}</td>
+                        <td>${node(customerNode.getElementsByTagName(`itemQty`)[0])}</td>
+                    </tr>
+                `)
+                listElement.appendChild(listItem);
+            }
+        }
+</script>
+</body>
+</html> 
