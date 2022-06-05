@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+    <style>
+    ol{
+        float: left;
+        width: 50%;
+    } 
+    li{
+        border: 2px dashed grey;
+        margin-bottom: 20px;
+    }
+    </style>
+        <ol id="customers"></ol>
+        <script>
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    displayData(this.responseXML);
+                    
+                }
+            };
+            xhttp.open("GET", "customers.xml", true);
+            xhttp.send();
+
+            function stringToNode(html) {
+                const template = document.createElement(`template`);
+                html = html.trim();
+                template.innerHTML = html;
+                return template.content.firstChild;
+            }
+
+            function displayData(xmlDoc) {
+
+                const listElement = document.getElementById(`customers`);
+                const cusNodes = xmlDoc.getElementsByTagName(`customer`);
+                const name=xmlDoc.getElementsByTagName(`name`);
+                const order=xmlDoc.getElementsByTagName(`order`);
+
+
+                for (let index = 0; index < cusNodes.length; index++) {
+                    const cusNode = cusNodes[index];
+                    const nameNode=name[index];
+                    const orderNode=order[index];
+
+
+                    //create li element for each
+                    const listItem = stringToNode(`<li>
+                        <h3>${nameNode.getAttribute(`title`)} - ${
+                        cusNode.getElementsByTagName(`name`)[0].childNodes[0].nodeValue
+                        }</h3>
+                        <em>${
+                        cusNode.getElementsByTagName(`address`)[0].childNodes[0].nodeValue
+                        }</em>
+                        <p> ${`Customer ID:-${cusNode.getAttribute(`custID`) 
+                        }`}</p>
+
+                        <p>${`Phone:-${cusNode.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue
+                        }`}</p>
+                        
+                        <h3>Order Details</h3>
+                        <em>${`OrderID:-${orderNode.getAttribute(`orderID`)}  (Order BY:${orderNode.getAttribute(`orderBy`) +")"}
+                        `}</em>
+                        <p>${`OrderDate:-${cusNode.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue
+                        }`}</p>
+                        <p>${`Item price: ${
+                            cusNode.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue
+                        }`}</p>
+                        <p>${`Item Quantity: ${
+                            cusNode.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue
+                        }`}</p>
+                        </li>`);
+                    listElement.appendChild(listItem);
+                }
+            }
+        </script>
+    </body>
+</html>
+
+<!-- No email for second customer so displaying email so error as no tag name email in customer 2 so i removed displaying email
+or we can do like add email tag with any value and then displaying it. -->
