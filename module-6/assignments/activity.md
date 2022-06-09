@@ -1,3 +1,3 @@
 # Activity
 
-- Convert customers.xml into json​
+- Convert customers.xml into json​ `- DONE`
