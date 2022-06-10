@@ -1,0 +1,114 @@
+[
+  {
+    "sku": "BOS12DDF2",
+    "createdAt": "2020-12-23T09:23:44",
+    "shippable": true,
+    "productName": "Dog Shirt Gift Baske",
+    "manufacturer": {
+      "id": "sjb-pet",
+      "name": "SJB Pet Boutique"
+    },
+    "description": "Something for every day of the week",
+    "prices": [
+      {
+        "currency": "USD",
+        "value": 35.99
+      },
+      {
+        "currency": "CAD",
+        "value": 44.99
+      },
+      {
+        "currency": "EURO",
+        "value": 26.79
+      }
+    ],
+    "productItems": [
+      { "id": 1200 },
+      { "id": 1201 },
+      { "id": 1202 },
+      { "id": 1203 },
+      { "id": 1204 },
+      { "id": 1205 },
+      { "id": 1206 }
+    ]
+  },
+  {
+    "sku": "OBOKS34KBKS",
+    "createdAt": "2019-12-23T17:47:10",
+    "shippable": true,
+    "productName": "Car Curiosity Basket",
+    "manufacturer": {
+      "id": "sjb-pet",
+      "name": "SJB Pet Boutique"
+    },
+    "description": "Playtime morning, noon, and night",
+    "prices": [
+      {
+        "currency": "USD",
+        "value": 15.99
+      },
+      {
+        "currency": "CAD",
+        "value": 18.82
+      },
+      {
+        "currency": "EURO",
+        "value": 11.9
+      }
+    ],
+    "productItems": [{ "id": 4430 }, { "id": 6500 }, { "id": 4434 }]
+  },
+  {
+    "sku": "HVBOSPR292BS",
+    "createdAt": "2021-04-03T16:15:37",
+    "shippable": false,
+    "productName": "Piggy Snuggle Basket",
+    "manufacturer": {
+      "id": "acme",
+      "name": "ACME"
+    },
+    "description": null,
+    "prices": [
+      {
+        "currency": "USD",
+        "value": 17.5
+      },
+      {
+        "currency": "CAD",
+        "value": 21.96
+      },
+      {
+        "currency": "EURO",
+        "value": 13.03
+      }
+    ],
+    "productItems": [{ "id": 3230 }, { "id": 3232 }]
+  },
+  {
+    "sku": "BJPSO1342KSLS",
+    "createdAt": "2021-09-07T15:58:13",
+    "shippable": true,
+    "productName": "Dog Snuggle Basket",
+    "manufacturer": {
+      "id": "acme",
+      "name": "ACME"
+    },
+    "description": null,
+    "prices": [
+      {
+        "currency": "USD",
+        "value": 14.25
+      },
+      {
+        "currency": "CAD",
+        "value": 17.88
+      },
+      {
+        "currency": "EURO",
+        "value": 10.61
+      }
+    ],
+    "productItems": [{ "id": 3230 }, { "id": 3232 }, { "id": 3232 }]
+  }
+]
