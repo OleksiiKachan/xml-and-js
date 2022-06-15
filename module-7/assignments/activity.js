@@ -87,7 +87,7 @@ const parsed = data.map(student => {
         id: student.id,
         firstName: student.first_name,
         lastName: student.last_name,
-        genter: student.gender,
+        gender: student.gender,
         ipAddress: student.ip_address
     };
 });
