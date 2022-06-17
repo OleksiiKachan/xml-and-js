@@ -7,15 +7,15 @@ const data = [
 
 const age = data.map(({ born, died }) => died - born);
 
-const filtered = age.filter((data) => data > 75);
+const filtered = age.filter(data => data > 75);
 
-const oldest = filtered.reduce((acc, value) => (acc > value ? acc : value));
+const oldest = filtered.reduce((acc, value) => acc > value ? acc : value);
 
 // Refactoring to use chaining
 console.log(
   data
     .map(({ born, died }) => died - born)
     .filter(age => age > 75)
-    .reduce((acc, value) => (acc > value ? acc : value))
+    .reduce((acc, value) => acc > value ? acc : value)
 );
 
