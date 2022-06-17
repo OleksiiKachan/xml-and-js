@@ -15,7 +15,7 @@ const oldest = filtered.reduce((acc, value) => (acc > value ? acc : value));
 console.log(
   data
     .map(({ born, died }) => died - born)
-    .filter((data) => data > 75)
+    .filter(age => age > 75)
     .reduce((acc, value) => (acc > value ? acc : value))
 );
 
