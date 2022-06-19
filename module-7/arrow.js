@@ -18,7 +18,7 @@ print(); // Prints: hello
 const printValue = (value) => {
   console.log(value);
 };
-printValue(25); // Prints: Baggage weight : 25 kilograms.
+printValue(25);
 
 // Concise arrow functions
 const multiply = (a, b) => a * b;
