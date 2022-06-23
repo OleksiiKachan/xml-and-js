@@ -5,28 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customers</title>
-    <style>
-        h3 {
-            padding: 1em;
-            background-color: lightblue;
-        }
-
-        table {
-            border-collapse: collapse;
-            margin-bottom: 2em;
-        }
-
-        table caption {
-            text-align: left;
-            margin-bottom: 1em;
-        }
-
-        th, td {
-            border: 1px solid;
-            padding: 5px;
-        }
-    </style>
+    <title>Stock Market</title>
+    <link rel="stylesheet" href="stockMarket.css">
 </head>
 
 <body>
@@ -55,7 +35,7 @@
         // must have value then proceed to get nodeValue
         function existNode(node) {
             if (!node) {
-                return "N/A";
+                return "Data doesn't exist";
             }
             else {
                 // console.log(typeof nodeValue);
@@ -92,18 +72,15 @@
                 <p>Address</p>
                 <ul>
                     <li>
-                        ${existNode(userNode.getElementsByTagName(`street`)[0])}
-                        , 
-                        ${existNode(userNode.getElementsByTagName(`city`)[0])}
-                        , 
-                        ${existNode(userNode.getElementsByTagName(`region`)[0])}
-                        , 
+                        ${existNode(userNode.getElementsByTagName(`street`)[0])}, 
+                        ${existNode(userNode.getElementsByTagName(`city`)[0])}, 
+                        ${existNode(userNode.getElementsByTagName(`region`)[0])}, 
                         ${existNode(userNode.getElementsByTagName(`country`)[0])}
                     </li>
                 </ul>
                     
                 <div>`)
-                console.log(userInfo);
+                //console.log(userInfo);
                 main.appendChild(userInfo);
 
 
