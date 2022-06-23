@@ -1,5 +1,6 @@
-### Contribution
+### My Contribution
 
--   Discuss the best way to transform JSON into XML
--   Transform first 7 JSON elements into XML
--   Create DTD and change exchange name's tag to 'exchange' from 'name'.
+- Discuss in which way do we transform JSON into XML
+- Transformed first 7 JSON elements into XML
+- Created DTD
+- Created html and css files
