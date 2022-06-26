@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="bank.css" />
+  </head>
+  <body>
+    <h1>Banks</h1>
+    <ol id="banks"></ol>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "./bank.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createBank(bank) {
+        const content = `<li>
+                          <article>
+                            <p><b>Id: </b>${bank.id}</p>
+                            <h2>${bank.name}</h2>
+                            <p>${bank.address}</p>
+                            <table id="clients" border="1" width="600px" style="text-align:center;" cellpadding="5">
+                              <thead>
+                                  <tr bgcolor="lightgrey">
+                                      <th>Client ID</th>
+                                      <th>Name</th>
+                                      <th>Email</th>
+                                      <th>Phone number</th>
+                                      <th>Cards</th>
+                                  </tr>
+                              </thead>
+                              <tbody>${createClients(bank.clients)}</tbody>
+                            </table>
+                          </article>
+                        </li>`;
+
+        return stringToNode(content);
+      }
+
+      function createClients(clients) {
+        let content = "";
+        for (let index = 0; index < clients.length; index++) {
+          content += `<tr>
+                        <td>${clients[index].clientId}</td>
+                        <td>${clients[index].name}</td>
+                        <td>${clients[index].email}</td>
+                        <td>${clients[index].phoneNumber}</td>
+                        <td>
+                          <ul>${createClientCards(clients[index].clientCards)}</ul>
+                        </td>
+                      </tr>`;
+        }
+
+        return content;
+      }
+
+      function createClientCards(clientCards) {
+        let content = "";
+        for (let index = 0; index < clientCards.length; index++)
+        //   content += `<li><b>Card number: </b>${clientCards[index].cardNumber}<br/>
+        //                    <b>Type:  </b>${clientCards[index].cardType}<br/>
+        //                    <b>Cvv:  </b>${clientCards[index].cardCvv}<br/>
+        //                    <b>Expires vt:  </b>${clientCards[index].cardExpiry}</li>`;
+        content += `<li><b>Card number: </b>${clientCards[index].cardNumber}<br/>
+                           <b>Type:  </b>${clientCards[index].cardType}<br/>
+                           <b>Cvv:  </b>${clientCards[index].cardCvv}<br/>
+                           <b>Expires vt:  </b>${clientCards[index].cardExpiry}</li>`;
+
+        return content;
+      }
+
+      function parseBank(xml) {
+        const id = xml.getAttribute("id");
+        const name = xml.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+        const addressNode = xml.getElementsByTagName("address")[0];
+        const street = addressNode.getElementsByTagName("street")[0].childNodes[0].nodeValue;
+        const city = addressNode.getElementsByTagName("city")[0].childNodes[0].nodeValue;
+        const region = addressNode.getElementsByTagName("region")[0].childNodes[0].nodeValue;
+        const country = addressNode.getElementsByTagName("country")[0].childNodes[0].nodeValue;
+        const address = street + "<br>" + city + "<br>" + region + "<br>" +country;
+        const clientsXml = xml.getElementsByTagName("clients")[0];
+        const clients = parseClients(clientsXml);
+
+        return {
+          id,
+          name,
+          address,
+          clients
+        };
+      }
+
+      function parseClients(clientsXml) {
+        const clientNodes = clientsXml.getElementsByTagName("client");
+        const clients = [];
+
+        for (let index = 0; index < clientNodes.length; index++) {
+          const clientId = clientNodes[index].getAttribute("id");
+          const name =
+            clientNodes[index].getElementsByTagName("firstName")[0].childNodes[0]
+              .nodeValue + " " +clientNodes[index].getElementsByTagName("lastName")[0].childNodes[0]
+              .nodeValue;
+          const email =
+            clientNodes[index].getElementsByTagName("email")[0].childNodes[0]
+              .nodeValue;
+          const phoneNumber =
+            clientNodes[index].getElementsByTagName("phoneNumber")[0].childNodes[0]
+              .nodeValue;
+          const clientCardsXml =
+            clientNodes[index].getElementsByTagName("cards")[0];
+          const clientCards = parseClientCards(clientCardsXml);
+
+          clients.push({
+            clientId,
+            name,
+            email,
+            phoneNumber,
+            clientCards
+          });
+        }
+        return clients;
+      }
+
+      function parseClientCards(clientCardsXml) {
+        const cardNodes = clientCardsXml.getElementsByTagName("card");
+        const cards = [];
+
+        for (let index = 0; index < cardNodes.length; index++) {
+        const cardNumber = cardNodes[index].getAttribute("number");
+          const cardType =
+          cardNodes[index].getElementsByTagName("type")[0]
+              .childNodes[0].nodeValue;
+          const cardCvv =
+          cardNodes[index].getElementsByTagName("cvv")[0]
+              .childNodes[0].nodeValue;
+          const cardExpiry =
+          cardNodes[index].getElementsByTagName("expiresAt")[0]
+              .childNodes[0].nodeValue;
+
+           cards.push({
+            cardNumber,
+            cardType,
+            cardCvv,
+            cardExpiry
+          });
+        }
+        return cards;
+      }
+
+      function displayData(xmlDoc) {
+        const banks = xmlDoc.getElementsByTagName("bank");
+        const list = document.getElementById("banks");
+
+        for (let index = 0; index < banks.length; index++) {
+          const element = banks[index];
+          const parsedBank = parseBank(element);
+          const bankElement = createBank(parsedBank);
+          list.appendChild(bankElement);
+        }
+      }
+    </script>
+  </body>
+</html>
