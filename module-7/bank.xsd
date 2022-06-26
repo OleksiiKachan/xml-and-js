@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"> 
+  <xs:element name="banks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="bank">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string" />
+              <xs:element name="address">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="street" type="xs:string" />
+                    <xs:element name="city" type="xs:string" />
+                    <xs:element name="region" type="xs:string" />
+                    <xs:element name="country" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="clients">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="client">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="firstName" type="xs:string" />
+                          <xs:element name="lastName" type="xs:string" />
+                          <xs:element name="email" type="xs:string" />
+                          <xs:element name="phoneNumber" type="xs:string" />
+                          <xs:element name="cards">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="card">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="type" type="xs:string" />
+                                      <xs:element name="cvv" type="xs:unsignedShort" />
+                                      <xs:element name="expiresAt" type="xs:gYearMonth" />
+                                    </xs:sequence>
+                                    <xs:attribute name="number" type="xs:unsignedLong" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

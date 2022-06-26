@@ -1,0 +1,39 @@
+h1 {
+    margin-left: 3.5%;
+  }
+  
+  ul {
+    list-style-type: square;
+  }
+  
+  li:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  
+  article {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  p:not(:first-child) {
+    font-size: 20px;
+  }
+  
+  table {
+    margin-top: 20px;
+    width: 1054px;
+  }
+  
+  #clients tr td ul li {
+    border: 1px solid grey;
+    border-radius: 3px;
+    list-style: none;
+  }
+  
