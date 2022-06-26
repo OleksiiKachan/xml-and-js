@@ -1,0 +1,20 @@
+h1 {
+  text-align: center;
+}
+
+article {
+  margin: 3rem;
+  background: linear-gradient(
+    29deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+  padding: 1rem 2rem;
+  border: 3.5px solid gray;
+  border-radius: 1rem;
+}
+
+ol > li > article > p:first-of-type {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}

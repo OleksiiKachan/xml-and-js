@@ -1,0 +1,69 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="airlines">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="airline" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element  name="id" type="xs:string"/>
+              <xs:element  name="name" type="xs:string"/>
+              <xs:element  name="street" type="xs:string"/>
+              <xs:element  name="city" type="xs:string"/>
+              <xs:element  name="region" type="xs:string" />
+              <xs:element  name="country" type="xs:string"/>
+              <xs:element  name="parks">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="park" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element  name="id" type="xs:string"/>
+                          <xs:element  name="routeType" type="xs:string"/>
+                          <xs:element  name="manufacturer" type="xs:string"/>
+                          <xs:element  name="year" type="xs:short"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="routes">
+                <xs:complexType>
+                  <xs:choice maxOccurs="unbounded" minOccurs="0">
+                    <xs:element name="route">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="vehicle" type="xs:string"/>
+                          <xs:element name="departure">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="airport" type="xs:string"/>
+                                <xs:element name="city" type="xs:string"/>
+                                <xs:element name="region" type="xs:string" minOccurs="0"/>
+                                <xs:element name="country" type="xs:string"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="destination">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element  name="airport" type="xs:string"/>
+                                <xs:element  name="city" type="xs:string"/>
+                                <xs:element  name="region" type="xs:string" minOccurs="0"/>
+                                <xs:element  name="country" type="xs:string"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:choice>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airlines Information Desk</title>
+  </head>
+  <body>
+    <h1>Airlines Information</h1>
+    <ol id="airlines-list"></ol>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "airlines.xml", true);
+      xhttp.send();
+
+      parseParks = (parksElement) => {
+        const parkNodes = parksElement.getElementsByTagName("park");
+        const parks = [];
+
+        for (let index = 0; index < parkNodes.length; index++) {
+          const id =
+            parkNodes[index].getElementsByTagName("id")[0].childNodes[0]
+              .nodeValue;
+          const routeType =
+            parkNodes[index].getElementsByTagName("routeType")[0].childNodes[0]
+              .nodeValue;
+          const manufacturer =
+            parkNodes[index].getElementsByTagName("manufacturer")[0]
+              .childNodes[0].nodeValue;
+          const year =
+            parkNodes[index].getElementsByTagName("year")[0].childNodes[0]
+              .nodeValue;
+
+          parks.push({ id, routeType, manufacturer, year });
+        }
+        return parks;
+      };
+
+      parseDepartures = (departureElement) => {
+        const airport =
+          departureElement.getElementsByTagName("airport")[0].childNodes[0]
+            .nodeValue;
+        const city =
+          departureElement.getElementsByTagName("city")[0].childNodes[0]
+            .nodeValue;
+        const country =
+          departureElement.getElementsByTagName("country")[0].childNodes[0]
+            .nodeValue;
+
+        return { airport, city, country };
+      };
+
+      parseDestination = (destinationElement) => {
+        const airport =
+          destinationElement.getElementsByTagName("airport")[0].childNodes[0]
+            .nodeValue;
+        const city =
+          destinationElement.getElementsByTagName("city")[0].childNodes[0]
+            .nodeValue;
+        const region = destinationElement.getElementsByTagName("region")[0]
+          ? destinationElement.getElementsByTagName("region")[0].childNodes[0]
+              .nodeValue
+          : "-";
+        const country =
+          destinationElement.getElementsByTagName("country")[0].childNodes[0]
+            .nodeValue;
+
+        return { airport, city, region, country };
+      };
+
+      parseRoutes = (routesElement) => {
+        const routeNodes = routesElement.getElementsByTagName("route");
+        const routes = [];
+
+        for (let index = 0; index < routeNodes.length; index++) {
+          const vehicle =
+            routeNodes[index].getElementsByTagName("vehicle")[0].childNodes[0]
+              .nodeValue;
+          const departureElement =
+            routeNodes[index].getElementsByTagName("departure")[0];
+          const destinationElement =
+            routeNodes[index].getElementsByTagName("destination")[0];
+
+          const departures = parseDepartures(departureElement);
+          const destination = parseDestination(destinationElement);
+          routes.push({ vehicle, departures, destination });
+        }
+        return routes;
+      };
+
+      parseAirline = (airlineElement) => {
+        const id =
+          airlineElement.getElementsByTagName("id")[0].childNodes[0].nodeValue;
+        const name =
+          airlineElement.getElementsByTagName("name")[0].childNodes[0]
+            .nodeValue;
+        const street =
+          airlineElement.getElementsByTagName("street")[0].childNodes[0]
+            .nodeValue;
+        const city =
+          airlineElement.getElementsByTagName("city")[0].childNodes[0]
+            .nodeValue;
+        const region =
+          airlineElement.getElementsByTagName("region")[0].childNodes[0]
+            .nodeValue;
+        const country =
+          airlineElement.getElementsByTagName("country")[0].childNodes[0]
+            .nodeValue;
+
+        const parksElement = airlineElement.getElementsByTagName("parks")[0];
+        const routesElement = airlineElement.getElementsByTagName("routes")[0];
+
+        const parks = parseParks(parksElement);
+        const routes = parseRoutes(routesElement);
+
+        return {
+          id,
+          name,
+          street,
+          city,
+          region,
+          country,
+          parks,
+          routes,
+        };
+      };
+
+      stringToNode = (html) => {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      };
+
+      getParksContent = (parsedAirline) => {
+        let content = "";
+        for (let index = 0; index < parsedAirline.parks.length; index++) {
+          content += `<li><p>${parsedAirline.parks[index].id}</p>
+            <p>Route Type: ${parsedAirline.parks[index].routeType}</p>
+            <p>Manufacturer: ${parsedAirline.parks[index].manufacturer}</p>
+            <p>Year: ${parsedAirline.parks[index].year}</p></li>`;
+        }
+        return content;
+      };
+
+      getDepartureContent = (route) => {
+        return `<li><p>Airport: ${route.departures["airport"]}</p>
+          <p>City: ${route.departures["city"]}</p>
+          <p>Country: ${route.departures["country"]}</p></li>`;
+      };
+
+      getDestinationContent = (route) => {
+        return `<li><p>Airport: ${route.destination["airport"]}</p>
+          <p>City: ${route.destination["city"]}</p>
+          <p>Region: ${route.destination["region"]}</p>
+          <p>Country: ${route.destination["country"]}</p></li>`;
+      };
+
+      getRoutesContent = (parsedAirline) => {
+        let content = "";
+        for (let index = 0; index < parsedAirline.routes.length; index++) {
+          content += `<li><p>${parsedAirline.routes[index].vehicle}</p>
+            <h4>Departure</h4><ul>${getDepartureContent(
+              parsedAirline.routes[index]
+            )}</ul>
+            <h4>Destination</h4><ul>${getDestinationContent(
+              parsedAirline.routes[index]
+            )}</ul></li>`;
+        }
+        return content;
+      };
+
+      createAirline = (parsedAirline) => {
+        const content = `<li>
+        <article>
+          <p>${parsedAirline.id}</p>
+          <p>Name: ${parsedAirline.name}</p>
+          <p>Street: ${parsedAirline.street}</p>
+          <p>City: ${parsedAirline.city}</p>
+          <p>Region: ${parsedAirline.region}</p>
+          <p>Country: ${parsedAirline.country}</p>
+          <h2>Parks</h2>
+          <ol>${getParksContent(parsedAirline)}</ol>
+          <h2>Routes</h2>
+          <ol>${getRoutesContent(parsedAirline)}</ol>
+        </article>
+        <hr>
+      </li>`;
+        return stringToNode(content);
+      };
+
+      displayData = (xmlDoc) => {
+        const airlines = xmlDoc.getElementsByTagName("airline");
+        const list = document.getElementById("airlines-list");
+
+        for (let index = 0; index < airlines.length; index++) {
+          const element = airlines[index];
+          const parsedAirline = parseAirline(element);
+
+          const airlineElement = createAirline(parsedAirline);
+          list.appendChild(airlineElement);
+        }
+      };
+    </script>
+  </body>
+</html>
