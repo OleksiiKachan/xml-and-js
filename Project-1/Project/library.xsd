@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="LIBRARY">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="library" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="id" type="xs:string" />
+                        <xs:element name="name" type="xs:string" />
+                        
+                        <xs:element name="address">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="street" type="xs:string" />
+                                <xs:element name="city" type="xs:string" />
+                                <xs:element name="region" type="xs:string" />
+                                <xs:element name="country" type="xs:string" />
+                            </xs:sequence>
+                        </xs:complexType>
+                        </xs:element>
+                        
+                        <xs:element name="specialty" type="xs:string" />
+                        <xs:element name="catalog" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="isbn" type="xs:string" />
+                                <xs:element name="title" type="xs:string" />
+                                <xs:element name="availability" type="xs:boolean" />
+                                
+                                 <!-- short range is -32,768 to +32,767
+                                 and we need only positive value 
+                                 so i used unsignedShort range is 0 and 65535 -->
+                                <xs:element name="year" type="xs:unsignedShort" />
+                                <xs:element name="genre" type="xs:string" />
+                                <xs:element name="description" type="xs:string" />
+                                <xs:element name="author" type="xs:string" />
+                            </xs:sequence>
+                        </xs:complexType>
+                        </xs:element>
+
+                    </xs:sequence>
+                </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

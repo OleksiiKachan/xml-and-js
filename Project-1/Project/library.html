@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+  <body>
+    <div id="library" >
+        <div id="books">
+        </div>
+    </div>
+
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "library.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function displayData(xmlDoc) {
+        const listElement = document.getElementById(`library`);
+        const studentNodes = xmlDoc.getElementsByTagName(`library`);
+
+        const bookNodes =xmlDoc.getElementsByTagName('catalog')
+        const bookElement = document.getElementById(`books`);
+        
+        for (let index = 0; index < studentNodes.length; index++) {
+          const studentNode = studentNodes[index];
+          const bookNode = bookNodes[index];
+
+          const listItem = stringToNode(`<div class="card">
+            <h2>${
+              studentNode.getElementsByTagName(`name`)[0].childNodes[0]
+                .nodeValue
+            } </h2> <p> ${
+            studentNode.getElementsByTagName(`street`)[0].childNodes[0]
+              .nodeValue
+          }
+          ${
+            studentNode.getElementsByTagName(`city`)[0].childNodes[0]
+              .nodeValue
+          }
+          ${
+            studentNode.getElementsByTagName(`region`)[0].childNodes[0]
+              .nodeValue
+          }
+          ${
+            studentNode.getElementsByTagName(`country`)[0].childNodes[0]
+              .nodeValue
+          }</p>
+            <p> ${ `Speciality: ${
+            studentNode.getElementsByTagName(`specialty`)[0].childNodes[0]
+              .nodeValue
+          }`
+        }
+        </p>
+        
+        <div class="books">
+        <h4>  ${ `Name:
+          ${ 
+            bookNode.getElementsByTagName(`title`)[0].childNodes[0]
+              .nodeValue
+          }`}
+          <p>
+            </p>
+          </h4>
+          <span style="float: right; margin-top: -40px;">${
+            bookNode.getElementsByTagName(`year`)[0].childNodes[0]
+              .nodeValue
+          }</span>
+          <p>${
+            bookNode.getElementsByTagName(`description`)[0].childNodes[0]
+              .nodeValue
+          }</p>
+          <p>${`Genre: <b> ${
+            bookNode.getElementsByTagName(`genre`)[0].childNodes[0].nodeValue
+          }`} </b></p>
+          <p>${`Author: <b>${
+            bookNode.getElementsByTagName(`author`)[0].childNodes[0].nodeValue
+          }`}</b></p>
+          </div>
+          </div>`
+          
+          );
+          listElement.appendChild(listItem);
+        
+    //     var x=function books(){
+    //     for (let indexx = 0; indexx < bookNodes.length; indexx++) {
+    //       const bookNode = bookNodes[indexx];
+    //       const bookItem = stringToNode(`<div class="">
+    //         <h2>${
+    //           bookNode.getElementsByTagName(`isbn`)[0].childNodes[0]
+    //             .nodeValue
+    //         } </h2> <p> ${
+    //         bookNode.getElementsByTagName(`title`)[0].childNodes[0]
+    //           .nodeValue
+    //       }
+    //       ${
+    //         bookNode.getElementsByTagName(`description`)[0].childNodes[0]
+    //           .nodeValue
+    //       }</p>
+    //       </div>`);
+    //       bookElement.appendChild(bookItem);
+    //     }
+    // }
+      }
+    }
+    </script>
+  </body>
+</html>
