@@ -1,0 +1,19 @@
+h3 {
+    padding: 1em;
+    background-color: lightblue;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 2em;
+}
+
+table caption {
+    text-align: left;
+    margin-bottom: 1em;
+}
+
+th, td {
+    border: 1px solid;
+    padding: 5px;
+}

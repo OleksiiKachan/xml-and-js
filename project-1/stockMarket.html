@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market</title>
+    <link rel="stylesheet" href="stockMarket.css">
+</head>
+
+<body>
+    <h2>Stock Market Information</h2>
+    <main id="all"></main>
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                displayData(this.responseXML);
+            }
+        };
+
+        xhttp.open("GET", "stockMarket.xml", true);
+        xhttp.send();
+
+        function stringToNode(html) {
+            const template = document.createElement(`template`);
+            html = html.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+        }
+
+
+        // check if getElementsByTagName returns a value
+        // must have value then proceed to get nodeValue
+        function existNode(node) {
+            if (!node) {
+                return "Data doesn't exist";
+            }
+            else {
+                // console.log(typeof nodeValue);
+                return node.childNodes[0].nodeValue;
+            }
+        }
+
+
+        function displayData(xmlDoc) {
+            const main = document.getElementById(`all`);
+
+            const userNodes = xmlDoc.getElementsByTagName(`user`);
+            // console.log(userNodes);
+
+            // go through each user
+            for (let index = 0; index < userNodes.length; index++) {
+                const userNode = userNodes[index];
+
+                // create user info             
+                const userInfo = stringToNode(`<div>
+                <h3>User ${index +1}</h3>  
+                <p>Basic Info </p>           
+                <ul>
+                    <li>ID: 
+                        ${existNode(userNode.getElementsByTagName(`id`)[0])}
+                    </li>
+                    <li>Exchange: 
+                        ${existNode(userNode.getElementsByTagName(`exchange`)[0])}
+                    </li>
+                    <li>Currency: 
+                        ${existNode(userNode.getElementsByTagName(`currency`)[0])}
+                    </li>
+                </ul>
+                <p>Address</p>
+                <ul>
+                    <li>
+                        ${existNode(userNode.getElementsByTagName(`street`)[0])}, 
+                        ${existNode(userNode.getElementsByTagName(`city`)[0])}, 
+                        ${existNode(userNode.getElementsByTagName(`region`)[0])}, 
+                        ${existNode(userNode.getElementsByTagName(`country`)[0])}
+                    </li>
+                </ul>
+                    
+                <div>`)
+                //console.log(userInfo);
+                main.appendChild(userInfo);
+
+
+
+                // create stock table
+                // stock table header row
+                const stockTableHead = stringToNode(`
+                    <table id="stocks${index}">
+                        <caption>Stocks</caption>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Name</th>
+                            <th>Sector</th>
+                            <th>Industry</th>
+                            <th>MarketCap</th>
+                            <th>Price</th>
+                        </tr>
+                    </table>
+                `)
+                //console.log(stockTableElement);                
+
+                // go through each stock under a user
+                // stock table body rows
+                const stockNodes = userNode.getElementsByTagName(`stock`);
+                for (let i = 0; i < stockNodes.length; i++) {
+                    const stockNode = stockNodes[i];
+
+                    const stockTableItem = stringToNode(`
+                        <tr>
+                            <td>
+                                ${existNode(stockNode.getElementsByTagName(`symbol`)[0])}
+                            </td>
+                            <td>
+                                ${existNode(stockNode.getElementsByTagName(`name`)[0])}
+                            </td>
+                            <td>
+                                ${existNode(stockNode.getElementsByTagName(`sector`)[0])}
+                            </td>
+                            <td>
+                                ${existNode(stockNode.getElementsByTagName(`industry`)[0])}
+                            </td>
+                            <td>
+                                ${existNode(stockNode.getElementsByTagName(`marketCap`)[0])}
+                            </td>
+                            <td>
+                                ${existNode(stockNode.getElementsByTagName(`price`)[0])}
+                            </td>
+                        </tr>
+                    `)
+
+                    main.appendChild(stockTableHead);
+                    const stockTableElement = document.getElementById(`stocks${index}`);
+                    stockTableElement.appendChild(stockTableItem);
+                }
+
+
+
+                // create account table
+                // account table header row
+                const accountTableHead = stringToNode(`
+                    <table id="accounts${index}">
+                        <caption>Account Holders and Bank Info</caption>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Gender</th>
+                            <th>Occupation</th>
+                            <th>Bank Iban</th>
+                        </tr>
+                    </table>
+                `)
+
+
+                // go through each account under a user
+                // account table body rows
+                const accountNodes = userNode.getElementsByTagName(`account`);
+                for (let i = 0; i < accountNodes.length; i++) {
+                    const accountNode = accountNodes[i];
+
+                    const accountTableItem = stringToNode(`
+                        <tr>
+                            <td>
+                                ${existNode(accountNode.getElementsByTagName(`firstName`)[0])}
+                            </td>
+                            <td>
+                                ${existNode(accountNode.getElementsByTagName(`lastName`)[0])}
+                            </td>
+                            <td>
+                                ${existNode(accountNode.getElementsByTagName(`gender`)[0])}
+                            </td>
+                            <td>
+                                ${existNode(accountNode.getElementsByTagName(`occupation`)[0])}
+                            </td>
+                            <td>
+                                ${existNode(accountNode.getElementsByTagName(`iban`)[0])}
+                            </td>
+                        </tr>                    
+                    `)
+
+                    main.appendChild(accountTableHead);
+                    const accountTableElement = document.getElementById(`accounts${index}`);
+                    accountTableElement.appendChild(accountTableItem);
+
+                }
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
