@@ -56,7 +56,9 @@
                         <td>${clients[index].email}</td>
                         <td>${clients[index].phoneNumber}</td>
                         <td>
-                          <ul>${createClientCards(clients[index].clientCards)}</ul>
+                          <ul>${createClientCards(
+                            clients[index].clientCards
+                          )}</ul>
                         </td>
                       </tr>`;
         }
@@ -67,27 +69,30 @@
       function createClientCards(clientCards) {
         let content = "";
         for (let index = 0; index < clientCards.length; index++)
-        //   content += `<li><b>Card number: </b>${clientCards[index].cardNumber}<br/>
-        //                    <b>Type:  </b>${clientCards[index].cardType}<br/>
-        //                    <b>Cvv:  </b>${clientCards[index].cardCvv}<br/>
-        //                    <b>Expires vt:  </b>${clientCards[index].cardExpiry}</li>`;
-        content += `<li><b>Card number: </b>${clientCards[index].cardNumber}<br/>
-                           <b>Type:  </b>${clientCards[index].cardType}<br/>
-                           <b>Cvv:  </b>${clientCards[index].cardCvv}<br/>
-                           <b>Expires vt:  </b>${clientCards[index].cardExpiry}</li>`;
+          content += `<li><b>Card number: </b>${clientCards[index].cardNumber}<br/>
+                            <b>Type:  </b>${clientCards[index].cardType}<br/>
+                            <b>Cvv:  </b>${clientCards[index].cardCvv}<br/>
+                            <b>Expires At:  </b>${clientCards[index].cardExpiry}</li>`;
 
         return content;
       }
 
       function parseBank(xml) {
         const id = xml.getAttribute("id");
-        const name = xml.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+        const name =
+          xml.getElementsByTagName("name")[0].childNodes[0].nodeValue;
         const addressNode = xml.getElementsByTagName("address")[0];
-        const street = addressNode.getElementsByTagName("street")[0].childNodes[0].nodeValue;
-        const city = addressNode.getElementsByTagName("city")[0].childNodes[0].nodeValue;
-        const region = addressNode.getElementsByTagName("region")[0].childNodes[0].nodeValue;
-        const country = addressNode.getElementsByTagName("country")[0].childNodes[0].nodeValue;
-        const address = street + "<br>" + city + "<br>" + region + "<br>" +country;
+        const street =
+          addressNode.getElementsByTagName("street")[0].childNodes[0].nodeValue;
+        const city =
+          addressNode.getElementsByTagName("city")[0].childNodes[0].nodeValue;
+        const region =
+          addressNode.getElementsByTagName("region")[0].childNodes[0].nodeValue;
+        const country =
+          addressNode.getElementsByTagName("country")[0].childNodes[0]
+            .nodeValue;
+        const address =
+          street + "<br>" + city + "<br>" + region + "<br>" + country;
         const clientsXml = xml.getElementsByTagName("clients")[0];
         const clients = parseClients(clientsXml);
 
@@ -95,7 +100,7 @@
           id,
           name,
           address,
-          clients
+          clients,
         };
       }
 
@@ -106,15 +111,17 @@
         for (let index = 0; index < clientNodes.length; index++) {
           const clientId = clientNodes[index].getAttribute("id");
           const name =
-            clientNodes[index].getElementsByTagName("firstName")[0].childNodes[0]
-              .nodeValue + " " +clientNodes[index].getElementsByTagName("lastName")[0].childNodes[0]
+            clientNodes[index].getElementsByTagName("firstName")[0]
+              .childNodes[0].nodeValue +
+            " " +
+            clientNodes[index].getElementsByTagName("lastName")[0].childNodes[0]
               .nodeValue;
           const email =
             clientNodes[index].getElementsByTagName("email")[0].childNodes[0]
               .nodeValue;
           const phoneNumber =
-            clientNodes[index].getElementsByTagName("phoneNumber")[0].childNodes[0]
-              .nodeValue;
+            clientNodes[index].getElementsByTagName("phoneNumber")[0]
+              .childNodes[0].nodeValue;
           const clientCardsXml =
             clientNodes[index].getElementsByTagName("cards")[0];
           const clientCards = parseClientCards(clientCardsXml);
@@ -124,7 +131,7 @@
             name,
             email,
             phoneNumber,
-            clientCards
+            clientCards,
           });
         }
         return clients;
@@ -135,22 +142,22 @@
         const cards = [];
 
         for (let index = 0; index < cardNodes.length; index++) {
-        const cardNumber = cardNodes[index].getAttribute("number");
+          const cardNumber = cardNodes[index].getAttribute("number");
           const cardType =
-          cardNodes[index].getElementsByTagName("type")[0]
-              .childNodes[0].nodeValue;
+            cardNodes[index].getElementsByTagName("type")[0].childNodes[0]
+              .nodeValue;
           const cardCvv =
-          cardNodes[index].getElementsByTagName("cvv")[0]
-              .childNodes[0].nodeValue;
+            cardNodes[index].getElementsByTagName("cvv")[0].childNodes[0]
+              .nodeValue;
           const cardExpiry =
-          cardNodes[index].getElementsByTagName("expiresAt")[0]
-              .childNodes[0].nodeValue;
+            cardNodes[index].getElementsByTagName("expiresAt")[0].childNodes[0]
+              .nodeValue;
 
-           cards.push({
+          cards.push({
             cardNumber,
             cardType,
             cardCvv,
-            cardExpiry
+            cardExpiry,
           });
         }
         return cards;

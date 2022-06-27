@@ -11,9 +11,8 @@
                         <th>Address</th>
                         <th>Clients</th>
                     </tr>
-
                     <xsl:for-each select="banks/bank">
-                        <tr>ß
+                        <tr>
                             <td>
                                 <xsl:value-of select="@id" />
                             </td>
@@ -45,8 +44,7 @@
                                                 <xsl:value-of select="@id" />
                                             </td>
                                             <td>
-                                                <xsl:value-of select="lastName" />
-                                                ,
+                                                <xsl:value-of select="lastName" />,
                                                 <xsl:value-of select="firstName" />
                                             </td>
                                             <td>
