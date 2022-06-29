@@ -12,7 +12,6 @@
 </tr>
 <xsl:for-each select="banks/bank">
 <tr>
-ß
 <td>
 <xsl:value-of select="@id"/>
 </td>
