@@ -1,0 +1,1121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE root [
+        <!ELEMENT root (element)*>
+        <!ELEMENT element (address|employees|empType|firstName|id|lastName|position|products|euroPrice|name|poundPrice|qty|usdPrice)*>
+        <!ELEMENT address (city|country|street|region)*>
+        <!ELEMENT city (#PCDATA)>
+        <!ELEMENT country (#PCDATA)>
+        <!ELEMENT street (#PCDATA)>
+        <!ELEMENT employees (element)*>
+        <!ELEMENT empType (#PCDATA)>
+        <!ELEMENT firstName (#PCDATA)>
+        <!ELEMENT id (#PCDATA)>
+        <!ELEMENT lastName (#PCDATA)>
+        <!ELEMENT position (#PCDATA)>
+        <!ELEMENT products (element)*>
+        <!ELEMENT euroPrice (#PCDATA)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT poundPrice (#PCDATA)>
+        <!ELEMENT qty (#PCDATA)>
+        <!ELEMENT usdPrice (#PCDATA)>
+        <!ELEMENT region (#PCDATA)>
+        ]>
+<root>
+   <element>
+      <address>
+         <city>Catamayo</city>
+         <country>Ecuador</country>
+         <street>57901 Rowland Drive</street>
+      </address>
+      <employees>
+         <element>
+            <empType>full-time</empType>
+            <firstName>Aurelia</firstName>
+            <id>695437ec-8a93-4335-a320-dd722459b64c</id>
+            <lastName>Korb</lastName>
+            <position>Design Engineer</position>
+         </element>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Muire</firstName>
+            <id>a470a199-b995-4c4c-a880-fd7c39c7a12b</id>
+            <lastName>MacTeague</lastName>
+            <position>GIS Technical Architect</position>
+         </element>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Dorolice</firstName>
+            <id>fece4b81-8eee-4b68-a727-21d9da993e21</id>
+            <lastName>Barsham</lastName>
+            <position>Legal Assistant</position>
+         </element>
+      </employees>
+      <id>1</id>
+      <products>
+         <element>
+            <euroPrice>€58,02</euroPrice>
+            <id>cb9a3d63-14c4-457a-be96-e2e87bf63c52</id>
+            <name>Muffin - Mix - Bran And Maple 15l</name>
+            <poundPrice>£51.61</poundPrice>
+            <qty>81</qty>
+            <usdPrice>$23.13</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€33,64</euroPrice>
+            <id>220c2562-381d-4c24-a7ea-b1edd8279e51</id>
+            <name>Chickensplit Half</name>
+            <poundPrice>£44.28</poundPrice>
+            <qty>3</qty>
+            <usdPrice>$69.53</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€47,03</euroPrice>
+            <id>0399b739-3d4a-42fd-a04c-eceb355c0b91</id>
+            <name>Wine - Maipo Valle Cabernet</name>
+            <poundPrice>£52.77</poundPrice>
+            <qty>6</qty>
+            <usdPrice>$11.13</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€81,87</euroPrice>
+            <id>43503d68-1f39-4c4a-95df-89fdb726fa6f</id>
+            <name>Muffin Puck Ww Carrot</name>
+            <poundPrice>£39.31</poundPrice>
+            <qty>71</qty>
+            <usdPrice>$86.76</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€10,89</euroPrice>
+            <id>e5ce2cec-aa8f-4d49-838c-b712b2bede2d</id>
+            <name>Coffee - 10oz Cup 92961</name>
+            <poundPrice>£83.95</poundPrice>
+            <qty>2</qty>
+            <usdPrice>$70.17</usdPrice>
+         </element>
+      </products>
+   </element>
+   <element>
+      <address>
+         <city>Guashe</city>
+         <country>China</country>
+         <street>267 Gulseth Trail</street>
+      </address>
+      <employees>
+         <element>
+            <empType>part-time</empType>
+            <firstName>Kimbell</firstName>
+            <id>0f4c244d-93be-4a7b-9111-8cb5cd549480</id>
+            <lastName>Zettler</lastName>
+            <position>Junior Executive</position>
+         </element>
+         <element>
+            <empType>part-time</empType>
+            <firstName>Jaye</firstName>
+            <id>a9b3995b-0efc-4994-8ebe-f1d8ce642f9a</id>
+            <lastName>Arkow</lastName>
+            <position>Associate Professor</position>
+         </element>
+         <element>
+            <empType>full-time</empType>
+            <firstName>Brianna</firstName>
+            <id>817fce43-2dac-410e-aa9d-7eca1140adb1</id>
+            <lastName>Spry</lastName>
+            <position>Director of Sales</position>
+         </element>
+      </employees>
+      <id>2</id>
+      <products>
+         <element>
+            <euroPrice>€35,47</euroPrice>
+            <id>127c5116-3f30-43a7-bc55-984a766e7aa6</id>
+            <name>Pepper - Paprika, Hungarian</name>
+            <poundPrice>£1.09</poundPrice>
+            <qty>6</qty>
+            <usdPrice>$17.15</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€51,58</euroPrice>
+            <id>7072c0d9-a97c-4f0a-934a-a11f4d35f297</id>
+            <name>Mushroom - Crimini</name>
+            <poundPrice>£38.28</poundPrice>
+            <qty>1</qty>
+            <usdPrice>$87.52</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€26,94</euroPrice>
+            <id>02165ea1-66a3-4587-a3cc-4b2d3e797057</id>
+            <name>Soup - Campbells Chili</name>
+            <poundPrice>£97.01</poundPrice>
+            <qty>78</qty>
+            <usdPrice>$35.56</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€78,03</euroPrice>
+            <id>c97d0fe3-2346-4bf9-a50c-e2650dd0a941</id>
+            <name>Bread Fig And Almond</name>
+            <poundPrice>£37.01</poundPrice>
+            <qty>16</qty>
+            <usdPrice>$34.23</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€89,57</euroPrice>
+            <id>e1ec7ab8-0a22-40fc-ba5d-0fb643dd4b30</id>
+            <name>Beef - Rib Roast, Capless</name>
+            <poundPrice>£95.00</poundPrice>
+            <qty>55</qty>
+            <usdPrice>$45.27</usdPrice>
+         </element>
+      </products>
+   </element>
+   <element>
+      <address>
+         <city>Tân Trụ</city>
+         <country>Vietnam</country>
+         <street>371 Hintze Trail</street>
+      </address>
+      <employees>
+         <element>
+            <empType>part-time</empType>
+            <firstName>Ulrica</firstName>
+            <id>bbbbd8c1-db53-485a-8392-8d76d83107ac</id>
+            <lastName>Preedy</lastName>
+            <position>Human Resources Assistant IV</position>
+         </element>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Robbert</firstName>
+            <id>c15636cd-9bf5-4558-b3c8-b23868fc59ad</id>
+            <lastName>Millimoe</lastName>
+            <position>General Manager</position>
+         </element>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Rufe</firstName>
+            <id>74a64dd8-0308-465f-9409-717a66836013</id>
+            <lastName>Caiger</lastName>
+            <position>Product Engineer</position>
+         </element>
+      </employees>
+      <id>3</id>
+      <products>
+         <element>
+            <euroPrice>€70,48</euroPrice>
+            <id>ce14017b-57ad-4a2c-968a-7df134a7e6ea</id>
+            <name>Zucchini - Green</name>
+            <poundPrice>£74.05</poundPrice>
+            <qty>7</qty>
+            <usdPrice>$69.03</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€86,83</euroPrice>
+            <id>b5bff4cb-2226-43a3-823d-323702f54a47</id>
+            <name>Bread - 10 Grain Parisian</name>
+            <poundPrice>£82.09</poundPrice>
+            <qty>71</qty>
+            <usdPrice>$24.39</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€70,70</euroPrice>
+            <id>9f84ce4a-0651-4b5e-85a8-2963dd3e4ae7</id>
+            <name>Smoked Paprika</name>
+            <poundPrice>£15.79</poundPrice>
+            <qty>85</qty>
+            <usdPrice>$7.63</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€70,95</euroPrice>
+            <id>158befbc-140a-4a86-a95c-b1836b159332</id>
+            <name>Table Cloth 91x91 Colour</name>
+            <poundPrice>£99.58</poundPrice>
+            <qty>60</qty>
+            <usdPrice>$79.56</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€47,82</euroPrice>
+            <id>a81baf19-878a-4be0-839f-f71b858f4079</id>
+            <name>Wine - Two Oceans Sauvignon</name>
+            <poundPrice>£88.48</poundPrice>
+            <qty>59</qty>
+            <usdPrice>$83.16</usdPrice>
+         </element>
+      </products>
+   </element>
+   <element>
+      <address>
+         <city>Shuikou</city>
+         <country>China</country>
+         <street>81 Moose Place</street>
+      </address>
+      <employees>
+         <element>
+            <empType>part-time</empType>
+            <firstName>Philippine</firstName>
+            <id>ddd8cc06-94c5-4ace-93f0-c4f889f9d00c</id>
+            <lastName>Anderl</lastName>
+            <position>Financial Advisor</position>
+         </element>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Aileen</firstName>
+            <id>73d84e71-19f7-49e7-bd93-8eba983e599d</id>
+            <lastName>Gillean</lastName>
+            <position>VP Marketing</position>
+         </element>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Herschel</firstName>
+            <id>10cb5d4b-813a-48be-a4cf-4153f6f3d385</id>
+            <lastName>Triebner</lastName>
+            <position>Nurse</position>
+         </element>
+      </employees>
+      <id>4</id>
+      <products>
+         <element>
+            <euroPrice>€17,49</euroPrice>
+            <id>49e330e4-da07-4225-aed6-5e6fd0436e86</id>
+            <name>Couscous</name>
+            <poundPrice>£45.10</poundPrice>
+            <qty>74</qty>
+            <usdPrice>$70.01</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€0,78</euroPrice>
+            <id>2ea8aa9b-670e-470c-ba26-a941689bd628</id>
+            <name>Soup - Campbells, Classic Chix</name>
+            <poundPrice>£91.65</poundPrice>
+            <qty>65</qty>
+            <usdPrice>$11.32</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€76,11</euroPrice>
+            <id>a76c2134-88bb-4b6f-83e9-0c29b9093ef4</id>
+            <name>Red Currant Jelly</name>
+            <poundPrice>£65.14</poundPrice>
+            <qty>1</qty>
+            <usdPrice>$68.79</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€48,64</euroPrice>
+            <id>1c314c15-e772-45fe-8de8-316089eb135b</id>
+            <name>Ecolab - Hobart Washarm End Cap</name>
+            <poundPrice>£5.97</poundPrice>
+            <qty>53</qty>
+            <usdPrice>$17.71</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€9,45</euroPrice>
+            <id>bd6f090b-114a-4f24-a4c9-55862eb0c82e</id>
+            <name>Lamb - Pieces, Diced</name>
+            <poundPrice>£74.93</poundPrice>
+            <qty>36</qty>
+            <usdPrice>$32.37</usdPrice>
+         </element>
+      </products>
+   </element>
+   <element>
+      <address>
+         <city>Karangsari</city>
+         <country>Indonesia</country>
+         <street>185 Crescent Oaks Plaza</street>
+      </address>
+      <employees>
+         <element>
+            <empType>part-time</empType>
+            <firstName>Rahel</firstName>
+            <id>65c37bda-0935-4e85-a6b1-a099ce045953</id>
+            <lastName>Foskin</lastName>
+            <position>Occupational Therapist</position>
+         </element>
+         <element>
+            <empType>part-time</empType>
+            <firstName>Moina</firstName>
+            <id>7c3014be-c46c-4350-aa48-70b23109d592</id>
+            <lastName>Nezey</lastName>
+            <position>Assistant Professor</position>
+         </element>
+         <element>
+            <empType>full-time</empType>
+            <firstName>Ira</firstName>
+            <id>f2a14e20-7eff-474f-9edf-5790f6588fe1</id>
+            <lastName>Gusticke</lastName>
+            <position>Social Worker</position>
+         </element>
+      </employees>
+      <id>5</id>
+      <products>
+         <element>
+            <euroPrice>€80,34</euroPrice>
+            <id>d8324e09-3c04-4d94-b8c0-b9d283e110b8</id>
+            <name>Peach - Halves</name>
+            <poundPrice>£89.28</poundPrice>
+            <qty>35</qty>
+            <usdPrice>$12.84</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€1,18</euroPrice>
+            <id>b5f5bb06-0b8c-4388-99dd-4925eebce730</id>
+            <name>Wine - Piper Heidsieck Brut</name>
+            <poundPrice>£49.67</poundPrice>
+            <qty>43</qty>
+            <usdPrice>$51.10</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€36,05</euroPrice>
+            <id>ec43bf05-ec1f-40b5-8aa1-90df53deedcd</id>
+            <name>Butter - Pod</name>
+            <poundPrice>£85.01</poundPrice>
+            <qty>7</qty>
+            <usdPrice>$85.69</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€79,84</euroPrice>
+            <id>8052f4ad-fc71-4c93-abeb-eeacf0ad8994</id>
+            <name>Skewers - Bamboo</name>
+            <poundPrice>£81.68</poundPrice>
+            <qty>18</qty>
+            <usdPrice>$12.45</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€70,98</euroPrice>
+            <id>842ef6ec-8944-4658-9417-84ec0f8e80d9</id>
+            <name>Water - Tonic</name>
+            <poundPrice>£51.62</poundPrice>
+            <qty>38</qty>
+            <usdPrice>$84.93</usdPrice>
+         </element>
+      </products>
+   </element>
+   <element>
+      <address>
+         <city>Barra do Corda</city>
+         <country>Brazil</country>
+         <street>914 Butterfield Pass</street>
+      </address>
+      <employees>
+         <element>
+            <empType>full-time</empType>
+            <firstName>Kerk</firstName>
+            <id>3096703f-175c-4618-af44-d536739d0c8b</id>
+            <lastName>Moses</lastName>
+            <position>Dental Hygienist</position>
+         </element>
+         <element>
+            <empType>full-time</empType>
+            <firstName>Zed</firstName>
+            <id>82f5aad9-e71d-444b-9f20-8db50cee93f5</id>
+            <lastName>Chidley</lastName>
+            <position>Marketing Assistant</position>
+         </element>
+         <element>
+            <empType>full-time</empType>
+            <firstName>Flss</firstName>
+            <id>7ba2374f-5396-4493-aedd-eb10dcfde2b4</id>
+            <lastName>Ovens</lastName>
+            <position>Assistant Manager</position>
+         </element>
+      </employees>
+      <id>6</id>
+      <products>
+         <element>
+            <euroPrice>€3,09</euroPrice>
+            <id>11bb7773-d76d-47c6-ac98-35409e2eca68</id>
+            <name>Soup - Campbells, Beef Barley</name>
+            <poundPrice>£31.36</poundPrice>
+            <qty>38</qty>
+            <usdPrice>$83.26</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€25,90</euroPrice>
+            <id>002143e1-34b2-412b-b023-9e6e2b205336</id>
+            <name>Bread - Roll, Whole Wheat</name>
+            <poundPrice>£62.70</poundPrice>
+            <qty>24</qty>
+            <usdPrice>$27.00</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€95,05</euroPrice>
+            <id>871f4c1f-500d-4f69-95cd-7ed525163bb4</id>
+            <name>Seabream Whole Farmed</name>
+            <poundPrice>£59.54</poundPrice>
+            <qty>46</qty>
+            <usdPrice>$44.85</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€9,77</euroPrice>
+            <id>2743147f-98b9-4cd1-afcd-968f4993d4b3</id>
+            <name>Pasta - Lasagna, Dry</name>
+            <poundPrice>£3.60</poundPrice>
+            <qty>67</qty>
+            <usdPrice>$40.56</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€99,26</euroPrice>
+            <id>d0129138-eff8-455d-93a0-037f80dcf226</id>
+            <name>Energy Drink</name>
+            <poundPrice>£41.23</poundPrice>
+            <qty>90</qty>
+            <usdPrice>$43.64</usdPrice>
+         </element>
+      </products>
+   </element>
+   <element>
+      <address>
+         <city>Zhuanqukou</city>
+         <country>China</country>
+         <street>56749 Wayridge Lane</street>
+      </address>
+      <employees>
+         <element>
+            <empType>part-time</empType>
+            <firstName>Freddie</firstName>
+            <id>10de0705-d600-41dd-afc0-87be6a5f7a80</id>
+            <lastName>Olohan</lastName>
+            <position>VP Accounting</position>
+         </element>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Geralda</firstName>
+            <id>5451cfd5-78f0-46d5-b5b9-f11b951221cc</id>
+            <lastName>Durrell</lastName>
+            <position>Speech Pathologist</position>
+         </element>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Lacee</firstName>
+            <id>d656dd4b-9414-4073-98bb-cc7eca7cbd9f</id>
+            <lastName>Smithson</lastName>
+            <position>Staff Accountant IV</position>
+         </element>
+      </employees>
+      <id>7</id>
+      <products>
+         <element>
+            <euroPrice>€17,14</euroPrice>
+            <id>6e6204db-1d2f-47f3-a5d6-6f9171430a72</id>
+            <name>Sauce - Roasted Red Pepper</name>
+            <poundPrice>£88.82</poundPrice>
+            <qty>35</qty>
+            <usdPrice>$79.19</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€87,02</euroPrice>
+            <id>0c57c439-64f8-4f91-9ccd-eb5ba0ce7a3b</id>
+            <name>Dikon</name>
+            <poundPrice>£67.72</poundPrice>
+            <qty>36</qty>
+            <usdPrice>$43.21</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€39,00</euroPrice>
+            <id>32827912-54be-4711-bd88-43e229ff3fcf</id>
+            <name>Trout - Rainbow, Frozen</name>
+            <poundPrice>£99.26</poundPrice>
+            <qty>8</qty>
+            <usdPrice>$62.10</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€23,36</euroPrice>
+            <id>9d2ece44-c0c3-4241-91fc-1bcfcbe430af</id>
+            <name>Beef - Ground Medium</name>
+            <poundPrice>£87.09</poundPrice>
+            <qty>92</qty>
+            <usdPrice>$71.86</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€0,50</euroPrice>
+            <id>d5668536-a673-445b-a3a2-f90c3c7762b3</id>
+            <name>Pastry - Banana Tea Loaf</name>
+            <poundPrice>£69.43</poundPrice>
+            <qty>57</qty>
+            <usdPrice>$18.99</usdPrice>
+         </element>
+      </products>
+   </element>
+   <element>
+      <address>
+         <city>Luhyny</city>
+         <country>Ukraine</country>
+         <street>57 Longview Terrace</street>
+      </address>
+      <employees>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Gar</firstName>
+            <id>af62c346-c5b1-4106-8653-3212327e6e91</id>
+            <lastName>Booty</lastName>
+            <position>Desktop Support Technician</position>
+         </element>
+         <element>
+            <empType>full-time</empType>
+            <firstName>Tessa</firstName>
+            <id>bb44670c-7ce4-4c06-8696-c9d5ff54c484</id>
+            <lastName>Gowans</lastName>
+            <position>Assistant Media Planner</position>
+         </element>
+         <element>
+            <empType>part-time</empType>
+            <firstName>Mandi</firstName>
+            <id>dc5df167-bf62-4433-b089-7d48f62f431e</id>
+            <lastName>Haye</lastName>
+            <position>Clinical Specialist</position>
+         </element>
+      </employees>
+      <id>8</id>
+      <products>
+         <element>
+            <euroPrice>€43,89</euroPrice>
+            <id>8c288a93-72aa-4110-8463-11dca2aeb0a5</id>
+            <name>Wine - Jafflin Bourgongone</name>
+            <poundPrice>£69.19</poundPrice>
+            <qty>7</qty>
+            <usdPrice>$86.82</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€12,77</euroPrice>
+            <id>fee68cb7-5390-4663-af2b-714976d4b7db</id>
+            <name>Rice Pilaf, Dry,package</name>
+            <poundPrice>£3.24</poundPrice>
+            <qty>68</qty>
+            <usdPrice>$14.75</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€47,22</euroPrice>
+            <id>2f2a581a-6560-4bf7-ab2a-a6d0087b3355</id>
+            <name>Cheese - Provolone</name>
+            <poundPrice>£8.24</poundPrice>
+            <qty>94</qty>
+            <usdPrice>$94.63</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€52,12</euroPrice>
+            <id>e5a010d0-7990-4965-939d-b226f5620bd4</id>
+            <name>Venison - Racks Frenched</name>
+            <poundPrice>£94.70</poundPrice>
+            <qty>36</qty>
+            <usdPrice>$20.09</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€77,15</euroPrice>
+            <id>80533147-95d2-44be-bec1-b74d00f5c048</id>
+            <name>Quail - Whole, Boneless</name>
+            <poundPrice>£13.55</poundPrice>
+            <qty>6</qty>
+            <usdPrice>$11.25</usdPrice>
+         </element>
+      </products>
+   </element>
+   <element>
+      <address>
+         <city>Cibeureum Satu</city>
+         <country>Indonesia</country>
+         <street>276 Lillian Alley</street>
+      </address>
+      <employees>
+         <element>
+            <empType>part-time</empType>
+            <firstName>Aldridge</firstName>
+            <id>6dda47ab-3e6f-4261-b459-70ca609d18dc</id>
+            <lastName>Gilgryst</lastName>
+            <position>Actuary</position>
+         </element>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Eal</firstName>
+            <id>f0cc28c4-58c7-472d-835f-e211850b4f8b</id>
+            <lastName>Slyvester</lastName>
+            <position>Graphic Designer</position>
+         </element>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Giustino</firstName>
+            <id>635a9ac9-dea1-465c-a8fc-0708b3269087</id>
+            <lastName>Skittrell</lastName>
+            <position>Desktop Support Technician</position>
+         </element>
+      </employees>
+      <id>9</id>
+      <products>
+         <element>
+            <euroPrice>€24,87</euroPrice>
+            <id>1ffa5260-361c-4804-aa71-16b4f3203a66</id>
+            <name>Chicken - Whole Roasting</name>
+            <poundPrice>£13.59</poundPrice>
+            <qty>97</qty>
+            <usdPrice>$73.54</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€40,44</euroPrice>
+            <id>6cc466cf-353a-477c-bbad-d1452b06d427</id>
+            <name>Onions - Red Pearl</name>
+            <poundPrice>£17.73</poundPrice>
+            <qty>41</qty>
+            <usdPrice>$84.38</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€73,11</euroPrice>
+            <id>dd94ecb9-2a1f-4642-90b5-167d917ac89b</id>
+            <name>Onions - Pearl</name>
+            <poundPrice>£82.10</poundPrice>
+            <qty>11</qty>
+            <usdPrice>$45.40</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€21,82</euroPrice>
+            <id>2ea832e3-4630-470b-8136-0129f289e47d</id>
+            <name>Nori Sea Weed</name>
+            <poundPrice>£86.37</poundPrice>
+            <qty>22</qty>
+            <usdPrice>$77.37</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€24,61</euroPrice>
+            <id>b8f22403-c72f-4d7d-88fd-a09ee019f485</id>
+            <name>Rice - Brown</name>
+            <poundPrice>£77.10</poundPrice>
+            <qty>20</qty>
+            <usdPrice>$88.22</usdPrice>
+         </element>
+      </products>
+   </element>
+   <element>
+      <address>
+         <city>Villa Urquiza</city>
+         <country>Argentina</country>
+         <street>32 Manitowish Hill</street>
+      </address>
+      <employees>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Andi</firstName>
+            <id>ded2f16e-929d-419e-b646-7e2052ec2be0</id>
+            <lastName>Lugsdin</lastName>
+            <position>Marketing Assistant</position>
+         </element>
+         <element>
+            <empType>full-time</empType>
+            <firstName>Launce</firstName>
+            <id>f81af41e-b074-467f-b253-276d4b251c4a</id>
+            <lastName>Livingston</lastName>
+            <position>Marketing Assistant</position>
+         </element>
+         <element>
+            <empType>part-time</empType>
+            <firstName>Wendel</firstName>
+            <id>14516bca-b8ac-438b-85d2-e1dcfb56a59b</id>
+            <lastName>Billett</lastName>
+            <position>Chief Design Engineer</position>
+         </element>
+      </employees>
+      <id>10</id>
+      <products>
+         <element>
+            <euroPrice>€34,70</euroPrice>
+            <id>fd6c53ef-845c-4c4c-9d9f-e4f91095650e</id>
+            <name>Flower - Dish Garden</name>
+            <poundPrice>£49.10</poundPrice>
+            <qty>56</qty>
+            <usdPrice>$10.15</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€15,63</euroPrice>
+            <id>266dc38b-fb3e-4559-86ca-957b921a36d6</id>
+            <name>Quinoa</name>
+            <poundPrice>£9.06</poundPrice>
+            <qty>35</qty>
+            <usdPrice>$68.06</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€89,19</euroPrice>
+            <id>3940dbde-18ec-4d80-8c06-5bce7977ba42</id>
+            <name>Milkettes - 2%</name>
+            <poundPrice>£46.34</poundPrice>
+            <qty>67</qty>
+            <usdPrice>$20.53</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€88,26</euroPrice>
+            <id>7715b17f-86b7-4558-bc79-8a24ed78d88c</id>
+            <name>Yoplait Drink</name>
+            <poundPrice>£99.07</poundPrice>
+            <qty>76</qty>
+            <usdPrice>$84.08</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€21,47</euroPrice>
+            <id>fab678e5-ce70-417f-9cb5-bd6797e6b9af</id>
+            <name>Watercress</name>
+            <poundPrice>£69.96</poundPrice>
+            <qty>44</qty>
+            <usdPrice>$6.86</usdPrice>
+         </element>
+      </products>
+   </element>
+   <element>
+      <address>
+         <city>Pittsburgh</city>
+         <country>United States</country>
+         <region>Pennsylvania</region>
+         <street>3 Merry Lane</street>
+      </address>
+      <employees>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Emmerich</firstName>
+            <id>1f1ce1dd-b89a-4b6f-a4b0-8db5699f9297</id>
+            <lastName>Shooter</lastName>
+            <position>Staff Accountant I</position>
+         </element>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Codi</firstName>
+            <id>1ae58a96-64f6-44a4-aa0f-9e8b152c99b9</id>
+            <lastName>Dugget</lastName>
+            <position>Administrative Assistant III</position>
+         </element>
+         <element>
+            <empType>full-time</empType>
+            <firstName>Jannelle</firstName>
+            <id>89afde32-76fc-4e35-9663-c28652ef9637</id>
+            <lastName>Beagley</lastName>
+            <position>Actuary</position>
+         </element>
+      </employees>
+      <id>11</id>
+      <products>
+         <element>
+            <euroPrice>€68,56</euroPrice>
+            <id>be7f9dfb-7888-4d8e-b7d0-f1274b5c63d5</id>
+            <name>Cocoa Butter</name>
+            <poundPrice>£1.65</poundPrice>
+            <qty>37</qty>
+            <usdPrice>$14.94</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€17,40</euroPrice>
+            <id>b80c7be2-5299-4666-87ff-19a910f9b487</id>
+            <name>Wine - Rubyport</name>
+            <poundPrice>£25.35</poundPrice>
+            <qty>33</qty>
+            <usdPrice>$12.52</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€7,68</euroPrice>
+            <id>e64d2a9d-58ce-4a02-9934-c0cb6b3a4de6</id>
+            <name>Appetizer - Tarragon Chicken</name>
+            <poundPrice>£56.51</poundPrice>
+            <qty>39</qty>
+            <usdPrice>$48.85</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€81,86</euroPrice>
+            <id>e669892c-dd67-4a5a-a2de-5741db421065</id>
+            <name>Napkin Colour</name>
+            <poundPrice>£86.75</poundPrice>
+            <qty>59</qty>
+            <usdPrice>$7.79</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€85,09</euroPrice>
+            <id>64253dea-f5f3-4218-a4a9-13e809abb976</id>
+            <name>Flour - Teff</name>
+            <poundPrice>£84.21</poundPrice>
+            <qty>28</qty>
+            <usdPrice>$98.46</usdPrice>
+         </element>
+      </products>
+   </element>
+   <element>
+      <address>
+         <city>Bulawin</city>
+         <country>Philippines</country>
+         <street>47595 Anthes Lane</street>
+      </address>
+      <employees>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Liva</firstName>
+            <id>04ef76d0-9483-49eb-90c1-fd9f7c4ea05e</id>
+            <lastName>Schutze</lastName>
+            <position>Professor</position>
+         </element>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Brewster</firstName>
+            <id>4099e8e3-89db-4aae-b968-30fab0323c7c</id>
+            <lastName>Wansbury</lastName>
+            <position>Engineer II</position>
+         </element>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Emmy</firstName>
+            <id>4e13bcd2-4977-472e-b354-18a4e6fed127</id>
+            <lastName>Grevile</lastName>
+            <position>VP Quality Control</position>
+         </element>
+      </employees>
+      <id>12</id>
+      <products>
+         <element>
+            <euroPrice>€79,67</euroPrice>
+            <id>40238a9e-5731-486d-8bc8-071260c80330</id>
+            <name>Compound - Mocha</name>
+            <poundPrice>£48.63</poundPrice>
+            <qty>51</qty>
+            <usdPrice>$89.81</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€60,01</euroPrice>
+            <id>2fcf59fd-2dd8-4d55-9aab-e400d4782a1a</id>
+            <name>Seedlings - Buckwheat, Organic</name>
+            <poundPrice>£47.88</poundPrice>
+            <qty>23</qty>
+            <usdPrice>$82.82</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€32,29</euroPrice>
+            <id>1bd40613-5dd9-4b59-bad5-3d063ba8b2b2</id>
+            <name>Bagel - Plain</name>
+            <poundPrice>£11.77</poundPrice>
+            <qty>60</qty>
+            <usdPrice>$58.16</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€32,55</euroPrice>
+            <id>59fb6721-c196-4ba1-9717-3511a2b4212e</id>
+            <name>Steampan - Lid For Half Size</name>
+            <poundPrice>£96.24</poundPrice>
+            <qty>99</qty>
+            <usdPrice>$81.04</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€9,20</euroPrice>
+            <id>8626e8a7-d1d3-48b8-9a33-000b6c868b6d</id>
+            <name>Cookie Choc</name>
+            <poundPrice>£47.32</poundPrice>
+            <qty>54</qty>
+            <usdPrice>$95.80</usdPrice>
+         </element>
+      </products>
+   </element>
+   <element>
+      <address>
+         <city>Fenghuangshan</city>
+         <country>China</country>
+         <street>8593 Lerdahl Pass</street>
+      </address>
+      <employees>
+         <element>
+            <empType>full-time</empType>
+            <firstName>Muffin</firstName>
+            <id>8b6f9f6a-51c0-4bbf-9a57-9956ccabad99</id>
+            <lastName>Overthrow</lastName>
+            <position>VP Accounting</position>
+         </element>
+         <element>
+            <empType>part-time</empType>
+            <firstName>Jan</firstName>
+            <id>0e9176dc-1d8d-44db-a12a-3405ee3550cf</id>
+            <lastName>Spurgin</lastName>
+            <position>Project Manager</position>
+         </element>
+         <element>
+            <empType>part-time</empType>
+            <firstName>Wolfie</firstName>
+            <id>c026a964-cb37-446f-8d31-66086627d9e7</id>
+            <lastName>Piser</lastName>
+            <position>Analog Circuit Design manager</position>
+         </element>
+      </employees>
+      <id>13</id>
+      <products>
+         <element>
+            <euroPrice>€57,90</euroPrice>
+            <id>1958ac43-2877-4194-85ab-25cd94ef0c4f</id>
+            <name>Asparagus - White, Canned</name>
+            <poundPrice>£27.21</poundPrice>
+            <qty>71</qty>
+            <usdPrice>$7.42</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€40,76</euroPrice>
+            <id>4cdf154d-a02f-46e3-9d8e-15be1ff0c272</id>
+            <name>Pork - Kidney</name>
+            <poundPrice>£74.01</poundPrice>
+            <qty>76</qty>
+            <usdPrice>$98.31</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€91,75</euroPrice>
+            <id>af4638b8-c071-487e-b7ae-983bf7cb81aa</id>
+            <name>Ginger - Fresh</name>
+            <poundPrice>£63.04</poundPrice>
+            <qty>6</qty>
+            <usdPrice>$56.12</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€43,39</euroPrice>
+            <id>82bb162c-40f2-455a-b47b-dceb52aec0f1</id>
+            <name>Oil - Truffle, Black</name>
+            <poundPrice>£83.40</poundPrice>
+            <qty>81</qty>
+            <usdPrice>$70.23</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€19,94</euroPrice>
+            <id>fbfdb7c4-c4a4-4c42-931e-f585f4fa366b</id>
+            <name>Chicken - Ground</name>
+            <poundPrice>£34.71</poundPrice>
+            <qty>24</qty>
+            <usdPrice>$72.56</usdPrice>
+         </element>
+      </products>
+   </element>
+   <element>
+      <address>
+         <city>Okotoks</city>
+         <country>Canada</country>
+         <region>Alberta</region>
+         <street>68 Leroy Terrace</street>
+      </address>
+      <employees>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Fleurette</firstName>
+            <id>3f492e41-0d26-4499-b1e7-a19c9df5944e</id>
+            <lastName>Perl</lastName>
+            <position>Editor</position>
+         </element>
+         <element>
+            <empType>part-time</empType>
+            <firstName>Cinda</firstName>
+            <id>07b9f96e-b118-42f0-bfb6-9676b1980cf3</id>
+            <lastName>Gregore</lastName>
+            <position>Product Engineer</position>
+         </element>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Catina</firstName>
+            <id>a44416bb-b722-426d-9694-8c4002e93f2a</id>
+            <lastName>Zamora</lastName>
+            <position>Registered Nurse</position>
+         </element>
+      </employees>
+      <id>14</id>
+      <products>
+         <element>
+            <euroPrice>€88,24</euroPrice>
+            <id>94639e21-ec99-43dc-923a-e65cf992a842</id>
+            <name>Longos - Assorted Sandwich</name>
+            <poundPrice>£54.21</poundPrice>
+            <qty>53</qty>
+            <usdPrice>$10.58</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€65,69</euroPrice>
+            <id>6492e8fd-801a-4bae-90f8-c34e812d39f4</id>
+            <name>Rabbit - Saddles</name>
+            <poundPrice>£18.49</poundPrice>
+            <qty>27</qty>
+            <usdPrice>$70.83</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€9,39</euroPrice>
+            <id>d6b53b74-bd0c-4e49-9099-d88a1a6718d0</id>
+            <name>Duck - Legs</name>
+            <poundPrice>£98.10</poundPrice>
+            <qty>43</qty>
+            <usdPrice>$10.67</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€79,87</euroPrice>
+            <id>473e239b-c0e2-452b-9db5-faf11834eaf3</id>
+            <name>Bread - 10 Grain Parisian</name>
+            <poundPrice>£99.38</poundPrice>
+            <qty>95</qty>
+            <usdPrice>$43.22</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€13,65</euroPrice>
+            <id>f17300d3-ecc1-42af-b0c1-dacc28dc0943</id>
+            <name>Cattail Hearts</name>
+            <poundPrice>£55.86</poundPrice>
+            <qty>33</qty>
+            <usdPrice>$87.39</usdPrice>
+         </element>
+      </products>
+   </element>
+   <element>
+      <address>
+         <city>Mangere</city>
+         <country>New Zealand</country>
+         <street>674 Gale Crossing</street>
+      </address>
+      <employees>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Sheryl</firstName>
+            <id>37d37f3f-cb0b-48c2-aabf-078b945e0754</id>
+            <lastName>Richmond</lastName>
+            <position>Financial Analyst</position>
+         </element>
+         <element>
+            <empType>full-time</empType>
+            <firstName>Logan</firstName>
+            <id>027ef6a2-67da-4a53-8673-c21ce82c3995</id>
+            <lastName>Stading</lastName>
+            <position>GIS Technical Architect</position>
+         </element>
+         <element>
+            <empType>contractor</empType>
+            <firstName>Hubey</firstName>
+            <id>75f8b5fc-7654-452c-8ff1-18cbec9bd029</id>
+            <lastName>Pimblett</lastName>
+            <position>Pharmacist</position>
+         </element>
+      </employees>
+      <id>15</id>
+      <products>
+         <element>
+            <euroPrice>€52,96</euroPrice>
+            <id>d37d997a-4f4c-41b8-b315-1ef613897ce0</id>
+            <name>Jam - Strawberry, 20 Ml Jar</name>
+            <poundPrice>£67.75</poundPrice>
+            <qty>97</qty>
+            <usdPrice>$72.48</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€47,56</euroPrice>
+            <id>16fd618d-31fa-4ccd-93f8-97613a017516</id>
+            <name>Wine - Two Oceans Sauvignon</name>
+            <poundPrice>£14.58</poundPrice>
+            <qty>8</qty>
+            <usdPrice>$49.63</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€22,39</euroPrice>
+            <id>a1795e10-d62e-44db-80b2-6c58778cd578</id>
+            <name>Cheese - Mozzarella, Shredded</name>
+            <poundPrice>£32.05</poundPrice>
+            <qty>66</qty>
+            <usdPrice>$85.72</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€41,29</euroPrice>
+            <id>49522419-ddb9-4101-bcfd-f87758b801fc</id>
+            <name>Table Cloth - 53x69 Colour</name>
+            <poundPrice>£57.91</poundPrice>
+            <qty>62</qty>
+            <usdPrice>$28.95</usdPrice>
+         </element>
+         <element>
+            <euroPrice>€81,97</euroPrice>
+            <id>1f791030-453e-4379-b52e-e48f5e628f0a</id>
+            <name>Soup - Beef Conomme, Dry</name>
+            <poundPrice>£4.41</poundPrice>
+            <qty>56</qty>
+            <usdPrice>$57.30</usdPrice>
+         </element>
+      </products>
+   </element>
+</root>
