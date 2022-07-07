@@ -1,8 +1,16 @@
+// function inc(a) {
+//     return a + 1;
+//   }
+
 function inc(a) {
     return new Promise((resolve) => {
         resolve(a + 1);
     });
 }
+
+// const sum = function (a, b) {
+//     return a + b;
+//   };
 
 const sum = (a, b) => {
     return new Promise((resolve) => {
@@ -53,7 +61,7 @@ const person = Person.of("Marcus Aurelius");
 // console.log("inc(5) =", inc(5));
 inc(5)
   .then((value) => console.log("inc(5) =", value))
-  .catch((error) => console.error("Error:", error));
+  .catch((error) => console.error("Error:", error)); // not required
 
 // console.log("sum(1, 3) =", sum(1, 3));
 sum(1, 3)
