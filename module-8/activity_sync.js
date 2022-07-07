@@ -1,11 +1,14 @@
 function inc(a) {
     return new Promise((resolve, reject) => {
-      console.log("It is done.");
+
+     
 
       const check = true;
       // Succeed half of the time.
       if (true) {
-            resolve(a+1 + " SUCCESS")
+        const b=a+1
+        console.log("It is done.");
+            resolve(b+" SUCCESS")
       } else {
         reject("FAILURE")
       }
