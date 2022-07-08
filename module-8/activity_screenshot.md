@@ -1,1 +1,1 @@
-![image](/image_activity1.jpg)
+![image](/image_activity1.jpeg)
