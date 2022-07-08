@@ -7,8 +7,7 @@ function inc(a) {
       // Succeed half of the time.
       if (true) {
         const b=a+1
-        console.log("It is done.");
-            resolve(b+" SUCCESS")
+        resolve(b +" SUCCESS")
       } else {
         reject("FAILURE")
       }
@@ -57,40 +56,39 @@ function inc(a) {
   function avg(a,b){
 
     return new Promise((resolve, reject) => {
-        console.log("Avg is done.");
   
         const check = true;
-      
-        if (true) {
-                 const avg = (a, b) => {
-                const s = sum(a, b);return s / 2;
-                        
 
-              resolve( avg + " SUCCESS") };
+        if (check==true) {
+          
+          console.log("Avg:"+ (a+b)/2);
+                resolve("Sucess")
+
+
         } else {
           reject("FAILURE")
         }
       })
   }
-
+console.log("avg(8,6)",avg(8,6));
  
-  console.log("avg(8, 6) =", avg(8, 6));
+ 
 
 
-  function obj(){
+  function obj(name){
 
     return new Promise((resolve, reject) => {
-        console.log("It is done.");
-  
+       
         const check = true;
-        // Succeed half of the time.
-        if (true) { 
-            const obj = {
-                name: "Marcus Aurelius",
-                split(sep = " ") {
-                  return this.name.split(sep);
-                },
-              };
+       
+        if (check==true) {
+       const k ={
+          name: "Marcus Aurelius",
+          split(sep = " ") {
+            return this.name.split(name);
+          }
+        };
+               
         } else {
           reject("FAILURE")
         }
@@ -100,46 +98,29 @@ function inc(a) {
     console.log("Marcus Aurelius",obj())
 
     class Person {
-      
-      
-        static of(name) {
+      constructor(name) {
+          this.name = name;
+      }
+  
+      static of(name) {
           return new Person(name);
-        }
-      
-        constructor (name){
+      }
+  
+      split(sep = " ") {
 
-          function obj1(){
-          return new Promise((resolve, reject) => {
-              console.log("It is done.");
+        const check = true;
+if(true){return new Promise((resolve) => {
+  resolve(this.name.split(sep));
+});}
+else {
+  reject("Failure")
+}
+
+          
+      }
+  }
         
-              const check = true;
-              // Succeed half of the time.
-              if (true) { 
-                      const obj = {
-                      name: "Marcus Aurelius",
-                      split(sep = " ") {
-                        return this.name.split(sep)
-                      resolve()
-                      
-                      
-                      }
-                    };
-              } else {
-                reject("FAILURE")
-              }
-            })
-        
-            console.log(""+obj);
-        
-          }
-       
-          console.log(obj1());
-       
-        }
-       
-    }  
-        
-    
+  const person = Person.of("Marcus Aurelius");
 
 //  constructor(name) {
 //  this.name = name;
@@ -147,6 +128,12 @@ function inc(a) {
 
 
 
+
+
+// console.log("person.split() =", person.split());
+person.split()
+  .then((value) => console.log("person.split() =", value))
+  .catch((error) => console.error("Error:", error));
     
       
    
