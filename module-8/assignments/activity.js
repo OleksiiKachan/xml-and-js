@@ -1,5 +1,3 @@
-const { resolve } = require("path");
-
 function inc(a) {
     return new Promise((resolve) => {
         resolve(a + 1);
@@ -97,7 +95,7 @@ const test = () => {
     person.split().then(console.log);
 };
 
-test();
+// test();
 
 const main = async () => {
     console.log("inc(5) =", await inc(5));
@@ -107,4 +105,4 @@ const main = async () => {
     console.log("person.split() =", await person.split());
 };
 
-// main();
+main();
