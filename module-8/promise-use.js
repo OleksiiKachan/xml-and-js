@@ -18,6 +18,7 @@ const executor = (resolve, reject) => {
  * Has executor function as constructor argument
  */
 const promise = new Promise(executor);
+console.log(promise);
 
 /**
  * Executes promise
