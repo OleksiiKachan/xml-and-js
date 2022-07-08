@@ -54,3 +54,5 @@ function main() {
 }
 
 main();
+
+// generateData((d)=> console.log(d));
