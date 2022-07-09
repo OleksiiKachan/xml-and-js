@@ -1,22 +1,24 @@
+const wait = () => new Promise (resolve => setTimeout(resolve,2000));
+
 function inc(a) {
-    return new Promise(resolve=>{resolve(a+1);})
+    return new Promise(resolve=>wait().then(()=>resolve(a+1)))
   }
   
   const sum = function (a, b) {
-    return new Promise(resolve=>{resolve(a+b);})
+    return new Promise(resolve=>wait().then(()=>resolve(a+b)))
   };
   
-  const max = (a, b) => {return new Promise(resolve=>{resolve(a > b ? a : b);})};
+  const max = (a, b) => {return new Promise(resolve=>wait().then(()=>resolve(a > b ? a : b)))};
   
   const avg = async(a, b) => {
     const s = await sum(a, b);
-    return new Promise(resolve=>{resolve(s/2);})
+    return new Promise(resolve=>wait().then(()=>resolve(s/2)))
   };
   
   const obj = {
     name: "Marcus Aurelius",
     split(sep = " ") {
-      return new Promise(resolve=>{resolve(this.name.split(sep));})
+      return new Promise(resolve=>wait().then(()=>resolve(this.name.split(sep))))
     },
   };
   
@@ -30,7 +32,7 @@ function inc(a) {
     }
   
     split(sep = " ") {
-      return new Promise(resolve=>{resolve(this.name.split(sep));})
+      return new Promise(resolve=>wait().then(()=>resolve(this.name.split(sep))))
     }
   }
   
