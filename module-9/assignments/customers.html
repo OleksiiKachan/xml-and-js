@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers</title>
+    <style>
+        table {
+          border-collapse: collapse;
+        }
+        th, td {
+          border: 1px solid;
+          padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Customer and Order Information</h2>
+    <table id="customers">
+        <tr>
+            <th>Customer ID</th>
+            <th>Title</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Order ID</th>
+            <th>Order By</th>
+            <th>Order Date</th>
+            <th>Item Price</th>
+            <th>Item Quantity</th>
+        </tr>
+        <!-- JS will render the data -->
+
+    </table>
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                displayData(this.responseXML);
+            }
+        };
+
+        xhttp.open("GET", "customers.xml", true);
+        xhttp.send();
+
+        function stringToNode(html) {
+            const template = document.createElement(`template`);
+            html = html.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+        }
+
+
+        // check if getElementsByTagName returns a value
+        // must have value then proceed to get nodeValue
+        function existNode(node) {
+            if(!node)
+            {
+                return "N/A";
+            }
+            else
+            {
+                // console.log(typeof nodeValue);
+                return node.childNodes[0].nodeValue;
+            }
+        }
+
+
+        function displayData(xmlDoc) {
+            const listElement = document.getElementById(`customers`);
+            const customerNodes = xmlDoc.getElementsByTagName(`customer`);
+
+            for (let index = 0; index < customerNodes.length; index++) {
+                const customerNode = customerNodes[index];
+
+                const listItem = stringToNode(`
+                    <tr>
+                        <td>
+                            ${customerNode.getAttribute(`custID`)}
+
+                        </td>
+                        <td>
+                            ${customerNode.getElementsByTagName(`name`)[0].getAttribute(`title`)}
+                        </td>
+                        <td>
+                            ${existNode(customerNode.getElementsByTagName(`name`)[0])}
+                        </td>
+                        <td>
+                            ${existNode(customerNode.getElementsByTagName(`address`)[0])}
+                        </td>
+                        <td>
+                            ${existNode(customerNode.getElementsByTagName(`phone`)[0])}
+                        </td>
+                        <td>
+                            ${existNode(customerNode.getElementsByTagName(`email`)[0])}
+                        </td>
+                        <td>
+                            ${customerNode.getElementsByTagName(`order`)[0].getAttribute(`orderID`)}
+                        </td>
+                        <td>
+                            ${customerNode.getElementsByTagName(`order`)[0].getAttribute(`orderBy`)}
+                        </td>
+                        <td>
+                            ${existNode(customerNode.getElementsByTagName(`orderDate`)[0])}
+                        </td>
+                        <td>
+                            ${existNode(customerNode.getElementsByTagName(`itemPrice`)[0])}
+                        </td>
+                        <td>
+                            ${existNode(customerNode.getElementsByTagName(`itemQty`)[0])}
+                        </td>
+                    </tr>
+                `)
+                listElement.appendChild(listItem);
+            }
+
+        }
+
+
+
+    </script>
+</body>
+</html>
