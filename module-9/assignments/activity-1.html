@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <h4>People List</h4>
+    <table id="people" border="1" style="text-align: center" cellpadding="10">
+      <thead>
+        <tr bgcolor="lightgrey">
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>IP Address</th>
+        </tr>
+      </thead>
+    </table>
+    <script>
+      const xhr = (url, method = "GET") =>
+        new Promise((resolve) => {
+          const xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              resolve(this.responseXML);
+            }
+          };
+          xhttp.open(method, url, true);
+          xhttp.send();
+        });
+
+      xhr("people.xml").then(displayData);
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        template.innerHTML = html.trim();
+        return template.content.firstChild;
+      }
+
+      function createPerson(person) {
+        const content = `<tr>
+                                    <td>${person.id}</td>
+                                    <td>${person.firstname} ${person.lastname}</td>
+                                    <td>${person.email}</td>
+                                    <td>${person.gender}</td>
+                                    <td>${person.ipAddress}</td>
+                                </tr>`;
+        return stringToNode(content);
+      }
+
+      function parsePerson(xml) {
+        const id = xml.getAttribute("id");
+        const firstname =
+          xml.getElementsByTagName("firstname")[0].childNodes[0].nodeValue;
+        const lastname =
+          xml.getElementsByTagName("lastname")[0].childNodes[0].nodeValue;
+        const email =
+          xml.getElementsByTagName("email")[0].childNodes[0].nodeValue;
+        const gender =
+          xml.getElementsByTagName("gender")[0].childNodes[0].nodeValue;
+        const ipAddress =
+          xml.getElementsByTagName("ipAddress")[0].childNodes[0].nodeValue;
+
+        return {
+          id,
+          firstname,
+          lastname,
+          email,
+          gender,
+          ipAddress,
+        };
+      }
+
+      function displayData(xmlDoc) {
+        const peopleTable = document.getElementById("people");
+        const personNodes = xmlDoc.getElementsByTagName("person");
+
+        const peopleTableHeader = peopleTable.appendChild;
+        for (let index = 0; index < personNodes.length; index++) {
+          const person = personNodes[index];
+          const parsedPerson = parsePerson(person);
+          const personRow = createPerson(parsedPerson);
+          peopleTable.appendChild(personRow);
+        }
+      }
+    </script>
+  </body>
+</html>
