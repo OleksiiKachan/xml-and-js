@@ -21,10 +21,10 @@
         document.getElementById("text").innerHTML =
           xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
       }
-xhr('customers.xml').then(displayData);
+xhr('people.xml').then(displayData);
 
 
-fetch("customers.xml").then((response)=> response.text()).then((str)=>
+fetch("people.xml").then((response)=> response.text()).then((str)=>
 new DOMParser().parseFromString(str,"text/xml")).then(displayData);
 
 
