@@ -1,32 +1,79 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <p id="text"></p>
+<html lang="en">
+
+<head>
+    <ol id="employees"></ol>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People</title>
+</head>
+
+<body>
+
+    <ol id="people"></ol>
 
     <script>
-      const xhr =(url,method="Get")=>
-      new Promise((resolve)=>{
-      const xhttp = new XMLHttpRequest();
-      
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          resolve(this.responseXML);
+        const xhr =(url,method="GET")=>
+        new Promise((resolve)=>{
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                displayData(this);
+            }
+        };
+        xhttp.open("GET", "people", true);
+        xhttp.send();
+    });
+        const displayData= (xml)=> {
+
+            const listElement = document.getElementById('people');
+            const xmlDoc = xml.responseXML;
+            const employeeNodes = xmlDoc.getElementsByTagName('employee');
+
+            for (let index = 0; index < employeeNodes.length; index++) {
+                const employee = employeeNodes[index];
+
+                const listItem = document.createElement(`li`);
+
+                const title = document.createElement(`h2`);
+                title.appendChild(
+                    document.createTextNode(employee.getElementsByTagName("email")[0].childNodes[0]
+                        .nodeValue + ` ` + employee.getElementsByTagName("firstname")[0].childNodes[0]
+                            .nodeValue
+                    )
+                );
+                listItem.appendChild(title);
+
+                const subtitle = document.createElement(`people`);
+                subtitle.appendChild(
+                    document.createTextNode(
+                        employee.getAttribute(`id`) +
+                        ` - ` +
+                        employee.getElementsByTagName("Gender")[0].childNodes[0]
+                            .nodeValue
+                    )
+                );
+                listItem.appendChild(subtitle);
+
+                const ip_address = document.createElement(`people`);
+                ip_address.appendChild(
+                    document.createTextNode(
+                        `ip_address` +
+                        employee.getElementsByTagName("lastname")[0].childNodes[0].nodeValue
+                    )
+                );
+                listItem.appendChild(id);
+
+                listElement.appendChild(listItem);
+            };
+
+            xhr(`people.xml`)
+        .then(displayData)
+        .catch((error) => console.error("error"));
         }
-      };
-      xhttp.open("GET", "people.xml", true);
-      xhttp.send();
-    })
-      function displayData(xml) {
-        const xmlDoc = xml.responseXML;
-        document.getElementById("text").innerHTML =
-          xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
-      }
-xhr('people.xml').then(displayData);
-
-
-
-
-
     </script>
-  </body>
-</html>
+
+</body>
+
+</html> 
