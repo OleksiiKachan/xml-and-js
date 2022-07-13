@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People's Name</title>
+    <style>
+        table {
+          border-collapse: collapse;
+        }
+        th, td {
+          border: 1px solid;
+          padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>People's Name</h2>
+    <table id="people">
+        <tr> 
+            <th>Id</th> 
+            <th>Full Name</th> 
+        </tr> 
+        <!-- Populate by JavaScript <tr><td></td></tr> -->
+    </table>
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                displayData(this);
+            }
+        };
+
+        xhttp.open("GET", "people.xml", true);
+        xhttp.send();
+
+        // turns string content into a node, then to line 70
+        function stringToNode(html) {
+            const template = document.createElement(`template`);
+            html = html.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+        }
+
+        function displayData(xml) {
+            // select table from html
+            const listElement = document.getElementById(`people`);
+
+            // parse xml to get all persons
+            const xmlDoc = xml.responseXML; 
+            const personNodes = xmlDoc.getElementsByTagName(`person`);
+
+            // loop through each person
+            for (let index = 0; index < personNodes.length; index++) {
+                // get one person tag at a time
+                const personNode = personNodes[index];
+                // create a node with that person node's data
+                const listItem = stringToNode(`   
+                    <tr>
+                        <td>
+                            ${personNode.getElementsByTagName(`id`)[0].childNodes[0].nodeValue}
+                        </td>
+                        <td>
+                            ${personNode.getElementsByTagName(`firstName`)[0].childNodes[0].nodeValue}, 
+                            ${personNode.getElementsByTagName(`lastName`)[0].childNodes[0].nodeValue}
+                        </td>
+                    </tr>
+                `);
+                // append the node to the table in html
+                listElement.appendChild(listItem);
+            }            
+        }
+    </script>
+</body>
+</html>
