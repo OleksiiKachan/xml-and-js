@@ -1,0 +1,34 @@
+h2 {
+    font-family: monospace;
+    font-size: xx-large;
+    color: rgb(233, 233, 237);
+    border-color: cadetblue;
+    border-width: 0.25em;
+    border-style: double;
+    text-align: center;
+    background: -webkit-linear-gradient(rgb(20, 161, 237), rgb(53, 4, 231));
+    /*-webkit-text-fill-color: transparent;*/
+    font-size: 40px;
+}
+
+h3 {
+    color: rgb(255, 255, 255);
+    border-width: 0.25em;
+    border-style:solid;
+    border-color: dodgerblue;
+    border-block-color:calc();
+    padding: 5px 15px;
+    background-image: linear-gradient(to right, rgb(15, 0, 128) 60% , rgb(3, 87, 151) );
+}
+
+p {
+    font-family: monospace;
+    color: rgb(15, 15, 16);
+    display: block;
+    background-color: rgb(228, 222, 222);
+    padding: 5px 30px;
+}
+li {
+    font-family: monospace;
+    color: rgb(15, 15, 16);
+}

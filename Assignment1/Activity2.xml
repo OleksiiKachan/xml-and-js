@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>​
+<Table>​
+  <Title>
+    <Title1>Empno</Title1>
+    <Title2>Empname</Title2>
+    <Title3>Salary</Title3>
+  </Title>
+  <Row1>
+    <Field1>1001</Field1>
+    <Field2>Alex</Field2>
+    <Field3>3000</Field3>
+  </Row1>
+  <Row2>
+    <Field1>1002</Field1>
+    <Field2>Sarah</Field2>
+    <Field3>4000</Field3>
+  </Row2>
+  <Row3>
+    <Field1>1003</Field1>
+    <Field2>Peter</Field2>
+    <Field3>3500</Field3>
+  </Row3>​
+</Table>
