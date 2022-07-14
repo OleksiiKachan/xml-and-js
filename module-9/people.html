@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+ <html>
+   <body>
+     <style>
+         table, th, td {
+             border : 1px solid black;
+             border-collapse : collapse; 
+         }
+
+         th,td {
+             padding: 5px;
+         }
+     </style>
+ <button type="button" onclick="loadXMLDoc()">Get my persons Catalog</button>
+ <br><br>
+ <table id="people"></table>
+     <script>
+      fetch("people.xml")
+         .then((response) => response.text())
+         .then((str) => new DOMParser().parseFromString(str, "text/xml"))
+         .then(displayData);
+
+       function myfunction(xml) {
+           var i;
+         var xmlDoc = xml.responseXML;
+         var table="<tr><th>First_name</th><th>last_name</th></tr>";
+         var x = xmlDoc.getElementsByTagName("persons");
+   for (i = 0; i <x.length; i++) {
+     table += "<tr><td>" +
+     x[i].getElementsByTagName("first_name")[0].childNodes[0].nodeValue +
+     "</td><td>" +
+     x[i].getElementsByTagName("last_name")[0].childNodes[0].nodeValue +
+     "</td></tr>";
+   }
+   document.getElementById("persons").innerHTML = table;
+ }
+ </script>
+ </body>
+ </html>

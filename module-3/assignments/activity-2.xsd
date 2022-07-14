@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<element name="products" type="productsType"/>
+
+<xs:complexType>
+<xs:sequence>
+<xs:element name="productName" type="xs:string"/>
+</xs:complexType>
+</xs:sequence>
+<xs:element name="manufacturer">
+<xs:complexType>
+<xs:simpleContent>
+<xs:extenstion base="xs:string">
+<xs:attribute name="id" type="xs:string" use="required"/>
+</xs:extenstion>
+</xs:simpleContent>
+</xs:element>
+</xs:complexType>
+</xs:sequence>
+<xs:element name="product" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="productName" type="xs:string"/>
+</xs:complexType>
+<xs:element name="manufacturer">
+<xs:complexType>
+<xs:simpleContent>
+<xs:extenstion base="xs:string">
+<xs:attribute name="id" type="xs:string" use="required"/>
+</xs:extenstion>
+</xs:simpleContent>
+</xs:element>
+</xs:complexType>
+</xs:sequence>
+<xs:element name="product" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+
+</xs:complexType>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="prices">
+<xs:complexType>
+<xs:simpleContent>
+<xs:extenstion base="xs:decimal">
+<xs:attribute name="currency" type="xs:string"/>
+</xs:extenstion>
+</xs:simpleContent>
+</xs:element>
+</xs:complexType>
+
+<xs:complexType name="productItems">
+<xs:sequence>
+<xs:element name="productItems" type="xs:string" />
+<xs:attribute name="sku" type="xs:string" use="required" />
+<xs:attribute name="createdAt" type="xs:dateTime" use="required" />
+<xs:attribute name="shippable" type="xs:boolean" use="required" />
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+
+
+
+
+
+
+
+
+
+
+

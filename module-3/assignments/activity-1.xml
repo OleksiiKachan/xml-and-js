@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<emp:employeeList xmlns:emp="http://ABC.com/employeeList">
+<List:personList>
+    <EMP:empID>E0000001</EMP:empID>
+    <DEP:name>Sales</DEP:name>
+    <EMP:name>John Smith</EMP:name>
+  </emp:employeeList>
+  </List:personList>
+  <List:personList>
+    <EMP:empID>E0000002</EMP:empID>
+    <DEP:name>Development</DEP:name>
+    <EMP:name>Ichiro Tanaka</EMP:name>
+  </emp:employeeList>
+  </List:personList>
+  <List:personList>
+    <EMP:empID>E0000003</EMP:empID>
+    <DEP:name>Development</DEP:name>
+    <EMP:name>Jiro Suzuki</EMP:name>
+  </emp:employeeList>
+  </List:personList>
+  <List:personList>
+    <EMP:empID>E0000004</EMP:empID>
+    <DEP:name>Administrative</DEP:name>
+    <EMP:name>Saburo Takahashi</EMP:name>
+ </emp:employeeList>
+  </List:personList>
+```
