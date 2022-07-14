@@ -28,3 +28,4 @@ git push
 
 if `git push` gives you `fatal: The current branch <branch-name> has no upstream branch.`, then run the command suggested in the message. would look like
 `git push --set-upstream origin <branch-name>`
+git commit -m "completed project"
