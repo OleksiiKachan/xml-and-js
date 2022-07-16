@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <title>Customer Orders and Information</title>
+    <div>Customer Orders and Information</div>
+    <script>
+        window.addEventListener("load", function () {
+            getRows();
+        });
+
+        function getRows() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("get", "customers.xml", true);
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    showResult(this);
+                }
+            };
+            xmlhttp.send(null);
+        }
+
+        function showResult(xmlhttp) {
+            var xmlDoc = xmlhttp.responseXML.documentElement;
+            removeWhitespace(xmlDoc);
+            var outputResult = document.getElementById("BodyRows");
+            var rowData = xmlDoc.getElementsByTagName("customer");
+            var rowData2 = xmlDoc.getElementsByTagName("order");
+            var rowData3 = xmlDoc.getElementsByTagName("item");
+
+            addTableRowsFromXmlDoc(rowData2, outputResult);
+            addTableRowsFromXmlDoc(rowData3, outputResult);
+            addTableRowsFromXmlDoc(rowData, outputResult);
+
+        }
+
+        function addTableRowsFromXmlDoc(xmlNodes, tableNode) {
+            var theTable = tableNode.parentNode;
+            var newRow, newCell, i;
+            console.log("Number of nodes: " + xmlNodes.length);
+            for (i = 0; i < xmlNodes.length; i++) {
+                newRow = tableNode.insertRow(i);
+                newRow.className = (i % 2) ? "OddRow" : "EvenRow";
+                for (j = 0; j < xmlNodes[i].childNodes.length; j++) {
+                    newCell = newRow.insertCell(newRow.cells.length);
+                    if (xmlNodes[i].childNodes[j].firstChild) {
+                        newCell.innerHTML = xmlNodes[i].childNodes[j].firstChild.nodeValue;
+                    } else {
+                        newCell.innerHTML = "-";
+                    }
+                    console.log("cell: " + newCell);
+                }
+            }
+            theTable.appendChild(tableNode);
+        }
+
+        function removeWhitespace(xml) {
+            var loopIndex;
+            for (loopIndex = 0; loopIndex < xml.childNodes.length; loopIndex++) {
+                var currentNode = xml.childNodes[loopIndex];
+                if (currentNode.nodeType == 1) {
+                    removeWhitespace(currentNode);
+                }
+                if (!(/\S/.test(currentNode.nodeValue)) && (currentNode.nodeType == 3)) {
+                    xml.removeChild(xml.childNodes[loopIndex--]);
+                }
+            }
+        }
+
+    </script>
+    <style>
+        table {}
+
+        .oddRow {
+            background-color: #dadada;
+        }
+
+        td {
+            padding: 2px;
+            border: 3px solid #dadada;
+        }
+
+        .EvenRow {
+            background-color: rgb(115, 115, 245);
+        }
+    </style>
+</head>
+
+<body>
+    <table id="MainTable">
+        <tbody id="BodyRows"></tbody>
+</body>
+
+</html> 
