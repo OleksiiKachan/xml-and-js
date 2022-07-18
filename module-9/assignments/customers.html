@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customers Details</title>
+  </head>
+  <body>
+    <h1>Customers</h1>
+    <ol id="customers"></ol>
+    <script>
+      const xhr = (url, method = "GET") => {
+        return new Promise((resolve, reject) => {
+          const xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              resolve(this.responseXML);
+            }
+          };
+          xhttp.open(method, url, true);
+          xhttp.send();
+        });
+      };
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function parseCustomer(xml) {
+        const name =
+          xml.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+        const address =
+          xml.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+        const phone =
+          xml.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+        const email = xml.getElementsByTagName("email")[0]
+          ? xml.getElementsByTagName("email")[0].childNodes[0].nodeValue
+          : "-";
+        const ordersXml = xml.getElementsByTagName("orders")[0];
+        const orders = parseOrders(ordersXml);
+
+        return {
+          name,
+          address,
+          phone,
+          email,
+          orders,
+        };
+      }
+
+      parseOrders = (ordersXml) => {
+        const orderNodes = ordersXml.getElementsByTagName("order");
+        const orders = [];
+
+        for (let index = 0; index < orderNodes.length; index++) {
+          const orderId = orderNodes[index].getAttribute("orderID");
+          const customerId = orderNodes[index].getAttribute("orderBy");
+          const orderDate =
+            orderNodes[index].getElementsByTagName("orderDate")[0].childNodes[0]
+              .nodeValue;
+          const orderItemsXml =
+            orderNodes[index].getElementsByTagName("items")[0];
+          const orderItems = parseOrderItems(orderItemsXml);
+
+          orders.push({
+            orderId,
+            customerId,
+            orderDate,
+            orderItems,
+          });
+        }
+
+        return orders;
+      };
+
+      parseOrderItems = (orderItemsXml) => {
+        const orderItemNodes = orderItemsXml.getElementsByTagName("item");
+        const orderItems = [];
+
+        for (let index = 0; index < orderItemNodes.length; index++) {
+          const itemPrice =
+            orderItemNodes[index].getElementsByTagName("itemPrice")[0]
+              .childNodes[0].nodeValue;
+          const orderItemQty =
+            orderItemNodes[index].getElementsByTagName("itemQty")[0]
+              .childNodes[0].nodeValue;
+
+          orderItems.push({
+            itemPrice,
+            orderItemQty,
+          });
+        }
+
+        return orderItems;
+      };
+
+      createCustomer = (parseCustomer) => {
+        let ordersContent = "";
+        let orderItemsContent = "";
+
+        for (let i = 0; i < parseCustomer.orders.length; i++) {
+          for (let j = 0; j < parseCustomer.orders[i].orderItems.length; j++) {
+            orderItemsContent += `</li>${parseCustomer.orders[i].orderItems[j]["itemPrice"]}</li>
+            <li>${parseCustomer.orders[i].orderItems[j]["orderItemQty"]}</li>`;
+          }
+        }
+
+        for (let i = 0; i < parseCustomer.orders.length; i++) {
+          ordersContent += `<li>${parseCustomer.orders[i]["orderDate"]}
+            <ul>${orderItemsContent}</ul>
+            </li>`;
+        }
+
+        const content = `<li>
+          <article>
+              <p>${parseCustomer.name}</p>
+              <h2>${parseCustomer.address}</h2>
+              <p>${parseCustomer.email}</p>
+              <ul>${ordersContent}</ul>
+          </article>
+      </li>`;
+        return stringToNode(content);
+      };
+
+      displayData = (xmlDoc) => {
+        const customers = xmlDoc.getElementsByTagName("customer");
+        const list = document.getElementById("customers");
+
+        for (let index = 0; index < customers.length; index++) {
+          const element = customers[index];
+          const parsedCustomer = parseCustomer(element);
+
+          const customerElement = createCustomer(parsedCustomer);
+          list.appendChild(customerElement);
+        }
+      };
+
+      xhr("customers.xml")
+        .then(displayData)
+        .catch((err) => console.error(err));
+    </script>
+  </body>
+</html>
