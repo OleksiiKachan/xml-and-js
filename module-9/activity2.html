@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People</title>
+</head>
+
+<body>
+
+    <ol id="cards"></ol>
+
+  <script>
+   
+  const xhr = (url, method = `GET`) =>
+  new Promise((resolve) => {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        resolve(this.responseXML);
+      }
+    };
+    xhttp.open(method, url);
+    xhttp.send();
+  });
+
+function stringToNode(html) {
+  const template = document.createElement(`template`);
+  html = html.trim();
+  template.innerHTML = html;
+  return template.content.firstChild;
+}
+
+function createCard(card) {
+  const content = `<li>
+  <article>
+    <p>${card.email}</p>
+    <h2>${card.first_name}</h2>
+    <div>
+      ${card.last_name}
+    </div>
+  </article>
+</li>`;
+
+  return stringToNode(content);
+}
+
+function parseCard(xml) {
+  const email = xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+  const first_name= xml.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+  const last_name =
+    xml.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+
+  return {
+    email,
+    first_name,
+    last_name,
+  };
+}
+
+function displayData(xmlDoc) {
+  const cards = xmlDoc.getElementsByTagName(`student`);
+
+  const list = document.getElementById(`cards`);
+
+  for (let index = 0; index < cards.length; index++) {
+    const element = cards[index];
+    const parsedCard = parseCard(element);
+
+    const cardElement = createCard(parsedCard);
+    list.appendChild(cardElement);
+  }
+}
+const loadData = async () =>{
+    try{
+        const response = await fetch('people.xml');
+        const str = await response.text();
+        const data = new DOMParser().parseFromString(str, 'text/xml');
+        displayData(data);
+    } catch(error){
+        console.error(error);
+    }
+};
+loadData();
+
+fetch("people.xml")
+  .then((response) => response.text())
+  .then((str) => new DOMParser().parseFromString(str, "text/xml"))
+  .then(displayData);
+
+    </script>
+</body>
+</html>
