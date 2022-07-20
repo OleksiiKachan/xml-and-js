@@ -2,7 +2,7 @@
  * Promise executor
  * Function that runs when promise is executed
  */
-const executor = (resolve, reject) => {
+ const executor = (resolve, reject) => {
   // do some work
   const check = true;
 
