@@ -1,0 +1,27 @@
+ul {
+  list-style-type: square;
+}
+
+li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+article {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+p {
+  margin: 0;
+  font-size: 18px;
+}
+
+p:not(:first-child) {
+  font-size: 14px;
+}
+
+table {
+  margin-top: 20px;
+}
