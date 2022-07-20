@@ -1,0 +1,91 @@
+body{
+    background-image: url("assets/vintage-green-pattern.jpg");
+    background-repeat: repeat;
+    background-size: contain;
+}
+.genre-card {
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    background-color: #4daf64;
+    color: white;
+  }
+  h2{
+    font-size: 24px;
+    color: white;
+    font-family: monospace;
+  }
+  img{
+    border-radius: 20px;
+    padding: 10px;
+  }
+  .genre-card:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  
+  .genre-card > div {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .genre-card > div > a {
+    color: white;
+    font-weight: bold;
+  }
+  
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    overflow: auto;
+    max-width: 100%;
+  }
+  
+  .tab {
+    overflow: hidden;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+  li{
+    float: left;
+  }
