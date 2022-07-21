@@ -1,0 +1,32 @@
+.genre-block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #4daf64;
+  color: white;
+}
+
+.genre-block:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.genre-block > h2 {
+  padding-left: 5rem;
+  font-size: 2.5rem;
+}
+
+ol {
+  list-style: none;
+}
+
+.hide {
+  display: none;
+}
+
+li {
+  display: flex;
+}
+
+li > a > img {
+  padding-right: 5rem;
+}
