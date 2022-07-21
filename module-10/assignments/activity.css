@@ -1,0 +1,39 @@
+.genre-card {
+    overflow: hidden;
+    background: linear-gradient(rgb(119, 196, 19), pink) ;
+    box-shadow: 0 8px 32px 0 rgba(155, 87, 23, 0.37);
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+  
+.genre-card:not(:last-child) {
+   margin-bottom: 15px;
+}
+  
+.genre-card > div {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.genre-card > div > a {
+    color: white;
+    font-weight: bold;
+}
+  
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 30px;
+    display: flex;
+    overflow: auto;
+    max-width: 100%;
+}
+  
+  

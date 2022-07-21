@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <table id="people" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>IP Address</th>
+        </tr>
+    </table>
+    <script>
+        fetch("people.xml")
+            .then((response) => response.text())
+            .then((str) => new DOMParser().parseFromString(str, "text/xml"))
+            .then(displayData);
+
+        function stringToNode(html) {
+            const template = document.createElement(`template`);
+            html = html.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+        }
+
+        function displayData(xmlDoc) {
+            const table_element = document.getElementById(`people`);
+            const person_nodes = xmlDoc.getElementsByTagName(`person`);
+            for (let index = 0; index < person_nodes.length; index++) {
+                const person_node = person_nodes[index];
+                const tr = stringToNode(`<tr>
+                    <td>${person_node.getElementsByTagName(`id`)[0].childNodes[0].nodeValue}</td>
+                    <td>${person_node.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue}
+                        ${person_node.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue}</td>
+                    <td>${person_node.getElementsByTagName(`email`)[0].childNodes[0].nodeValue}</td>
+                    <td>${person_node.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue}</td>
+                    <td>${person_node.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue}</td>
+                </tr>`);
+                table_element.appendChild(tr);
+            }
+        }
+
+    </script>
+</body> 
