@@ -1,0 +1,41 @@
+.genre-card {
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    background-color: #fb2e9f;
+    color: white;
+    text-align: center;
+    font-size: larger;
+    font-style: oblique;
+    font-family:  Tahoma, Verdana, sans-serif;
+    font-stretch: extra-expanded;
+  }
+  
+  .genre-card:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  
+  .genre-card > div {
+    padding: 20px 10px;
+    overflow: hidden;
+  }
+  
+  .genre-card > div:first-child {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .genre-card > div > a {
+    color: rgb(16, 1, 1);
+    font-weight: bold;
+  }
+  
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    grid-row-gap: 30px;
+    max-width: 100%;
+  }
