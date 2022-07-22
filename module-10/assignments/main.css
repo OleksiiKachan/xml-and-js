@@ -2,17 +2,17 @@
   max-width: 100%;
   overflow: hidden;
   display: flex;
-  background-color: #4daf64;
-  color: white;
+  background-color: #af4d4d;
+  color: rgb(255, 255, 255);
 }
 
 .genre-card:not(:last-child) {
-  margin-bottom: 15px;
+  margin-bottom: 60px;
 }
 
 .genre-card > div {
   padding: 10px 20px;
-  display: flex;
+  display: -moz-grid-line;
   flex-direction: column;
   overflow: hidden;
 }
@@ -26,7 +26,7 @@ ol {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
+  display: inline-block;
   overflow: auto;
-  max-width: 100%;
+  max-width: 200%;
 }
