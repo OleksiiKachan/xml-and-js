@@ -2,6 +2,8 @@
   background-size: cover;
   background-color: yellowgreen;
   color: white;
+  padding-top: 1px;
+  padding-left: 15px;
 }
 
 .genre-card:not(:last-child) {
@@ -45,4 +47,6 @@ li {
 
 h3 {
   text-decoration: none;
+  float: right;
+  color: yellowgreen;
 }
