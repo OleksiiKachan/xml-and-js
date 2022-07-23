@@ -44,6 +44,16 @@ const getPlaylistByGenre = async (token, genreId) => {
   return data.playlists.items;
 };
 
+const getTracksByPlaylist = async (token, tracks) => {
+  const result = await fetch(`${tracks.href}?limit=5`, {
+    method: "GET",
+    headers: { Authorization: "Bearer " + token },
+  });
+
+  const data = await result.json();
+  return data.items;
+};
+
 const loadData = async () => {
   const token = await getToken();
   const genres = await getGenres(token);
@@ -51,38 +61,53 @@ const loadData = async () => {
 
   genres.map(async ({ name, id, icons: [icon], href }) => {
     const playlists = await getPlaylistByGenre(token, id);
-    playlists.map((value) => console.log(value));
-    const playlistsList = playlists
-      .map(
-        ({
-          name,
-          external_urls: { spotify },
-          images: [image],
-          description,
-          tracks,
-        }) => `
-        <li>
-          <a href="${spotify}" alt="${name}" target="_blank">
-            <img src="${image.url}" width="180" height="180"/>
-          </a>
-          <div>
-          <h3>${name}</h3>
-          <h2>${description}</h2>
-          <h4>Total Tracks: ${tracks.total}</h4>
-          </div>
-        </li>`
-      )
-      .join(``);
+    let playlistsList = playlists.map(
+      async ({
+        name,
+        external_urls: { spotify },
+        images: [image],
+        description,
+        tracks,
+      }) => {
+        const songs = await getTracksByPlaylist(token, tracks);
+        const tracksList = songs.map(
+          ({
+            track: {
+              name,
+              artists: [artist],
+            },
+          }) => {
+            return `<p>Track Name: ${name}, Artist: ${artist.name}</p>`;
+          }
+        );
+        return `
+          <li id="playlist">
+            <a href="${spotify}" alt="${name}" target="_blank">
+              <img src="${image.url}" width="180" height="180"/>
+            </a>
+            <div>
+            <h3>${name}</h3>
+            <h2>${description}</h2>
+            <h4>Total Tracks: ${tracks.total}</h4>
+            <div id="tracks">${tracksList.join(``)}</div>
+            </div>
+          </li>
+          <hr>
+          `;
+      }
+    );
 
     if (playlists) {
       const html = `
       <article>
       <div class="genre-block" onclick="openList(${name})">
-        <img class="genre-image" src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
+        <img class="genre-image" src="${icon.url}" width="${
+        icon.width
+      }" height="${icon.height}" alt="${name}"/>
           <h2>${name}</h2>
         </div>
           <ol class="hide" id="${name}">
-            ${playlistsList}
+            ${await (await Promise.all(playlistsList)).join(``)}
           </ol>
       </article>`;
 
