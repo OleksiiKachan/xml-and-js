@@ -16,8 +16,9 @@ const getToken = async () => {
 };
 
 const getGenres = async (token) => {
+  const limit = 5;
   const result = await fetch(
-    `https://api.spotify.com/v1/browse/categories?locale=sv_US`,
+    `https://api.spotify.com/v1/browse/categories?locale=en_US&limit=${limit}`,
     {
       method: "GET",
       headers: { Authorization: "Bearer " + token },
@@ -25,6 +26,7 @@ const getGenres = async (token) => {
   );
 
   const data = await result.json();
+  // console.log(data.categories.items);
   return data.categories.items;
 };
 
@@ -40,25 +42,27 @@ const getPlaylistByGenre = async (token, genreId) => {
   );
 
   const data = await result.json();
-//   console.log(data.playlists.items);
+  // console.log(data.playlists.items);
   return data.playlists.items;
 };
 
 
-const getTracksbyPlaylist = async (token, playlistId) => {
-    const limit = 10;
-    const result = await fetch (
-        `https://api.spotify.com/v1/playlists/${playlistId}/tracks?limit=${limit}`,
+const getTracksByPlaylist = async (token, playlistUrl) => {
+  const limit = 4;
+  const result = await fetch(
+    `${playlistUrl}?limit=${limit}`,
     {
       method: "GET",
       headers: { Authorization: "Bearer " + token },
     }
-    );
+  );
 
-    const data = await result.json();
-    console.log(data.items);
-    // return data.playlists.items;
+  const data = await result.json();
+  // console.log(data.items);
+  // console.log(data.items[0].track);
+  return data.items;
 };
+
 
 const loadGenres = async () => {
   const token = await getToken();
@@ -66,39 +70,50 @@ const loadGenres = async () => {
   const list = document.getElementById(`genres`);
   genres.map(async ({ name, id, icons: [icon], href }) => {
     const playlists = await getPlaylistByGenre(token, id);
-    const playlistsList = playlists
-      .map(
-        async ({ name, id, external_urls: { spotify }, images: [image] }) => {
-            const tracklists = await getTracksbyPlaylist(token, id);
-            return `
+    const playlistsList = playlists.map(
+      async ({ name, external_urls: { spotify }, images: [image], tracks: { href } }) => {
+        const tracks = await getTracksByPlaylist(token, href);
+        const tracksList = tracks.map(({ track: { name, artists: [artist] } }) => {
+          return `<p>Track Name: ${name}, Artist: ${artist.name}</p>`
+        }).join(``);
+        // console.log(tracksList);
+
+        return `
         <li>
           <a href="${spotify}" alt="${name}" target="_blank">
             <img src="${image.url}" width="180" height="180"/>
           </a>
+           <div> 
+            ${tracksList}
+          </div>
         </li>`
-  })
-      .join(``);
+      });
+
+    // you have resolved promise only inside .then function 
+    // to get promise data on the same level you need to await
+    resolvedplaylistsList = await Promise.all(playlistsList);
+    resolvedplaylistsList = resolvedplaylistsList.join(``);
+    // console.log(resolvedplaylistsList);
 
     if (playlists) {
       const html = `
       <article class="genre-card">
+      <div>
+        <h2>${name}</h2>
         <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
-        <div>
-          <h2>${name}</h2>
-          <ol>
-            ${playlistsList}
-          </ol>
-        </div>
+      </div>
+      <div>        
+        <ol>
+          ${resolvedplaylistsList}
+        </ol>
+      </div>
       </article>`;
-
-
-
-
-
 
       list.insertAdjacentHTML("beforeend", html);
     }
-  });
+  }
+  );
 };
+
 
 loadGenres();
