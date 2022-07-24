@@ -116,39 +116,6 @@ const loadGenres = async () => {
       list.insertAdjacentHTML("beforeend", html);
     }
   });
-
-  // genres.map(async ({ name, id, icons: [icon], href }) => {
-  //   const tracksData = await getTracksByPlaylist(token, tracks.href);
-  //   const tracksList = tracksData
-  //     .map(
-  //       ({name,
-  //         external_urls: { spotify },
-  //         images: [image],
-  //         tracks,}) => `
-  //       <li>
-  //         <a href="${spotify}" alt="${name}" target="_blank">
-  //           <img src="${image.url}" width="180" height="180"/>
-  //         </a>
-  //       </li>`
-  //     )
-  //     .join(``);
-      
-  //   if (tracksData) {
-  //     const html = `
-  //     <article class="genre-card">
-  //       <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
-  //       <div>
-  //         <h2>${name}</h2>
-  //         <ol>
-  //           ${playlistsList}
-  //         </ol>
-  //       </div>
-  //     </article>`;
-
-  //     list.insertAdjacentHTML("beforeend", html);
-  //   }
-  // });
-
 };
 
 loadGenres();
