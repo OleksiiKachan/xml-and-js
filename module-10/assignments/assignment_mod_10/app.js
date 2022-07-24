@@ -43,44 +43,65 @@ const getPlaylistByGenre = async (token, genreId,tracks) => {
   return data.playlists.items;
 };
 
+const getTracksArtists = async (token, playlistUrl) => {
+  const limit = 2;
+  const result = await fetch(
+    `${playlistUrl}?limit=${limit}`,
+    {
+      method: "GET",
+      headers: { Authorization: "Bearer " + token },
+    }
+  );
+
+  const data = await result.json();
+  return data.items;
+};
+
+
 const loadGenres = async () => {
   const token = await getToken();
   const genres = await getGenres(token);
   const list = document.getElementById(`genres`);
   genres.map(async ({ name, id, icons: [icon], href }) => {
     const playlists = await getPlaylistByGenre(token, id);
-    const playlistsList = playlists
-      .map(
-        ({ name, external_urls: { spotify }, images: [image],tracks:{href} }) => 
-        
-           
-        
-        
-        `
-        
+    const playlistsList = playlists.map(
+      async ({ name, external_urls: { spotify }, images: [image], tracks: { href } }) => {
+        const tracks = await getTracksArtists(token, href);
+        const tracksList = tracks.map(({ track: { name, artists: [artist] } }) => {
+          return `<p>Track Name: ${name}, Artist: ${artist.name}</p>`
+        }).join(``);
+        return `
         <li>
           <a href="${spotify}" alt="${name}" target="_blank">
-            <img src="${image.url}" width="180" height="200"/>
+            <img src="${image.url}" width="150" height="100"/>
           </a>
+           <div> 
+            ${tracksList}
+          </div>
         </li>`
-      )
-      .join(``);
+      });
+
+    resolvedList = await Promise.all(playlistsList);
+    resolvedList = resolvedList.join(``);
 
     if (playlists) {
       const html = `
       <article class="genre-card">
+      <div>
+        <h2>${name}</h2>
         <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
-        <div>
-          <h2>${name}</h2>
-          <ol>
-            ${playlistsList}
-          </ol>
-        </div>
+      </div>
+      <div>        
+        <ol>
+          ${ resolvedList }
+        </ol>
+      </div>
       </article>`;
 
       list.insertAdjacentHTML("beforeend", html);
     }
-  });
+  }
+  );
 };
 
 loadGenres();
