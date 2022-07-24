@@ -1,0 +1,52 @@
+.genre-card {
+  background-size: cover;
+  background-color: yellowgreen;
+  color: white;
+  padding-top: 1px;
+  padding-left: 15px;
+}
+
+.genre-card:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.genre-card > div {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.genre-card > div > a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+li {
+  padding: 20px;
+  margin: 10px;
+  background-color: white;
+}
+
+.genre-icon {
+  opacity: 0.8;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+h3 {
+  text-decoration: none;
+  float: right;
+  color: yellowgreen;
+}
