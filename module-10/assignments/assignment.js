@@ -10,7 +10,6 @@ const getToken = async () => {
     },
     body: "grant_type=client_credentials",
   });
-
   const data = await result.json();
   return data.access_token;
 };
@@ -23,7 +22,6 @@ const getGenres = async (token) => {
       headers: { Authorization: "Bearer " + token },
     }
   );
-
   const data = await result.json();
   return data.categories.items;
 };
@@ -38,18 +36,16 @@ const getPlaylistByGenre = async (token, genreId) => {
       headers: { Authorization: "Bearer " + token },
     }
   );
-
   const data = await result.json();
   return data.playlists.items;
 };
 
 const getTracksByPlaylist = async (token, tracksEndpoint) => {
-  const limit = 5;
+  const limit = 2;
   const result = await fetch(`${tracksEndpoint}?limit=${limit}`, {
     method: "GET",
     headers: { Authorization: "Bearer " + token },
   });
-
   const data = await result.json();
   return data.items;
 };
@@ -60,59 +56,45 @@ const loadGenres = async () => {
   const list = document.getElementById(`genres`);
   genres.map(async ({ name, id, icons: [icon], href }) => {
     const playlists = await getPlaylistByGenre(token, id);
-    let playlistsList = ``;
-    playlistsList += playlists.map(
-        async ({
-          name,
-          external_urls: { spotify },
-          images: [image],
-          tracks,
-        }) => {
-          const tracksData = await getTracksByPlaylist(token, tracks.href);
-          let tracksList = ``;
-          if (tracksData) {
-            tracksList += tracksData
-              .map(
-                ({
-                  track: {
-                    external_urls: { spotify },
-                    name,
-                    artists,
-                  },
-                }) =>
-                  `<li>
+    const playlistsList = await(await Promise.all(playlists.map(
+      async ({ name, external_urls: { spotify }, images: [image], tracks }) => {
+        const tracksData = await getTracksByPlaylist(token, tracks.href);
+        let tracksList = tracksData
+          .map(
+            ({
+              track: {
+                external_urls: { spotify },
+                name,
+                artists,
+              },
+            }) =>
+              `<li>
+                  <a href="${spotify}" alt="${name}" target="_blank">
+                    <h3>${name} - ${artists.map((artist) => artist.name).join(",")}</h3>
+                  </a>
+              </li>`
+          )
+          .join(``);
+        return `<li>
                     <a href="${spotify}" alt="${name}" target="_blank">
-                      <h3>${name} by ${artists
-                    .map((artist) => artist.name)
-                    .join(",")}</h3>
+                    <img src="${image.url}" width="180" height="180"/>
+                    <h3>${name}</h3>
+                    <div id="tracks"><ol>${tracksList}</ol></div>
                     </a>
-                  </li>`
-              )
-              ;
-          }
-         return `<li>
-              <a href="${spotify}" alt="${name}" target="_blank">
-                <img src="${image.url}" width="180" height="180"/>
-                <h3>${name}</h3>
-                <div id="tracks"><ol>${tracksList}</ol></div>
-              </a>
-            </li>`;
-        }
-      ).join();
-     
-      
+                </li>`;
+      }
+    ))).join(``);
+
     if (playlists) {
-      const html = `
-      <div class="genre-card">
-        <h2>${name}</h2>
-        <img class="genre-icon" src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
-        <div>
-          <ol>
-            ${playlistsList}
-          </ol>
-        </div>
-      </div>`;
-      
+      const html = `<div class="genre-card">
+                    <h2>${name}</h2>
+                    <img class="genre-icon" src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
+                    <div>
+                      <ol>
+                        ${playlistsList}
+                      </ol>
+                    </div>
+                  </div>`;
       list.insertAdjacentHTML("beforeend", html);
     }
   });
