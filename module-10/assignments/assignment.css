@@ -1,0 +1,31 @@
+.genre-card {
+    max-width: 100%;
+    overflow: hidden;
+    display: grid;
+    background-color: #1e1265;
+    color: rgb(24, 18, 18);
+  }
+
+  .genre-card:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .genre-card > div > a {
+    color: white;
+    font-weight: bold;
+  }
+
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 5;
+    display: flex;
+    grid-row-gap: 10px;
+  }
+
+  li {
+    margin: 10px;
+    padding: 10px;
+    border: black 3px solid;
+    background-color: rgb(184, 236, 102);
+  }
