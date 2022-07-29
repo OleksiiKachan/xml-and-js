@@ -71,7 +71,7 @@ const rGenres = (filterTerm) => {
         });
     }
 
-    const list = document.getElementById(`genres`);
+    const lst = document.getElementById(`genres`);
 
     const html = source.map(({ name, id, icons: [icon], playlists }) => {
         const playlistsList = playlists
@@ -110,7 +110,7 @@ const rGenres = (filterTerm) => {
         }
     });
 
-    list.innerHTML = html;
+    lst.innerHTML = html;
 };
 
 loadGenres().then(rGenres);
