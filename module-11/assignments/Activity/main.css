@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 1fr 0.5fr 1fr;
     grid-10px;
-    background-color: aquamarine;
+    background-color: rgb(127, 165, 255);
   }
   
    
@@ -28,3 +28,9 @@
   }
 
   .genre-card{color: #000;}
+
+body{
+
+background-color: rgb(37, 125, 202);
+
+  }
