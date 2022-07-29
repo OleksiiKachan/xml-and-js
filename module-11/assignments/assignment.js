@@ -77,9 +77,8 @@ const renderGenres = (filterTerm, withPlaylist) => {
     const term = filterTerm.toLowerCase();
     source = source.filter(({ name }) => name.toLowerCase().includes(term));
   }
-  if(withPlaylist !== undefined){
+  if(typeof withPlaylist !== 'undefined')
     source = withPlaylist? source.filter(({ playlistWithTracks }) => playlistWithTracks.length > 0) : source.filter(({ playlistWithTracks }) => playlistWithTracks.length === 0) ;
-  } 
 
   const list = document.getElementById(`genres`);
   const html = source.reduce(
