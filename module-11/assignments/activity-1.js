@@ -183,7 +183,7 @@ const main = async () => {
 main();
 
 
-const onSubmit = async (event) => {
+const onSubmit = (event) => {
   event.preventDefault();
   // console.log(event);
   // const term = event.target.name.value;
