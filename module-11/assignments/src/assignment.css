@@ -1,0 +1,39 @@
+.genre-card {
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    color:white;
+    background-color:royalblue;
+  }
+  
+  .genre-card:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  
+  .genre-card > div {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .genre-card > div > a {
+    color: white;
+    font-weight: bold;
+  }
+  
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 30px;
+    overflow: auto;
+    max-width: 100%;
+  }
+
+  form{
+    margin-bottom: 20px;
+  }
+  
