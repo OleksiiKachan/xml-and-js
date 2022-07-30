@@ -1,2 +1,2 @@
-![image](../Assignment/pop.jpg)
-![image](../Assignment/jazz.jpg)
+[!image](../Assignment/pop.jpg)
+[!image](../Assignment/jazz.jpg)
