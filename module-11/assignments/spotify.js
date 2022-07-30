@@ -57,15 +57,19 @@ const loadGenres = async () => {
   );
 };
 
-const renderGenres = (filterTerm) => {
+const renderGenres = (filterTerm, hideEmptyGenre) => {
   let source = _data;
 
   if (filterTerm) {
-    console.log(filterTerm);
     const term = filterTerm.toLowerCase();
     source = source.filter(({ name }) => {
-      console.log(name.toLowerCase().includes(term));
       return name.toLowerCase().includes(term);
+    });
+  }
+
+  if (hideEmptyGenre) {
+    source = source.filter((obj) => {
+      if (obj.playlists.length !== 0) return obj;
     });
   }
 
@@ -117,8 +121,9 @@ const onSubmit = (event) => {
   event.preventDefault();
 
   const term = event.target.term.value;
+  const hideEmptyGenre = document.getElementById("with").checked ? true : false;
 
-  renderGenres(term);
+  renderGenres(term, hideEmptyGenre);
 };
 
 openList = (element) => {
