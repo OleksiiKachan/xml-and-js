@@ -1,5 +1,17 @@
-const clientId = `7b9414905af941b79d8500a6883813bb`;
-const clientSecret = `df92b95367bb4dad8117e85f74113ce4`;
+const clientId = `1ecf4bfead8442ef9ae05640177797c0`;
+const clientSecret = `fe87bdd22ca24ada920404473856abdc`;
+
+const getGenres = async (token) => {
+  const result = await fetch(
+    `https://api.spotify.com/v1/browse/categories`,
+    {
+      method: "GET",
+      headers: { Authorization: "Bearer " + token },
+    }
+  );
+  const data = await result.json();
+  return data.categories.items;
+};
 
 const getToken = async () => {
   const result = await fetch("https://accounts.spotify.com/api/token", {
@@ -10,27 +22,13 @@ const getToken = async () => {
     },
     body: "grant_type=client_credentials",
   });
-
   const data = await result.json();
+  getGenres(data.access_token);
   return data.access_token;
 };
 
-const getGenres = async (token) => {
-  const result = await fetch(
-    `https://api.spotify.com/v1/browse/categories?locale=sv_US`,
-    {
-      method: "GET",
-      headers: { Authorization: "Bearer " + token },
-    }
-  );
-
-  const data = await result.json();
-  return data.categories.items;
-};
-
 const getPlaylistByGenre = async (token, genreId) => {
-  const limit = 12;
-
+  const limit = 10;
   const result = await fetch(
     `https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`,
     {
@@ -40,23 +38,20 @@ const getPlaylistByGenre = async (token, genreId) => {
   );
 
   const data = await result.json();
-  //console.log(data.playlists.items)
   return data.playlists.items;
 };
-const getTrackByPlaylist = async (token, tracks) => {
-    const limit = 5;
 
-    const result = await fetch(
-      `${tracks.href}/?limit=${limit}`,
-      {
-        method: "GET",
-        headers: { Authorization: "Bearer " + token },
-      }
-    );
-
-    const data = await result.json();
-    return data.items;
-  };
+const getTracks = async (token, playlistId) => {
+  const limit = 4;
+  const result = await fetch(`${playlistId}?limit=${limit}`,
+    {
+      method: "GET",
+      headers: { Authorization: "Bearer " + token },
+    }
+  );
+  const data = await result.json();
+  return data.items;
+};
 
 const loadGenres = async () => {
   const token = await getToken();
@@ -66,30 +61,34 @@ const loadGenres = async () => {
     const playlists = await getPlaylistByGenre(token, id);
     const playlistsList = playlists
       .map(
-        async ({ name, external_urls: { spotify }, images: [image],tracks}) => {
-            const getTracks = await getTrackByPlaylist(token,tracks);
-            const tracksList = getTracks.map(async({track:{name,artists:[artist]}})=>{
-                `<h3>Track Name: ${name}</h3>
-                 <h3>Artist: ${artist.name}</h3><br>`
-            }).join(``);
-            return `
-            <li>
-              <a href="${spotify}" alt="${name}" target="_blank">
-                <img src="${image.url}" width="180" height="180"/>
-              </a>
-              <div>${tracksList}</div>
-            </li>`;
-        }
-    );
+        async ({ name, external_urls: { spotify }, images: [image],tracks: { href } }) => {
+          const tracks=await getTracks(token,href);
+          const trackList = tracks.map(({ track:{name,artists:[artist] } }) =>{
+            return `<p>Track Name: ${name},Artist: ${artist.name}</p>`
+          }).join(``);
+          return ` 
+          <li>
+            <a href="${spotify}" alt="${name}" target="_blank">
+              <img src="${image.url}" width="180" height="180"/>
+            </a>
+            <div>
+              ${trackList}
+            </div>
+          </li>`
+          });
+
+          resolvedplaylistsList = await Promise.all(playlistsList);
+          resolvedplaylistsList = resolvedplaylistsList.join(``);
+
     if (playlists) {
       const html = `
       <article class="genre-card">
-        <div>
+        
           <h2>${name}</h2>
-          <ol>
-            ${await (await Promise.all(playlistsList)).join(``)}
-          </ol>
         </div>
+          <ol class="grid-container">
+            ${resolvedplaylistsList}
+          </ol>
       </article>`;
 
       list.insertAdjacentHTML("beforeend", html);
