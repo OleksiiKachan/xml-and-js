@@ -1,4 +1,4 @@
-<!--update 1-->
+<!--update 2-->
 <!-- Vishal Kumar  N01496099-->
 <!DOCTYPE html>
 <html lang="en">
@@ -6,35 +6,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="main.css" />
     <title>Spotify Assignment Module 11</title> 
   </head>
   <body>
    
     <form onsubmit="onSubmit(event)">
-      <input type="radio" id="input-filter" name="term" value="JAZZ">
+      <!-- <input type="radio" id="input-filter" name="term" value="JAZZ">
       <label for="input-filter">Jazz</label><br>
       <input type="radio" id="input-filter" name="term" value="rock">
       <label for="input-filter">Rock</label><br>
       <input type="radio" id="input-filter" name="term" value="pop">
-      <label for="input-filter">Pop</label>
+      <label for="input-filter">Pop</label> -->
       
-<br>
-      <!-- <label for="input-filter">Search Genre Name</label>
-      <input
-        type="text"
-        name="term"
-        id="input-filter"
-        placeholder="Enter Genre Name"
-      /> -->
+     
+
+<label for="input-filter-term">Search Genre Name</label>
+<input
+  type="text"
+  name="term"
+  id="input-filter-term"
+  placeholder="Enter Genre Name"
+/>
+<input type="radio" name="withPlaylist" id="withPlaylist" value=true>
+<label for="withPlaylist">With Playlist</label>
+<input type="radio" name="withPlaylist" id="withoutPlaylist" value=false>
+<label for="withoutPlaylist">Without Playlist</label>
+
       <button type="submit">Search</button>
-<!-- 
-      <input type="radio" id="jazz" name="fav_song" value="HTML">
-      <label for="html">Jazz</label><br>
-      <input type="radio" id="css" name="fav_song" value="CSS">
-      <label for="css">CSS</label><br>
-      <input type="radio" id="javascript" name="fav_song" value="JavaScript">
-      <label for="javascript">JavaScript</label> -->
       
     </form>
     <br>
