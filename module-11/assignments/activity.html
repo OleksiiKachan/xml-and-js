@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Tracks</title>
+    <link rel="stylesheet" type="text/css" href="activity.css" />
+  </head>
+  <body>
+    <div class="filter-">
+    <form onsubmit="onSubmit(event)" onreset="onReset()">
+        <label for="input-genre" >Find genre: </label>
+        <input type="text" name="input-filter-genre" id="input-genre" placeholder="Enter genre">
+        <button type="submit">Apply Filter</button>
+      </form>
+    </div>
+      <div id="genres"></div>
+    </div>
+    <script src="activity.js" type="text/javascript"></script>
+  </body>
+</html>
