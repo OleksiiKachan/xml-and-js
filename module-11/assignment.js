@@ -1,6 +1,8 @@
 const clientId = `63cbf6b3691644599bbc94aaa2d68ba2`;
  const clientSecret = `0dba00550f0f4fd88aa0f8d524205ab9`;
 
+ let _data = []
+
  const getToken = async () => {
    const result = await fetch("https://accounts.spotify.com/api/token", {
      method: "POST",
@@ -23,11 +25,14 @@ const clientId = `63cbf6b3691644599bbc94aaa2d68ba2`;
        headers: { Authorization: "Bearer " + token },
      }
    );
+
    const data = await result.json();
    return data.categories.items;
  };
+
  const getPlaylistByGenre = async (token, genreId) => {
    const limit = 5;
+
    const result = await fetch(
      `https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`,
      {
@@ -53,17 +58,21 @@ const clientId = `63cbf6b3691644599bbc94aaa2d68ba2`;
      const data = await result.json();
      return data.items;
  };
+
  const loadGenres = async () => {
      const token = await getToken();
      const genres = await getGenres(token);
+
      _data = await Promise.all(
        genres.map(async (genre) => {
          const playlists = await getPlaylistByGenre(token, genre.id);
 
          const loadedplaylists = await Promise.all(
              playlists.map(async (playlist) => {
-                 const tracks = await getTrackByPlaylist(token,playlist.tracks);
-                 return {...playlist, tracks};
+                 if(playlist){
+                     const tracks = await getTrackByPlaylist(token,playlist.tracks);
+                     return {...playlist, tracks};
+                 }
              })
          );
 
@@ -71,7 +80,7 @@ const clientId = `63cbf6b3691644599bbc94aaa2d68ba2`;
        })
      );
  };
- const renderGenres = (filterTerm) =>{
+ const renderGenres = (filterTerm, displayPlaylist) =>{
      let source = _data;
 
      if (filterTerm) {
@@ -80,58 +89,81 @@ const clientId = `63cbf6b3691644599bbc94aaa2d68ba2`;
            name.toLowerCase().includes(term)
          );
      };
+     if (displayPlaylist=="display"){
+     console.log(displayPlaylist);
      const html = source.reduce((acc, { name, playlists:loadedplaylists }) => {
          const playlistsList = loadedplaylists
-           .map(
+         .map(
              ({ name, external_urls: { spotify }, images: [image],tracks }) => {
-                 const tracksList = tracks.map(({track})=>{
-                     if(track){
-                         return`
-                         <p>Track Name: ${track.name}</p>
-                         <p>Artist: ${track.artists.map(artist => artist.name)}</p><br>`
-                     }
-                 }).join(``);
+                 if(tracks){
+                     const tracksList = tracks.map(({track})=>{
+                         if(track){
+                             return`
+                             <p>Track Name: ${track.name}</p>
+                             <p>Artist: ${track.artists.map(artist => artist.name)}</p><br>`
+                         }
+                     }).join(``);
 
-                 return `
-                 <li>
-                   <a href="${spotify}" alt="${name}" target="_blank">
-                     <img src="${image.url}" width="180" height="180"/>
-                   </a>
-                   <div>${tracksList}</div>
-                 </li>`
+                     return `
+                     <li>
+                     <a href="${spotify}" alt="${name}" target="_blank">
+                         <img src="${image.url}" width="180" height="180"/>
+                     </a>
+                     <div>${tracksList}</div>
+                     </li>`
+                 }
              }
-           )
-           .join(``);
+         )
+         .join(``);
 
          if (loadedplaylists) {
-           return (
+         return (
              acc +
              `
-           <article class="genre-card">
+         <article class="genre-card">
              <div>
-               <h2>${name}</h2>
-               <ol>
+             <h2>${name}</h2>
+             <ol>
                  ${playlistsList}
-               </ol>
+             </ol>
              </div>
-           </article>`
-           );
+         </article>`
+         );
          }
      }, ``);
-
      const list = document.getElementById(`genres`);
 
      list.innerHTML = html;
- };
+     }
 
+     else{
+         console.log(displayPlaylist);
+         const html = source.reduce((acc, { name}) => {
+
+             return (
+                 acc +
+                 `
+             <article class="genre-card">
+                 <div>
+                 <h2>${name}</h2>
+                 </div>
+             </article>`
+             );
+
+         }, ``);
+         const list = document.getElementById(`genres`);
+         list.innerHTML = html;
+     }
+ };
  loadGenres().then(()=>{
      renderGenres();
  });
-
  const onSubmit = (event) =>{
      event.preventDefault();
 
      const term = event.target.term.value;
 
-     renderGenres(term);
+     const displayPlaylist = event.target.displayPlaylists.value;
+
+     renderGenres(term,displayPlaylist);
  };
