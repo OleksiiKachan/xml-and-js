@@ -1,0 +1,86 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  }
+  
+  form, fieldset {
+    margin-bottom: 1em;
+  }
+  
+  .genre-card {
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    background-color: #af9d4d;
+    color: white;
+    border: solid black 2px;
+  }
+  
+  .genre-card:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  
+  .genre-card > div {
+    padding: 30px 30px;
+    overflow: hidden;
+  }
+  
+  .genre-card > div:first-child {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .genre-card > div > a {
+    color: white;
+    font-weight: bold;
+  }
+  
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-row-gap: 20px;
+    max-width: 100%;
+    background-color: #2196F3;
+    border-left: 15px solid;
+    border-image: linear-gradient(45deg, purple, orange) 1;
+  }
+  
+  li {
+    margin: 10px;
+    padding: 10px;
+    border: black 3px solid;
+    background-color: white;
+    color: black;
+  }
+  .filter-{
+    align-items: center;
+    margin-left: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    }
+    button {
+      background-color: transparent;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      outline: none;
+      border-top: solid black 1px;
+      border-left: solid black 2px;
+      border-right: solid black 2px;
+      border-bottom: solid gray 5px;
+      padding: 5px 10px;
+  }
+  #input-genre{
+    border: none;
+    border-top: solid black 1px;
+      border-left: solid black 2px;
+      border-right: solid black 2px;
+      border-bottom: solid gray 5px;
+      padding: 5px 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+      border-radius: 25px;
+  }
