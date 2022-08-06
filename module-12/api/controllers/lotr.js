@@ -36,8 +36,12 @@ const getAllChapters = async () => {
     const { data } = await axios.get(`${endpoint}/chapter`, {
       headers: { Authorization: "Bearer " + token },
     });
-    console.log(data);
-    return { code: 200, data: JSON.stringify(data) };
+    let parsedData = data.docs.map((item) => {
+      return {"_id": item._id, "name": item.book, "chapters": item.chapterName};
+    });
+    parsedData = JSON.stringify(parsedData);
+
+    return { code: 200, data: parsedData};
   } catch (error) {
     return {
       code: 500,
