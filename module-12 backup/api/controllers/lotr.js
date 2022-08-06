@@ -31,23 +31,7 @@ const getAllMovies = async () => {
   }
 };
 
-const getAllChapters = async () => {
-  try {
-    const { data } = await axios.get(`${endpoint}/chapter`, {
-      headers: { Authorization: "Bearer " + token },
-    });
-    console.log(data);
-    return { code: 200, data: JSON.stringify(data) };
-  } catch (error) {
-    return {
-      code: 500,
-      data: { message: error.message },
-    };
-  }
-};
-
 module.exports = {
   getAllBooks,
   getAllMovies,
-  getAllChapters,
 };
