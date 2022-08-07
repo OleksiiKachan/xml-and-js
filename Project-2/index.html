@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Movie Search Website</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>    
+    <body>
+        <div class="wrapper">
+            <div class="logo">
+                <div class="container">
+                    <p>Welcome to World of Movies</p>
+                </div>
+            </div>
+            <!-- search container -->
+            <div class="search-container">
+                <div class="search-element">
+                    <h3>Search Movie:</h3>
+                    <input type="text" placeholder="Start typing here" id="searchinput" class="form-control"
+                        onkeyup="findMovies()" onclick="findMovies()">
+
+                    <div class="search-list" id="search-list">
+                        <!-- movielist here -->
+                    </div>
+                </div>
+            </div>
+            <!-- output container -->
+            <div class="container">
+                <div class="output-container">
+                    <div class="output-grid" id="output-grid">
+                        <!-- movie information here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="">
+            <p>Designed & Developed by: <b>Vishesh Makwana & DarshanKumar Patel </b></p>
+        </footer>
+        <script src="js/script.js"></script>
+    </body>
+</html>
