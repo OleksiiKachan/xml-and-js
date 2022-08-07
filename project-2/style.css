@@ -1,0 +1,32 @@
+.crypto-card {
+    display: flex;
+    color: black;
+  }
+  
+  .crypto-card:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  
+  .crypto-card > div {
+    padding: 30px 20px;
+  }
+  
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: auto;
+    max-width: 100%;
+  }
+  
+  li{
+    border:2px solid gray;
+    margin-right: 15px;
+  }
+  
+  form {
+    margin-bottom: 15px;
+  }
+  
