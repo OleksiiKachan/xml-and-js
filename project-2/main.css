@@ -1,0 +1,29 @@
+#cities > li {
+  font-size: 1.3rem;
+  padding: 1rem 2rem;
+  background-color: rgb(255, 237, 210);
+  margin: 1rem 1rem;
+}
+
+#main-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 400px;
+}
+
+#city-info {
+  display: grid;
+  grid-template-columns: 600px 600px;
+  justify-content: space-between;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
