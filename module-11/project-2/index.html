@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Currency Converter</title>
+  </head>
+  <body>
+    <h1>Currency Converter</h1>
+    <div class="main-wrapper">
+      <form>
+        <div>
+          <label for="from-currency-list">Choose FROM symbol:</label>
+          <select name="from-currency-list" id="from-currency-list">
+            <option value="CAD">CAD</option>
+            <option value="CAD">USD</option>
+            <option value="CAD">GBP</option>
+            <option value="CAD">INR</option>
+          </select>
+        </div>
+        <div>
+          <label for="to-currency-list">Choose TO symbol:</label>
+          <select name="to-currency-list" id="to-currency-list">
+            <option value="CAD">CAD</option>
+            <option value="CAD">USD</option>
+            <option value="CAD">GBP</option>
+            <option value="CAD">INR</option>
+          </select>
+        </div>
+        <div>
+          <label for="amount">Type amount:</label>
+          <input type="text" name="amount" id="amount" />
+        </div>
+        <div>
+          <button>Convert</button>
+          <input type="reset" value="Clear" />
+        </div>
+      </form>
+
+      <span>14.99</span>
+    </div>
+    <script type="text/javascript" src="./main.js"></script>
+  </body>
+</html>

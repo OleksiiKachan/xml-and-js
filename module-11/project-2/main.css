@@ -1,0 +1,7 @@
+html {
+    text-align: center;
+  }
+  main-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
