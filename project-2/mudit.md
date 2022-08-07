@@ -1,4 +1,4 @@
-# Tasks done by Mudit Khanna
+# Tasks done by Mudit Khanna (N01487943)
 
 - Grabbed the new api since the old one was not working
 - Created the function to get the api results from the api and filter according to the need and then load the data on the dom using the load data function.
