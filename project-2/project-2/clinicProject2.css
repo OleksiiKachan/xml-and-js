@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-app {
+    min-height: 100vh;
+    background-image: url('images/image.png');
+}
+
+#drugs {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.drug {
+    margin-left: 20px;
+    width: 23%;
+    box-shadow: 0 0 4px 3px rgb(11, 101, 126);
+    text-align: center;
+    padding: 1.5 em;
+    margin-bottom: 2em;
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.images {
+    width: 80%;
+}
+
+.brand_name {
+    font-size: 1.3rem;
+}
+
+.labeler_name, .generic_name, .dosage_form {
+    font-weight: bold;
+    text-transform: capitalize;
+    margin: 1em;
+    font-size: 1rem;
+}
+
+form {
+    padding: 1.5 em;
+    margin: 1em;
+}
+
+.search-area {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.header-area {
+    margin-top: 15px;
+}
+
+.card-element {
+    padding-top: 5px;
+    text-align: left;
+    margin-left: 30px;
+}
+
+.card-image {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#errorMessage {
+    color: red;
+}

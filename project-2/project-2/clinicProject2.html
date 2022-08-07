@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>OpenFDA API</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="clinicProject2.css" />
+</head>
+
+<body>
+    <div class="container-fluid main-app">
+        <div class="row header-area">
+            <div class="col-lg-4 col-lg-offset-4">
+                <h1>Drug and Food Info</h1>
+            </div>
+        </div>
+        <div class="row search-area">
+            <div class="col-lg-4 col-lg-offset-4">
+                <label>Search Brand:</label>
+                <div class="input-group">
+                    <input type="text" name="name" id="searchField" placeholder="Search Brand..."
+                        class="form-control" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" onclick="search()" type="button">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row search-area">
+            <div class="col-lg-4 col-lg-offset-4">
+                <label>Route:</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" value="ORAL" type="radio" name="route_type"
+                        id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        ORAL
+                    </label>
+                    <input class="form-check-input" value="INJECTION" type="radio" name="route_type"
+                        id="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        INJECTION
+                    </label>
+                    <input class="form-check-input" value="TOPICAL" type="radio" name="route_type"
+                        id="flexRadioDefault3">
+                    <label class="form-check-label" for="flexRadioDefault3">
+                        TOPICAL
+                    </label>
+                    <input class="form-check-input" value="OPHTHALMIC" type="radio" name="route_type"
+                        id="flexRadioDefault4">
+                    <label class="form-check-label" for="flexRadioDefault4">
+                        OPHTHALMIC
+                    </label>
+                </div>
+                <div class="row" style="padding-left: 20px">
+                    <button class="btn btn-default" onclick="filterRoute()" type="button">Apply Filter</button>
+                    <button class="btn btn-default" onclick="resetRoute()" type="button">Reset Filter</button>
+                </div>
+            </div>
+        </div>
+        <div id="drugs"></div>
+        <div class="row search-area">
+            <div class="col-lg-4 col-lg-offset-4">
+                <div id="errorMessage"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="clinicProject2.js"></script>
+</body>
+
+</html>
