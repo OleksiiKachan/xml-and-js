@@ -1,0 +1,2 @@
+- Worked on currency converter api integration
+- Worked on the html structure
