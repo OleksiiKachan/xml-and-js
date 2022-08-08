@@ -5,3 +5,6 @@ main-wrapper {
   display: flex;
   flex-direction: row;
 }
+p {
+  display: none;
+}

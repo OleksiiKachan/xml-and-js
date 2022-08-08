@@ -10,24 +10,14 @@
   <body>
     <h1>Currency Converter</h1>
     <div class="main-wrapper">
-      <form>
+      <form onsubmit="onSubmit(event)">
         <div>
           <label for="from-currency-list">Choose FROM symbol:</label>
-          <select name="from-currency-list" id="from-currency-list">
-            <option value="CAD">CAD</option>
-            <option value="CAD">USD</option>
-            <option value="CAD">GBP</option>
-            <option value="CAD">INR</option>
-          </select>
+          <select name="from-currency-list" id="from-currency-list"></select>
         </div>
         <div>
           <label for="to-currency-list">Choose TO symbol:</label>
-          <select name="to-currency-list" id="to-currency-list">
-            <option value="CAD">CAD</option>
-            <option value="CAD">USD</option>
-            <option value="CAD">GBP</option>
-            <option value="CAD">INR</option>
-          </select>
+          <select name="to-currency-list" id="to-currency-list"></select>
         </div>
         <div>
           <label for="amount">Type amount:</label>
@@ -35,11 +25,10 @@
         </div>
         <div>
           <button>Convert</button>
-          <input type="reset" value="Clear" />
+          <input type="reset" onclick="onReset()" />
         </div>
       </form>
-
-      <span>14.99</span>
+      <p id="result">Result: <span id="converted-amount"></span></p>
     </div>
     <script type="text/javascript" src="./main.js"></script>
   </body>
