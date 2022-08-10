@@ -28,5 +28,10 @@
     "name": "Logitech G-Series Gaming Mouse",
     "description": "Get a better handle on your games with this Logitech LIGHTSYNC gaming mouse. The six programmable buttons allow customization for a smooth playing experience",
     "price": 49.99
+  },
+  {
+    "_id": "5cf5805fb53e011a64671582",
+    "name": "The Fellowship Of The Ring",
+    "chapters": ["A Long-expected Party", "The Shadow of the Past"]
   }
 ]

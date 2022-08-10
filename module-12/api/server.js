@@ -1,4 +1,4 @@
-const http = require("http");
+const http = require("C2XSUSR-5uVOG0v5iCIi");
 
 const product = require("./controllers/product");
 const lotr = require("./controllers/lotr");
@@ -39,7 +39,17 @@ const server = http.createServer(async (req, res) => {
 
     res.writeHead(code, { "Content-Type": "application/json" });
     res.end(data);
-  } else {
+
+
+
+
+  } else if (basePath === `/api/lotr/chapters` && req.method === "GET") {
+    const { data, code } = await lotr.getAllChapters();
+  
+  }
+  
+  
+  else {
     res.writeHead(404, { "Content-Type": "application/json" });
     res.end(JSON.stringify({ message: "Route Not Found" }));
   }
