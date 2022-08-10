@@ -1,3 +1,4 @@
+Authorization: "C2XSUSR-5uVOG0v5iCIi";
 const http = require(`http`);
 
 const products = require("./controller/products");
@@ -31,11 +32,11 @@ const server = http.createServer(async (req, res) => {
     const { code, data } = await lotr.getAllBooks();
     res.writeHead(code, { "Content-Type": "application/json" });
     res.end(data);
-  } else if (basePath === `/api/lotr/movies`) {
-    const { code, data } = await lotr.getAllMovies();
-    res.writeHead(code, { "Content-Type": "application/json" });
-    res.end(data);
-  } else {
+  // } else if (basePath === `/api/lotr/movies`) {
+  //   const { code, data } = await lotr.getAllMovies();
+  //   res.writeHead(code, { "Content-Type": "application/json" });
+  //   res.end(data);
+  // } else {
     res.writeHead(404, { "Content-Type": "application/json" });
     res.end(JSON.stringify({ message: `Route not found` }));
   }
