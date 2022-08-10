@@ -29,7 +29,8 @@ const getAllMovies = async () => {
     };
   }
 };
+
 module.exports = {
   getAllBooks,
-  getAllMovies
+  getAllMovies,
 };
