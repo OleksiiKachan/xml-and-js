@@ -37,12 +37,13 @@ const getChapter = async () => {
 
     const books = await getAllBooks()
     const book1=JSON.parse(books.data).docs[0];
+    book1.chapters=chapters1
     const book2=JSON.parse(books.data).docs[1];
+    book2.chapters=chapters2
     const book3=JSON.parse(books.data).docs[2];
+    book3.chapters=chapters3
 
-    // let book1 = books[0].push(chapters1)
-
-    return { code: 200, data: JSON.stringify({book1,chapters1}) };
+    return { code: 200, data: JSON.stringify({book1,book2,book3}) };
   } catch (error) {
     return {
       code: 500,
