@@ -1,6 +1,6 @@
 const { default: axios } = require("axios");
 
-const token = `WHl-mwhsBxmD1LqQBWnx` //process.env.LOTR_TOKEN;
+const token = process.env.LOTR_TOKEN;
 const endpoint = `https://the-one-api.dev/v2`;
 
 const getAllBooks = async () => {
