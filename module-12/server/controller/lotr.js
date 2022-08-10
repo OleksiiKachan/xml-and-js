@@ -29,20 +29,7 @@ const getAllMovies = async () => {
     };
   }
 };
-
-const getAllChapters = async () => {
-  try {
-    const { data } = await axios.get(`${endpoint}/book`);
-
-    return { code: 200, data: JSON.stringify(data) };
-  } catch (error) {
-    return { code: 500, data: JSON.stringify({ message: error.message }) };
-  }
-};
-
-
 module.exports = {
   getAllBooks,
-  getAllMovies,
-  getAllChapters
+  getAllMovies
 };
