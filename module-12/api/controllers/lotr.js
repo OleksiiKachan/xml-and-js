@@ -33,7 +33,9 @@ const getAllMovies = async () => {
 
 const getAllChapters = async () => {
   try {
-    const { data } = await axios.get(`${endpoint}/chapters`);
+    const { data } = await axios.get(`${endpoint}/chapter`, {
+      headers: { Authorization: "Bearer " + token },
+    });;
     return { code: 200, data: JSON.stringify(data) };
   } catch (error) {
     return { code: 500, data: JSON.stringify({ message: error.message }) };
@@ -54,20 +56,20 @@ const getAllBookChapters = async () => {
     const data =
       books && books.docs
         ? books.docs.map((book) => {
-            const chapters =
+            const chaptersOfBook =
               chapters && chapters.docs
-                ? chapters.docs.filter((chapter) => chapter.book === book._id)
+                ? chapters.docs.filter(chapter => chapter.book === book._id)
                 : [];
             return {
               ...book,
-              chapters: chapters.map((chapter) => chapter.chapterName),
+              chapters: chaptersOfBook.map(chapter => chapter.chapterName),
             };
           })
         : [];
     return { code: 200, data: JSON.stringify(data) };
   } catch (error) {
     return {
-      code: error.response.status || 500,
+      code: 500,
       data: JSON.stringify({ message: error.message }),
     };
   }
@@ -76,6 +78,5 @@ const getAllBookChapters = async () => {
 module.exports = {
   getAllBooks,
   getAllMovies,
-  getAllChapters,
-  getAllBookChapters,
+  getAllBookChapters
 };
