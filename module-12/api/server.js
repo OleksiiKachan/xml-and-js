@@ -34,6 +34,11 @@ const server = http.createServer(async (req, res) => {
 
     res.writeHead(code, { "Content-Type": "application/json" });
     res.end(data);
+  }  else if (basePath === `/api/lotr/chapters` && req.method === "GET") {
+    const { data, code } = await lotr.getAllBooks();
+
+    res.writeHead(code, { "Content-Type": "application/json" });
+    res.end(data);
   } else if (basePath === `/api/lotr/movie` && req.method === "GET") {
     const { data, code } = await lotr.getAllMovies();
 
