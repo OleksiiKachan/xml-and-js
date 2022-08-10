@@ -17,3 +17,4 @@ Note: Please ignore the URL sent in Blackboard (it is based on main branch, not 
 ]
 ```
 
+![image info](./activity.png)
