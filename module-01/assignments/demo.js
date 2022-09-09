@@ -1,5 +1,4 @@
 function MyFunction() 
 {
-    let out= document.getElementById("test");
-    out.innerhtml= "Dhruv Desdai";
+    document.getElementById("myDiv").textContent = "Dhruv Desai";
 }
