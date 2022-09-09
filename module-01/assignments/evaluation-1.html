@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>
+Click button to display my Name
+</title>
+</head>
+<body style = "text-align:center;">
+<h1>
+Welcome to ITC5202
+</h1>
+<button id="1" onClick="BK_click(this.id)">
+Click here to display my Name
+</button>
+<p id = "BK_DOWN" style =
+"color:green; font-size: 20px; font-weight: bold;">
+</p>
+<script>
+var el_up = document.getElementById("BK_UP");
+var el_down = document.getElementById("BK_DOWN");
+function BK_click(clicked) {
+el_down.innerHTML = "GAURAV CHOUDHARY ";
+}
+</script>
+</body>
+</html>
