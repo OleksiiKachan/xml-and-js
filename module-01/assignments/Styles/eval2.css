@@ -1,0 +1,8 @@
+body {
+    background-color: rgb(255, 250, 206);
+}
+
+#comment {
+    height: 100px;
+    width: 300px;
+}
