@@ -1,0 +1,10 @@
+form{
+    border: solid black 2px;
+    background-color: lightgoldenrodyellow;
+    width: 40%;
+    margin:auto;
+    /* padding:10px; */
+}
+form>*{
+    margin:10px;
+}
