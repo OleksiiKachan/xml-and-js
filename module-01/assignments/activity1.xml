@@ -1,0 +1,63 @@
+<?xml version = "1.0" encoding= "UTF-8"?>
+    <Info>
+        <Person>
+        <Name>Abhay Nimavat</Name>
+        
+        <Interest>Coding, Reading books</Interest>
+        <Hobbies>Playing Sports</Hobbies>
+        </Person>
+        <Person>
+        <Name>Krish Nimavat</Name>
+        
+        <Interest>Coding, Reading books</Interest>
+        <Hobbies>Playing Sports</Hobbies>
+        </Person>
+        <Person>
+        <Name>Dhruv Desai</Name>
+        
+        <Interest>Coding, Reading books</Interest>
+        <Hobbies>Playing Sports</Hobbies>
+        </Person>
+        <Person>
+        <Name>Bhavish</Name>
+        
+        <Interest>Coding, Reading books</Interest>
+        <Hobbies>Playing Sports</Hobbies>
+        </Person>
+        <Person>
+        <Name>Devansh</Name>
+        
+        <Interest>Coding, Reading books</Interest>
+        <Hobbies>Playing Sports</Hobbies>
+        </Person>
+        <Person>
+        <Name>Ashish</Name>
+        
+        <Interest>Coding, Reading books</Interest>
+        <Hobbies>Playing Sports</Hobbies>
+        </Person>
+        <Person>
+        <Name>Nick</Name>
+        
+        <Interest>Coding, Reading books</Interest>
+        <Hobbies>Playing Sports</Hobbies>
+        </Person>
+        <Person>
+        <Name>Bob</Name>
+        
+        <Interest>Coding, Reading books</Interest>
+        <Hobbies>Playing Sports</Hobbies>
+        </Person>
+        <Person>
+        <Name>Glen</Name>
+        
+        <Interest>Coding, Reading books</Interest>
+        <Hobbies>Playing Sports</Hobbies>
+        </Person>
+        <Person>
+        <Name>Rohilla</Name>
+        
+        <Interest>Coding, Reading books</Interest>
+        <Hobbies>Playing Sports</Hobbies>
+        </Person>
+    </Info>
