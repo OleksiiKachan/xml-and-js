@@ -1,4 +1,4 @@
-<document>
+<Institution>
     <employee>
         <empno>1001</empno>
         <empname>Alex</empname>
@@ -14,4 +14,4 @@
         <empname>Peter</empname>
         <salary>3500</salary>
     </employee>
-</document>
+</Institution>
