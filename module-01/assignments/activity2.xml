@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<myMessage>
+ <displayTable>
+  <data category="data1">
+    <row1>Empno</row1>
+    <row2>Empname</row2>
+    <row3>Salary</row3>
+  </data>
+   <data category="data2">
+    <empNo>1001</empNo>
+    <empName>Alex</empName>
+    <sal>3000</sal>
+  </data>
+    <data category="data3">
+    <empNo>1002</empNo>
+    <empName>Sarah</empName>
+    <sal>4000</sal>
+  </data>
+    <data category="data4">
+    <empNo>1003</empNo>
+    <empName>Peter</empName>
+    <sal>3500</sal>
+  </data>
+ </displayTable>
+</myMessage>

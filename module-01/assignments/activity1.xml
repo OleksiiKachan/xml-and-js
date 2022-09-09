@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<myMessage>
+
+  <name>Hardi Majmundar</name>
+  <email>hardimajmundar0906@gmail.com</email>
+  <hobbies>I love to travel and explore different countries and food.</hobbies>
+
+  <personList>
+List of Person
+<name> Hardi </name>
+<hobby> Exploring </hobby>
+<name> Achint </name>
+<hobby> Reading </hobby>
+<name> Dhruv </name>
+<hobby> Exploring </hobby>
+<name> Helly </name>
+<hobby> Studying </hobby>
+<name> Jwalit </name>
+<hobby> Execrising </hobby>
+<name> Mahima </name>
+<hobby> Drawing </hobby>
+<name> Nisha </name>
+<hobby> Folk Dance </hobby>
+<name> Tanmay </name>
+<hobby> Art </hobby>
+<name> Kunal </name>
+<hobby> Sleeping </hobby>
+<name> Arth </name>
+<hobby> Eating </hobby>
+</personList>
+</myMessage>
