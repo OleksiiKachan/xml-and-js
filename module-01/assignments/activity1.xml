@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>​
+    <student>
+        <name> Parth </name>​
+        <interest> Video Games </interest>
+        <hobbies> Swimming </hobbies>
+    </student>
+    <student>​
+        <name> Falgun </name>​
+        <interest> Books </interest>
+        <hobbies> Reading </hobbies>
+    </student>
+    <student>​
+        <name> Mann </name>​
+        <interest> Foods </interest>
+        <hobbies> Cooking </hobbies>
+    </student>
+    <student>​
+        <name> Devansh </name>​
+        <interest> Games </interest>
+        <hobbies> Cricket </hobbies>
+    </student>
+    <student>​
+        <name> Devarsh </name>​
+        <interest> Technology </interest>
+        <hobbies> Learning </hobbies>
+    </student>
+    <student>​
+        <name> Jay </name>​
+        <interest> Cooking </interest>
+        <hobbies> Reading </hobbies>
+    </student>
+    <student>​
+        <name> Ka </name>​
+        <interest> Books </interest>
+        <hobbies> Reading </hobbies>
+    </student>
+    <student>​
+        <name> Alfredos </name>​
+        <interest> Foods </interest>
+        <hobbies> Cooking </hobbies>
+    </student>
+    <student>​
+        <name> Rishit </name>​
+        <interest> Games </interest>
+        <hobbies> Cricket </hobbies>
+    </student>
+    <student>​
+        <name> John </name>​
+        <interest> Technology </interest>
+        <hobbies> Learning </hobbies>
+    </student>
+</info>
+
