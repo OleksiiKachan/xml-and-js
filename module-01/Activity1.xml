@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<People>
+    <StudentName> 
+        <intrests> Data Management, Data Management</intrests>
+        <hobbies>Running, Skydiving</hobbies>
+    </StudentName>
+    <StudentName> 
+        <intrests> xyz</intrests>
+        <hobbies>xyz</hobbies>
+    </StudentName>
+</People>
