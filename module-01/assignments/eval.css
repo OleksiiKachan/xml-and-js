@@ -1,0 +1,23 @@
+div {
+	
+	border: 2px solid;
+	border-color: blue;
+	Color: Blue;
+    background-color: bisque;
+	margin: 2em;
+	padding: 10px;
+	font-weight: bold;
+	
+}
+
+
+label {
+    float: left;
+    width: 12em;
+    text-align: left;
+	
+}
+
+	
+
+
