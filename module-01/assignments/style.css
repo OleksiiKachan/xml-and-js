@@ -1,0 +1,9 @@
+form {
+  display: inline-block;
+  background-color: antiquewhite;
+}
+input {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
