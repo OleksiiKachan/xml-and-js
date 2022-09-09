@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>​
+<Students>
+<Student>
+    <Personal>​
+        <Name> Vinay Muthyapu </subject>​
+        <dateofBirth> Jan 31, 2018 </dateofBirth>​
+    </Personal>
+    <Hobbies>
+        <h1>Listening music</h1>
+        <h2>Reading books</h2>
+        <h3>Playing cricket</h3>
+    </Hobbies>
+</Student>
+<Student>
+    <Personal>​
+        <Name> Student2 </subject>​
+        <dateofBirth> Jan 31, 2018 </dateofBirth>​
+    </Personal>
+    <Hobbies>
+        <h1>hobby1</h1>
+        <h2>hobby2</h2>
+        <h3>hobby3</h3>
+    </Hobbies>
+</Student>
+<Students>
