@@ -1,0 +1,38 @@
+<html>
+    <head>
+        Eval 2
+    </head>
+    <body style="background-color: rgb(245, 245, 207); border: 1px;">
+        <form >
+            Your Email*: 
+            <input id="email" type="email" ><br>
+
+            Date of Visit: 
+            <input id="Date" type="date"><br>
+
+            Your Comments:
+            <br>
+            <input id="comments" type="textarea">
+            <br>
+            <button id="btn" >Send Your Feedback</button>
+        </form>
+        Output:
+        Email: <h3 id="e1"></h3>
+        DOV: <h3 id="e2"></h3>
+        Com: <h3 id="e3"></h3>
+        <script>
+            function display(event) {
+                console.log(document.getElementById("email"))
+                event.preventDefault();
+                document.getElementById("e1").innerHTML= document.getElementById("email").value;
+                document.getElementById("e2").innerHTML= document.getElementById("Date").value;
+                document.getElementById("e3").innerHTML= document.getElementById("comments").value;
+                return false;
+            }
+
+            let btn = document.getElementById("btn");
+	    // add event listener for the button, for action "click"
+	    btn.addEventListener("click", display);
+        </script>
+    </body>
+</html>
