@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message>​
+    <myMessage>​
+        <Empno>1001</Empno>​
+        <EmpName>Alex</EmpName>
+        <salary>3000</salary>​
+    </myMessage>
+    <myMessage>​
+        <Empno>1002</Empno>​
+        <EmpName>Sarah</EmpName>
+        <salary>4000</salary>​
+    </myMessage>
+    <myMessage>​
+        <Empno>1003</Empno>​
+        <EmpName>Peter</EmpName>
+        <salary>3500</salary>​
+    </myMessage>
+</message>

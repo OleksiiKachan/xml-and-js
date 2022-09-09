@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message>
+    <myMessage>
+        <name> Vrushali </name>
+        <intrests> Data analytics </intrests>
+        <hobby> music </hobby>
+    </myMessage>
+    <myMessage>
+        <name> janki </name>
+        <intrests> xml </intrests>
+        <hobby> volleyball </hobby>
+    </myMessage>
+    <myMessage>
+        <name> srushti </name>
+        <intrests> art </intrests>
+        <hobby> basketball </hobby>
+    </myMessage>
+    <myMessage>
+        <name> vedu </name>
+        <intrests> dance </intrests>
+        <hobby> music </hobby>
+    </myMessage>
+    <myMessage>
+        <name> vrushang </name>
+        <intrests> coding </intrests>
+        <hobby> cricket </hobby>
+    </myMessage>
+    <myMessage>
+        <name> jenil </name>
+        <intrests> angular </intrests>
+        <hobby> baseball </hobby>
+    </myMessage>
+    <myMessage>
+        <name> radhika </name>
+        <intrests> database </intrests>
+        <hobby> cards </hobby>
+    </myMessage>
+    <myMessage>
+        <name> shruti </name>
+        <intrests> architecture </intrests>
+        <hobby> baseball </hobby>
+    </myMessage>
+    <myMessage>
+        <name> esha </name>
+        <intrests> baking </intrests>
+        <hobby> music </hobby>
+    </myMessage>
+    <myMessage>
+        <name> janvi </name>
+        <intrests> teaching </intrests>
+        <hobby> cooking </hobby>
+    </myMessage>
+</message>
