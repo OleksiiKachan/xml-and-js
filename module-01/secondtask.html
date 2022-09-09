@@ -1,0 +1,30 @@
+<html>
+    <head><title> first task</title>
+       <style>
+        #divv 
+        {
+            border:3px black;
+            background-color: pink;
+        }
+       </style>
+        </head>
+        <body background-color="ffc0bc">
+            <div id="divv">
+           <form onsubmit="functionn()">
+           Your email <sup>*</sup> :&nbsp; <input type="Email" name="Email">
+           <br>
+           Date of Visit <input type="date">
+           <br>
+           Your Feedback &nbsp; <input type="textarea" name="feedback" id="feedback">
+           <input type="submit">
+           </form>
+        </div>
+        <script>
+          function functionn()
+          {
+var feed=document.getElementById("feedback").value;
+alert(feed);
+          }
+        </script>
+          </body>
+        </html>
