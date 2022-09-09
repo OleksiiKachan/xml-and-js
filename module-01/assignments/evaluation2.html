@@ -1,0 +1,26 @@
+<html>
+
+    <head>
+        <title> Evaluation 2</title>
+    </head>
+
+    <body>
+        <label style="color: purple; font-size: larger;" > Your Email: </label>  
+        <input id="email1" type="text"><br>
+        <label style="color: darkred; font-size: larger; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> Date of Visit: </label> 
+        <input id="date1" type="date"><br>
+        <label style="color: maroon; font-size: larger; font-family: 'Times New Roman', Times, serif;"> Your Comment: </label><br>
+        <textarea id="comments" type="textarea"></textarea><br>
+        <input type = "button" value="submit" onclick="disInformation()"><br>
+    </body>
+
+    <script>
+        const disInformation = () => {
+            let str = "";
+            const name = document.getElementById('email1').value;
+            const date = document.getElementById('date1').value;
+            const comment = document.getElementById('comments').value;
+            alert(`${name} ${date} ${comment}`);
+        }
+    </script>
+</html>
