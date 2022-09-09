@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Evaluation 2</title>
+    </head>
+    <body>
+        <form>
+            Your Email: <input type="email" id="mail"><br><br>
+            Date of Visit: <input type="text" placeholder="mm/dd/yyyy" id="date"><br><br>
+            Your comment: <br><textarea id="comment" cols="30" rows="10"></textarea><br><br>
+            <input type="button" value="Send your Feedback" onclick='display()'>
+        </form>
+    </body>
+    <script>
+        function display(){
+            let mail = document.getElementById("mail").value;
+            let date = document.getElementById("date").value;
+            let c = document.getElementById("comment").value;
+            console.log(mail);
+            console.log(date);
+            console.log(c);
+        }
+    </script>
+</html>
