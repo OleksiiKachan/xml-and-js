@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<head>
+<h1>Welcome to ICT5202</h1>
+
+</head>
+
+<body>
+
+
+   
+
+
+    <input type="text" name="name" id="name"><br>
+    <button id="b1" onclick="showName();">Click Me</button>
+    
+        <script>
+                 function showName()
+	                    {
+                            let newName = input.value;
+                            input.value = '';
+
+                            let newItem = document.createElement('h2');
+                            
+                            newItem.appendChild(newName);
+                            newName.textContent = newName;
+                            list.appendChild(newName);
+                                
+	                    }		
+        </script>
+    
+        <h2></h2>
+
+</body>
+
+</html>
+
+

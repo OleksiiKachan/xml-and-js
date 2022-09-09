@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<head>
+
+</head>
+
+<body>
+
+   
+    Your Email<input type="text" name="name" id="name"><br>
+    Date of Visit<input type="text" name="name" id="name"><br>
+    Your Comment<input type="text" name="name" id="name"><br>
+    <br>
+    <button id="b1" onclick="showName();">Send your Feedback</button>
+    
+        <script>
+                 function showName()
+	                    {
+                            let newName = input.value;
+                            input.value = '';
+
+                            let newItem = document.createElement('h2');
+                            
+                            newItem.appendChild(newName);
+                            newName.textContent = newName;
+                            list.appendChild(newName);
+                                
+	                    }		
+        </script>
+    
+        <h2></h2>
+
+</body>
+
+</html>
+
+
