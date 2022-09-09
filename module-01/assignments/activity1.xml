@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Info>
+<person>
+<Name>Devasrh Desai</Name>
+<Interest>coding,learning new things</Interest>
+<Hobbies>cricket,singing</Hobbies>
+</person>
+
+<--! 2nd question for 10 people--!>
+<Person>
+<Name>Devansh Shah</Name>
+<Interest>collecting coins</Interest>
+<Hobbies>tracking,Dancing</Hobbies>
+</Person>
+<Person>
+<Name>Parth Lukhi</Name>
+<Interest>ancient coins</Interest>
+<Hobbies>playing carrom</Hobbies>
+</Person>
+<Person>
+<Name>Mann Bhatt</Name>
+<Interest>coding,learning new things</Interest>
+<Hobbies>cricket,singing</Hobbies>
+</Person>
+<Person>
+<Name>Shahrukh khan</Name>
+<Interest>coding,learning new things
+<Hobbies>cricket,singing</Hobbies>
+</Person>
+<Person>
+<Name>salman khan</Name>
+<Interest>coding,learning new things</Interest>
+<Hobbies>cricket,singing</Hobbies>
+</Person>
+<Person>
+<Name>Narendra modi</Name>
+<Interest>coding,learning new things</Interest>
+<Hobbies>cricket,singing</Hobbies>
+</Person>
+<Person>
+<Name>Rahul Gandhi</Name>
+<Interest>coding,learning new things</Interest>
+<Hobbies>cricket,singing</Hobbies>
+</Person>
+<Person>
+<Name>falgun dudhhat</Name>
+<Interest>coding,learning new things</Interest
+<Hobbies>cricket,singing</Hobbies>
+</Person>
+<Person>
+<Name>bhavish rohilla</Name>
+<Interest>coding,learning new things</Interest>
+<Hobbies>cricket,singing</Hobbies>
+</Person>
+<Person>
+<Name>roshani patel</Name>
+<Interest>coding,learning new things</Interest>
+<Hobbies>cricket,singing</Hobbies>
+</Person>
+</Info>
