@@ -4,7 +4,15 @@
         <name>Long</name>
         <hobby>Badminton</hobby>
     </persondetail>
+    <persondetail>
+        <name></name>
+        <hobby></hobby>
+    </persondetail>
+    <persondetail>
+        <name></name>
+        <hobby></hobby>
+    </persondetail>
 </people>
 
-<!--2. We group the details of 10 people within a big tag <people>. 
+<!--2. We group the details of 10 people within a tag <people>. 
 And under each <persondetail> we store the details of each person-->
