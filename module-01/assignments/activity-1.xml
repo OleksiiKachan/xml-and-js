@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<interests_hobbies>
+    <student>
+        <intrest> in field of IT </intrest>
+        <hobbies> readding books </hobbies>
+    </student>
+
+    <student>
+        <intrest>in art</intrest>
+        <hobbies>painting</hobbies>
+    </student>
+
+    <student>
+        <intrest>music</intrest>
+        <hobbies>singing </hobbies>
+    </student>
+
+    <student>
+        <intrest>music</intrest>
+        <hobbies>learning diffrent music innstuments</hobbies>
+    </student>
+
+    <student>
+        <intrest>in field of IT</intrest>
+        <hobbies>learning new topics of latest technology</hobbies>
+    </student>
+
+    <student>
+        <intrest>films</intrest>
+        <hobbies>watching diffren movies</hobbies>
+    </student>
+
+    <student>
+        <intrest>culture</intrest>
+        <hobbies>wrirting and researching about diffrent culture</hobbies>
+    </student>
+
+<student>
+  <intrest>history</intrest>
+  <hobbies>visting historical places</hobbies>
+</student>
+
+<student>
+  <intrest>art</intrest>
+  <hobbies>painting</hobbies>
+</student>
+
+<student>
+  <intrest>grapgics and animation</intrest>
+  <hobbies>readding books</hobbies>
+</student>
+
+</interests_hobbies>
