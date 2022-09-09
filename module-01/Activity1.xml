@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+<person1>
+<name>Naga Venkata Vintha</name>
+<college>Humber college</college>
+<course>Information technology Solutions</course>
+<hobbies>Watching movies</hobbies>
+</person1>
+<person2>
+<name>Ram</name>
+<college>Humber college</college>
+<course>Information technology Solutions</course>
+<hobbies>playing cricket</hobbies>
+</person2>
+<person3>
+<name>ranjith</name>
+<college>Humber college</college>
+<course>Information technology Solutions</course>
+<hobbies>Playing games</hobbies>
+</person3>
+<person4>
+<name>Harish</name>
+<college>Humber college</college>
+<course>Information technology Solutions</course>
+<hobbies>Listening music</hobbies>
+</person4>
+<person5>
+<name>Manu</name>
+<college>Humber college</college>
+<course>Information technology Solutions</course>
+<hobbies>playing guitar</hobbies>
+</person5>
+<person6>
+<name>Shanmukh</name>
+<college>Humber college</college>
+<course>Information technology Solutions</course>
+<hobbies>dancing</hobbies>
+</person6>
+<person7>
+<name>bhargav</name>
+<college>Humber college</college>
+<course>Information technology Solutions</course>
+<hobbies>playing violin</hobbies>
+</person7>
+<person8>
+<name>Rana</name>
+<college>Humber college</college>
+<course>Information technology Solutions</course>
+<hobbies>Playing Football</hobbies>
+</person8>
+<person9>
+<name>pavan</name>
+<college>Humber college</college>
+<course>Information technology Solutions</course>
+<hobbies>Playing volleyball</hobbies>
+</person9>
+<person10>
+<name>sasank</name>
+<college>Humber college</college>
+<course>Information technology Solutions</course>
+<hobbies>Reading books</hobbies>
+</person10>
+</data>
