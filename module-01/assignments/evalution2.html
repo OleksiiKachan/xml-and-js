@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+       
+            width: 50%;
+        margin-left : 25%
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        Your Email* : <input type="text" id="email">
+        <br>
+        </br>
+        Date to visit : <input type="date" id="date">
+        <br>
+        <br>
+        your comment: 
+        <br><textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+        <br>
+       <button onclick="myFunction()">send your feedback</button>
+       your Email is :
+       <p id="ee"></p>
+        <p id="dd"></p>
+        <p id="cc"></p>
+
+    </form>
+    <script>
+        function myFunction()
+        {
+        
+       const myElement = document.getElementById("email");
+        // alert(myElement.value);
+        document.getElementById("ee").innerHTML = document.getElementById("email").value;
+         document.getElementById("dd").innerHTML = document.getElementById("date").value;
+          document.getElementById("cc").innerHTML = document.getElementById("comment").value;
+        }
+    </script>
+    </body>
+</html>
