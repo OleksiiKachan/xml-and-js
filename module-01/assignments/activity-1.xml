@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<people>
+    <persondetail>
+        <name>Long</name>
+        <hobby>Badminton</hobby>
+    </persondetail>
+</people>
+
+<!--2. We group the details of 10 people within a big tag <people>. 
+And under each <persondetail> we store the details of each person-->

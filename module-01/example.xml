@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<messages>
 <myMessage>
   <subject>This is a welcome message</subject>
   <date>Jan 31, 2018</date>
 </myMessage>
+<myMessage>
+  <subject>This is a welcome message</subject>
+  <date>Jan 31, 2018</date>
+</myMessage>
+</messages>
