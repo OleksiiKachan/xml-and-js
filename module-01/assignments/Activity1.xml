@@ -1,0 +1,17 @@
+
+<!-- 1. Create a simple XML file which describes you and your interests/hobbies -->
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<people>
+    <person>
+        <name>Raghav</name>
+        <hobbies>Cooking, Listening to music</hobbies>
+    </person>
+</people>
+
+<!-- 
+2. How to structure the data in previous activity in order to have Name/Hobbies for a group of 10 people? 
+    In the above XML code, people is the root element and person is a child element with 2 subchild elements name and hobbies.
+    By using this structure we can store any number of persons name and hobbies.
+-->
