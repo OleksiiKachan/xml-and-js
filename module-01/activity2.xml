@@ -1,0 +1,49 @@
+<?xml version ="1.0"
+encoding ="UTF-8"?>
+<people>
+<person>
+<name>ram</ram>
+<qualification>graduation</qualification>
+<hobbies>listening to music</hobbies>
+</person>
+<person>
+<name>ron</ron>
+<qualification>UG</qualification>
+<hobbies>watching webseries</hobbies>
+</person>
+<person>
+<name>will</name>
+<qualification>grad</qualification>
+<hobbies>dancing<hobbies>
+</person>
+<person>
+<name>adam</name>
+<qualification>grad</qualification>
+<hobbies>swimming<hobbies>
+</person>
+<person>
+<name>neva</name>
+<qualification>high school</qualification>
+<hobbies>dancing<hobbies>
+</person>
+<person>
+<name>nitya</name>
+<qualification>grad</qualification>
+<hobbies>playing basketball<hobbies>
+</person>
+<person>
+<name>masoor</name>
+<qualification>postgrad</qualification>
+<hobbies>watching tv<hobbies>
+</person>
+<person>
+<name>maya</name>
+<qualification>high school</qualification>
+<hobbies>dancing<hobbies>
+</person>
+<person>
+<name>manya</name>
+<qualification>high school</qualification>
+<hobbies>roaming<hobbies>
+</person>
+<people>
