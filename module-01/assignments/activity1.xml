@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>​
+<info>
+    <people>
+        <me>
+            <name>Ashish Kumar</name>
+            <hobbies>Charging Phone</hobbies>
+            <hobbies>Blinking Eyes</hobbies>
+            <hobbies>Cooking</hobbies>
+        <me>
+<!-- For other 10 -->
+        <name>abc</name>
+        <hobbies>Charging Phone</hobbies>
+        <hobbies>Blinking Eyes</hobbies>
+        <hobbies>Cooking</hobbies>
+
+        <name>bcd</name>
+        <hobbies>Charging Phone</hobbies>
+        <hobbies>Blinking Eyes</hobbies>
+        <hobbies>Cooking</hobbies>
+    </people>
+</info>
+
