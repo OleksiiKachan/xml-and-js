@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>​
+<information>
+    <person>
+        <name>Bhavish Rohilla</name>
+        <course>Information Technology Solutions</course>
+        <institute>Humber College</institute>
+        <hobby>Travelling</hobby>
+    </person>
+
+    <person>
+        <name>Dhruv Desai</name>
+        <course>Business Analytics</course>
+        <institute>Seneca College</institute>
+        <hobby>Playing Games</hobby>
+    </person>
+    <person>
+        <name>Mann Bhatt</name>    
+        <course>Master in Business</course>
+        <institute>Centennial College</institute>
+        <hobby>Eating</hobby>
+    </person>
+
+    <person>
+        <name>Nurooddin</name>
+        <course>Information Technology Solutions</course>
+        <institute>Lambton</institute>
+        <hobby>Teaching</hobby>
+    </person>
+
+    <person>
+        <name>Nithya</name>
+        <course>Web Programming</course>
+        <institute>Humber College</institute>
+        <hobby>Teaching</hobby>
+    </person>
+
+    <person>
+        <name>Devarsh</name>  
+        <course>IT Solutions</course>
+        <institute>Humber College</institute>
+        <hobby>Travelling</hobby>
+    </person>
+
+    <person>
+        <name>Harsh</name>
+        <course>Salt College</course>
+        <institute>York Univesity</institute>
+        <hobby>Reading</hobby>
+    </person>
+
+    <person>
+        <name>Timmy</name>   
+        <course>Information Technology Solutions</course>
+        <institute>Humber College</institute>
+        <hobby>Work out</hobby>
+    </person>
+
+    <person>
+        <name>Abhay</name>
+        <course>Analytics Engineering</course>
+        <institute>Niagara College</institute>
+        <hobby>Travelling</hobby>
+    </person>
+
+    <person>
+        <name>Alfred</name>
+        <course>Information Technology Solutions</course>
+        <institute>Humber College</institute>
+        <hobby>Travelling</hobby>
+    </person>
+</information>
