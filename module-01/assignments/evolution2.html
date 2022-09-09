@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>
+            Evolution 2
+        </title>
+    </head>
+    <body>
+        <form>
+            <label> Your Mail* </label> &nbsp;
+            <input id="fname" type="email" required> <br/>
+            <label> Date </label> &nbsp;
+            <input id="date" type="date"><br/>
+            <label> comment </label> &nbsp;
+            <textarea id="comment" type="textarea"> </textarea><br/>
+            <input type="button" value="submit" onclick="displayInformation()">
+        </form>
+    </body> 
+    <script>
+        const displayInformation = () => {
+            let str = '';
+            const name = document.getElementById('fname').value;
+            if (!name) {
+                alert('Please enter Email First');
+                return;
+            }
+            const date = document.getElementById('date').value;
+            const comment = document.getElementById('comment').value;
+            alert(` Email: ${name}\n Date: ${date}\n Comment:${comment}`);
+        }
+    </script>
+</html>
