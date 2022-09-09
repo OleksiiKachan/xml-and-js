@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ev2</title>
+        <style>
+            body {background-color: blanchedalmond;}
+            /* body {align-items: flex-start;} */
+        </style>
+    </head>
+    <body>
+        <label>Your Email *: </label>
+        <input type="text" id="mail"><br/>
+        <br/>
+        <label>Date of Visit: </label>
+        <input type="date" id="d"><br/>
+        <br/>
+        <label>Your Comment: </label>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <textarea type="comment" id="com"></textarea>
+        <br/><br/>
+        <input type="button" value="Send Your Feedback" onclick="view()">
+        <br/>
+    </body>
+    <script>
+        const view = () => {
+        let string = '';
+        const mail = document.getElementById('mail').value;
+        const d = document.getElementById('d').value;
+        const com = document.getElementById('com').value;
+        alert(`${mail}\n ${d}\n ${com}`);
+        }
+    </script>
+</html>
