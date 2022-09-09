@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Info>
+    <Person>
+        <Name> Dhruv Desai </Name>
+        <Program> Information Technology Solutions </Program>
+        <College> Humber College </College>
+        <Age> 22 </Age>
+        <Interest> Playing PC games </Interest>
+    </Person>
+
+    <Person>
+        <Name> Abhay Nimavat </Name>
+        <Program> Information Technology Solutions </Program>
+        <College> Humber College </College>
+        <Age> 21 </Age>
+        <Interest> Playing games </Interest>
+    </Person>
+
+    <Person>
+        <Name> Devansh Shah </Name>
+        <Program> Information Technology Solutions </Program>
+        <College> Centennial College </College>
+        <Age> 20 </Age>
+        <Interest> Playing PC games </Interest>
+    </Person>
+
+    <Person>
+        <Name> Bhavish Rohilla </Name>
+        <Program> Information Technology Solutions </Program>
+        <College> Georgian College </College>
+        <Age> 22 </Age>
+        <Interest> Playing PC games </Interest>
+    </Person>
+
+    <Person>
+        <Name> Devarsh Desai Desai </Name>
+        <Program> Information Technology Solutions </Program>
+        <College> Humber College </College>
+        <Age> 23 </Age>
+        <Interest> Playing PC games </Interest>
+    </Person>
+
+    <Person>
+        <Name> Mann Bhatt </Name>
+        <Program> Information Technology Solutions </Program>
+        <College> Humber College </College>
+        <Age> 24 </Age>
+        <Interest> Playing PC games </Interest>
+    </Person>
+
+    <Person>
+        <Name> Parth Lukhi </Name>
+        <Program> Information Technology Solutions </Program>
+        <College> Humber College </College>
+        <Age> 21 </Age>
+        <Interest> Playing PC games </Interest>
+    </Person>
+
+    <Person>
+        <Name> Jay Savani </Name>
+        <Program> Information Technology Solutions </Program>
+        <College> Humber College </College>
+        <Age> 22 </Age>
+        <Interest> Playing PC games </Interest>
+    </Person>
+
+    <Person>
+        <Name> Dhyey Vaishnav </Name>
+        <Program> Cyber Security </Program>
+        <College> Seneca College </College>
+        <Age> 19 </Age>
+        <Interest> Playing Games </Interest>
+    </Person>
+
+    <Person>
+        <Name> Ayush Chauhan </Name>
+        <Program> Automotive Technician </Program>
+        <College> Loyalist College </College>
+        <Age> 25 </Age>
+        <Interest> Playing Cricket </Interest>
+    </Person>
+
+</Info>
