@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">
+    <title>form</title>
+</head>
+<body>
+    <div class="container">
+  <form action="login.html" method="get" id="login_form">
+    <fieldset>
+        <div class = "container">
+        <label for="email">E-Mail*:</label>
+        <input type="email" name="email" id="email"
+               autofocus required><br>
+        <label for="date">Date of visit:</label>
+        <input type="date" name="date" id="date"><br>
+               </div>
+
+        Your Comment:<br>
+        <textarea id="comments"></textarea>
+        <br>
+        <button class="submit-btn" onclick="deleteTaskFunc()">Send Your Feedback</button>
+    </fieldset>
+    </div>
+</body>
+</html>

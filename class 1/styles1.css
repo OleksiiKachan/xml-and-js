@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 62.5%;
+    font-family: sans-serif;
+}
+
+.container {
+    font-size: 1rem;
+    color: #555;
+    padding: 8.2rem 30rem;
+}
