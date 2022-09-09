@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<person>
+  <name>Alla-Anastasiia Gnatkiv</name>
+  <age>21</age>
+  <gender>female</gender>
+  <hobbies>
+    <hobbie>
+      <name>Programming</name>
+    </hobbie>
+    <hobbie>
+      <name>Dancing</name>
+    </hobbie>
+    <hobbie>
+      <name>Sleeping</name>
+    </hobbie>
+  </hobbies>
+</person>
