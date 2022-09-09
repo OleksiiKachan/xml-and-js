@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>ev2 - your data</title>
+        <link rel="stylesheet" type="text/css" href="./css/ev2.css">
+    </head>
+    <body>
+        <form>
+            <label>Your Email <span id="err">*</span>:</label>
+            <input type="text" id="email"><br><br>
+            <label>Date Of Visit <span id="err"></span>:</label>
+            <input type="date" id="dov"><br><br>
+            <label>Your Comment:</label><br>
+            <textarea id="cmt" cols="40" rows="8">
+
+            </textarea><br><br><br>
+            <button type="button" id="btnsubmit" onclick="btnsubmit_displaydata()">Send Your Feedback</button>
+            <p id="ans"></p>
+        </form>
+        <script>
+            function btnsubmit_displaydata() {
+                var email=document.getElementById("email").value;
+                var date=document.getElementById("dov").value;
+                var cmt=document.getElementById("cmt").value;
+
+                document.getElementById("ans").innerHTML = "Email: "+email+"<br> Date: "+date+"<br>Comment: "+cmt;
+            }
+        </script>
+    </body>
+</html>
