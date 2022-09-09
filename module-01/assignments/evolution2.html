@@ -1,0 +1,61 @@
+<html>
+<head>
+<script LANGUAGE="JavaScript" type="text/javascript">
+function display() {
+var x=document.form1.email.value;
+var atposition=x.indexOf("@");
+var dotposition=x.lastIndexOf(".");
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
+alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);
+return false;
+}
+DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=300,height=200')
+message = "<li><b>Email: </b>" + document.form1.email.value + "</ul>";
+message += "<li><b>Date of Visit: </b>" + document.form1.dov.value + "</ul>";
+message += "<li><b>COMMENT: </b>" + document.form1.subject.value + "</ul>";
+DispWin.document.write(message);
+}
+</script>
+<style>
+body {border: 3sp solid black;}
+* {box-sizing: 250px,250px;}
+input[type=text], select, textarea {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+margin-top: 6px;
+margin-bottom: 16px;
+resize: vertical;
+}
+input[type=submit] {
+background-color: yellowgreen;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+.container {
+border-radius: 5px;
+background-color: blueviolet;
+padding: 5px;
+}
+</style>
+</head>
+<body>
+<h1>FEEDBACK FORM</h1>
+<div class="container">
+<form name="form1">
+<p><b>Email:</b> <input type="text" name="email"></p><br/>
+<p><b>Date of Visit:<b>
+<input type="date" name="dov" value="mm/dd/yyyy">
+</p>
+<label for="subject">Your Comment:</label>
+<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+<p><input TYPE="BUTTON" VALUE="Send your Feedback" onClick="display();"></p>
+</form>
+</div>
+</body>
+</html>
