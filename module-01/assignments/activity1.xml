@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mySelf>
+    <Name> Jay Savani.</Name>
+    <hobbies> My hobbies are surrounding with sports fields. Criclet and Football are my fabourite sports.</hobbies>
+</mySelf>
+
+
+// Group of 10 people
+<Info>
+
+    <Person>
+        <Name> Jay </Name>
+        <Hobby> Sports </Hobby>
+    </Person>
+
+    <Person>
+        <Name> Parth </Name>
+        <Hobby> Singing </Hobby>
+    </Person>
+
+    <Person>
+        <Name> Falgun </Name>
+        <Hobby> Writing </Hobby>
+    </Person>
+
+    <Person>
+        <Name> Abhi </Name>
+        <Hobby> Music </Hobby>
+    </Person>
+
+    <Person>
+        <Name> Jay </Name>
+        <Hobby> Sports </Hobby>
+    </Person>
+
+    <Person>
+        <Name> Deep </Name>
+        <Hobby> Dancing </Hobby>
+    </Person>
+
+    <Person>
+        <Name> Rahul </Name>
+        <Hobby> Cooking </Hobby>
+    </Person>
+
+    <Person>
+        <Name> Manan </Name>
+        <Hobby> Swimming </Hobby>
+    </Person>
+
+    <Person>
+        <Name> Raj </Name>
+        <Hobby> Reading </Hobby>
+    </Person>
+
+    <Person>
+        <Name> Mehul </Name>
+        <Hobby> Sleeping </Hobby>
+    </Person>
+    
+</Info>
