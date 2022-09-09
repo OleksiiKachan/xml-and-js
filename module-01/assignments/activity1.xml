@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<people>
+    <person>
+        <name>Vasyl Marusiak</name>
+        <dob>Jun 22, 1992</dob>
+        <hobbies>
+            <hobby>Video games</hobby>
+            <hobby>Tabletop games</hobby>
+            <hobby>Tennis</hobby>
+        </hobbies>
+    </person>
+</people>
