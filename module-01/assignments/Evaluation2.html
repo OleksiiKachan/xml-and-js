@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Evaluation: 2</title>
+        <style>
+            .frame{
+                background-color: antiquewhite;
+                border: 1px solid black;
+                height: 250px;
+                width: 500px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <form class="frame">
+            <label for="email">Your Email:</label>
+            <input type="text" class="email" id="email"><span>*</span><br><br>
+
+            <label for="date">Date of Visit:</label>
+            <input type="date" class="date" id="date"><br><br>
+            
+            <label for="comment">Your comment:</label><br>
+           <textarea class="comment" id="comment" rows="5" cols="50"></textarea><br><br>
+            
+           <button onclick="mess()">Send your feedback</button>
+        </form>
+        <script>
+
+
+            function mess()
+             {
+                var mail=document.getElementById("email").value;
+                var dat=document.getElementById("date").value;
+                var comm=document.getElementById("comment").value;
+                alert("your name is "+ mail+ "and u visted on"+ dat+"   your comment is :"+ comm);
+
+
+            }
+        </script>
+    </body>
+</html>
