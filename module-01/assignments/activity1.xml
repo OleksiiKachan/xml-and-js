@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<myMessage>
+  <person>
+  <name>janki</name>
+  <hobbies>sketching</hobbies>
+  </person>
+
+   <person>
+  <name>hardi</name>
+  <hobbies>shopping</hobbies>
+  </person>
+
+   <person>
+  <name>heli</name>
+  <hobbies>backing</hobbies>
+  </person>
+
+ <person>
+  <name>patel</name>
+  <hobbies>sketching</hobbies>
+  </person>
+
+  <person>
+  <name>janvi</name>
+  <hobbies>sketching</hobbies>
+  </person>
+
+  <person>
+  <name>janki</name>
+  <hobbies>sports</hobbies>
+  </person>
+
+  <person>
+  <name>liya</name>
+  <hobbies>sports</hobbies>
+  </person>
+
+   <person>
+  <name>piya</name>
+  <hobbies>shopping</hobbies>
+  </person>
+
+   <person>
+  <name>hel</name>
+  <hobbies>backing</hobbies>
+  </person>
+
+ <person>
+  <name>piyanbk</name>
+  <hobbies>sketching</hobbies>
+  </person>
+
+  <person>
+  <name>janvi</name>
+  <hobbies>sketching</hobbies>
+  </person>
+
+  <person>
+  <name>kinjal</name>
+  <hobbies>sketching</hobbies>
+  </person>
+</myMessage>

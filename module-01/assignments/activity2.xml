@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<myMessage>
+
+    <row>
+        | Empno | Empname | Salary |
+    </row>
+    <row>
+        <column>
+        1001
+        </column>
+        <column>
+        Alex
+        </column>
+        <column>
+        3000
+        </column>
+    </row>
+     <row>
+        <column>
+        1002
+        </column>
+        <column>
+        Sarah
+        </column>
+        <column>
+        4000
+        </column>
+    </row>
+     <row>
+        <column>
+        1003
+        </column>
+        <column>
+        Peter
+        </column>
+        <column>
+        3500
+        </column>
+    </row>
+ 
+</myMessage>
+
