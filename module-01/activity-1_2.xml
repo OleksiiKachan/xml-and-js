@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<people>
+    <person>
+        <name>Alla-Anastasiia Gnatkiv</name>
+        <age>21</age>
+        <gender>female</gender>
+        <hobbies>
+            <hobbie>
+                <name>Programming</name>
+            </hobbie>
+            <hobbie>
+                <name>Dancing</name>
+            </hobbie>
+            <hobbie>
+                <name>Sleeping</name>
+            </hobbie>
+        </hobbies>
+    </person>
+
+    <person>
+        <name>Oleg</name>
+        <age>55</age>
+        <gender>male</gender>
+        <hobbies>
+            <hobbie>
+                <name>Singing</name>
+            </hobbie>
+            <hobbie>
+                <name>Dancing</name>
+            </hobbie>
+            <hobbie>
+                <name>Eating</name>
+            </hobbie>
+        </hobbies>
+    </person>
+
+    <person>
+        <name>Olena</name>
+        <age>25</age>
+        <gender>female</gender>
+        <hobbies>
+            <hobbie>
+                <name>Football</name>
+            </hobbie>
+            <hobbie>
+                <name>Basketball</name>
+            </hobbie>
+        </hobbies>
+    </person>
+
+    <person>
+        <name>Helen</name>
+        <age>35</age>
+        <gender>female</gender>
+        <hobbies>
+            <hobbie>
+                <name>Programming</name>
+            </hobbie>
+            <hobbie>
+                <name>Dancing</name>
+            </hobbie>
+            <hobbie>
+                <name>Skiing</name>
+            </hobbie>
+        </hobbies>
+    </person>
+
+    <person>
+        <name>Bob</name>
+        <age>61</age>
+        <gender>male</gender>
+        <hobbies>
+            <hobbie>
+                <name>Watching movies</name>
+            </hobbie>
+            <hobbie>
+                <name>Football</name>
+            </hobbie>
+        </hobbies>
+    </person>
+
+
+    <person>
+        <name>Oleksii</name>
+        <age>23</age>
+        <gender>male</gender>
+        <hobbies>
+            <hobbie>
+                <name>Play games</name>
+            </hobbie>
+            <hobbie>
+                <name>Develope games</name>
+            </hobbie>
+            <hobbie>
+                <name>Basketball</name>
+            </hobbie>
+        </hobbies>
+    </person>
+
+
+    <person>
+        <name>Olga</name>
+        <age>33</age>
+        <gender>female</gender>
+        <hobbies>
+            <hobbie>
+                <name>Dancing</name>
+            </hobbie>
+            <hobbie>
+                <name>Singing</name>
+            </hobbie>
+        </hobbies>
+    </person>
+
+
+    <person>
+        <name>Tamara</name>
+        <age>37</age>
+        <gender>female</gender>
+        <hobbies>
+            <hobbie>
+                <name>Reading</name>
+            </hobbie>
+            <hobbie>
+                <name>Drawing</name>
+            </hobbie>
+        </hobbies>
+    </person>
+
+
+    <person>
+        <name>Ekampreet</name>
+        <age>25</age>
+        <gender>male</gender>
+        <hobbies>
+            <hobbie>
+                <name>Running</name>
+            </hobbie>
+            <hobbie>
+                <name>Cooking</name>
+            </hobbie>
+            <hobbie>
+                <name>Netflix</name>
+            </hobbie>
+        </hobbies>
+    </person>
+
+
+    <person>
+        <name>Roksana</name>
+        <age>43</age>
+        <gender>female</gender>
+        <hobbies>
+            <hobbie>
+                <name>Skating</name>
+            </hobbie>
+            <hobbie>
+                <name>Dancing</name>
+            </hobbie>
+            <hobbie>
+                <name>Baseball</name>
+            </hobbie>
+        </hobbies>
+    </person>
+</people>
