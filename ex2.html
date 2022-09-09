@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title></title>
+
+    <style>
+        .body {
+    width: 400px;
+    height: 300px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 30px;
+    }
+
+    #fm{
+        background-color: antiquewhite;
+    }
+
+    .required input:after { content:"*";
+                            color: black; }
+
+    </style>
+  </head>
+  <body class="body">
+    <form id="fm">
+        <div class="required">
+            <label for="Email">Your Email:</label>
+            <input type="text" required/><br />
+        </div>
+
+        
+        <br>
+        <label for="date">Date of visit:</label>
+        <input type="date" /><br />
+        <br>
+    
+        <label for="comment">Your comment:</label><br />
+        <textarea id="comment" rows="8" cols="50"></textarea><br>
+        <br>
+    
+        <button onclick=alert("Hello")>Send your feedback</button>
+    </form>
+
+  </body>
+</html>
