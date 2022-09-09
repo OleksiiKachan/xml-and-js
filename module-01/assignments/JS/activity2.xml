@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <company>
-    <Empno>
-        <column1>1001</column1>
-        <column2>1002</column2>
-        <column3>1003</column3>
-    </Empno>
-    <Empname>
-        <column1>Alex</column1>
-        <column2>Sarah</column2>
-        <column3>Peter</column3>
-    </Empname>
-    <salary>
-        <column1>3000</column1>
-        <column2>4000</column2>
-        <column3>3500</column3>
-    </salary>
+        <emp>
+            <Empno>1001</Empno>
+            <Empname>Alex</Empname>
+            <salary>3000<salary>
+        </emp1>
+
+        <emp>
+            <Empno>1002</Empno>
+            <Empname>Alex</Empname>
+            <salary>4000</salary>
+        </emp>
+
+        <emp>
+            <Empno>1003</Empno>
+            <Empname>Sarah</Empname>
+            <salary>3500</salary>
+        </emp>
 </company>

@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>​
 <info>
     <people>
-        <me>
+        <person>
             <name>Ashish Kumar</name>
             <hobbies>Charging Phone</hobbies>
             <hobbies>Blinking Eyes</hobbies>
             <hobbies>Cooking</hobbies>
-        <me>
-<!-- For other 10 -->
-        <name>abc</name>
-        <hobbies>Charging Phone</hobbies>
-        <hobbies>Blinking Eyes</hobbies>
-        <hobbies>Cooking</hobbies>
+        <person>
+    <!-- For other 10 -->
+        <person>
+            <name>Vassal</name>
+            <hobbies>Charging Phone</hobbies>
+            <hobbies>Blinking Eyes</hobbies>
+            <hobbies>Cooking</hobbies>
+        </person>
 
-        <name>bcd</name>
-        <hobbies>Charging Phone</hobbies>
-        <hobbies>Blinking Eyes</hobbies>
-        <hobbies>Cooking</hobbies>
+        <person>
+            <name>Alla</name>
+            <hobbies>Charging Phone</hobbies>
+            <hobbies>Blinking Eyes</hobbies>
+            <hobbies>Cooking</hobbies>
+        <person>
     </people>
 </info>
 
