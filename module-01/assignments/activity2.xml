@@ -1,20 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <myMessage>​
     <table>
-        <row id="row1">
-            | Empno | Empname | Salary |
+        <row id="title">
+            <column id="clm1">
+                Empno
+            </column>
+            <column id="clm2">
+                Empname
+            </column>
+            <column id="clm3">
+                Salary
+            </column>
         </row>
-        <row id="row2">
-            | ----- | ----- | ----- |
+        <row id="emp1">
+            <column id="clm1">
+                1001
+            </column>
+            <column id="clm2">
+                Alex
+            </column>
+            <column id="clm3">
+                3000
+            </column>
         </row>
-        <row id="row3">
-            | 1001 | Alex | 3000 |
+        <row id="emp2">
+            <column id="clm1">
+                1002
+            </column>
+            <column id="clm2">
+                arah
+            </column>
+            <column id="clm3">
+                4000
+            </column>
         </row>
-        <row id="row4">
-            | 1002 | arah | 4000 |
-        </row>
-        <row id="row5">
-            | 1003 | Peter | 3500 |
+        <row id="emp1">
+            <column id="clm1">
+                1003
+            </column>
+            <column id="clm2">
+                Peter
+            </column>
+            <column id="clm3">
+                3500
+            </column>
         </row>
     </table>
 </myMessage>
