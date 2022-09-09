@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<people>
+  <person>
+    <name>
+      <first>Santosh</first>
+      <last>Dhakal</last>
+    </name>
+    <address>
+      <street>Bloor Street</street>
+      <city>Mississauga</city>
+      <province>ON</province>
+    </address>
+    <hobbies>
+      <hobby>Watching Movies</hobby>
+      <hobby>Browsing the internet</hobby>
+      <hobby>Learning new language</hobby>
+    </hobbies>
+  </person>
+</people>
