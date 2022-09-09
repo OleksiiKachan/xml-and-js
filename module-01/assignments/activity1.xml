@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<myMessage>​
+    <people id="people1">
+        <name> heli Kheni </name>​
+        <hobbies> I like to bake cakes, drawing henna and try new foods. </hobbies>
+    </people>
+    <people id="people2">
+        <name> DP </name>​
+        <hobbies> watching tv </hobbies>
+    </people>
+    <people id="people3">
+        <name> vrushali </name>​
+        <hobbies> food </hobbies>
+    </people>
+    <people id="people4">
+        <name> hardi </name>​
+        <hobbies> travelling </hobbies>
+    </people>
+    <people id="people5">
+        <name> janki </name>​
+        <hobbies> cooking </hobbies>
+    </people>
+    <people id="people2">
+        <name> vidhi </name>​
+        <hobbies> writing </hobbies>
+    </people>
+    <people id="people6">
+        <name> alla </name>​
+        <hobbies> tv </hobbies>
+    </people>
+    <people id="people7">
+        <name> aekam </name>​
+        <hobbies> traveling </hobbies>
+    </people>
+    <people id="people8">
+        <name> gurpreet </name>​
+        <hobbies> singing </hobbies>
+    </people>
+    <people id="people9">
+        <name> vru </name>​
+        <hobbies> studying </hobbies>
+    </people>​
+    <people id="people10">
+        <name> janki </name>​
+        <hobbies> reading, dancing </hobbies>
+    </people>
+</myMessage>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<myMessage>​
+    <table>
+        <row id="row1">
+            | Empno | Empname | Salary |
+        </row>
+        <row id="row2">
+            | ----- | ----- | ----- |
+        </row>
+        <row id="row3">
+            | 1001 | Alex | 3000 |
+        </row>
+        <row id="row4">
+            | 1002 | arah | 4000 |
+        </row>
+        <row id="row5">
+            | 1003 | Peter | 3500 |
+        </row>
+    </table>
+</myMessage>
