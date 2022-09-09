@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <form action="/action_page.php">
+        <label>Your email:</label><br>
+        <input type="text" id="email" name="email"><br>
+        <label>Date of visit:</label><br>
+        <input type="text" id="date" name="date"><br><br>
+        <p><label for="textarea">your comment:</label></p>
+        <textarea id="textarea" name="textarea" rows="4" cols="50"></textarea>      
+        <br><input onclick="myFunction()" type="button" value="send your feedback">
+        <p id="result"></p>
+        <p id="result1"></p>
+        <p id="result2"></p>
+    </form> 
+<script>
+function myFunction() {
+    var x = document.getElementById("email").value;
+    var y = document.getElementById("date").value;
+    var z = document.getElementById("textarea").value;
+    result.innerHTML = x;
+    result1.innerHTML = y;
+    result2.innerHTML = z;
+
+    }
+</script>
+
+</body>
+</html>
