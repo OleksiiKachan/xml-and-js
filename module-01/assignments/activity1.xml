@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<introduction>
+
+<mydescription>
+<name> Hinal Amin </name>
+<description> I am very introvert person </description>
+<hobbies>
+  <intrest> Playing </intrest>
+  <intrest> dancing </intrest>
+</hobbies>
+</mydescription>
+
+<mydescription>
+<name> Harshvi Patel </name>
+<description> I have completed my bachelors in Computer Engineering </description>
+<hobbies>
+<intrest> Gyming </intrest>
+<intrest> Reading </intrest>
+</hobbies>
+</mydescription>
+
+<mydescription>
+<name> Prachi Patel </name>
+<description> I have completed my bachelors in IT </description>
+<hobbies>
+<intrest> Singing </intrest>
+<intrest> Playing </intrest>
+</hobbies>
+</mydescription>
+
+<mydescription>
+<name> Sejal solanki </name>
+<description> I have completed my bachelors in computer Engineering and done my masters in IT and currently I am working in LXT as data transcriber </description>
+<hobbies>
+<intrest> Playing Badminton </intrest>
+<intrest> Cooking </intrest>
+</hobbies>
+</mydescription>
+
+<mydescription>
+<name> Yashasvi Patel </name>
+<description> I am very talkative person. </description>
+<hobbies>
+<intrest> walking </intrest>
+<intrest> Reading </intrest>
+</hobbies>
+</mydescription>
+
+<mydescription>
+<name> Jeel Desai </name>
+<description> I have graduated from the MBIT college , Anand </description>
+<hobbies>
+<intrest> Dancing </intrest>
+<intrest> Reading </intrest>
+</hobbies>
+</mydescription>
+
+
+
+</introduction>

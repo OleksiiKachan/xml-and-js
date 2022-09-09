@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<detailsofemployees>
+  <employee>
+     <empno> 1001 </empno>
+     <empname> Alex</empname>
+    <empsalary> 3000</empsalary>
+ </employee>
+  <employee>
+     <empno> 1002 </empno>
+     <empname> Sarah</empname>
+    <empsalary> 4000</empsalary>
+ </employee>
+  <employee>
+     <empno> 1003 </empno>
+     <empname> Peter</empname>
+    <empsalary> 3500</empsalary>
+ </employee>
+ </detailsofemployess>
