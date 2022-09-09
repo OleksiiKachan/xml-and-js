@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<intro>
+<person>
+    <name>prachi</name>
+    <interests>watching movies</interests>
+    <hobbies>cooking</hobbies>
+</person>
+<person>
+    <name>Hinal</name>
+    <interests>exploring world</interests>
+    <hobbies>painting</hobbies>
+</person>
+<person>
+    <name>Vidhi</name>
+    <interests>traveling</interests>
+    <hobbies>coding</hobbies>
+</person>
+<person>
+    <name>Priya</name>
+    <interests>reading books</interests>
+    <hobbies>cycling</hobbies>
+</person>
+<person>
+    <name>Roshni</name>
+    <interests>reading books</interests>
+    <hobbies>cycling</hobbies>
+</person>
+<person>
+    <name>Jeel</name>
+    <interests>gym</interests>
+    <hobbies>cycling</hobbies>
+</person>
+<person>
+    <name>Kushal</name>
+    <interests>reading books</interests>
+    <hobbies>writing</hobbies>
+</person>
+<person>
+    <name>Hem</name>
+    <interests>arts</interests>
+    <hobbies>drawing</hobbies>
+</person>
+<person>
+    <name>Nidhi</name>
+    <interests>Engineering</interests>
+    <hobbies>exploring</hobbies>
+</person>
+<person>
+    <name>Jay</name>
+    <interests>teaching</interests>
+    <hobbies>reading</hobbies>
+</person>
+<intro>
