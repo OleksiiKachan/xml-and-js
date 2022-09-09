@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Evaluation 2</title>
+    <link rel="stylesheet" href="./evaluation-2.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <label>Your Email* :</label>
+        <input id="email_id" type="email">
+        <br>
+        <br>
+        <label>Date of visit :</label>
+        <input id="date" type="date">
+        <br>
+        <br>
+        <label>Your comment :</label>
+        <br>
+        <textarea name="" id="comment" cols="50" rows="5"></textarea>
+        <br>
+        <input type="button" value="Send feedback" onclick="display_fed()"> 
+    </div>
+    <Script>
+        let display_fed = function(){
+            let email = document.getElementById("email_id").value
+            let date = document.getElementById("date").value
+            let comment = document.getElementById("comment").value
+            console.log("email: ",email)
+            console.log("date:",date)
+            console.log("comment:",comment)
+        }
+    </Script>
+</body>
+
+</html>
