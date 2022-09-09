@@ -1,0 +1,29 @@
+<html>
+    <style>
+        .f1{
+            border-color: black;
+            border-style: solid;
+            padding: 10px;
+            width: fit-content;
+            background-color:lightyellow;
+        }
+            
+    </style>
+    <body>
+    <form class="f1">
+        <br/>Your Email*: </span> <input type="text" id="email"><br/><br>
+        Date of Visit*: <input type="date" id="dt"><br/><br>
+        Your Comment:<br/>
+        <textarea id="cmt"></textarea><br><br>
+        <button onclick="func()">Send your Feedback</button><br/><br/>
+    </form>
+    <script>
+        function func(){
+            var email = document.getElementById("email").value;
+            var dt=document.getElementById("dt").value;
+            var Comment=document.getElementById("cmt").value;
+            alert("Entered details are\nEmail: "+email+"\nDate: "+dt+"\nComment: "+Comment);
+        }
+    </script>
+</body>
+</html>
