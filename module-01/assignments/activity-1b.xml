@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<people>
+    <person>
+    <name>Gaurav Choudhary</name>
+    <college>Humber IGS</college>
+    <hobbies>Swimming</hobbies>
+    <hobbies>Badminton</hobbies>
+    <hobbies>Basketball</hobbies>
+    </person>
+
+    <person>
+    <name>Vandana</name>
+    <college>Humber IGS</college>
+    <hobbies>Swimming</hobbies>
+    <hobbies>Badminton</hobbies>
+    <hobbies>Basketball</hobbies>
+    </person>
+    
+    <person>
+    <name>Shrishti Sandhu</name>
+    <college>Humber IGS</college>
+    <hobbies>Swimming</hobbies>
+    <hobbies>Badminton</hobbies>
+    <hobbies>Basketball</hobbies>
+    </person>
+
+    <person>
+    <name>Vishesh Anand</name>
+    <college>Humber IGS</college>
+    <hobbies>Swimming</hobbies>
+    <hobbies>Badminton</hobbies>
+    <hobbies>Basketball</hobbies>
+    </person>
+
+    <person>
+    <name>Harkirat Kaur</name>
+    <college>Humber IGS</college>
+    <hobbies>Swimming</hobbies>
+    <hobbies>Badminton</hobbies>
+    <hobbies>Basketball</hobbies>
+    </person>
+
+    <person>
+    <name>Pragati</name>
+    <college>Humber IGS</college>
+    <hobbies>Swimming</hobbies>
+    <hobbies>Badminton</hobbies>
+    <hobbies>Basketball</hobbies>
+    </person>
+
+    <person>
+    <name>Rashmi Yadav</name>
+    <college>Humber IGS</college>
+    <hobbies>Swimming</hobbies>
+    <hobbies>Badminton</hobbies>
+    <hobbies>Basketball</hobbies>
+    </person>
+
+    <person>
+    <name>Divya Pandey</name>
+    <college>Humber IGS</college>
+    <hobbies>Swimming</hobbies>
+    <hobbies>Badminton</hobbies>
+    <hobbies>Basketball</hobbies>
+    </person>
+
+    <person>
+    <name>Deepika Pandey</name>
+    <college>Humber IGS</college>
+    <hobbies>Swimming</hobbies>
+    <hobbies>Badminton</hobbies>
+    <hobbies>Basketball</hobbies>
+    </person>
+
+    <person>
+    <name>Vandana Gautam</name>
+    <college>Humber IGS</college>
+    <hobbies>Swimming</hobbies>
+    <hobbies>Badminton</hobbies>
+    <hobbies>Basketball</hobbies>
+    </person>
+</people>
