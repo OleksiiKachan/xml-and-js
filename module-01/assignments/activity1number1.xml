@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<person>
+    <firstName>Ryan</firstName>
+    <lastName>Gonzales</lastName>
+    <interestList>
+        <interest1>music production</interest1>
+        <interest2>live music</interest2>
+        <interest3>bikes</interest3>
+        <interest4>traveling</interest4>
+        <interest5>outdoor adventure</interest5>
+        <interest6>80s and 90s cult movies</interest6>
+        <interest7>vintage clothing and accessories</interest7>
+    </interestList>
+    <hobbyList>
+        <hobby1>playing musical instruments</hobby1>
+        <hobby2>playing in bands</hobby2>
+        <hobby3>home recording</hobby3>
+        <hobby4>attending concerts</hobby4>
+        <hobby5>mountain climbing</hobby5>
+        <hobby6>trecking</hobby6>
+        <hobby7>road biking</hobby7>
+        <hobby8>video editing</hobby8>
+    </hobbyList>
+</person>
