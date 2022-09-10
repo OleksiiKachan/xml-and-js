@@ -1,17 +1,15 @@
 # Activity 1
-
-xml
-<?xml version="1.0" encoding="utf-8"?>​
-<myintro>​
-<detail>
-<name> Rahul Karadwal </name>
-<id> N01532332 </id>
-<interest> Interested in Money </interest>
-<goal> Earn Lots of Money </goal>
-</detail>
-<other>
-<friend> My friends are the skills which will help me to earn money </friend>
-</other>
+<?xml version="1.0" encoding="utf-8"?>
+<myintro>
+	<detail>
+		<name> Rahul Karadwal </name>
+		<id> N01532332 </id>
+		<interest> Money </interest>
+		<goal> Money </goal>
+	</detail>
+	<other>
+		<friend> Money </friend>
+	</other>
 </myintro>
 
 
