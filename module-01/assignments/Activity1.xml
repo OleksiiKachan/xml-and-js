@@ -1,0 +1,53 @@
+#Activity 1
+<?xml version="1.0" encoding="utf-8"?>
+  <message>
+        <myMessage>
+        <name> My Name is Neeraj.  </name>
+        <hobbies>I like playing games.</hobbies>    
+        </myMessage>
+        
+        <myMessage>
+        <name> My Name is Alex. </name>
+        <hobbies> I like watching movies. </hobbies>
+        </myMessage> 
+        
+        <myMessage>
+          <name> My Name is Rock. </name>
+          <hobbies> I like watching series. </hobbies>
+        </myMessage>
+
+        <myMessage>
+          <name> My Name is Jane. </name>
+          <hobbies> I like reading books. </hobbies>
+        </myMessage>
+        
+        <myMessage>
+          <name> My Name is Chris. </name>
+          <hobbies> I like playing football. </hobbies>
+        </myMessage>
+        
+        <myMessage>
+          <name> My Name is Evans. </name>
+          <hobbies> I like playing baseball. </hobbies>
+        </myMessage>
+        
+        <myMessage>
+          <name> My Name is Mike. </name>
+          <hobbies> I like playing cricket. </hobbies>
+        </myMessage>
+        
+        <myMessage>
+          <name> My Name is Frodo. </name>
+          <hobbies> I like playing basketball. </hobbies>
+        </myMessage>
+        
+        <myMessage>
+          <name> My Name is Gandalf. </name>
+          <hobbies> I like playing hockey. </hobbies>
+        </myMessage>
+        
+        <myMessage>
+          <name> My Name is Tony. </name>
+          <hobbies> I like playing games. </hobbies>
+        </myMessage>
+  </message>

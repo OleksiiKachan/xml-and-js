@@ -1,0 +1,23 @@
+# Activity 2
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<table>
+    <Empno>
+    <empno1>1001</empno1>
+    <empno2>1002</empno2>
+    <empno3>1003</empno3>
+    </Empno>
+
+    <Empname>
+    <empname1>Alex</empname1>
+    <empname2>Sarah</empname2>
+    <empname3>Peter</empname3>
+    </Empname>
+
+    <Salary>
+    <salary1>3000</salary1>
+    <salary2>4000</salary2>
+    <salary3>3500</salary3>
+    </Salary>
+<table>
