@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <employee>
+        <emp>1001</emp>
+        <emp>Alex</emp>
+        <emp>3000</emp>
+    
+        <emp>1002</emp>
+        <emp>Sara</emp>
+        <emp>4000</emp>
+   
+        <emp>1003</emp>
+        <emp>Peter</emp>
+        <emp>3500</emp>
+    </employee>
+</document>
