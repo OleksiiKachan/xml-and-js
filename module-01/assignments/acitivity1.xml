@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<details>
+<about_me>
+    <name>Vandana</name>
+    <hobbies>Playing mobilegames</hobbies>
+    <hobbies>Dancing</hobbies>
+    <hobbies>Badminton</hobbies>
+</about_me>
+
+//For 10 People
+
+<people>
+    <person>
+        <name>Dimple</name>
+        <hobbies>Acting</hobbies>
+        <hobbies>Listining music</hobbies>
+        <hobbies>Singing</hobbies>
+    </person>
+    <person>
+        <name>Rihaan</name>
+        <hobbies>Eating</hobbies>
+        <hobbies>Sleeping</hobbies>
+        <hobbies>Googling</hobbies>
+    </person>
+    <person>
+        <name>Monika</name>
+        <hobbies>Cooking</hobbies>
+        <hobbies>Cleaning</hobbies>
+        <hobbies>Reading</hobbies>
+    </person>
+    <person>
+        <name>Vinay</name>
+        <hobbies>Coding</hobbies>
+        <hobbies>Gym</hobbies>
+        <hobbies>Sports</hobbies>
+    </person>
+    <person>
+        <name>Lalit</name>
+        <hobbies>Playing Instruments</hobbies>
+        <hobbies>Reading</hobbies>
+    </person>
+    <person>
+        <name>Adhik</name>
+        <hobbies>Acting</hobbies>
+        <hobbies>Dancing</hobbies>
+        <hobbies>Singing</hobbies>
+    </person>
+    <person>
+        <name>Alia</name>
+        <hobbies>Cooking</hobbies>
+        <hobbies>Playimg mobilegames</hobbies>
+    </person>
+    <person>
+        <name>Chand</name>
+        <hobbies>Cooking</hobbies>
+        <hobbies>Dancing</hobbies>
+        <hobbies>Basketball</hobbies>
+    </person>
+    <person>
+        <name>Ritika</name>
+        <hobbies>Cooking</hobbies>
+        <hobbies>Cleaning</hobbies>
+        <hobbies>Singing</hobbies>
+    </person>
+    <person>
+        <name>Qudrat</name>
+        <hobbies>Sleeping</hobbies>
+        <hobbies>Dancing</hobbies>
+        <hobbies>Singing</hobbies>
+    </person>
+</people>
+</details>
