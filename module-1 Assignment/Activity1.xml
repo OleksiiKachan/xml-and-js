@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>​
+<!-- 1.Create a simple XML file which describes you and your interests/hobbies -->
+<SelfDescription>​
+  <Name> Gunveet Singh Dhillon </Name>
+  <Age> 23 </Age>
+  <Nationality> Indian </Nationality>​
+  <Interest> Programming, Bodybuilding </Interest>
+  <Hobbies> Gaming, Playing football </Hobbies>​
+</SelfDescription>
+
+<!-- 2.How to structure the data in previous activity in order to have Name/Hobbies for a group of 10 people? -->
+<Person>​
+  <Name> Remo </Name>​
+  <Interest> Arts, Photography </Interest>
+  <Hobbies> Painting, Singing </Hobbies>​
+</Person>
+
+<Person>​
+  <Name> Yusuf </Name>​
+  <Interest> Programming, Cricket </Interest>
+  <Hobbies> Reading books, Singing </Hobbies>​
+</Person>
+
+<Person>​
+  <Name> John </Name>​
+  <Interest> Writing Novels </Interest>
+  <Hobbies> Reading books, Painting </Hobbies>​
+</Person>
+
+<Person>​
+  <Name> Jennifer </Name>​
+  <Interest> Programming, Photography </Interest>
+  <Hobbies> Painting, Singing </Hobbies>​
+</Person>
+
+<Person>​
+  <Name> Julia </Name>​
+  <Interest> Painting </Interest>
+  <Hobbies> Listening music, Gaming </Hobbies>​
+</Person>
+
+<Person>​
+  <Name> Sam </Name>​
+  <Interest> Cooking, Swimming </Interest>
+  <Hobbies> Painting, Reading </Hobbies>​
+</Person>
+
+<Person>​
+  <Name> Rahul </Name>​
+  <Interest> Archery, Gaming </Interest>
+  <Hobbies> Playing Cricket, Singing </Hobbies>​
+</Person>
+
+<Person>​
+  <Name> Kevin </Name>​
+  <Interest> Theater, Travelling </Interest>
+  <Hobbies> Playing Basketball, Sketching </Hobbies>​
+</Person>
+
+<Person>​
+  <Name> Nancy </Name>​
+  <Interest> Calligraphy, Graphic Designing </Interest>
+  <Hobbies> Dancing, Singing </Hobbies>​
+</Person>
+
+<Person>​
+  <Name> Harry </Name>​
+  <Interest> Programming, Blog Writing </Interest>
+  <Hobbies> Cycling, Reading </Hobbies>​
+</Person>
