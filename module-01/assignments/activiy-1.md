@@ -1,12 +1,19 @@
 # Activity 1
 
-```xml
+xml
 <?xml version="1.0" encoding="utf-8"?>​
-<myMessage>​
-  <subject> This is a welcome message </subject>​
-  <date> Jan 31, 2018 </date>​
-</myMessage>
-```
+<myintro>​
+<detail>
+<name> Rahul Karadwal </name>
+<id> N01532332 </id>
+<interest> Interested in Money </interest>
+<goal> Earn Lots of Money </goal>
+</detail>
+<other>
+<friend> My friends are the skills which will help me to earn money </friend>
+</other>
+</myintro>
+
 
 1. Create a simple XML file which describes you and your interests/hobbies
 
