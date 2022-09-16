@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<?xml-stylesheet href="assignment.css"?>
+
+<!DOCTYPE menuInfo
+[
+<!ELEMENT menuInfo (title, summary, effectiveDate, menu+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT summary (#PCDATA)>
+<!ELEMENT effectiveDate (#PCDATA)>
+<!ELEMENT menu (category, menuItem+)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT menuItem (itemName, description, price, indicator*)>
+<!ELEMENT itemName (originalName*, oldName)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT indicator (#PCDATA)>
+<!ELEMENT originalName (#PCDATA)>
+<!ELEMENT oldName (#PCDATA)>
+]>
+
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -8,7 +28,7 @@
     up just the way you like them!!
     ]]>
   </summary>
-  <effective Date>03/12/2016</effective Date>
+  <effectiveDate>03/12/2016</effectiveDate> <!--Here starting tag was something like "<effective Date> and ending tag was like </effective date>"-->
   <menu>
     <category>Traditional Favorites</category>
     <menuItem>
@@ -28,7 +48,7 @@
     </menuItem>
     <menuItem>
       <itemName>
-        <originalName> Fresh Mornin' Sampler </originalname>
+        <originalName> Fresh Mornin' Sampler </originalName> <!--Here, starting tag was "<originalName" and ending tag was "</originalName>"-->
         <oldName> Mornin' Sampler </oldName>
       </itemName>
       <description>
@@ -48,7 +68,7 @@
     <category>Lite and Quick</category>
     <menuItem>
       <itemName>
-        <name> Oatmeal Breakfast </originalName>
+        <oldName> Oatmeal Breakfast </oldName> <!--Name of the starting tag and closing tag was different i.e., "name" and "originalName" respectively.-->
       </itemName>
       <description>
         <![CDATA[
@@ -80,3 +100,6 @@
     </menuItem>
   </menu>
 </menuInfo>
+
+<!--3. Dhruv Jatinkumar Desai
+    N01511490-->

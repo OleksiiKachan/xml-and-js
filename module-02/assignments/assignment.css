@@ -1,0 +1,16 @@
+menuInfo
+{
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+}
+
+originalName 
+{
+    font-size: 25px;
+}
+
+category
+{
+    display: block;
+    font-style: italic;
+    font-size: 50px;
+}
