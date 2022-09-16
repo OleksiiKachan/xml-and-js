@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> XML </title>
+        <style>
+            table,
+            th,
+            td{border: 1px solid black;
+               border-collapse: collapse;}
+            th,
+            td{padding: 5px;}
+        </style>
+    </head>
+    <br>
+        <br id="text">
+            <h1> DATA XML</h1>
+            <button id="ShowData"> Show Data XML </button></br></br>
+        </div>
+        <table id="tab"></table>
+        <script type="text/javascript">
+            document.getElementById("ShowData").addEventListener("click", ShowData);
+            function ShowData(){
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function(){
+                    if(this.readyState == 3 && this.status ==200){
+                        showXML(this);
+                    }
+                };
+                xhr.open("GET","exerc.xml",true);
+                xhr.send();
+            }
+            function showXML(xml){
+                var docXML = xml.responseXML;
+                var table = "<tr><th>Empno</th><th>Empname</th><th>Salary</th></tr>"
+                var data = docXML.getElementByTagName("IN");
+                for(var i=0; i < data.length; i++){
+                    table += "<tr><td>";
+                    table += data[i].getElementByTagName("Empno")[0].textContent;
+                    table += "</td><td>";
+                    table += data[i].getElementByTagName("Empname")[0].textContent;
+                    table += "</td><td>";
+                    table += data[i].getElementByTagName("Salary")[0].textContent;
+                    table += "</td></tr>";
+                }
+                document.getElementById("tab").innerHTML = table;
+                }
+        </script>
+    </body> 
+</html>

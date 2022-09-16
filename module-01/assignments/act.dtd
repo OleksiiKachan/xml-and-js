@@ -1,0 +1,8 @@
+<!DOCTYPE hobby
+[
+<!ELEMENT hobby (id,activity,envoriment)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT activity (#PCDATA)>
+<!ELEMENT envoriment (#PCDATA)>
+]>
+

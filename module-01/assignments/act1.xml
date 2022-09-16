@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hobby SYSTEM "act.dtd">
+<name>​
+  <personal_information>
+    <lastname>Rimari</lastname>
+    <firstname>Marleni</firstname> 
+    <birthday> Jan 31 </birthday>
+    <country> Peru </country>
+    <city>Lima</city>
+  </personal_information>
+   <hobby>
+        <id>1</id> 
+        <activity>Jogging</activity>
+        <envoriment>park</envoriment>
+    </hobby> 
+    <hobby>
+        <id>2</id>
+        <activity>Trekking</activity>
+        <envoriment>mountains</envoriment>
+    </hobby>
+    <hobby>
+        <id>3</id>
+        <activity>Camping</activity>
+        <envoriment>mountains and beach</envoriment>
+    </hobby>
+    <hobby>
+        <id>4</id>
+        <activity>travelling</activity>
+        <envoriment>beachs</envoriment>
+    </hobby>​
+</name>
