@@ -13,7 +13,7 @@ There are 3 errors in the assignment.xml file. All the erros are related to the 
 ![image info](../assets/final.png)
 
 Ans2:
-There are no special characters used in the file. But CDATA is used to breaklines in between the texts and arranhe the text in proper formate. User can easily read it.
+There are no special characters used in the file. But CDATA is used to breaklines in between the texts and arrange the text in proper formate. User can easily read it.
 
 Ans4:
 The first line in the document showing the version and encoding type is the prolog as well as the comments added are the part of prolog.
