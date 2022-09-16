@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<note>
+  <describe> My name is Sharon </describe>
+  <subject> My hobbies are watching movies and web series </subject>
+  <interest> My interest is in Web application </interest>
+
+  <describe> My name is Reuben </describe>
+  <subject> My hobbies are watching movies </subject>
+  <interest> My interest is in XML application </interest>
+
+  <describe> My name is Kevin </describe>
+  <subject> My hobbies are cooking </subject>
+  <interest> My interest is in Java application </interest>
+
+  <describe> My name is Isabella </describe>
+  <subject> My hobbies are baking cake </subject>
+  <interest> My interest is in Android application </interest>
+
+  <describe> My name is Corella </describe>
+  <subject> My hobbies are watching movies and web series </subject>
+  <interest> My interest is in Web application </interest>
+
+  <describe> My name is Rahul </describe>
+  <subject> My hobbies are watching movies and web series </subject>
+  <interest> My interest is in Web application </interest>
+
+  <describe> My name is Kiran </describe>
+  <subject> My hobbies are watching movies and web series </subject>
+  <interest> My interest is in Web application </interest>
+</note>
