@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE people
+[
+    <!ELEMENT people (person+)>
+    <!ELEMENT person (name, contact)>
+    <!ELEMENT name (fname?, lname)>
+    <!ELEMENT fname (#PCDATA)>
+    <!ELEMENT lname (#PCDATA)>
+    <!ELEMENT contact (number+, email?)>
+    <!ELEMENT number (#PCDATA)>
+    <!ELEMENT email (#PCDATA)>
+    <!ATTLIST number type (home| work| mobile) #REQUIRED> 
+]>
+<people>
+    <person>
+        <name>
+            <fname>Rorie</fname>
+            <lname>Demanche</lname>
+        </name>
+        <contact>
+            <number type="home">+1 (710) 153-4949</number>
+            <number type="work">+1 (503) 319-3558</number>
+            <number type="mobile">+1 (182) 748-1667</number>
+            <email>rdemache0@foxnews.com</email>
+        </contact>
+    </person>
+    <person>
+        <name>
+            <fname>Kelcey</fname>
+            <lname>Surman</lname>
+        </name>
+        <contact>
+            <number type="home">+1 (249) 926-7376</number>
+            <number type="work">+1 (208) 363-6588</number>
+            <number type="mobile">+1 (982) 536-6860</number>
+            <email>ksurman1@usnews.com</email>
+        </contact>
+    </person>
+    <person>
+        <name>
+            <fname>Simon</fname>
+            <lname>Heddan</lname>
+        </name>
+        <contact>
+            <number type="home">+1 (687) 808-4290</number>
+            <number type="work">+1 (604) 815-7810</number>
+            <number type="mobile">+1 (924) 174-3271</number>
+            <email>sheddan2@alexa.com</email>
+        </contact>
+    </person>
+    <person>
+        <name>
+            <fname>Chan</fname>
+            <lname>Supple</lname>
+        </name>
+        <contact>
+            <number type="home">+1 (577) 165-2495</number>
+            <number type="work">+1 (547) 934-73337</number>
+            <number type="mobile">+1 (367) 667-0747</number>
+            <email>csupple3@123-reg.co.uk</email>
+        </contact>
+    </person>
+</people>
