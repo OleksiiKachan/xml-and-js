@@ -10,7 +10,6 @@
   <!ELEMENT phone (#PCDATA)>
   <!ELEMENT email (#PCDATA)>
 ]>
-
 <person>
   <person persID="pers101">
     <name title="Mr.">Rorie Demanche</name>
