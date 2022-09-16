@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Data
+[
+    <!ELEMENT Data (Person+)>
+    <!ELEMENT Person (Name, Phone, Mail)>
+    <!ELEMENT Name (#CDATA)>
+    <!ELEMENT Phone (#CDATA)>
+    <!ATTLIST Phone type (home|work|mobile) #REQUIRED>
+    <!ELEMENT Mail (#CDATA)>
+]>
+
+<Data>
+
+    <Person>
+        <Name> Rorie Demanche </Name>
+        <Phone type = "home"> +1 (710) 153-4949 </Phone>
+        <Phone type = "work"> +1 (503) 319-3558 </Phone>
+        <Phone type = "mobile"> +1 (182) 748-1667 </Phone>
+        <Mail> rdemanche0@foxnews.com </Mail>
+    </Person>
+
+    <Person>
+        <Name> Kelcey Surman </Name>
+        <Phone type = "home"> +1 (249) 926-7376 </Phone>
+        <Phone type = "work"> +1 (208) 363-6588 </Phone>
+        <Phone type = "mobile"> +1 (982) 536-6860 </Phone>
+        <Mail> ksurman1@usnews.com </Mail>
+    </Person>
+
+    <Person>
+        <Name> Simon Heddan </Name>
+        <Phone type = "home"> +1 (687) 808-4290 </Phone>
+        <Phone type = "work"> +1 (604) 815-7810 </Phone>
+        <Phone type = "mobile"> +1 (924) 174-3271 </Phone>
+        <Mail> sheddan2@alexa.com </Mail>
+    </Person>
+
+    <Person>
+        <Name> Chan Supple </Name>
+        <Phone type = "home"> +1 (577) 165-2495 </Phone>
+        <Phone type = "work"> +1 (547) 934-7337 </Phone>
+        <Phone type = "mobile"> +1 (367) 667-0747 </Phone>
+        <Mail> csupple3@123-reg.co.uk </Mail>
+    </Person>
+
+</Data>
+
