@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <products>
+
   <product>
     <productName>Dog Shirt Gift Basket</productName>
     <manufacturer>SJB Pet Boutique</manufacturer>
@@ -8,7 +9,13 @@
     <price>CAD$44.99</price>
     <price>&#8364;26.79</price>
     <productItems>1200, 1201, 1202, 1203, 1204, 1205, 1206</productItems>
+    <message>
+    <![CDATA[
+    For more information, please visit <website> or call us on #905-111-2222 & +1-800-111-2222
+    ]]> 
+    </message>
   </product>
+
   <product>
     <productName>Car Curiosity Basket</productName>
     <manufacturer>SJB Pet Boutique</manufacturer>
@@ -17,7 +24,9 @@
     <price>CAD$18.82</price>
     <price>&#8364;11.90</price>
     <productItems>4430, 6500, 4434</productItems>
+    <message>For more information,please visit &gt; website &lt; or call us on #905-111-2222 &amp; +1-800-111-2222</message>
   </product>
+
   <product>
     <productName>Piggy Snuggle Basket</productName>
     <manufacturer>ACME</manufacturer>
@@ -25,7 +34,13 @@
     <price>CAD$21.96</price>
     <price>&#8364;13.03</price>
     <productItems>3230, 3232</productItems>
+    <message>
+    <![CDATA[
+    For more information, please visit <website> or call us on #905-111-2222 & +1-800-111-2222
+    ]]> 
+    </message>
   </product>
+
   <product>
     <productName>Dog Snuggle Basket</productName>
     <manufacturer>ACME</manufacturer>
@@ -33,5 +48,10 @@
     <price>CAD$17.88</price>
     <price>&#8364;10.61</price>
     <productItems>3230, 3232, 3250</productItems>
+    <message>
+    <![CDATA[
+    For more information, please visit <website> or call us on #905-111-2222 & +1-800-111-2222
+    ]]> 
+    </message>
   </product>
 </products>

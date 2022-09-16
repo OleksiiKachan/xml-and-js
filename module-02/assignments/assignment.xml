@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <menuInfo>
+
   <title>Chester's Breakfast Menu</title>
   <summary>
     <![CDATA[
@@ -44,6 +45,9 @@
       <indicator>&#9824;</indicator>  <!-- vegan -->  
     </menuItem>
   </menu>
+
+
+
   <menu>
     <category>Lite and Quick</category>
     <menuItem>
@@ -79,4 +83,5 @@
       <indicator>&#9832;</indicator>  <!-- Low-carb -->
     </menuItem>
   </menu>
+
 </menuInfo>
