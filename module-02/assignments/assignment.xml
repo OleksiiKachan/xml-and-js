@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!DOCTYPE menuinfo
+[
+  
+]>
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -8,7 +13,8 @@
     up just the way you like them!!
     ]]>
   </summary>
-  <effective Date>03/12/2016</effective Date>
+    <!-- <effective date> is not a valid element tag . There was a space between the words which is not allowed-->
+  <effectiveDate>03/12/2016</effectiveDate>
   <menu>
     <category>Traditional Favorites</category>
     <menuItem>
@@ -28,7 +34,8 @@
     </menuItem>
     <menuItem>
       <itemName>
-        <originalName> Fresh Mornin' Sampler </originalname>
+      <!-- as the element tags are case sensitive, the error is because of the 'n' of the 'name' -->
+        <originalName> Fresh Mornin' Sampler </originalName>
         <oldName> Mornin' Sampler </oldName>
       </itemName>
       <description>
@@ -48,9 +55,12 @@
     <category>Lite and Quick</category>
     <menuItem>
       <itemName>
-        <name> Oatmeal Breakfast </originalName>
+      <!-- we have the element as orginalName and the opening and 
+      closing tag should be same. So we need to change the <name>' to '<originalName>' -->
+        <originalName> Oatmeal Breakfast </originalName>
       </itemName>
       <description>
+      
         <![CDATA[
         Our Oatmeal is served warm with your choice of Fried Apples, Pecans, Raisins,
         Fresh Sliced Bananas or 100% Pure Natural Syrup. Also, served with your
@@ -80,3 +90,17 @@
     </menuItem>
   </menu>
 </menuInfo>
+
+
+<!--Ans 2. CDATA block is used to display the string as it is. -->
+<!-- Name - Bhavish Rohilla 
+     Student ID - n01532797 -->
+
+                <!-- Ans 4. -->
+ <!-- prologue in this document is <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> -->
+<!-- document body is the structure of a xml file that statrs from the root element. In this file document 
+document body starts from <menuInfo>  -->
+
+<!-- epilog is the part of the xml file which is added after the body document. Here in this file,
+the epilog is Ans 2 , name and student ID-->
+

@@ -1,0 +1,3 @@
+informationCards -> person
+person -> name, phone, email
+phone => home, work, mobile
