@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE employeeDetails
+[
+    <!ELEMENT employeeDetails (employeeDetail+)>
+    <!ELEMENT employeeDetail (employeeName,phoneNumber*,employeeEmail)>
+    <!ELEMENT employeeName (#PCDATA)>
+    <!ELEMENT phoneNumber (#PCDATA)>
+    <!ATTLIST phoneNumber numberType (home | work | mobile) #REQUIRED>
+    <!ELEMENT employeeEmail (#PCDATA)>
+]>
+ <employeeDetails>
+    <employeeDetail>
+        <employeeName>
+            Rorie Demanche
+        </employeeName>
+        <phoneNumber numberType="home">
+            +1 (710) 153-4949
+        </phoneNumber>
+        <phoneNumber numberType="work">
+            +1 (503) 319-3558 
+        </phoneNumber>
+        <phoneNumber numberType="mobile">
+            - +1 (182) 748-1667 
+        </phoneNumber>
+        <employeeEmail>
+            rdemanche0@foxnews.com
+        </employeeEmail>
+    </employeeDetail>
+    <employeeDetail>
+        <employeeName>
+            Kelcey Surman
+        </employeeName>
+        <phoneNumber numberType="home">
+            +1 (710) 153-4949 
+        </phoneNumber>
+        <phoneNumber numberType="work">
+            +1 (503) 319-3558 
+        </phoneNumber>
+        <phoneNumber numberType="mobile">
+            +1 (182) 748-1667 
+        </phoneNumber>
+         <employeeEmail>
+            rdemanche0@foxnews.com
+        </employeeEmail>
+    </employeeDetail>
+    <employeeDetail>
+        <employeeName>
+            Kelcey Surman
+        </employeeName>
+        <phoneNumber numberType="home">
+            +1 (249) 926-7376 
+        </phoneNumber>
+        <phoneNumber numberType="work">
+            +1 (208) 363-6588 
+        </phoneNumber>
+        <phoneNumber numberType="mobile">
+            +1 (982) 536-6860 
+        </phoneNumber>
+         <employeeEmail>
+            ksurman1@usnews.com
+        </employeeEmail>
+    </employeeDetail>
+    <employeeDetail>
+        <employeeName>
+            Kelcey Surman
+        </employeeName>
+        <phoneNumber numberType="home">
+            +1 (249) 926-7376 
+        </phoneNumber>
+        <phoneNumber numberType="work">
+            +1 (208) 363-6588 
+        </phoneNumber>
+        <phoneNumber numberType="mobile">
+            +1 (982) 536-6860 
+        </phoneNumber>
+         <employeeEmail>
+            ksurman1@usnews.com
+        </employeeEmail>
+    </employeeDetail>
+ </employeeDetails>
