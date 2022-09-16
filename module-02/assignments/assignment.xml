@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml-stylesheet href="./style.css"?>
 
-<!DOCTYPE menuinfo
+<!DOCTYPE menuInfo
 [
-  
+  <!ELEMENT menuInfo (title, summary, effectiveDate, menu+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT summary (#PCDATA)>
+  <!ELEMENT effectiveDate (#PCDATA)>
+  <!ELEMENT menu (category, menuItem+)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT menuItem (itemName, description, price, indicator*)>
+  <!ELEMENT itemName (originalName, oldName*)>
+  <!ELEMENT originalName (#PCDATA)>
+  <!ELEMENT oldName (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT indicator (#PCDATA)>
 ]>
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
@@ -91,16 +104,5 @@
   </menu>
 </menuInfo>
 
-
-<!--Ans 2. CDATA block is used to display the string as it is. -->
 <!-- Name - Bhavish Rohilla 
      Student ID - n01532797 -->
-
-                <!-- Ans 4. -->
- <!-- prologue in this document is <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> -->
-<!-- document body is the structure of a xml file that statrs from the root element. In this file document 
-document body starts from <menuInfo>  -->
-
-<!-- epilog is the part of the xml file which is added after the body document. Here in this file,
-the epilog is Ans 2 , name and student ID-->
-
