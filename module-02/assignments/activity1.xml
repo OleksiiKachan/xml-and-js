@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE business-cards
+[
+  <!ELEMENT business-cards (business-card+)>
+  <!ELEMENT business-card (owner-name, phone-num, phone-num, phone-num, email)>
+  <!ATTLIST business-card id ID #REQUIRED>
+  <!ELEMENT owner-name (#PCDATA)>
+  <!ELEMENT phone-num (#PCDATA)>
+  <!ATTLIST phone-num type (home|work|mobile) #REQUIRED>
+  <!ELEMENT email (#PCDATA)>
+]>
+<business-cards>
+    <business-card id="owner1">
+        <owner-name> Rorie Demanche </owner-name>
+        <phone-num type="home"> +1 (710) 153-4949 </phone-num>
+        <phone-num type="work"> +1 (503) 319-3558 </phone-num>
+        <phone-num type="mobile"> +1 (182) 748-1667 </phone-num>
+        <email> rdemanche0@foxnews.com </email>
+    </business-card>
+    <business-card id="owner2">
+        <owner-name>Kelcey Surman</owner-name>
+        <phone-num type="home"> +1 (249) 926-7376 </phone-num>
+        <phone-num type="work"> +1 (208) 363-6588  </phone-num>
+        <phone-num type="mobile"> +1 (982) 536-6860 </phone-num>
+        <email> ksurman1@usnews.com </email>
+    </business-card>
+    <business-card id="owner3">
+        <owner-name>Simon Heddan</owner-name>
+        <phone-num type="home"> +1 (687) 808-4290 </phone-num>
+        <phone-num type="work"> +1 (604) 815-7810 </phone-num>
+        <phone-num type="mobile"> +1 (924) 174-3271 </phone-num>
+        <email> sheddan2@alexa.com </email>
+    </business-card>
+    <business-card id="owner4">
+        <owner-name>Chan Supple</owner-name>
+        <phone-num type="home"> +1 (577) 165-2495 </phone-num>
+       <phone-num type="work"> +1 (547) 934-7337 </phone-num>
+        <phone-num type="mobile"> +1 (367) 667-0747 </phone-num>
+        <email> csupple3@123-reg.co.uk </email>
+    </business-card>
+</business-cards>

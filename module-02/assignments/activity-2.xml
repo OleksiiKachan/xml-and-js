@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- prelog contains first line, comment, css import lines-->
-<!DOCTYPE customers 
-[
-  <!ELEMENT product (productName, manufacturer, description, price, productItems)>
-  <!ELEMENT productName (#PCDATA)>
-  <!ELEMENT manufacturer (#PCDATA)>
-  <!ELEMENT description (#PCDATA)>
-  <!ELEMENT price (#PCDATA)>
-  <!ATTLIST price currency CDATA #IMPLIED>
-  <!ELEMENT productItems (#PCDATA)>
-]>
-<!--document - body -->
 <products>
   <product>
     <productName>Dog Shirt Gift Basket</productName>
     <manufacturer>SJB Pet Boutique</manufacturer>
     <description>Something for every day of the week</description>
-    <price currency="US">$35.99</price>
+    <price>US$35.99</price>
     <price>CAD$44.99</price>
     <price>&#8364;26.79</price>
     <productItems>1200, 1201, 1202, 1203, 1204, 1205, 1206</productItems>
+    <message>
+      <![CDATA[
+        For further information, please visit
+        <our website> or call us on #905-111-2222 & +1-800-111- 2222
+      ]]>
+    </message>
   </product>
   <product>
     <productName>Car Curiosity Basket</productName>
@@ -29,6 +23,10 @@
     <price>CAD$18.82</price>
     <price>&#8364;11.90</price>
     <productItems>4430, 6500, 4434</productItems>
+    <message>
+        For further information, please visit
+        &lt;our website&gt; or call us on #905-111-2222 &amp; +1-800-111- 2222
+    </message>
   </product>
   <product>
     <productName>Piggy Snuggle Basket</productName>
@@ -37,6 +35,12 @@
     <price>CAD$21.96</price>
     <price>&#8364;13.03</price>
     <productItems>3230, 3232</productItems>
+    <message>
+      <![CDATA[
+        For further information, please visit
+        <our website> or call us on #905-111-2222 & +1-800-111- 2222
+      ]]>
+    </message>
   </product>
   <product>
     <productName>Dog Snuggle Basket</productName>
@@ -45,5 +49,11 @@
     <price>CAD$17.88</price>
     <price>&#8364;10.61</price>
     <productItems>3230, 3232, 3250</productItems>
+    <message>
+      <![CDATA[
+        For further information, please visit
+        <our website> or call us on #905-111-2222 & +1-800-111- 2222
+      ]]>
+    </message>
   </product>
 </products>

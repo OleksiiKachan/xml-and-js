@@ -6,7 +6,8 @@ And add following element to each product
 
 ```xml
 <message>
-  For further information, please visit <our website> or call us on #905-111-2222 & +1-800-111- 2222
+  For further information, please visit
+   <our website> or call us on #905-111-2222 & +1-800-111- 2222
 </message>
 ```
 
