@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE business_cards
+[
+    <!ELEMENT business_cards (person+)>
+    <!ELEMENT person (name , contact)>
+    <!ELEMENT name (#PCDATA) >
+    <!ELEMENT contact (phone+, email+)>
+    <!ELEMENT phone (#PCDATA)>
+    <!ATTLIST phone type (home | work | mobile) #REQUIRED>
+    <!ELEMENT email (#PCDATA)>
+]>
+<business_cards>
+
+    <person>
+        <name>Rorie Demanche</name>
+        <contact>
+            <phone type="home">+1 (710) 153-4949</phone>
+            <phone type="work">+1 (503) 319-3558</phone>
+            <phone type="mobile">+1 (182) 748-1667</phone>
+            <email>rdemanche0@foxnews.com</email>
+        </contact>
+    </person>
+    <person>
+        <name>Kelcey Surman</name>
+        <contact>
+            <phone type="home">+1 (249) 926-7376</phone>
+            <phone type="work">+1 (208) 363-6588</phone>
+            <phone type="mobile">+1 (982) 536-6860</phone>
+            <email>ksurman1@usnews.com</email>
+        </contact>
+    </person>
+    <person>
+        <name>Simon Heddan</name>
+        <contact>
+            <phone type="home">+1 (687) 808-4290</phone>
+            <phone type="work">+1 (604) 815-7810</phone>
+            <phone type="mobile">+1 (924) 174-3271</phone>
+            <email>sheddan2@alexa.com</email>
+        </contact>
+    </person>
+    <person>
+        <name>Chan Supple</name>
+        <contact>
+            <phone type="home">+1 (577) 165-2495</phone>
+            <phone type="work">+1 (547) 934-7337</phone>
+            <phone type="mobile">+1 (367) 667-0747</phone>
+            <email>csupple3@123-reg.co.uk</email>
+        </contact>
+    </person>
+</business_cards>
