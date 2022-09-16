@@ -1,0 +1,35 @@
+﻿
+<?xml version="1.0" encoding="utf-8"?>
+<card>
+	<person>
+		<name > Rorie Demanche</name>
+		<phone type="home"> +1 (710) 153-4949</phone>
+		<phone type="work"> +1 (503) 319-3558</phone>
+		<phone type="mobile"> +1 (182) 748-1667	</phone>
+		<phone type="other"> +1 (182) 748-1667	</phone>
+		<mail> rdemanche0@foxnews.com</mail>
+	</person>
+	<person>
+		<name> Kelcey Surman</name>
+		<phone type="home"> +1789456123</phone>
+		<phone type="work"> +1235478965</phone>
+		<phone type="other"> +245789654</phone>
+		<mail> ksurman1@usnews.com</mail>
+	</person>
+	<person>
+		<name>Simon Heddan </name>
+		<phone type="home"> +145789652</phone>
+		<phone type="work"> +45879652</phone>
+		<phone type="mobile"> +78546287</phone>
+		<mail> sheddan2@alexa.com </mail>
+	</person>
+	<person>
+		<name> Chan Supple</name>
+		<phone type="home"> +4568712563</phone>
+		<phone type="work"> +78549652</phone>
+		<phone type="mobile"> +487512655</phone>
+		<mail> csupple3@123-reg.co.uk </mail>
+	</person>
+	
+
+</card>
