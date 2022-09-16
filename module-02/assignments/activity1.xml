@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE information
+[
+<!ELEMENT information (person)>
+<!ELEMENT person(name, phonenumber+, email)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT phonenumber (#PCDATA)>
+<!ATTLIST phonenumber type (home|work| mobile) #IMPLIED>
+<!ELEMENT email (#PCDATA)>
+]>
+
+
+<information>
+<person>
+<name> Rorie Demanche </name>
+<phonenumber type="home"> +1(710) 153-4949 </phonenumber>
+<phonenumber type="work"> +1(503) 319-3558 </phonenumber>
+<phonenumber type="mobile"> +1(182) 748-1667 </phonenumber>
+<email> rdemanche0@foxnews.com </email>
+</person>
+<person>
+<name> Kelcey Surman </name>
+<phonenumber type="home"> +1 (249) 926-7376</phonenumber>
+<phonenumber type="work">  +1 (208) 363-6588 </phonenumber>
+<phonenumber type="mobile">+1 (982) 536-6860 </phonenumber>
+<email> ksurman1@usnews.com </email>
+</person>
+<person>
+<name> Simon Heddan</name>
+<phonenumber type="home"> +1 (687) 808-4290 </phonenumber>
+<phonenumber type="work"> +1 (604) 815-7810</phonenumber>
+<phonenumber type="mobile"> +1 (924) 174-3271 </phonenumber>
+<email> sheddan2@alexa.com </email>
+</person>
+<person>
+<name> Chan Supple </name>
+<phonenumber type="home"> +1 (577) 165-2495 </phonenumber>
+<phonenumber type="work"> +1 (547) 934-7337 </phonenumber>
+<phonenumber type="mobile"> +1 (367) 667-0747 </phonenumber>
+<email> csupple3@123-reg.co.uk</email>
+</person>
+
+</information>
