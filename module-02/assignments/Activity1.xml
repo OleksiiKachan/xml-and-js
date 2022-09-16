@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bussinesscards>
+    <card>
+        <name>## Rorie demanche</name>
+        <phno type="home">+1 (718) 153-4949</phno>
+        <phno type="work">+1 (503) 319-3558</phno>
+        <phno type="mobile">+1 (182) 748-1667</phno>
+        <email>rdemanche0@foxnews.com</email>
+    </card>
+
+    <card>
+        <name>## kelcey Surman</name>
+        <phno type="home">+1 (249) 926-7376</phno>
+        <phno type="work">+1 (208) 363-6588</phno>
+        <phno type="mobile">+1 (982) 536-6860</phno>
+        <email>ksurman1@usnews.com</email>
+    </card>
+
+    <card>
+        <name>## Simon Heddan</name>
+        <phno type="home">+1 (687) 808-4290</phno>
+        <phno type="work">+1 (604) 815-7810</phno>
+        <phno type="mobile">+1 (924) 174-3271</phno>
+        <email>sheddan@alexa.com</email>
+    </card>
+    <card>
+        <name>## Chan Supple</name>
+        <phno type="home">+1 (577) 165-2495</phno>
+        <phno type="work">+1 (547) 934-7337</phno>
+        <phno type="mobile">+1 (367) 667-0747</phno>
+        <email>csupple3@123-reg.co.uk</email>
+    </card>
+</bussinesscards>
