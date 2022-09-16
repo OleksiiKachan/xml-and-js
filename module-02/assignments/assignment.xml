@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml-stylesheet href="./style.css"?>
+<!DOCTYPE menuInfo
+[
+  <!ELEMENT menuInfo (title, summary,effectiveDate,menu+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT summary (#PCDATA)>
+  <!ELEMENT effectiveDate (#PCDATA)>
+  <!ELEMENT menu (category, menuItem+)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT menuItem (itemName, description, price, indicator*)>
+  <!ELEMENT itemName (originalName,oldName*)>
+  <!ELEMENT originalName (#PCDATA)>
+  <!ELEMENT oldName (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT indicator (#PCDATA)>
+]>
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -8,7 +25,7 @@
     up just the way you like them!!
     ]]>
   </summary>
-  <effectiveDate>03/12/2016</effectiveDate>
+  <effectiveDate>03/12/2016</effectiveDate><!--There was space between tags <effective Date> is not a valid tag>-->
   <menu>
     <category>Traditional Favorites</category>
     <menuItem>
@@ -28,6 +45,8 @@
     </menuItem>
     <menuItem>
       <itemName>
+      <!--Name of the tags are case sensitive, name of one of the tag
+       was originalname which was changed to originalName-->
         <originalName> Fresh Mornin' Sampler </originalName>
         <oldName> Mornin' Sampler </oldName>
       </itemName>
@@ -48,7 +67,8 @@
     <category>Lite and Quick</category>
     <menuItem>
       <itemName>
-        <name> Oatmeal Breakfast </originalName>
+      <!--Name of both tags should be same-->
+        <originalName> Oatmeal Breakfast </originalName>
       </itemName>
       <description>
         <![CDATA[
@@ -80,3 +100,9 @@
     </menuItem>
   </menu>
 </menuInfo>
+
+
+<!-- 3. Name :- Abhay Nimavat
+    Student Number:- N01530302
+-->
+
