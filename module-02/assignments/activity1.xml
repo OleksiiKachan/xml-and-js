@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE information
 [
-<!ELEMENT information (person)>
-<!ELEMENT person(name, phonenumber+, email)>
+<!ELEMENT information (person+)>
+<!ELEMENT person (name, phonenumber+, email)>
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT phonenumber (#PCDATA)>
 <!ATTLIST phonenumber type (home|work| mobile) #IMPLIED>
