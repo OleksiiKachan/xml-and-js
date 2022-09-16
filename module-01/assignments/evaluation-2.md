@@ -1,7 +1,13 @@
-# Evaluation 2
 
-![image info](../assets/2.png)
+<html>
+    <head>
 
-1. Design the following webform, and add some CSS style (like color)
+    </head>
+    <body bgcolor="lightgrey">
+        Your Email*:<input type="text" name="Email"><br><br>
+        Date Of Visit:<input type="date" name="date"><br><br>
 
-2. Using JavaScript, develop a program which collect form data and display them, when user clicks on “send your feedback” button
+        Your Comment:<br><input type="subject" name="subject" style="height:100px"><br><br>
+        <button>Send your Feedback</button>
+    </body>
+</html>
