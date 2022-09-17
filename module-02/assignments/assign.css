@@ -1,0 +1,31 @@
+
+menuInfo {
+    color: rgb(3, 2, 32);
+    background-color : rgb(162, 221, 250);
+    width: 100%;
+}
+
+summary, effective_Date {
+    
+      
+    text-align: center;
+    display: block;
+}
+
+title {
+    font-weight : bold;
+    font-size : 30px;  
+    text-align: center;
+    display: block;
+
+}
+category {
+    font-size : 20px;
+    font-weight : bold;
+    display: block;
+}
+  originalName {
+    font-size : 18px;
+    font-weight : bold;
+    display: block;
+  }
