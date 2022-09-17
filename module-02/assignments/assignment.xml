@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml-stylesheet href="style.css" type="text/css"?>
+<!DOCTYPE menuInfo [
+  <!ELEMENT menuInfo (title, summary, effective, menu+)>
+  <!ATTLIST effective date CDATA #IMPLIED>
+  <!ELEMENT menu (category, menuItem+)>
+  <!ELEMENT menuItem (itemName, description, price, indicator*)>
+  <!ELEMENT itemName (originalName, oldName?)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT summary (#PCDATA)>
+  <!ELEMENT effective (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT originalName (#PCDATA)>
+  <!ELEMENT oldName (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT indicator (#PCDATA)>
+
+]>
+
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -8,7 +27,7 @@
     up just the way you like them!!
     ]]>
   </summary>
-  <effective Date>03/12/2016</effective Date>
+  <effective date="03/12/2016">03/12/2016</effective>
   <menu>
     <category>Traditional Favorites</category>
     <menuItem>
@@ -28,7 +47,7 @@
     </menuItem>
     <menuItem>
       <itemName>
-        <originalName> Fresh Mornin' Sampler </originalname>
+        <originalName> Fresh Mornin' Sampler </originalName>
         <oldName> Mornin' Sampler </oldName>
       </itemName>
       <description>
@@ -48,7 +67,7 @@
     <category>Lite and Quick</category>
     <menuItem>
       <itemName>
-        <name> Oatmeal Breakfast </originalName>
+        <originalName> Oatmeal Breakfast </originalName>
       </itemName>
       <description>
         <![CDATA[
@@ -80,3 +99,5 @@
     </menuItem>
   </menu>
 </menuInfo>
+
+<!-- Alla-Anastasiia Gntakiv N01525207-->
