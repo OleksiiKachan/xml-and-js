@@ -1,0 +1,26 @@
+title {
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+}
+
+originalName {
+    font-size: 20px;
+}
+  
+category {
+    display: block;
+    font-weight: bold;
+}
+
+menuItem {
+    display: block;
+}
+
+description {
+    font-style: italic;
+}
+
+price {
+    color: red;
+}
