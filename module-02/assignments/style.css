@@ -1,0 +1,25 @@
+originalName {
+  font-size: 1.5em;
+}
+
+oldName::before {
+  content: '(';
+}
+
+oldName::after {
+  content: ')';
+}
+
+category {
+  display: block;
+  color: blue
+}
+
+menuItem, description {
+  display: block;
+}
+
+price {
+  color: green;
+  font-weight: bold;
+}
