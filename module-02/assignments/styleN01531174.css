@@ -1,0 +1,34 @@
+originalName
+{  color:greenyellow;
+    font-size: large;display:block;
+
+}
+description
+{text-indent: 1px;
+}
+oldName
+{display: block;
+ font-style:bold;
+ color: blueviolet;
+}
+category
+{
+    display:block;
+}
+price 
+{
+    display:block;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;color: magenta;
+}
+summary
+{ display:block;
+    font-size:large;
+    color: mediumvioletred;
+    padding-bottom: 1px;
+}
+title{
+    font-size: xx-large;
+    display:block;
+    align-self: center;
+    color:REd;
+}
