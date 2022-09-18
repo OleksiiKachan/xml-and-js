@@ -1,0 +1,55 @@
+menuInfo {
+    border-radius: 2em;
+    border-color: brown;
+    margin: 10em;
+    color: brown;
+    line-height: 2em;
+    border: 0.5rem outset rgb(206, 38, 66);
+    outline: 0.5rem solid khaki;
+    box-shadow: 0 0 0 2rem skyblue;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+title {
+    font-size: 2em;
+    background-color: bisque;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    display: block;
+    padding: 20px;
+    margin:-10px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+summary {
+    font-size:20px;
+}
+
+originalName {
+    font-size: 25px;
+}
+
+oldName {
+    font-style: italic;
+}
+
+description {
+    display: block;
+}
+
+menuItem {
+    display: block;
+}
+
+category {
+    display: block;
+    font-size: 25px;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
