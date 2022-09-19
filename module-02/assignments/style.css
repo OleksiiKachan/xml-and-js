@@ -1,0 +1,15 @@
+originalName{
+    font-size:20px;
+}
+
+category{
+    display: block;
+    font-weight: bold;
+    color: brown;
+}
+
+menuInfo{
+    background-color: bisque;
+    margin: 5px;
+    padding: 10px;
+}
