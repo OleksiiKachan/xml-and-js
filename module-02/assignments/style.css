@@ -1,0 +1,12 @@
+originalName{
+    font-size: 1.5em;
+}
+*{
+    display: block;
+}
+menu{
+    margin: 10px;
+}
+menuItem{
+    margin: 20px;
+}
