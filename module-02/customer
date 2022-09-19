@@ -1,0 +1,8 @@
+customers->customer
+customer->name,address,phone,email
+customer=>custID
+name=>title
+orders->order
+order=>orderID items
+items->item
+item->itemPrice itemQty

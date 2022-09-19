@@ -1,0 +1,91 @@
+# Assignment 1
+
+1. Open `module-2/assignments/assignment.xml` in your browser. Are there any errors? Explain the error and fix it.
+Ans.
+Error 1 : <effective Date>03/12/2016</effective Date> 
+No attribute used in the element.
+<effective type="Date">03/12/2016</effective>
+   
+Error 2 :
+<originalName> Fresh Mornin' Sampler </originalname>
+It should have same name of opening tag and closing tag here, originalName is not same as originalName(lowercase 'n' in closing tag).It should be<originalName> Fresh Mornin' Sampler </originalName>
+
+Error 3 :
+<name> Oatmeal Breakfast </originalName>
+opening tag must be same as closing tag. It should be either <name></name> or <originalName></originalName>
+
+2. What is the use of CDATA block in this document?
+Ans. 
+CDATA is one type of block of text that only has character data such as < , > , and &. The use of cdata in this file was to give description about the breakfast.
+Example:
+<![CDATA[
+    If you've been craving an authentic homestyle country breakfast,
+    look no further than Chester's!  We've got your breakfast favorites served
+    up just the way you like them!!
+    ]]>
+
+<![CDATA[
+    Our Oatmeal is served warm with your choice of Fried Apples, Pecans, Raisins,
+    Fresh Sliced Bananas or 100% Pure Natural Syrup. Also, served with your
+    choice of Apple Bran Muffin or Wild Maine Blueberry Muffin. Available
+    all day.
+    ]]>
+
+3. Add comment line to the end of file which contains you name and student id.
+Ans.
+<!--Gaurav Choudhary
+N01531431-->
+
+4. Identify prolog, document body, and epilog in the document. Are there any processing instructions?
+Ans.
+Prolog : Prolog always occour before body content in file, 
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+
+Document Body: Contains tree structure of body
+<menuInfo>..</menuInfo>
+
+Epilog: After body. Which is final comments 
+<!--Username: Gaurav Choudhary
+    N01531431-->
+Yes style.css is the processing instructions for assignment.xml
+
+5. Add inline DTD for this document.
+Ans.
+<!DOCTYPE menuInfo 
+[
+<!ELEMENT menuInfo (title, summary, effective, menu+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT summary (#PCDATA)>
+<!ELEMENT effective (#PCDATA)>
+<!ATTLIST effective type (Date) #REQUIRED>
+<!ELEMENT menu (category,menuItem+)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT menuItem (itemName+,description,price,indicator*)>
+<!ELEMENT itemName (originalName, oldName?)>
+<!ELEMENT originalName (#PCDATA)>
+<!ELEMENT oldName (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT indicator (#PCDATA)>
+]>
+
+6. Verify that file is well-formed and valid. 
+Ans. The file is valid and well-formed as there are no errors in the assignment.xml file.
+
+7. Create `style.css` file and link it to the file. Add the following styles to the .css: <!--Done>
+
+- Change font-size of `originalName`
+- Display each `category` on the new line
+- Add any other css-rule
+
+Ans. 
+originalName {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+}
+
+category {
+    display: block;
+}
