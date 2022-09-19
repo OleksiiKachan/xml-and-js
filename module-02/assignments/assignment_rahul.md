@@ -50,7 +50,6 @@ Ans 1 ->
 	<!ELEMENT description (#PCDATA) >
 	<!ELEMENT price (#PCDATA)>
 	<!ELEMENT indicator (#PCDATA)>
-
 ]>
 
 Ans 6 ->
@@ -58,9 +57,11 @@ Ans 6 ->
 	![Screenshot (716)](https://user-images.githubusercontent.com/49285978/191113049-383598d7-1fab-460d-9aae-30bcdfa00d7a.png)
 	
 	Screenshot of code
-	![Screenshot (717)](https://user-images.githubusercontent.com/49285978/191113155-6ba39658-df81-4649-9ccf-88dfe6d3db21.png)
-	![Screenshot (718)](https://user-images.githubusercontent.com/49285978/191113197-fef1b6ef-d1e0-4db8-9a84-d331b5d294ff.png)
-	![Screenshot (719)](https://user-images.githubusercontent.com/49285978/191113217-8e1ad01f-a1fc-47fb-8246-d77e9f446fbb.png)
+	
+	![Screenshot (717)](https://user-images.githubusercontent.com/49285978/191113823-de378250-f240-48fc-a0e5-5a257b9fb7da.png)
+![Screenshot (718)](https://user-images.githubusercontent.com/49285978/191113852-e2f731f8-eb24-427b-aaca-606a31227731.png)
+![Screenshot (719)](https://user-images.githubusercontent.com/49285978/191113898-5d007a9a-780d-433a-9d9a-db8f457f9d90.png)
+
 
 
 
