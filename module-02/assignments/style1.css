@@ -1,0 +1,13 @@
+originalName {
+    font-size: 25px;
+  }
+  
+  category {
+    color: rgb(0, 255, 68);
+    display: block;
+    font-weight: bold;
+  }
+  *{
+    font-family: 'Courier New', Courier, monospace;
+  }
+  

@@ -7,7 +7,6 @@
 5. Add inline DTD for this document.
 6. Verify that file is well-formed and valid.
 7. Create `style.css` file and link it to the file. Add the following styles to the .css:
-
 - Change font-size of `originalName`
 - Display each `category` on the new line
 - Add any other css-rule
