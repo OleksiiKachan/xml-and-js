@@ -1,16 +1,35 @@
 
 Ans 1 ->
 
-String="
-  <effective type="Date">03/12/2016</effective>
-  <menu>"
-    In this line date wasn't mention with its attribute + it was mention again as an element in closing tag.
 
-  <![CDATA[ <originalName> Fresh Mornin' Sampler </originalName> ]]>
+  ![Screenshot (721)](https://user-images.githubusercontent.com/49285978/191116362-a1dd9955-c1c5-410d-a14f-0c9be440a9b7.png)
+  
+     
+     In this line date wasn't mention with its attribute + it was mention again as an element in closing tag.
+      Modified Code:
+  ![Screenshot (722)](https://user-images.githubusercontent.com/49285978/191116642-d380aee3-c06e-4627-8fba-ea406e24b0eb.png)
+    
+   ------------------------------------------------------------------------------- 
+    
+
+  ![Screenshot (723)](https://user-images.githubusercontent.com/49285978/191116950-7af0ab88-2aa6-4c7f-8f53-08bf7aaef761.png)
+  
+  
     In this line there was a mis-match in the spelling of  elements in oneping and closing tag.
+      Modified Code:
+  ![Screenshot (724)](https://user-images.githubusercontent.com/49285978/191117096-af0086b3-79d6-45cd-86de-9c8b2c413fb2.png)
 
-  <![CDATA[ <originalName> Oatmeal Breakfast </originalName> ]]>
-  In this line  the element in the opening tag was different from the  element in closing tag.
+  --------------------------------------------------------------------------------------
+  
+  
+  ![Screenshot (725)](https://user-images.githubusercontent.com/49285978/191117581-0ef65c40-2827-474a-b723-0830e4e4682a.png)
+  
+  
+  
+  	In this line  the element in the opening tag was different from the  element in closing tag.
+	Modified Code:
+![Screenshot (726)](https://user-images.githubusercontent.com/49285978/191117889-4fea7c5b-d21b-443f-979a-a6e700966a79.png)
+
 
 
 
@@ -26,7 +45,8 @@ String="
 
 
   Ans 4 ->
-  Prolog in the file is  <!-- <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> -->
+  Prolog in the file is  ![Screenshot (727)](https://user-images.githubusercontent.com/49285978/191118453-a6296db2-c4ca-4d60-bab9-20f4966b5aee.png)
+
   document body is the content between root element <menuInfo>
   There are not any processing instruction but according to the 7th question i'll have to add the css link
   which would be like processing instruction. 
