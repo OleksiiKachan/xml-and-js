@@ -1,0 +1,15 @@
+originalName {
+    font-size: 18px;
+}
+
+category {
+    font-style: italic;
+}
+
+* {
+    display: block;
+  }
+
+  indicator {
+    display: inline;
+  }
