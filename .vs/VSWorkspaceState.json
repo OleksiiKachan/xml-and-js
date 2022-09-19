@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\module-01",
-    "\\module-01\\assignments"
+    "\\module-01\\assignments",
+    "\\module-02",
+    "\\module-02\\assignments"
   ],
-  "SelectedNode": "\\module-01\\assignments\\activiy-2.md",
+  "SelectedNode": "\\module-02\\customers.xml",
   "PreviewInSolutionExplorer": false
 }
