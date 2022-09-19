@@ -58,7 +58,8 @@ Ans 6 ->
 	
 	Screenshot of code
 	
-	![Screenshot (717)](https://user-images.githubusercontent.com/49285978/191113823-de378250-f240-48fc-a0e5-5a257b9fb7da.png)
+![Screenshot (717)](https://user-images.githubusercontent.com/49285978/191114025-166f0abb-f236-41f5-843e-099542e61a0d.png)
+
 ![Screenshot (718)](https://user-images.githubusercontent.com/49285978/191113852-e2f731f8-eb24-427b-aaca-606a31227731.png)
 ![Screenshot (719)](https://user-images.githubusercontent.com/49285978/191113898-5d007a9a-780d-433a-9d9a-db8f457f9d90.png)
 
