@@ -1,16 +1,16 @@
 
 Ans 1 ->
-<!--
+<![CDATA[
 </summary>
   <effective type="Date">03/12/2016</effective>
   <menu>
--->
+]]>
     In this line date wasn't mention with its attribute + it was mention again as an element in closing tag.
 
-  <!-- <originalName> Fresh Mornin' Sampler </originalName> -->
+  <![CDATA[ <originalName> Fresh Mornin' Sampler </originalName> ]]>
     In this line there was a mis-match in the spelling of  elements in oneping and closing tag.
 
-  <!-- <originalName> Oatmeal Breakfast </originalName> -->
+  <![CDATA[ <originalName> Oatmeal Breakfast </originalName> ]]>
   In this line  the element in the opening tag was different from the  element in closing tag.
 
 
