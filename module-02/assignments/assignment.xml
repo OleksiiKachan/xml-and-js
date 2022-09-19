@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml-stylesheet type="text/css" href="assignment.css"?>
+<!DOCTYPE customers 
+[
+<!ELEMENT menuInfo (menuInfo+)>
+<!ELEMENT title (title)>
+<!ELEMENT summary (#PCDATA)>
+<!ELEMENT menu (category, menuItem)>
+<!ELEMENT menuItem (itemName, description, price)>
+<!ELEMENT itemName (originalName, oldName)>
+]>
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -8,7 +18,7 @@
     up just the way you like them!!
     ]]>
   </summary>
-  <effective Date>03/12/2016</effective Date>
+  <effective type="Date">03/12/2016</effective>
   <menu>
     <category>Traditional Favorites</category>
     <menuItem>
@@ -28,7 +38,7 @@
     </menuItem>
     <menuItem>
       <itemName>
-        <originalName> Fresh Mornin' Sampler </originalname>
+        <originalName> Fresh Mornin' Sampler </originalName>
         <oldName> Mornin' Sampler </oldName>
       </itemName>
       <description>
@@ -48,7 +58,7 @@
     <category>Lite and Quick</category>
     <menuItem>
       <itemName>
-        <name> Oatmeal Breakfast </originalName>
+        <originalName> Oatmeal Breakfast </originalName>
       </itemName>
       <description>
         <![CDATA[
@@ -80,3 +90,7 @@
     </menuItem>
   </menu>
 </menuInfo>
+<!-- 
+  Name: Meet Hiteshkumar Trivedi
+  student_id: N01520331
+ -->
