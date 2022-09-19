@@ -1,0 +1,17 @@
+originalName {
+    font-size:larger;
+    font-weight: bolder;
+}
+
+category {
+    display:block;
+    text-align:center;
+    }
+    title {
+        display: block;
+        font-weight: bolder;
+        text-align: center;
+        font-size: 40px;
+        background-color: yellowgreen;
+        color: black;
+    }
