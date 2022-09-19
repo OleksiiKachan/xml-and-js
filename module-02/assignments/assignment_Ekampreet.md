@@ -7,7 +7,7 @@ There were only two types of errors in the file:
 CDATA block helps to create the problematic characters into strings, so that xml does not show any undesired result while comphrehending those characters. For example, line break and apostrophe are the characters that xml would not have comprehended correctly and thus we needed to use CDATA or their character or entity references. 
 
 # 3.
-![Adding a comment](../assets/3.png)
+![Adding a comment](../assets/3.PNG)
 
 # 4.
 The prolog is the content which is written above the <menuInfo> tag, which is the root element of this document. In this document, only the XML Declaration is given in the prolog.
@@ -17,10 +17,10 @@ The epilog is the content after the closing root tag, i.e., the </menuInfo> tag.
 There are no processing instructions as apart from the XML Declaration and the comment, everything else is the document body.
 
 # 5. 
-![Adding DTD](../assets/5.png)
+![Adding DTD](../assets/5.PNG)
 
 # 6.
-![Verification that the file is well-formed and valid](../assets/6_Valid.png)
+![Verification that the file is well-formed and valid](../assets/6_Valid.PNG)
 
 # 7.   
 ![Added Stylesheet to the xml file](../assets/7_AddedStylesheet.PNG)
