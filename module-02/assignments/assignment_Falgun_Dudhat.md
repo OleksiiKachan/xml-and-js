@@ -16,8 +16,8 @@
     - ![image info](./assets/Screenshot%202022-09-19%20151437.png)
 
 
-3. 
-    ![image info](./assets/Screenshot%202022-09-19%20151559.png)
+3. Comment
+    - ![image info](./assets/Screenshot%202022-09-19%20151559.png)
 
 4. 
     - prolog:![image info](./assets/Screenshot%202022-09-19%20152320.png)
@@ -25,13 +25,13 @@
     - epilog:![image info](./assets/Screenshot%202022-09-19%20165537.png)
     - There is not any pocessing information.
 
-5. 
-    ![image info](./assets/Screenshot%202022-09-19%20155851.png)
+5. DTD
+    - ![image info](./assets/Screenshot%202022-09-19%20155851.png)
 
-6. 
-    ![image info](./assets/Screenshot%202022-09-19%20160324.png)
+6. well-formed and valid.
+    - ![image info](./assets/Screenshot%202022-09-19%20160324.png)
 
-7. 
-    ![image info](./assets/Screenshot%202022-09-19%20163455.png)
+7. style
+    - ![image info](./assets/Screenshot%202022-09-19%20163455.png)
 
  
