@@ -1,10 +1,9 @@
 
 Ans 1 ->
 
-<</summary>
+"</summary>
   <effective type="Date">03/12/2016</effective>
-  <menu>
->
+  <menu>"
     In this line date wasn't mention with its attribute + it was mention again as an element in closing tag.
 
   <![CDATA[ <originalName> Fresh Mornin' Sampler </originalName> ]]>
