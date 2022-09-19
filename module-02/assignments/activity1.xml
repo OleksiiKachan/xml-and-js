@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE person
+<!DOCTYPE info
 [
     <!ELEMENT info (person+)>
     <!ELEMENT person (name, phone, mail)>
-    <!ELEMENT name (#CDATA)>
-    <!ELEMENT phone (#CDATA)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT phone (#PCDATA)>
     <!ATTLIST phone type (home | work | mobile)>
-    <!ELEMENT mail (#CDATA)>
+    <!ELEMENT mail (#PCDATA)>
 ]>
 
 <info>
