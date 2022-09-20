@@ -11,6 +11,8 @@ The block contains some data that is used to describe anything in detail, hence 
 
 
 3. Add comment line to the end of file which contains you name and student id.
+
+![image info](../assets/Capture.PNG)
 <Comment><!-- Name: Harish Nomula Student Id:N01532988 --></Comment>
 
 4. Identify prolog, document body, and epilog in the document. Are there any processing instructions?
@@ -26,19 +28,22 @@ A syntax element with a field type of XML serves as a representation of the docu
 
 The syntactic element tree only displays internal (inline) DTD subsets. A DTD that is declared inside the XML document itself is known as an inline DTD. It could be a whole DTD definition or an extension of a definition found in another DTD.
 
-<!DOCTYPE Student [
-<!ELEMENT Student (Name,Id,Course,Country)>
-<!ELEMENT Name (#PCDATA)>
-<!ELEMENT Id (#PCDATA)>
-<!ELEMENT Course (#PCDATA)>
-<!ELEMENT Country (#PCDATA)>
+<!DOCTYPE menuInfo
+[
+  <!ELEMENT menuInfo (title, summary, effectiveDate, menu+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT summary (#PCDATA)>
+  <!ELEMENT effectiveDate (#PCDATA)>
+  <!ELEMENT menu (category, menuItem+)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT menuItem (itemName, description, price, indicator*)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT indicator (#PCDATA)>
+  <!ELEMENT itemName (originalName?, oldName?)>
+  <!ELEMENT originalName (#PCDATA)>
+  <!ELEMENT oldName (#PCDATA)>
 ]>
-<Student>
-<Name>Harish Nomula</Name>
-<Id>N01532988</Id>
-<Course>Information Technology Solutions</Course>
-<Country>INDIA</Country>
-</Student>
 
 
 6. Verify that file is well-formed and valid.
