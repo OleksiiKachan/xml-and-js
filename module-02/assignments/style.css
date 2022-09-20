@@ -1,0 +1,12 @@
+originalName
+{
+    font-size: 30px;
+    color: blueviolet;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+category
+{
+    content: "\A";
+    white-space: pre;
+}
