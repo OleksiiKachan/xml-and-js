@@ -18,6 +18,13 @@ Explain the error and fix it.
 
 ![](images/error3.png)
 
+**Similar to the second error, the third error mentions that opening and closing tag is not the same. But this time it points to Line 51. The opening tag is just <name>, while the closing tag is </originalName>, which causes this error message.**
+**To fix this, we change the opening tag to <originalName> so that it will match the closing tag </originalName>.**
+**After the three syntax errors have been addressed, the xml file will render successfully in Google Chrome without any error messages:**
+
+![](images/errorfixed.PNG)
+
+
 2.	What is the use of CDATA block in this document?
 
 **The CDATA block was used for the summary element (summary of the whole menu) and description element (description for each item in a specific menu), housing all words in one paragraph within the CDATA blocks’ opening <![CDATA[ and closing ]]> tags, then displaying it in Google Chrome as the whole content of each element. In Google Chrome, the whole CDATA block shows its element’s text contents in one line, regardless if the sentences are broken during the process of writing the xml code by pressing the Enter key.**
