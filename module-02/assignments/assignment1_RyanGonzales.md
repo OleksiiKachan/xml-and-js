@@ -6,20 +6,20 @@ Explain the error and fix it.
 
 ![](images/error1.png)
 
-**The error points out line 11 of the xml code, where in element <effective Date> were written incorrectly. There is a space between words “effective” and “Date” which causes the error**. 
+**The error points out line 11 of the xml code, where in element "effective Date" were written incorrectly. There is a space between words “effective” and “Date” which causes the error**. 
 
 **To fix this, we should remove the space between the two words. After fixing the first error and opening the xml file in Google Chrome, this second error is being displayed:**
 
 ![](images/error2.png)
 
-**It says that there is something wrong with the code in line 31, which is the opening and ending tag not being the same. The opening tag for “originalName” is spelled as is, but the closing tag is misspelled as “orginalname” (lowercase n). To correct this, we make the closing tag to </originalName> to match the opening tag <originalName>.**
+**It says that there is something wrong with the code in line 31, which is the opening and ending tag not being the same. The opening tag for “originalName” is spelled as is, but the closing tag is misspelled as “orginalname” (lowercase n). To correct this, we make the closing tag to "originalName" to match the opening tag "originalName".**
 
 **After fixing the second error and opening the xml file in Google Chrome, this third error is being displayed:**
 
 ![](images/error3.png)
 
-**Similar to the second error, the third error mentions that opening and closing tag is not the same. But this time it points to Line 51. The opening tag is just <name>, while the closing tag is </originalName>, which causes this error message.**
-**To fix this, we change the opening tag to <originalName> so that it will match the closing tag </originalName>.**
+**Similar to the second error, the third error mentions that opening and closing tag is not the same. But this time it points to Line 51. The opening tag is just "name", while the closing tag is "originalName", which causes this error message.**
+**To fix this, we change the opening tag to "originalName" so that it will match the closing tag "originalName".**
 **After the three syntax errors have been addressed, the xml file will render successfully in Google Chrome without any error messages:**
 
 ![](images/errorfixed.PNG)
@@ -27,7 +27,7 @@ Explain the error and fix it.
 
 2.	What is the use of CDATA block in this document?
 
-**The CDATA block was used for the summary element (summary of the whole menu) and description element (description for each item in a specific menu), housing all words in one paragraph within the CDATA blocks’ opening <![CDATA[ and closing ]]> tags, then displaying it in Google Chrome as the whole content of each element. In Google Chrome, the whole CDATA block shows its element’s text contents in one line, regardless if the sentences are broken during the process of writing the xml code by pressing the Enter key. Also, special characters within the CDATA block that are used in xml code such as asterisk (*) will not be processed as code, instead will pass as just text data**
+**The CDATA block was used for the summary element (summary of the whole menu) and description element (description for each item in a specific menu), housing all words in one paragraph within the CDATA blocks’ opening and closing tags, then displaying it in Google Chrome as the whole content of each element. In Google Chrome, the whole CDATA block shows its element’s text contents in one line, regardless if the sentences are broken during the process of writing the xml code by pressing the Enter key. Also, special characters within the CDATA block that are used in xml code such as asterisk (*) will not be processed as code, instead will pass as just text data**
 
 ![](images/CDATAblock.png)
 
