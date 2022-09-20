@@ -1,82 +1,105 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<!DOCTYPE menuInfo [
+  <!ELEMENT menuInfo (title,summary,effective,menu+)>
+  <!ATTLIST menuInfo xmlns CDATA #FIXED "">
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST title xmlns CDATA #FIXED "">
+  <!ELEMENT summary (#PCDATA)>
+  <!ATTLIST summary xmlns CDATA #FIXED "">
+  <!ELEMENT effective (#PCDATA)>
+  <!ATTLIST effective date CDATA #FIXED "">
+  <!ELEMENT menu (category,menuItem+)>
+  <!ATTLIST menu xmlns CDATA #FIXED "">
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST category xmlns CDATA #FIXED "">
+  <!ELEMENT menuItem (itemName,description,price,indicator*)>
+  <!ATTLIST menuItem xmlns CDATA #FIXED "">
+  <!ELEMENT itemName (originalName,oldName?)>
+  <!ATTLIST itemName xmlns CDATA #FIXED "">
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST description xmlns CDATA #FIXED "">
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST price xmlns CDATA #FIXED "">
+  <!ELEMENT indicator (#PCDATA)>
+  <!ATTLIST indicator xmlns CDATA #FIXED "">
+  <!ELEMENT originalName (#PCDATA)>
+  <!ATTLIST originalName xmlns CDATA #FIXED "">
+  <!ELEMENT oldName (#PCDATA)>
+  <!ATTLIST oldName xmlns CDATA #FIXED "">
+]>
 <menuInfo>
-  <title>Chester's Breakfast Menu</title>
-  <summary>
-    <![CDATA[
-    If you've been craving an authentic homestyle country breakfast,
+   <title>Chester's Breakfast Menu</title>
+   <summary><![CDATA[If you've been craving an authentic homestyle country breakfast,
     look no further than Chester's!  We've got your breakfast favorites served
-    up just the way you like them!!
-    ]]>
-  </summary>
-  <effective Date>03/12/2016</effective Date>
-  <menu>
-    <category>Traditional Favorites</category>
-    <menuItem>
-      <itemName>
-        <originalName> Rise n' Shine</originalName>
-        <oldName> Shine </oldName>
-      </itemName>
-      <description>
-        <![CDATA[
-        Two Eggs* cooked to order with Grits, Gravy and Homemade Buttermilk
+    up just the way you like them!!]]></summary>
+   <effective type="date">03/12/2016</effective>
+   <!--there is none attribute used in the element. Date attribute has not been specifiedin the effective tag and effective tag does not need date attribute to end -->
+   <menu>
+      <category>Traditional Favorites</category>
+      <menuItem>
+         <itemName>
+            <originalName>Rise n' Shine</originalName>
+            <oldName>Shine</oldName>
+         </itemName>
+         <description><![CDATA[Two Eggs* cooked to order with Grits, Gravy and Homemade Buttermilk
         Biscuits along with real Butter and the best fresh jam
         available. Served with your choice of Fresh Fruit or Hashbrown Casserole
-        and Smoked Sausage Patties, Turkey Sausage Patties or Thick-Sliced Bacon.
-        ]]>
-      </description>
-      <price>7.95</price>
-    </menuItem>
-    <menuItem>
-      <itemName>
-        <originalName> Fresh Mornin' Sampler </originalname>
-        <oldName> Mornin' Sampler </oldName>
-      </itemName>
-      <description>
-        <![CDATA[
-        Low-Fat Vanilla Yogurt and Seasonal Fruit topped with our Honey Granola
+        and Smoked Sausage Patties, Turkey Sausage Patties or Thick-Sliced Bacon.]]></description>
+         <price>7.95</price>
+      </menuItem>
+      <menuItem>
+         <itemName>
+            <originalName>Fresh Mornin' Sampler</originalName>
+            <!--The element type "originalName" must be terminated by the matching end-tag "</originalName>".-->
+            <oldName>Mornin' Sampler</oldName>
+         </itemName>
+         <description><![CDATA[Low-Fat Vanilla Yogurt and Seasonal Fruit topped with our Honey Granola
         mix of Almonds and Dried Fruit. Served with a Wild Maine Blueberry Muffin
-        or an Apple Bran Muffin.
-        ]]>
-      </description>
-      <price>6.95</price>
-      <indicator>&#9829;</indicator>  <!-- heart healthy -->
-      <indicator>&#9830;</indicator>  <!-- low-sodium -->
-      <indicator>&#9824;</indicator>  <!-- vegan -->  
-    </menuItem>
-  </menu>
-  <menu>
-    <category>Lite and Quick</category>
-    <menuItem>
-      <itemName>
-        <name> Oatmeal Breakfast </originalName>
-      </itemName>
-      <description>
-        <![CDATA[
-        Our Oatmeal is served warm with your choice of Fried Apples, Pecans, Raisins,
+        or an Apple Bran Muffin.]]></description>
+         <price>6.95</price>
+         <indicator>♥</indicator>
+         <!-- heart healthy -->
+         <indicator>♦</indicator>
+         <!-- low-sodium -->
+         <indicator>♠</indicator>
+         <!-- vegan -->
+      </menuItem>
+   </menu>
+   <menu>
+      <category>Lite and Quick</category>
+      <menuItem>
+         <itemName>
+            <originalName>Oatmeal Breakfast</originalName>
+            <!--The content of element type "itemName" must match "(originalName,oldName?)". And add old name to it by by own. i am keeping oatmeal breakfast old name as Oat Porridge Breakfast-->
+            <oldName>Oat Porridge Breakfast</oldName>
+         </itemName>
+         <description><![CDATA[Our Oatmeal is served warm with your choice of Fried Apples, Pecans, Raisins,
         Fresh Sliced Bananas or 100% Pure Natural Syrup. Also, served with your
         choice of Apple Bran Muffin or Wild Maine Blueberry Muffin. Available
-        all day.
-        ]]>
-      </description>
-      <price>6.95</price>
-      <indicator>&#9829;</indicator>  <!-- heart healthy -->
-      <indicator>&#9830;</indicator>  <!-- low-sodium -->
-      <indicator>&#9824;</indicator>  <!-- vegan -->  
-    </menuItem>
-    <menuItem>
-      <itemName>
-        <originalName> Chester's Meat Platter </originalName>
-        <oldName> Chester Platter </oldName>
-      </itemName>
-      <description>
-        <![CDATA[
-        Country Ham, Pork Chops or Steak* grilled to order, Three Eggs* cooked
+        all day.]]></description>
+         <price>6.95</price>
+         <indicator>♥</indicator>
+         <!-- heart healthy -->
+         <indicator>♦</indicator>
+         <!-- low-sodium -->
+         <indicator>♠</indicator>
+         <!-- vegan -->
+      </menuItem>
+      <menuItem>
+         <itemName>
+            <originalName>Chester's Meat Platter</originalName>
+            <oldName>Chester Platter</oldName>
+         </itemName>
+         <description><![CDATA[Country Ham, Pork Chops or Steak* grilled to order, Three Eggs* cooked
         to order served with Cottage Cheese, Smoked Sausage Patties, Turkey
-        Sausage Patties or Thick-Sliced Bacon.
-        ]]>
-      </description>
-      <price>12.95</price>
-      <indicator>&#9832;</indicator>  <!-- Low-carb -->
-    </menuItem>
-  </menu>
+        Sausage Patties or Thick-Sliced Bacon.]]></description>
+         <price>12.95</price>
+         <indicator>♨</indicator>
+         <!-- Low-carb -->
+      </menuItem>
+   </menu>
 </menuInfo>
+
+<!-- NAME - VANDANA
+     STUDENT ID - N01476677 -->
