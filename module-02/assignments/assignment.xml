@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml-stylesheet type="text/css" href="style1.css"?>
+<!DOCTYPE menuInfo 
+[
+  <!ELEMENT menuInfo (menu, title, summary, effective)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT summary (#PCDATA)>
+  <!ELEMENT effective (#PCDATA)>
+  <!ATTLIST effective Date CDATA #REQUIRED>
+  <!ELEMENT menu (category, menuItem)>
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST category caID ID #REQUIRED>
+  <!ELEMENT menuItem (itemName,description,price,indicator)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT indicator (#PCDATA)>
+   <!ATTLIST indicator inID ID #REQUIRED>
+  <!ELEMENT itemName (originalName, oldName)>
+  <!ELEMENT originalName (#PCDATA)>
+  <!ELEMENT oldName (#PCDATA)>
+]>
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -8,9 +28,9 @@
     up just the way you like them!!
     ]]>
   </summary>
-  <effective Date>03/12/2016</effective Date>
+  <effective Date="01/01/1991">03/12/2016</effective> <!-- should contain exactly the same information beacuse use a atribute-->
   <menu>
-    <category>Traditional Favorites</category>
+    <category caID="c01">Traditional Favorites</category>
     <menuItem>
       <itemName>
         <originalName> Rise n' Shine</originalName>
@@ -25,10 +45,12 @@
         ]]>
       </description>
       <price>7.95</price>
+      <indicator inID="I01"></indicator>
     </menuItem>
+    <category caID="c02">--</category>
     <menuItem>
       <itemName>
-        <originalName> Fresh Mornin' Sampler </originalname>
+        <originalName> Fresh Mornin' Sampler </originalName> <!-- must be terminated by the matching end-tag -->
         <oldName> Mornin' Sampler </oldName>
       </itemName>
       <description>
@@ -39,16 +61,16 @@
         ]]>
       </description>
       <price>6.95</price>
-      <indicator>&#9829;</indicator>  <!-- heart healthy -->
-      <indicator>&#9830;</indicator>  <!-- low-sodium -->
-      <indicator>&#9824;</indicator>  <!-- vegan -->  
+      <indicator inID="I02">&#9829;</indicator>  <!-- heart healthy -->
+      <indicator inID="I03">&#9830;</indicator>  <!-- low-sodium -->
+      <indicator inID="I04">&#9824;</indicator>  <!-- vegan -->  
     </menuItem>
   </menu>
   <menu>
     <category>Lite and Quick</category>
     <menuItem>
       <itemName>
-        <name> Oatmeal Breakfast </originalName>
+        <name> Oatmeal Breakfast </name> <!-- must be terminated by the matching end-tag -->
       </itemName>
       <description>
         <![CDATA[
@@ -59,9 +81,9 @@
         ]]>
       </description>
       <price>6.95</price>
-      <indicator>&#9829;</indicator>  <!-- heart healthy -->
-      <indicator>&#9830;</indicator>  <!-- low-sodium -->
-      <indicator>&#9824;</indicator>  <!-- vegan -->  
+      <indicator inID="I06">&#9829;</indicator>  <!-- heart healthy -->
+      <indicator inID="I07">&#9830;</indicator>  <!-- low-sodium -->
+      <indicator inID="I08">&#9824;</indicator>  <!-- vegan -->  
     </menuItem>
     <menuItem>
       <itemName>
@@ -76,7 +98,9 @@
         ]]>
       </description>
       <price>12.95</price>
-      <indicator>&#9832;</indicator>  <!-- Low-carb -->
+      <indicator inID="I05">&#9832;</indicator>  <!-- Low-carb -->
     </menuItem>
   </menu>
 </menuInfo>
+<!-- N° Student: N01517222
+    Full Name: Marleni Rimari  -->
