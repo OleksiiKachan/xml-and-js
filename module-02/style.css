@@ -1,7 +1,7 @@
-name {
-  font-weight: bold;
+.originalName {
+  font-family: "Times New Roman", Times, serif;
 }
-
-* {
+category {
+  color: rgb(0, 0, 255);
   display: block;
-}
+  font-weight: bold;
