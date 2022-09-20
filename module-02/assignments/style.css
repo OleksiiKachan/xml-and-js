@@ -1,0 +1,15 @@
+/*    Change font-size of originalName   */
+originalName{
+    font-size: 50px;
+    font-style:oblique;
+}
+/*   Display each category on the new line    */
+category{
+    display: block;
+}
+/*  Add any other css-rule  */
+*{
+    color:blue;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
