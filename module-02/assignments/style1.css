@@ -1,0 +1,9 @@
+originalName {
+    font-size: 30px;
+  }
+  
+  category {
+    color: rgb(0, 255, 60);
+    display: ruby-base;
+    font-weight: bolder;
+  }
