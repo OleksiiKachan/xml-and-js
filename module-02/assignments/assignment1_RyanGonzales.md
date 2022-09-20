@@ -27,7 +27,7 @@ Explain the error and fix it.
 
 2.	What is the use of CDATA block in this document?
 
-**The CDATA block was used for the summary element (summary of the whole menu) and description element (description for each item in a specific menu), housing all words in one paragraph within the CDATA blocks’ opening <![CDATA[ and closing ]]> tags, then displaying it in Google Chrome as the whole content of each element. In Google Chrome, the whole CDATA block shows its element’s text contents in one line, regardless if the sentences are broken during the process of writing the xml code by pressing the Enter key.**
+**The CDATA block was used for the summary element (summary of the whole menu) and description element (description for each item in a specific menu), housing all words in one paragraph within the CDATA blocks’ opening <![CDATA[ and closing ]]> tags, then displaying it in Google Chrome as the whole content of each element. In Google Chrome, the whole CDATA block shows its element’s text contents in one line, regardless if the sentences are broken during the process of writing the xml code by pressing the Enter key. Also, special characters within the CDATA block that are used in xml code such as asterisk (*) will not be processed as code, instead will pass as just text data**
 
 ![](images/CDATAblock.png)
 
