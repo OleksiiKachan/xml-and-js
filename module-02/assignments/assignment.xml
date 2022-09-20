@@ -1,5 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<menuInfo>
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?> <!--Prolog-->
+<?xml-stylesheet type="text/css" href="style1.css"?>
+<!DOCTYPE menuInfo 
+[
+  <!ELEMENT menuInfo (title, summary,effectiveDate,menu+)>
+  <!ELEMENT menu (category, menuItem+)>
+  <!ELEMENT menuItem (itemName,description,price,indicator*)>
+  <!ELEMENT itemName (name?,originalName?,oldName?)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT summary (#PCDATA)>
+  <!ELEMENT effectiveDate (#PCDATA)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT originalName (#PCDATA)>
+  <!ELEMENT oldName (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT indicator (#PCDATA)>
+  ]>
+<menuInfo> <!--Document body start-->
   <title>Chester's Breakfast Menu</title>
   <summary>
     <![CDATA[
@@ -8,7 +26,7 @@
     up just the way you like them!!
     ]]>
   </summary>
-  <effective Date>03/12/2016</effective Date>
+  <effectiveDate>03/12/2016</effectiveDate>
   <menu>
     <category>Traditional Favorites</category>
     <menuItem>
@@ -28,7 +46,7 @@
     </menuItem>
     <menuItem>
       <itemName>
-        <originalName> Fresh Mornin' Sampler </originalname>
+        <originalName> Fresh Mornin' Sampler </originalName>
         <oldName> Mornin' Sampler </oldName>
       </itemName>
       <description>
@@ -48,7 +66,7 @@
     <category>Lite and Quick</category>
     <menuItem>
       <itemName>
-        <name> Oatmeal Breakfast </originalName>
+        <originalName> Oatmeal Breakfast </originalName>
       </itemName>
       <description>
         <![CDATA[
@@ -79,4 +97,5 @@
       <indicator>&#9832;</indicator>  <!-- Low-carb -->
     </menuItem>
   </menu>
-</menuInfo>
+</menuInfo><!--Document body ends--> 
+<!--Name: Naga Venkata Vintha, Student ID: N01532648--><!--epilog-->
