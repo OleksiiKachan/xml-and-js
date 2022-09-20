@@ -42,7 +42,7 @@ Explain the error and fix it.
 ![](images/docbody2.png)
 ![](images/docbody3.png)
 
-**An epilog is the final comments or processing instructions found at the last part of the document. In this case, it is line 82 which is my name and student id.**
+**An epilog is the final comments or processing instructions found at the last part of the document. In this case, it is line 83 which is my name and student id.**
 
 ![](images/epilog.png)
 
@@ -50,6 +50,9 @@ Explain the error and fix it.
 
 ![](images/DTD.png)
 
+
+
+```htm
 <!DOCTYPE menuInfo
 [ 
   <!ELEMENT menuInfo (title, summary, effectiveDate, menu+)>
@@ -73,6 +76,8 @@ Explain the error and fix it.
   <!ELEMENT price (#PCDATA)>
   <!ELEMENT indicator (#PCDATA)>
 ]>
+
+```
 
 
 6.	Verify that file is well-formed and valid.
