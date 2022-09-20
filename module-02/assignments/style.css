@@ -1,0 +1,32 @@
+menuInfo{
+    background-color: lightgreen;
+}
+originalName{
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+
+}
+ title, summary, effective{
+  font-style:  bold;
+  font-size: 28px;
+  display:block;
+  text-align: center; 
+  margin:0.5em; 
+  padding:0.5em; 
+  background-color: yellow;
+}
+
+ category{
+    font-family:Georgia, serif;;
+    display: block;
+    text-align: center;
+    border: 1px solid black;
+    margin:0.5em; 
+    padding:0.5em;
+}
+
+
+menuItem, itemName, description, price, indicator, originalName{
+    display:block;
+    text-align: center;
+}
