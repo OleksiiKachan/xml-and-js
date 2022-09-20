@@ -19,3 +19,9 @@ The use of CDATA in this document is to make a short presentation of the menu ca
 ![image info](../screenshoot/cap3.jpg)
 
 5.Add inline DTD for this document.
+![image info](../screenshoot/cap4.jpg)
+
+6.Verify that file is well-formed and valid.
+![image info](../screenshoot/cap5.jpg)
+
+7.Create `style.css` file and link it to the file. Add the following styles to the .css:

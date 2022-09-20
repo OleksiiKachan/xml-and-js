@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/css" href="style1.css"?>
 <!DOCTYPE menuInfo 
 [
-  <!ELEMENT menuInfo (menu, title, summary, effective)>
+  <!ELEMENT menuInfo (title, summary, effective,menu)>
   <!ELEMENT title (#PCDATA)>
   <!ELEMENT summary (#PCDATA)>
   <!ELEMENT effective (#PCDATA)>
@@ -10,11 +10,13 @@
   <!ELEMENT menu (category, menuItem)>
   <!ELEMENT category (#PCDATA)>
   <!ATTLIST category caID ID #REQUIRED>
+  <!ATTLIST menu mID ID  #REQUIRED>
   <!ELEMENT menuItem (itemName,description,price,indicator)>
+  <!ATTLIST menuItem meID ID #REQUIRED>
   <!ELEMENT description (#PCDATA)>
   <!ELEMENT price (#PCDATA)>
   <!ELEMENT indicator (#PCDATA)>
-   <!ATTLIST indicator inID ID #REQUIRED>
+  <!ATTLIST indicator inID ID #REQUIRED>
   <!ELEMENT itemName (originalName, oldName)>
   <!ELEMENT originalName (#PCDATA)>
   <!ELEMENT oldName (#PCDATA)>
@@ -29,9 +31,9 @@
     ]]>
   </summary>
   <effective Date="01/01/1991">03/12/2016</effective> <!-- should contain exactly the same information beacuse use a atribute-->
-  <menu>
+  <menu mID="m01">
     <category caID="c01">Traditional Favorites</category>
-    <menuItem>
+    <menuItem meID="me01">
       <itemName>
         <originalName> Rise n' Shine</originalName>
         <oldName> Shine </oldName>
@@ -48,7 +50,7 @@
       <indicator inID="I01"></indicator>
     </menuItem>
     <category caID="c02">--</category>
-    <menuItem>
+    <menuItem meID="me02">
       <itemName>
         <originalName> Fresh Mornin' Sampler </originalName> <!-- must be terminated by the matching end-tag -->
         <oldName> Mornin' Sampler </oldName>
@@ -66,11 +68,12 @@
       <indicator inID="I04">&#9824;</indicator>  <!-- vegan -->  
     </menuItem>
   </menu>
-  <menu>
-    <category>Lite and Quick</category>
-    <menuItem>
+  <menu mID="m02">
+    <category caID="c03">Lite and Quick</category>
+    <menuItem meID="me03">
       <itemName>
-        <name> Oatmeal Breakfast </name> <!-- must be terminated by the matching end-tag -->
+        <originalName> Oatmeal Breakfast </originalName> <!-- must be terminated by the matching end-tag -->
+        <oldName>-- </oldName>
       </itemName>
       <description>
         <![CDATA[
@@ -85,7 +88,8 @@
       <indicator inID="I07">&#9830;</indicator>  <!-- low-sodium -->
       <indicator inID="I08">&#9824;</indicator>  <!-- vegan -->  
     </menuItem>
-    <menuItem>
+    <category caID="c04">--</category>
+    <menuItem meID="me04">
       <itemName>
         <originalName> Chester's Meat Platter </originalName>
         <oldName> Chester Platter </oldName>

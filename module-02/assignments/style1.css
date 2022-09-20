@@ -1,7 +1,11 @@
-name {
+originalName {
     font-weight: bold;
   }
   
   * {
     display: block;
   }
+
+category{
+  font-weight: bold;
+}
