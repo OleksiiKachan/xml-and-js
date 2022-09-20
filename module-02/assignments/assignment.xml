@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?> <!-- Prolog -->
+<?xml-stylesheet type="text/css" href="/assignments/style_Neeraj.css"?>
+<!DOCTYPE menuInfo [
+<!ELEMENT menuInfo (title,summary,effectiveDate,menu+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT summary (#PCDATA)>
+<!ELEMENT effectiveDate (#PCDATA)>
+<!ELEMENT menu (category,menuItem+)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT menuItem (itemName,description,price,indicator*)>
+<!ELEMENT itemName (originalName,oldName?)>
+<!ELEMENT originalName (#PCDATA)>
+<!ELEMENT oldName (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT indicator (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+]>
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -8,13 +24,13 @@
     up just the way you like them!!
     ]]>
   </summary>
-  <effective Date>03/12/2016</effective Date>
+  <effectiveDate>03/12/2016</effectiveDate>  <!--fix #1-->
   <menu>
     <category>Traditional Favorites</category>
     <menuItem>
       <itemName>
-        <originalName> Rise n' Shine</originalName>
-        <oldName> Shine </oldName>
+        <originalName>Rise n' Shine</originalName>
+        <oldName>Shine</oldName>
       </itemName>
       <description>
         <![CDATA[
@@ -28,8 +44,8 @@
     </menuItem>
     <menuItem>
       <itemName>
-        <originalName> Fresh Mornin' Sampler </originalname>
-        <oldName> Mornin' Sampler </oldName>
+        <originalName>Fresh Mornin' Sampler</originalName>    <!-- fix #2 -->
+        <oldName>Mornin' Sampler</oldName>
       </itemName>
       <description>
         <![CDATA[
@@ -48,7 +64,7 @@
     <category>Lite and Quick</category>
     <menuItem>
       <itemName>
-        <name> Oatmeal Breakfast </originalName>
+        <originalName>Oatmeal Breakfast</originalName>    <!-- fix #3-->
       </itemName>
       <description>
         <![CDATA[
@@ -65,8 +81,8 @@
     </menuItem>
     <menuItem>
       <itemName>
-        <originalName> Chester's Meat Platter </originalName>
-        <oldName> Chester Platter </oldName>
+        <originalName>Chester's Meat Platter</originalName>
+        <oldName>Chester Platter</oldName>
       </itemName>
       <description>
         <![CDATA[
@@ -79,4 +95,6 @@
       <indicator>&#9832;</indicator>  <!-- Low-carb -->
     </menuItem>
   </menu>
-</menuInfo>
+</menuInfo>       <!-- Document -->
+
+<!-- name: Neeraj Babbar student ID: n01531376 -->  <!-- Epilog -->
