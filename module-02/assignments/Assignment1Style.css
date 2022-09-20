@@ -1,0 +1,18 @@
+originalName{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+category{
+    display: block;
+    white-space: pre-line;
+}
+price{
+    color: red;
+    font-size: large;
+    animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
