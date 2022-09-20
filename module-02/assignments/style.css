@@ -1,0 +1,22 @@
+originalName{
+    font-size: 20px;
+}
+
+category{
+    display: block;
+    font-size: 40px;
+}
+
+title, summary, menu, category, menuItem, itemName, originalName, oldName{
+    display: block;
+}
+
+title{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+summary{
+    display: block;
+    font-size: 30px;
+}
