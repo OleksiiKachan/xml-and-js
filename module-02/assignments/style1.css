@@ -1,0 +1,22 @@
+originalName {
+    font-size:large;
+}
+price {
+    font-weight: bold;
+}
+title {
+    color: blue;
+    font-size: medium;
+    }
+
+menuInfo {
+    background-color: grey;
+        }
+
+category {
+    display: block;
+        }
+
+category:before {
+    content: "";
+                }

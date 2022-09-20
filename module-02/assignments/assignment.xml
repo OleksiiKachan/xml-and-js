@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?> <!--Prolog = XML declaration-->
+<?xml-stylesheet type="text/css" href="style1.css"?>  <!--Prolog = processing instruction-->
+<!--This document contains the Menu with few items prize and description-->  <!--Prolog = Comments-->
+
+<!--Prolog = Document type declaration-->
+<!DOCTYPE menuInfo
+[
+  <!ELEMENT menuInfo (title, summary, effectiveDate, menu+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT summary (#PCDATA)>
+  <!ELEMENT effectiveDate (#PCDATA)>
+  <!ELEMENT menu (category, menuItem+)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT menuItem (itemName, description, price, indicator*)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT indicator (#PCDATA)>
+  <!ELEMENT itemName (originalName?, oldName?)>
+  <!ELEMENT originalName (#PCDATA)>
+  <!ELEMENT oldName (#PCDATA)>
+]>
+
+<!--Document body-->
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -8,9 +30,9 @@
     up just the way you like them!!
     ]]>
   </summary>
-  <effective Date>03/12/2016</effective Date>
+  <effectiveDate>03/12/2016</effectiveDate>  <!--There should be no space in tag-->
   <menu>
-    <category>Traditional Favorites</category>
+    <category>Traditional Favorites</category><br/>
     <menuItem>
       <itemName>
         <originalName> Rise n' Shine</originalName>
@@ -25,10 +47,11 @@
         ]]>
       </description>
       <price>7.95</price>
+
     </menuItem>
     <menuItem>
       <itemName>
-        <originalName> Fresh Mornin' Sampler </originalname>
+        <originalName> Fresh Mornin' Sampler </originalName> <!--opening tag and closing tag should contain same name-->
         <oldName> Mornin' Sampler </oldName>
       </itemName>
       <description>
@@ -45,10 +68,10 @@
     </menuItem>
   </menu>
   <menu>
-    <category>Lite and Quick</category>
+    <category>Lite and Quick</category><br/>
     <menuItem>
       <itemName>
-        <name> Oatmeal Breakfast </originalName>
+        <originalName> Oatmeal Breakfast </originalName>  <!--opening tag and end tag should be same-->
       </itemName>
       <description>
         <![CDATA[
@@ -80,3 +103,5 @@
     </menuItem>
   </menu>
 </menuInfo>
+
+<!--Name : Deeksha Kademgari  Student ID: N01532273 -->
