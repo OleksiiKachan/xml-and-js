@@ -4,7 +4,7 @@ Explain the error and fix it.
 
 **For the first error message when opening the xml file in Google Chrome, this is being displayed:**
 
-![image info](module-02\images\error1.png)
+![module-02\images\error1.png]
 
 **The error points out line 11 of the xml code, where in element <effective Date> were written incorrectly. There is a space between words “effective” and “Date” which causes the error**. 
 
