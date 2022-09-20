@@ -3,5 +3,23 @@ name {
 }
 
 * {
+  margin-left: 20px;
   display: block;
 }
+
+menuInfo{
+  background-color: lightblue;
+}
+originalName{
+  font-size: 22px;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+}
+title {
+  text-decoration:underline;
+}
+category{
+  margin:0.5em; 
+  padding:0.5em;
+}
+

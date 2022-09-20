@@ -34,6 +34,23 @@ The epilog will contain any comments or instructions after the document body, he
 
 5. Add inline DTD for this document.
 
+<!DOCTYPE menuInfo [
+  <!ELEMENT menuInfo (title,summary,effective,menu+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT summary (#PCDATA)>
+  <!ELEMENT effective (#PCDATA)>
+  <!ATTLIST effective date CDATA #IMPLIED>
+  <!ELEMENT menu (category,menuItem+)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT menuItem (itemName,description,price,indicator*)>
+  <!ELEMENT itemName (originalName,oldName?)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT indicator (#PCDATA)>
+  <!ELEMENT originalName (#PCDATA)>
+  <!ELEMENT oldName (#PCDATA)>
+]>
+
 6. Verify that file is well-formed and valid.
   ![image ans 6 ](../assets/q6.jpg)
 
@@ -43,4 +60,9 @@ The epilog will contain any comments or instructions after the document body, he
 - Display each `category` on the new line
 - Add any other css-rule
 
+![image ans 7 ](../assets/q7.jpg)
+
 Create `module-2/assignments/assignment_YOURNAME.md` and add your theory answers. Add screenshots of each step to the file (Refer `module-1/assignments/evaluation-1.md` on how to add image to md file)
+
+<!-- Name: Hanish Kaprani
+    Student ID: N01519824 -->
