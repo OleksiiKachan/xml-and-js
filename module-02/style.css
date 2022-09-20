@@ -1,5 +1,8 @@
-name {
-  font-weight: bold;
+originalName{
+  font-size: large;
+}
+oldName{
+  font-size: small;
 }
 
 * {
