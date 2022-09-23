@@ -60,4 +60,5 @@ Question 7.
 
 ![image info](../assignments/declarationofCSS.png)
 
+
 ![image info](../assignments/contentofCSS.png)
