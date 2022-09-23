@@ -1,28 +1,28 @@
 # Activity 1
 
 ```xml
-<employeeList>
-  <personList>
-    <empID>E0000001</empID>
-    <name>Sales</name>
-    <name>John Smith</name>
-  </personList>
-  <personList>
-    <empID>E0000002</empID>
-    <name>Development</name>
-    <name>Ichiro Tanaka</name>
-  </personList>
-  <personList>
-    <empID>E0000003</empID>
-    <name>Development</name>
-    <name>Jiro Suzuki</name>
-  </personList>
-  <personList>
-    <empID>E0000004</empID>
-    <name>Administrative</name>
-    <name>Saburo Takahashi</name>
-  </personList>
-</employeeList>
+<ls:employeeList xmlns:ls="urn:corp:list" xmlns:ep="urn:corp:emp" xmlns:dp="urn:corp:dep">
+  <ls:personList >
+    <ep:empID>E0000001</ep:empID>
+    <dp:name>Sales</dp:name>
+    <ep:name>John Smith</ep:name>
+  </ls:personList>
+  <ls:personList>
+    <ep:empID>E0000002</ep:empID>
+    <dp:name>Development</dp:name>
+    <ep:name>Ichiro Tanaka</ep:name>
+  </ls:personList>
+  <ls:personList>
+    <ep:empID>E0000003</ep:empID>
+    <dp:name>Development</dp:name>
+    <ep:name>Jiro Suzuki</ep:name>
+  </ls:personList>
+  <ls:personList>
+    <ep:empID>E0000004</ep:empID>
+    <dp:name>Administrative</dp:name>
+    <ep:name>Saburo Takahashi</ep:name>
+  </ls:personList>
+</ls:employeeList>
 ```
 
 Resolve naming collision by adding namepsaces
