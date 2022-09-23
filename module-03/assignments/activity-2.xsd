@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="product">
+    <xs:element name="products">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="product" type="ProductType" minOccurs="1" maxOccurs="unbounded" />
@@ -20,7 +20,7 @@
                     </xs:simpleContent>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="description" type="xs:string"></xs:element>
+            <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1" ></xs:element>
             <xs:element name="prices">
                 <xs:complexType>
                     <xs:sequence>
