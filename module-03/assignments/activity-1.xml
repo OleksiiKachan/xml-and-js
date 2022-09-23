@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<p:employeeList xmlns:p="urn:corp:list"
+    xmlns:e="urn:corp:emp"
+    xmlns:d="urn:corp:dep">
+    <p:personList>
+        <e:empID>E0000001</e:empID>
+        <d:name>Sales</d:name>
+        <e:name>John Smith</e:name>
+    </p:personList>
+    <p:personList>
+        <e:empID>E0000002</e:empID>
+        <d:name>Development</d:name>
+        <e:name>Ichiro Tanaka</e:name>
+    </p:personList>
+    <p:personList>
+        <e:empID>E0000003</e:empID>
+        <d:name>Development</d:name>
+        <e:name>Jiro Suzuki</e:name>
+    </p:personList>
+    <p:personList>
+        <e:empID>E0000004</e:empID>
+        <d:name>Administrative</d:name>
+        <e:name>Saburo Takahashi</e:name>
+    </p:personList>
+</p:employeeList>
