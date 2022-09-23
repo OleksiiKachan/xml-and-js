@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="productInfo" type="ProductsType">
+  <xs:complexType name="ProductsType">
+  <xs:sequence>
+  <xs:element name="products" type="ProductsType" minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="productName">
+      <xs:complexType>
+      <xs:sequence>
+            <xs:simpleContent>
+                <xs:attribute name="sku" type="xs:string"/> 
+                <xs:attribute name="createdAt" type="xs:dateTime"/>
+                <xs:attribute name="shippable" type="xs:boolean"/>   
+            </xs:simpleContent>
+      </xs:sequence>
+      </xs:complexType>
+      </xs:element>
+      </xs:element>
+      <xs:element name="description" type="xs:string"/>
+      <xs:element name="prices" type="xs:string"/>
+      <xs:element name="productItems" type="xs:string"/>
+      <xs:element name="manufacturer">
+          <xs:complexType>
+            <xs:simpleContent>
+                <xs:attribute name="id" type="xs:string"/>    
+            </xs:simpleContent>
+          </xs:complexType>
+      </xs:element>    
+  </xs:sequence>
+  </xs:complexType>
+  </xs:element>    
+</xs:schema>  
+     
+ 
