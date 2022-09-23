@@ -25,16 +25,22 @@ Answer-3: Added my name and student id in assignment.xml and assignment_Sharon.m
                STUDENT ID - N01533014 -->
 
 4. Identify prolog, document body, and epilog in the document. Are there any processing instructions?
-Answer-4: Prolog : Prolog occour before body content in the document, 
+Answer-4: Prolog : 1. Prolog occour before body content in the document,
+
           <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
           <?xml-stylesheet type="text/css" href="style.css"?>
 
-          Document Body: 1. whatever data or content present in <!DOCTYPE menuInfo [......]>
-                         2. whatever data or content present in body of the document i.e, from <menuInfo>...every content present in between....</menuInfo>
+          2. whatever data or content present in <!DOCTYPE menuInfo [......]>
 
-          Epilog: Any comments or processing Instriction present 
+          Document Body:  whatever data or content present in body of the document i.e, from <menuInfo>...every content present in 
+                          between....</menuInfo>
+
+          Epilog: Any comments or processing Instriction present
+
                   <!-- NAME - Sharon Sebastian
+
                STUDENT ID - N01533014 -->
+
               style.css is the processing instructions for assignment.xml
 
 5. Add inline DTD for this document.
@@ -135,13 +141,13 @@ Create `module-2/assignments/assignment_YOURNAME.md` and add your theory answers
 
 I am added screenshot of the output and css file, and  also the screenshot of the site that shows my xml file well-formed and valid. 
 
-![image info](XML-AND-JS/assets/css-1.png)
-![image info](XML-AND-JS/assets/css-2.png)
-![image info](XML-AND-JS/assets/output.png)
-![image info](XML-AND-JS/assets/valid-1.png)
-![image info](XML-AND-JS/assets/valid-2.png)
-![image info](XML-AND-JS/assets/valid-3.png)
-![image info](XML-AND-JS/assets/valid-4.png)
+![image info](XML-AND-JS/assets/Error.png)
+![image info](XML-AND-JS/assets/Output.png)
+![image info](XML-AND-JS/assets/Validate.png)
+![image info](XML-AND-JS/assets/Validate2.png)
+![image info](XML-AND-JS/assets/Validate3.png)
+![image info](XML-AND-JS/assets/Validate4.png)
+
 
 
 <!-- NAME - Sharon Sebastian
