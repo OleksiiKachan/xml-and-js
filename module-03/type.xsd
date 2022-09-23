@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
   <xs:element name="menuInfo" type="MenuInfoType"/>
 
   <xs:complexType name="MenuInfoType">
@@ -22,6 +23,7 @@
     <xs:sequence>
         <xs:element name="itemName" type="ItemNameType"/>
         <xs:element name="description" type="xs:string" />
+        
         <xs:element name="price">
           <xs:complexType>
             <xs:simpleContent>
@@ -31,6 +33,7 @@
             </xs:simpleContent>
           </xs:complexType>
         </xs:element>
+        
         <xs:element name="indicator" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
