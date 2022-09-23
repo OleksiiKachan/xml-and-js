@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="product" type="productInfoType"/>
+
+<xs:complexType name="productType">
+<xs:sequence>
+<xs:element name="productName" type="xs:string" />
+<xs:element name="manufacturer" type="xs:string" />
+<xs:element name="prices" type="ProductPrices" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ProductItemType">
+<xs:sequence>
+<xs:element name="productItems" type="xs:string" />
+<xs:element name="description" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ProductPrices">
+<xs:sequence>
+<xs:element name="price" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+
