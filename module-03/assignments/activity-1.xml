@@ -1,6 +1,5 @@
-# Activity 1
+<?xml version="1.0" encoding="utf-8"?>
 
-```xml
 <list:employeeList xmlns:list="urn:corp:list" xmlns:emp="urn:corp:emp" xmlns:dep="urn:corp:dep">
   <list:personList>
     <emp:empID>E0000001</emp:empID>
@@ -23,18 +22,3 @@
     <emp:name>Saburo Takahashi</emp:name>
   </list:personList>
 </list:employeeList>
-```
-
-Resolve naming collision by adding namepsaces
-
-- `employeeList` and `personList` - list schema
-- `empId` and second `name` - employee schema
-- first `name` - department schema
-
----
-
-- list schema - urn:corp:list
-- employee schema - urn:corp:emp
-- department schema - urn:corp:dep
-
-Save file as `module-3/asssignments/activity-1.xml`
