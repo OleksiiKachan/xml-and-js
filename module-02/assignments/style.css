@@ -1,0 +1,23 @@
+originalName{
+    font-size: larger;
+}
+category::before{
+    content: "\a";
+    white-space: pre;
+}
+category::after{
+    content: "\a";
+    white-space: pre;
+}
+category{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+menuInfo{
+    background-color: lightpink;
+    display: block;
+    margin: 2em 1em;
+    border: 4px solid black;
+    padding: 0px 1em;
+}
