@@ -1,0 +1,23 @@
+# Activity 1
+<List:employeeList xmlns:List="urn:corp:list" xmlns:emp="urn:corp:emp" xmlns:dept="urn:corp:dept">
+  <List:personList>
+    <emp:empID>E0000001</emp:empID>
+    <dept:name>Sales</dept:name>
+    <emp:name>John Smith</emp:name>
+  </List:personList>
+  <List:personList>
+    <emp:empID>E0000002</emp:empID>
+    <dept:name>Development</dept:name>
+    <emp:name>Ichiro Tanaka</emp:name>
+  </List:personList>
+  <List:personList>
+    <emp:empID>E0000003</emp:empID>
+    <dept:name>Development</dept:name>
+    <emp:name>Jiro Suzuki</emp:name>
+  </List:personList>
+  <List:personList>
+    <emp:empID>E0000004</emp:empID>
+    <dept:name>Administrative</dept:name>
+    <emp:name>Saburo Takahashi</emp:name>
+  </List:personList>
+</List:employeeList>
