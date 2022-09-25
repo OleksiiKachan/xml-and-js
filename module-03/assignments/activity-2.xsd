@@ -11,7 +11,7 @@
     <xs:complexType name="productType">
         <xs:sequence>
             <xs:element name="productName" type="xs:string"/>
-            <xs:element name="manufacturer"/>
+            <xs:element name="manufacturer">
                 <xs:complexType>
                     <xs:simpleContent>
                         <xs:extension base="xs:string">
@@ -20,7 +20,7 @@
                     </xs:simpleContent>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="description" type="xs:string"/>
+            <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
             <xs:element name="prices" type="priceType"/>
             <xs:element name="productItems" type="xs:string"/>
         </xs:sequence>
@@ -31,7 +31,7 @@
 
     <xs:complexType name="priceType">
         <xs:sequence>
-            <xs:element name="price" type="xs:string"/ minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="price" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
 
