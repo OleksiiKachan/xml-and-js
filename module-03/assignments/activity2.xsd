@@ -13,19 +13,15 @@
       <xs:element name="productName" type="xs:string"/>
       <xs:element name="manufacturer" type="string"/>
       <xs:element name="description" type="xs:string"/>
-      <xs:element name="prices" type="xs:string"/>
+      <xs:element name="prices" type="xs:priceType"/>
       <xs:element name="productItems" type="xs:string"/>
     </xs:sequence>
     <xs:attribute name="sku" type="xs:string"/>
     <xs:attribute name="createdAt" type="xs:dateTime"/>
     <xs:attribute name="shippable" type="xs:boolean"/>
-  </xs:complexType>			 
+  </xs:complexType>			  
 
-  <xs:complexType name="string" mixed="true">
-    <xs:attribute name="id" type="xs:string"/>
-  </xs:complexType>
-
-  <xs:complexType name="price">
+  <xs:complexType name="priceType">
     <xs:sequence>
         <xs:element name="price" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
