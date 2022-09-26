@@ -6,7 +6,7 @@
   <!ATTLIST product description CDATA #REQUIRED>
   <!ATTLIST product product_image CDATA #REQUIRED>
   <!ELEMENT catalog_item (item_number, price, size+)>
-  <!ATTLIST catalog_item gender CDATA #REQUIRED>
+  <!ATTLIST catalog_item gender (Men|Women|NonBinary) #REQUIRED>
   <!ELEMENT item_number (#PCDATA)>
   <!ELEMENT price (#PCDATA)>
   <!ELEMENT size (color_swatch+)>
