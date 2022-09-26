@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf"utf-8 standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="catalog" type="catalogType"/>
+    <xs:complexType name="catalogType">
+      <xs:sequence>
+        <xs:element name="product" type="productType"/>
+          <xs:complexType name="productType">
+            <xs:attribute type="xs:string" name="product_id"/>
+            <xs:attribute type="xs:string" name="description"/>
+            <xs:attribute type="xs:string" name="product_image"/>
+            <xs:sequence>
+              <xs:element name="catalog_item"  type = "catalog_itemType" maxOccurs="unbounded" minOccurs="0"/>
+              <xs:attribute type="xs:string" name="gender" use="optional"/>
+                <xs:complexType name="catalog_itemType">
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="item_number"/>
+                    <xs:element type="xs:float" name="price"/>
+
+                    <xs:element name="size" type="sizeType" maxOccurs="unbounded" minOccurs="0"/>
+                    <xs:attribute type="xs:string" name="description" use="optional"/>
+                      <xs:complexType name="sizeType">
+                        <xs:sequence>
+                          <xs:element name="color_swatch" type="color_swatch" maxOccurs="unbounded" minOccurs="0"/>
+                            <xs:complexType name="color_swatchType">
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="image" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:sequence>
+                      </xs:complexType>
+                  </xs:sequence>
+                </xs:complexType>
+            </xs:sequence>
+          </xs:complexType>
+      </xs:sequence>
+    </xs:complexType>
+</xs:schema>

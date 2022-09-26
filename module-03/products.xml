@@ -20,7 +20,6 @@
                 </xs:extension>
                 </xs:simpleContent>
               </xs:complexType>
-            
             <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="prices" type="pricesType"/>
               <xs:complexType name="pricesType">
