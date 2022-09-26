@@ -1,0 +1,20 @@
+title{
+    font-size: large;
+    color: blueviolet;
+    font-weight: bold;
+}
+
+originalName{
+font-size: large;
+color: blue;
+
+}
+
+*{
+    display: block;
+}
+
+indicator{
+    display: inline-block;
+    color: red;
+}

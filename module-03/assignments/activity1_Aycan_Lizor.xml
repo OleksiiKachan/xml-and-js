@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <list:employeeList xmlns:list="urn:corp:list" xmlns:emp="urn:corp:emp" xmlns:dep="urn:corp:dep">
+<!--Buradaki corp ne anlama geliyor-->
+<!--default tanımlama yaptığımızda nasıl anlaşılacak namelerin karışmayacağı-->
 
   <list:personList>
     <emp:empID>E0000001</emp:empID>
