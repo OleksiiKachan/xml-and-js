@@ -37,7 +37,6 @@
   </xs:attribute>    
 </xs:sequence>
 </xs:complexType> 
-
 </xs:schema>
 
 
