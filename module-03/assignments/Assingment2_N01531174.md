@@ -7,7 +7,8 @@ the size element can occur one or more times.
 The size element has an element called color_swatch which can occur one or more times.
 The color_swatch has a attribute called image which value should be compulsory.
 
-![module3](https://user-images.githubusercontent.com/108425395/192163433-da090874-7415-44b9-9816-fe12083a3051.png)
+![module3_3](https://user-images.githubusercontent.com/108425395/192399676-f68f46db-16cf-4255-a02f-c0f320176b79.png)
+
 
 
 Thought process behind the xsd file :
