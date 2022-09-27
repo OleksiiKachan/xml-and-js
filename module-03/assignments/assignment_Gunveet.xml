@@ -14,7 +14,7 @@
 <!ELEMENT color_swatch (#PCDATA)>
 <!ATTLIST color_swatch image (red_cardigan.jpg | navy_cardigan.jpg | burgundy_cardigan.jpg | black_cardigan.jpg) #REQUIRED>
 ]>
-<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="catalog.xsd">
+<catalog>
   <product product_id="e4892f6a-7cce-11ec-90d6-0242ac120003" description="Cardigan Sweater" product_image="cardigan.jpg">
     <catalog_item gender="Men">
       <item_number>QWZ5671</item_number>
