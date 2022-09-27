@@ -5,7 +5,7 @@
   <!ELEMENT title (#PCDATA)>
   <!ELEMENT summary (#PCDATA)>
   <!ELEMENT effective (#PCDATA)>
-  <!ATTLIST effective date CDATA #FIXED>
+  <!ATTLIST effective Date CDATA #FIXED >
   <!ELEMENT menu (category,menuItem+)>
   <!ELEMENT category (#PCDATA)>
   <!ELEMENT menuItem (itemName,description,price,indicator*)>
