@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="catalog" type="CatalogType" />
+
+    <xs:complexType name="CatalogType">
+        <xs:sequence>
+            <xs:element name="product" minOccurs="1" maxOccurs="unbounded" type="ProductType"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ProductType">
+        <xs:sequence>
+            <xs:element name="catalog_item" minOccurs="1" maxOccurs="unbounded" type="Catalog_ItemType"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="product_id" type="xs:ID"></xs:attribute>
+        <xs:attribute name="description" type="xs:string"></xs:attribute>
+        <xs:attribute name="product_image" type="xs:string"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="Catalog_ItemType">
+        <xs:sequence>
+            <xs:element name="item_number" type="xs:string"></xs:element>
+            <xs:element name="price" type="xs:float"></xs:element>
+            <xs:element name="size" type="SizeType" minOccurs="1" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="gender" type="xs:string"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="SizeType">
+        <xs:sequence>
+            <xs:element name="color_swatch" type="Color_SwatchType" minOccurs="1" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="description" type="xs:string"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="Color_SwatchType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="image" type="xs:string"></xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+</xs:schema>
