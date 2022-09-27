@@ -20,6 +20,7 @@
   <!ELEMENT itemPrice (#PCDATA)>
   <!ELEMENT itemQty (#PCDATA)>
 ]>
+
 <customers>
   <customer custID="cust201">
     <name title="Mr.">John Michael</name>
