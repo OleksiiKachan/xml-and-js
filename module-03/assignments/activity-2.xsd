@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <xs:element name="products">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="product" type="productType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+<xs:complexType name="product">
+    <xs:sequence>
+        <xs:element name="productName" tytpe="xs:string" />
+        <xs:complexType>
+            <xs:element name="manufacturer" type="manufacturerType" />
+        </xs:complexType>
+        <xs:element name="description" type='xs:string' minOccurs="0" maxOccurs="1" />
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="prices" type="pricesType" use="required" />
+            </xs:sequence>
+        </xs:complexType>
+        <xs:element name="productItem" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="sku" type="xs:string" />
+    <xs:attribute name="createdAt" type="xs:DateTime" />
+    <xs:attribute name="shippable" type="xs:boolean" />
+</xs:complexType>
+
+<xs:complexType name="manufacturerType">
+    <xs:element name="manufacturer" type="xs:string" use="required" />
+    <xs:attribute name="id" type="string" />
+</xs:complexType>
+
+<xs:complexType type="pricesType">
+    <xs:element name="price" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+
+</xs:complexType>
+</xs:schema>
