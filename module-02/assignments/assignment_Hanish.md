@@ -30,7 +30,7 @@ The document body will conatin all the content inside the root element , that is
 
 The epilog will contain any comments or instructions after the document body, here it will be student name and id comment :
 <!--Name: Hanish Kaprani
-    Student ID: N01519824--> 
+    Student ID: N01519824 --> 
 
 5. Add inline DTD for this document.
 
@@ -53,7 +53,8 @@ The epilog will contain any comments or instructions after the document body, he
 
 6. Verify that file is well-formed and valid.
   ![image ans 6 ](../assets/q6.jpg)
-
+  ![image ans 6.1](../assets/q6.1.jpg)
+  
 7. Create `style.css` file and link it to the file. Add the following styles to the .css:
 
 - Change font-size of `originalName`
