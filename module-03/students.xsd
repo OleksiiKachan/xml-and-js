@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ //1
   <xs:element name="class">
+  
     <xs:complexType>
       <xs:sequence>
         <xs:element name="student" type="StudentType" minOccurs="0" maxOccurs="unbounded" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-
+//2
   <xs:complexType name="StudentType">
     <xs:sequence>
       <xs:element name="firstname" type="xs:string"/>
