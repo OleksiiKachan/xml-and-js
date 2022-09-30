@@ -1,0 +1,4 @@
+//product[2]
+//(product)[last()]
+//product[1]/@sku
+//product[manufacturer/@id="sjb-pet"]
