@@ -11,8 +11,11 @@
 
 **Condition**: shippable items
 
+
 ## Table 2
 
 **Columns**: Product name, Description, USD price, Euro price
 
 **Condition**: manufacturer id is "acme"
+
+![image](./activity-4.png)
