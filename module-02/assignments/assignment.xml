@@ -8,7 +8,7 @@
   <!ELEMENT summary (#PCDATA)>
   <!ATTLIST summary xmlns CDATA #FIXED "">
   <!ELEMENT effective (#PCDATA)>
-  <!ATTLIST effective date CDATA #FIXED "">
+  <!ATTLIST effective type (date) #REQUIRED>
   <!ELEMENT menu (category,menuItem+)>
   <!ATTLIST menu xmlns CDATA #FIXED "">
   <!ELEMENT category (#PCDATA)>
