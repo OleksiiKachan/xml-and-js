@@ -4,7 +4,7 @@
 Answer-1: i have fixed all the errors and write each explanation in comment where i have also corrected the error.
 
 error1:  <effective Date>03/12/2016</effective Date>
-        explanation: <!--there is none attribute used in the element. Date attribute has not been specifiedin the effective tag and effective tag does not need date attribute to end -->
+        explanation: <!--there is none attribute used in the element. Date attribute has not been specifiedin the effective tag and effective   tag does not need date attribute to end -->
         error corrected:<effective type="date">03/12/2016</effective> 
 
 error2:   <originalName> Fresh Mornin' Sampler </originalname>
@@ -41,45 +41,32 @@ Answer-4: Prolog : 1. Prolog occour before body content in the document,
 Answer-5: i have added it in the assignment.xml document.
           
           <!DOCTYPE menuInfo [
-<!ELEMENT menuInfo (title,summary,effective,menu+)>
-<!ATTLIST menuInfo
-  xmlns CDATA #FIXED ''>
-<!ELEMENT title (#PCDATA)>
-<!ATTLIST title
-  xmlns CDATA #FIXED ''>
-<!ELEMENT summary (#PCDATA)>
-<!ATTLIST summary
-  xmlns CDATA #FIXED ''>
-<!ELEMENT effective (#PCDATA)>
-<!ATTLIST effective 
-     date CDATA #FIXED ''>
-<!ELEMENT menu (category,menuItem+)>
-<!ATTLIST menu
-  xmlns CDATA #FIXED ''>
-<!ELEMENT category (#PCDATA)>
-<!ATTLIST category
-  xmlns CDATA #FIXED ''>
-<!ELEMENT menuItem (itemName,description,price,indicator*)>
-<!ATTLIST menuItem
-  xmlns CDATA #FIXED ''>
-<!ELEMENT itemName (originalName,oldName?)>
-<!ATTLIST itemName
-  xmlns CDATA #FIXED ''>
-<!ELEMENT description (#PCDATA)>
-<!ATTLIST description
-  xmlns CDATA #FIXED ''>
-<!ELEMENT price (#PCDATA)>
-<!ATTLIST price
-  xmlns CDATA #FIXED ''>
-<!ELEMENT indicator (#PCDATA)>
-<!ATTLIST indicator
-  xmlns CDATA #FIXED ''>
-<!ELEMENT originalName (#PCDATA)>
-<!ATTLIST originalName
-  xmlns CDATA #FIXED ''>
-<!ELEMENT oldName (#PCDATA)>
-<!ATTLIST oldName
-  xmlns CDATA #FIXED ''>
+  <!ELEMENT menuInfo (title,summary,effective,menu+)>
+  <!ATTLIST menuInfo xmlns CDATA #FIXED "">
+  <!ELEMENT title (#PCDATA)>
+  <!ATTLIST title xmlns CDATA #FIXED "">
+  <!ELEMENT summary (#PCDATA)>
+  <!ATTLIST summary xmlns CDATA #FIXED "">
+  <!ELEMENT effective (#PCDATA)>
+  <!ATTLIST effective type (date) #REQUIRED>
+  <!ELEMENT menu (category,menuItem+)>
+  <!ATTLIST menu xmlns CDATA #FIXED "">
+  <!ELEMENT category (#PCDATA)>
+  <!ATTLIST category xmlns CDATA #FIXED "">
+  <!ELEMENT menuItem (itemName,description,price,indicator*)>
+  <!ATTLIST menuItem xmlns CDATA #FIXED "">
+  <!ELEMENT itemName (originalName,oldName?)>
+  <!ATTLIST itemName xmlns CDATA #FIXED "">
+  <!ELEMENT description (#PCDATA)>
+  <!ATTLIST description xmlns CDATA #FIXED "">
+  <!ELEMENT price (#PCDATA)>
+  <!ATTLIST price xmlns CDATA #FIXED "">
+  <!ELEMENT indicator (#PCDATA)>
+  <!ATTLIST indicator xmlns CDATA #FIXED "">
+  <!ELEMENT originalName (#PCDATA)>
+  <!ATTLIST originalName xmlns CDATA #FIXED "">
+  <!ELEMENT oldName (#PCDATA)>
+  <!ATTLIST oldName xmlns CDATA #FIXED "">
 ]>
 
 6. Verify that file is well-formed and valid.
@@ -145,6 +132,9 @@ I have added screenshot of the output and css file, and  also the screenshot of 
 ![image info](module-02/assignment/assets/valid-2.png)
 ![image info](module-02/assignment/assets/valid-3.png)
 ![image info](module-02/assignment/assets/valid-4.png)
+
+![image info](assets/validation_mod02.png)
+
 
 
 <!-- NAME - VANDANA
