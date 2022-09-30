@@ -39,8 +39,8 @@ The epilog will contain any comments or instructions after the document body, he
   <!ELEMENT title (#PCDATA)>
   <!ELEMENT summary (#PCDATA)>
   <!ELEMENT effective (#PCDATA)>
-  <!ATTLIST effective date CDATA #IMPLIED>
-  <!ELEMENT menu (category,menuItem+)>
+  <!ATTLIST effective type (Date) #REQUIRED>
+  <!ELEMENT menu (category+,menuItem+)>
   <!ELEMENT category (#PCDATA)>
   <!ELEMENT menuItem (itemName,description,price,indicator*)>
   <!ELEMENT itemName (originalName,oldName?)>
