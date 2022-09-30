@@ -16,3 +16,5 @@
 **Columns**: Product name, Description, USD price, Euro price
 
 **Condition**: manufacturer id is "acme"
+
+![Activity 4](./assets/activity4.png.PNG)
