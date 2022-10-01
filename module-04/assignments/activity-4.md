@@ -5,6 +5,9 @@
 3. Add 2 tables from description below
 4. Open `module-4/assignments/activity-4.xml` in browser (using `http-server`) and screenshot output of your file and save it as `module-4/assignments/activity-4.png`
 
+![image info](assets/activity-4-xml.png)
+
+
 ## Table 1
 
 **Columns**: Product name, Manufacturer id, Description, USD price
@@ -16,3 +19,4 @@
 **Columns**: Product name, Description, USD price, Euro price
 
 **Condition**: manufacturer id is "acme"
+

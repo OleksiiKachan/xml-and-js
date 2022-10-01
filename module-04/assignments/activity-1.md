@@ -13,6 +13,9 @@ Answer4://products[manufacturer/@id= 'sjb-pet']
 
 Save your answers into `module-4/assignments/activity-1_STUDENTID.md` and attach screenshots
 
-
+![image info](assets/mod4-1.png)
+![image info](assets/mod4-3.png)
+![image info](assets/mod4-2.png)
+![image info](assets/mod4-4.png)
 
 You can use <https://www.freeformatter.com/xpath-tester.html> to test your answers
