@@ -19,20 +19,20 @@ tell processor to process the entire document with this template.
     <html>
       <body>
         <h2>Product</h2>
-               
+
         <table border="1">
-          <tr bgcolor="blue">
+          <tr bgcolor="green">
             <th>productName</th>
-            <th>manufacturer</th>
-            <th>description</th>
-            <th>prices</th>
-            <th>productItems</th>
+            <th>Manufacturer id</th>
+            <th>Description</th>
+            <th>USD price</th>
           </tr>
                
           <!-- for-each processing instruction 
             Looks for each element matching the XPath expression 
           -->
           <xsl:for-each select="products/product">
+          <xsl:if test="@shippable = 'true'">
             <tr>
               <td>
                 <!-- value-of processing instruction 
@@ -40,15 +40,45 @@ tell processor to process the entire document with this template.
                 -->
                 <xsl:value-of select="productName"/>
               </td>
-              <td><xsl:value-of select="manufacturer"/></td>
+              <td><xsl:value-of select="manufacturer/@id"/></td>
               <td><xsl:value-of select="description"/></td>
               
-              <td><xsl:value-of select="prices"/></td>
-              <td><xsl:value-of select="productItems"/></td>
-                        </tr>
+              <td><xsl:value-of select="prices/price[1]"/></td>
+              </tr>
+              </xsl:if>
           </xsl:for-each>
         </table>
-      </body>
+         <br/>
+         <br/>     
+        <table border="1">
+          <tr bgcolor="green">
+            <th>productName</th>
+            <th>Description</th>
+            <th>USD prices</th>
+            <th>Euro prices</th>
+          </tr>
+               
+          <!-- for-each processing instruction 
+            Looks for each element matching the XPath expression 
+          -->
+          <xsl:for-each select="products/product">
+          <xsl:if test="manufacturer/@id = 'acme'">
+            <tr>
+              <td>
+                <!-- value-of processing instruction 
+                  process the value of the element matching the XPath expression 
+                -->
+                <xsl:value-of select="productName"/>
+              </td>
+              <td><xsl:value-of select="description"/></td>
+              
+              <td><xsl:value-of select="prices/price[1]"/></td>
+              <td><xsl:value-of select="prices/price[3]"/></td>
+            </tr>
+            </xsl:if>
+          </xsl:for-each>
+        </table>      
+        </body>
     </html>
   </xsl:template>  
 </xsl:stylesheet>
