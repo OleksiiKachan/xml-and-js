@@ -4,6 +4,7 @@ Namespace tells the xlst processor about which
 element is to be processed and which is used for output purpose only 
 --> 
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">   
+
 <!-- xsl template declaration:  
 template tells the xlst processor about the section of xml 
 document which is to be formatted. It takes an XPath expression. 
