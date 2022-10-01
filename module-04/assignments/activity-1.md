@@ -1,5 +1,9 @@
 # Activity 1
 
+![image info](../assignments/Screenshot2(validation)_Activity1.png)
+![image info](../Screenshot%201_Activity4.png)
+![image info](Activity-1-screenshot.png)
+
 Generate folowing XPath queries for `module-4/products.xml` file
 
 1. Target 2nd product in the list

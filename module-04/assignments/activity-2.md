@@ -1,5 +1,7 @@
 # Activity 2
 
+![image info](../assignments/Screenshot1%20(http-server)_Activity2.png)
+
 1. Run local server by running `http-server` command in your terminal
 2. Take a screenshot of your terminal with running local server and save as `module-4/assignments/activity-2-server.png`
 3. Open `module-4/students.xml` file in browser. Your localhost should be available on `localhost:8080`, `http://127.0.0.1:8080`, `http://192.168.0.16:8080`

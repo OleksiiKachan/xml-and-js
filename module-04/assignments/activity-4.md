@@ -1,5 +1,8 @@
 # Activity 4
 
+![image info](Activity-4.xsl-%20screenshot.png)
+![image info](Activity-4-http-server%20browser.png)
+
 1. Save `module-4/products.xml` as `module-4/assignments/activity-4.xml`
 2. Create `module-4/assignments/activity-4.xsl` and link `module-4/assignments/activity-4.xml` to it
 3. Add 2 tables from description below
