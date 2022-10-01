@@ -1,0 +1,2 @@
+Q1)Open `module-4/assignments/activity-4.xml` in browser (using `http-server`) and screenshot output of your file and save it as `module-4/assignments/activity-4.png`
+Answer - [! image info](../Activity-4_output.PNG)
