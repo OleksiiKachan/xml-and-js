@@ -18,4 +18,14 @@
 - inside size columns (small, medium, large, and extra large) display subtable with 2 columns: color and image
 ![image info](../assignments/Assignment-4_output.png)
 
+-----------------------------Explanation------------------------------- 
+- Here, title is given in h2 tag
+- ordered list is used 
+- for each loop to render to the product (catalog/product) because root element.
+- article tag is used and then h3 tag for product and for description p(paragraph) tag is used.
+- table is created and column names is given and inside that table another subtable is created for the size.
+- catalog item is renderd using for each loop and switch case that is choose is used for gender.
+- for the size, first go through all the size using for each and then if the required size description is there then it selects color and image from color_swatch. Likewise go through each size. 
+
+
 Create `module-4/assignments/assignment_YOURNAME.md` and explain your thought process in it. Add screenshots of each step to the file (Refer `week-1/assignments/evaluation-1.md` on how to add image to md file)
