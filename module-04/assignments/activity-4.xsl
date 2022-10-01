@@ -3,7 +3,7 @@
     <xsl:template match="/">
         <html>
             <body>
-                <h2 style="color: #48C9B0; text-decoration: underline;">Shippable items true table</h2>
+                <h2 style="color: #48C9B0; text-decoration: underline;">Shippable  items true table</h2>
                 <table border="1">
                     <tr bgcolor="#BB8FCE">
                         <th>Product Name</th>
