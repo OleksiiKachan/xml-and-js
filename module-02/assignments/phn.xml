@@ -1,33 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <details>
 <person>
-<name> RORIE DEMANCHE </name>
-<phoneno type="home">+1(710)153-4949  </phoneno>
+<name>RORIE DEMANCHE</name>
+<phoneno type="home">+1(710)153-4949</phoneno>
 <email>rdemanchee@foxnews.com</email>
 </person>
-
 <person>
-
-<<name>Kelcey Surman</name>
-<Phoneno. type="home">+1 (249) 926-7376</phoneno>>
-<Phoneno. types"work">+1 (208) 363-6588</phoneno>
-<phoneno. type="mobile">+1 (9) 536-6860</phoneno>
+<name>Kelcey Surman</name>
+<Phoneno type="home">+1(249)926-7376</phoneno>
+<Phoneno types"work">+1(208)363-6588</phoneno>
+<phoneno type="mobile">+1(924)536-6860</phoneno>
 <email>ksurman1@usnews.com</email>
 </person>
-
 <person>
 <name>Simon Heddan</name>
-<Phoneno type="home">+1 (687) 808-4290 </phoneno.> 
-<Phoneno type="work">+1 (604) 815-7810 </phoneno.>
-<phoneno type="mobile">+1 (924) 174-3271 </phonano.>
-<email>sheddan2@alexa.com</cemail>
+<Phoneno type="home">+1 (687)808-4290 </phoneno> 
+<Phoneno type="work">+1 (604)815-7810 </phoneno>
+<phoneno type="mobile">+1 (924)174-3271 </phonano>
+<email>sheddan2@alexa.com</email>
 </person>
-
 <person>
 <name>Chan Supple</name>
-<Phoneno type="home">+1 (577) 165-2495 </phoneno.> 
-<Phoneno type="work">+1 (547) 934-7337+1 </phoneno.>
-<phoneno type="mobile">+1 (367) 667-0747</phonano.>
-<email>sheddan2@alexa.com</cemail>
+<Phoneno type="home">+1(577)165-2495 </phoneno> 
+<Phoneno type="work">+1(547)934-7337+1 </phoneno>
+<phoneno type="mobile">+1(367) 667-0747</phonano>
+<email>sheddan2@alexa.com</email>
 </person>
 </details>
