@@ -18,13 +18,13 @@ tell processor to process the entire document with this template.
 		
     <html> 
       <body> 
-        <h2>Students</h2> 
+        <h2>Products</h2> 
 				
         <table border="1"> 
           <tr bgcolor="#9acd32"> 
-            <th>Roll No</th> 
-            <th>First Name</th> 
-            <th>Last Name</th> 
+            <th>Product</th> 
+            <th>Manufacturer</th> 
+            <th>Description</th> 
             <th>Nick Name</th> 
             <th>Marks</th> 
           </tr> 
