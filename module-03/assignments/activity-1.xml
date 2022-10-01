@@ -6,24 +6,24 @@
   <list:personList>
     <emp:empID>  E0000001</emp:empID>
     <dep:name>Sales</dep:name>
-    <name>John Smith</name>
+    <emp:name>John Smith</emp:name>
   </list:personList>
 
   <list:personList>
     <emp:empID>E0000002</emp:empID>
     <dep:name>Development</dep:name>
-    <name>Ichiro Tanaka</name>
+    <emp:name>Ichiro Tanaka</emp:name>
   </list:personList>
 
   <list:personList>
     <emp:empID>E0000003 </emp:empID>
     <dep:name>Development</dep:name>
-    <name>Jiro Suzuki</name>
+    <emp:name>Jiro Suzuki</emp:name>
   </list:personList>
 
   <list:personList>
     <emp:empID>E0000004</emp:empID>
     <dep:name>Administrative</dep:name>
-    <name>Saburo Takahashi</name>
+    <emp:name>Saburo Takahashi</emp:name>
   </list:personList>
 </list:employeeList>
