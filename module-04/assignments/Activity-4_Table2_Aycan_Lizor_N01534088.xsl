@@ -12,7 +12,6 @@
         <table border="1"> 
           <tr bgcolor="#9acd32">
             <th>Product Name</th> 
-           
             <th>Description</th> 
             <th>Prices</th> 
             
