@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="activity-4.xsl"?>
 <products>
   <product sku="BOS12DDF2" createdAt="2020-12-23T09:23:44" shippable="true">
     <productName>Dog Shirt Gift Basket</productName>
@@ -40,6 +41,6 @@
       <price>CAD$17.88</price>
       <price>&#8364;10.61</price>
     </prices>
-    <productItems>3230, 3232, 3250</productItems>
+    <productItems>3230, 323, 3250</productItems>
   </product>
 </products>
