@@ -26,9 +26,3 @@
 
 7. Create `style.css` file and link it to the file. Add the following styles to the .css:
     ![image info](../assignments/css.png)
-
-- Change font-size of `originalName`
-- Display each `category` on the new line
-- Add any other css-rule
-
-Create `module-2/assignments/assignment_YOURNAME.md` and add your theory answers. Add screenshots of each step to the file (Refer `module-1/assignments/evaluation-1.md` on how to add image to md file)

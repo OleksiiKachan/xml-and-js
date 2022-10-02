@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Person>
+<Name>Henny</Name>
+<Interest>reading, Art</Interest> 
+<Hobbies>Painting, Cooking, Dancing</Hobbies> 
+</Person>
+
+<!- 2nd Structure for 10 records -> 
+<?xml version="1.0" encoding="utf-8"?>
+<Data>
+<Person>
+<Name>Mohit</Name>
+<Interest>Coding, Art</Interest> 
+<Hobbies>Painting, Cooking, Dancing</Hobbies> 
+</Person>
+<Person>
+<Name>Yatri</Name>
+<Interest>Physics, Art</Interest> 
+<Hobbies>Sketching, Photography</Hobbies> 
+</Person>
+<Person>
+<Name>Malhar</Name>
+<Interest>Art, Planting</Interest>
+<Hobbies>Photography, Dancing</Hobbies>
