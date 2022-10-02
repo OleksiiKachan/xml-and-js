@@ -16,3 +16,5 @@
 **Columns**: Product name, Description, USD price, Euro price
 
 **Condition**: manufacturer id is "acme"
+
+![image info](./Screenshot%202022-10-01%20230926.png)
