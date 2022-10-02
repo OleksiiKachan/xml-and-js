@@ -5,6 +5,7 @@
 2.  XSD files
 
 ![image info](../Assetss/2QA2-1.png)
+
 ![image info](../Assetss/2QA2-2.png)
 
 3.  DTD declaration is complex, when mentioning the workflow with cardinality, attribute types if there are more tags its much more difficult to understand the flow.
