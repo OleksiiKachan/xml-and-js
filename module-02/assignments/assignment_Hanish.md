@@ -52,7 +52,7 @@ The epilog will contain any comments or instructions after the document body, he
 ]>
 
 6. Verify that file is well-formed and valid.
-  ![image ans 6 ](../assets/q6.jpg)
+  ![image answer 6 ](../assets/q6.jpg)
 
 7. Create `style.css` file and link it to the file. Add the following styles to the .css:
 
