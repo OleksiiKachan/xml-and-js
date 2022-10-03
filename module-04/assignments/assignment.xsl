@@ -4,6 +4,7 @@
     <html>
       <body>
         <h1>Catalog</h1>
+
         <ol>
           <li>
             <article>
@@ -16,6 +17,7 @@
             </article>
           </li>
         </ol>
+
         <table border="1">
           <tr>
             <th>Item Number</th>
@@ -36,18 +38,10 @@
                   <xsl:when test="@gender='Women'">W</xsl:when>
                 </xsl:choose>
               </td>
-              <td>
-                <table broder="1">
-                  <tr>
-                    <th>Color</th>
-                    <th>Image</th>
-                  </tr>
-                  <xsl:apply-templates select="size[@description='Small']" />
-                </table>
-              </td>
-              <td><xsl:value-of select="size[@description='Medium']" /></td>
-              <td><xsl:value-of select="size[@description='Large']" /></td>
-              <td><xsl:value-of select="size[@description='Extra Large']" /></td>
+              <td><xsl:apply-templates select="size[@description='Small']" /></td>
+              <td><xsl:apply-templates select="size[@description='Medium']" /></td>
+              <td><xsl:apply-templates select="size[@description='Large']" /></td>
+              <td><xsl:apply-templates select="size[@description='Extra Large']" /></td>
             </tr>
           </xsl:for-each>
         </table>
@@ -56,11 +50,18 @@
   </xsl:template>
 
   <xsl:template match="size">
-    <xsl:for-each select="color_swatch">
+    <table broder="1">
       <tr>
-        <td><xsl:value-of select="." /> </td>
-        <td><xsl:value-of select="@image" /> </td>
+        <th>Color</th>
+        <th>Image</th>
       </tr>
-    </xsl:for-each>
+      <xsl:for-each select="color_swatch">
+        <tr>
+          <td><xsl:value-of select="." /> </td>
+          <td><xsl:value-of select="@image" /> </td>
+        </tr>
+      </xsl:for-each>
+  </table>
+    
   </xsl:template>
 </xsl:stylesheet>
