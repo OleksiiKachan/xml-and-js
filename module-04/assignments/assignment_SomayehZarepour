@@ -1,0 +1,4 @@
+At first XSL template should match with root element (/). Then we start writing the HTML code for rendering catalog element from XML file. By using for-each loop we can select all children tag of catalog. Tag. and we put product-id and description attributes of product tag in <h3> and <p> tag.
+Then we start designing table and wrapped selected columns in <tr>tag. Second for-each is used for accessing the value of each element. By if condition we declare if attribute’s value of gender is Men or Women. And again, we use if condition for declaration different sizes. We designed a sub table for each size by declaration color and image columns. We do this for all four sizes. 
+![](assignment-output.png)
+![](assignment-output1.png)
