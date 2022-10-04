@@ -1,5 +1,8 @@
 # Assignment
 
+![image info](../assets/assignment.png)
+
+
 1. Open `module-4/assignments/assignment.xml` in your editor
 2. Create xsl file and add link to it
 3. Display catalog in the following way
