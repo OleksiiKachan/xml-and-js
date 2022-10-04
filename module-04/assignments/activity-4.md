@@ -7,10 +7,10 @@
 
 3. Add 2 tables from description below.
 #Table One
-![](../assests/table-1.png)
+![](../assests/table1.png)
 
 #Table Two
-![](../assests/table-2.png)
+![](../assests/table2.png)
 
 
 4. Open `module-4/assignments/activity-4.xml` in browser (using `http-server`) and screenshot output of your file and save it as `module-4/assignments/activity-4.png`
