@@ -14,3 +14,6 @@
 - inside size columns (small, medium, large, and extra large) display subtable with 2 columns: color and image
 
 Create `module-4/assignments/assignment_YOURNAME.md` and explain your thought process in it. Add screenshots of each step to the file (Refer `week-1/assignments/evaluation-1.md` on how to add image to md file)
+![answer-xml](assignment-4.png)
+
+We start my creating the xsl file and adding the stylesheet and template tags. Then we link it to the xml file using xml style sheet. Then as we want 'Catalog" in the title we use the head tag we then move on to the list tag and include article tag inside it since we want to put the catalogue items in the atricle tag. 
