@@ -14,3 +14,72 @@
 - inside size columns (small, medium, large, and extra large) display subtable with 2 columns: color and image
 
 Create `module-4/assignments/assignment_YOURNAME.md` and explain your thought process in it. Add screenshots of each step to the file (Refer `week-1/assignments/evaluation-1.md` on how to add image to md file)
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/">
+        <html>
+            <head>
+                <title>Catalog</title>
+            </head>
+            <body>
+                <h1>Catalog</h1>
+                <ul>
+                    <xsl:for-each select="catalog/product">
+                        <li>
+                            <article>
+                                <h3><xsl:value-of select="/@product_id"/></h3>
+                                <p><xsl:value-of select="/@description"/></p>
+                                <table border="1">
+                                    <tr bgcolor="green">
+                                        <th>item number</th>
+                                        <th>price</th>
+                                        <th>gender</th>
+                                        <th>small</th>
+                                        <th>medium</th>
+                                        <th>large</th>
+                                        <th>extra large</th>
+                                    </tr>
+                                    <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><table>
+                                            <tr>
+                                                <th>Color<th>
+                                                <th>Image<th>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><table>
+                                            <tr>
+                                                <th>Color<th>
+                                                <th>Image<th>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><table>
+                                            <tr>
+                                                <th>Color<th>
+                                                <th>Image<th>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><table>
+                                            <tr>
+                                                <th>Color<th>
+                                                <th>Image<th>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    </tr>
+                                </table>
+                            </article>
+                        </li>
+                    </xsl:for-each>
+                </ul>
+            </body>
+        </html>
+  </xsl:template>
+</xsl:stylesheet>
