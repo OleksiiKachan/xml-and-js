@@ -17,6 +17,9 @@
                     li h1 {
                         font-size: 30px;
                     }
+                    li p {
+                        font-size: 30px;
+                    }
                     table {
                         margin: 0 auto;
                     }
@@ -29,9 +32,6 @@
                     }
                     th, td {
                         padding: 4px 8px;
-                    }
-                    td {
-                        text-align: center;
                     }
                 </style>
             </head>
@@ -74,14 +74,15 @@
                             <td>
                                 <xsl:if test="size[@description='Small']">
                                     <table>
-                                        <xsl:for-each select="size[@description='Small']">
+                                        <tr>
+                                            <th>Color</th>
+                                            <th>Image</th> 
+                                        </tr>
+                                            
+                                        <xsl:for-each select="size[@description='Small']/color_swatch">
                                             <tr>
-                                                <th>Color</th>
-                                                <td><xsl:value-of select="color_swatch"/></td>
-                                            </tr>
-                                            <tr>
-                                                <th>Image</th> 
-                                                <td><xsl:value-of select="color_swatch/@image"/></td>
+                                                <td><xsl:value-of select="."/></td> 
+                                                <td><xsl:value-of select="@image"/></td>
                                             </tr>  
                                         </xsl:for-each>
                                     </table>
@@ -91,15 +92,16 @@
                             <td>
                                 <xsl:if test="size[@description='Medium']">
                                     <table>
-                                        <xsl:for-each select="size[@description='Medium']">
+                                        <tr>
+                                            <th>Color</th>
+                                            <th>Image</th> 
+                                        </tr>
+                                            
+                                        <xsl:for-each select="size[@description='Medium']/color_swatch">
                                             <tr>
-                                                <th>Color</th>
-                                                <td><xsl:value-of select="color_swatch"/></td>
-                                            </tr>
-                                            <tr>
-                                                <th>Image</th> 
-                                                <td><xsl:value-of select="color_swatch/@image"/></td>
-                                            </tr> 
+                                                <td><xsl:value-of select="."/></td> 
+                                                <td><xsl:value-of select="@image"/></td>
+                                            </tr>  
                                         </xsl:for-each>
                                     </table>
                                 </xsl:if>
@@ -107,15 +109,16 @@
                             <td>
                                 <xsl:if test="size[@description='Large']">
                                     <table>
-                                        <xsl:for-each select="size[@description='Large']">
+                                        <tr>
+                                            <th>Color</th>
+                                            <th>Image</th> 
+                                        </tr>
+                                            
+                                        <xsl:for-each select="size[@description='Large']/color_swatch">
                                             <tr>
-                                                <th>Color</th>
-                                                <td><xsl:value-of select="color_swatch"/></td>
-                                            </tr>
-                                            <tr>
-                                                <th>Image</th> 
-                                                <td><xsl:value-of select="color_swatch/@image"/></td>
-                                            </tr> 
+                                                <td><xsl:value-of select="."/></td> 
+                                                <td><xsl:value-of select="@image"/></td>
+                                            </tr>   
                                         </xsl:for-each>
                                     </table>
                                 </xsl:if>
@@ -123,16 +126,16 @@
                             <td>
                                 <xsl:if test="size[@description='Extra Large']">
                                     <table>
-
-                                        <xsl:for-each select="size[@description='Extra Large']">
+                                        <tr>
+                                            <th>Color</th>
+                                            <th>Image</th> 
+                                        </tr>
+                                            
+                                        <xsl:for-each select="size[@description='Extra Large']/color_swatch">
                                             <tr>
-                                                <th>Color</th>
-                                                <td><xsl:value-of select="color_swatch"/></td>
-                                            </tr>
-                                            <tr>
-                                                <th>Image</th> 
-                                                <td><xsl:value-of select="color_swatch/@image"/></td>
-                                            </tr> 
+                                                <td><xsl:value-of select="."/></td> 
+                                                <td><xsl:value-of select="@image"/></td>
+                                            </tr>  
                                         </xsl:for-each>
                                     </table>
                                 </xsl:if>
