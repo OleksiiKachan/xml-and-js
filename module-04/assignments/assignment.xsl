@@ -107,7 +107,7 @@
                                                     <td></td>
                                                 </xsl:otherwise>
                                             </xsl:choose>
-                                        </tr>
+                                    </tr>
                                     </xsl:for-each>
                                 </tr>                                
                             </table>
