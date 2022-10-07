@@ -1,17 +1,39 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
   <body>
     <ol id="students"></ol>
     <script>
+      //step 1
       const xhttp = new XMLHttpRequest();
+
       xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
+
+        //  if (this.readyState === 4 && this.status === 200) {
+        //   const firstname = studentNode.getElementsByTagName(`firstname`)[0].childNodes[0].nodeValue
+        // console.log(firstname);
+
+        // const lastname = studentNode.getElementsByTagName(`lastname`)[0].childNodes[0].nodeValue
+        // console.log(lastname);
+        // const htmlstring = `<li><h2>${firstname} ${lastname}</li></h2>`
+        // template.innerHTML = htmlstring //dealt as string 
+        // const html = template.content.firstChild;
+        // console.log(list.innerHTML);
+        // const value = list.innerHTML + html
+        // list.innerHTML = value;
+         // }
+
+
           displayData(this.responseXML);
         }
       };
-      xhttp.open("GET", "students.xml", true);
-      xhttp.send();
 
+      xhttp.open("GET", "students.xml", true); //net reqst - get, post, put
+
+      xhttp.send();
+//
       function stringToNode(html) {
         const template = document.createElement(`template`);
         html = html.trim();
@@ -24,24 +46,28 @@
 
         const studentNodes = xmlDoc.getElementsByTagName(`student`);
         for (let index = 0; index < studentNodes.length; index++) {
-          const studentNode = studentNodes[index];
+
+          const studentNode = studentNodes[index];//each element separatly
+          console.log(studentNode);
+
           const listItem = stringToNode(`<li>
             <h2>${
-              studentNode.getElementsByTagName(`firstname`)[0].childNodes[0]
-                .nodeValue
+              studentNode.getElementsByTagName(`firstname`)[0].childNodes[0].nodeValue
             } ${
-            studentNode.getElementsByTagName(`lastname`)[0].childNodes[0]
-              .nodeValue
+            studentNode.getElementsByTagName(`lastname`)[0].childNodes[0].nodeValue
           }</h2>
           <p>${studentNode.getAttribute(`rollno`)} - ${
-            studentNode.getElementsByTagName(`nickname`)[0].childNodes[0]
-              .nodeValue
+            studentNode.getElementsByTagName(`nickname`)[0].childNodes[0].nodeValue
           }</p>
           <p>${`Grade: ${
             studentNode.getElementsByTagName(`marks`)[0].childNodes[0].nodeValue
           }`}</p>
           </li>`);
           listElement.appendChild(listItem);
+
+
+
+        
         }
       }
     </script>
