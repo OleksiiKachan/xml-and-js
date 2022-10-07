@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <ol id="people"></ol>
+        <script>
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                //    console.log("readyState = " + this.readyState + " and status = " + this.status);
+                //    console.log({status:this.status})
+                //    console.log({readyState:this.readyState})
+                    displayData(this);
+                }
+            };
+
+            xhttp.open("GET", "people.xml", true);
+            xhttp.send();
+
+            function displayData(xml) {
+                const listElement = document.getElementById(`people`);
+
+                const xmlDoc = xml.responseXML;
+                const peopleNodes = xmlDoc.getElementsByTagName(`person`);
+
+                for (let index = 0; index < peopleNodes.length; index++) {
+                const persons = peopleNodes[index];
+
+                const listItem = document.createElement(`li`);
+
+                const title = document.createElement(`h3`);
+                title.appendChild(
+                    document.createTextNode(
+                    persons.getElementsByTagName(`firstName`)[0].childNodes[0]
+                        .nodeValue +
+                        ` ` +
+                        persons.getElementsByTagName(`lastName`)[0].childNodes[0]
+                        .nodeValue
+                    )
+                );
+
+               
+                listItem.appendChild(title);
+                listElement.appendChild(listItem);
+                }
+            }
+      
+
+        </script>
+
+    </body>
+
+</html>

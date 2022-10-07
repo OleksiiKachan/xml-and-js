@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<people>
+    <person id="1">
+        <firstName>Hussain</firstName>
+        <lastName>Zeale</lastName>
+        <email>hzeale0@odnoklassniki.ru</email>
+        <gender>Male</gender>
+        <ipAddress>143.237.191.245</ipAddress>
+    </person>
+    <person id="2">
+        <firstName>Michale</firstName>
+        <lastName>Delgado</lastName>
+        <email>mdelgado1@paginegialle.it</email>
+        <gender>Male</gender>
+        <ipAddress>144.2.126.19</ipAddress>
+    </person>
+    <person id="3">
+        <firstName>Gaspard</firstName>
+        <lastName>Upwood</lastName>
+        <email>gupwood2@fastcompany.com</email>
+        <gender>Male</gender>
+        <ipAddress>147.85.27.165</ipAddress>
+    </person>
+</people>
