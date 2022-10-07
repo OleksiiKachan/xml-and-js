@@ -1,0 +1,20 @@
+h1 {
+    text-decoration: underline;
+}
+
+a {
+    color: black;
+}
+
+table {
+    margin-top: 10px;
+}
+
+td {
+    padding: 10px;
+}
+
+ol {
+    margin: 0;
+    padding: 0 0 0 20px;
+}
