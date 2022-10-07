@@ -11,10 +11,15 @@
       };
       xhttp.open("GET", "students.xml", true);
       xhttp.send();
+// requesting, loading; buraya kadar yazılanlar sadece loading
+
+
+
+
 
       function displayData(xml) {
         const listElement = document.getElementById(`students`);
-
+        
         const xmlDoc = xml.responseXML;
         const studentNodes = xmlDoc.getElementsByTagName("student");
 

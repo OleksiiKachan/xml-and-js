@@ -13,9 +13,9 @@
         }
       };
       xhttp.open("GET", "cards.xml", true);
-      xhttp.send();
+      xhttp.send(); ///Buraya kadar 1.Step yaptık, download.
 
-      function stringToNode(html) {
+      function stringToNode(html) { ///Burası 3.Step creating empty template and cards
         const template = document.createElement(`template`);
         html = html.trim();
         template.innerHTML = html;
@@ -33,7 +33,7 @@
   </article>
 </li>`;
 
-        return stringToNode(content);
+        return stringToNode(content); //Burada aslında 2.step başlıyor, dataları okumaya başlıyoruz.
       }
 
       function parseCard(xml) {
@@ -54,7 +54,7 @@
         };
       }
 
-      function displayData(xmlDoc) {
+      function displayData(xmlDoc) {    ///4.Step; Burada son adım, display
         const cards = xmlDoc.getElementsByTagName(`record`);
 
         const list = document.getElementById(`cards`);
