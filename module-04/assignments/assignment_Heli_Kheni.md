@@ -1,4 +1,6 @@
-for creating xsl file:
+I make new xsl file then i link this xsl file with xml file.
+
+code for xsl file:(assignment.xsl)
 first line is always xml declartion.
 for designing code written into html tag.
 step 1- Main title is catlog so i wrote catlog in h1 tag.

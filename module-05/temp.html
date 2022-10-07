@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="students">
+        <script>
+            const xhr=new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                if(this.readyState === 4 && this.status == 200){
+                    //console.log(this.responseXML);
+
+                    //const root=this.responseXML.childNodes[0];
+
+                    const students=this.responseXML.getElementsByTagName(`student`);
+                    const list=document.getElementById("students");
+                    for(let index=0;index<students.length;index++)
+                    {
+                        const student = students[index];
+                        const firstName = student.getElementsByTagName(`firstname`)[0].childNodes[0]
+                        .nodeValue;
+                        const lastName = student.getElementsByTagName(`lastname`)[0].childNodes[0]
+                        .nodeValue;
+                        console.log(firstName,lastName);
+
+                        const htmlstring=`<li><h2>${firstName} ${lastName}'</h2></li>`;
+                       // const template = document.createElement(`template`);
+                        //const html = template.content.firstChild;
+                        //list.appendChild(html);
+
+                        //or
+                        const value= list.innerHTML + htmlstring;
+                        list.innerHTML = value;
+                    }
+                }
+            };
+            xhr.open("GET","students.xml",open)
+            xhr.send();
+        </script>
+            
+    </ol>
+</body>
+</html>
