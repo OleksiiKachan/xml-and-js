@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="people.css" />
+    </head>
+    <body>
+        <div id="root"></div>
+        <script>
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if(this.readyState === 4 && this.status === 200){
+                    const rootList = document.getElementById('root');
+                    const xmlList = this.responseXML.getElementsByTagName('row');
+                    for (let i=0; i<xmlList.length; i++){
+                        const row = xmlList[i];
+                        const id = row.getAttribute("id");
+                        const firstName = row.getElementsByTagName('first_name')[0].childNodes[0].nodeValue;
+                        const lastName = row.getElementsByTagName('last_name')[0].childNodes[0].nodeValue;
+                        const email = row.getElementsByTagName('email')[0].childNodes[0].nodeValue;
+                        const gender = row.getElementsByTagName('gender')[0].childNodes[0].nodeValue;
+                        const ip = row.getElementsByTagName('ip_address')[0].childNodes[0].nodeValue;
+                        rootList.innerHTML += `<div class="person"><h1>${id}: ${firstName} ${lastName}</h1>
+                            <a href = "mailto: ${email}">${email}</a></br>
+                            <p>${gender}</p>
+                            <p>IP: ${ip}</p></div>`;
+                    }
+                }
+            }
+            xhr.open("GET", "people.xml", true);
+            xhr.send();
+        </script>
+    </body>
+</html>
