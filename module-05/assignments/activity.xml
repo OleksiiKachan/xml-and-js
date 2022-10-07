@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+<info>
+   <id>1</id>
+   <first_name>Husain</first_name>
+    <last_name>Zeale</last_name>
+    <email>hzeale0@odnoklassniki.ru</email>
+    <gender>Male</gender>
+    <ip_address>143.237.191.245</ip_address>
+</info>
+<info>
+    <id>2</id>
+    <first_name>Michale</first_name>
+    <last_name>Delgado</last_name>
+    <email>mdelgado1@paginegialle.it</email>
+    <gender>Male</gender>
+    <ip_address>144.2.126.19</ip_address>
+</info>
+<info>
+    <id>3</id>
+    <first_name>Gaspard</first_name>
+    <last_name>Upwood</last_name>
+    <email>gupwood2@fastcompany.com</email>
+    <gender>Male</gender>
+    <ip_address>147.85.27.165</ip_address>
+</info>
+</dataset>
+

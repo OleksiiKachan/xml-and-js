@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <meta charset="UTF-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Document</title>
+
+    </head>
+    <body>
+        <ol id="dataset"></ol>
+        <script>
+           const xhttp = new XMLHttpRequest();
+           xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseXML);
+           displayData(this.responseXML);
+        }
+    };
+    xhttp.open("GET", "activity.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+        
+      }
+      function createdataset(dataset){
+        const content = `<li>
+            <article>
+    <p>${dataset.id}</p>
+    <h4>${dataset.first_name}</h4>
+    <h4>${dataset.last_name}</h4>
+    <h4>${dataset.email}</h4>
+    <h4>${dataset.gender}</h4>
+    <h4>${dataset.ip_address}</h4>
+            </article>
+     </li>`;
+      
+          return stringToNode(content);
+      }
+      function parsedataset(xml) {
+        const id =
+          xml.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+        const first_name =
+          xml.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+        const last_name =
+          xml.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+        const email =
+          xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+          const gender =
+          xml.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue;
+          const ip_address =
+          xml.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue;
+        return {
+          id,
+          first_name,
+          last_name,
+          email,
+          gender,
+          ip_address,
+        };
+      }
+      function displayData(xmlDoc) {
+        const cards = xmlDoc.getElementsByTagName(`info`);
+
+        const list = document.getElementById(`dataset`);
+
+        for (let index = 0; index < cards.length; index++) {
+          const element = cards[index];
+          const parsedCard = parsedataset(element);
+
+          const datasetElement = createdataset(parsedCard);
+          list.appendChild(datasetElement);
+        }
+
+    }
+        </script>
+    </body>
+</html>
