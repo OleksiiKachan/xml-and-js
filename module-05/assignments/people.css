@@ -1,0 +1,13 @@
+body{
+    background-color: lightpink;
+}
+
+li{
+    border: 2px solid black;
+    border-radius: 0px;
+    margin: 10px;
+}
+
+li{
+    background-color: lightblue;
+}
