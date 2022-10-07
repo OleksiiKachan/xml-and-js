@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <ul id="people"></ul>
+        <script>
+            //step1=load
+            //step2=parse
+            //step3=display
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    displayData(this.responseXML);
+                }
+            };
+            xhr.open("GET", "people.xml", true);
+            xhr.send();
+
+            function stringToNode(html) {
+                const template = document.createElement(`template`);
+                html = html.trim();
+                template.innerHTML = html;
+                return template.content.firstChild;
+            }
+
+            function displayData(xmlDoc) {
+                const listElement = document.getElementById(`people`);
+
+                const personNodes = xmlDoc.getElementsByTagName(`person`);
+                for (let index = 0; index < personNodes.length; index++) {
+                    const personNode = personNodes[index];
+                    const listItem = stringToNode(`<li>
+                        <h2>${
+                            personNode.getElementsByTagName(`id`)[0].childNodes[0]
+                                .nodeValue
+                        } ${
+                        personNode.getElementsByTagName(`first_name`)[0].childNodes[0]
+                            .nodeValue
+                        } ${
+                        personNode.getElementsByTagName(`last_name`)[0].childNodes[0]
+                            .nodeValue    
+                    }</h2>
+                    <p>${`Email: ${
+                        personNode.getElementsByTagName(`email`)[0].childNodes[0]
+                            .nodeValue
+                    }`}</p>
+                    <p>${`Gender: ${
+                        personNode.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue
+                    }`}</p>
+                    <p>${`IP Address: ${
+                        personNode.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue
+                    }`}</p>
+                    </li>`);
+                    listElement.appendChild(listItem);
+                }
+            } 
+        </script>
+    </body>
+</html>
