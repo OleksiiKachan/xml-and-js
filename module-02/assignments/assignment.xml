@@ -8,7 +8,7 @@
   <!ELEMENT summary (#PCDATA)>
   <!ATTLIST summary xmlns CDATA #FIXED "">
   <!ELEMENT effective (#PCDATA)>
-  <!ATTLIST effective date CDATA #FIXED "">
+  <!ATTLIST effective type (date) #REQUIRED>
   <!ELEMENT menu (category,menuItem+)>
   <!ATTLIST menu xmlns CDATA #FIXED "">
   <!ELEMENT category (#PCDATA)>
@@ -33,8 +33,8 @@
    <summary><![CDATA[If you've been craving an authentic homestyle country breakfast,
     look no further than Chester's!  We've got your breakfast favorites served
     up just the way you like them!!]]></summary>
-   <effective type = "Date" >03/12/2016</effective>
-   <!--there is none attribute used in the element such as type="date"-->
+   <effective type="date">03/12/2016</effective>
+   <!--there is none attribute used in the element. Date attribute has not been specifiedin the effective tag and effective tag does not need date attribute to end -->
    <menu>
       <category>Traditional Favorites</category>
       <menuItem>
@@ -71,7 +71,7 @@
       <menuItem>
          <itemName>
             <originalName>Oatmeal Breakfast</originalName>
-            <!--The content of element type "itemName" must match with the same as originalName.-->
+            <!--The content of element type "itemName" must match "(originalName,oldName?)". And add old name to it by by own. i am keeping oatmeal breakfast old name as Oat Porridge Breakfast-->
             <oldName>Oat Porridge Breakfast</oldName>
          </itemName>
          <description><![CDATA[Our Oatmeal is served warm with your choice of Fried Apples, Pecans, Raisins,
