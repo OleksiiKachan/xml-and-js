@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="people"></ol>
+    <script>
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            if(this.readyState === 4 && this.status === 200){
+                console.log(this.responseXML)
+                displayData(this.responseXML);
+            }
+        };
+
+        xhr.open("GET", "people.xml", true);
+        xhr.send();
+
+        function stringToNode(html){
+            const template = document.createElement(`template`);
+            html = html.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+        }
+
+        function displayData(xmlDoc){
+            const listElement = document.getElementById(`people`);
+
+            const PersonInfoNodes = xmlDoc.getElementsByTagName(`PersonInfo`);
+            for (let index = 0; index < PersonInfoNodes.length; index++) {
+            const PersonInfoNode = PersonInfoNodes[index];
+            const listItem = stringToNode(`<li>
+                <h2>${`Name: ${
+                    PersonInfoNode.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue
+                }`} ${
+                    PersonInfoNode.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue
+                }</h2>
+
+            <p>${`Email: ${
+                PersonInfoNode.getElementsByTagName(`email`)[0].childNodes[0].nodeValue
+            }`}</p>
+
+            <p></p>
+
+            <p>${`Gender: ${
+                    PersonInfoNode.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue
+            }`}</p>
+
+            <p>${`IP Addres: ${
+                    PersonInfoNode.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue
+            }`}</p>
+            </li>`);
+            listElement.appendChild(listItem);
+            }
+        }
+
+    </script>
+</body>
+</html>
