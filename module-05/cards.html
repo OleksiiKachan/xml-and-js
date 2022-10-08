@@ -33,10 +33,10 @@
   </article>
 </li>`;
 
-        return stringToNode(content); //Burada aslında 2.step başlıyor, dataları okumaya başlıyoruz.
+        return stringToNode(content); 
       }
 
-      function parseCard(xml) {
+      function parseCard(xml) {    //Burada aslında 2.step başlıyor, dataları okumaya başlıyoruz.
         const number =
           xml.getElementsByTagName(`number`)[0].childNodes[0].nodeValue;
         const type =

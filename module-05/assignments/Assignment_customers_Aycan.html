@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="customers"></ol>
+    <script>
+
+const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "customers.xml", true);
+      xhttp.send();
+///--------------------------------------------------------------------------------------------////
+
+function stringToNode(html) { ///Burası 3.Step creating empty template and cards
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createCard(card) {
+        const content = `<li>
+                              <article>
+                                
+                                <p>Name :${card.name}</p>
+                                <p>Address :${card.address}</p>
+                                <p>Phone :${card.phone}</p>
+                                <p>Email: ${card.email}</p>
+                                <p>Order Date :${card.orderDate}</p>
+                                <p>Item Price: ${card.itemPrice}</p>
+                                <p>Quantity :${card.itemQty}</p>
+                                                         
+                              </article>
+                          </li>`;                        
+    return stringToNode(content); 
+      }      
+////----------------------------------------------------------------------------------                                        
+                                    
+function parseCard(xml) {    //Burada aslında 2.step başlıyor, dataları okumaya başlıyoruz.
+        
+        const name =
+          xml.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+        const address =
+          xml.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+        const phone =
+          xml.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+        const email =
+          xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+        const orderDate =
+          xml.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
+        const itemPrice =
+          xml.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
+        const itemQty =
+          xml.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
+        return {
+           name, address, phone, email, orderDate, itemPrice, itemQty
+        };
+      }                                   
+    
+      function displayData(xmlDoc) {    ///4.Step; Burada son adım, display
+        const cards = xmlDoc.getElementsByTagName(`customer`);
+
+        const list = document.getElementById(`customers`);
+
+        for (let index = 0; index < cards.length; index++) {
+          const element = cards[index];
+          const parsedCard = parseCard(element);
+
+          const cardElement = createCard(parsedCard);
+          list.appendChild(cardElement);
+        }
+      }
+    </script>
+    
+  </body>
+  </html>                          
+                                    
+
+
+
+
+
+
+  
