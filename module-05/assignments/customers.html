@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <ul id="list"></ul>
+        <script>
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+
+                if (this.readyState === 4 && this.status === 200) {
+                    const xmlDoc = this.responseXML; 
+                    const listElement = document.getElementById("list");
+                    const cust = xmlDoc.getElementsByTagName(`customer`);
+                    
+                    for(let index = 0; index < cust.length; index++) {
+                        var emailValue = "";
+                        const customerNode = cust[index];
+
+                        //const custID = customerNode.getElementsByAtttribute(`custID`)[0].childNodes[0].nodeValue;
+                        const title = customerNode.getElementsByTagName(`name`)[0].attributes[0].textContent
+                        const name = customerNode.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+                        const address = customerNode.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+                        const phone = customerNode.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+                        if(customerNode.getElementsByTagName(`email`)[0]){
+                             emailValue = customerNode.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+                        }
+                        else{
+                             emailValue = "Customer does not have email";
+                        }
+                        const email = emailValue;
+                        const ordersDate = customerNode.getElementsByTagName(`orders`)[0].childNodes[1].childNodes[1].childNodes[0].textContent;
+                        const orderID = customerNode.getElementsByTagName(`orders`)[0].children[0].attributes[0].nodeValue;
+                        const orderBy = customerNode.getElementsByTagName(`orders`)[0].children[0].attributes[1].nodeValue
+                        const itemPrice = customerNode.getElementsByTagName(`orders`)[0].childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[0].textContent
+                        const itemQty = customerNode.getElementsByTagName(`orders`)[0].childNodes[1].childNodes[3].childNodes[1].childNodes[3].childNodes[0].textContent 
+                        const custID = customerNode.getElementsByTagName(`customer`)
+                        
+                        console.log(customerNode.getElementsByTagName(`customers`));
+
+                        const htmlstring = `<li><h1 style="color:DodgerBlue"><u> Details of the customer named ${title} ${name} </u></h1><br> 
+                        <h3 style="color:MediumSeaGreen"> Address : ${address}</h3><br> 
+                        <h3 style="color:MediumSeaGreen"> phone : ${phone}</h3><br> 
+                        <h3 style="color:MediumSeaGreen"> email : ${email}</h3><br>
+                        <h3 style="color:MediumSeaGreen"> orders date : ${ordersDate}</h3><br>
+                        <h3 style="color:MediumSeaGreen"> order Id : ${orderID}</h3><br>
+                        <h3 style="color:MediumSeaGreen"> orderBy : ${orderBy}</h3><br>
+                        <h3 style="color:MediumSeaGreen"> Item price : ${itemPrice}</h3><br>
+                        <h3 style="color:MediumSeaGreen"> Item Quantity : ${itemQty}</h3></li><br>`
+                                               
+                       const value = listElement.innerHTML + htmlstring 
+                       listElement.innerHTML=value;
+                    }
+                }
+            };
+            xhttp.open("GET", "customers.xml", true); 
+            xhttp.send();
+        </script>
+    </body>
+</html>
