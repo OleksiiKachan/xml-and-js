@@ -8,3 +8,5 @@ Generate folowing XPath queries for `module-4/products.xml` file
 ![image info](../assets/3.png)
 4. Target all products with manufacturer id `sjb-pet`
 ![image info](../assets/4.png)
+
+
