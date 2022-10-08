@@ -20,10 +20,7 @@
       xhttp.send();
         function displayData(xmlDoc) {
             const listElement = document.getElementById("people_list");
-
-            
             const peopleNodes = xmlDoc.getElementsByTagName(`people`);
-
             for(let index=0;index<peopleNodes.length;index++)
             {
                 const people = peopleNodes[index];
