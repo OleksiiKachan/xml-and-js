@@ -54,17 +54,41 @@
         margin-top: 0;
       }
 
-      .orders .order {
+      .orders .items {
         display: grid;
         grid-template-columns: 2fr 1fr 1fr;
       }
 
-      .orders .order > p:nth-child(-n+3) {
+      .orders .items > p:nth-child(-n + 3) {
         border-bottom: 1px solid lightgray;
       }
 
-      .orders .order .info > p {
+      .orders .items .info > p {
         margin: 0;
+      }
+
+      .orders .order {
+        text-align: left;
+      }
+
+      .orders .order > p {
+        margin: 0;
+        padding-top: 4px;
+      }
+
+      .orders .order > p:first-child {
+        font-weight: bold;
+      }
+
+      .ordersTitle {
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        border-bottom: 1px solid lightgray;
+      }
+
+      .item_num {
+        font-weight: bold;
       }
     </style>
   </head>
@@ -119,8 +143,8 @@
             const pPhone = document.createElement("p");
             pPhone.classList.add("phone");
 
-            pName.innerHTML = `${title} ${name}`
-            pEmail.innerHTML = email || 'N/A'
+            pName.innerHTML = `${title} ${name}`;
+            pEmail.innerHTML = email || "N/A";
             pAddress.innerHTML = address;
             pPhone.innerHTML = phone;
 
@@ -150,16 +174,17 @@
               const ordersDiv = document.createElement("div");
               ordersDiv.classList.add("orders");
 
-              const title = `<p>Orders</p>`;
-              let orderStr = `<div class="order">
-                                  <p>Product Info</p>
+              let orderStr = `<div><p class="ordersTitle">Orders</p>
+                              <div class="order">
+                                  <p>Order #${j+1}</p>
+                                  <p>Id: ${orderId}</p>
+                                  <p>OrderBy: ${orderBy}</p>
+                                  <p>Date: ${orderDate}</p>
+                                </div>
+                                <div class="items">
+                                  <p>Item</p>
                                   <p>Price</p>
-                                  <p>Quantity</p>
-                                  <div class="info">
-                                    <p>Id: ${orderId}</p>
-                                    <p>OrderBy: ${orderBy}</p>
-                                    <p>Date: ${orderDate}</p>
-                                  </div>`;
+                                  <p>Quantity</p>`;
 
               console.log(orderId, orderBy, orderDate);
               const items = order.getElementsByTagName("item");
@@ -174,15 +199,15 @@
                   item.getElementsByTagName("itemQty")[0].childNodes[0]
                     .nodeValue;
 
-                orderStr += `<p>${itemPrice}</p>
-                             <p>${itemQty}</p>
-                            </div>`;
+                orderStr += ` <p class="item_num">Item #${k + 1}</p>
+                              <p>${itemPrice}</p>
+                              <p>${itemQty}</p>
+                            </div></div>`;
 
                 const tempP = document.createElement("p");
                 tempP.innerHTML = orderStr;
 
                 ordersDiv.appendChild(tempP.firstChild);
-
                 cardDiv.appendChild(ordersDiv);
 
                 console.log(itemPrice, itemQty);
