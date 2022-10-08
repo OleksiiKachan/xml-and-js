@@ -18,7 +18,8 @@
         const xmlDoc = xml.responseXML;
         const studentNodes = xmlDoc.getElementsByTagName("student");
 
-        for (let index = 0; index < studentNodes.length; index++) {
+        for (let index = 0; index < studentNodes.length; index++)
+         {
           const student = studentNodes[index];
 
           const listItem = document.createElement(`li`);

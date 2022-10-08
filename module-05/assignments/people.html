@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+       <ol id="people"></ol> 
+        <script>
+             const xhttp = new XMLHttpRequest();
+
+             xhttp.onreadystatechange = function () {
+
+             if (this.readyState == 4 && this.status == 200) {
+
+             const xmldoc=this.responseXML;
+             const people=xmldoc.getElementsByTagName('data');
+
+             const list=document.getElementById('people');
+
+             for(let index =0;index<people.length;index++){
+
+                const information=people[index];
+
+             const number =
+             information.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+             const fname =
+             information.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+             const lname =
+             information.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+             const em =
+             information.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+             const gen =
+             information.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue;
+             const ip =
+             information.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue;
+
+             const content=`<li>${number},${fname},${lname},${em},${gen},${ip}</li>`
+             list.innerHTML=list.innerHTML+content;
+            }
+
+
+        }
+      };
+      xhttp.open("GET", "people.xml", true);
+      xhttp.send();
+        </script>
+    </body>
+</html>
