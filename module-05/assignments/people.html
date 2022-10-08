@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <body>
-       <ol id="people"></ol> 
+       <table id="people">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>IP Adress</th>
+            </tr>
+       </table> 
         <script>
              const xhttp = new XMLHttpRequest();
 
@@ -10,9 +18,10 @@
              if (this.readyState == 4 && this.status == 200) {
 
              const xmldoc=this.responseXML;
-             const people=xmldoc.getElementsByTagName('data');
+             const people=xmldoc.getElementsByTagName('info');
 
              const list=document.getElementById('people');
+
 
              for(let index =0;index<people.length;index++){
 
@@ -31,14 +40,22 @@
              const ip =
              information.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue;
 
-             const content=`<li>${number},${fname},${lname},${em},${gen},${ip}</li>`
+             const name= fname+lname;
+
+             const content=`<tr>
+                                <td>${number}</td>  
+                                <td>${name}</td>
+                                <td>${em}</td>
+                                <td>${gen}</td>
+                                <td>${ip}</td>
+                            </tr>`
              list.innerHTML=list.innerHTML+content;
             }
 
 
         }
       };
-      xhttp.open("GET", "people.xml", true);
+      xhttp.open("GET", "peoplee.xml", true);
       xhttp.send();
         </script>
     </body>
