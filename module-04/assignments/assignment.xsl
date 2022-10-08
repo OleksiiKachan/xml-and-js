@@ -2,11 +2,13 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:template match="/"> 
     <html style="background-color: #F9B7FF;"> 
+    
       <body> 
         <h1 style="color: #9F000F; text-decoration: underline; font-size:300%;">Catalog</h1>
         <ul>
             <xsl:for-each select="catalog/product">
                 <li>
+
                     <article>
                     <h3 style="color: #FF6700 "><xsl:value-of select="@product_id"/></h3>
                     <p style="color: blue; font-size:160%;"><b><xsl:value-of select="@description"/></b></p>
@@ -20,6 +22,7 @@
                                 <th>Large</th>
                                 <th>Extra Large</th>
                             </tr> 
+                            
                             <xsl:for-each select="catalog_item"> 
                                 <tr bgcolor="#4EE2EC">
                                     <td><xsl:value-of select="item_number"/></td>
