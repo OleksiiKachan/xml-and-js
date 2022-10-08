@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <!-- <script src="main.js"></script> -->
+  </head>
+  <body>
+    <ul id="data"></ul>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          //console.log(this);
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "activity1.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createCard(detail) {
+        const content = `<li>
+        <article>
+            <h1>${detail.id}</h1>
+            <h3>${detail.first_name} ${detail.last_name}</h3>
+            <p>${detail.email}</p>
+            <p>${detail.gender}</p>
+            <p>${detail.ip_address}</p>
+        </article>
+    </li>`;
+
+        return stringToNode(content);
+      }
+
+      function parseCard(xml) {
+        const id = xml.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+        const first_name =
+          xml.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+        const last_name =
+          xml.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+        const email =
+          xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+        const gender =
+          xml.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue;
+        const ip_address =
+          xml.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue;
+
+        return {
+          id,
+          first_name,
+          last_name,
+          email,
+          gender,
+          ip_address,
+        };
+      }
+
+      function displayData(xmlDoc) {
+        const data = xmlDoc.getElementsByTagName(`details`);
+
+        const list = document.getElementById(`data`);
+
+        for (let index = 0; index < data.length; index++) {
+          const element = data[index];
+          const parsedCard = parseCard(element);
+
+          const ele = createCard(parsedCard);
+          list.appendChild(ele);
+        }
+      }
+    </script>
+  </body>
+</html>
