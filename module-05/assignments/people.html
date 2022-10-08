@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <ol id="person1"></ol>
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            displayData(this.responseXML);
+          }
+        };
+        xhttp.open("GET", "people.xml", true);
+        xhttp.send();
+        
+        function displayData(xmlDoc) {
+            const listElement = document.getElementById(`person1`);
+
+            const peopleNodes = xmlDoc.getElementsByTagName("person");
+            for(let index = 0 ; index < peopleNodes.length ; index++ ){
+            const person = peopleNodes[index];
+
+            const listItem = document.createElement(`li`);
+
+          const title = document.createElement(`h2`);
+          title.appendChild(
+            document.createTextNode(
+              person.getElementsByTagName("firstname")[0].childNodes[0]
+                .nodeValue +
+                ` ` +
+                person.getElementsByTagName("lastname")[0].childNodes[0]
+                  .nodeValue
+            )
+          );
+          listItem.appendChild(title);
+
+          const subtitle = document.createElement(`p`);
+          subtitle.appendChild(
+            document.createTextNode( `id:` +
+              person.getAttribute(`id`) +
+                ` - Email: ` +
+                person.getElementsByTagName("email")[0].childNodes[0]
+                  .nodeValue + ` Gender: \n ` +
+                  person.getElementsByTagName("gender")[0].childNodes[0]
+                  .nodeValue 
+            )
+          );
+          listItem.appendChild(subtitle);
+
+          
+          const grade = document.createElement(`p`);
+          grade.appendChild(
+            document.createTextNode(
+              `Ip: ` +
+                person.getElementsByTagName("ip_address")[0].childNodes[0].nodeValue
+            )
+          );
+          listItem.appendChild(grade);
+
+          listElement.appendChild(listItem);
+
+        }
+
+        }
+        function stringToNode(html) {
+          const template = document.createElement(`template`);
+          html = html.trim();
+          template.innerHTML = html;
+          return template.content.firstChild;
+        }
+
+
+    </script>
+</body>
+</html>
