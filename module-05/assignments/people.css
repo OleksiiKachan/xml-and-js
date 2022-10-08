@@ -9,38 +9,14 @@ body {
     margin-top: 60px;
 }
 
-div {
-    text-align: center;
-}
-
-ul {
-    list-style: none;
-}
-
-h1 {
-    font-size: 40px;
-    color: #444;
-}
-
-li h1 {
-    font-size: 30px;
-}
-
-li p {
-    font-size: 30px;
-}
-
 table {
     margin: 0 auto;
 }
 
-td table,
-td table {
-    margin: 0 !important;
-}
-
-table td {
-    padding: 4px 8px;
+table td,
+th,
+td {
+    padding: 6px 12px;
 }
 
 table,
@@ -53,9 +29,4 @@ td {
 th {
     color: white;
     background-color: #999;
-}
-
-th,
-td {
-    padding: 4px 8px;
 }
