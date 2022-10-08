@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Customers</title>
+    <style>
+      .customer p + p {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      #customers {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .card {
+        width: 300px;
+        border: 1px solid lightblue;
+        border-radius: 16px;
+        padding: 16px;
+        margin: 8px;
+      }
+
+      .card .id {
+        font-weight: bold;
+        padding-bottom: 16px;
+        border-bottom: 1px lightgray solid;
+      }
+
+      .card .customer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card .customer p {
+        padding: 4px;
+        text-align: center;
+      }
+
+      .card .customer .circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50px;
+        background-color: lightblue;
+      }
+
+      .card .customer .name {
+        font-weight: bold;
+      }
+
+      .card .customer .id {
+        align-self: stretch;
+        margin-top: 0;
+      }
+
+      .orders .order {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+
+      .orders .order > p:nth-child(-n+3) {
+        border-bottom: 1px solid lightgray;
+      }
+
+      .orders .order .info > p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="customers"></div>
+    <script>
+      const xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+          const xmlDoc = this.responseXML;
+
+          const customers = xmlDoc.getElementsByTagName("customer");
+
+          const customersDiv = document.getElementById("customers");
+
+          for (let i = 0; i < customers.length; i++) {
+            const customer = customers[i];
+
+            let custId = customer.getAttribute("custID");
+
+            let nameNode = customer.getElementsByTagName("name")[0];
+            let name = nameNode.childNodes[0].nodeValue;
+            let title = nameNode.getAttribute("title");
+
+            let address =
+              customer.getElementsByTagName("address")[0].childNodes[0]
+                .nodeValue;
+            let phone =
+              customer.getElementsByTagName("phone")[0].childNodes[0].nodeValue;
+            let email =
+              customer.getElementsByTagName("email")[0]?.childNodes[0]
+                ?.nodeValue;
+
+            const cardDiv = document.createElement("div");
+            cardDiv.classList.add("card");
+
+            const customerDiv = document.createElement("div");
+            customerDiv.classList.add("customer");
+            const pId = document.createElement("p");
+            pId.classList.add("id");
+
+            pId.innerHTML = `CUSTOMER: ${custId}`;
+
+            const circleDiv = document.createElement("div");
+            circleDiv.classList.add("circle");
+            const pName = document.createElement("p");
+            pName.classList.add("name");
+            const pEmail = document.createElement("p");
+            pEmail.classList.add("email");
+            const pAddress = document.createElement("p");
+            pAddress.classList.add("address");
+            const pPhone = document.createElement("p");
+            pPhone.classList.add("phone");
+
+            pName.innerHTML = `${title} ${name}`
+            pEmail.innerHTML = email || 'N/A'
+            pAddress.innerHTML = address;
+            pPhone.innerHTML = phone;
+
+            customerDiv.append(pId);
+            customerDiv.append(circleDiv);
+            customerDiv.append(pName);
+            customerDiv.append(pEmail);
+            customerDiv.append(pAddress);
+            customerDiv.append(pPhone);
+
+            cardDiv.appendChild(customerDiv);
+
+            console.log(custId, title, name, address, phone, email);
+
+            //customerDiv.appendChild(span)
+            let orders = customer.getElementsByTagName("order");
+
+            for (let j = 0; j < orders.length; j++) {
+              const order = orders[j];
+
+              let orderId = order.getAttribute("orderID");
+              let orderBy = order.getAttribute("orderBy");
+              let orderDate =
+                order.getElementsByTagName("orderDate")[0].childNodes[0]
+                  .nodeValue;
+
+              const ordersDiv = document.createElement("div");
+              ordersDiv.classList.add("orders");
+
+              const title = `<p>Orders</p>`;
+              let orderStr = `<div class="order">
+                                  <p>Product Info</p>
+                                  <p>Price</p>
+                                  <p>Quantity</p>
+                                  <div class="info">
+                                    <p>Id: ${orderId}</p>
+                                    <p>OrderBy: ${orderBy}</p>
+                                    <p>Date: ${orderDate}</p>
+                                  </div>`;
+
+              console.log(orderId, orderBy, orderDate);
+              const items = order.getElementsByTagName("item");
+
+              for (let k = 0; k < items.length; k++) {
+                const item = items[k];
+
+                let itemPrice =
+                  item.getElementsByTagName("itemPrice")[0].childNodes[0]
+                    .nodeValue;
+                let itemQty =
+                  item.getElementsByTagName("itemQty")[0].childNodes[0]
+                    .nodeValue;
+
+                orderStr += `<p>${itemPrice}</p>
+                             <p>${itemQty}</p>
+                            </div>`;
+
+                const tempP = document.createElement("p");
+                tempP.innerHTML = orderStr;
+
+                ordersDiv.appendChild(tempP.firstChild);
+
+                cardDiv.appendChild(ordersDiv);
+
+                console.log(itemPrice, itemQty);
+              }
+            }
+
+            customersDiv.appendChild(cardDiv);
+          }
+        }
+      };
+      xhr.open("GET", "customers.xml", true);
+      xhr.send();
+    </script>
+  </body>
+</html>
