@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Customers</title>
+    </head>
+    <body>
+        <ol id="customers"></ol>
+        <script>
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if (this.readyState === 4 && this.status === 200){
+                    displayData(this.responseXML);
+                }
+            };
+            xhttp.open("GET", "../customers.xml", true);
+            xhttp.send();
+
+            function stringToNode(html){
+                const template = document.createElement(`template`);
+                html = html.trim();
+                template.innerHTML = html;
+                return template.content.firstChild;
+            }
+
+            function createCustomers(customers){
+                const content = `<li>
+                    <article>
+                        <h2>${customers.title} ${customers.name}</h2>
+                        <h3>${customers.custID}</h3>
+                        <p>${customers.address}</p>
+                        <p>${customers.phone}</p>
+                        <p>${customers.email}</p>
+                        <table border="1">
+                            <tr>
+                                <td colspan='2'>Order date: ${customers.orderDate}</td>
+                            </tr>
+                            <tr>
+                                <td>Order ID: ${customers.orderID}</td>
+                                <td>Order by: ${customers.orderBy}</td>
+                            </tr>
+                            <tr>
+                                <td>Item Price</td>
+                                <td>${customers.itemPrice}</td>
+                            </tr>
+                            <tr>
+                                <td>Item quantity</td>
+                                <td>${customers.itemQty}</td>
+                            </tr>
+                        </table>
+                    </article>
+                    </li>`
+                return stringToNode(content);
+            }
+
+            function parseCustomers(xml){
+                const title = xml.getElementsByTagName(`name`)[0].getAttribute(`title`);
+                const name = xml.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+                const custID = xml.getAttribute(`custID`);
+                const address = xml.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+                const phone = xml.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+                const email = xml.getElementsByTagName(`email`)[0]?xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue:'';
+                const orderDate = xml.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
+                const orderID = xml.getElementsByTagName(`order`)[0].getAttribute(`orderID`);
+                const orderBy = xml.getElementsByTagName(`order`)[0].getAttribute(`orderBy`);
+                const itemPrice = xml.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
+                const itemQty = xml.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
+                return{
+                    title,
+                    name,
+                    custID,
+                    address,
+                    phone,
+                    email,
+                    orderDate,
+                    orderID,
+                    orderBy,
+                    itemPrice,
+                    itemQty
+                };
+            }
+
+            function displayData(xmlDoc){
+                const customers = xmlDoc.getElementsByTagName(`customer`);
+                const list = document.getElementById(`customers`);
+
+                for(let index = 0; index < customers.length; index ++){
+                    const element = customers[index];
+                    const parsedCustomers = parseCustomers(element);
+
+                    const customersElement = createCustomers(parsedCustomers);
+                    list.appendChild(customersElement);
+                }
+            }
+
+        </script>
+    </body>
+</html>
