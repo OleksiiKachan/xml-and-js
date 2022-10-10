@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <title>
+        Module - 05
+    </title>
+    <script>
+
+    </script>
+</head>
+<body>
+    <ol id="customers"></ol> 
+        <script>
+             const xhttp = new XMLHttpRequest();
+             
+             xhttp.onreadystatechange = function () {
+
+             if (this.readyState == 4 && this.status == 200) {
+         
+             const xmldoc=this.responseXML;
+             const customer=xmldoc.getElementsByTagName('customer');
+
+             const list=document.getElementById('customers');
+
+             for(let index =0;index<customer.length;index++){
+
+                const information=customer[index];
+
+             const custname =
+             information.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+             const address =
+             information.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+             const phone =
+             information.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+             const em =
+             information.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+             const order_date =
+             information.getElementsByTagName(`orders/order/items/item/itemPrice`)[0].childNodes[0].nodeValue;
+             const itemqty =
+             information.getElementsByTagName(`orders/order/items/item/itemQty`)[0].childNodes[0].nodeValue;
+
+             const content=`<li>${custname},${address},${phone},${em},${order_date},${itemqty}</li>`
+             list.innerHTML=list.innerHTML+content;
+            }
+           
+
+        }
+      };
+      xhttp.open("GET", "people.xml", true);
+      xhttp.send();
+        </script>
+</body>
+</html>
