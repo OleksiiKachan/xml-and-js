@@ -1,0 +1,75 @@
+<html>
+    <body>
+        <ol id="data"></ol>
+        <script>
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function (){
+                if(this.readyState == 4 && this.status == 200){
+                    displayData(this.responseXML);
+                }
+            };
+            xhr.open("GET","customers.xml",true);
+            xhr.send();
+            
+            function displayData(xmlDoc){
+                const customers = xmlDoc.getElementsByTagName("customer");
+
+                const list = document.getElementById(`data`);
+
+                for(let index = 0; index < customers.length; index++){
+                    const cust = customers[index];
+                    const parsedCust = parseCust(cust);
+
+                    const custElement = createCust(parsedCust);
+                    list.appendChild(custElement);
+                }
+            }
+
+            function parseCust(xml){
+                const name = xml.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+                const address = xml.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+                const phone = xml.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+                var email = "";
+                if(xml.getElementsByTagName(`email`)[0] != null)
+                    email = xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+                else
+                    email = "Not given";
+                const orderID = xml.getElementsByTagName(`order`)[0].getAttribute(`orderID`);
+                const orderDate = xml.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
+                const itemprice = xml.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
+                const itemqty = xml.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
+                
+                return {name,address,phone,email,orderID,orderDate,itemprice,itemqty};
+            }
+            function stringToNode(html){
+                const template = document.createElement("template");
+                html = html.trim();
+                template.innerHTML = html;
+                return template.content.firstChild;
+            }
+            function createCust(cust){
+                const content = `<li>
+                    <article>
+                        <h2>Name: ${cust.name}</h2>
+                        <p>Address: ${cust.address}</p>
+                        <p>Phone: ${cust.phone}</p>
+                        <p>e-mail: ${cust.email}</p>
+                        <ul>
+                            <article>
+                                <h3>Orders</h3>
+                            <li>                               
+                                <p>Order ID: ${cust.orderID}</p>
+                                <p>Order Date: ${cust.orderDate}</p>
+                                <p>Item Price: ${cust.itemprice}</p>
+                                <p>Item Quantity: ${cust.itemqty}</p>
+                            </li>
+                            </article>
+                        </ul>
+                    </artcile>
+                    </li>`;
+                return stringToNode(content);
+            }
+        </script>
+        
+    </body>
+</html>
