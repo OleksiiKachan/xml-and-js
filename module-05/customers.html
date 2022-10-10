@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 5 - Assignment n01532797</title>
+    <style>
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h1{
+            background-color: aquamarine;
+        }
+        ul{
+            background-color: azure;
+        }
+    </style>
+</head>
+<body>
+    <ul id="customers"></ul>
+    <script>
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            if(this.readyState === 4 && this.status === 200){
+                console.log(this.responseXML)
+                displayData(this.responseXML);
+            }
+        };
+
+        xhr.open("GET", "customers.xml", true);
+        xhr.send();
+
+        // function stringToNode(html){
+        //     const template = document.createElement(`template`);
+        //     html = html.trim();
+        //     template.innerHTML = html;
+        //     return template.content.firstChild;
+        // }
+
+        function displayData(xmlDoc){
+            const listElement = document.getElementById(`customers`);
+
+            const customerNodes = xmlDoc.getElementsByTagName(`customer`);
+            for (let index = 0; index < customerNodes.length; index++) {
+                const customerNode = customerNodes[index];
+                const customerID = customerNode.getAttribute('custID');
+                const customerTitle = customerNode.getElementsByTagName(`name`)[0].getAttribute(`title`);
+                const customerName = customerNode.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+                const customerAddress = customerNode.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+                const customerPhone = customerNode.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+                
+                var customerEmail = "";
+                if(customerNode.getElementsByTagName(`email`)[0]!=null){
+                    customerEmail = customerNode.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+                }
+                else{
+                    customerEmail = "No email";
+                }
+                const orderID = customerNode.getElementsByTagName(`order`)[0].getAttribute(`orderID`);
+                const orderBy = customerNode.getElementsByTagName(`order`)[0].getAttribute(`orderBy`);
+                
+                const orderDate = customerNode.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
+                const itemPrice = customerNode.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
+                const itemQty = customerNode.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
+                const htmlPage = `<h1>Customer Name : ${customerTitle + " " + customerName}</h1>
+                                <ul>
+                                    <li><p>Customer Id : ${customerID}</p></li>
+                                    <li><p>Address : ${customerAddress} </p></li>
+                                    <li><p>Phone : ${customerPhone}</p></li>
+                                    <li>Email : ${customerEmail}</li>
+                                    <li><b>Orders :</b>
+                                        <p>Order ID : ${orderID}</p>
+                                        <p>Order By : ${orderBy}</p>
+                                        <p>Order Date : ${orderDate}</p> 
+                                        <p>
+                                            <b>Items : </b>
+                                            <ul>
+                                                <li>Item Price : ${itemPrice}</li>
+                                                <li>Item Quantity : ${itemQty}</li>    
+                                            </ul>
+                                        </p>   
+                                    </li>
+                                </ul>
+                                <hr>`;
+                const page = listElement.innerHTML + htmlPage;
+                listElement.innerHTML = page;
+            }
+        }
+
+    </script>
+</body>
+</html>

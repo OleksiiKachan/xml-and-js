@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="./customers.xsl"?>
 <customers>
+  
   <customer custID="cust201">
     <name title="Mr.">John Michael</name>
     <address>
@@ -9,6 +10,7 @@
     <phone>(407) 555-3476</phone>
     <email>jk@example.net</email>
     <orders>
+    
       <order orderID="or1089" orderBy="cust201">
         <orderDate>2021-06-03</orderDate>
         <items>
@@ -19,7 +21,9 @@
         </items>
       </order>
     </orders>
+
   </customer>
+
   <customer custID="cust202">
     <name title="Mrs.">Sarah Michael</name>
     <address>
@@ -38,4 +42,5 @@
       </order>
     </orders>
   </customer>
+
 </customers>
