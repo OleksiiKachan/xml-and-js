@@ -1,0 +1,27 @@
+*{
+    background-color: aqua;
+}
+
+h1 {
+    text-decoration:wavy underline;
+    text-align: center;
+    font-size: 200%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: crimson;
+}
+
+h2{
+    text-decoration: underline;   
+}
+
+p{
+    color: darkorchid;
+}
+div {
+    
+        border: 2px solid red;
+        border-radius: 3px;
+}
+p{
+    border: 2px dotted yellow; 
+}
