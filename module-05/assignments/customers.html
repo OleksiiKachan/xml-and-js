@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    
+    <ol id="cust"></ol>
+    <script>
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                displayData(this.responseXML);
+            }
+        };
+        xhr.open("GET", "customers.xml", true);
+        xhr.send();
+
+        function stringToNode(html)
+        {
+          const template = document.createElement(`template`);
+          html = html.trim();
+          template.innerHTML = html;
+          return template.content.firstChild;
+        }
+
+        function displayData(xmlDoc) 
+        {
+            const listElement = document.getElementById("cust");
+            const custNodes = xmlDoc.getElementsByTagName(`customer`);
+
+            for (let i = 0; i < custNodes.length; i++) 
+            {
+                const customerNode = custNodes[i];
+                const listItem = stringToNode
+                (`<li>
+                  <h3> ${customerNode.getElementsByTagName(`name`)[0].getAttribute(`title`) } ${ customerNode.getElementsByTagName(`name`)[0].childNodes[0].nodeValue} </h3>
+                  <p> ${customerNode.getAttribute(`custID`) } </p>
+                  <p> ${customerNode.getElementsByTagName(`address`)[0].childNodes[0].nodeValue } </p>
+                  <p> ${customerNode.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue } </p>
+                  <p> ${customerNode.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue } </p>
+                  <p> ${ customerNode.getElementsByTagName(`order`)[0].getAttribute(`orderID`)} </p>
+                  <p> ${customerNode.getElementsByTagName(`order`)[0].getAttribute(`orderBy`) } </p>
+                  <p> ${customerNode.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue } </p>
+                  <p> ${customerNode.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue } </p>
+                  
+                `);
+
+                listElement.appendChild(listItem);
+            }
+        }
+    </script>
+</body>
+
+</html>
