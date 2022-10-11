@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  
+  <table id="customers"></table>
+  <button type="button" onclick="load()">Data</button>
+    <script>
+      function load(){
+       const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this);
+        }
+      };
+
+      xhttp.open("GET","/module-05/customers.xml", true);
+      xhttp.send();
+
+      function displayData(xml) {
+          var i;
+          var xmlDoc = xml.responseXML;
+          var table="<tr><th>name</th><th>Address</th><th>Phone</th><th>Email</th></tr>";
+          var x = xmlDoc.getElementsByTagName("customer");
+          for (i = 0; i <x.length; i++) { 
+            
+            table += "<tr><td>" +
+            x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+            "</td><td>"  +
+            x[i].getElementsByTagName("address")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("phone")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("email")[0].childNodes[0].nodeValue +
+            "</td><tr>"  ;
+          }
+          document.getElementById("customers").innerHTML = table;
+        }
+      }
+    </script>
+
+</body>
+</html>
