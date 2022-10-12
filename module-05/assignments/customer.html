@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <ol id="customer"></ol>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "customers.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function displayData(xmlDoc) {
+        const ListNode = document.getElementById(`customer`);
+
+        const customerNodes = xmlDoc.getElementsByTagName(`customer`);
+        for (let index = 0; index < customerNodes.length; index++) {
+          const customerNode = customerNodes[index];
+          console.log(customerNode.getElementsByTagName(`order`))
+          const listItem = stringToNode(`<li>
+            <h2>${
+                customerNode.getElementsByTagName(`name`)[0].attributes[0]
+              .nodeValue
+            } ${
+            customerNode.getElementsByTagName(`name`)[0].childNodes[0]
+              .nodeValue
+          }</h2>
+          <p> Address: ${customerNode.getElementsByTagName(`address`)[0].childNodes[0].nodeValue} </p>
+          <p> phone: ${customerNode.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue} </p>
+          <p>${`Email: ${
+            customerNode.getElementsByTagName(`email`)[0] ? customerNode.getElementsByTagName(`email`)[0].childNodes[0].nodeValue : ""
+          }`}</p>
+          <ul id="${customerNode.getAttribute('custID')}"> <h6> Order Detail </h6> </ul> 
+          </li>`);
+          ListNode.appendChild(listItem);
+        }
+        displayOrderData(xmlDoc)
+      }
+      
+      function displayOrderData(xmlDoc) {
+        const Orderes = xmlDoc.getElementsByTagName(`order`);
+        for (let index = 0; index < Orderes.length; index++) {
+            const Order = Orderes[index];
+            console.log(Order.getElementsByTagName(`items`)[0].children[0].getElementsByTagName('itemPrice')[0].childNodes[0].nodeValue)
+          const OrderList = document.getElementById(`${ Order.getAttribute('orderBy')}`);
+          const Items = stringToNode(`
+          <li>
+          <p> Order_Date: ${Order.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue} </p>
+          <p> Order_itemPrice: ${Order.getElementsByTagName(`items`)[0].children[0].getElementsByTagName('itemPrice')[0].childNodes[0].nodeValue} </p>
+          <p> Order_itemQty: ${Order.getElementsByTagName(`items`)[0].children[0].getElementsByTagName('itemQty')[0].childNodes[0].nodeValue} </p>
+          </li>`);
+          OrderList.appendChild(Items);
+        }
+      }
+    </script>
+  </body>
+</html>
