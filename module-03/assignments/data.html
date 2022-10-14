@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="data.css" />
+
+    </head>
+  <body>
+    <h1> Books Catalog</h1>
+    <ul id="book"></ul>
+    <script>
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                displayData(this.responseXML);
+            }
+        };
+        xhr.open("GET", "data.xml", true);
+        xhr.send();
+
+        function stringToNode(html)
+        {
+          const template = document.createElement(`template`);
+          html = html.trim();
+          template.innerHTML = html;
+          return template.content.firstChild;
+        }
+
+        function displayData(xmlDoc) 
+        {
+            const listElement = document.getElementById("book");
+            const custNodes = xmlDoc.getElementsByTagName(`detail`);
+
+            for (let i = 0; i < custNodes.length; i++) 
+            {
+                const customerNode = custNodes[i];
+                const listItem = stringToNode
+                (`<li>
+                    <design>
+                  <h2> ${customerNode.getElementsByTagName(`title`)[0].childNodes[0].nodeValue } </h2>
+                  <p>${`Authors: ${customerNode.getElementsByTagName(`name`)[0].childNodes[0].nodeValue } `}</p>
+                  <p>${`Book was written in ${customerNode.getElementsByTagName(`year`)[0].childNodes[0].nodeValue } `}</p>
+                  <p>${`Retial price is $ ${customerNode.getElementsByTagName(`price`)[0].childNodes[0].nodeValue } `}</p>
+
+                  </design>
+                `);
+
+                listElement.appendChild(listItem);
+            }
+        }
+    </script>
+</body>
+
+</html>

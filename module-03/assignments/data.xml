@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="./data.xsl"?>
+
+<!DOCTYPE root 
+[
+<!ELEMENT root (detail+)>
+<!ELEMENT detail ((author)*,category, price, title, year)>
+<!ELEMENT author (name*)>
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST name xmlns CDATA #FIXED "">
+<!ELEMENT category (#PCDATA)>
+<!ATTLIST category xmlns CDATA #FIXED "">
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price xmlns CDATA #FIXED "">
+<!ELEMENT title (#PCDATA)>
+<!ATTLIST title xmlns CDATA #FIXED "">
+<!ELEMENT year (#PCDATA)>
+]>
+
+<root>
+   <detail>
+      <author>
+         <name>Giada De Laurentiis</name>
+      </author>
+      <category>cooking</category>
+      <price>30.0</price>
+      <title>Everyday Italian</title>
+      <year>2005</year>
+   </detail>
+   <detail>
+      <author>
+         <name>J K. Rowling</name>
+      </author>
+      <category>children</category>
+      <price>29.99</price>
+      <title>Harry Potter</title>
+      <year>2005</year>
+   </detail>
+   <detail>
+      <author>
+         <name>James McGovern</name>
+         <name>Per Bothner</name>
+         <name>Kurt Cagle</name>
+         <name>James Linn</name>
+         <name>Vaidyanathan Nagarajan</name>
+      </author>
+      <category>web</category>
+      <price>49.99</price>
+      <title>XQuery Kick Start</title>
+      <year>2003</year>
+   </detail>
+   <detail>
+      <author>
+         <name>Erik T. Ray</name>
+      </author>
+      <category>web</category>
+      <price>39.95</price>
+      <title>Learning XML</title>
+      <year>2005</year>
+   </detail>
+</root>
