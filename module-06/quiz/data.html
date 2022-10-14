@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <ul id="list"></ul>
+        <script>
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+
+                if (this.readyState === 4 && this.status === 200) {
+                    const xmlDoc = this.responseXML; 
+                    const listElement = document.getElementById("list");
+                    const b = xmlDoc.getElementsByTagName(`book`);
+                    
+                    for(let index = 0; index < b.length; index++) {
+                        const bookNode = b[index];
+
+                        const category = bookNode.getElementsByTagName(`category`)[0].childNodes[0].nodeValue;
+                        const title = bookNode.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
+                        const author = bookNode.getElementsByTagName(`author`)[0].childNodes[0].nodeValue;
+                        const year = bookNode.getElementsByTagName(`year`)[0].childNodes[0].nodeValue;
+                        const price = bookNode.getElementsByTagName(`price`)[0].childNodes[0].nodeValue;
+
+                        console.log(bookNode.getElementsByTagName(`author`)[0].childNodes[0].nodeValue)
+    
+
+                        const htmlstring = `
+                        <div style = "margin: 25px; width: 30%; display: flex; flex-direction: column;border: 1px black solid; background: grey; border-radius: 25px;">
+                            <h3 style = "text-align: right">${category}</h3><br>
+                            <h1>${title}</h1><br>
+                            <h3>Authors : ${author}</h3><br>
+                            <h3>Book was written in : ${year}</h3>
+                            <h3>Retail price is : ${price}</h3><br>
+
+                        </div>
+                        `                
+                       const value = listElement.innerHTML + htmlstring 
+                       listElement.innerHTML=value;
+                    }
+                }
+            };
+            xhttp.open("GET", "data.xml", true); 
+            xhttp.send();
+        </script>
+    </body>
+</html>

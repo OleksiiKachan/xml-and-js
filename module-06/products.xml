@@ -1,6 +1,7 @@
 
 <?xml version="1.0" encoding="utf-8"?>
 <products>
+
   <product sku="BOS12DDF2" createdAt="2020-12-23T09:23:44" shippable="true">
     <productName>Dog Shirt Gift Basket</productName>
     <manufacturer id="sjb-pet">SJB Pet Boutique</manufacturer>
@@ -12,6 +13,7 @@
     </prices>
     <productItems>1200, 1201, 1202, 1203, 1204, 1205, 1206</productItems>
   </product>
+
   <product sku="OBOKS34KBKS" createdAt="2019-12-23T17:47:10" shippable="true">
     <productName>Car Curiosity Basket</productName>
     <manufacturer id="sjb-pet">SJB Pet Boutique</manufacturer>
@@ -23,6 +25,7 @@
     </prices>
     <productItems>4430, 6500, 4434</productItems>
   </product>
+
   <product sku="HVBOSPR292BS" createdAt="2021-04-03T16:15:37" shippable="false">
     <productName>Piggy Snuggle Basket</productName>
     <manufacturer id="acme">ACME</manufacturer>
@@ -33,6 +36,7 @@
     </prices>
     <productItems>3230, 3232</productItems>
   </product>
+
   <product sku="BJPSO1342KSLS" createdAt="2021-09-07T15:58:13" shippable="true"> 
     <productName>Dog Snuggle Basket</productName>
     <manufacturer id="acme">ACME</manufacturer>
@@ -43,4 +47,5 @@
     </prices>
     <productItems>3230, 3232, 3250</productItems>
   </product>
+  
 </products>

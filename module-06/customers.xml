@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <customers>
+
   <customer custID="cust201">
     <name title="Mr.">John Michael</name>
     <address>
@@ -19,6 +20,7 @@
       </order>
     </orders>
   </customer>
+
   <customer custID="cust202">
     <name title="Mrs.">Sarah Michael</name>
     <address>
@@ -37,4 +39,5 @@
       </order>
     </orders>
   </customer>
+  
 </customers>
