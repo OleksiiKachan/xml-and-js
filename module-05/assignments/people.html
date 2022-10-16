@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>People</title>
+        <style>
+            #container>div{
+                border: 2px solid black;
+                border-radius: 10px;
+                display: inline-block;
+                margin: 10px;
+                padding: 10px;
+                width:20%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+
+        <script>
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 & this.status == 200){
+                    const xmlDoc = this.responseXML;
+                    const people = xmlDoc.getElementsByTagName("person");
+
+                    for(let person of people){
+                        const templateString = 
+                            `<div>
+                                <h2>
+                                    ${person.getElementsByTagName("fname")[0].childNodes[0].nodeValue} 
+                                    ${person.getElementsByTagName("lname")[0].childNodes[0].nodeValue}   
+                                </h2>
+                                <p>
+                                    Gender: ${person.getElementsByTagName("gender")[0].childNodes[0].nodeValue},
+                                    ID: ${person.getElementsByTagName("id")[0].childNodes[0].nodeValue}
+                                </p>
+                                <p>
+                                    ${person.getElementsByTagName("email")[0].childNodes[0].nodeValue}
+                                </p>
+                                <p>
+                                    ${person.getElementsByTagName("ipAddress")[0].childNodes[0].nodeValue}
+                                </p>
+                            </div>`;
+
+                        const template = document.createElement("template");
+                        template.innerHTML = templateString;
+                        document.getElementById("container").append(template.content.firstChild);
+                    }
+                }
+            }
+            xhttp.open("GET", "people.xml", true);
+            xhttp.send();
+        </script>
+    </body>
+</html>
