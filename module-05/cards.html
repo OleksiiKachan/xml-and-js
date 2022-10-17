@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="cards.css" />
+  <link rel="stylesheet" href="quiz-1.css" />
 </head>
-
 <body>
-  <ol id="cards"></ol>
-  <script>
-    const xhttp = new XMLHttpRequest();
+    
+    <script>
+        const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         displayData(this.responseXML);
@@ -69,7 +68,7 @@
         list.appendChild(cardElement);
       }
     }
-  </script>
+    </script>
 </body>
-
 </html>
+
