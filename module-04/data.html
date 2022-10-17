@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+      <link rel="stylesheet" href="data.css" />
+  
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Documents</title>
+    
+      </head>
+    <body>
+        <ol id="data"></ol>
+        <script>
+          const xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this)
+              displayData(this.responseXML);
+            }
+          };
+          xhttp.open("GET", "data.xml", true);
+          xhttp.send();
+
+          function displayData(xmlDoc) {
+            const list = document.getElementById("data");
+            const dataNodes = xmlDoc.getElementsByTagName(`book`);
+
+            for(let index=0;index<dataNodes.length;index++)
+            {
+                const dataDetail = dataNodes[index];
+                const title = dataDetail.getElementsByTagName(`title`)[0].childNodes[0]
+                .nodeValue;
+                const author = dataDetail.getElementsByTagName(`author`)[0].childNodes[0]
+                .nodeValue;
+                const year = dataDetail.getElementsByTagName(`year`)[0].childNodes[0]
+                .nodeValue;
+                const price = dataDetail.getElementsByTagName(`price`)[0].childNodes[0]
+                .nodeValue;
+                const category = dataDetail.getElementsByTagName(`category`)[0].childNodes[0]
+                .nodeValue;
+
+                const htmlstring=`<h3>book </h3>
+                <div>
+                    <li>
+                     <h2>title: ${title}</h2>
+                     <h2>author: ${author}</h2>
+                     <p>year: ${year}</p>
+                     <p>price: ${price}</p>
+                     <p>category: ${category}</p>
+                    </li>
+                </div>`;
+
+                const value= list.innerHTML + htmlstring;
+                list.innerHTML = value;
+
+            }
+        }
+    </script>
+</body>
+</html>
+
+
