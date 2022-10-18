@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data> 
+  <book year="2005 " price = "30.0">
+    <title>Everyday Italian</title>    
+    <author>Giada De Laurentiis</author>
+    <category>cooking</category>	 
+   </book>
+   <book year="2005 " price = "29.99">
+      <title>Harry Potter</title>    
+      <author>J K. Rowling</author>
+      <category>children</category>	
+   </book> 
+   <book year="2003 " price = "49.99">
+      <title>Query Kick Start</title>    
+      <author>James McGovern,Per Bothner,Kurt Cagle,James Linn,Vaidyanathan Nagarajan</author>
+      <category>web</category>	
+   </book> 
+   <book year="2005 " price = "39.95">
+      <title>Learning XML</title>    
+      <author>Erik T. Ray</author>
+      <category>web</category>	
+   </book> 
+ </data> 

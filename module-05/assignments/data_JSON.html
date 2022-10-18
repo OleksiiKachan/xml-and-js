@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cards.css" />
+  </head>
+  <body>
+    <ol id="cards"></ol>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "data_json_quiz1.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createCard(card) {
+        const content = `<li>
+  <article>
+    <p>${card.type}</p>
+    <h2>${card.number}</h2>
+    <div>
+      ${card.balance} ${card.currency}
+    </div>
+  </article>
+</li>`;
+
+        return stringToNode(content);
+      }
+
+      function parseCard(xml) {
+        const number =
+          xml.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
+        const type =
+          xml.getElementsByTagName(`author`)[0].childNodes[0].nodeValue;
+        const currency =
+          xml.getElementsByTagName(`category`)[0].childNodes[0].nodeValue
+
+        return {
+          number,
+          type,
+          currency,
+          balance,
+        };
+      }
+
+      function displayData(xmlDoc) {
+        const cards = xmlDoc.getElementsByTagName(`year`);
+
+        const list = document.getElementById(`price`);
+
+        for (let index = 0; index < cards.length; index++) {
+          const element = cards[index];
+          const parsedCard = parseCard(element);
+
+          const cardElement = createCard(parsedCard);
+          list.appendChild(cardElement);
+        }
+      }
+    </script>
+  </body>
+</html>
