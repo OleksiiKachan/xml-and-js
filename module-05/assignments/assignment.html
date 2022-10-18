@@ -18,8 +18,9 @@
              if (this.readyState == 4 && this.status == 200) {
          
              const xmldoc=this.responseXML;}
-             xhttp.open("GET", "students.xml", true);
-      xhttp.send();
+             xhttp.open("GET", "customerss.xml", true);
+            xhttp.send();
+
              const customer=xmldoc.getElementsByTagName('customer');
 
              const list=document.getElementById('customers');
@@ -48,7 +49,7 @@
 
         }
       };
-      xhttp.open("GET", "people.xml", true);
+      xhttp.open("GET", "customers.xml", true);
       xhttp.send();
         </script>
 </body>
