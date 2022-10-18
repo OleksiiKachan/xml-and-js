@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <h1> Book Catalog</h1>
+
+        <ul id="books"></ul>
+        
+        <script>
+            const xhttp = new XMLHttpRequest();
+             
+             xhttp.onreadystatechange = function () {
+
+             if (this.readyState == 4 && this.status == 200) {
+         
+             const xmldoc=this.responseXML;
+             const books=xmldoc.getElementsByTagName('book');
+
+             const list=document.getElementById('books');
+
+             for(let index =0;index<books.length;index++){
+
+                const information=books[index];
+               
+             const title =
+             information.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
+             const authors =
+             information.getElementsByTagName(`author`)[0].childNodes[0].nodeValue;
+             const year =
+             information.getElementsByTagName(`year`)[0].childNodes[0].nodeValue;
+             const price =
+             information.getElementsByTagName(`price`)[0].childNodes[0].nodeValue;
+             const category =
+             information.getElementsByTagName(`category`)[0].childNodes[0].nodeValue;
+             
+
+             const content=`<li>${title},${authors},${year},${price},${category}</li>`
+             list.innerHTML=list.innerHTML+content;
+            }
+           
+
+        }
+      };
+      xhttp.open("GET", "data.xml", true);
+      xhttp.send();
+        </script>
+    </body>
+    </html>
