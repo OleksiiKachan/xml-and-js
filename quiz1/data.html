@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        li{
+            background-color: rgb(172, 169, 169);
+            border: 10px;
+            border-radius: 6px;
+            margin: 12px;
+
+            width:fit-content;
+            list-style: none;
+        }
+        #category{
+            text-align: right;
+        }
+    </style>
+    <body>
+        <h2>Books Catalog</h2>
+        <ol id="info"></ol>
+        <script>
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    displayData(this.responseXML);
+                }
+            };
+            
+            xhttp.open("GET", "./data.xml", true);
+            xhttp.send();
+
+            function stringToNode(html) {
+                const template = document.createElement(`template`);
+                html = html.trim();
+                template.innerHTML = html;
+                return template.content.firstChild;
+            }
+
+            function displayData(xmlDoc){
+                const listElement = document.getElementById(`info`);
+
+
+                const infoNodes = xmlDoc.getElementsByTagName(`info`);
+                for (let index = 0; index < infoNodes.length; index++) {
+                    const infoNode = infoNodes[index];
+                    const authorNodes = infoNode.getElementsByTagName(`name`)
+                    const authArray = [];
+                    for (const a of authorNodes) {
+                       authArray.push(a.childNodes[0].nodeValue)
+                    }
+
+                console.log(authArray)
+
+                const listItem = stringToNode(`<li>
+                <p id="category"> ${infoNode.getElementsByTagName(`category`)[0].childNodes[0].nodeValue} </p>
+                <h4>${infoNode.getElementsByTagName(`title`)[0].childNodes[0].nodeValue}</h4>
+                <p>Authors: ${authArray.join(', ')} </p>
+                <p>Book was written in ${infoNode.getElementsByTagName(`year`)[0].childNodes[0].nodeValue}</p>
+                <p>Retail Price is ${infoNode.getElementsByTagName(`price`)[0].childNodes[0].nodeValue}</p>
+                </li>`);
+                listElement.appendChild(listItem);
+                }
+            }
+        </script>
+    </body>
+</html>
