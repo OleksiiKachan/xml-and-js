@@ -2,53 +2,75 @@
 
 <head>
     <title>
-        Module - 05
+        Module - 05 Assignment
     </title>
-    <script>
-
-    </script>
+    <style>
+        #container{
+                border:2px solid black;
+                border-radius: 10px;
+                display: inline-block;
+                margin: 10px;
+                padding: 10px;
+            }
+    </style>
 </head>
 <body>
-    <ol id="customers"></ol> 
+    <div id="container"></div> 
         <script>
              const xhttp = new XMLHttpRequest();
              
              xhttp.onreadystatechange = function () {
 
              if (this.readyState == 4 && this.status == 200) {
-         
-             const xmldoc=this.responseXML;}
-             xhttp.open("GET", "customerss.xml", true);
-            xhttp.send();
+                const contdiv = document.getElementById("container");
 
-             const customer=xmldoc.getElementsByTagName('customer');
+                const xmldoc=this.responseXML;
+                const customers=xmldoc.getElementsByTagName('customer');
+                console.log(customers);
 
-             const list=document.getElementById('customers');
+                for(let customer of customers){
+                        const templateString = 
+                            `<div>
+                                <h2>
+                                    ${customer.getElementsByTagName("name")[0].getAttribute("title")}
+                                    ${customer.getElementsByTagName("name")[0].childNodes[0].nodeValue}
+                                </h2>
+                                <h3>Contact Details:</h3>
+                                <p>
+                                    Address:
+                                    ${customer.getElementsByTagName("address")[0].childNodes[0].nodeValue} 
+                                </p>
+                                <p>
+                                    Phone:
+                                    ${customer.getElementsByTagName("phone")[0].childNodes[0].nodeValue}
+                                </p>
+                                <p>
+                                    Email:
+                                    ${customer.getElementsByTagName("email")[0]?.childNodes[0]?.nodeValue || "Not provided"}
+                                </p>
+                                <h3>Orders:</h3>
+                                <p>
+                                    Order ID: 
+                                    ${customer.getElementsByTagName("order")[0].getAttribute('orderID')}, 
+                                    Order Date: 
+                                    ${customer.getElementsByTagName("orderDate")[0].childNodes[0].nodeValue}
+                                </p>
+                                <p>
+                                    Item Quantity:
+                                    ${customer.getElementsByTagName("itemQty")[0].childNodes[0].nodeValue},
+                                    Item Price:
+                                    ${customer.getElementsByTagName("itemPrice")[0].childNodes[0].nodeValue}
+                                </p>
+                            </div>`;
 
-             for(let index =0;index<customer.length;index++){
-
-                const information=customer[index];
-
-             const custname =
-             information.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
-             const address =
-             information.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
-             const phone =
-             information.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
-             const em =
-             information.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
-             const order_date =
-             information.getElementsByTagName(`orders/order/items/item/itemPrice`)[0].childNodes[0].nodeValue;
-             const itemqty =
-             information.getElementsByTagName(`orders/order/items/item/itemQty`)[0].childNodes[0].nodeValue;
-
-             const content=`<li>${custname},${address},${phone},${em},${order_date},${itemqty}</li>`
-             list.innerHTML=list.innerHTML+content;
+                        const template = document.createElement('template');
+                        template.innerHTML = templateString;
+                        console.log(template);
+                        containerDiv.appendChild(template.content.firstChild);
             }
-           
 
+            }
         }
-      };
       xhttp.open("GET", "customers.xml", true);
       xhttp.send();
         </script>
