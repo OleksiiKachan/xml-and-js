@@ -101,8 +101,6 @@ const parsed = data.map(x => {
  console.log(" --------- Parsed ----------- ")
  console.log(parsed)
 
- const filtered = parsed.filter(x => {
-  return parseInt(x.id) > 5
- })
+ const filtered = parsed.filter(x => x.id > 5)
 console.log(" ---- Filtered ---- ")
 console.log(filtered)
