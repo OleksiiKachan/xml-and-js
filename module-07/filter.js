@@ -27,3 +27,11 @@ console.log(pilots);
 const empire = pilots.filter((pilot) => pilot.faction === "Empire");
 
 console.log(empire);
+
+const rebels = pilots.filter((pilot) => pilot.faction === "Rebels");
+console.log(rebels);
+
+const rebelPilots = pilots.filter((pilot) => pilot.faction === "Rebels").map((pilot) => {
+  return pilot.name;
+});
+console.log(rebelPilots);

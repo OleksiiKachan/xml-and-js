@@ -1,5 +1,8 @@
 const officers = [
-  { id: 20, name: "Captain Piett" },
+  { 
+    id: 20, 
+    name: "Captain Piett" 
+  },
   { id: 24, name: "General Veers" },
   { id: 56, name: "Admiral Ozzel" },
   { id: 88, name: "Commander Jerjerrod" },
@@ -29,6 +32,10 @@ const officersIds_2 = officers.map((officer) => {
 
 console.log(officersIds_2);
 
+const officers_names = officers.map((officer) => {
+  return officer.name;
+});
+console.log(officers_names);
 // const officersIds_3 = officers.map((officer) => officer.id);
 
 // console.log(officersIds_3);
