@@ -50,5 +50,19 @@ const { rebels, empire } = pilots.reduce(
   { rebels: [], empire: [] }
 );
 
+const { rebels1, empire1 } = pilots.reduce(
+  (accum, pilot) => {
+    let type;
+    if (pilot.faction === "Rebels") {
+      type = `rebels`;z
+    } else if (pilot.faction === "Empire") {
+      accum.empire.push(pilot);
+    }
+
+    return accum;
+  },
+  { rebels1: [], empire1: [] }
+);
+
 console.log(rebels);
 console.log(empire);
