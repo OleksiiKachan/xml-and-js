@@ -52,3 +52,14 @@ const { rebels, empire } = pilots.reduce(
 
 console.log(rebels);
 console.log(empire);
+
+
+console.log("using map");
+
+const nameArray = pilots
+.filter((pilot) => pilot.faction === "Empire")
+.filter((pilot) => pilot.faction === "Rebels")
+.map(({name}) =>name);
+
+console.log(nameArray)
+

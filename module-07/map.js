@@ -1,3 +1,6 @@
+//Map her zaman array döner bunu unutma---------------//
+
+
 const officers = [
   { id: 20, name: "Captain Piett" },
   { id: 24, name: "General Veers" },
@@ -41,3 +44,8 @@ const numbers = [1, 2, 3, 4, 5, 6];
 const evenNumbers = numbers.map((number) => {
   return number % 2 === 0;
 });
+
+
+//Map her zaman array döner bunu unutma---------------//
+//cd module-07   hangi klasördesin
+//node map.js  hangi dosyayı çalıştırmak istiyorsun

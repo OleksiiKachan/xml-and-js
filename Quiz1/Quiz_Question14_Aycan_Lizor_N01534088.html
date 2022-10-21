@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--<link rel="stylesheet" href="cards.css" />-->
+  </head>
+  <style>
+article{
+    background-color: grey; 
+    border-radius: 5px;
+   padding-left: 15px;
+   padding-bottom: 5px;
+    margin: 20px;
+}
+ul{
+    list-style: none; 
+}
+#category{
+    text-align:right;
+    
+}
+#card_div{
+    width: 350px;
+ 
+}
+
+#category_p{
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
+  </style>
+  <body>
+    <h2>Books Catalog</h2>
+    <ul id="cards"></ul>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "Quiz_Question11_Aycan_Lizor_N01534088.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createCard(card) {
+        const content = `<li>
+  <div id="card_div">          
+  <article>
+    <div id="category">
+        <p id="category_p" > ${card.category}</p>
+    </div>
+    <h2>${card.title}</h2>
+    <p>Author : ${card.number}</p><br>
+    <p>Book was written in : ${card.year}</p>
+    <p>Retail price is : $ ${card.price}</p>
+   
+  </article>
+  </div>
+</li>`;
+
+        return stringToNode(content);
+      }
+
+      function parseCard(xml) {
+        const title =
+          xml.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
+        const author =
+          xml.getElementsByTagName(`author`)[0].childNodes[0].nodeValue;
+        const year =
+          xml.getElementsByTagName(`year`)[0].childNodes[0].nodeValue;
+        const price =
+          xml.getElementsByTagName(`price`)[0].childNodes[0].nodeValue;
+        const category =
+          xml.getElementsByTagName(`category`)[0].childNodes[0].nodeValue;
+
+        return {
+          title,
+          author,
+          price,
+          year,
+          category,
+        };
+      }
+
+      function displayData(xmlDoc) {
+        const cards = xmlDoc.getElementsByTagName(`product`);
+
+        const list = document.getElementById(`cards`);
+
+        for (let index = 0; index < cards.length; index++) {
+          const element = cards[index];
+          const parsedCard = parseCard(element);
+
+          const cardElement = createCard(parsedCard);
+          list.appendChild(cardElement);
+        }
+      }
+    </script>
+  </body>
+</html>

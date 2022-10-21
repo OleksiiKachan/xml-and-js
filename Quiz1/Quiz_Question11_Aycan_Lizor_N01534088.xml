@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE catalog [
+     
+      <!ELEMENT catalog (product+)>
+      <!ELEMENT product (title, authors, year, price, category)>
+              
+      <!ELEMENT title (#PCDATA)>
+      <!ELEMENT authors (author+)>
+      <!ELEMENT author (#PCDATA)>
+      
+      <!ELEMENT year (#PCDATA)>
+      <!ELEMENT price (#PCDATA)>
+      <!ELEMENT category (#PCDATA)>   
+       
+]>
+
+<?xml-stylesheet type="text/xsl" href="Quiz_Question13_Aycan_Lizor_N01534088.xsl"?>
+
+
+
+<catalog>
+    <product>
+        <title>Everyday Italian</title>
+        <authors>
+            <author>Giada De Laurentiis</author>
+        </authors>
+        <year>2005</year>
+        <price>30.0</price>
+        <category>cooking</category>
+    </product>
+
+    <product>
+        <title>Harry Potter</title>
+        <authors>
+            <author>J K. Rowling</author>
+        </authors>
+        <year>2005</year>
+        <price>29.99</price>
+        <category>children</category>
+    </product>
+
+     <product>
+        <title>XQuery Kick Start</title>
+        <authors>
+            <author>James McGovern</author>
+            <author>Per Bothner</author>
+            <author>James Linn</author>
+            <author>Vaidyanathan Nagarajan</author>
+        </authors>
+        <year>2003</year>
+        <price>49.99</price>
+        <category>web</category>
+    </product>
+
+    <product>
+        <title>Learning XML</title>
+        <authors>
+            <author>Erik T. Ray</author>
+        </authors>
+        <year>2005</year>
+        <price>39.95</price>
+        <category>web</category>
+    </product>
+
+</catalog>

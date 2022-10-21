@@ -1,3 +1,5 @@
+//Filter her zaman array döner---------------------//
+
 const pilots = [
   {
     id: 2,
@@ -24,6 +26,14 @@ const pilots = [
 console.log(`Source:`);
 console.log(pilots);
 
-const empire = pilots.filter((pilot) => pilot.faction === "Empire");
+const empire = pilots
+.filter((pilot) => pilot.faction === "Empire")
+.map((pilot) =>pilot.name); // burada  şunuda yazabilrdik .map(({name}) =>name). burada {} anlamı name field kendisi.
 
-console.log(empire);
+console.log(empire);empire
+
+
+//Filter her zaman array döner---------------------//
+//cd module-07   hangi klasördesin
+//node filter.js  hangi dosyayı çalıştırmak istiyorsun
+
