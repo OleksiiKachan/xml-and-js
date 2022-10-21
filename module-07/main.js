@@ -48,3 +48,5 @@ const finalValue = personnel
   .filter((person) => person.isForceUser)
   .map((jedi) => jedi.pilotingScore + jedi.shootingScore)
   .reduce((acc, value) => acc + value, 0);
+
+console.log(personnel);
