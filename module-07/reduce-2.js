@@ -52,3 +52,21 @@ const { rebels, empire } = pilots.reduce(
 
 console.log(rebels);
 console.log(empire);
+
+console.log("using .map()")
+const names = pilots.reduce(
+  (acc, pilot) => {
+    let types;
+    if (pilot.faction === "Rebels") {
+      types = rebels;
+    } else if (pilot.faction === "Empire") {
+      types = empire;
+    }
+    if (acc[types] && acc[types].length > 0){
+      acc[type] = acc[type] + ", " + pilot.name;
+    } else{
+      acc[types] = pilot.name;
+    }
+    return acc;
+  }
+

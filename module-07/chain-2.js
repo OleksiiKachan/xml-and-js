@@ -131,7 +131,7 @@ const active = data.filter((item) => item.isActive);
 
 // console.log(total);
 
-// const values = active.map((item) => item.values).flat();
+// const values = active.map((item) => item.values).flat();  <- .flat() to break down the brackets
 
 const values = active.flatMap((item) => item.values);
 

@@ -26,8 +26,11 @@ console.log(`-----------`);
 const officersIds_2 = officers.map((officer) => {
   return officer.id;
 });
+const {id} = officers;
 
 console.log(officersIds_2);
+
+const officersName = officers.map(({ name }) => name);
 
 // const officersIds_3 = officers.map((officer) => officer.id);
 

@@ -87,3 +87,8 @@ const totalJediScore_3 = personnel
   .map((jedi) => jedi.pilotingScore + jedi.shootingScore)
   .reduce((acc, score) => acc + score, 0);
 console.log(totalJediScore_3);
+
+const JediScore_3 = personnel
+  .filter((person) => person.isForceUser)
+  .map((jedi) => jedi.pilotingScore + jedi.shootingScore)
+console.log(Math.max(JediScore_3));
