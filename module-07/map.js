@@ -29,13 +29,17 @@ const officersIds_2 = officers.map((officer) => {
 
 console.log(officersIds_2);
 
+
+const officersname = officers.map(({name})=> name);
+console.log(officersname);
+
 // const officersIds_3 = officers.map((officer) => officer.id);
 
 // console.log(officersIds_3);
 
-// const officersIds_4 = officers.map(({ id }) => id);
+ const officersIds_4 = officers.map(({ id }) => id);
 
-// console.log(officersIds_4);
+ console.log(officersIds_4);
 
 const numbers = [1, 2, 3, 4, 5, 6];
 const evenNumbers = numbers.map((number) => {
