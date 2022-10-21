@@ -82,22 +82,22 @@ const data = [
   ]
 
 
-  const d1 = data.map((d) => {
+  const parsed = data.map((d) => {
     return {
-        ID: d.id,
-        FirstName: d.first_name,
-        LastName: d.last_name,
-        Gender: d.gender,
-        IPAddress: d.ip_address
+        id: d.id,
+        firstName: d.first_name,
+        lastName: d.last_name,
+        gender: d.gender,
+        ipAddress: d.ip_address
     }
    });
 
-   const filtered = d1.filter((d) => {
+   const filtered = parsed.filter((d) => {
     if(d.ID > 5){
         return d
     }
    })
-  console.log(d1)
+  console.log(parsed)
 
   console.log("--------------Filtered Result---------------")
   console.log(filtered)
