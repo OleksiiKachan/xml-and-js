@@ -48,3 +48,23 @@ const finalValue = personnel
   .filter((person) => person.isForceUser)
   .map((jedi) => jedi.pilotingScore + jedi.shootingScore)
   .reduce((acc, value) => acc + value, 0);
+
+  console.log(finalValue);
+
+  const finalValue3 = personnel
+  .filter((person) => person.isForceUser)
+  .map((jedi) => jedi.pilotingScore + jedi.shootingScore)
+
+  console.log(finalValue3);
+
+  const finalValue2 = personnel
+  .filter((person) => person.isForceUser)
+  .map((jedi) => jedi.pilotingScore + jedi.shootingScore)
+  .reduce((acc, value) => {
+    if(acc < value)
+      acc=value
+    return acc;
+  }, 0);
+  console.log("max value: "+finalValue2);
+
+  
