@@ -101,6 +101,9 @@
 ```
 
 save result into `parsed` variable and console.log it
+![image_info](1.png)
+![image_info](2.png)
 
 - Filter out data to have ids greater than 5 only, save it into `filtered` variable, and console.log the result
+![image_info](3.png)
 - Attach screenshot of the output in your terminal
