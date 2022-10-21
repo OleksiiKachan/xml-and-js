@@ -104,3 +104,10 @@ save result into `parsed` variable and console.log it
 
 - Filter out data to have ids greater than 5 only, save it into `filtered` variable, and console.log the result
 - Attach screenshot of the output in your terminal
+![image info](assets/activity-6-1.png)
+
+![image info](assets/activity-6-2.png)
+
+![image info](assets/activity-6-3.png)
+
+![image info](assets/activity-6-4.png)

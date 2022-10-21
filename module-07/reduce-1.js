@@ -29,3 +29,24 @@ const totalYears = pilots.reduce((accum, pilot) => {
 }, 0);
 
 console.log(totalYears);
+
+const tYears = pilots.reduce((accum, {years})=> accum + years,0);
+console.log(tYears);
+
+const names = pilots.reduce((acc, {name})=> {
+  return acc + ", "+ name;
+}, "");
+console.log(names);
+
+const nams = pilots.reduce((acc, {name})=> {
+  if(acc.length > 0 ){
+  return acc + ", "+ name;}
+  else {
+    return name;
+  }
+}, "");
+console.log(nams);
+
+const name_2 = pilots.map(({name})=> name).join(", ");
+console.log(names);
+console.log(name_2);
