@@ -17,6 +17,7 @@ officers.forEach((officer) => {
   officersIds_1.push(officer.id);
 });
 
+
 console.log(officersIds_1);
 
 console.log(`-----------`);
@@ -33,11 +34,20 @@ console.log(officersIds_2);
 
 // console.log(officersIds_3);
 
-// const officersIds_4 = officers.map(({ id }) => id);
+const officersIds_4 = officers.map(({ id }) => id);
 
 // console.log(officersIds_4);
 
 const numbers = [1, 2, 3, 4, 5, 6];
 const evenNumbers = numbers.map((number) => {
   return number % 2 === 0;
+});
+
+
+const officersIds_11 = officers.map((officer) => officer.name);
+
+const officersIds_111 = officers.map(({ name }) => name);
+
+const officersIds_1111 = officers.map((officer) => {
+  return officer.name;
 });
