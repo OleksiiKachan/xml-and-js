@@ -25,5 +25,9 @@ console.log(`Source:`);
 console.log(pilots);
 
 const empire = pilots.filter((pilot) => pilot.faction === "Empire");
+const rebel = pilots
+  .filter((pilot) => pilot.faction === "Rebels")
+  .map((pilot) => pilot.name);
 
 console.log(empire);
+console.log(rebel);
