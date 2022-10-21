@@ -36,15 +36,23 @@ const personnel = [
   },
 ];
 
-const jedi = personnel.filter((person) => person.isForceUser);
 
-const totalScores = jedi.map((jedi) => jedi.pilotingScore + jedi.shootingScore);
 
-const totalScore = totalScores.reduce((acc, value) => acc + value, 0);
+const data= personnel 
+  .filter((item)=> item.isForceUser)
+  .map((item)=> item.pilotingScore+item.shootingScore)
+  .reduce((acc,item)=> acc+item,0);
 
-console.log(totalScore);
+//const jedi = personnel.filter((person) => person.isForceUser);
 
-const finalValue = personnel
+//const totalScores = jedi.map((jedi) => jedi.pilotingScore + jedi.shootingScore);
+
+//const totalScore = totalScores.reduce((acc, value) => acc + value, 0);
+
+//console.log(totalScore);
+
+/*onst finalValue = personnel
   .filter((person) => person.isForceUser)
   .map((jedi) => jedi.pilotingScore + jedi.shootingScore)
   .reduce((acc, value) => acc + value, 0);
+*/
