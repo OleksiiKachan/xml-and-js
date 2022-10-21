@@ -85,7 +85,6 @@
     "gender": "Female",
     "ip_address": "108.233.202.64"
   }
-]
 ```
 
 - Call map function on `data` to convert these objects into
@@ -102,5 +101,11 @@
 
 save result into `parsed` variable and console.log it
 
+![image info](../assignments/ParsedData.png)
+
 - Filter out data to have ids greater than 5 only, save it into `filtered` variable, and console.log the result
+
+![image info](../assignments/FilteredData.png)
+
 - Attach screenshot of the output in your terminal
+
