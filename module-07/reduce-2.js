@@ -39,16 +39,31 @@ console.log(`using .reduce()`);
 
 const { rebels, empire } = pilots.reduce(
   (accum, pilot) => {
+    let type;
     if (pilot.faction === "Rebels") {
-      accum.rebels.push(pilot);
-    } else if (pilot.faction === "Empire") {
-      accum.empire.push(pilot);
+      //accum.rebels.push(pilot);
+      type = 'rebels'
     }
+    else if (pilot.faction === "Empire") {
+      type = "empire"
+    }
+
+    if (accum[type].length > 0) {
+      accum[type] = accum[type] + ", " + pilot.name;
+    }
+    else {
+      accum[type] = pilot.name;
+    }
+
+
+    // accum.empire.push(pilot);
+
 
     return accum;
   },
-  { rebels: [], empire: [] }
+  { rebels: "", empire: "" }
 );
 
 console.log(rebels);
 console.log(empire);
+
