@@ -23,11 +23,11 @@ console.log(`-----------`);
 console.log(`map`);
 console.log(`-----------`);
 
-const officersIds_2 = officers.map((officer) => {
-  return officer.id;
+const officername_2 = officers.map((officer) => {
+  return officer.name;
 });
 
-console.log(officersIds_2);
+console.log(officername_2);
 
 // const officersIds_3 = officers.map((officer) => officer.id);
 
