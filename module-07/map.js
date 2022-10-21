@@ -38,6 +38,6 @@ console.log(officersIds_2);
 // console.log(officersIds_4);
 
 const numbers = [1, 2, 3, 4, 5, 6];
-const evenNumbers = numbers.map((number) => {
+const evenNumbers = numbers.map((name) => {
   return number % 2 === 0;
 });
