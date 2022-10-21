@@ -24,6 +24,33 @@ const pilots = [
 console.log(`Source:`);
 console.log(pilots);
 
-const empire = pilots.filter((pilot) => pilot.faction === "Empire");
+// const empire1 = pilots.filter((pilot) => pilot.faction === "Empire");
 
-console.log(empire);
+// console.log(empire1);
+
+// const name1 = pilots.filter((pilot) => pilot.name === "Ciena Ree");
+// console.log(name1);
+
+const {rebels, empire} = pilots.reduce((acc, item) => {
+  if(item.faction === 'Empire'){
+    acc.empire.push(item);
+  }else if (item.faction === 'Rebels') {
+    acc.rebels.push(item);
+  }
+  return acc;
+},
+{
+  rebels: [], empire: []
+});
+
+const names = rebels.map((item) => item.name).join(", ");
+console.log(rebels, empire);
+
+
+
+
+
+
+
+
+
