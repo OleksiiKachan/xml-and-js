@@ -52,3 +52,6 @@ const { rebels, empire } = pilots.reduce(
 
 console.log(rebels);
 console.log(empire);
+
+const r_map = pilots.map((pilot)=> pilot.name).join(", ");
+console.log(r_map);

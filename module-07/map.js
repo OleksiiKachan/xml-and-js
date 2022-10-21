@@ -27,7 +27,14 @@ const officersIds_2 = officers.map((officer) => {
   return officer.id;
 });
 
+const officerName = officers.map(({ name }) => name);
+console.log(officerName);
+
 console.log(officersIds_2);
+
+//const { name } =officer;
+
+//const offname= officer.name;
 
 // const officersIds_3 = officers.map((officer) => officer.id);
 
