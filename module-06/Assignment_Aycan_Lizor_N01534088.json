@@ -1,0 +1,90 @@
+[
+    {
+        "Sku":"BOS12DDF2",
+        "CreatedAt":"2020-12-23T09:23:44",
+        "Shipppable":"true",
+        "ProductDetails":[
+            {
+                "ProductName":"Dog Shirt Gift Basket",
+                "ManufacturerID":"sjb-pet",
+                "Manufacturer":"SJB Pet Boutique",
+                "Description":"Something for every day of the week",
+                "Items":"1200, 1201, 1202, 1203, 1204, 1205, 1206",
+                "Prices":[
+                    {
+                        "$price":"US$35.99",
+                        "CADprice":"CAD$44.99",
+                        "€price":"€26.79"
+                    }
+                ]
+            }
+
+        ]
+    },
+    {
+        "Sku":"OBOKS34KBKS",
+        "CreatedAt":"2019-12-23T17:47:10",
+        "Shipppable":"true",
+        "ProductDetails":[
+            {
+                "ProductName":"Car Curiosity Basket",
+                "ManufacturerID":"sjb-pet",
+                "Manufacturer":"SJB Pet Boutique",
+                "Description":"Playtime morning, noon, and night",
+                "Items":"4430, 6500, 4434",
+                "Prices":[
+                    {
+                        "$price":"US$15.99",
+                        "CADprice":"CAD$18.82",
+                        "€price":"€11.90"
+                    }
+                ]
+            }
+
+        ]
+    },
+    {
+        "Sku":"HVBOSPR292BS",
+        "CreatedAt":"2021-04-03T16:15:37",
+        "Shipppable":"false",
+        "ProductDetails":[
+            {
+                "ProductName":"Piggy Snuggle Basket",
+                "ManufacturerID":"acme",
+                "Manufacturer":"ACME",
+                "Items":"3230, 3232",
+                "Prices":[
+                    {
+                        "$price":"US$17.50",
+                        "CADprice":"CAD$21.96",
+                        "€price":"€13.03"
+                    }
+                ]
+            }
+
+        ]
+    },
+    {
+        "Sku":"BJPSO1342KSLS",
+        "CreatedAt":"2021-09-07T15:58:13",
+        "Shipppable":"true",
+        "ProductDetails":[
+            {
+                "ProductName":"Dog Snuggle Basket",
+                "ManufacturerID":"acme",
+                "Manufacturer":"ACME",
+                "Items":"3230, 3232, 3250",
+                "Prices":[
+                    {
+                        "$price":"US$14.25",
+                        "CADprice":"CAD$17.88",
+                        "€price":"€10.61"
+                    }
+                ]
+            }
+
+        ]
+    }
+
+
+]
