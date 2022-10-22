@@ -134,7 +134,7 @@ const active = data.filter((item) => item.isActive);
 // const values = active.map((item) => item.values).flat();
 
 const values = active.flatMap((item) => item.values);
-
+//por const values = active.flatMap((item) => item.values).flat();
 const total = values.reduce((acc, value) => acc + value, 0);
 
 console.log(total);
