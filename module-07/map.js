@@ -35,6 +35,10 @@ console.log(officersIds_2);
 
 // const officersIds_4 = officers.map(({ id }) => id);
 
+const officersIds_5 = officers.map(({name}) =>name);
+console.log(officersIds_5);
+
+
 // console.log(officersIds_4);
 
 const numbers = [1, 2, 3, 4, 5, 6];
