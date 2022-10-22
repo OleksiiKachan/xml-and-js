@@ -49,3 +49,4 @@ const evenNumbers = numbers.map((number) => {
 //Map her zaman array döner bunu unutma---------------//
 //cd module-07   hangi klasördesin
 //node map.js  hangi dosyayı çalıştırmak istiyorsun
+//console.log(`Source:`); yazmazsan console.log çalışmıyor. bunu en başa yazmayı unutma.
