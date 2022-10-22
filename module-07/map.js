@@ -14,7 +14,8 @@ console.log(`-----------`);
 
 const officersIds_1 = [];
 officers.forEach((officer) => {
-  officersIds_1.push(officer.id);
+  // officersIds_1.push(officer.id);
+  officersIds_1.push(officer.name);
 });
 
 console.log(officersIds_1);
@@ -24,7 +25,8 @@ console.log(`map`);
 console.log(`-----------`);
 
 const officersIds_2 = officers.map((officer) => {
-  return officer.id;
+  // return officer.id;
+  return officer.name;
 });
 
 console.log(officersIds_2);
@@ -34,6 +36,7 @@ console.log(officersIds_2);
 // console.log(officersIds_3);
 
 // const officersIds_4 = officers.map(({ id }) => id);
+const officersIds_4 = officers.map(({ name }) => name);
 
 // console.log(officersIds_4);
 
