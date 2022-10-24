@@ -4,6 +4,7 @@ const data = [
     { born: 1869, died: 1948 },
     { born: 1901, died: 1989 },
   ];
+  
 
   const age = data.map((data) => {
     return (data.died - data.born)
@@ -27,7 +28,8 @@ const data = [
       return filtered
     }
   }, 0)
-  console.log("----------Reduce oldest---------------");
+
+  console.log("-----------------Reduce oldest-------------------");
   console.log(oldest);
 
   console.log("------------------Rechaining code------------------");
