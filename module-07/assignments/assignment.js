@@ -30,3 +30,18 @@ const oldest = [filtered].reduce(([[old]]) => {
 
 console.log('\n-------------OLDEST---------------\n');
 console.log(oldest);
+
+
+
+const oldest2 = data
+  .map((age) => {
+    return age.died - age.born;
+  })
+  .filter((filtered) => {
+    return filtered.age > 75;
+  })
+  .reduce((oldest) => {
+    return Math.max(oldest.age);
+  });
+console.log('\n-------------OLDEST2---------------\n');
+console.log(oldest2);
