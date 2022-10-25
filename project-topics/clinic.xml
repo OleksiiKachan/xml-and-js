@@ -1,0 +1,76 @@
+<info>
+    <clinic id="ce2d33d3-342c-4d55-9c8f-e5b35535941c">
+        <address>
+            <street>4 Ridge Oak Plaza</street>
+            <city>Tampa</city>
+            <region>Florida</region>
+            <country>United States</country>
+        </address>
+        <employees id="d4cc0867-340d-4649-88f4-51c97f26432">
+            <firstName>Zorine</firstName>
+            <lastName>Climson</lastName>
+            <empType>contractor</empType>
+        </employees>
+        <employees id="b248a336-cf55-48e1-8c19-bdff3ebec577">
+            <firstName>Gerhard</firstName>
+            <lastName>O'Dyvoy</lastName>
+            <empType>full-time</empType>
+        </employees>
+        <employees id="d7a03a4c-db45-4d84-b25a-9e7cbccc603f">
+            <firstName>Titus</firstName>
+            <lastName>Sivess</lastName>
+            <empType>part-time</empType>
+        </employees>
+        <drugs>
+            <manufacturer>          American Health Packaging
+            </manufacture>
+            <brand>Pioglitazone Hydrochloride</brand>
+            <name>pioglitazone hydrochloride</name>
+            <code>68084-631</code>
+            <diagnosisCode>V341XXD</diagnosisCode>
+            <diagnosisDescription>Passenger in 3-whl mv injured in clsn w hv veh nontraf</diagnosisDescription> 
+            <qty>210</qty>
+        </drugs>
+        <drugs>
+            <manufacturer>A-S Medication Solutions LLC
+            </manufacture>
+            <brand>Diazepam</brand>
+            <name>diazepam</name>
+            <code>54569-5354</code>
+            <diagnosisCode>S4912</diagnosisCode>
+            <diagnosisDescription>Sltr-haris Type II physeal fracture of lower end of humerus</diagnosisDescription> 
+            <qty>191</qty>
+        </drugs>
+        <drugs>
+            <manufacturer> Safeway, Inc.
+            </manufacture>
+            <brand>Adult Cough Relief DM</brand>
+            <name>Dextromethorphan HBr</name>
+            <code>21130-383</code>
+            <diagnosisCode>S7011</diagnosisCode>
+            <diagnosisDescription>Contusion of right thigh</diagnosisDescription> 
+            <qty>410</qty>
+        </drugs>
+            <drugs>
+            <manufacturer> Major Pharmaceuticals
+            </manufacture>
+            <brand>Guanfacine Hydrochloride</brand>
+            <name>Guanfacine Hydrochloride</name>
+            <code>0904-6183</code>
+            <diagnosisCode>S43213D</diagnosisCode>
+            <diagnosisDescription>nterior subluxation of unsp sternoclavicular joint, subs</diagnosisDescription> 
+            <qty>421</qty>
+        </drugs>
+        </drugs>
+            <drugs>
+            <manufacturer> Major Pharmaceuticals
+            </manufacture>
+            <brand>Guanfacine Hydrochloride</brand>
+            <name>Guanfacine Hydrochloride</name>
+            <code>0904-6183</code>
+            <diagnosisCode>S43213D</diagnosisCode>
+            <diagnosisDescription>nterior subluxation of unsp sternoclavicular joint, subs</diagnosisDescription> 
+            <qty>421</qty>
+        </drugs>
+    </clinic>
+</info>
