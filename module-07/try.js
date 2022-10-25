@@ -37,4 +37,6 @@ const {a,b}=data.reduce((accum,c)=>{
 console.log(a);
 console.log(b);
 
+console.log(`---Chaining---`)
+
 
