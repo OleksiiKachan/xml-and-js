@@ -66,3 +66,5 @@ console.log(name_2);*/
 const name_2 = pilots.map(({ name }) => name).join(", ");
 console.log(names);
 console.log(name_2);
+
+console.log('using.filter()');
