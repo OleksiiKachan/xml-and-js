@@ -24,8 +24,11 @@ const pilots = [
 console.log("Source:");
 console.log(pilots);
 
-const totalYears = pilots.reduce((accum, pilot) => {
-  return accum + pilot.years;
+const totalYears = pilots.reduce((age1,age2) => {
+  if(age1 > age2)
+  return age1;
+  else 
+    age2;
 }, 0);
 
 console.log(totalYears);
