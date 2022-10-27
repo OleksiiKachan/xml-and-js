@@ -16,11 +16,11 @@
     - Similarly, create separate complex types for `CarModelType` and `CarType`, define all their elements and unique attributes: `id` for `<carModel>` and `vin` for `<car>`
     - Validate final xsd online
 - Create xslt to display data in the table format
-    - Create page header and a table with predefiened column headers for retailers
+    - Create a page header and a table with predefined column headers for retailers
     - Create `<xsl:for-each select="retailers/retailer">` loop to add each retailer and their attributes to the table
-    - Create a new table with predefiened column headers for each retailer to display all available models
+    - Create a new table with predefined column headers for each retailer to display all available models
     - Create a nested `<xsl:for-each select="carModels/carModel">` loop to fill the models table with the corresponding data
-    - Create an unordered list in the last column of retailers table to display the information about sold vehicle
+    - Create an unordered list in the last column of the retailers' table to display the information about sold vehicles
     - Create another nested `<xsl:for-each select="cars/car">` loop to fill the list
     - Add background color to columns of both tables to improve readability
     - Add some style to the names of retailers
