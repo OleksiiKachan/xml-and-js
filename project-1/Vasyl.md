@@ -1,0 +1,27 @@
+# Project 1
+
+- Create automotive.xml out of automotive.json
+    - Use online tools to perform the initial conversion
+    - Give automatically generated tags more meaningful names
+        - root -> retailers
+        - row -> retailer
+    - Refactor lists
+        - list of `<carModels>` -> `<carModels>` with a list of `<carModel>` inside
+        - list of `<cars>` -> `<cars>` with a list of `<car>` inside
+    - Change `<id>` and `<vin>` elements to attributes
+    - Validate final xml online
+- Create xsd for created xml file
+    - Create a root `<retailers>` element with a sequence of the newly defined `RetailerType` elements for `<retailer>` tag
+    - Create a separate complex type element `RetailerType`, define all elements of the `<retailer>` tag, define new types `CarModelType` and `CarType` to describe them separately, and define a unique `id` attribute
+    - Similarly, create separate complex types for `CarModelType` and `CarType`, define all their elements and unique attributes: `id` for `<carModel>` and `vin` for `<car>`
+    - Validate final xsd online
+- Create xslt to display data in the table format
+    - Create page header and a table with predefiened column headers for retailers
+    - Create `<xsl:for-each select="retailers/retailer">` loop to add each retailer and their attributes to the table
+    - Create a new table with predefiened column headers for each retailer to display all available models
+    - Create a nested `<xsl:for-each select="carModels/carModel">` loop to fill the models table with the corresponding data
+    - Create an unordered list in the last column of retailers table to display the information about sold vehicle
+    - Create another nested `<xsl:for-each select="cars/car">` loop to fill the list
+    - Add background color to columns of both tables to improve readability
+    - Add some style to the names of retailers
+    - Remove some margins to save space

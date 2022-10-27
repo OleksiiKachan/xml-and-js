@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="retailers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="retailer" type="RetailerType" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="RetailerType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="street" type="xs:string"/>
+      <xs:element name="city" type="xs:string"/>
+      <xs:element name="region" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="country" type="xs:string"/>
+      <xs:element name="carModels">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="carModel" type="CarModelType" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="cars">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="car" type="CarType" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" use="required" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="CarModelType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="year" type="xs:gYear"/>
+      <xs:element name="usdPrice" type="xs:string"/>
+      <xs:element name="cadPrice" type="xs:string"/>
+      <xs:element name="euroPrice" type="xs:string"/>
+      <xs:element name="poundPrice" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="id" use="required" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="CarType">
+    <xs:sequence>
+      <xs:element name="color" type="xs:string"/>
+      <xs:element name="buyer" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="vin" use="required" type="xs:string"/>
+  </xs:complexType>
+</xs:schema>
