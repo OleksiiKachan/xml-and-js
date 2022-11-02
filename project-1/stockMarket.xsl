@@ -6,7 +6,7 @@
         <title>Stock Market info</title>
       </head>  
       <body>
-        <h1>Sock Market</h1>
+        <h1>Stock Market</h1>
         <table border="1">
           <tr>
             <th>id</th>
