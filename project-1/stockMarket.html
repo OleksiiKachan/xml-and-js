@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stockMarket.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="stockMarket"></div>
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                displayData(this.responseXML);
+            }
+        };
+        xhttp.open("GET", "stockMarket.xml", true);
+        xhttp.send();
+
+        function stringToNode(html) {
+            const template = document.createElement(`template`);
+            html = html.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+        }
+
+        function displayData(xmlDoc) {
+            const divElement = document.getElementById(`stockMarket`);
+
+            const rowNodes = xmlDoc.getElementsByTagName(`row`);
+            for (let index = 0; index < rowNodes.length; index++) {
+                const rowNode = rowNodes[index];
+                const divItem = stringToNode(
+                    `<div class = "list"><ul>
+                        <li><h3>ID</h3></li>
+                        <li>${rowNode.getElementsByTagName(`id`)[0].childNodes[0].nodeValue}</li>
+                        <li><h3>Name</h3></li>
+                        <li>${rowNode.getElementsByTagName(`name`)[0].childNodes[0].nodeValue}</li>
+                        <li><h3>Currency</h3></li>
+                        <li>${rowNode.getElementsByTagName(`currency`)[0].childNodes[0].nodeValue}</li>
+                        <li><h3>Address</h3></li>
+                        <li>
+                            <table class="addressTable">
+                                <tr>
+                                    <th>street</th>
+                                    <th>city</th>
+                                    <th>region</th>
+                                    <th>country</th>
+                                </tr>
+
+                                ${displayAddressTable(xmlDoc, index)}
+                            </table>
+                        </li>
+                        <li><h3>Stocks</h3></li>
+                        <li>
+                            <table class="stocksTable">
+                                <tr>
+                                    <th>Symbol</th>
+                                    <th>Name</th>
+                                    <th>Sector</th>
+                                    <th>Industry</th>
+                                    <th>MarketCap</th>
+                                    <th>Price</th>
+                                </tr>
+
+                                ${displayStocksTable(xmlDoc, index)}
+                            </table>
+                        </li>
+                        <li><h3>Accounts</h3></li>
+                        <li>
+                            <table class="accountsTable">
+                                <h4>Holder</h4>
+                                <table class="holderTable">
+                                    <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Gender</th>
+                                        <th>Occupation</th>
+                                    </tr>
+
+                                    ${displayHolderTable(xmlDoc, index)}
+                                </table>
+                                <h4>Bank</h4>
+                                <table class="bankTable">
+                                    <tr>
+                                        <th>Iban</th>
+                                    </tr>
+
+                                    ${displayBankTable(xmlDoc, index)}
+                                </table>
+                            </table>
+                        </li>
+              
+            </ul></div>`);
+                divElement.appendChild(divItem);
+            }
+        }
+
+        function displayAddressTable(xmlDoc, i) {
+            let table = "";
+            const rowNodes = xmlDoc.getElementsByTagName(`row`)[i].getElementsByTagName(`address`);
+            for (let y = 0; y < rowNodes.length; y++) {
+                const rowNode = rowNodes[y];
+                const tableItem =
+                `<tr>
+              <td>${rowNode.getElementsByTagName(`street`)[0].childNodes[0].nodeValue}</td>
+              <td>${rowNode.getElementsByTagName(`city`)[0].childNodes[0].nodeValue}</td>
+              <td>${rowNode.getElementsByTagName(`region`)[0].childNodes[0].nodeValue}</td>
+              <td>${rowNode.getElementsByTagName(`country`)[0].childNodes[0].nodeValue}</td>
+                </tr>`;
+
+                table = table + tableItem;
+            }
+
+            return table;
+        }
+
+        function displayStocksTable(xmlDoc, i) {
+            let table = "";
+            const rowNodes = xmlDoc.getElementsByTagName(`row`)[i].getElementsByTagName(`stocks`);
+            for (let y = 0; y < rowNodes.length; y++) {
+                const rowNode = rowNodes[y];
+                const tableItem = 
+                    `<tr>
+              <td>${rowNode.getElementsByTagName(`symbol`)[0].childNodes[0].nodeValue}</td>
+              <td>${rowNode.getElementsByTagName(`sname`)[0].childNodes[0].nodeValue}</td>
+              <td>${rowNode.getElementsByTagName(`sector`)[0].childNodes[0].nodeValue}</td>
+              <td>${rowNode.getElementsByTagName(`industry`)[0].childNodes[0].nodeValue}</td>
+              <td>${rowNode.getElementsByTagName(`marketCap`)[0].childNodes[0].nodeValue}</td>
+              <td>${rowNode.getElementsByTagName(`price`)[0].childNodes[0].nodeValue}</td>
+                </tr>`;
+            
+                table = table + tableItem;
+            }
+
+            return table;
+        }
+
+        function displayHolderTable(xmlDoc, i) {
+            let table = "";
+            const rowNodes = xmlDoc.getElementsByTagName(`row`)[i].getElementsByTagName(`holder`);
+            for (let y = 0; y < rowNodes.length; y++) {
+                const rowNode = rowNodes[y];
+                const tableItem = 
+                `<tr>
+              <td>${rowNode.getElementsByTagName(`firstName`)[0].childNodes[0].nodeValue}</td>
+              <td>${rowNode.getElementsByTagName(`lastName`)[0].childNodes[0].nodeValue}</td>
+              <td>${rowNode.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue}</td>
+              <td>${rowNode.getElementsByTagName(`occupation`)[0].childNodes[0].nodeValue}</td>
+                </tr>`;
+
+                table = table + tableItem;
+            }
+
+            return table;
+        }
+
+        function displayBankTable(xmlDoc, i) {
+            let table = "";
+            const rowNodes = xmlDoc.getElementsByTagName(`row`)[i].getElementsByTagName(`bank`);
+            for (let y = 0; y < rowNodes.length; y++) {
+                const rowNode = rowNodes[y];
+                const tableItem = 
+                `<tr>
+              <td>${rowNode.getElementsByTagName(`iban`)[0].childNodes[0].nodeValue}</td>
+                </tr>`;
+
+                table = table + tableItem;
+            }
+
+            return table;
+        }
+    </script>
+</body>
+
+</html>

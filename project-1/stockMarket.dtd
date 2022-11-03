@@ -1,0 +1,25 @@
+<!ELEMENT root (row+)>
+<!ELEMENT row (id, name, currency, address, stocks+, accounts+)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT currency (#PCDATA)>
+<!ELEMENT address (street, city, region, country)>
+<!ELEMENT stocks (symbol, sname, sector, industry, marketCap, price)>
+<!ELEMENT accounts (holder, bank)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT region (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT symbol (#PCDATA)>
+<!ELEMENT sname (#PCDATA)>
+<!ELEMENT sector (#PCDATA)>
+<!ELEMENT industry (#PCDATA)>
+<!ELEMENT marketCap (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT holder (firstName, lastName, gender, occupation)>
+<!ELEMENT bank (iban)>
+<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT gender (#PCDATA)>
+<!ELEMENT occupation (#PCDATA)>
+<!ELEMENT iban (#PCDATA)>
