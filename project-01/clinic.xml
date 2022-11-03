@@ -1,0 +1,1111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="clinic.xsl"?>
+<!DOCTYPE clinics
+[
+    <!ELEMENT clinics (clinic+)>
+    <!ELEMENT clinic (address,employees?,drugs?)>
+    <!ATTLIST clinic id ID #REQUIRED>
+    <!ELEMENT address (street,city,region,country)>
+    <!ELEMENT employees (employee+)>
+    <!ELEMENT employee (firstName,lastName,empType)>
+    <!ATTLIST employee id ID #REQUIRED>
+    <!ELEMENT street (#PCDATA)>
+    <!ELEMENT city (#PCDATA)>
+    <!ELEMENT region (#PCDATA)>
+    <!ELEMENT country (#PCDATA)>
+    <!ELEMENT firstName (#PCDATA)>
+    <!ELEMENT lastName (#PCDATA)>
+    <!ELEMENT empType (#PCDATA)>
+    <!ELEMENT drugs (drug+)>
+    <!ELEMENT drug (manufacturer,brand,name,code,diagnosisCode,diagnosisDescription,qty)>
+    <!ELEMENT manufacturer (#PCDATA)>
+    <!ELEMENT brand (#PCDATA)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT code (#PCDATA)>
+    <!ELEMENT diagnosisCode (#PCDATA)>
+    <!ELEMENT diagnosisDescription (#PCDATA)>
+    <!ELEMENT qty (#PCDATA)>
+]
+>
+<clinics>
+  <clinic id="ce2d33d3-342c-4d55-9c8f-e5b35535941c">
+    <address>
+      <street>4 Ridge Oak Plaza</street>
+      <city>Tampa</city>
+      <region>Florida</region>
+      <country>United States</country>
+    </address>
+    <employees>
+        <employee id="d4cc0867-340d-4649-88f4-51c97f26432b">
+            <firstName>Zorine</firstName>
+            <lastName>Climson</lastName>
+            <empType>contractor</empType>
+        </employee>
+        <employee id="b248a336-cf55-48e1-8c19-bdff3ebec577">
+            <firstName>Gerhard</firstName>
+            <lastName>O&#x27;Dyvoy</lastName>
+            <empType>full-time</empType>
+        </employee>
+        <employee id="d7a03a4c-db45-4d84-b25a-9e7cbccc603f">
+            <firstName>Titus</firstName>
+            <lastName>Sivess</lastName>
+            <empType>part-time</empType>
+        </employee> 
+    </employees>
+    <drugs>
+        <drug>
+            <manufacturer>American Health Packaging</manufacturer>
+            <brand>Pioglitazone Hydrochloride</brand>
+            <name>pioglitazone hydrochloride</name>
+            <code>68084-631</code>
+            <diagnosisCode>V341XXD</diagnosisCode>
+            <diagnosisDescription>Passenger in 3-whl mv injured in clsn w hv veh nontraf, subs</diagnosisDescription>
+            <qty>210</qty>
+        </drug>
+        <drug>
+            <manufacturer>A-S Medication Solutions LLC</manufacturer>
+            <brand>Diazepam</brand>
+            <name>diazepam</name>
+            <code>54569-5354</code>
+            <diagnosisCode>S4912</diagnosisCode>
+            <diagnosisDescription>Sltr-haris Type II physeal fracture of lower end of humerus</diagnosisDescription>
+            <qty>191</qty>
+        </drug>
+        <drug>
+            <manufacturer>Safeway, Inc.</manufacturer>
+            <brand>Adult Cough Relief DM</brand>
+            <name>Dextromethorphan HBr</name>
+            <code>21130-383</code>
+            <diagnosisCode>S7011</diagnosisCode>
+            <diagnosisDescription>Contusion of right thigh</diagnosisDescription>
+            <qty>410</qty>
+        </drug>
+        <drug>
+            <manufacturer>Major Pharmaceuticals</manufacturer>
+            <brand>Guanfacine Hydrochloride</brand>
+            <name>Guanfacine Hydrochloride</name>
+            <code>0904-6183</code>
+            <diagnosisCode>S43213D</diagnosisCode>
+            <diagnosisDescription>Anterior subluxation of unsp sternoclavicular joint, subs</diagnosisDescription>
+            <qty>421</qty>
+        </drug>
+        <drug>
+            <manufacturer>Bryant Ranch Prepack</manufacturer>
+            <brand>Phentermine Hydrochloride</brand>
+            <name>Phentermine Hydrochloride</name>
+            <code>63629-4501</code>
+            <diagnosisCode>S68127</diagnosisCode>
+            <diagnosisDescription>Partial traumatic MCP amputation of left little finger</diagnosisDescription>
+            <qty>480</qty>
+        </drug>      
+    </drugs>
+  </clinic>
+  <clinic id="3baa90fa-dc23-4eaf-926f-e4b7fcc30fb2">
+    <address>
+      <street>00387 Sloan Drive</street>
+      <city>Kansas City</city>
+      <region>Missouri</region>
+      <country>United States</country>
+    </address>
+    <employees>
+        <employee id="34b1b3e9-3fc9-4930-b2af-c70ad6a6dd83">
+            <firstName>Rozina</firstName>
+            <lastName>Spurryer</lastName>
+            <empType>part-time</empType>
+        </employee>
+        <employee id="e9907735-48f5-4e14-ab42-5325859903ae">
+            <firstName>Brandice</firstName>
+            <lastName>Pryce</lastName>
+            <empType>intern</empType>
+        </employee>
+        <employee id="1fef0fd9-f54b-4a28-8b87-df24f6c608ea">
+            <firstName>Agna</firstName>
+            <lastName>Harlow</lastName>
+            <empType>part-time</empType>
+        </employee>
+    </employees>
+    <drugs>
+        <drug>
+            <manufacturer>Mylan Pharmaceuticals Inc.</manufacturer>
+            <brand>Maprotiline Hydrochloride</brand>
+            <name>maprotiline hydrochloride</name>
+            <code>0378-0087</code>
+            <diagnosisCode>T83590S</diagnosisCode>
+            <diagnosisDescription>I/I react d/t implanted urn nstim dev, sequela</diagnosisDescription>
+            <qty>85</qty>
+        </drug>
+        <drug>
+            <manufacturer>Winthrop U.S.</manufacturer>
+            <brand>Docetaxel</brand>
+            <name>Docetaxel</name>
+            <code>0955-1021</code>
+            <diagnosisCode>S43006</diagnosisCode>
+            <diagnosisDescription>Unspecified dislocation of unspecified shoulder joint</diagnosisDescription>
+            <qty>198</qty>
+        </drug>
+        <drug>
+            <manufacturer>United Exchange Corp.</manufacturer>
+            <brand>Coralite Pain Relief</brand>
+            <name>DL-Camphor, L-Menthol, Methylsalicylate</name>
+            <code>65923-156</code>
+            <diagnosisCode>T25511D</diagnosisCode>
+            <diagnosisDescription>Corrosion of first degree of right ankle, subs encntr</diagnosisDescription>
+            <qty>481</qty>
+        </drug>
+        <drug>
+            <manufacturer>Blenheim Pharmacal, Inc.</manufacturer>
+            <brand>clopidogrel bisulfate</brand>
+            <name>clopidogrel bisulfate</name>
+            <code>62034-015</code>
+            <diagnosisCode>Q7211</diagnosisCode>
+            <diagnosisDescription>Congen absence of right thigh and lower leg w foot present</diagnosisDescription>
+            <qty>140</qty>
+        </drug>
+        <drug>
+            <manufacturer>St Marys Medical Park Pharmacy</manufacturer>
+            <brand>NIFEDIPINE</brand>
+            <name>NIFEDIPINE</name>
+            <code>60760-182</code>
+            <diagnosisCode>T387X4</diagnosisCode>
+            <diagnosisDescription>Poisoning by androgens and anabolic congeners, undetermined</diagnosisDescription>
+            <qty>174</qty>
+        </drug>
+    </drugs>
+  </clinic>
+  <clinic id="3afef871-5c97-4453-ada9-5d68e8f2e58d">
+    <address>
+      <street>07 Butterfield Alley</street>
+      <city>Youngstown</city>
+      <region>Ohio</region>
+      <country>United States</country>
+    </address>
+    <employees>
+        <employee id="5a7e6d7a-176a-4596-8032-486106bd377f">
+            <firstName>Catriona</firstName>
+            <lastName>Degoey</lastName>
+            <empType>part-time</empType>
+        </employee>
+        <employee id="dec79287-17e5-4c8c-a3b5-290c8a225519">
+            <firstName>Butch</firstName>
+            <lastName>Fulford</lastName>
+            <empType>part-time</empType>
+        </employee>
+        <employee id="dd709773-d825-4de9-87aa-60e5fe6fdc9c">
+            <firstName>Cash</firstName>
+            <lastName>Grandin</lastName>
+            <empType>part-time</empType>
+        </employee>      
+    </employees>
+    <drugs>
+        <drug>
+            <manufacturer>Preferred Pharmaceuticals, Inc.</manufacturer>
+            <brand>Losartan Potassium</brand>
+            <name>Losartan Potassium</name>
+            <code>68788-9712</code>
+            <diagnosisCode>S8609</diagnosisCode>
+            <diagnosisDescription>Other specified injury of Achilles tendon</diagnosisDescription>
+            <qty>448</qty>
+        </drug>
+        <drug>
+            <manufacturer>APP Pharmaceuticals, LLC</manufacturer>
+            <brand>Anastrozole</brand>
+            <name>Anastrozole</name>
+            <code>63323-129</code>
+            <diagnosisCode>V2910XD</diagnosisCode>
+            <diagnosisDescription>Mtrcy passenger injured in collision w unsp mv nontraf, subs</diagnosisDescription>
+            <qty>313</qty>
+        </drug>
+        <drug>
+            <manufacturer>A-S Medication Solutions LLC</manufacturer>
+            <brand>Fleet</brand>
+            <name>sodium phosphate, dibasic and sodium phosphate, monobasic</name>
+            <code>54569-0826</code>
+            <diagnosisCode>S40252</diagnosisCode>
+            <diagnosisDescription>Superficial foreign body of left shoulder</diagnosisDescription>
+            <qty>11</qty>
+        </drug>
+        <drug>
+            <manufacturer>Natural Health Supply</manufacturer>
+            <brand>SKIN ERUPTIONS</brand>
+            <name>CHIMAPHILA UMBELLATA</name>
+            <code>64117-219</code>
+            <diagnosisCode>S3205</diagnosisCode>
+            <diagnosisDescription>Fracture of fifth lumbar vertebra</diagnosisDescription>
+            <qty>442</qty>
+        </drug>
+        <drug>
+            <manufacturer>Kosan Kozmetik Sanayi ve Ticaret A.S.</manufacturer>
+            <brand>flormar Concealer Sunscreen Broad Spectrum SPF 20 LC05 CAPPUCCINO</brand>
+            <name>OCTINOXATE</name>
+            <code>61722-042</code>
+            <diagnosisCode>S85121A</diagnosisCode>
+            <diagnosisDescription>Oth injury of unsp tibial artery, right leg, init encntr</diagnosisDescription>
+            <qty>294</qty>
+        </drug>
+    </drugs>
+  </clinic>
+  <clinic id="4ee91409-eb73-43aa-bf07-2f7b9da0bd73">
+    <address>
+      <street>76631 Garrison Circle</street>
+      <city>Atlanta</city>
+      <region>Georgia</region>
+      <country>United States</country>
+    </address>
+    <employees>
+        <employee id="4a6a0ac0-b266-4a63-973b-429949fb0ed6">
+            <firstName>Thibaut</firstName>
+            <lastName>Mazzei</lastName>
+            <empType>contractor</empType>
+        </employee>
+        <employee id="2356551b-35a2-4a2c-afbe-9cea0721229e">
+            <firstName>Bertram</firstName>
+            <lastName>Hambrook</lastName>
+            <empType>intern</empType>
+        </employee>
+        <employee id="2fea7fd2-fc32-4573-96ec-64c034f9b960">
+            <firstName>Saundra</firstName>
+            <lastName>Hakking</lastName>
+            <empType>contractor</empType>
+        </employee>
+    </employees>
+    <drugs>
+        <drug>
+            <manufacturer>Hyland&#x27;s</manufacturer>
+            <brand>VERATRUM ALBUM</brand>
+            <name>VERATRUM ALBUM ROOT</name>
+            <code>54973-0628</code>
+            <diagnosisCode>V320XXA</diagnosisCode>
+            <diagnosisDescription>Driver of 3-whl mv inj in clsn w 2/3-whl mv nontraf, init</diagnosisDescription>
+            <qty>51</qty>
+        </drug>
+        <drug>
+            <manufacturer>Eight and Company</manufacturer>
+            <brand>Sprayology Arnica Power 3</brand>
+            <name>Arnica montana</name>
+            <code>61096-0032</code>
+            <diagnosisCode>S42141B</diagnosisCode>
+            <diagnosisDescription>Disp fx of glenoid cav of scapula, r shldr, init for opn fx</diagnosisDescription>
+            <qty>465</qty>
+        </drug>
+        <drug>
+            <manufacturer>MSD Consumer Care, Inc.</manufacturer>
+            <brand>Coppertone UltraGuard</brand>
+            <name>Avobenzone, Homosalate, Octisalate, Octocrylene, and Oxybenzone</name>
+            <code>11523-7272</code>
+            <diagnosisCode>S71141</diagnosisCode>
+            <diagnosisDescription>Puncture wound with foreign body, right thigh</diagnosisDescription>
+            <qty>129</qty>
+        </drug>
+        <drug>
+            <manufacturer>Stat Rx USA</manufacturer>
+            <brand>BETAMETHASONE CLOTRIMAZOLE</brand>
+            <name>BETAMETHASONE CLOTRIMAZOLE</name>
+            <code>16590-033</code>
+            <diagnosisCode>T83113A</diagnosisCode>
+            <diagnosisDescription>Breakdown (mechanical) of other urinary stents, init</diagnosisDescription>
+            <qty>492</qty>
+        </drug>
+        <drug>
+            <manufacturer>LG Household and Healthcare, Inc.</manufacturer>
+            <brand>OH Age recovery Tri Shield pact 10</brand>
+            <name>TITANIUM DIOXIDE, OCTINOXATE</name>
+            <code>53208-551</code>
+            <diagnosisCode>S42156A</diagnosisCode>
+            <diagnosisDescription>Nondisp fx of neck of scapula, unsp shoulder, init</diagnosisDescription>
+            <qty>112</qty>
+        </drug>
+    </drugs>
+  </clinic>
+  <clinic id="53099d06-064f-4b44-b02c-54bd64cc3024">
+    <address>
+      <street>85 Farwell Drive</street>
+      <city>Linton</city>
+      <region>England</region>
+      <country>United Kingdom</country>
+    </address>
+    <employees>
+        <employee id="32dc81c8-97e8-4fe7-a523-893e3ba65d02">
+            <firstName>Frederik</firstName>
+            <lastName>Mosdell</lastName>
+            <empType>contractor</empType>
+        </employee>
+        <employee id="c7cb7bd1-aa8e-474f-a4df-007508d24e84">
+            <firstName>Aveline</firstName>
+            <lastName>Wainer</lastName>
+            <empType>part-time</empType>
+        </employee>
+        <employee id="b5f36801-a88c-484c-a59c-84afdb03f8d1">
+            <firstName>Ted</firstName>
+            <lastName>Dungey</lastName>
+            <empType>intern</empType>
+        </employee>
+    </employees>
+    <drugs>
+        <drug>
+            <manufacturer>NCS HealthCare of KY, Inc dba Vangard Labs</manufacturer>
+            <brand>Risperidone</brand>
+            <name>risperidone</name>
+            <code>0615-7507</code>
+            <diagnosisCode>S72001H</diagnosisCode>
+            <diagnosisDescription>Fx unsp prt of nk of r femr, 7thH</diagnosisDescription>
+            <qty>30</qty>
+        </drug>
+        <drug>
+            <manufacturer>Direct Rx</manufacturer>
+            <brand>AMITRIPTYLINE HYDROCHLORIDE</brand>
+            <name>AMITRIPTYLINE HYDROCHLORIDE</name>
+            <code>61919-012</code>
+            <diagnosisCode>L859</diagnosisCode>
+            <diagnosisDescription>Epidermal thickening, unspecified</diagnosisDescription>
+            <qty>298</qty>
+        </drug>
+        <drug>
+            <manufacturer>Sanum Kehlbeck GmbH &amp; Co. KG</manufacturer>
+            <brand>Pleo Sanuvis</brand>
+            <name>lactic acid, l-</name>
+            <code>60681-6301</code>
+            <diagnosisCode>S15211A</diagnosisCode>
+            <diagnosisDescription>Minor laceration of right external jugular vein, init encntr</diagnosisDescription>
+            <qty>327</qty>
+        </drug>
+        <drug>
+            <manufacturer>E-Z-EM Canada Inc</manufacturer>
+            <brand>Readi-Cat2 Vanilla Smoothie</brand>
+            <name>Barium Sulfate</name>
+            <code>32909-755</code>
+            <diagnosisCode>M6146</diagnosisCode>
+            <diagnosisDescription>Other calcification of muscle, lower leg</diagnosisDescription>
+            <qty>403</qty>
+        </drug>
+        <drug>
+            <manufacturer>Physicians Total Care, Inc.</manufacturer>
+            <brand>Rivastigmine Tartrate</brand>
+            <name>rivastigmine tartrate</name>
+            <code>54868-6145</code>
+            <diagnosisCode>T25421S</diagnosisCode>
+            <diagnosisDescription>Corrosion of unspecified degree of right foot, sequela</diagnosisDescription>
+            <qty>443</qty>
+        </drug>
+    </drugs>
+  </clinic>
+  <clinic id="98576a89-1f2c-4ff4-a392-77cce24ae509">
+    <address>
+      <street>49811 Sundown Trail</street>
+      <city>Dallas</city>
+      <region>Texas</region>
+      <country>United States</country>
+    </address>
+    <employees>
+        <employee id="eaf847d0-eb4f-4e26-8603-9de59b1679ea">
+            <firstName>Lulita</firstName>
+            <lastName>Goundsy</lastName>
+            <empType>contractor</empType>
+        </employee>
+        <employee id="c38357e6-2bd4-49c1-9790-8af96998c8ce">
+            <firstName>Davidde</firstName>
+            <lastName>Gregoriou</lastName>
+            <empType>part-time</empType>
+        </employee>
+        <employee id="37fb8dd4-a023-4c05-a48a-9394039c249b">
+            <firstName>Carroll</firstName>
+            <lastName>Kennefick</lastName>
+            <empType>full-time</empType>
+        </employee>
+    </employees>
+    <drugs>
+        <drug>
+            <manufacturer>Physicians Total Care, Inc.</manufacturer>
+            <brand>Vitamin A and Vitamin D</brand>
+            <name>PETROLATUM</name>
+            <code>54868-2877</code>
+            <diagnosisCode>H18621</diagnosisCode>
+            <diagnosisDescription>Keratoconus, unstable, right eye</diagnosisDescription>
+            <qty>201</qty>
+        </drug>
+        <drug>
+            <manufacturer>TOLMAR Pharmaceuticals, Inc.</manufacturer>
+            <brand>ELIGARD</brand>
+            <name>Leuprolide Acetate</name>
+            <code>62935-452</code>
+            <diagnosisCode>S00269S</diagnosisCode>
+            <diagnosisDescription>Insect bite of unsp eyelid and periocular area, sequela</diagnosisDescription>
+            <qty>28</qty>
+        </drug>
+        <drug>
+            <manufacturer>Uriel Pharmacy Inc.</manufacturer>
+            <brand>Plantago Primula</brand>
+            <name>Plantago Primula</name>
+            <code>48951-8034</code>
+            <diagnosisCode>O411025</diagnosisCode>
+            <diagnosisDescription>Infct of amniotic sac and membrns, unsp, second tri, fetus 5</diagnosisDescription>
+            <qty>79</qty>
+        </drug>
+        <drug>
+            <manufacturer>Reckitt Benckiser LLC</manufacturer>
+            <brand>Mucinex Fast-Max</brand>
+            <name>Acetaminophen, Guaifenesin, and Phenylephrine Hydrochloride</name>
+            <code>63824-016</code>
+            <diagnosisCode>S90931S</diagnosisCode>
+            <diagnosisDescription>Unspecified superficial injury of right great toe, sequela</diagnosisDescription>
+            <qty>496</qty>
+        </drug>
+        <drug>
+            <manufacturer>Theraceutix, LLC</manufacturer>
+            <brand>TCX Skincare</brand>
+            <name>Colloidal Oatmeal</name>
+            <code>49449-100</code>
+            <diagnosisCode>S61210</diagnosisCode>
+            <diagnosisDescription>Laceration w/o foreign body of r idx fngr w/o damage to nail</diagnosisDescription>
+            <qty>9</qty>
+        </drug>
+    </drugs>
+  </clinic>
+  <clinic id="c4c6ad57-cc08-443f-9b7b-54a31f222d97">
+    <address>
+      <street>83 Logan Alley</street>
+      <city>Caen</city>
+      <region>Basse-Normandie</region>
+      <country>France</country>
+    </address>
+    <employees>
+        <employee id="63a2b7ff-1cb4-45dc-9563-93d7c1e55c04">
+            <firstName>Wainwright</firstName>
+            <lastName>Beeck</lastName>
+            <empType>contractor</empType>
+        </employee>
+        <employee id="4e89d3dc-f348-446d-8f74-62b70d8845bc">
+            <firstName>Wolf</firstName>
+            <lastName>Catlette</lastName>
+            <empType>full-time</empType>
+        </employee>
+        <employee id="d0eb38c9-ebed-4fdc-831e-6ad0a35107cb">
+            <firstName>Fran</firstName>
+            <lastName>Marrion</lastName>
+            <empType>part-time</empType>
+        </employee>
+    </employees>
+    <drugs>
+        <drug>
+            <manufacturer>Topco Associates LLC</manufacturer>
+            <brand>Topcare Cold Head Congestion Severe</brand>
+            <name>Acetaminophen, Dextromethorphan HBr, Guaifenesin, Phenylephrine HCl</name>
+            <code>36800-234</code>
+            <diagnosisCode>T2065XD</diagnosisCode>
+            <diagnosisDescription>Corrosion of second degree of scalp, subsequent encounter</diagnosisDescription>
+            <qty>401</qty>
+        </drug>
+        <drug>
+            <manufacturer>Crosstex International Inc.</manufacturer>
+            <brand>Zap APF</brand>
+            <name>Sodium Fluoride</name>
+            <code>24794-105</code>
+            <diagnosisCode>T465X1S</diagnosisCode>
+            <diagnosisDescription>Poisoning by oth antihypertn drugs, accidental, sequela</diagnosisDescription>
+            <qty>34</qty>
+        </drug>
+        <drug>
+            <manufacturer>Caraco Pharmaceutical Laboratories, Ltd.</manufacturer>
+            <brand>VERAPAMIL HYDROCHLORIDE</brand>
+            <name>VERAPAMIL HYDROCHLORIDE</name>
+            <code>57664-117</code>
+            <diagnosisCode>S60949A</diagnosisCode>
+            <diagnosisDescription>Unsp superficial injury of unspecified finger, init encntr</diagnosisDescription>
+            <qty>332</qty>
+        </drug>
+        <drug>
+            <manufacturer>Meijer Distribution Inc</manufacturer>
+            <brand>nicotine</brand>
+            <name>Nicotine polacrilex</name>
+            <code>41250-700</code>
+            <diagnosisCode>S51841S</diagnosisCode>
+            <diagnosisDescription>Puncture wound with foreign body of right forearm, sequela</diagnosisDescription>
+            <qty>470</qty>
+        </drug>
+        <drug>
+            <manufacturer>NATURE REPUBLIC CO., LTD.</manufacturer>
+            <brand>BLEMISH LAB BYE PORE BB</brand>
+            <name>TITANIUM DIOXIDE, OCTINOXATE, ZINC OXIDE</name>
+            <code>51346-051</code>
+            <diagnosisCode>S12150K</diagnosisCode>
+            <diagnosisDescription>Oth traum displ spondylolysis of 2nd cervcal vert, 7thK</diagnosisDescription>
+            <qty>139</qty>
+        </drug>
+    </drugs>
+  </clinic>
+  <clinic id="32f2022f-0c5a-46c1-a226-5afa86e14a20">
+    <address>
+      <street>35749 Petterle Parkway</street>
+      <city>Clichy</city>
+      <region>Île-de-France</region>
+      <country>France</country>
+    </address>
+    <employees>    
+        <employee id="92b91ab5-e272-4283-aa27-c17372189a9f">
+            <firstName>Meris</firstName>
+            <lastName>Coultard</lastName>
+            <empType>part-time</empType>
+        </employee>
+        <employee id="50c846dd-b4e7-45af-ac86-9ad2b483a024">
+            <firstName>Horacio</firstName>
+            <lastName>Clinch</lastName>
+            <empType>intern</empType>
+        </employee>
+        <employee id="8bf23a9c-3f7d-4503-81fe-d7267fd1fe34">
+            <firstName>Verene</firstName>
+            <lastName>Carrabot</lastName>
+            <empType>part-time</empType>
+        </employee>
+    </employees>
+    <drugs>
+        <drug>
+            <manufacturer>Eisai Inc.</manufacturer>
+            <brand>Salagen</brand>
+            <name>pilocarpine hyrochloride</name>
+            <code>62856-705</code>
+            <diagnosisCode>P5699</diagnosisCode>
+            <diagnosisDescription>Hydrops fetalis due to other hemolytic disease</diagnosisDescription>
+            <qty>459</qty>
+        </drug>
+        <drug>
+            <manufacturer>Carilion Materials Management</manufacturer>
+            <brand>Acetaminophen and Diphenhydramine HCl</brand>
+            <name>Acetaminophen and Diphenhydramine HCl</name>
+            <code>68151-0703</code>
+            <diagnosisCode>M84375K</diagnosisCode>
+            <diagnosisDescription>Stress fracture, left foot, subs for fx w nonunion</diagnosisDescription>
+            <qty>73</qty>
+        </drug>
+        <drug>
+            <manufacturer>Greenstone LLC</manufacturer>
+            <brand>NITROGLYCERIN</brand>
+            <name>nitroglycerin</name>
+            <code>59762-3304</code>
+            <diagnosisCode>S46009</diagnosisCode>
+            <diagnosisDescription>Unsp injury of musc/tend the rotator cuff of unsp shoulder</diagnosisDescription>
+            <qty>194</qty>
+        </drug>
+        <drug>
+            <manufacturer>Morgan Gallacher, Inc. DBA Custom Chemical Formulators, Inc.</manufacturer>
+            <brand>PROBLEND Antibacterial Liquid Cleanser</brand>
+            <name>Parachlorometaxylenol</name>
+            <code>50241-143</code>
+            <diagnosisCode>S45192</diagnosisCode>
+            <diagnosisDescription>Other specified injury of brachial artery, left side</diagnosisDescription>
+            <qty>12</qty>
+        </drug>
+        <drug>
+            <manufacturer>Mueller Sports Medicine, Inc.</manufacturer>
+            <brand>Hot Stuff Cream</brand>
+            <name>Capsaicin</name>
+            <code>52564-308</code>
+            <diagnosisCode>S63</diagnosisCode>
+            <diagnosisDescription>Dislocation and sprain of joints and ligaments at wrs/hnd lv</diagnosisDescription>
+            <qty>408</qty>
+        </drug>
+    </drugs>
+  </clinic>
+  <clinic id="d3389b97-e38b-4233-91ea-856ffa5f9dfa">
+    <address>
+      <street>9 Mockingbird Junction</street>
+      <city>Las Vegas</city>
+      <region>Nevada</region>
+      <country>United States</country>
+    </address>
+    <employees>
+        <employee id="81cb939c-9ca5-41b2-9e3b-9be69147e00e">
+            <firstName>Jesse</firstName>
+            <lastName>Shand</lastName>
+            <empType>intern</empType>
+        </employee>
+        <employee id="e07e4084-11fa-4cb6-8ba5-559c338265e3">
+            <firstName>Carmella</firstName>
+            <lastName>Dani</lastName>
+            <empType>full-time</empType>
+        </employee>
+        <employee id="06ec0ed8-95fc-43e5-87db-c100e2414af0">
+            <firstName>Kristina</firstName>
+            <lastName>McBean</lastName>
+            <empType>part-time</empType>
+        </employee>
+    </employees>
+    <drugs>
+        <drug>
+            <manufacturer>AbbVie Inc.</manufacturer>
+            <brand>Depacon</brand>
+            <name>Valproate Sodium</name>
+            <code>0074-1564</code>
+            <diagnosisCode>V870XXD</diagnosisCode>
+            <diagnosisDescription>Person injured in clsn betw car and 2/3-whl pwr veh, subs</diagnosisDescription>
+            <qty>81</qty>
+        </drug>
+        <drug>
+            <manufacturer>JUBILANT CADISTA PHARMACEUTICALS, INC.</manufacturer>
+            <brand>cyclobenzaprine hydrochloride</brand>
+            <name>cyclobenzaprine hydrochloride</name>
+            <code>59746-177</code>
+            <diagnosisCode>I8322</diagnosisCode>
+            <diagnosisDescription>Varicose veins of l low extrem w ulc and inflammation</diagnosisDescription>
+            <qty>93</qty>
+        </drug>
+        <drug>
+            <manufacturer>Amneal Pharmaceuticals</manufacturer>
+            <brand>Metformin Hydrochloride</brand>
+            <name>Metformin Hydrochloride</name>
+            <code>53746-179</code>
+            <diagnosisCode>M1904</diagnosisCode>
+            <diagnosisDescription>Primary osteoarthritis, hand</diagnosisDescription>
+            <qty>487</qty>
+        </drug>
+        <drug>
+            <manufacturer>Dolgencorp, LLC</manufacturer>
+            <brand>dg health pain relief</brand>
+            <name>Acetaminophen</name>
+            <code>55910-200</code>
+            <diagnosisCode>T22721D</diagnosisCode>
+            <diagnosisDescription>Corrosion of third degree of right elbow, subs encntr</diagnosisDescription>
+            <qty>80</qty>
+        </drug>
+        <drug>
+            <manufacturer>L Perrigo Company</manufacturer>
+            <brand>good sense athletes foot</brand>
+            <name>tolnaftate</name>
+            <code>0113-0154</code>
+            <diagnosisCode>M24139</diagnosisCode>
+            <diagnosisDescription>Other articular cartilage disorders, unspecified wrist</diagnosisDescription>
+            <qty>309</qty>
+        </drug>
+    </drugs>
+  </clinic>
+  <clinic id="ad3da69d-1681-47a0-9f1e-f3a06fa42390">
+    <address>
+      <street>5043 Larry Parkway</street>
+      <city>Dallas</city>
+      <region>Texas</region>
+      <country>United States</country>
+    </address>
+    <employees>
+        <employee id="e119867c-404a-4d66-b30a-95b6715df64a">
+            <firstName>Kristien</firstName>
+            <lastName>Le Batteur</lastName>
+            <empType>part-time</empType>
+        </employee>
+        <employee id="2c37678f-51de-4f0d-961e-ab0e63d5790a">
+            <firstName>Carmine</firstName>
+            <lastName>Deakan</lastName>
+            <empType>intern</empType>
+        </employee>
+        <employee id="f6f19892-a9da-4fdf-a723-b4b6bc78aca4">
+            <firstName>Darrel</firstName>
+            <lastName>MacDougal</lastName>
+            <empType>contractor</empType>
+        </employee>
+    </employees>
+    <drugs>
+        <drug>
+            <manufacturer>Rebel Distributors Corp</manufacturer>
+            <brand>Haloperidol</brand>
+            <name>Haloperidol</name>
+            <code>21695-653</code>
+            <diagnosisCode>I512</diagnosisCode>
+            <diagnosisDescription>Rupture of papillary muscle, not elsewhere classified</diagnosisDescription>
+            <qty>414</qty>
+        </drug>
+        <drug>
+            <manufacturer>Par Pharmaceutical Inc.</manufacturer>
+            <brand>Nateglinide</brand>
+            <name>Nateglinide</name>
+            <code>49884-984</code>
+            <diagnosisCode>J0181</diagnosisCode>
+            <diagnosisDescription>Other acute recurrent sinusitis</diagnosisDescription>
+            <qty>201</qty>
+        </drug>
+        <drug>
+            <manufacturer>Medline Industries, Inc.</manufacturer>
+            <brand>Obstetrical Antiseptic</brand>
+            <name>Benzalkonium Chloride</name>
+            <code>53329-933</code>
+            <diagnosisCode>H59361</diagnosisCode>
+            <diagnosisDescription>Postproc seroma of right eye and adnexa fol other procedure</diagnosisDescription>
+            <qty>482</qty>
+        </drug>
+        <drug>
+            <manufacturer>STAT RX USA LLC</manufacturer>
+            <brand>IBUPROFEN</brand>
+            <name>IBUPROFEN</name>
+            <code>16590-126</code>
+            <diagnosisCode>S62331</diagnosisCode>
+            <diagnosisDescription>Disp fx of neck of second metacarpal bone, left hand</diagnosisDescription>
+            <qty>168</qty>
+        </drug>
+        <drug>
+            <manufacturer>Chain Drug Marketing Association</manufacturer>
+            <brand>Awaken by Quality Choice Anti-Wrinkle and Firming Moisturizer Day Broad Spectrum SPF18 Sunscreen</brand>
+            <name>Avobenzone, Octisalate and Octocrylene</name>
+            <code>63868-251</code>
+            <diagnosisCode>S65590</diagnosisCode>
+            <diagnosisDescription>Other specified injury of blood vessel of right index finger</diagnosisDescription>
+            <qty>81</qty>
+        </drug>
+    </drugs>
+  </clinic>
+  <clinic id="2e9be843-21c8-4824-b093-76be483c6606">
+    <address>
+      <street>7 Briar Crest Terrace</street>
+      <city>Bremen</city>
+      <region>Bremen</region>
+      <country>Germany</country>
+    </address>
+    <employees>
+        <employee id="75b6c212-42bb-4778-b9be-1ee14789b9a3">
+            <firstName>Dougie</firstName>
+            <lastName>Ziehm</lastName>
+            <empType>full-time</empType>
+        </employee>
+        <employee id="62faa73e-b710-442a-b5aa-3b9288a99ca3">
+            <firstName>Gayler</firstName>
+            <lastName>Roper</lastName>
+            <empType>intern</empType>
+        </employee>
+        <employee id="485a2796-ba9a-42eb-b46b-73467a93eca8">
+            <firstName>James</firstName>
+            <lastName>Barringer</lastName>
+            <empType>part-time</empType>
+        </employee>
+    </employees>
+    <drugs>
+        <drug>
+            <manufacturer>L&#x27;Oreal USA Products Inc</manufacturer>
+            <brand>La Roche Posay</brand>
+            <name>Avobenzone Homosalate Octisalate Octocrylene Oxybenzone</name>
+            <code>49967-084</code>
+            <diagnosisCode>M47819</diagnosisCode>
+            <diagnosisDescription>Spondylosis without myelopathy or radiculopathy, site unsp</diagnosisDescription>
+            <qty>342</qty>
+        </drug>
+        <drug>
+            <manufacturer>Cantrell Drug Company</manufacturer>
+            <brand>Oxytocin</brand>
+            <name>Oxytocin</name>
+            <code>52533-048</code>
+            <diagnosisCode>L0501</diagnosisCode>
+            <diagnosisDescription>Pilonidal cyst with abscess</diagnosisDescription>
+            <qty>314</qty>
+        </drug>
+        <drug>
+            <manufacturer>ALK-Abello, Inc.</manufacturer>
+            <brand>QUERCUS VIRGINIANA POLLEN</brand>
+            <name>Virginia Live Oak</name>
+            <code>0268-6643</code>
+            <diagnosisCode>S52246R</diagnosisCode>
+            <diagnosisDescription>Nondisp spiral fx shaft of ulna, unsp arm, 7thR</diagnosisDescription>
+            <qty>299</qty>
+        </drug>
+        <drug>
+            <manufacturer>KINeSYS Pharmaceutical Inc.</manufacturer>
+            <brand>KINeSYS EarthKind SPF 30 Sunscreen</brand>
+            <name>ZINC OXIDE</name>
+            <code>61481-0037</code>
+            <diagnosisCode>S71041</diagnosisCode>
+            <diagnosisDescription>Puncture wound with foreign body, right hip</diagnosisDescription>
+            <qty>152</qty>
+        </drug>
+        <drug>
+            <manufacturer>Share Corporation</manufacturer>
+            <brand>Insti-Foam Sanitizer</brand>
+            <name>BENZETHONIUM CHLORIDE</name>
+            <code>68654-575</code>
+            <diagnosisCode>S04892S</diagnosisCode>
+            <diagnosisDescription>Injury of other cranial nerves, left side, sequela</diagnosisDescription>
+            <qty>72</qty>
+        </drug>
+    </drugs>
+  </clinic>
+  <clinic id="6ddd6a92-80f0-4aba-af00-79797cdb0328">
+    <address>
+      <street>491 Granby Terrace</street>
+      <city>Rueil-Malmaison</city>
+      <region>Île-de-France</region>
+      <country>France</country>
+    </address>
+    <employees>
+        <employee id="37b74e41-d8db-4025-8157-3be538c2710c">
+            <firstName>Gavra</firstName>
+            <lastName>MacSweeney</lastName>
+            <empType>full-time</empType>
+        </employee>
+        <employee id="bad39366-2fdf-494f-9326-8954e2daec3b">
+            <firstName>Biddie</firstName>
+            <lastName>Paulucci</lastName>
+            <empType>contractor</empType>
+        </employee>
+        <employee id="644336c9-9fb4-4565-88fb-b494bc26dfd2">
+            <firstName>Kort</firstName>
+            <lastName>Auten</lastName>
+            <empType>contractor</empType>
+        </employee>
+    </employees>
+    <drugs>
+        <drug>
+            <manufacturer>Jets, Sets, &amp; Elephants Beauty Corp.</manufacturer>
+            <brand>Shopko Antibacterial Hand Sanitizer</brand>
+            <name>Ethyl Alcohol</name>
+            <code>50988-282</code>
+            <diagnosisCode>T532X4A</diagnosisCode>
+            <diagnosisDescription>Toxic effect of trichloroethylene, undetermined, init encntr</diagnosisDescription>
+            <qty>190</qty>
+        </drug>
+        <drug>
+            <manufacturer>Baxter Healthcare Corporation</manufacturer>
+            <brand>Dopamine Hydrochloride and Dextrose</brand>
+            <name>Dopamine Hydrochloride</name>
+            <code>0338-1009</code>
+            <diagnosisCode>L97911</diagnosisCode>
+            <diagnosisDescription>Non-prs chr ulc unsp prt of r low leg limited to brkdwn skin</diagnosisDescription>
+            <qty>86</qty>
+        </drug>
+        <drug>
+            <manufacturer>Preferred Pharmaceuticals, Inc</manufacturer>
+            <brand>Amlodipine Besylate</brand>
+            <name>amlodipine besylate</name>
+            <code>68788-1738</code>
+            <diagnosisCode>S63694</diagnosisCode>
+            <diagnosisDescription>Other sprain of right ring finger</diagnosisDescription>
+            <qty>117</qty>
+        </drug>
+        <drug>
+            <manufacturer>Sun Pharma Global FZE</manufacturer>
+            <brand>Atomoxetine Hydrochloride</brand>
+            <name>Atomoxetine Hydrochloride</name>
+            <code>47335-814</code>
+            <diagnosisCode>D3142</diagnosisCode>
+            <diagnosisDescription>Benign neoplasm of left ciliary body</diagnosisDescription>
+            <qty>105</qty>
+        </drug>
+        <drug>
+            <manufacturer>A-S Medication Solutions LLC</manufacturer>
+            <brand>Diazepam</brand>
+            <name>diazepam</name>
+            <code>54569-0936</code>
+            <diagnosisCode>D1800</diagnosisCode>
+            <diagnosisDescription>Hemangioma unspecified site</diagnosisDescription>
+            <qty>299</qty>
+        </drug>
+    </drugs>
+  </clinic>
+  <clinic id="6d69ed19-a55d-4766-a0fa-c9b5801b7417">
+    <address>
+      <street>0106 Melody Avenue</street>
+      <city>Orléans</city>
+      <region>Centre</region>
+      <country>France</country>
+    </address>
+    <employees>
+        <employee id="bcbb2f9f-1df6-4151-bd61-aed0d844a628">
+            <firstName>Sharity</firstName>
+            <lastName>Cumbers</lastName>
+            <empType>full-time</empType>
+        </employee>
+        <employee id="9538493c-a842-4592-b5fc-a1489d2c8cb5">
+            <firstName>Aile</firstName>
+            <lastName>Patching</lastName>
+            <empType>contractor</empType>
+        </employee>
+        <employee id="1fcfa64c-6964-4568-8aea-9cf9489fd1d6">
+            <firstName>Sophronia</firstName>
+            <lastName>Labin</lastName>
+            <empType>full-time</empType>
+        </employee>
+    </employees>
+    <drugs>
+        <drug>
+            <manufacturer>American Sales Company</manufacturer>
+            <brand>Tussin DM</brand>
+            <name>Dextromethorphan Hydrobromide, GUAIFENESIN</name>
+            <code>41520-018</code>
+            <diagnosisCode>T38894D</diagnosisCode>
+            <diagnosisDescription>Poisoning by oth hormones and synthetic sub, undet, subs</diagnosisDescription>
+            <qty>44</qty>
+        </drug>
+        <drug>
+            <manufacturer>Baxter Healthcare Corporation</manufacturer>
+            <brand>CLINIMIX E</brand>
+            <name>Leucine, Phenylalanine, Lysine, Methionine, Isoleucine, Valine, Histidine, Threonine, Tryptophan, Alanine, Glycine, Arginine, Proline, Serine, Tyrosine, Sodium Acetate, Dibasic Potassium Phosphate, Ma</name>
+            <code>0338-1147</code>
+            <diagnosisCode>S93132</diagnosisCode>
+            <diagnosisDescription>Subluxation of interphalangeal joint of left great toe</diagnosisDescription>
+            <qty>283</qty>
+        </drug>
+        <drug>
+            <manufacturer>State of Florida DOH Central Pharmacy</manufacturer>
+            <brand>Hydroxyzine Hydrochloride</brand>
+            <name>Hydroxyzine Hydrochloride</name>
+            <code>53808-0632</code>
+            <diagnosisCode>O3472</diagnosisCode>
+            <diagnosisDescription>Maternal care for abnlt of vulva and perineum, second tri</diagnosisDescription>
+            <qty>454</qty>
+        </drug>
+        <drug>
+            <manufacturer>Actavis Elizabeth LLC</manufacturer>
+            <brand>Alprazolam</brand>
+            <name>Alprazolam</name>
+            <code>0228-3084</code>
+            <diagnosisCode>S72324J</diagnosisCode>
+            <diagnosisDescription>Nondisp transverse fx shaft of r femr, 7thJ</diagnosisDescription>
+            <qty>302</qty>
+        </drug>
+        <drug>
+            <manufacturer>Ohm Laboratories Inc.</manufacturer>
+            <brand>Ibuprofen and Pseudoephedrine Hydrochloride</brand>
+            <name>Ibuprofen and Pseudoephedrine Hydrochloride</name>
+            <code>51660-490</code>
+            <diagnosisCode>T471X4</diagnosisCode>
+            <diagnosisDescription>Poisoning by oth antacids and anti-gstrc-sec drugs, undet</diagnosisDescription>
+            <qty>216</qty>
+        </drug>
+    </drugs>
+  </clinic>
+  <clinic id="48c9a7af-e36e-4001-8fd6-1a28a6629b72">
+    <address>
+      <street>010 Hudson Parkway</street>
+      <city>Shreveport</city>
+      <region>Louisiana</region>
+      <country>United States</country>
+    </address>
+    <employees>
+        <employee id="4f76b6ee-dac8-4ac2-8ede-e4681e167646">
+            <firstName>Darelle</firstName>
+            <lastName>Tyzack</lastName>
+            <empType>contractor</empType>
+        </employee>
+        <employee id="34335673-9bf5-42ec-bd81-1d5bb358af92">
+            <firstName>Mace</firstName>
+            <lastName>Fellnee</lastName>
+            <empType>full-time</empType>
+        </employee>
+        <employee id="1e76d554-bcd2-4791-b574-b07366f4f7e9">
+            <firstName>Perl</firstName>
+            <lastName>Burbridge</lastName>
+            <empType>contractor</empType>
+        </employee>
+    </employees>
+    <drugs>
+        <drug>
+            <manufacturer>Taro Pharmaceuticals U.S.A., Inc.</manufacturer>
+            <brand>Clotrimazole</brand>
+            <name>Clotrimazole</name>
+            <code>51672-1260</code>
+            <diagnosisCode>S91129</diagnosisCode>
+            <diagnosisDescription>Laceration w foreign body of unsp toe(s) w/o damage to nail</diagnosisDescription>
+            <qty>42</qty>
+        </drug>
+        <drug>
+            <manufacturer>McKesson</manufacturer>
+            <brand>Sunmark Naproxen Sodium</brand>
+            <name>Naproxen Sodium</name>
+            <code>49348-260</code>
+            <diagnosisCode>V744XXA</diagnosisCode>
+            <diagnosisDescription>Prsn brd/alit from bus injured in collision w hv veh, init</diagnosisDescription>
+            <qty>85</qty>
+        </drug>
+        <drug>
+            <manufacturer>SHISEIDO AMERICA INC.</manufacturer>
+            <brand>CLE DE PEAU BEAUTE UV PROTECTION</brand>
+            <name>OCTINOXATE, OCTOCRYLENE, and ZINC OXIDE</name>
+            <code>52686-275</code>
+            <diagnosisCode>S62334K</diagnosisCode>
+            <diagnosisDescription>Disp fx of nk of 4th MC bone, r hand, subs for fx w nonunion</diagnosisDescription>
+            <qty>428</qty>
+        </drug>
+        <drug>
+            <manufacturer>Roxane Laboratories, Inc.</manufacturer>
+            <brand>Leucovorin Calcium</brand>
+            <name>Leucovorin Calcium</name>
+            <code>0054-8496</code>
+            <diagnosisCode>T497X4A</diagnosisCode>
+            <diagnosisDescription>Poisoning by dental drugs, topically applied, undet, init</diagnosisDescription>
+            <qty>153</qty>
+        </drug>
+        <drug>
+            <manufacturer>Unit Dose Services</manufacturer>
+            <brand>Diclofenac Sodium</brand>
+            <name>Diclofenac Sodium</name>
+            <code>50436-1182</code>
+            <diagnosisCode>S72346K</diagnosisCode>
+            <diagnosisDescription>Nondisp spiral fx shaft of unsp femr, 7thK</diagnosisDescription>
+            <qty>360</qty>
+        </drug>
+    </drugs>
+  </clinic>
+  <clinic id="b219ffa3-0405-4678-b41b-93855adf8131">
+    <address>
+      <street>964 Badeau Avenue</street>
+      <city>Pemberton</city>
+      <region>British Columbia</region>
+      <country>Canada</country>
+    </address>
+    <employees>
+        <employee id="32c846b1-a70a-40bd-a027-1a9eac575207">
+            <firstName>Kala</firstName>
+            <lastName>Jewis</lastName>
+            <empType>intern</empType>
+        </employee>
+        <employee id="7ec0758b-89de-4207-b7bc-5241a469af74">
+            <firstName>Hettie</firstName>
+            <lastName>Severs</lastName>
+            <empType>part-time</empType>
+        </employee>
+        <employee id="b08e5273-3075-4054-90f2-2ff4ac1b1995">
+            <firstName>Vinni</firstName>
+            <lastName>Chappell</lastName>
+            <empType>full-time</empType>
+        </employee>
+    </employees>
+    <drugs>
+        <drug>
+            <manufacturer>Carver Korea Co.,Ltd</manufacturer>
+            <brand>AHC Hydration Special Gen Serum</brand>
+            <name>Adenosine</name>
+            <code>58930-030</code>
+            <diagnosisCode>H6506</diagnosisCode>
+            <diagnosisDescription>Acute serous otitis media, recurrent, bilateral</diagnosisDescription>
+            <qty>293</qty>
+        </drug>
+        <drug>
+            <manufacturer>Ascend Laboratories LLC</manufacturer>
+            <brand>benzonatate</brand>
+            <name>benzonatate</name>
+            <code>67877-105</code>
+            <diagnosisCode>S72432C</diagnosisCode>
+            <diagnosisDescription>Disp fx of med condyle of l femr, 7thC</diagnosisDescription>
+            <qty>26</qty>
+        </drug>
+        <drug>
+            <manufacturer>Hospira, Inc</manufacturer>
+            <brand>Ampicillin and Sulbactam</brand>
+            <name>Ampicillin sodium and Sulbactam sodium</name>
+            <code>0409-2988</code>
+            <diagnosisCode>S064X4S</diagnosisCode>
+            <diagnosisDescription>Epidural hemorrhage w LOC of 6 hours to 24 hours, sequela</diagnosisDescription>
+            <qty>268</qty>
+        </drug>
+        <drug>
+            <manufacturer>LABORATOIRES M&amp;L</manufacturer>
+            <brand>Immortelle Brightening Hand Care SPF 15</brand>
+            <name>OCTINOXATE, OCTISALATE, AVOBENZONE, OCTOCRYLENE</name>
+            <code>10345-025</code>
+            <diagnosisCode>T80A19S</diagnosisCode>
+            <diagnosisDescription>Non-ABO incompat w hemolytic transfs react, unsp, sequela</diagnosisDescription>
+            <qty>113</qty>
+        </drug>
+        <drug>
+            <manufacturer>Physicians Total Care, Inc.</manufacturer>
+            <brand>Carbamazepine</brand>
+            <name>Carbamazepine</name>
+            <code>54868-6074</code>
+            <diagnosisCode>F4320</diagnosisCode>
+            <diagnosisDescription>Adjustment disorder, unspecified</diagnosisDescription>
+            <qty>79</qty>
+        </drug>
+    </drugs>
+  </clinic>
+</clinics>
