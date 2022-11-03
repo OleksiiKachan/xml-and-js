@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Automotive project</title>
+        <style>
+
+            body{
+                padding: 2%;
+
+                font-family: cursive;
+
+                background-image: linear-gradient(to right, violet, lightcyan);
+
+            }
+
+            ul{
+                list-style-type: none;
+                padding: 0;
+            }
+
+            #container > div{
+                border:2px solid white;
+                border-radius: 10px;
+                display: inline-block;
+                margin: 1%;
+                padding: 1.5%;
+                width: 44%;
+            }
+
+
+            .carModelsList > li, .carsList > li{
+                border: 2px solid lightcoral;
+                border-radius: 5px;
+                display: inline-block;
+                margin: 1%;
+                padding: 1%;
+                width: 28%;
+                position: relative;
+            }
+
+            .carsList > li{
+                padding: 2%;
+                width: 43%;
+            }
+
+            .right{
+                position: absolute;
+                top: -7%;
+                right:2%;
+            }
+            .right > span{
+                display:block;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Retailers Information:</h1>
+        <div id="container"></div>
+
+        <script>
+
+
+
+
+            const xhttp = new XMLHttpRequest();
+            
+            xhttp.onreadystatechange = function() {
+
+                if(this.readyState == 4 && this.status == 200){
+
+                    displayData(this.responseXML);
+
+                }
+            };
+
+            xhttp.open("GET", "./automotive.xml", true);
+            xhttp.send();
+
+
+
+
+            const displayData = function (xmlDoc) {
+                const containerDiv = document.getElementById("container");
+
+                const retailers = xmlDoc.getElementsByTagName("retailer");
+                
+
+                for(let retailer of retailers){
+                    const templateString = `
+                        <div>
+                            <h2>
+                                ${retailer.getElementsByTagName("name")[0].childNodes[0].nodeValue}
+                            </h2>
+
+
+                            <p>
+                                <b>Address: </b>
+                                ${retailer.getElementsByTagName("street")[0].childNodes[0].nodeValue}, 
+                                ${retailer.getElementsByTagName("city")[0].childNodes[0].nodeValue}, 
+                                ${
+                                    (retailer.getElementsByTagName("region")[0]?.childNodes[0]?.nodeValue) ?
+                                    retailer.getElementsByTagName("region")[0]?.childNodes[0]?.nodeValue+ "," : ""
+                                }
+                                ${retailer.getElementsByTagName("country")[0].childNodes[0].nodeValue}
+                            </p>
+
+
+                            <h3>Car Models:</h3>
+
+                            <ul class="carModelsList">
+                                ${ generateCarModels( retailer ) }
+                            
+                            </ul>
+                               
+                            <h3>Cars:</h3>
+
+                            <ul class="carsList">
+                                ${generateCars(retailer)}
+                            <ul>
+                        
+                        </div>
+                    `;
+
+                    containerDiv.appendChild(stringToNode(templateString));
+                }
+
+                
+
+            }
+
+
+
+            const generateCarModels = retailer => {
+                let returnString = "";
+                
+                for(let model of retailer.getElementsByTagName("carModel"))
+                {
+                    console.log(model);
+                    returnString += `
+                        <li>
+                            <b>
+                                ${model.getElementsByTagName("name")[0].childNodes[0].nodeValue} 
+                            </b>
+                            <p class="right">Year: 
+                                <span>
+                                    ${model.getElementsByTagName("year")[0].childNodes[0].nodeValue} 
+                                </span>
+                            </p> 
+                            <p> Prices:</p> 
+                            <ul>
+                                <li>USD: ${model.getElementsByTagName("usdPrice")[0].childNodes[0].nodeValue} </li>
+                                <li>CAD: ${model.getElementsByTagName("cadPrice")[0].childNodes[0].nodeValue} </li>
+                                <li>Euro: ${model.getElementsByTagName("euroPrice")[0].childNodes[0].nodeValue} </li>
+                                <li>Pound: ${model.getElementsByTagName("poundPrice")[0].childNodes[0].nodeValue} </li>
+                            </ul>
+                        </li>
+                    `;
+                }
+
+                return returnString;
+            }
+
+
+
+
+            const generateCars = retailers => {
+                let returnString = "";
+
+                for(let car of retailers.getElementsByTagName("car")){
+                    returnString += `
+                        <li>
+                            <p>Car Color: 
+                                ${car.getElementsByTagName("color")[0].childNodes[0].nodeValue}
+                            </p>    
+                            <p>Buyer:
+                                ${car.getElementsByTagName("buyer")[0].childNodes[0].nodeValue}
+                            </p>
+                        </li>
+                    `;
+                }
+
+                return returnString;
+            }
+            
+            
+
+            const stringToNode = htmlString => {
+                const tempElement = document.createElement("template");
+                tempElement.innerHTML = htmlString.trim();
+                return tempElement.content.firstChild;
+            }
+            
+
+
+
+        </script>
+    </body>
+</html>
