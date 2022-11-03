@@ -22,10 +22,8 @@ const filtered= age.filter((age) => {
         accum=filtered;
     return accum;
   }, 0);
-
   console.log("------ Oldest age -----------");
   console.log(oldest);
-
   console.log("--- rechaining --");
   const refactor = data
   .map((data) => data.died - data.born)
