@@ -75,6 +75,8 @@
       }
     ]
   },
+
+
   {
     "id": "3baa90fa-dc23-4eaf-926f-e4b7fcc30fb2",
     "address": {
@@ -151,6 +153,8 @@
       }
     ]
   },
+
+
   {
     "id": "3afef871-5c97-4453-ada9-5d68e8f2e58d",
     "address": {
@@ -181,13 +185,13 @@
     ],
     "drugs": [
       {
-        "manufacturer": "Preferred Pharmaceuticals, Inc.",
-        "brand": "Losartan Potassium",
-        "name": "Losartan Potassium",
-        "code": "68788-9712",
-        "diagnosisCode": "S8609",
-        "diagnosisDescription": "Other specified injury of Achilles tendon",
-        "qty": 448
+        "manufacturer": "Mylan Pharmaceuticals Inc.",
+        "brand": "Pioglitazone Hydrochloride",
+        "name": "Pioglitazone Hydrochloride",
+        "code": "0378-0087",
+        "diagnosisCode": "T83590S",
+        "diagnosisDescription": "I/I react d/t implanted urn nstim dev, sequela",
+        "qty": 85
       },
       {
         "manufacturer": "APP Pharmaceuticals, LLC",
@@ -227,6 +231,8 @@
       }
     ]
   },
+
+
   {
     "id": "4ee91409-eb73-43aa-bf07-2f7b9da0bd73",
     "address": {
@@ -303,6 +309,7 @@
       }
     ]
   },
+
   {
     "id": "53099d06-064f-4b44-b02c-54bd64cc3024",
     "address": {
@@ -379,6 +386,7 @@
       }
     ]
   },
+
   {
     "id": "98576a89-1f2c-4ff4-a392-77cce24ae509",
     "address": {
@@ -455,6 +463,7 @@
       }
     ]
   },
+
   {
     "id": "c4c6ad57-cc08-443f-9b7b-54a31f222d97",
     "address": {
@@ -531,6 +540,7 @@
       }
     ]
   },
+
   {
     "id": "32f2022f-0c5a-46c1-a226-5afa86e14a20",
     "address": {
@@ -607,6 +617,7 @@
       }
     ]
   },
+
   {
     "id": "d3389b97-e38b-4233-91ea-856ffa5f9dfa",
     "address": {
@@ -683,6 +694,7 @@
       }
     ]
   },
+
   {
     "id": "ad3da69d-1681-47a0-9f1e-f3a06fa42390",
     "address": {
@@ -759,6 +771,7 @@
       }
     ]
   },
+
   {
     "id": "2e9be843-21c8-4824-b093-76be483c6606",
     "address": {
@@ -835,6 +848,7 @@
       }
     ]
   },
+
   {
     "id": "6ddd6a92-80f0-4aba-af00-79797cdb0328",
     "address": {
@@ -911,6 +925,7 @@
       }
     ]
   },
+
   {
     "id": "6d69ed19-a55d-4766-a0fa-c9b5801b7417",
     "address": {
@@ -987,6 +1002,7 @@
       }
     ]
   },
+
   {
     "id": "48c9a7af-e36e-4001-8fd6-1a28a6629b72",
     "address": {
@@ -1063,6 +1079,7 @@
       }
     ]
   },
+
   {
     "id": "b219ffa3-0405-4678-b41b-93855adf8131",
     "address": {

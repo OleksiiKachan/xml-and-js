@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            li {
+                color: blue;
+            }
+            b{
+                font-size: 20px;   
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="clinicInfo"></ul>
+        <script>
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    displayData(this.responseXML);
+                }
+            };
+            xhttp.open("GET", "./clinic.xml", true);
+            xhttp.send();
+        
+            function displayData(xmlDoc) {
+                const listElement = document.getElementById(`clinicInfo`);
+                const customerNodes = xmlDoc.getElementsByTagName(`clinic`);
+                for (let index = 0; index < customerNodes.length; index++) {
+                const info = customerNodes[index];
+                const cId = info.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+                const street = info.getElementsByTagName(`street`)[0].childNodes[0].nodeValue;
+                const city = info.getElementsByTagName(`city`)[0].childNodes[0].nodeValue;
+                const region = info.getElementsByTagName(`region`)[0].childNodes[0].nodeValue;
+                const country = info.getElementsByTagName(`country`)[0].childNodes[0].nodeValue;
+                    
+                const htmlstring=`<b>---------------- Clinic Information ${index +1} -----------------</b>
+                <li>Clinic ID =  ${cId}</li>
+                <h3>Address Information</h3>
+                <li>Street =  ${street}</li>
+                <li>City =  ${city}</li>
+                <li>Region =  ${region}</li>
+                <li>Country =  ${country}</li>`
+
+                const clinicValue= listElement.innerHTML + htmlstring;
+                listElement.innerHTML = clinicValue;
+
+                    const employeesNodes = info.getElementsByTagName(`empData`);
+                    for(let index = 0; index < employeesNodes.length; index++){
+                        const emp = employeesNodes[index];
+                        const id = emp.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+                        const firstName = emp.getElementsByTagName(`firstName`)[0].childNodes[0].nodeValue;
+                        const lastName = emp.getElementsByTagName(`lastName`)[0].childNodes[0].nodeValue;
+                        const empType = emp.getElementsByTagName(`empType`)[0].childNodes[0].nodeValue;
+
+                        const htmlstring=`<h3>Employee Details ${index +1}</h3>
+                        <li>Id =  ${id}</li>
+                        <li>FirstName =  ${firstName}</li>
+                        <li>LastName =  ${lastName}</li>
+                        <li>Employee type =  ${empType}</li>`
+
+                        const empValue= listElement.innerHTML + htmlstring;
+                        listElement.innerHTML = empValue;
+                    }
+
+                    const drugNodes = info.getElementsByTagName(`drugData`);
+                    for(let index = 0; index < drugNodes.length; index++){
+                        const drug = drugNodes[index];
+                        const manufacturer = drug.getElementsByTagName(`manufacturer`)[0].childNodes[0].nodeValue;
+                        const brand = drug.getElementsByTagName(`brand`)[0].childNodes[0].nodeValue;
+                        const name = drug.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+                        const code = drug.getElementsByTagName(`code`)[0].childNodes[0].nodeValue;
+                        const diagnosisCode = drug.getElementsByTagName(`diagnosisCode`)[0].childNodes[0].nodeValue;
+                        const diagnosisDescription = drug.getElementsByTagName(`diagnosisDescription`)[0].childNodes[0].nodeValue;
+                        const qty = drug.getElementsByTagName(`qty`)[0].childNodes[0].nodeValue;
+                        
+                        const htmlstring = `
+                        <h3>Drug Details ${index +1}</h3>
+                        <li>Manufacturer =  ${manufacturer}</li>
+                        <li>Brand =  ${brand}</li>
+                        <li>Name =  ${name}</li>
+                        <li>Code =  ${code}</li>
+                        <li>Diagnosis code =  ${diagnosisCode}</li>
+                        <li>Diagnosis description =  ${diagnosisDescription}</li>
+                        <li>Quantity =  ${qty}</li>
+                        </br> `;
+                        const drugValue = listElement.innerHTML + htmlstring;
+                        listElement.innerHTML = drugValue;
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
