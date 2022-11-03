@@ -1,0 +1,40 @@
+table,td,tr
+{
+    border: 1px solid black;
+}
+h1{
+    margin-left: 22em;
+    color: red;
+}
+hr{
+    color:black;
+}
+h2{
+   
+    font-size: 25px;
+   color: darkblue;
+}
+body{
+    background-color: lightblue;
+}
+div{
+  margin-top: 20px;
+}
+#t{
+    color: blue ;
+    font-size: large;
+}
+h3{
+    color: blue ;
+}
+h4{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: brown;
+}
+h5{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: brown;
+
+}

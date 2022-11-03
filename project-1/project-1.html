@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="project-1.css" />
+    <title>Company Details</title>
+</head>
+<body>
+    <h2>Company Details</h2>
+    <ol id="companyDetails"></ol>
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    displayData(this.responseXML);
+                }
+            };
+      xhttp.open("GET", "project-1.xml", true);
+      xhttp.send();
+        function displayData(xmlDoc) {
+            const list = document.getElementById("companyDetails");
+            const customersNodes = xmlDoc.getElementsByTagName(`company`);
+            for(let index=0;index<customersNodes.length;index++)
+            {
+                const customerDetails = customersNodes[index];
+                const name = customerDetails.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+                const stockSymbol = customerDetails.getElementsByTagName(`stockSymbol`)[0].childNodes[0].nodeValue;
+                const domain = customerDetails.getElementsByTagName(`domain`)[0].childNodes[0].nodeValue;
+                const htmlstring=`<h3>Software Company: ${index +1}</h3>
+                <div>
+                     <p>Name: ${name}</p>
+                     <p>Stock Symbol: ${stockSymbol}</p>
+                     <p>Domain: ${domain}</p>
+                     <h3> Apps:</h3>
+                </div>
+                `
+                const value2= list.innerHTML + htmlstring;
+                list.innerHTML = value2;
+                const AppDetailsNodes = customerDetails.getElementsByTagName(`apps`);
+                for(let index=0;index<AppDetailsNodes.length;index++)
+                {
+                    const appDetails = AppDetailsNodes[index];
+                    const appId = appDetails.getElementsByTagName(`appId`)[0].childNodes[0].nodeValue;
+                    const appName = appDetails.getElementsByTagName(`appName`)[0].childNodes[0].nodeValue;
+                    const currentVersion = appDetails.getElementsByTagName(`currentVersion`)[0].childNodes[0].nodeValue;
+                    const url = appDetails.getElementsByTagName(`url`)[0].childNodes[0].nodeValue;
+                    const htmlstring2 =
+                    `<ul>
+                        <h4>App ${index+1}</h4>
+                        <li><p>appId: ${appId}</p></li>
+                        <li><p>Name: ${appName}</p></li>
+                        <li><p>currentVersiom: ${currentVersion}</p></li>
+                        <li><p>url: ${url}</p></li>
+                    </ul>`
+                    const value3= list.innerHTML + htmlstring2;
+                    list.innerHTML = value3;
+                }
+                const htmlstring4=`<h3>Employees: </h3>`
+                const value3= list.innerHTML + htmlstring4;
+                list.innerHTML = value3;
+
+                const EmpDetailsNodes = customerDetails.getElementsByTagName(`employees`);
+                
+                for(let index=0;index<EmpDetailsNodes.length;index++)
+                {
+                    const empDetails = EmpDetailsNodes[index];
+                    const id = empDetails.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+                    const firstName = empDetails.getElementsByTagName(`firstName`)[0].childNodes[0].nodeValue;
+                    const lastName = empDetails.getElementsByTagName(`lastName`)[0].childNodes[0].nodeValue;
+                    const email = empDetails.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+                    const userName = empDetails.getElementsByTagName(`userName`)[0].childNodes[0].nodeValue;
+                    const occupation = empDetails.getElementsByTagName(`occupation`)[0].childNodes[0].nodeValue;
+                    const department = empDetails.getElementsByTagName(`department`)[0].childNodes[0].nodeValue;
+                    const ip = empDetails.getElementsByTagName(`ip`)[0].childNodes[0].nodeValue;
+                    const mac = empDetails.getElementsByTagName(`mac`)[0].childNodes[0].nodeValue;
+                    const htmlstring2 =
+                    `<ul>
+                        <li><h4>Employee ${index+1}</h4>
+                        <li><p>id: ${id}</p>
+                        <li><p>firstName: ${firstName}</p>
+                        <li><p>lastName: ${lastName}</p>
+                        <li><p>Email: ${email}</p>
+                        <li><p>userName: ${userName}</p>
+                        <li><p>occuaption: ${occupation}</p>
+                        <li><p>Department: ${department}</p>
+                        <li><h5> Device: </h5>
+                            <ul>
+                                <li><p> Ip: ${ip}</p>
+                                <li><p>mac: ${mac}</p>
+                            </ul?
+                        </li>
+                    </ul>`
+                    const value3= list.innerHTML + htmlstring2;
+                    list.innerHTML = value3;
+                }
+           /*    
+                </div>`;
+*/
+                //const value= list.innerHTML + htmlstring + htmlstring2 ;
+                //list.innerHTML = value;
+            }
+        }
+    </script>
+</body>
+</html>
