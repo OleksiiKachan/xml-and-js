@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="info">
+        <xs:complexType>
+        <xs:sequence>
+            <xs:element name="clinic" type="clinicType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="clinicType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+
+            <xs:element name="address">
+            <xs:complexType>
+            <xs:sequence>
+                <xs:element name="street" type="xs:string"/>
+                <xs:element name="city" type="xs:string"/>
+                <xs:element name="region" type="xs:string"/>
+                <xs:element name="country" type="xs:string"/>
+            </xs:sequence>
+            </xs:complexType>
+            </xs:element>
+
+
+            <xs:element name="employees">
+                <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="empData" type="empDataType" minOccurs="0" maxOccurs="unbounded" />
+                </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="drugs">
+                <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="drugData" type="drugDataType" minOccurs="0" maxOccurs="unbounded" />
+                </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+
+
+        </xs:sequence>
+    </xs:complexType>		
+
+
+    <xs:complexType name="empDataType">
+
+        <xs:sequence>
+            <xs:element name="id" type="xs:string" />
+            <xs:element name="firstName" type="xs:string" />
+            <xs:element name="lastName" type="xs:string" />
+            <xs:element name="empType" type="xs:string" />
+        </xs:sequence>
+    
+    </xs:complexType>
+
+    <xs:complexType name="drugDataType">
+
+        <xs:sequence>
+            <xs:element name="manufacturer" type="xs:string" />
+            <xs:element name="brand" type="xs:string" />
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="code" type="xs:string" />
+            <xs:element name="diagnosisCode" type="xs:string" />
+            <xs:element name="diagnosisDescription" type="xs:string" />
+            <xs:element name="qty" type="xs:positiveInteger" />
+        </xs:sequence>
+    
+    </xs:complexType>
+
+</xs:schema>
