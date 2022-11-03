@@ -1,0 +1,157 @@
+<html>
+    <head>
+        <title>stockMarket</title>
+        <style>
+            h2 {
+                text-align: center;
+                font-size: 30px;
+                font-family: Courier, 'Courier New', monospace;
+            }
+            table, th, td {
+                border: 1px solid;
+            }
+            #main th{
+                background-color: orange;
+            }
+            #stocksTable th{
+                background-color: antiquewhite;
+            }
+            #accounts th{
+                background-color: lightsalmon;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>Stock Market</h2>
+        <div id="stocks"></div>
+        <script>
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if (this.readyState === 4 && this.status === 200){
+                    displayData(this.responseXML);
+                }
+            };
+            xhttp.open("GET", "stockMarket.xml", true);
+            xhttp.send();
+
+            function stringToNode(html){
+                const template = document.createElement(`template`);
+                html = html.trim();
+                template.innerHTML = html;
+                return template.content.firstChild;
+            }
+
+            function createBranches(branch){
+                console.log(branch.stocks[0].getElementsByTagName('stockName')[0].innerHTML);
+                var content = `
+                    <article>
+                        <table id="main">
+                            <tr>
+                              <th>Branch ID</th>
+                              <th>Name</th>
+                              <th>Currency</th>
+                              <th>Address</th>
+                              <th>Stocks</th>
+                              <th>Accounts</th>
+                            </tr>
+                            <tr>
+                              <td>${branch.id}</td>
+                              <td>${branch.name}</td>
+                              <td>${branch.currency}</td>
+                              <td>${branch.street}, ${branch.city}, ${branch.region}, ${branch.country}</td>
+                              <td>
+                                <table id="stocksTable">
+                                    <tr>
+                                        <th>Symbol</th>
+                                        <th>Stock Name</th>
+                                        <th>Sector</th>
+                                        <th>Industry</th>
+                                        <th>Market Cap</th>
+                                        <th>Price</th>
+                                    </tr>`;
+                                Array.from(branch.stocks).forEach(function(stock, index){
+                                    content = content + `
+                                    <tr>
+                                        <td>${stock.getElementsByTagName('symbol')[0].childNodes[0].nodeValue}</td>
+                                        <td>${stock.getElementsByTagName('stockName')[0].childNodes[0].nodeValue}</td>
+                                        <td>${stock.getElementsByTagName('sector')[0].childNodes[0].nodeValue}</td>
+                                        <td>${stock.getElementsByTagName('industry')[0].childNodes[0].nodeValue}</td>
+                                        <td>${stock.getElementsByTagName('marketCap')[0].childNodes[0].nodeValue}</td>
+                                        <td>${stock.getElementsByTagName('price')[0].childNodes[0].nodeValue}</td>
+                                    </tr>
+                                `;
+                                });
+                                
+                                content = content + `</table>
+                              </td>
+                              <td>
+                                <table id="accounts">
+                                    <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Gender</th>
+                                        <th>Occupation</th>
+                                        <th>iban</th>
+                                    </tr>`;
+                                Array.from(branch.accounts).forEach(function(account, index){
+                                    content = content + `<tr>
+                                        <td>${account.getElementsByTagName('firstName')[0].childNodes[0].nodeValue}</td>
+                                        <td>${account.getElementsByTagName('lastName')[0].childNodes[0].nodeValue}</td>
+                                        <td>${account.getElementsByTagName('gender')[0].childNodes[0].nodeValue}</td>
+                                        <td>${account.getElementsByTagName('occupation')[0].childNodes[0].nodeValue}</td>
+                                        <td>${account.getElementsByTagName('iban')[0].childNodes[0].nodeValue}</td>
+                                    </tr>`;
+                                });
+                                content + content + `   
+                                </table>
+                              </td>
+                            </tr>
+                        </table>
+                    </article>
+                    `
+                return stringToNode(content);
+            }
+
+            function parseBranches(xml){
+                const id = xml.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+                const name = xml.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+                const currency = xml.getElementsByTagName(`currency`)[0].childNodes[0].nodeValue;
+                const street = xml.getElementsByTagName(`street`)[0].childNodes[0].nodeValue;
+                const city = xml.getElementsByTagName(`city`)[0].childNodes[0].nodeValue;
+                const region = xml.getElementsByTagName(`region`)[0].childNodes[0].nodeValue;
+                const country = xml.getElementsByTagName(`country`)[0].childNodes[0].nodeValue;
+
+                const stocks = xml.getElementsByTagName(`stocks`);
+                const accounts = xml.getElementsByTagName(`accounts`);
+
+                return {
+                    id,
+                    name,
+                    currency,
+                    street,
+                    city,
+                    region,
+                    country,
+                    stocks,
+                    accounts
+                };
+            }
+
+            function displayData(xmlDoc){
+                const branches = xmlDoc.getElementsByTagName(`branch`);
+                const list = document.getElementById(`stocks`);
+
+                for(let index = 0; index < branches.length; index ++){
+                    const element = branches[index];
+                    const parsedBranches = parseBranches(element);
+
+                    const branchesElement = createBranches(parsedBranches);
+                    list.appendChild(branchesElement);
+                }
+            }
+
+        </script>
+
+    </body>
+</html>
