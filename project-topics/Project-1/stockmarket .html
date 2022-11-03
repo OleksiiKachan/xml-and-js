@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project </title>
+        <h1> Stock Market</h1>
+    </head>
+
+<body>
+    <ol id="stockmarket"></ol>
+<script>
+
+const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if (this.readyState === 4 && this.status ===200){
+                const xmlDoc = this.responseXML
+
+                const marketNode = xmlDoc.getElementsByTagName(`market`);
+                const listElement = document.getElementById(`stockmarket`);
+
+                for (let index = 0; index < marketNode.length; index++) {
+          const market = marketNode[index];
+
+          const ID = market.getAttribute(`id`)
+          const Name=  market.getElementsByTagName(`name`)[0].childNodes[0].nodeValue
+         const Currency = market.getElementsByTagName(`currency`)[0].childNodes[0]
+                .nodeValue 
+            const Street = market.getElementsByTagName(`street`)[0].childNodes[0]
+                .nodeValue
+         const City = market.getElementsByTagName(`city`)[0].childNodes[0].nodeValue
+          const Region = market.getElementsByTagName(`region`)[0].childNodes[0].nodeValue
+          const Country = market.getElementsByTagName(`country`)[0].childNodes[0].nodeValue
+          
+
+                 
+
+
+
+
+         
+                const stocks = xmlDoc.getElementsByTagName(`stock`)
+                
+        for (let j = 0; j < stocks.length; j++) {
+           const stock =  stocks[j]
+
+            const stockID = stock.getAttribute(`symbol`)
+            const stockName = stock.getElementsByTagName(`name`)[0].childNodes[0].nodeValue
+            const sector = stock.getElementsByTagName(`sector`)[0].childNodes[0].nodeValue
+            const industry = stock.getElementsByTagName(`industry`)[0].childNodes[0].nodeValue
+            const marketcap = stock.getElementsByTagName(`marketcap`)[0].childNodes[0].nodeValue
+            const price = stock.getElementsByTagName(`price`)[0].childNodes[0].nodeValue
+        
+          
+            
+        
+        
+        
+
+
+        
+
+        const outputString = `<div class="book">
+                                  <p> ID:  ${ID}</p>
+                                  <h2> Name:  ${Name}</h2>
+                                  <h2> Currency: ${Currency}</h2>
+                                  <h2> Street: ${Street}</h2>
+                                  <h2> City: ${City}</h2>
+                                  <h2> Region: ${Region}</h2>
+                                  <h2> Country: ${Country}</h2>
+                                  <p>stockID: ${stockID}</p>
+                                  <p>stockNAme: ${stockName}</p>
+                                  <p>sector: ${sector}</p>
+                                  <p>industry: ${industry}</p>            
+                                  <p>marketcap: ${marketcap}</p>
+                                  <p>Price: ${price}</p>
+                                
+                                </div>
+                                <br/>`
+
+                                const tempP = document.createElement('p')
+          tempP.innerHTML = outputString
+
+          listElement.appendChild(tempP.firstChild)
+
+                              }
+
+            
+        }
+
+      }
+    }
+
+        xhttp.open ("GET", "stockMarket.xml", true);
+        xhttp.send()
+
+        </script>
+        </body>
+        </html>
+
+        
