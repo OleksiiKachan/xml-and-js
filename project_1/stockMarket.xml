@@ -1,0 +1,995 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="stockMarket.xsl"?>
+<!DOCTYPE stockmarket [
+<!ELEMENT stockmarket (market+)>
+<!ELEMENT market (name+,currency+,address+, stocks+, accounts+)> 
+<!ATTLIST market id CDATA #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT currency (#PCDATA)>
+<!ELEMENT address (street, city, region, country)> 
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT region (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT stocks (stock+)>
+<!ELEMENT stock (name, sector, industry, marketcap, price)> 
+<!ATTLIST stock symbol CDATA #REQUIRED>
+<!ELEMENT sector (#PCDATA)>
+<!ELEMENT industry (#PCDATA)>
+<!ELEMENT marketcap (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT accounts (account+)>
+<!ELEMENT account (holder+, bank)> 
+<!ELEMENT holder (firstname, lastname, gender, occupation)> 
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT lastname (#PCDATA)>
+<!ELEMENT gender (#PCDATA)>
+<!ELEMENT occupation (#PCDATA)>
+<!ELEMENT bank (iban)>
+<!ELEMENT iban (#PCDATA)>
+
+]>
+<stockmarket>
+    <market id="4d4dec4b-f56a-4751-8139-12212ffe65b0">
+        <name>NYSE</name>
+        <currency>Dollar</currency>
+        <address>
+            <street>032 Petterle Hill</street>
+            <city>Cochrane</city>
+            <region>Alberta</region>
+            <country>Canada</country>
+        </address>
+        <stocks>
+            <stock symbol="BTEC ">
+                <name>Principal Healthcare Innovators Index ETF</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>$6.68M</marketcap>
+                <price>94.33</price>
+            </stock>
+            <stock symbol="EVOL">
+                <name>Evolving Systems, Inc.</name>
+                <sector>Technology</sector>
+                <industry>EDP Services</industry>
+                <marketcap>$63.62M</marketcap>
+                <price>63.04</price>
+            </stock>
+            <stock symbol="USLV">
+                <name>VelocityShares 3x Long Silver ETN</name>
+                <sector>Finance</sector>
+                <industry>Investment Bankers/Brokers/Service</industry>
+                <marketcap>$225.24M</marketcap>
+                <price>15.82</price>
+            </stock>
+            <stock symbol="STAY">
+                <name>Extended Stay America, Inc.</name>
+                <sector>Consumer Services</sector>
+                <industry>Hotels/Resorts</industry>
+                <marketcap>$3.65B</marketcap>
+                <price>356.1</price>
+            </stock>
+        </stocks>
+        <accounts>
+            <account>
+                <holder>
+                    <firstname>Ansel</firstname>
+                    <lastname>Debnam</lastname>
+                    <gender>Male</gender>
+                    <occupation>Help Desk Operator</occupation>
+                </holder>
+                <bank>
+                    <iban>GR90 7801 778L UXMT WBCJ 9MDI 067</iban>
+                </bank>
+            </account>
+            <account>
+                <holder>
+                    <firstname>Marlo</firstname>
+                    <lastname>Dunkinson</lastname>
+                    <gender>Female</gender>
+                    <occupation>Social Worker</occupation>
+                </holder>
+                <bank>
+                    <iban>SE77 7583 5357 3185 9088 0124</iban>
+                </bank>
+            </account>
+        </accounts>
+    </market>
+    <market id="c4937049-157d-4bfb-9e5d-13fef9d0776b">
+        <name>NYSE</name>
+        <currency>Dollar</currency>
+        <address>
+            <street>5 Merchant Crossing</street>
+            <city>Hope</city>
+            <region>British Columbia</region>
+            <country>Canada</country>
+        </address>
+        <stocks>
+            <stock symbol="ACWX">
+                <name>iShares MSCI ACWI ex US Index Fund</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>$2.33B</marketcap>
+                <price>510.08</price>
+            </stock>
+            <stock symbol="BHI">
+                <name>Baker Hughes Incorporated</name>
+                <sector>Energy</sector>
+                <industry>Metal Fabrications</industry>
+                <marketcap>$24.37B</marketcap>
+                <price>824.43</price>
+            </stock>
+            <stock symbol="WCST">
+                <name>Wecast Network, Inc.</name>
+                <sector>Consumer Services</sector>
+                <industry>Television Services</industry>
+                <marketcap>$130.02M</marketcap>
+                <price>191.29</price>
+            </stock>
+            <stock symbol="FEIM">
+                <name>Frequency Electronics, Inc.</name>
+                <sector>Capital Goods</sector>
+                <industry>Electrical Products</industry>
+                <marketcap>$81.19M</marketcap>
+                <price>363.32</price>
+            </stock>
+        </stocks>
+        <accounts>
+            <account>
+                <holder>
+                    <firstname>Andromache</firstname>
+                    <lastname>Fitzsimons</lastname>
+                    <gender>Female</gender>
+                    <occupation>Research Assistant IV</occupation>
+                </holder>
+                <bank>
+                    <iban>AD34 5129 3101 RLWW PHUU J9DD</iban>
+                </bank>
+            </account>
+            <account>
+                <holder>
+                    <firstname>Boycey</firstname>
+                    <lastname>Mitkin</lastname>
+                    <gender>Male</gender>
+                    <occupation>Project Manager</occupation>
+                </holder>
+                <bank>
+                    <iban>FR34 4840 0434 52EM LDBX JQTI I27</iban>
+                </bank>
+            </account>
+        </accounts>
+    </market>
+    <market id="fd88d061-29fb-4604-b5a8-41494ae49584">
+        <name>NYSE</name>
+        <currency>Dollar</currency>
+        <address>
+            <street>177 5th Way</street>
+            <city>Savannah</city>
+            <region>Georgia</region>
+            <country>United States</country>
+        </address>
+        <stocks>
+            <stock symbol="EMN">
+                <name>Eastman Chemical Company</name>
+                <sector>Basic Industries</sector>
+                <industry>Major Chemicals</industry>
+                <marketcap>$12.11B</marketcap>
+                <price>411.74</price>
+            </stock>
+            <stock symbol="NIQ">
+                <name>Nuveenn Intermediate Duration Quality Municipal Term Fund</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>$172.36M</marketcap>
+                <price>385.9</price>
+            </stock>
+            <stock symbol="ORN">
+                <name>Orion Group Holdings, Inc.</name>
+                <sector>Basic Industries</sector>
+                <industry>Military/Government/Technical</industry>
+                <marketcap>$198.43M</marketcap>
+                <price>317.74</price>
+            </stock>
+            <stock symbol="PSCD">
+                <name>PowerShares S&amp;P SmallCap Consumer Discretionary Portfolio</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>$61.54M</marketcap>
+                <price>268.87</price>
+            </stock>
+
+        </stocks>
+        <accounts>
+            <account>
+                <holder>
+                    <firstname>Kipper</firstname>
+                    <lastname>Atmore</lastname>
+                    <gender>Male</gender>
+                    <occupation>Data Coordiator</occupation>
+                </holder>
+                <bank>
+                    <iban>SM63 W140 1645 835M AFA7 BDQA DYD</iban>
+                </bank>
+            </account>
+            <account>
+                <holder>
+                    <firstname>Ethelred</firstname>
+                    <lastname>Agglio</lastname>
+                    <gender>Male</gender>
+                    <occupation>Staff Accountant II</occupation>
+                </holder>
+                <bank>
+                    <iban>AT37 3844 5500 7658 8702</iban>
+                </bank>
+            </account>
+        </accounts>
+    </market>
+    <market id="6abfbb60-e6bc-4e89-be4d-7d793f042b36">
+        <name>NYSE</name>
+        <currency>Dollar</currency>
+        <address>
+            <street>7240 Northport Place</street>
+            <city>Torrance</city>
+            <region>California</region>
+            <country>United States</country>
+        </address>
+        <stocks>
+            <stock symbol="BRCD">
+                <name>Brocade Communications Systems, Inc.</name>
+                <sector>Technology</sector>
+                <industry>Computer Communications Equipment</industry>
+                <marketcap>$5.18B</marketcap>
+                <price>718.38</price>
+            </stock>
+            <stock symbol="STBZ">
+                <name>State Bank Financial Corporation.</name>
+                <sector>Finance</sector>
+                <industry>Major Banks</industry>
+                <marketcap>$1.04B</marketcap>
+                <price>404.49</price>
+            </stock>
+            <stock symbol="NCIT">
+                <name>NCI, Inc.</name>
+                <sector>Technology</sector>
+                <industry>EDP Services</industry>
+                <marketcap>$276.46M</marketcap>
+                <price>380.96</price>
+            </stock>
+            <stock symbol="ASNA">
+                <name>Ascena Retail Group, Inc.</name>
+                <sector>Consumer Services</sector>
+                <industry>Clothing/Shoe/Accessory Stores</industry>
+                <marketcap>$425.18M</marketcap>
+                <price>344.13</price>
+            </stock>
+        </stocks>
+        <accounts>
+            <account>
+                <holder>
+                    <firstname>Milo</firstname>
+                    <lastname>Klaas</lastname>
+                    <gender>Male</gender>
+                    <occupation>Web Designer III</occupation>
+                </holder>
+                <bank>
+                    <iban>GB69 ZJIH 6218 6620 3113 93</iban>
+                </bank>
+            </account>
+            <account>
+                <holder>
+                    <firstname>Wendy</firstname>
+                    <lastname>Biaggetti</lastname>
+                    <gender>Female</gender>
+                    <occupation>Account Executive</occupation>
+                </holder>
+                <bank>
+                    <iban>AD90 1616 2051 KLP5 GP6H 4UPU</iban>
+                </bank>
+            </account>
+        </accounts>
+    </market>
+    <market id="1ea4b6b2-0536-487c-9fc1-c9b538465f63">
+        <name>NASDAQ</name>
+        <currency>Dollar</currency>
+        <address>
+            <street>52 Westridge Crossing</street>
+            <city>Charleston</city>
+            <region>West Virginia</region>
+            <country>United States</country>
+        </address>
+        <stocks>
+            <stock symbol="EARN">
+                <name>Ellington Residential Mortgage REIT</name>
+                <sector>Consumer Services</sector>
+                <industry>Real Estate Investment Trusts</industry>
+                <marketcap>$140.16M</marketcap>
+                <price>128.58</price>
+            </stock>
+            <stock symbol="WPXP">
+                <name>WPX Energy, Inc.</name>
+                <sector>Energy</sector>
+                <industry>Oil &amp; Gas Production</industry>
+                <marketcap>n/a</marketcap>
+                <price>531.5</price>
+            </stock>
+            <stock symbol="FONE">
+                <name>First Trust NASDAQ Smartphone Index Fund</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>$14.95M</marketcap>
+                <price>697.75</price>
+            </stock>
+            <stock symbol="SND">
+                <name>Smart Sand, Inc.</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>"$318.69M</marketcap>
+                <price>399.76</price>
+            </stock>
+        </stocks>
+        <accounts>
+            <account>
+                <holder>
+                    <firstname>Peg</firstname>
+                    <lastname>Ballendine</lastname>
+                    <gender>Female</gender>
+                    <occupation>Health Coach II</occupation>
+                </holder>
+                <bank>
+                    <iban>GE40 KP41 9834 2190 5920 14</iban>
+                </bank>
+            </account>
+            <account>
+                <holder>
+                    <firstname>Yurik</firstname>
+                    <lastname>Geraudel</lastname>
+                    <gender>Male</gender>
+                    <occupation>Developer I</occupation>
+                </holder>
+                <bank>
+                    <iban>ES12 2073 3004 3988 7018 4868</iban>
+                </bank>
+            </account>
+        </accounts>
+    </market>
+    <market id="8417f291-12c5-448d-8091-75862fe0ccd2">
+        <name>NYSE</name>
+        <currency>Dollar</currency>
+        <address>
+            <street>28688 Ilene Place</street>
+            <city>Sussex</city>
+            <region>New Brunswick</region>
+            <country>Canada</country>
+        </address>
+        <stocks>
+            <stock symbol="BEL">
+                <name>Belmond Ltd.</name>
+                <sector>Consumer Services</sector>
+                <industry>Hotels/Resorts</industry>
+                <marketcap>$1.35B</marketcap>
+                <price>243.06</price>
+            </stock>
+            <stock symbol="NEOG">
+                <name>Neogen Corporation</name>
+                <sector>Health Care</sector>
+                <industry>Biotechnology: In Vitro &amp; In Vivo Diagnostic Substances</industry>
+                <marketcap>$2.6B</marketcap>
+                <price>855.86</price>
+            </stock>
+            <stock symbol="SRDX">
+                <name>Surmodics, Inc</name>
+                <sector>Health Care</sector>
+                <industry>Medical/Dental Instruments</industry>
+                <marketcap>$333.24M</marketcap>
+                <price>965.51</price>
+            </stock>
+            <stock symbol="BGB">
+                <name>Blackstone / GSO Strategic Credit Fund</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>$716.42M</marketcap>
+                <price>565.55</price>
+            </stock>
+        </stocks>
+        <accounts>
+            <account>
+                <holder>
+                    <firstname>Miguelita</firstname>
+                    <lastname>Domeney</lastname>
+                    <gender>Female</gender>
+                    <occupation>Junior Executive</occupation>
+                </holder>
+                <bank>
+                    <iban>KZ06 845Z NISE LT1M NI7P</iban>
+                </bank>
+            </account>
+            <account>
+                <holder>
+                    <firstname>Kimberlyn</firstname>
+                    <lastname>Fronsek</lastname>
+                    <gender>Genderfluid</gender>
+                    <occupation>Assistant Manager</occupation>
+                </holder>
+                <bank>
+                    <iban>FR63 7481 7443 76BJ NNEY XUHY V74</iban>
+                </bank>
+            </account>
+        </accounts>
+    </market>
+    <market id="0cef825d-79b2-4e86-af56-e3650871d53c">
+        <name>NYSE</name>
+        <currency>Dollar</currency>
+        <address>
+            <street>4 Oriole Plaza</street>
+            <city>San Antonio</city>
+            <region>Texas</region>
+            <country>United States</country>
+        </address>
+        <stocks>
+            <stock symbol="CBA">
+                <name>ClearBridge American Energy MLP Fund Inc.</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>$508.59M</marketcap>
+                <price>859.45</price>
+            </stock>
+            <stock symbol="HCOM">
+                <name>Hawaiian Telcom Holdco, Inc.</name>
+                <sector>Consumer Services</sector>
+                <industry>Telecommunications Equipment</industry>
+                <marketcap>$301.17M</marketcap>
+                <price>979.21</price>
+            </stock>
+            <stock symbol="GGM">
+                <name>Guggenheim Credit Allocation Fund</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>$161.51M</marketcap>
+                <price>630.12</price>
+            </stock>
+            <stock symbol="REIS">
+                <name>Reis, Inc</name>
+                <sector>Miscellaneous</sector>
+                <industry>Business Services</industry>
+                <marketcap>$237.79M</marketcap>
+                <price>995.45</price>
+            </stock>
+        </stocks>
+        <accounts>
+            <account>
+                <holder>
+                    <firstname>Anette</firstname>
+                    <lastname>Myner</lastname>
+                    <gender>Genderfluid</gender>
+                    <occupation>Business Systems Development Analyst</occupation>
+                </holder>
+                <bank>
+                    <iban>MK26 512Z QIUS QEAN M56</iban>
+                </bank>
+            </account>
+            <account>
+                <holder>
+                    <firstname>Nichole</firstname>
+                    <lastname>Fylan</lastname>
+                    <gender>Male</gender>
+                    <occupation>VP Marketing</occupation>
+                </holder>
+                <bank>
+                    <iban>FR41 6541 7865 34SC PB8J BXGM Z73</iban>
+                </bank>
+            </account>
+        </accounts>
+    </market>
+    <market id="0b4c5b44-6981-4ed4-b788-c68e7d7d28e5">
+        <name>NYSE</name>
+        <currency>Dollar</currency>
+        <address>
+            <street>250 Susan Point</street>
+            <city>Charleston</city>
+            <region>South Carolina</region>
+            <country>United States</country>
+        </address>
+        <stocks>
+            <stock symbol="CZNC">
+                <name>Citizens &amp; Northern Corp</name>
+                <sector>Finance</sector>
+                <industry>Major Banks</industry>
+                <marketcap>$287.82M</marketcap>
+                <price>218.47</price>
+            </stock>
+            <stock symbol="USB^O">
+                <name>U.S. Bancorp</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>n/a</marketcap>
+                <price>144.1</price>
+            </stock>
+            <stock symbol="INDB">
+                <name>Independent Bank Corp</name>
+                <sector>Finance</sector>
+                <industry>Major Banks</industry>
+                <marketcap>$1.79B</marketcap>
+                <price>590.43</price>
+            </stock>
+            <stock symbol="FEI">
+                <name>First Trust MLP and Energy Income Fund</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>$690.47M</marketcap>
+                <price>437.86</price>
+            </stock>
+        </stocks>
+        <accounts>
+            <account>
+                <holder>
+                    <firstname>Chastity</firstname>
+                    <lastname>Mowne</lastname>
+                    <gender>Female</gender>
+                    <occupation>Engineer IV</occupation>
+                </holder>
+                <bank>
+                    <iban>CH20 3063 6DTA 9CVY 13GN D</iban>
+                </bank>
+            </account>
+            <account>
+                <holder>
+                    <firstname>Maure</firstname>
+                    <lastname>Temprell</lastname>
+                    <gender>Female</gender>
+                    <occupation>Administrative Assistant III</occupation>
+                </holder>
+                <bank>
+                    <iban>FR79 6810 2052 41FA 8IVH RFIM L96</iban>
+                </bank>
+            </account>
+        </accounts>
+    </market>
+    <market id="4e6b71c6-4eab-49f0-b4e5-97e34b6c024a">
+        <name>NASDAQ</name>
+        <currency>Dollar</currency>
+        <address>
+            <street>9 Anderson Crossing</street>
+            <city>Toronto</city>
+            <region>Ontario</region>
+            <country>Canada</country>
+        </address>
+        <stocks>
+            <stock symbol="MTEX">
+                <name>Mannatech, Incorporated</name>
+                <sector>Consumer Durables</sector>
+                <industry>Specialty Chemicals</industry>
+                <marketcap>$36.87M</marketcap>
+                <price>468.28</price>
+            </stock>
+            <stock symbol="BLCM">
+                <name>Bellicum Pharmaceuticals, Inc.</name>
+                <sector>Health Care</sector>
+                <industry>Major Pharmaceuticals</industry>
+                <marketcap>$375.06M</marketcap>
+                <price>485.81</price>
+            </stock>
+            <stock symbol="THST">
+                <name>Truett-Hurst, Inc.</name>
+                <sector>Consumer Non-Durables</sector>
+                <industry>Beverages (Production/Distribution)</industry>
+                <marketcap>$9.12M</marketcap>
+                <price>162.96</price>
+            </stock>
+            <stock symbol="AMD">
+                <name>Advanced Micro Devices, Inc</name>
+                <sector>Technology</sector>
+                <industry>Semiconductors</industry>
+                <marketcap>$10.81B</marketcap>
+                <price>879.67</price>
+            </stock>
+        </stocks>
+        <accounts>
+            <account>
+                <holder>
+                    <firstname>Auroora</firstname>
+                    <lastname>Cullerne</lastname>
+                    <gender>Female</gender>
+                    <occupation>Web Developer III</occupation>
+                </holder>
+                <bank>
+                    <iban>TR55 2136 97UW TWY1 7A49 EYAT XD</iban>
+                </bank>
+            </account>
+            <account>
+                <holder>
+                    <firstname>Mano</firstname>
+                    <lastname>Lupson</lastname>
+                    <gender>Male</gender>
+                    <occupation>Civil Engineer</occupation>
+                </holder>
+                <bank>
+                    <iban>PT39 0455 0594 1248 2986 2405 5</iban>
+                </bank>
+            </account>
+        </accounts>
+    </market>
+    <market id="0b06b451-b2df-4be8-a3a9-2226d8217b1e">
+        <name>NYSE</name>
+        <currency>Dollar</currency>
+        <address>
+            <street>6682 Bobwhite Drive</street>
+            <city>Baltimore</city>
+            <region>Maryland</region>
+            <country>United States</country>
+        </address>
+        <stocks>
+            <stock symbol="ENLK">
+                <name>EnLink Midstream Partners, LP</name>
+                <sector>Public Utilities</sector>
+                <industry>Natural Gas Distribution</industry>
+                <marketcap>$5.52B</marketcap>
+                <price>711.04</price>
+            </stock>
+            <stock symbol="WCG">
+                <name>WellCare Health Plans, Inc</name>
+                <sector>Health Care</sector>
+                <industry>Medical Specialities</industry>
+                <marketcap>$7.77B</marketcap>
+                <price>657.57</price>
+            </stock>
+            <stock symbol="QVCB">
+                <name>Liberty Interactive Corporation</name>
+                <sector>Consumer Services</sector>
+                <industry>Catalog/Specialty Distribution</industry>
+                <marketcap>$10.92B</marketcap>
+                <price>114.08</price>
+            </stock>
+            <stock symbol="ROBO">
+                <name>ROBO Global Robotics and Automation Index ETF</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>$158.98M</marketcap>
+                <price>40.27</price>
+            </stock>
+        </stocks>
+        <accounts>
+            <account>
+                <holder>
+                    <firstname>Sid</firstname>
+                    <lastname>Kinghorne</lastname>
+                    <gender>Male</gender>
+                    <occupation>Assistant Professor</occupation>
+                </holder>
+                <bank>
+                    <iban>FR66 4086 0476 02RQ YALU QEJY T44</iban>
+                </bank>
+            </account>
+            <account>
+                <holder>
+                    <firstname>Alfy</firstname>
+                    <lastname>Ingleton</lastname>
+                    <gender>Male</gender>
+                    <occupation>Programmer Analyst III</occupation>
+                </holder>
+                <bank>
+                    <iban>MK95 687O X9YY LSJ8 T77</iban>
+                </bank>
+            </account>
+        </accounts>
+    </market>
+    <market id="23075cd9-e774-4d0d-825e-4b6a0d831197">
+        <name>NASDAQ</name>
+        <currency>Dollar</currency>
+        <address>
+            <street>13 Myrtle Street</street>
+            <city>Phoenix</city>
+            <region>Arizona</region>
+            <country>United States</country>
+        </address>
+        <stocks>
+            <stock symbol="W">
+                <name>Wayfair Inc</name>
+                <sector>Consumer Services</sector>
+                <industry>Catalog/Specialty Distribution</industry>
+                <marketcap>$6.6B</marketcap>
+                <price>931.16</price>
+            </stock>
+            <stock symbol="AFG">
+                <name>American Financial Group, Inc.</name>
+                <sector>Finance</sector>
+                <industry>Property-Casualty Insurers</industry>
+                <marketcap>$8.98B</marketcap>
+                <price>627.49</price>
+            </stock>
+            <stock symbol="ESSA">
+                <name>ESSA Bancorp, Inc.</name>
+                <sector>Finance</sector>
+                <industry>Banks</industry>
+                <marketcap>$175.65M</marketcap>
+                <price>40.15</price>
+            </stock>
+            <stock symbol="HCOM">
+                <name>Hawaiian Telcom Holdco, Inc</name>
+                <sector>Consumer Services</sector>
+                <industry>Telecommunications Equipment</industry>
+                <marketcap>$301.17M</marketcap>
+                <price>153.76</price>
+            </stock>
+        </stocks>
+        <accounts>
+            <account>
+                <holder>
+                    <firstname>Lance</firstname>
+                    <lastname>Metham</lastname>
+                    <gender>Male</gender>
+                    <occupation>Design Engineer</occupation>
+                </holder>
+                <bank>
+                    <iban>BH96 ARQL RZYU X9GX OHU5 AF</iban>
+                </bank>
+            </account>
+            <account>
+                <holder>
+                    <firstname>Clerissa</firstname>
+                    <lastname>Kilius</lastname>
+                    <gender>Female</gender>
+                    <occupation>Assistant Manager</occupation>
+                </holder>
+                <bank>
+                    <iban>GT15 VTFF 33JA J6MT DE0X KVXP YECV</iban>
+                </bank>
+            </account>
+        </accounts>
+    </market>
+    <market id="c942ac70-945f-4eb7-a591-aa02dce97319">
+        <name>NASDAQ</name>
+        <currency>Dollar</currency>
+        <address>
+            <street>0727 Novick Street</street>
+            <city>Lafayette</city>
+            <region>Louisiana</region>
+            <country>United States</country>
+        </address>
+        <stocks>
+            <stock symbol="BPTH">
+                <name>Bio-Path Holdings, Inc</name>
+                <sector>Health Care</sector>
+                <industry>Major Pharmaceuticals</industry>
+                <marketcap>$33.49M</marketcap>
+                <price>539.68</price>
+            </stock>
+            <stock symbol="KNOP">
+                <name>KNOT Offshore Partners LP</name>
+                <sector>Consumer Services</sector>
+                <industry>Marine Transportation</industry>
+                <marketcap>$702.27M</marketcap>
+                <price>580.09</price>
+            </stock>
+            <stock symbol="MARPS">
+                <name>Marine Petroleum Trust</name>
+                <sector>Energy</sector>
+                <industry>Oil &amp; Gas Production</industry>
+                <marketcap>$6.92M</marketcap>
+                <price>421.92</price>
+            </stock>
+            <stock symbol="EPR^E">
+                <name>EPR Properties</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>n/a</marketcap>
+                <price>151.38</price>
+            </stock>
+        </stocks>
+        <accounts>
+            <account>
+                <holder>
+                    <firstname>Eadmund</firstname>
+                    <lastname>Turrell</lastname>
+                    <gender>Male</gender>
+                    <occupation>Registered Nurse</occupation>
+                </holder>
+                <bank>
+                    <iban>TN27 3912 0512 5390 4442 2473</iban>
+                </bank>
+            </account>
+            <account>
+                <holder>
+                    <firstname>Dom</firstname>
+                    <lastname>Lethbridge</lastname>
+                    <gender>Male</gender>
+                    <occupation>Senior Sales Associate</occupation>
+                </holder>
+                <bank>
+                    <iban>FR33 0502 8180 32O1 BZPK ALGQ C45</iban>
+                </bank>
+            </account>
+        </accounts>
+    </market>
+    <market id="b128697a-c233-4155-ba69-42592b8f3f8e">
+        <name>NYSE</name>
+        <currency>Dollar</currency>
+        <address>
+            <street>1 Vera Court</street>
+            <city>Saint Andrews</city>
+            <region>New Brunswick</region>
+            <country>Canada</country>
+        </address>
+        <stocks>
+            <stock symbol="AMCX">
+                <name>AMC Networks Inc</name>
+                <sector>Consumer Services</sector>
+                <industry>Television Services</industry>
+                <marketcap>$3.72B</marketcap>
+                <price>36.07</price>
+            </stock>
+            <stock symbol="ZEUS">
+                <name>Olympic Steel, Inc.</name>
+                <sector>Basic Industries</sector>
+                <industry>Metal Fabrications</industry>
+                <marketcap>$184.08M</marketcap>
+                <price>611.3</price>
+            </stock>
+            <stock symbol="PSA^X">
+                <name>Public Storage</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>n/a</marketcap>
+                <price>468.24</price>
+            </stock>
+            <stock symbol="WHLRD">
+                <name>Wheeler Real Estate Investment Trust, Inc</name>
+                <sector>Consumer Services</sector>
+                <industry>Real Estate Investment Trusts</industry>
+                <marketcap>n/a</marketcap>
+                <price>981.24</price>
+            </stock>
+        </stocks>
+        <accounts>
+            <account>
+                <holder>
+                    <firstname>Kevan</firstname>
+                    <lastname>Semeniuk</lastname>
+                    <gender>Male</gender>
+                    <occupation>Web Developer I</occupation>
+                </holder>
+                <bank>
+                    <iban>MU88 LOXO 3038 3465 8377 4163 127A HC</iban>
+                </bank>
+            </account>
+            <account>
+                <holder>
+                    <firstname>Karlan</firstname>
+                    <lastname>D'Onise</lastname>
+                    <gender>Male</gender>
+                    <occupation>Software Consultant</occupation>
+                </holder>
+                <bank>
+                    <iban>LB58 3089 Q74D HR4O 2XW1 U339 QIUW</iban>
+                </bank>
+            </account>
+        </accounts>
+    </market>
+    <market id="be2b81ac-d6e2-4ad2-b671-6a0ce6a4c69b">
+        <name>NASDAQ</name>
+        <currency>Dollar</currency>
+        <address>
+            <street>9751 Haas Terrace</street>
+            <city>Los Angeles</city>
+            <region>California</region>
+            <country>United States</country>
+        </address>
+        <stocks>
+            <stock symbol="LXP^C">
+                <name>Lexington Realty Trust</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>n/a</marketcap>
+                <price>21.09</price>
+            </stock>
+            <stock symbol="DMB">
+                <name>Dreyfus Municipal Bond Infrastructure Fund, Inc</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>$242.27M</marketcap>
+                <price>638.37</price>
+            </stock>
+            <stock symbol="RNDB">
+                <name>Randolph Bancorp, Inc.</name>
+                <sector>Finance</sector>
+                <industry>Major Banks</industry>
+                <marketcap>$91.85M</marketcap>
+                <price>194.09</price>
+            </stock>
+            <stock symbol="SEV">
+                <name>Sevcon, Inc.</name>
+                <sector>Energy</sector>
+                <industry>Industrial Machinery/Components</industry>
+                <marketcap>$89.69M</marketcap>
+                <price>878.42</price>
+            </stock>
+        </stocks>
+        <accounts>
+            <account>
+                <holder>
+                    <firstname>Yettie</firstname>
+                    <lastname>Bastin</lastname>
+                    <gender>Female</gender>
+                    <occupation>Occupational Therapist</occupation>
+                </holder>
+                <bank>
+                    <iban>BE77 2368 3747 4333</iban>
+                </bank>
+            </account>
+            <account>
+                <holder>
+                    <firstname>Paulette</firstname>
+                    <lastname>Van Ross</lastname>
+                    <gender>Female</gender>
+                    <occupation>Engineer III</occupation>
+                </holder>
+                <bank>
+                    <iban>CY12 7405 7001 UHOO VNPN K8LK 9AET</iban>
+                </bank>
+            </account>
+        </accounts>
+    </market>
+    <market id="591a5568-40c7-489f-9ff7-d3d39a3b7179">
+        <name>NYSE</name>
+        <currency>Dollar</currency>
+        <address>
+            <street>121 Fordem Pass</street>
+            <city>Clearwater</city>
+            <region>Florida</region>
+            <country>United States</country>
+        </address>
+        <stocks>
+            <stock symbol="RPRX">
+                <name>Repros Therapeutics Inc</name>
+                <sector>Health Care</sector>
+                <industry>Biotechnology: Biological Products (No Diagnostic Substances)</industry>
+                <marketcap>$9.14M</marketcap>
+                <price>541.69</price>
+            </stock>
+            <stock symbol="TLLP">
+                <name>Tesoro Logistics LP</name>
+                <sector>Energy</sector>
+                <industry>Natural Gas Distribution</industry>
+                <marketcap>$5.26B</marketcap>
+                <price>111.0</price>
+            </stock>
+            <stock symbol="WHFBL">
+                <name>WhiteHorse Finance, Inc</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>n/a</marketcap>
+                <price>324.65</price>
+            </stock>
+            <stock symbol="TCRX">
+                <name>THL Credit, Inc</name>
+                <sector>n/a</sector>
+                <industry>n/a</industry>
+                <marketcap>n/a</marketcap>
+                <price>996.28</price>
+            </stock>
+        </stocks>
+        <accounts>
+            <account>
+                <holder>
+                    <firstname>Hyman</firstname>
+                    <lastname>Van Der Vlies</lastname>
+                    <gender>Male</gender>
+                    <occupation>Senior Editor</occupation>
+                </holder>
+                <bank>
+                    <iban>IE66 MMQE 6856 9649 7494 15</iban>
+                </bank>
+            </account>
+            <account>
+                <holder>
+                    <firstname>Revkah</firstname>
+                    <lastname>Bone</lastname>
+                    <gender>Female</gender>
+                    <occupation>Marketing Assistant</occupation>
+                </holder>
+                <bank>
+                    <iban>FR32 0932 2274 83OI XRRZ OHHP P33</iban>
+                </bank>
+            </account>
+        </accounts>
+    </market>
+
+</stockmarket>
