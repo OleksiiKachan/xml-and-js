@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="companyDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="company">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string" />
+              <xs:element name="stockSymbol" type="xs:string" />
+              <xs:element name="domain" type="xs:string" />
+              <xs:element name="appDetails">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="apps">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="appId" type="xs:string" />
+                          <xs:element name="appName" type="xs:string" />
+                          <xs:element name="currentVersion" type="xs:string" />
+                          <xs:element name="url" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="empDetails">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="employees">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="id" type="xs:string" />
+                          <xs:element name="firstName" type="xs:string" />
+                          <xs:element name="lastName" type="xs:string" />
+                          <xs:element name="email" type="xs:string" />
+                          <xs:element name="userName" type="xs:string" />
+                          <xs:element name="occupation" type="xs:string" />
+                          <xs:element name="department" type="xs:string" />
+                          <xs:element name="devices">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="device">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ip" type="xs:string" />
+                                      <xs:element name="mac" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
