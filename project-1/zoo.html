@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo</title>
+    <link rel="stylesheet" href="zoo.css"> 
+</head>
+<body>
+    <ul id="list"></ul>
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                displayZooData(this.responseXML);
+            }
+        };
+        xhttp.open("GET", "zoo.xml", true);
+        xhttp.send();
+
+        function displayZooData(xmlDoc) {
+            const listElement = document.getElementById(`list`);
+            const zooNodes = xmlDoc.getElementsByTagName(`zoo`);
+            for (let index = 0; index < zooNodes.length; index++) {
+                const info = zooNodes[index];
+                const zId = info.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+                const openTime = info.getElementsByTagName(`openTime`)[0].childNodes[0].nodeValue;
+                const closeTime = info.getElementsByTagName(`closeTime`)[0].childNodes[0].nodeValue;
+                const city = info.getElementsByTagName(`city`)[0].childNodes[0].nodeValue;
+                const region = info.getElementsByTagName(`region`)[0].childNodes[0].nodeValue;
+                const country = info.getElementsByTagName(`counry`)[0].childNodes[0].nodeValue;
+               
+
+                const zooinfo = `<h2> Zoo Information ${index + 1}</h2>
+                <li>Zoo ID =  ${zId}</li>
+                <li>openTime =  ${openTime}</li>
+                <li>closeTime =  ${closeTime}</li>
+
+                <h5>Location</h5>
+
+                <li>City =  ${city}</li>
+                <li>Region =  ${region}</li>
+                <li>country =  ${country}</li>`
+                
+
+                const zooinformation = listElement.innerHTML + zooinfo;
+                listElement.innerHTML = zooinformation;
+
+                const animalinfo = info.getElementsByTagName(`animals`);
+                for (let index = 0; index < animalinfo.length; index++) {
+                    const ani = animalinfo[index];
+                    const giveName = ani.getElementsByTagName(`giveName`)[0].childNodes[0].nodeValue;
+                    const commonName = ani.getElementsByTagName(`commonName`)[0].childNodes[0].nodeValue;
+                    const scientificName = ani.getElementsByTagName(`scientificName`)[0].childNodes[0].nodeValue;
+                    const dob = ani.getElementsByTagName(`dob`)[0].childNodes[0].nodeValue;
+                    const sex= ani.getElementsByTagName(`sex`)[0].childNodes[0].nodeValue;
+
+                    const zooinfo = `<h5>Animal Details ${index + 1}</h5>
+                        <li>giveName =  ${giveName}</li>
+                        <li>commonName =  ${commonName}</li>
+                        <li>scientificName =  ${scientificName}</li>
+                        <li>dob =  ${dob}</li>
+                        <li>sex =  ${sex}</li>`
+
+                    const animalValue = listElement.innerHTML + zooinfo;
+                    listElement.innerHTML = animalValue;
+                }
+                const employeeNode = info.getElementsByTagName(`employees`);
+                for (let index = 0; index < employeeNode.length; index++) {
+                    const emp = employeeNode[index];
+                    const e_id = emp.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+                    const FirstName = emp.getElementsByTagName(`firstName`)[0].childNodes[0].nodeValue;
+                    const Lastname = emp.getElementsByTagName(`lastName`)[0].childNodes[0].nodeValue;
+                    const Employee_dob = emp.getElementsByTagName(`dob`)[0].childNodes[0].nodeValue;
+                    const Employee_position = emp.getElementsByTagName(`position`)[0].childNodes[0].nodeValue;
+                   
+
+                    const EmployeeValue = `
+                        <h5>Employee Details ${index + 1}</h5>
+                        <li>e_id =  ${e_id}</li>
+                        <li>FirstName =  ${FirstName}</li>
+                        <li>Lastname =  ${Lastname}</li>
+                        <li>Employee_dob =  ${Employee_dob}</li>
+                        <li>Employee_position =  ${Employee_position}</li>
+                       
+                        </br> `;
+                    const evalue = listElement.innerHTML + EmployeeValue;
+                    listElement.innerHTML = evalue;
+                }
+                
+
+                
+            }
+        }
+    </script>
+</body>
+
+</html>
