@@ -21,7 +21,7 @@
       xhttp.send();
         function displayData(xmlDoc) {
             const list = document.getElementById("customerList");
-            const customersNodes = xmlDoc.getElementsByTagName(`customer`);
+            const zooNodes = xmlDoc.getElementsByTagName(`customer`);
             for(let index=0;index<customersNodes.length;index++)
             {
                 const customerDetails = customersNodes[index];
