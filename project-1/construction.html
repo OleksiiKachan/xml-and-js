@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ol id="labours"></ol>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "construction.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function displayData(xmlDoc) {
+        const listElement = document.getElementById(`labours`);
+
+        const ConstructionNodes = xmlDoc.getElementsByTagName(`slot`);
+
+        for (let index = 0; index < ConstructionNodes.length; index++) {
+          const ConstructionNode = ConstructionNodes[index];
+
+          const listItem = stringToNode(`<li>
+            <h2>${`Start-Date:-${
+              ConstructionNode.getElementsByTagName(`startDate`)[0]
+                .childNodes[0].nodeValue
+            }`} </h2>
+          <h2>${`End-Date:- ${
+            ConstructionNode.getElementsByTagName(`endDate`)[0].childNodes[0]
+              .nodeValue
+          }`}</h2>
+          <p>${`Contractor: ${
+            ConstructionNode.getElementsByTagName(`name`)[0] != null
+              ? ConstructionNode.getElementsByTagName(`name`)[0].childNodes[0]
+                  .nodeValue
+              : "No information of contractor"
+          }`}</p>
+          <h2>Address</h2>
+          <p>${`StreetName:- ${
+            ConstructionNode.getElementsByTagName(`street`)[0].childNodes[0]
+              .nodeValue
+          }`}</br>${`City:-${
+            ConstructionNode.getElementsByTagName(`city`)[0].childNodes[0]
+              .nodeValue
+          }`}</br>${`Region:-${
+            ConstructionNode.getElementsByTagName(`region`)[0].childNodes[0]
+              .nodeValue
+          }`}</br>${`Country:-${
+            ConstructionNode.getElementsByTagName(`country`)[0].childNodes[0]
+              .nodeValue
+          }`}</p>
+          <h2>Worker Details:- </h2>
+          ${infoWorkers(ConstructionNode)}
+
+
+          <h2>Equipments</h2>
+          ${equipInfo(ConstructionNode)}
+          <h2>Supply</h2>
+          ${supplyInfo(ConstructionNode)}
+          
+
+          </li>`);
+          listElement.appendChild(listItem);
+        }
+      }
+      const infoWorkers = (info) => {
+        let returnString = "";
+        for (let worker of info.getElementsByTagName("workers")) {
+          returnString += `
+            <p>${`Name: ${
+              worker.getElementsByTagName(`firstName`)[0].childNodes[0]
+                .nodeValue
+            }`}</br>${`Last-Name:-${
+            worker.getElementsByTagName(`lastName`)[0].childNodes[0].nodeValue
+          }`}</br>${`Role:-${
+            worker.getElementsByTagName(`role`)[0].childNodes[0].nodeValue
+          }`}</p>
+            `;
+        }
+        return returnString;
+      };
+      const equipInfo = (equip) => {
+        let returnString = "";
+        for (let equ of equip.getElementsByTagName("equipment")) {
+          returnString += `<p>${`Type: ${
+            equ.getElementsByTagName(`type`)[0].childNodes[0].nodeValue
+          }`}</br>${`Quantity:-${
+            equ.getElementsByTagName(`qty`)[0].childNodes[0].nodeValue
+          }`}</p>`;
+        }
+        return returnString;
+      };
+      const supplyInfo = (supply) => {
+        let returnString = "";
+        for (let sup of supply.getElementsByTagName("supply")) {
+          returnString += `<p>${`Material: ${
+            sup.getElementsByTagName(`material`)[0].childNodes[0].nodeValue
+          }`}</br>${`Quantity:-${
+            sup.getElementsByTagName(`qty`)[0].childNodes[0].nodeValue
+          }`}</p>`;
+        }
+        return returnString;
+      };
+    </script>
+  </body>
+</html>
