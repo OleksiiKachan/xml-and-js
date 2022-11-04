@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cars_for_sale.xsl"?>
+<!DOCTYPE cars_for_sale
+[
+    <!ELEMENT cars_for_sale (brand+)>
+
+    <!ELEMENT brand (car+)>
+        <!ATTLIST brand name CDATA #REQUIRED>
+
+    <!ELEMENT car (model, year, price, type, transmission?, image)>
+        <!ATTLIST car id CDATA #REQUIRED>
+
+    <!ELEMENT model (#PCDATA)>
+	<!ELEMENT year (#PCDATA)>
+	<!ELEMENT price (#PCDATA)>
+
+    <!ELEMENT type (body?, fuel?)>
+    <!ELEMENT body (#PCDATA)>
+	<!ELEMENT fuel (#PCDATA)>
+
+	<!ELEMENT transmission (#PCDATA)>
+    <!ELEMENT image (#PCDATA)>
+
+]>
+
+<cars_for_sale>
+    <brand name="Mercedez">
+        <car id="11102007">
+            <model>E350</model>
+            <year>2007</year>
+            <price>CAD 7,500</price>
+            <type>
+                <body>Sedan</body>
+                <fuel>Gasoline</fuel>
+            </type>
+            <transmission>Automatic</transmission>
+            <image>1.png</image>
+        </car>
+        <car id="12242011">
+            <model>GLK Class</model>
+            <year>2011</year>
+            <price>CAD 10,250</price>
+            <type>
+                <body>SUV, Crossover</body>
+                <fuel>Gasoline</fuel>
+            </type>
+            <transmission>Automatic</transmission>
+            <image>4.png</image>
+        </car>
+    </brand>
+
+    <brand name="Toyota">
+        <car id="10051995">
+            <model>MR-2 GT-S</model>
+            <year>1995</year>
+            <price>CAD 25,000</price>
+            <type>
+                <fuel>Gasoline</fuel>
+            </type>
+            <transmission>Manual</transmission>
+            <image>2.png</image>
+        </car>
+    </brand>
+
+    <brand name="Jaguar">
+        <car id="09182017">
+            <model>XE 35t Prestige</model>
+            <year>2017</year>
+            <price>CAD 28,900</price>
+            <type>
+                <body>Sedan</body>
+                <fuel>Gasoline</fuel>
+            </type>
+            <transmission>Automatic</transmission>
+            <image>3.png</image>
+        </car>
+    </brand>
+
+    <brand name="Honda">
+        <car id="08282008">
+            <model>Accord EX-L</model>
+            <year>2008</year>
+            <price>CAD 5,500</price>
+            <type>
+                <fuel>Gasoline</fuel>
+            </type>
+            <transmission>Automatic</transmission>
+            <image>5.png</image>
+        </car>
+        <car id="09172012">
+            <model>Civic Si</model>
+            <year>2012</year>
+            <price>CAD 7,000</price>
+            <type>
+                <body>Sedan</body>
+                <fuel>Gasoline</fuel>
+            </type>
+            <transmission>Manual</transmission>
+            <image>14.png</image>
+        </car>
+        <car id="07172015">
+            <model>CR-V</model>
+            <year>2015</year>
+            <price>CAD 27,000</price>
+            <type>
+                <body>SUV, Crossover</body>
+                <fuel>Gasoline</fuel>
+            </type>
+            <transmission>Automatic</transmission>
+            <image>15.png</image>
+        </car>
+    </brand>
+
+    <brand name="Jeep">
+        <car id="03252006">
+            <model>Liberty Sport</model>
+            <year>2006</year>
+            <price>CAD 3,200</price>
+            <type>
+                <body>SUV, Crossover</body>
+                <fuel>Gasoline</fuel>
+            </type>
+            <transmission>Automatic</transmission>
+            <image>6.png</image>
+        </car>
+        <car id="01142008">
+            <model>Wrangler Sahara</model>
+            <year>2008</year>
+            <price>CAD 13,900</price>
+            <type>
+                <body>SUV, Crossover</body>
+                <fuel>Gasoline</fuel>
+            </type>
+            <transmission>Manual</transmission>
+            <image>7.png</image>
+        </car>
+    </brand>
+
+    <brand name="BMW">
+         <car id="11092010">
+            <model>528i xDrive</model>
+            <year>2010</year>
+            <price>CAD 9,000</price>
+            <type>
+                <body>Sedan</body>
+                <fuel>Gasoline</fuel>
+            </type>
+            <transmission>Automatic</transmission>
+            <image>8.png</image>
+        </car>
+        <car id="10282018">
+            <model>340i xDrive</model>
+            <year>2018</year>
+            <price>CAD 41,999</price>
+            <type>
+                <body>Sedan</body>
+                <fuel>Gasoline</fuel>
+            </type>
+            <transmission>Automatic</transmission>
+            <image>19.png</image>
+        </car>
+    </brand>
+
+    <brand name="Chevrolet">
+        <car id="03202009">
+            <model>Impala SS</model>
+            <year>2009</year>
+            <price>CAD 3,000</price>
+            <type>
+                <body>Sedan</body>
+                <fuel>Gasoline</fuel>
+            </type>
+            <transmission>Automatic</transmission>
+            <image>9.png</image>
+        </car>
+        <car id="09212015">
+            <model>Cruze</model>
+            <year>2015</year>
+            <price>CAD 9,000</price>
+            <type>
+                <body>Sedan</body>
+                <fuel>Gasoline</fuel>
+            </type>
+            <transmission>Automatic</transmission>
+            <image>18.png</image>
+        </car>
+    </brand>
+
+    <brand name="Kia">
+        <car id="07292015">
+            <model>Soul</model>
+            <year>2015</year>
+            <price>CAD 14,000</price>
+            <type>
+                <body>SUV, Crossover</body>
+            </type>
+            <image>10.png</image>
+        </car>
+    </brand>
+
+    <brand name="Volkswagen">
+        <car id="0323013">
+            <model>Golf TDI</model>
+            <year>2013</year>
+            <price>CAD 7,500</price>
+            <type>
+                <body>Hatchback</body>
+                <fuel>Gasoline</fuel>
+            </type>
+            <transmission>Manual</transmission>
+            <image>11.png</image>
+        </car>
+        <car id="04152006">
+            <model>Beetle Convertible</model>
+            <year>2006</year>
+            <price>CAD 10,000</price>
+            <type>
+                <fuel>Gasoline</fuel>
+            </type>
+            <transmission>Manual</transmission>
+            <image>12.png</image>
+        </car>
+    </brand>
+
+    <brand name="Mazda">
+        <car id="12211995">
+            <model>Miata MX5</model>
+            <year>1995</year>
+            <price>CAD 18,500</price>
+            <type>
+                <fuel>Gasoline</fuel>
+            </type>
+            <transmission>Manual</transmission>
+            <image>13.png</image>
+        </car>
+    </brand>
+
+    <brand name="Audi">
+        <car id="03242006">
+            <model>A4 2.0T</model>
+            <year>2006</year>
+            <price>CAD 3,500</price>
+             <type>
+                <body>Other</body>
+            </type>
+            <image>16.png</image>
+        </car>
+    </brand>
+
+    <brand name="Ford">
+        <car id="03252012">
+            <model>Escape</model>
+            <year>2012</year>
+            <price>CAD 6,950</price>
+            <type>
+                <body>SUV, Crossover</body>
+            </type>
+            <transmission>Automatic</transmission>
+            <image>17.png</image>
+        </car>
+        <car id="12251978">
+            <model>F150</model>
+            <year>1978</year>
+            <price>CAD 9,000</price>
+            <type>
+                <body>Pickup Truck</body>
+                <fuel>Gasoline</fuel>
+            </type>
+            <image>20.png</image>
+        </car>
+    </brand>
+</cars_for_sale>

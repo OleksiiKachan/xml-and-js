@@ -20,9 +20,6 @@ console.log('\n------------FILTERED--------------\n');
 console.log(filtered);
 
 
-
-//const oldest = filtered.reduce((old) => old);
-
 const oldest = [filtered].reduce(([[old]]) => {
     return Math.max(old.age);
 });

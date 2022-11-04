@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="cars.css" />
+  </head>
+  <body>
+
+    <h1>Cars For Sale</h1>
+
+
+    <ol id="cards"></ol>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "cars_for_sale.xml", true);
+      xhttp.send();
+
+
+///--------------------------------------------------------------------
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createCard(card) {
+        const content = `<li>
+  <article>
+    <img src="images/${card.img}"  width="300" height="200">
+    <h2>${card.brand}, ${card.model}</h2>
+    <p>Year: ${card.year}</p>
+    <p>Body: ${card.body}</p>
+    <p>Fuel: ${card.fuel}</p>
+    <p>Transmission: ${card.transmission}</p>
+    <p> ${card.price}</p>
+  </article>
+</li>`;
+
+        return stringToNode(content);
+      }
+///-----------------------------------------------------------------
+
+
+      function parseCard(xml) {
+        const brand =
+          xml.getElementsByTagName(`brand`)[0].childNodes[0].nodeValue;
+        const model =
+          xml.getElementsByTagName(`model`)[0].childNodes[0].nodeValue;
+        const year =
+          xml.getElementsByTagName(`year`)[0].childNodes[0].nodeValue;
+        const body =
+          xml.getElementsByTagName(`body`)[0].childNodes[0].nodeValue;
+        const fuel =
+          xml.getElementsByTagName(`fuel`)[0].childNodes[0].nodeValue;
+        const transmission =
+        xml.getElementsByTagName(`transmission`)[0].childNodes[0].nodeValue;
+        const price =
+          xml.getElementsByTagName(`price`)[0].childNodes[0].nodeValue;
+        const img = xml.getElementsByTagName(`image`)[0].childNodes[0].nodeValue;
+        return {
+          img,brand, model, year, body, fuel, transmission, price
+        };
+      }
+
+///----------------------------------
+
+      function displayData(xmlDoc) {
+        const cards = xmlDoc.getElementsByTagName(`car`);
+
+        const list = document.getElementById(`cards`);
+
+        for (let index = 0; index < cards.length; index++) {
+          const element = cards[index];
+          const parsedCard = parseCard(element);
+
+          const cardElement = createCard(parsedCard);
+          list.appendChild(cardElement);
+        }
+      }
+    </script>
+  </body>
+</html>

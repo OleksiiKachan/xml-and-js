@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="cars_for_sale">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="brand" type="BrandSpec" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="BrandSpec">
+        <xs:sequence>
+            <xs:element name="car" type="CarSpec" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="CarSpec">
+        <xs:sequence>
+            <xs:element name="model" type="xs:string"/>
+            <xs:element name="year" type="xs:string"/>
+            <xs:element name="price" type="xs:string"/>
+            <xs:element name="type" type="Type" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="transmission" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="image" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string"/>
+    </xs:complexType>	
+
+    <xs:complexType name="Type">
+        <xs:sequence>
+            <xs:element name="body" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="fuel" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>	
+    </xs:complexType>	
+</xs:schema>
