@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo</title>
+    <link rel="stylesheet" href="zoo.css"> 
+</head>
+<body>
+    <ul id="zooo"></ul>
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                displayZooData(this.responseXML);
+            }
+        };
+        xhttp.open("GET", "zoo.xml", true);
+        xhttp.send();
+
+        function displayZooData(xmlDoc) {
+            const listElement = document.getElementById(`zooo`);
+            const zooNodes = xmlDoc.getElementsByTagName(`element`);
+            for (let index = 0; index < zooNodes.length; index++) {
+                const zzz = zooNodes[index];
+                const zId = zzz.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+                const openTime = zzz.getElementsByTagName(`openTime`)[0].childNodes[0].nodeValue;
+                const closeTime = zzz.getElementsByTagName(`closeTime`)[0].childNodes[0].nodeValue;
+                const city = zzz.getElementsByTagName(`city`)[0].childNodes[0].nodeValue;
+                const region = zzz.getElementsByTagName(`region`)[0].childNodes[0].nodeValue;
+                const country = zzz.getElementsByTagName(`counry`)[0].childNodes[0].nodeValue;
+
+
+                const zoodat = `<h2> Zoo Information ${index + 1}</h2>
+                <li>Zoo ID =  ${zId}</li>
+                <li>openTime =  ${openTime}</li>
+                <li>closeTime =  ${closeTime}</li>
+                <h5>Location</h5>
+                <li>City =  ${city}</li>
+                <li>Region =  ${region}</li>
+                <li>country =  ${country}</li>`
+
+
+                const zoooo = listElement.innerHTML + zoodat;
+                listElement.innerHTML = zoooo;
+
+                const animalz = xmlDoc.getElementsByTagName(`animals`);
+                for (let index = 0; index < animalz.length; index++) {
+                    const animall = animalz[index];
+                    const giveName = animall.getElementsByTagName(`giveName`)[0].nodeValue;
+                    const commonName = animall.getElementsByTagName(`commonName`)[0].nodeValue;
+                    const scientificName = animall.getElementsByTagName(`scientificName`)[0].nodeValue;
+                    const dob = animall.getElementsByTagName(`dob`)[0].nodeValue;
+                    const sex= animall.getElementsByTagName(`sex`)[0].nodeValue;
+
+                    const zo = `<h5>Animal Details ${index + 1}</h5>
+                        <li>giveName =  ${giveName}</li>
+                        <li>commonName =  ${commonName}</li>
+                        <li>scientificName =  ${scientificName}</li>
+                        <li>dob =  ${dob}</li>
+                        <li>sex =  ${sex}</li>`
+
+                    const animalzs = listElement.innerHTML + zo;
+                    listElement.innerHTML = animalzs;
+                }
+                const employeez = xmlDoc.getElementsByTagName(`employees`);
+                for (let index = 0; index < employeez.length; index++) {
+                    const emp = employeez[index];
+                    const e_id = emp.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+                    const FirstName = emp.getElementsByTagName(`firstName`)[0].childNodes[0].nodeValue;
+                    const Lastname = emp.getElementsByTagName(`lastName`)[0].childNodes[0].nodeValue;
+                    const Employee_dob = emp.getElementsByTagName(`dob`)[0].childNodes[0].nodeValue;
+                    const Employee_position = emp.getElementsByTagName(`position`)[0].childNodes[0].nodeValue;
+
+
+                    const Employeess = `
+                        <h5>Employee Details ${index + 1}</h5>
+                        <li>e_id =  ${e_id}</li>
+                        <li>FirstName =  ${FirstName}</li>
+                        <li>Lastname =  ${Lastname}</li>
+                        <li>Employee_dob =  ${Employee_dob}</li>
+                        <li>Employee_position =  ${Employee_position}</li>      
+                        </br> `;
+                    const evalue = listElement.innerHTML + Employeess;
+                    listElement.innerHTML = evalue;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
