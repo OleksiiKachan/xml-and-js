@@ -1,0 +1,45 @@
+body{
+    background-color: rgba(19, 90, 157, 0.44);
+    font-size: 20px;
+}
+h1{
+    color: red;
+}
+hr{
+    color:black;
+}
+h2{
+
+    font-size: 25px;
+   color: darkblue;
+}
+
+div{
+  margin-top: 20px;
+}
+
+h3{
+    color: blue ;
+}
+h4{
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+    color: brown;
+}
+
+
+ol {
+    border: 1px solid black;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    background-color:  rgb(255, 255, 255);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 500px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
