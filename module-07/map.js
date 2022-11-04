@@ -27,6 +27,10 @@ const officersIds_2 = officers.map((officer) => {
   return officer.id;
 });
 
+const officersName = officers.map(({ name }) => name);
+console.log("------------Names-------------")
+console.log(officersName);
+
 console.log(officersIds_2);
 
 // const officersIds_3 = officers.map((officer) => officer.id);
@@ -41,3 +45,5 @@ const numbers = [1, 2, 3, 4, 5, 6];
 const evenNumbers = numbers.map((number) => {
   return number % 2 === 0;
 });
+
+console.log(evenNumbers);

@@ -189,6 +189,3 @@ console.log(parsed);
 console.log("-----Filtered results-----");
 const filtered = parsed.filter((parsed) => parsed.id > 5 );
 console.log(filtered);
-
-
-
