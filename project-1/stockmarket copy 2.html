@@ -40,7 +40,7 @@ const xhttp = new XMLHttpRequest();
 
 
 
-/*
+
          
                 const stocks = xmlDoc.getElementsByTagName(`stock`)
                 
@@ -58,95 +58,35 @@ const xhttp = new XMLHttpRequest();
             
         
         
-        */
-        function stringToNode(html) {
-        const template = document.createElement(`template`);
-        html = html.trim();
-        template.innerHTML = html;
-        return template.content.firstChild;
-      }
+        
 
-
-        const listElements = document.getElementById(`stockmarket`);
-         
-        const stockNode = xmlDoc.getElementsByTagName(`stock`);
-
-        var listItem
-
-        for (let index = 0; index < stockNode.length; index++) {
-          const stock = stockNode[index];
-
-           listItem = stringToNode(`<dl>
-          <div1>
-            <p>${`ID: ${stock.getAttribute(`symbol`)}`}</p>
-            <p>${`Name: ${
-            stock.getElementsByTagName(`name`)[0].childNodes[0].nodeValue
-          }`}</p>
-
-          <dt> ${`Currency:${
-              stock.getElementsByTagName(`sector`)[0].childNodes[0]
-                .nodeValue 
-          }`}</dt>
-          Address
-          <p>${`Street: ${
-            stock.getElementsByTagName(`industry`)[0].childNodes[0].nodeValue
-          }`}</p>
-          <p>${`City: ${
-            stock.getElementsByTagName(`marketcap`)[0].childNodes[0].nodeValue
-          }`}</p>
-          <p>${`Region: ${
-            stock.getElementsByTagName(`price`)[0].childNodes[0].nodeValue
-          }`}</p>
-          
-          
-         
-
-          
-          
-          </div1>
 
         
 
-          </dl>`);
-
-          console.log (listItem);
-
-          
-
-          
-        }
-       const test = listElements.appendChild(listItem); 
-
-/*
- <p>stockNAme: ${stockName}</p>
-                                  <p>sector: ${sector}</p>
-                                  <p>industry: ${industry}</p>            
-                                  <p>marketcap: ${marketcap}</p>
-                                  <p>Price: ${price}</p>
-
-*/
-        
-
-        const outputString = `<div class="book">
-                                  <p> ID:  ${ID}</p>
-                                  <h2> Name:  ${Name}</h2>
-                                  <h2> Currency: ${Currency}</h2>
-                                  <h2> Street: ${Street}</h2>
-                                  <h2> City: ${City}</h2>
-                                  <h2> Region: ${Region}</h2>
-                                  <h2> Country: ${Country}</h2>
-                                  <p>stockID: ${test}</p>
-                                 
+        const outputString = `<dl>
+                                  <dt> ID:  ${ID}</dt>
+                                  <dt> Name:  ${Name}</dt>
+                                  <dt> Currency: ${Currency}</dt>
+                                  <dt> Street: ${Street}</dt>
+                                  <dt> City: ${City}</dt>
+                                  <dt> Region: ${Region}</dt>
+                                  <dt> Country: ${Country}</dt>
+                                  <dt>stockID: ${stockID}</dt>
+                                  <dd>stockNAme: ${stockName}</dd>
+                                  <dd>sector: ${sector}</dd>
+                                  <dd>industry: ${industry}</dd>            
+                                  <dd>marketcap: ${marketcap}</dd>
+                                  <dd>Price: ${price}</dd>
                                 
-                                </div>
-                                <br/>`
+                                
+                                <dl>`
 
                                 const tempP = document.createElement('p')
           tempP.innerHTML = outputString
 
           listElement.appendChild(tempP.firstChild)
 
-                            //  }
+                              }
 
             
         }

@@ -35,6 +35,19 @@
         
 ![image info](xlt.jpg)   
 
+
+\
+&nbsp;
+
+3) In creating the HTML,
+
+- I used several functions and  two loops to list out the elements in a description list, using the `<dl>` tag.
+
+\
+&nbsp;
+
+        
+![image info](stock.jpg)  
     
 
 

@@ -52,3 +52,40 @@ const { rebels, empire } = pilots.reduce(
 
 console.log(rebels);
 console.log(empire);
+
+console.log(`test-----------`);
+
+
+const rebels_2 = pilots.filter((pilot) => pilot.faction === "Rebels");
+const empire_2 = pilots.filter((pilot) => pilot.faction === "Empire");
+
+
+const rebelname = rebels_2.map(({name})=> name).join(", ");
+console.log(rebelname);
+
+const empirename = empire_2.map(({name})=> name).join(", ");
+console.log(empirename);
+
+
+const { rebelss, empires } = pilots.reduce(
+  (accum, pilot) => {
+    if (pilot.faction === "Rebels") {
+      type = `rebels`;
+    } else if (pilot.faction === "Empire") {
+      type = `empire`;
+    }
+    if (accum[type].length > 0){
+      accum[type] = accum[type] + ", " + pilot.name;
+    }
+    else {
+      accum[type] =  pilot.name;
+    }
+ 
+    return accum;
+  },
+  { rebelss: "", empires: "" }
+);
+
+console.log(`test2-----------`);
+console.log(rebelss);
+console.log(empires);
