@@ -1,0 +1,2 @@
+# Description:
+We completed this assignment with help of all the three files. We all created the three files with help of each other. We all knew little about all the covered topics but we cooperated and worked together in a group. We learned a lot from that project and have much to share about it. 
