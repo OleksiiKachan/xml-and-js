@@ -39,6 +39,8 @@ ol {
     background-color:  rgb(255, 255, 255);
     border-radius: 8px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
     max-width: 500px;
     margin-bottom: 20px;
     margin-top: 20px;
