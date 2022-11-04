@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="library.css" />
+  </head>
+
+  <body>
+    <h1>Library</h1>
+    <div id="books"></div>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "library.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createBook(book) {
+        const content = `<article>
+    <p>Book ID:${book.id}</p>
+    <h2>Book Name: ${book.name}</h2>
+    <h3>Address</h3>
+    <p >Street:${book.street}</p>
+    <p >City:${book.city}</p>
+    <p >Region:${book.region}</p>
+    <p >Country:${book.country}</p>
+    <h3>ISBN: ${book.isbn}</h3>
+    <h4>Title: ${book.title}</h4>
+    <p>Availability: ${book.availability}</p>
+    <p>Year: ${book.year}</p>
+    <p>Genre: ${book.genre}</p>
+    <p>Description: ${book.description}</p>
+    <p>Author: ${book.author}</p>
+    
+    
+   
+  </article>`;
+
+        return stringToNode(content);
+      }
+
+      function parseBook(xml) {
+        const id = xml.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+        const name =
+          xml.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+        const street =
+          xml.getElementsByTagName(`street`)[0].childNodes[0].nodeValue;
+        const city =
+          xml.getElementsByTagName(`city`)[0].childNodes[0].nodeValue;
+        const region =
+          xml.getElementsByTagName(`region`)[0].childNodes[0].nodeValue;
+        const country =
+          xml.getElementsByTagName(`country`)[0].childNodes[0].nodeValue;
+        const isbn =
+          xml.getElementsByTagName(`isbn`)[0].childNodes[0].nodeValue;
+        const title =
+          xml.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
+        const availability =
+          xml.getElementsByTagName(`availability`)[0].childNodes[0].nodeValue;
+        const year =
+          xml.getElementsByTagName(`year`)[0].childNodes[0].nodeValue;
+        const genre =
+          xml.getElementsByTagName(`genre`)[0].childNodes[0].nodeValue;
+        const description =
+          xml.getElementsByTagName(`description`)[0].childNodes[0].nodeValue;
+        const author =
+          xml.getElementsByTagName(`author`)[0].childNodes[0].nodeValue;
+        return {
+          id,
+          name,
+          street,
+          city,
+          region,
+          country,
+          isbn,
+          title,
+          availability,
+          year,
+          genre,
+          description,
+          author,
+        };
+      }
+
+      function displayData(xmlDoc) {
+        const books = xmlDoc.getElementsByTagName(`details`);
+
+        const list = document.getElementById(`books`);
+
+        for (let index = 0; index < books.length; index++) {
+          const element = books[index];
+          const parsedBook = parseBook(element);
+
+          const bookElement = createBook(parsedBook);
+          list.appendChild(bookElement);
+        }
+      }
+    </script>
+  </body>
+</html>
