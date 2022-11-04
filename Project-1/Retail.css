@@ -1,0 +1,28 @@
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  body{
+    background-color: rgb(163, 173, 177);
+  }
+  design {
+
+    border: 2px solid rgb(189, 173, 202);
+    border-radius: 15px;
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+
+    max-width: 600px;
+    background-color: rgb(209, 178, 87);
+  }
+
+
+
+ 
