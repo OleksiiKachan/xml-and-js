@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airlines</title>
+    <style>
+        html {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .carrier p:first-child {
+            text-align: right;
+        }
+
+        .carrier {
+            border-radius: 16px;
+            background-color: lightgray;
+            padding: 8px;
+            margin: 8px 0;
+        }
+
+        .authors {
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Airlines</h1>
+    <div id="container">
+
+    </div>
+
+
+    <script>
+        const xhttp = new XMLHttpRequest()
+        xhttp.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status ===200) {
+                displayData(this.responseXML);              
+            }
+        }
+
+        xhttp.open('GET', 'airlines.xml', true)
+        xhttp.send()
+
+        function displayData(xmlDoc){
+            const container = document.getElementById('container');
+            const carriers = xmlDoc.getElementsByTagName('carrier');
+            const addressesNode = xmlDoc.getElementsByTagName('address');
+            const parksNode = xmlDoc.getElementsByTagName('parks');
+            const routesNode = xmlDoc.getElementsByTagName('routes');
+
+
+            for (let i = 0; i < carriers.length; i++) {
+                const carrier = carriers[i];
+                const addressNode = addressesNode[i];
+                const parkNode = parksNode[i].getElementsByTagName('park');
+                const routeNode = routesNode[i].getElementsByTagName('route');
+
+                const id = carrier.getAttribute('id');
+                const nameString = carrier.getElementsByTagName('name')[0].childNodes[0].nodeValue;
+                const addressString = `${addressNode.getElementsByTagName('street')[0].childNodes[0].nodeValue}, ${
+                    addressNode.getElementsByTagName('city')[0].childNodes[0].nodeValue}, ${
+                    addressNode.getElementsByTagName('region')[0].childNodes[0].nodeValue}, ${
+                    addressNode.getElementsByTagName('country')[0].childNodes[0].nodeValue}`;
+                let parkString = '';
+                let routeString = '';
+
+
+                for (let j = 0; j < parkNode.length; j++) {
+                    const park =  parkNode[j]
+
+                    parkString += `${park.getElementsByTagName('manufacturer')[0].childNodes[0].nodeValue} (${
+                        park.getElementsByTagName('year')[0].childNodes[0].nodeValue})`
+                    if (j != parkNode.length - 1) {
+                        parkString += ', '
+                    }
+                }
+
+                for (let j = 0; j < routeNode.length; j++) {
+                    const route =  routeNode[j];
+                    const departure = routeNode[j].getElementsByTagName('departure')[0]
+                    const destination = routeNode[j].getElementsByTagName('destination')[0]
+
+                    routeString += `<strong>${route.getAttribute('vehicle')}(Vehicle ID):</strong><br>${
+                        departure.getElementsByTagName('airport')[0].childNodes[0].nodeValue} - ${
+                        departure.getElementsByTagName('city')[0].childNodes[0].nodeValue}, ${
+                        departure.getElementsByTagName('country')[0].childNodes[0].nodeValue} >>> `;
+
+                    routeString += `${destination.getElementsByTagName('airport')[0].childNodes[0].nodeValue} - ${
+                        destination.getElementsByTagName('city')[0].childNodes[0].nodeValue}, ${
+                        destination.getElementsByTagName('country')[0].childNodes[0].nodeValue} <br>`;
+                    
+                }
+
+                console.log(routeString);
+
+                const outputString = `<div class="carrier">
+                                        <p>${id}</p>
+                                        <h2>${nameString}</h2>
+                                        <p>${addressString}</p>
+                                        <p class="parks">Parks: ${parkString}</p>
+                                        <p class="route">Routes:<br/> ${routeString}</p>
+                                    </div><br/>`
+
+                const tempP = document.createElement('p')
+                tempP.innerHTML = outputString
+                container.appendChild(tempP.firstChild)
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE airlines
+[
+<!ELEMENT airlines(carrier+Park+routes+departure+destination+)>
+<!ELEMENT carrier(id,name,street,city,region,country)>
+<ELEMENT  id(#PCDATA)>
+<ELEMENT  name(#PCDATA)>
+<ELEMENT  street(#PCDATA)>
+<ELEMENT  city(#PCDATA)>
+<ELEMENT  region(#PCDATA)>
+<ELEMENT  country(#PCDATA)>
+<!ELEMENT Park(id,routeType,manufacturer,year)>
+<ELEMENT  id(#PCDATA)>
+<ELEMENT  routeType(#PCDATA)>
+<ELEMENT  manufacturer(#PCDATA)>
+<ELEMENT  year(#PCDATA)>
+<!ELEMENT routes(vehicle)>
+<ELEMENT  vehicle(#PCDATA)>
+<!ELEMENT departure(airport,city,country)>
+<ELEMENT  airport(#PCDATA)>
+<ELEMENT  city(#PCDATA)>
+<ELEMENT  country(#PCDATA)>
+<!ELEMENT destination(airport,region,city,country)>
+<ELEMENT  airport(#PCDATA)>
+<ELEMENT  region(#PCDATA)>
+<ELEMENT  city(#PCDATA)>
+<ELEMENT  country(#PCDATA)>
+
+]>
