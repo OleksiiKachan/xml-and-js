@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Clinic</title>
+</head>
+
+<body>
+
+    <div id="clinics">
+
+    </div>
+    <div id="emps">
+
+    </div>
+    <div id="drugs">
+
+    </div>
+
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                displayData(this.responseXML);
+            }
+        };
+        xhttp.open("GET", "clinic.xml", true);
+        xhttp.send();
+
+        function stringToNode(html) {
+            const template = document.createElement(`template`);
+            html = html.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+        }
+
+
+        function createClinic(clinic) {
+            console.log(clinic)
+            const content =
+
+                `<li>
+                    <artcile>
+                        <p>${clinic.id}</p>
+                        <p>Address: ${clinic.address}</p>
+                        <article>
+                            <h3>Employees</h3>
+                            <p>${clinic.emp}</p>
+                        </article>
+
+                        <article>
+                            <h3>Drugs</h3>
+                            <p>${clinic.drug}</p>
+                        </article>
+
+                    </article>
+                    </li>`;
+
+            return stringToNode(content);
+        }
+
+        function parseClinic(xml) {
+
+            const id = xml.getAttribute(`id`);
+            const address = xml.getElementsByTagName(`street`)[0].childNodes[0].nodeValue + "," + xml.getElementsByTagName(`city`)[0].childNodes[0].nodeValue + "," + xml.getElementsByTagName(`region`)[0].childNodes[0].nodeValue + "," + xml.getElementsByTagName(`country`)[0].childNodes[0].nodeValue;
+            var emp = "";
+            for (let index = 0; index < xml.getElementsByTagName(`employee`).length; index++) {
+                var emp = emp + xml.getElementsByTagName(`firstName`)[index].childNodes[0].nodeValue + " " + xml.getElementsByTagName(`lastName`)[index].childNodes[0].nodeValue + " - " + xml.getElementsByTagName(`empType`)[index].childNodes[0].nodeValue + "<br>";
+            }
+
+            var drug = "";
+
+            for (let index = 0; index < xml.getElementsByTagName(`drug`).length; index++) {
+                var drug = drug +
+                    xml.getElementsByTagName(`manufacturer`)[index].childNodes[0].nodeValue + " " +
+                    xml.getElementsByTagName(`brand`)[index].childNodes[0].nodeValue + "  " +
+                    xml.getElementsByTagName(`name`)[index].childNodes[0].nodeValue + "  " +
+                    xml.getElementsByTagName(`code`)[index].childNodes[0].nodeValue + "  " +
+                    xml.getElementsByTagName(`diagnosisCode`)[index].childNodes[0].nodeValue + "  " +
+                    xml.getElementsByTagName(`diagnosisDescription`)[index].childNodes[0].nodeValue + "  " +
+                    xml.getElementsByTagName(`qty`)
+                    + "<br>";
+            }
+
+
+
+            return { id, address, emp, drug };
+
+        }
+
+
+        function displayData(xmlDoc) {
+            const clinics = xmlDoc.getElementsByTagName(`clinic`);
+            let id = clinics[0].getAttribute("id");
+
+            const list = document.getElementById(`clinics`);
+
+            for (let index = 0; index < clinics.length; index++) {
+                const element = clinics[index];
+                const parsedClinic = parseClinic(element);
+                const clinicElement = createClinic(parsedClinic);
+                list.appendChild(clinicElement);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
