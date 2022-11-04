@@ -52,3 +52,18 @@ const { rebels, empire } = pilots.reduce(
 
 console.log(rebels);
 console.log(empire);
+
+const { rebel_name, empire_name } = pilots.reduce(
+  (accum,pilot) =>{
+    if(pilot.faction === "Rebels"){
+      accum.rebel_name.push(pilot.name);
+    }else if(pilot.faction === "Empire"){
+      accum.empire_name.push(pilot.name);
+    }
+    return accum;
+  },
+  {rebel_name: [], empire_name: []}
+);
+
+console.log(rebel_name);
+console.log(empire_name)
