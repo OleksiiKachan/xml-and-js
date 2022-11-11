@@ -4,36 +4,27 @@
  * 3. Make sure the "Finish" is logged after all the data is converted
  */
 
-function timeout(ms, callback) {
-  return new Promise(function (resolve) {
-    setTimeout(function () {
-      resolve();
-      callback();
-    }, ms);
-  });
-}
+const timeout = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function generateRandomNumber() {
   return Math.floor(Math.random() * 40);
 }
 
-function generateData(callback) {
-  timeout(1000, function () {
-    const data = Array.from({ length: 20 }, generateRandomNumber);
-    callback(data);
-  });
+const generateData = async () => {
+  await timeout()
+  return Array.from({ length: 20 }, generateRandomNumber)
 }
 
-function convertToFeet(meters, callback) {
+const convertToFeet = async (meters) => {
   const feet = meters * 3.2808;
   timeout(3500, function () {
-    callback(feet);
+    //callback(feet);
   });
 }
 
-function processData(data, callback) {
+const processData = async (data) => {
   data.map(function (value) {
-    callback(value);
+    //callback(value);
   });
 }
 
@@ -50,6 +41,9 @@ function main() {
       });
     });
   });
+  const data = generateData()
+  
+
   console.log("Finish");
 }
 
