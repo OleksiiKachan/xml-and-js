@@ -47,7 +47,10 @@ class Person {
   }
 
   static of(name) {
-    return new Person(name);
+    //return new Person(name);
+    return new Promise((resolve) => {
+      wait().then(() => resolve(new Person(name)))
+    })
   }
 
   split(sep = " ") {
@@ -56,9 +59,10 @@ class Person {
   }
 }
 
-const person = Person.of("Marcus Aurelius");
-
 const main = async () => {
+
+  const person = await Person.of("Marcus Aurelius");
+
   console.log("inc(5) =", await inc(5));
   console.log("sum(1, 3) =", await sum(1, 3));
   console.log("max(8, 6) =", await max(8, 6));
