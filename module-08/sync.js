@@ -1,4 +1,4 @@
-function inc(a) {
+function inc(a){
   return a + 1;
 }
 
@@ -42,3 +42,6 @@ console.log("max(8, 6) =", max(8, 6));
 console.log("avg(8, 6) =", avg(8, 6));
 console.log("obj.split() =", obj.split());
 console.log("person.split() =", person.split());
+
+
+
