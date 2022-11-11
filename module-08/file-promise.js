@@ -25,7 +25,14 @@ const checkIfFile = (filename) =>
       }
     });
   });
-
+/*
+if (err || !status(isFile())) {
+        reject(err) || new Error("This location contains not a file")
+      }
+      else {
+        resolve(filename);
+      }
+*/
 const readFile = (filename) =>
   new Promise((resolve, reject) => {
     fs.readFile(filename, null, (err, data) => {
@@ -41,3 +48,11 @@ const safeReadFile = (filename) =>
   checkIfExists(filename).then(checkIfFile).then(readFile);
 
 safeReadFile(filename).then(console.log).catch(console.error);
+
+/*
+checkIfExists(filename)
+.then(() => checkIfFile(filename))
+.catch((error) => console.error(error))
+.then(() => readFile(filename))
+.then((data) => console.log(data))
+.catch((error) => console.error(error));*/
