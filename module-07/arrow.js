@@ -23,3 +23,11 @@ printValue(25);
 // Concise arrow functions
 const multiply = (a, b) => a * b;
 console.log(multiply(2, 30)); // Prints: 60
+
+
+const fn = () => console.log("important function");
+
+const another = fn;
+
+another("another function");
+
