@@ -48,11 +48,11 @@
                 const animalz = xmlDoc.getElementsByTagName(`animals`);
                 for (let index = 0; index < animalz.length; index++) {
                     const animall = animalz[index];
-                    const giveName = animall.getElementsByTagName(`giveName`)[0].childNodes[0].nodeValue;
-                    const commonName = animall.getElementsByTagName(`commonName`)[0].childNodes[0].nodeValue;
-                    const scientificName = animall.getElementsByTagName(`scientificName`)[0].childNodes[0].nodeValue;
-                    const dob = animall.getElementsByTagName(`dob`)[0].childNodes[0].nodeValue;
-                    const sex= animall.getElementsByTagName(`sex`)[0].childNodes[0].nodeValue;
+                    const giveName = animall.getElementsByTagName(`giveName`)[0].nodeValue;
+                    const commonName = animall.getElementsByTagName(`commonName`)[0].nodeValue;
+                    const scientificName = animall.getElementsByTagName(`scientificName`)[0].nodeValue;
+                    const dob = animall.getElementsByTagName(`dob`)[0].nodeValue;
+                    const sex= animall.getElementsByTagName(`sex`)[0].nodeValue;
 
                     const zo = `<h5>Animal Details ${index + 1}</h5>
                         <li>giveName =  ${giveName}</li>
