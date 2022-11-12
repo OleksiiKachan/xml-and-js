@@ -54,30 +54,25 @@ console.log("person.split() =", person.split());
 const _wait = (ms = 1000) => new Promise((resolve) => setTimeout(resolve,ms));
 
 const _inc = (a)=>
-new Promise((resolve) =>
-_wait().then(() => resolve(a+1)));
+new Promise((resolve) => _wait().then(() => resolve(a+1)));
 
 
 
 const _sum = (a,b)=>
-new Promise((resolve)=>
-_wait().then(() => resolve(a+b)));
+new Promise((resolve)=> _wait().then(() => resolve(a+b)));
 
 const _max =(a,b)=>
 new Promise((resolve)=> 
 _wait().then(()=> resolve(a>b?a:b)));
 
 const _avg = (a,b) =>
-new Promise((resolve)=>
-_wait().then(() => resolve((a+b)/2)));
+new Promise((resolve)=> _wait().then(() => resolve((a+b)/2)));
 
 
 const _obj = {
   name: "Marcus Aurelius",
   split(sep = " ") {
-    return new Promise((resolve) =>
-    wait().then(() => 
-    resolve(this.name.split(sep))));
+    return new Promise((resolve) => wait().then(() => resolve(this.name.split(sep))));
   }
 };
   
@@ -88,14 +83,11 @@ class _Person {
     }
 
     static of(name) {
-      return new Promise((resolve) => 
-      wait().then(()=> resolve(new _Person(name))));
+      return new Promise((resolve) => wait().then(()=> resolve(new _Person(name))));
 
     }
      split(sep = " ") {
-      return new Promise((resolve) => 
-      wait().then(() => 
-      resolve(this.name.split(sep))));
+      return new Promise((resolve) => wait().then(() => resolve(this.name.split(sep))));
   }}
 
 console.log("******** Refactoring by Promise ********");
