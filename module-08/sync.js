@@ -14,9 +14,11 @@ const max = async(a, b) => {
       return new Promise((resolve) => wait().then(() => resolve(a > b ? a : b)));
 }
 
-const avg = async(a, b) => {
-  return new Promise((resolve) => wait().then(() => resolve(sum(a, b).then((value) => `${value}`) / 2)));
-};
+const avg = (a, b) => new Promise((resolve) => {
+  wait()
+    .then(() => sum(a, b))
+    .then((sum) => resolve(sum / 2))
+})
 
 const obj = {
   name : "Marcus Aurelius",
@@ -33,7 +35,8 @@ class Person {
 
   static async of(name) {
     //return new Person(name);
-    return new Promise((resolve) => wait().then(() => resolve(name)));
+    return new Promise((resolve) => 
+    wait().then(() => resolve(new Person (name))));
   }
 
   async split(sep = " ") {
@@ -43,7 +46,8 @@ class Person {
   }
 }
 
-(async() => { const person = await Person.of("Marcus Aurelius");
+(async() => { 
+  const person = await Person.of("Marcus Aurelius");
 
 console.log("inc(5) =", inc(5));
 sum(1, 3).then((value) => console.log(`sum(1, 3) = ${value}`));
