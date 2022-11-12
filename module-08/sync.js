@@ -1,4 +1,6 @@
-function inc(a) {
+const { resolve } = require("path");
+
+async function inc(a) {
   return a + 1;
 }
 
@@ -26,10 +28,14 @@ class Person {
   }
 
   static of(name) {
-    return new Person(name);
-  }
+    return new Promise(resolve) => 
+    wait().then(() => resolve(new Person(name)))
+  
+    //return new Person(name);
+  };
 
-  split(sep = " ") {
+  async split(sep = " ") {
+    await wait();
     return this.name.split(sep);
   }
 }
