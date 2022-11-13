@@ -8,9 +8,6 @@
                         font-family: sans-serif;
                         color: #444;
                     }
-                    div {
-                    text-align: center;
-                    }
                     ul {
                     list-style: none;
                     }
