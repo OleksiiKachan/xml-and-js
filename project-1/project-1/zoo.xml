@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <?xml-stylesheet type="text/xsl" href="zoo.xsl"?>
-<!DOCTYPE zoo 
+<!DOCTYPE list 
 [
   <!ELEMENT list (zoo+)>
   <!ELEMENT zoo (id, openTime, closeTime, location, animals+, employees+)>
@@ -32,7 +32,7 @@
       <region>Nova Scotia</region>
       <counry>Canada</counry>
     </location>
-    <animals id="1">
+    <animals>
       <giveName>Kelby</giveName>
       <commonName>Wagtail, african pied</commonName>
       <scientificName>Motacilla aguimp</scientificName>
