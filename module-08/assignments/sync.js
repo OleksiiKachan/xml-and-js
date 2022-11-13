@@ -138,9 +138,9 @@ const executor = (resolve, reject) => {
     };
   
     if (obj.name.includes(" ")) {
-      reject();
+      resolve();
     } else {
-      resolve(obj);
+      reject();
     }
   };
 
