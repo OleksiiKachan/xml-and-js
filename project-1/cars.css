@@ -1,0 +1,40 @@
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+article {
+  border: 1px solid darkgray;
+  border-radius: 10px;
+  padding: 20px;
+
+float: left;
+
+  width: 300px;
+  height: 500px;
+  margin: 40px;
+}
+
+p {
+  margin: 0;
+  font-size: 24px;
+  color: dimgrey;
+}
+h1{
+  text-align: center;
+  font-size:50px ;
+}
+h2 {
+  margin: 40px 0;
+  font-size: 32px;
+}
+
+article > div {
+  align-self: flex-end;
+  font-size: 32px;
+}
