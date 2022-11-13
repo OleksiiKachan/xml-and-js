@@ -2,6 +2,8 @@
 //  return a + 1;
 //}
 
+
+
 function inc(a) {
   return new Promise ((resolve, reject) => {
     if (isNaN(a))
@@ -13,7 +15,7 @@ function inc(a) {
     else
     {  
       resolve ({
-        result: a+1
+        result:(a+1)
       }) 
     }
   })
@@ -48,8 +50,8 @@ function sum(a,b) {
   })
 }
 
-sum(5,7).then((result) => {
-  console.log(result)
+sum(5,7).then((value) => {
+  console.log(value)
 }).catch((error) => {
   console.error(error)
 })
@@ -59,22 +61,28 @@ sum(5,7).then((result) => {
 
 //const max = (a, b) => (a > b ? a : b);
 
-const maxPromise =  new Promise ((resolve,reject) => {
-  const max = (a,b) => (a>b ? a: b);
-
-  if (max <= 0)
-    reject();
-  else
-    resolve();
-
-});
-
-max=(3,8)
-maxPromise.then(() => {
-  console.log(max)
-}).catch(() => {
-  console.log("You are comparing negative numbers.")
-});
+function max(a,b) {
+    return new Promise ((resolve, reject) => {
+      if (a===b)
+      {
+        reject ({
+          error: ('numbers are the same.')
+        })
+      }
+      else
+      {  
+        resolve ({
+          result: (a > b ? a : b)
+        }) 
+      }
+    })
+  }
+  
+  max(7,9).then((value) => {
+    console.log(value)
+  }).catch((error) => {
+    console.error(error)
+  })
 
 
 
@@ -83,33 +91,67 @@ maxPromise.then(() => {
 //  return s / 2;
 //};
 
-const avgPromise =  new Promise ((resolve,reject) => {
-  const s = sum(a,b);
-  const avg = (a,b) => s/2;
+function avg(a,b) {
+    return new Promise ((resolve, reject) => {
+
+        
+
+      if (a+b === 0)
+      {
+        reject ({
+          error: ('Average is zero')
+        })
+      }
+      else
+      {  
+        resolve ({
+          result: ((a+b)/2)
+        }) 
+      }
+    })
+  }
   
-
-  if (a <= 0 || b <= 0)
-    reject();
-  else
-    resolve();
-
-});
-
-avg=(7,9)
-avgPromise.then(() => {
-  console.log()
-}).catch(() => {
-  console.log("You are comparing negative numbers.")
-});
+  avg(9,7).then((value) => {
+    console.log(value)
+  }).catch((error) => {
+    console.error(error)
+  });
 
 
 
 //const obj = {
- // name: "Marcus Aurelius",
- // split(sep = " ") {
- //   return this.name.split(sep);
- // },
+//  name: "Marcus Aurelius",
+//  split(sep = " ") {
+//    return this.name.split(sep);
+//  },
 //};
+
+
+
+const executor = (resolve, reject) => {
+    
+    const obj = {
+        name: "Marcus Aurelius",
+        split(sep = " ") {
+            return this.name.split(sep);
+        },
+    };
+  
+    if (obj.name.includes(" ")) {
+      reject();
+    } else {
+      resolve(obj);
+    }
+  };
+
+  const promise = new Promise(executor);
+
+promise
+.then(() => console.log(obj))
+.catch(() => console.log("Name doesn't have a space in it."));
+
+
+
 
 class Person {
   constructor(name) {
