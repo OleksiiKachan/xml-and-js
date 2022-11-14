@@ -159,3 +159,81 @@ console.log("avg(8, 6) =", avg(8, 6));
 console.log("obj.split() =", obj.split());
 console.log("person.split() =", person.split());
 }*/
+
+
+//Person.of("Marcus Aurelius").then(value => console.log(`avg3(8,6) = ${value}`));
+
+
+/*
+const obj2 = {
+  name: "Marcus Aurelius",
+  aync split(sep = " ") {
+    await wait()
+    return this.name.split(sep);
+  }
+};*/
+
+/*class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  static async of(name) {
+    await wait()
+    return new Person(name);
+  }
+
+  async split(sep = " ") {
+    await wait()
+    return this.name.split(sep);
+  }
+}*/
+
+
+//inc(5).then(value => console.log(`inc(5) = ${value}`));
+/*
+const main = async()=> {
+  const person = Person.of("Marcus Aurelius");
+
+console.log("inc(5) =", inc(5));
+console.log("sum(1, 3) =", sum(1, 3));
+console.log("max(8, 6) =", max(8, 6));
+console.log("avg(8, 6) =", avg(8, 6));
+console.log("obj.split() =", obj.split());
+console.log("person.split() =", person.split());
+}
+main*/
+/*
+no fun name
+inc(5).then(value => console.log(`inc(5) = ${value}`));
+
+(async()=> {
+  const person = await Person.of("Marcus Aurelius");
+
+console.log("inc(5) =", await inc(5));
+console.log("sum(1, 3) =", await sum(1, 3));
+console.log("max(8, 6) =", await max(8, 6));
+console.log("avg(8, 6) =", await  avg(8, 6));
+console.log("obj.split() =", obj.split());
+console.log("person.split() =", person.split());
+})()*/
+/*const person = Person.of("Marcus Aurelius");
+
+console.log("inc(5) =", inc(5));
+console.log("sum(1, 3) =", sum(1, 3));
+console.log("max(8, 6) =", max(8, 6));
+console.log("avg(8, 6) =", avg(8, 6));
+console.log("obj.split() =", obj.split());
+console.log("person.split() =", person.split());*/
+
+
+/*const main = async()=> {
+  const person = Person.of("Marcus Aurelius");
+
+console.log("inc(5) =", inc(5));
+console.log("sum(1, 3) =", sum(1, 3));
+console.log("max(8, 6) =", max(8, 6));
+console.log("avg(8, 6) =", avg(8, 6));
+console.log("obj.split() =", obj.split());
+console.log("person.split() =", person.split());
+}*/
