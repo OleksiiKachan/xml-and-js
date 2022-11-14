@@ -11,4 +11,3 @@ xsl - linked xml with xsl and defined the required table headers and parsed the 
 html - linked xml to html using xhttp verified the status of request.
        parsed to each element in the xml and linked to html tags to render it on the web page.
        Implemented css for it design.
-
