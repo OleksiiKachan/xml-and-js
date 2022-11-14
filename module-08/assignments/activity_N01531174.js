@@ -1,16 +1,13 @@
 const wait = (ms = 1000) => new Promise((resolve) => setTimeout(resolve,ms));
-
 const inc = (a) => 
   new Promise((resolve)=>{
     wait().then(()=> resolve(a+1));
   })
-
 const sum = (a,b) => {
   return new Promise((resolve) => {
     wait().then(() => resolve(a+b));
   })
 }
-
 const max = (a,b) => {
   return new Promise((resolve) => {
     wait().then(() => resolve(a > b ? a : b));
@@ -60,5 +57,4 @@ const main = async()=>{
   console.log("obj.split() =", await obj.split());
   console.log("person.split() =", await person.split());
 };
-
 main();
