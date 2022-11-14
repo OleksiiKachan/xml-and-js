@@ -4,53 +4,43 @@
  * 3. Make sure the "Finish" is logged after all the data is converted
  */
 
-function timeout(ms, callback) {
+const timeout = (ms) => {
   return new Promise(function (resolve) {
     setTimeout(function () {
       resolve();
-      callback();
     }, ms);
   });
 }
 
-function generateRandomNumber() {
+const generateRandomNumber = () => {
   return Math.floor(Math.random() * 40);
 }
 
-function generateData(callback) {
-  timeout(1000, function () {
-    const data = Array.from({ length: 20 }, generateRandomNumber);
-    callback(data);
-  });
+const generateData = async () => {
+  await timeout(1000)
+  return Array.from({ length: 20 }, generateRandomNumber);
 }
 
-function convertToFeet(meters, callback) {
+const convertToFeet = async (meters) => {
+  await timeout(3500);
   const feet = meters * 3.2808;
-  timeout(3500, function () {
-    callback(feet);
-  });
+  return feet;
 }
 
-function processData(data, callback) {
-  data.map(function (value) {
-    callback(value);
-  });
+const processData = async (data) => {
+  // return new Promise((resolve, reject) =>{
+  //   resolve(data.map(convertToFeet))
+  // });
+  return await Promise.all(data.map(value => convertToFeet(value).then(res => logResult(value, res))))
 }
 
-function logResult(meters, feet) {
+const logResult =  (meters, feet) => {
   console.log(`Converted ${meters}m to ${feet}ft`);
 }
 
-function main() {
+(async () => {
   console.log("Start");
-  generateData(function (data) {
-    processData(data, function (value) {
-      convertToFeet(value, function (result) {
-        logResult(value, result);
-      });
-    });
-  });
+  const generate = await generateData();
+  await processData(generate);
   console.log("Finish");
-}
-
-main();
+})();
