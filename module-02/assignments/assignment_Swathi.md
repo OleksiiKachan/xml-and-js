@@ -9,6 +9,7 @@ Yes there are some errors
 3).In line 50 The element type was not matching,in the end tag n should be capital 'N'
    The error was<originalName> Fresh Mornin' Sampler </originalname>
    It should be <originalName> </originalName>
+   image---image_1 (C:\Users\14372\Pictures)
 
 2. What is the use of CDATA block in this document?
 The use of CDATA block in this document is that we can use this to escape some characters which otherwise will be treated as regular XML. The data inside this will not be parsed. For example, if you want to pass a math equation that contains < or > on it, we can use CDATA to do it and is treated as a character data and not as a markup which is in between the <description> </description>

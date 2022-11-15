@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <!-- <script src="main.js"></script> -->
+  </head>
+  <body>
+    <ul id="info"></ul>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "Quiz01.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createCard(Books) {
+        const content = `<li>
+        <article>
+            <h1>${Books.title}</h1>
+            <h3>${Books.author}</h3>
+            <p>${Books.year}</p>
+            <p>${Books.price}</p>
+            <p>${Books.category}</p>
+        </article>
+    </li>`;
+
+        return stringToNode(content);
+      }
+
+      function parseCard(xml) {
+        const title =
+          xml.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
+        const author =
+          xml.getElementsByTagName(`author`)[0].childNodes[0].nodeValue;
+        const year =
+          xml.getElementsByTagName(`year`)[0].childNodes[0].nodeValue;
+        const price =
+          xml.getElementsByTagName(`price`)[0].childNodes[0].nodeValue;
+        const category =
+          xml.getElementsByTagName(`category`)[0].childNodes[0].nodeValue;
+
+        return {
+          title,
+          author,
+          year,
+          price,
+          category,
+        };
+      }
+
+      function displayData(xmlDoc) {
+        const data = xmlDoc.getElementsByTagName(`Books`);
+
+        const list = document.getElementById(`info`);
+
+        for (let index = 0; index < data.length; index++) {
+          const element = data[index];
+          const parsedCard = parseCard(element);
+
+          const ele = createCard(parsedCard);
+          list.appendChild(element);
+        }
+      }
+    </script>
+  </body>
+</html>

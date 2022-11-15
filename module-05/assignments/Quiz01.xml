@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="quiz01.xsl"?>
+<Books>
+<info>
+<title>Everyday Italian</title>
+<author>Giada De Laurentiis</author>
+<year>2005</year>
+<price>30.0</price>
+<category>cooking</category>
+</info>
+<info>
+<title>Harry Potter</title>
+<author>J K. Rowling</author>
+<year>2005</year>
+<price>29.99</price>
+<category>children</category>
+</info>
+<info>
+<title>XQuery Kick Start</title>
+<author>James McGovern</author>
+<author>Per Bothner</author>
+<author>Kurt Cagle</author>
+<author>James Linn</author>
+<author>Vaidyanathan Nagarajan</author>
+<year>2003</year>
+<price>49.99</price>
+<category>web</category>
+</info>
+<info>
+<title>Learning XML</title>
+<author>Erik T. Ray</author>
+<year>2005</year>
+<price>29.95</price>
+<category>web</category>
+</info>
+</Books>
+
+
+

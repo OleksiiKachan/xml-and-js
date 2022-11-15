@@ -41,4 +41,4 @@ console.log(pilots_2);
 const empire = pilots
   .filter((pilot) => pilot.faction === "Empire")
   .map(({name}) => name);
-  console.log(empire);
+  console.log(empire)
