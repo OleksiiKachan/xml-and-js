@@ -44,6 +44,7 @@ const obj = {
   (async () => {
   const person = await Person.of("Marcus Aurelius");
   
+  
   console.log("inc(5) =", await inc(5));
   console.log("sum(1, 3) =", await sum(1, 3));
   console.log("max(8, 6) =", await max(8, 6));
