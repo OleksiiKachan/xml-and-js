@@ -11,11 +11,12 @@ const avg =(a,b) =>new Promise((resolve)=>wait().then(()=>sum(a,b)).then((s)=>re
                                     
 const obj = {
   name: "Marcus Aurelius",
- split(sep = " ") {
-  return new Promise((resolve) =>
-  wait().then(()=> resolve(this.name.split(sep))));
+  split(sep = " ") {
+    return new Promise((resolve) =>
+    wait().then(()=> resolve(this.name.split(sep))));
   },
 };
+
 class Person {
   constructor(name) {
     this.name = name;
@@ -26,8 +27,8 @@ class Person {
 
     return new Promise((resolve)=>wait().then(()=>resolve(new Person(name))));
   }
-
-   split(sep = " ") {
+  
+  split(sep = " ") {
     return new Promise((resolve)=>wait().then(()=>resolve(this.name.split(sep))));
    
   }
