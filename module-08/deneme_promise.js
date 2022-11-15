@@ -26,14 +26,14 @@ const checkIfFile = (filename) =>       //file mi kontrol ediyoruz
     });
   });
 
-const readFile = (filename) =>
+const readFile = (filename) => //dosyayı okumak için ynei pormise yarat
   new Promise((resolve, reject) => {
-    fs.readFile(filename, null, (err, data) => {
-      if (err) {
+    fs.readFile(filename, null, (err, data) => { //dosya okurken hata varsa
+      if (err) {                                    // hata fırlat
         reject(err);
       }
 
-      resolve(JSON.parse(data));
+      resolve(JSON.parse(data));                // hata yoksa datayı parse et ve dön
     });
   });
 

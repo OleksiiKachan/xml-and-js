@@ -4,96 +4,108 @@
  * 3. Make sure the "Finish" is logged after all the data is converted
  */
 //----------------------------------------------------------------------
-//  function timeout(ms, callback) {
-//     return new Promise(function (resolve) {
-//       setTimeout(function () {
-//         resolve();
-//         callback();
-//       }, ms);
-//     });
-//   }
 
 
 
 
 timeout = (ms, callback) =>{
-return new Promise (function (resolve) {
-         setTimeout(function () {
-          resolve();
-          callback();
-        }, ms);
-      });
-};
-//--------------------------------------------------------------------------  
-  
-//   function generateRandomNumber() {
-//     return Math.floor(Math.random() * 40);
-//   }
-
-  generateRandomNumber =() => {
-     return Math.floor(Math.random() * 40);
-  }
-
-//--------------------------------------------------------------------------
-
-
-  async function generateData (callback) {
-    
-    await timeout(1000,generateRandomNumber);
-     
-    const data = (Array.from({ length: 20 }, generateRandomNumber));
-   
-    callback(data);
-  };
-  
-   
-//-----------------------------------------------------------------------------
-  
-
-  async function convertToFeet (meters, callback) {
-    
-   await timeout(3500, generateData);
-   const feet = meters * 3.2808;
-   callback(feet);
-    
-  };  
-//-------------------------------------------------------------------------------
-
-  processData = (data, callback) => 
-    data.map(function (value) {
-      callback(value);
-    });
- //------------------------------------------------------------------------------ 
-
-  logResult = (meters, feet)=>
-    console.log(`Converted ${meters}m to ${feet}ft`);
-  
-//--------------------------------------------------------------------------------  
-
-//   function main() {
-//     console.log("Start");
-//     generateData(function (data) {
-//       processData(data, function (value) {
-//         convertToFeet(value, function (result) {
-//           logResult(value, result);
-//         });
-//       });
-//     });
-//     console.log("Finish");
-//   }
-
-   main =() =>
-    console.log("Start");
-    generateData(function (data) {
-      processData(data, function (value) {
-       convertToFeet(value, function (result) {
-          logResult(value, result);
+  return new Promise (function (resolve) {
+           setTimeout(function () {
+            resolve();
+            callback();
+          }, ms);
         });
-      });
-    });
-    console.log("Finish");
-   
-  main();
+  };
+  //--------------------------------------------------------------------------  
+    
+  
+    const generateRandomNumber = async function () {
+       return Math.floor(Math.random() * 40);
+    }
 
- 
+  
+  
+  //--------------------------------------------------------------------------
+  
+  
+    // generateData = (callback) => 
+      
+    // timeout(1000, function () {
+        
+    //       const data = Array.from({ length: 20 }, generateRandomNumber);
+    //     callback(data);
+    //   });
+  
+  const  generateData = async function (){
+      await timeout(1000, callback);
+      return Array.from({ length: 20 }, generateRandomNumber);
+
+  }
+    
+  //-----------------------------------------------------------------------------
+    
+  
+  
+    // convertToFeet = (meters, callback) => {
+    //   const feet = meters * 3.2808;
+    //   timeout(3500, function () {
+    //     callback(feet);
+    //   });
+    // }  
+
+    const convertToFeet = async function (meters){
+        await timeout (3500, callback);
+        const feet = meters * 3.2808 ;
+        return feet ;
+
+    }
+
+
+  //-------------------------------------------------------------------------------
+      
+    const processData = async function (data) {
+       await timeout(1000, callback);
+      data.map(function (value) {
+        callback(value);
+      });
+
+      return value;
+    }
+   
+      
+   //------------------------------------------------------------------------------ 
+   
+   const  logResult = async function (meters, feet) {
+    console.log(`Converted ${meters}m to ${feet}ft`);
+   }
+      
+    
+  //--------------------------------------------------------------------------------  
+  
+  
+    //  main =() =>
+    //   console.log("Start");
+    //   generateData(function (data) {
+    //     processData(data, function (value) {
+    //       convertToFeet(value, function (result) {
+    //         logResult(value, result);
+    //       });
+    //     });
+    //   });
+    //   console.log("Finish");
+     
+    // main();
+
+      (async() => {
+
+        console.log("generateRandomNumber: ", generateRandomNumber());
+        console.log("generateData: ", await generateData());
+        console.log("convertToFeet: ", await convertToFeet(meters));
+        console.log("processData:", await processDat(data) );
+        console.log ("logResult: ", logResult(meters,feet));
+
+      })();
+  
+   
+    
   
