@@ -1,4 +1,4 @@
-# Git Commands
+ # Git Commands
 
 ## How to sync your fork with original repo
 
