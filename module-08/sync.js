@@ -1,44 +1,62 @@
-function inc(a) {
-  return a + 1;
-}
-
-const sum = function (a, b) {
-  return a + b;
+const wait = (ms = 1000) => new Promise((resolve) => setTimeout(resolve,ms));
+const inc = async (a) => {
+    await wait();
+    return a + 1;
+  }
+  
+  const sum = async (a, b) => {
+    await wait();
+    return a + b;
+  };
+  
+  const max = async (a, b) => {
+    await wait();
+    return (a > b ? a : b);
 };
+  
+  const avg = async (a, b) => {
+    await wait();
+    const s = await sum(a, b);
+    return (s / 2);
+  };
 
-const max = (a, b) => (a > b ? a : b);
+  const obj = {
+    name: "Marcus Aurelius",
+    async split(sep = " ") {
+        await wait();
+      return this.name.split(sep);
+    },
+  };
 
-const avg = (a, b) => {
-  const s = sum(a, b);
-  return s / 2;
-};
+  class Person {
+    constructor(name) {
+      this.name = name;
+    }
+  
+    static async of(name) {
+        await wait();
+      return new Person(name);
+    }
+  
+    async split(sep = " ") {
+        await wait();
+      return this.name.split(sep);
+    }
+  }
+  
+ 
+  
+  inc(5).then((value) => console.log(`inc(5) =  ${value}`));
+  const main= async () => {
+    const person = await Person.of("Marcus Aurelius");
+    console.log("inc(5) =", await inc(5));
+    console.log("sum(1, 3) =", await sum(1, 3));
+    console.log("max(8, 6) =", await max(8, 6));
+    console.log("avg(8, 6) =", await avg(8, 6));
+    console.log("obj.split() =", await obj.split());
+    console.log("person.split() =", await person.split());
 
-const obj = {
-  name: "Marcus Aurelius",
-  split(sep = " ") {
-    return this.name.split(sep);
-  },
-};
-
-class Person {
-  constructor(name) {
-    this.name = name;
   }
 
-  static of(name) {
-    return new Person(name);
-  }
 
-  split(sep = " ") {
-    return this.name.split(sep);
-  }
-}
-
-const person = Person.of("Marcus Aurelius");
-
-console.log("inc(5) =", inc(5));
-console.log("sum(1, 3) =", sum(1, 3));
-console.log("max(8, 6) =", max(8, 6));
-console.log("avg(8, 6) =", avg(8, 6));
-console.log("obj.split() =", obj.split());
-console.log("person.split() =", person.split());
+  main();
