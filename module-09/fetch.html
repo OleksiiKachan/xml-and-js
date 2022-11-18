@@ -2,14 +2,8 @@
 <html lang="en">
   <body>
     <script type="text/javascript">
-      fetch("https://jsonplaceholder.typicode.com/users")
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          }
-
-          throw new Error(`Unable to load data`);
-        })
+      fetch("books.json")
+        .then((response) =>  response.json())
         .then((data) => {
           console.log(data);
         });

@@ -57,3 +57,13 @@ function displayData(xmlDoc) {
     list.appendChild(cardElement);
   }
 }
+
+const main = async () => {
+  const result = await fetch("cards.xml");
+  const data = await result.text();
+  const parser = new DOMParser();
+  const parsed = parser.parseFromString(data, "text/xml");
+  displayData(parsed);
+};
+
+main();
