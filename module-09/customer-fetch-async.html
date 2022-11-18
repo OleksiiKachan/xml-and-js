@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list"></ul>
+    <script>
+        function displayData(xmlDoc) {
+            const listElement = document.getElementById(`list`);
+
+            const customerNodes = xmlDoc.getElementsByTagName(`customer`);
+            for (let index = 0; index < customerNodes.length; index++) {
+                const customers = customerNodes[index];
+                const Id = customers.getAttribute(`custID`);
+                const title = customers.getElementsByTagName(`name`)[0].getAttribute(`title`);
+                const custname = customers.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+                const address = customers.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+                const phone = customers.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+                const orderdate =customers.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
+                const orderid = customers.getElementsByTagName(`order`)[0].getAttribute(`orderID`);
+                const orderby = customers.getElementsByTagName(`order`)[0].getAttribute(`orderBy`);
+                const itemprice = customers.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
+                const itemqty = customers.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
+                var Email = "";
+                if (customers.getElementsByTagName(`email`)[0] != null){
+                    Email = customers.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+                }
+                else {
+                    Email = "Customer does not have email";
+                }
+                const htmlstring = `
+                       <h3 style="color:red">Customer ID : ${Id}</h3></br>
+                       <li>name of the customers  : ${custname}</li>
+                       <li>Address  : ${address}</li>
+                       <li>order date  : ${orderdate}</li>
+                       <li>phone : ${phone}</li>
+                       <li>order id  : ${orderid}</li>
+                       <li>order by  : ${orderby}</li>
+                       <li>title  : ${title}</li>
+                       <li>item price : ${itemprice}</li>
+                       <li>item quentity  : ${itemqty}</li>
+                       <li>Email = : ${Email}</li>
+                    `;
+                const value = listElement.innerHTML + htmlstring;
+                listElement.innerHTML = value;
+            }
+        }
+        const loadData = async () => {
+            const response = await fetch("cust.xml");
+            const str = await response.text();
+            const xmlData = new DOMParser().parseFromString(str, "text/xml");
+            displayData(xmlData);
+        };
+
+        loadData();
+        
+    </script>
+</body>
+</html>
