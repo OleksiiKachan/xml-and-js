@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      p{
+        color: brown;
+      }
+      h2{
+        color: orange;   
+      }
+      li{
+        color: grey;   
+      }
+    </style>
+</head>
+<body>
+    <h2>Customer Information</h2>
+    <ul id="customers"></ul>
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    displayData(this.responseXML);
+                }
+            };
+            xhttp.open("GET", "../customers.xml", true);
+            xhttp.send();
+        function displayData(xmlDoc) {
+            const list = document.getElementById("customers");
+            const customersNodes = xmlDoc.getElementsByTagName(`customer`);
+            for(let index=0;index<customersNodes.length;index++)
+            {
+                const cu = customersNodes[index];
+                const custID = cu.getAttribute(`custID`);
+                const title = cu.getElementsByTagName(`name`)[0].getAttribute(`title`);
+                const firstName = cu.getElementsByTagName(`name`)[0].childNodes[0]
+                .nodeValue;
+                const address = cu.getElementsByTagName(`address`)[0].childNodes[0]
+                .nodeValue;
+                const phone = cu.getElementsByTagName(`phone`)[0].childNodes[0]
+                .nodeValue;
+                const orderdate = cu.getElementsByTagName(`orderDate`)[0].childNodes[0]
+                .nodeValue;
+                const orderID = cu.getElementsByTagName(`order`)[0].getAttribute(`orderID`);
+                const orderBy = cu.getElementsByTagName(`order`)[0].getAttribute(`orderBy`);
+                const itemprice = cu.getElementsByTagName(`itemPrice`)[0].childNodes[0]
+                .nodeValue;
+                const itemqty = cu.getElementsByTagName(`itemQty`)[0].childNodes[0]
+                .nodeValue;
+                var Email = "";
+                if(cu.getElementsByTagName(`email`)[0]!= null)
+                     Email = cu.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+                else
+                    Email = "";
+                const htmlstring=`
+                    <li><p><b>Customer ID: </b>${custID}</p><br/>
+                        <p><b>Name: </b>${title+ " " + firstName}</p><br/>
+                        <p><b>Address: </b>${address}</p><br/>
+                        <p><b>Phone: </b>${phone}</p></br>
+                        <p><b>Email: </b>${Email}</p><br/>
+                        <p><b>Orders: </b><br/>
+                            <p>  Order Id:  ${orderID}</p>
+                            <p>  Order By:  ${orderBy}</p>
+                            <p>  Order Date:  ${orderdate}</p>
+                            <p>
+                                <b>Items: </b>
+                                    <ul>
+                                        <li> <p> itemsPrice:  ${itemprice}</li></p>
+                                        <li> <p>  itemsQty:  ${itemqty}</p>  </li>
+                                    </ul>
+                            </p>
+                    </li>
+                <br>`;
+                const val= list.innerHTML + htmlstring;
+                list.innerHTML = val;
+            }
+        }
+    </script>
+</body>
+</html>

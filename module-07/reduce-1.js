@@ -31,7 +31,9 @@ const totalYears = pilots.reduce((accum, pilot) => {
 const totalyears1 = pilots.reduce((accu, {years}) => accu + years,0);
 
 const names = pilots.reduce((acc,{ name })=> {
-  if (acc.lengeth > 0) {
+  if (acc.length > 0) {
+    console.log(acc);
+    console.log(name);
     return acc + ", " + name;
   }else {
     return name;
@@ -41,8 +43,8 @@ const names = pilots.reduce((acc,{ name })=> {
 const name_2 = pilots.map(({ name }) => name).join(", ");
 
 console.log(totalYears);
-console.log(totalYears1);
+console.log(totalyears1);
 console.log(names);
-console.log(names_2);
+console.log(name_2);
 
 
