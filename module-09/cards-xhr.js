@@ -1,11 +1,15 @@
-const xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
-  if (this.readyState == 4 && this.status == 200) {
-    displayData(this.responseXML);
-  }
-};
-xhttp.open("GET", "cards.xml");
-xhttp.send();
+const xhr = (url, method='GET') => 
+  new Promise((resolve) => {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        displayData(this);
+      }
+    };
+    xhttp.open(method, url);
+    xhttp.send();
+  })
+
 
 function stringToNode(html) {
   const template = document.createElement(`template`);
@@ -57,3 +61,19 @@ function displayData(xmlDoc) {
     list.appendChild(cardElement);
   }
 }
+
+const main = async () => {
+
+  const result = await fetch("cards.xml");
+  const data = await result.text();
+  
+  fetch("cards.xml")
+  .then((result) => result.text())
+  .then((data) => displayData(data))
+
+  const parser = new DOMParser();
+  const xmlDoc = parser.parseFromString(data, "text/xml")
+  displayData(xmlDoc);
+}
+
+main();
