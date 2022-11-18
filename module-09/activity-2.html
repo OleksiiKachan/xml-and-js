@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            color: blue;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: medium;
+        }
+    </style>
+</head>
+
+<body>
+    <ol id="lists"></ol>
+    <script>
+        const xhr = (url, method = `GET`) =>
+            new Promise((resolve) => {
+                const xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        resolve(this.responseXML);
+                    }
+                };
+
+                xhttp.open(method, url);
+                xhttp.send();
+            });
+        function displayData(xmlDoc) {
+            const studentNodes = xmlDoc.getElementsByTagName(`people`);
+            const listElement = document.getElementById("lists");
+
+            for (let index = 0; index < studentNodes.length; index++) {
+                const studentNode = studentNodes[index];
+                const listItem = stringToNode(`<li style="font-weight:bold;color:blue;">
+                    <h2> Name  ${studentNode.getElementsByTagName(`first_name`)[0].childNodes[0]
+                        .nodeValue
+                    } ${studentNode.getElementsByTagName(`last_name`)[0].childNodes[0]
+                        .nodeValue
+                    }</h2>
+                    <h2>Email : ${studentNode.getElementsByTagName(`email`)[0].childNodes[0]
+                        .nodeValue
+
+                    }</h2>
+                     <h2>Gender :  ${studentNode.getElementsByTagName(`gender`)[0].childNodes[0]
+                        .nodeValue
+
+                    }</h2>
+                     <h2>Ip_address ${studentNode.getElementsByTagName(`ip_address`)[0].childNodes[0]
+                        .nodeValue
+
+                    }</h2>
+                    
+              </li>`);
+                listElement.appendChild(listItem);
+            }
+        }
+
+
+        function stringToNode(html) {
+            const template = document.createElement(`template`);
+            html = html.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+        }
+       fetch("people.xml")
+            .then((response) => response.text())
+            .then((str) => new DOMParser().parseFromString(str, "text/xml"))
+            .then(displayData);
+    </script>
+</body>
+
+</html>
