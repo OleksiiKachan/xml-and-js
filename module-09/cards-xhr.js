@@ -1,11 +1,17 @@
-const xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
-  if (this.readyState == 4 && this.status == 200) {
-    displayData(this.responseXML);
-  }
-};
-xhttp.open("GET", "cards.xml");
-xhttp.send();
+const xhr =  ( url, method = 'GET') =>{
+  new Promise((resolve) => {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        resolve(this);
+      }
+    };
+    xhttp.open(method, url);
+    xhttp.send();
+  })
+} 
+
+xhr("cards.xml").then( ({responseXML}) => displayData(responseXML));
 
 function stringToNode(html) {
   const template = document.createElement(`template`);
