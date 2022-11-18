@@ -1,0 +1,46 @@
+<html>
+    <body>
+        <style>
+            table,th,td{
+                border:2px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+        <table id="data">
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+            </tr>
+        </table>
+        <script>
+            
+            function displayData(xml){
+                //const xmlDoc = xml.responseXML;
+                const firstnamelist = xml.getElementsByTagName("firstname");
+                const lastnamelist = xml.getElementsByTagName("lastname");
+                const list = document.getElementById("data");
+                
+                for(let index = 0; index < firstnamelist.length; index++){
+                    const fname = xml.getElementsByTagName("firstname")[index].childNodes[0].nodeValue;
+                    const lname = xml.getElementsByTagName("lastname")[index].childNodes[0].nodeValue;
+                    const personName = stringToNode(`<tr><td>${fname}</td><td>${lname}</td></tr>`);
+                    list.appendChild(personName);
+                }    
+            }
+            function stringToNode(html){
+                const template = document.createElement("template");
+                html = html.trim();
+                template.innerHTML = html;
+                return template.content.firstChild;
+            }
+
+            fetch("people.xml")
+            .then((data) => data.text())
+            .then((data) => {
+                const parser = new DOMParser();
+                const parsed = parser.parseFromString(data, `text/xml`);
+                displayData(parsed);
+            })
+        </script>
+    </body>
+</html>
