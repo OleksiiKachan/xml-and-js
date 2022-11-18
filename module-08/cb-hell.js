@@ -17,7 +17,7 @@ const generateData = () => new Promise((resolve) => timeout(1000).then(() => res
 
 const convertToFeet = (meters) => new Promise((resolve) => timeout(3500).then(() => resolve(meters * 3.2808)));
 
-const processData = async (data) => await Promise.all(data.map(e => convertToFeet(e).then((f) => logResult(e, f))));
+const processData = async (data) => Promise.all(data.map(e => convertToFeet(e).then((f) => logResult(e, f))));
 
 const logResult = (meters, feet) => console.log(`Converted ${meters}m to ${feet}ft`);
 
