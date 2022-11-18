@@ -1,11 +1,25 @@
-const xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
-  if (this.readyState == 4 && this.status == 200) {
-    displayData(this.responseXML);
-  }
-};
-xhttp.open("GET", "cards.xml");
-xhttp.send();
+// const xhr = (url, method = `GET`) =>
+// new Promise((resolve) => 
+// {
+//   const xhttp = new XMLHttpRequest();xhttp.onreadystatechange = function () 
+//   {
+//     if (this.readyState == 4 && this.status == 200) {resolve(this.responseXML);
+//     }
+//   };
+//   xhttp.open(method, url);
+//   xhttp.send();
+// });
+
+
+
+// const xhttp = new XMLHttpRequest();
+// xhttp.onreadystatechange = function () {
+//   if (this.readyState == 4 && this.status == 200) {
+//     displayData(this.responseXML);
+//   }
+// };
+// xhttp.open("GET", "cards.xml");
+// xhttp.send();
 
 function stringToNode(html) {
   const template = document.createElement(`template`);
@@ -57,3 +71,27 @@ function displayData(xmlDoc) {
     list.appendChild(cardElement);
   }
 }
+
+//xhr("cards.xml").then(data => displayData);
+
+// fetch("cards.xml").then((data)=>data.text())
+// .then((data)=>{
+//   const parser=new DOMParser();
+//   const parsed=parser.parseFromString(data,'text/xml');
+//   console.log(parsed);
+//   displayData(parsed);
+// });
+
+const main=async()=>{
+  const result=await fetch("books.json");
+  const data=await result.json();
+
+  console.log(data.map(({title}) => title));
+
+  // const parser=new DOMParser();
+  // const parsed=parser.parseFromString(stringData,'text/xml');
+
+  // displayData(parsed);
+};
+
+main();
