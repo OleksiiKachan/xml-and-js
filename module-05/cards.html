@@ -5,25 +5,42 @@
   </head>
   <body>
     <ol id="cards"></ol>
-    <script>
-      const xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          displayData(this.responseXML);
-        }
-      };
-      xhttp.open("GET", "cards.xml", true);
+   <script>
+
+    /*
+
+  **  ===>>  Write _promisified_ version of XHR  ****
+
+activity-1
+
+    const xhr = (url, method = `GET`) =>
+      new Promise((resolve) => {
+          const xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+              resolve(this.responseXML);
+          }
+        };
+      xhttp.open(method, url);
       xhttp.send();
+   });
 
-      function stringToNode(html) {
-        const template = document.createElement(`template`);
-        html = html.trim();
-        template.innerHTML = html;
-        return template.content.firstChild;
-      }
 
-      function createCard(card) {
-        const content = `<li>
+*/
+
+
+//xhr("cards.xml").then(displayData);
+
+
+function stringToNode(html) {
+  const template = document.createElement(`template`);
+  html = html.trim();
+  template.innerHTML = html;
+  return template.content.firstChild;
+}
+
+function createCard(card) {
+  const content = `<li>
   <article>
     <p>${card.type}</p>
     <h2>${card.number}</h2>
@@ -33,40 +50,74 @@
   </article>
 </li>`;
 
-        return stringToNode(content);
-      }
+  return stringToNode(content);
+}
 
-      function parseCard(xml) {
-        const number =
-          xml.getElementsByTagName(`number`)[0].childNodes[0].nodeValue;
-        const type =
-          xml.getElementsByTagName(`type`)[0].childNodes[0].nodeValue;
-        const currency =
-          xml.getElementsByTagName(`currency`)[0].childNodes[0].nodeValue;
-        const balance =
-          xml.getElementsByTagName(`balance`)[0].childNodes[0].nodeValue;
+function parseCard(xml) {
+  const number = xml.getElementsByTagName(`number`)[0].childNodes[0].nodeValue;
+  const type = xml.getElementsByTagName(`type`)[0].childNodes[0].nodeValue;
+  const currency =
+    xml.getElementsByTagName(`currency`)[0].childNodes[0].nodeValue;
+  const balance =
+    xml.getElementsByTagName(`balance`)[0].childNodes[0].nodeValue;
 
-        return {
-          number,
-          type,
-          currency,
-          balance,
-        };
-      }
+  return {
+    number,
+    type,
+    currency,
+    balance,
+  };
+}
 
-      function displayData(xmlDoc) {
-        const cards = xmlDoc.getElementsByTagName(`record`);
+function displayData(xmlDoc) {
+  const cards = xmlDoc.getElementsByTagName(`record`);
 
-        const list = document.getElementById(`cards`);
+  const list = document.getElementById(`cards`);
 
-        for (let index = 0; index < cards.length; index++) {
-          const element = cards[index];
-          const parsedCard = parseCard(element);
+  for (let index = 0; index < cards.length; index++) {
+    const element = cards[index];
+    const parsedCard = parseCard(element);
 
-          const cardElement = createCard(parsedCard);
-          list.appendChild(cardElement);
-        }
-      }
-    </script>
-  </body>
+    const cardElement = createCard(parsedCard);
+    list.appendChild(cardElement);
+  }
+}
+
+
+/*
+
+activity -2
+
+ *** - Replace XHR with fetch()​ with then
+
+
+ fetch("cards.xml")
+  .then ((result)=> result.text())
+    .then((data)=>{
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(data,"text/xml");
+      displayData(xmlDoc);
+    }
+    );
+
+*/
+
+
+
+//   Using fetch API with async/await
+
+
+const main= async () => {
+  const result = await fetch("cards.xml");
+  const data = await result.text();
+
+  const parser = new DOMParser();
+  const xmlDoc = parser.parseFromString(data,"text/xml");
+  displayData(xmlDoc);
+  
+};
+
+main();
+
+   </script>
 </html>
