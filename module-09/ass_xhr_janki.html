@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            color: blue;
+        }
+    
+        h3 {
+            color: pink;
+        }
+    
+       
+    </style>
+</head>
+<body>
+    <ul id="customers"></ul>
+    <script>
+        const xhr = (url, method = `GET`) =>
+            new Promise((resolve) => {
+                const xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                    displayData(this.responseXML);
+                    }
+                };
+                xhttp.open(method, url);
+                xhttp.send();
+            });
+        // function stringToNode(html) {
+        //         const template = document.createElement(`template`);
+        //         html = html.trim();
+        //         template.innerHTML = html;
+        //         return template.content.firstChild;
+        //     }
+
+        function displayData(xmlDoc) {
+            const listElement = document.getElementById(`customers`);
+
+            const customerNodes = xmlDoc.getElementsByTagName(`customer`);
+            for (let index = 0; index < customerNodes.length; index++) {
+                const customers = customerNodes[index];
+                const cId = customers.getAttribute(`custID`);
+                const title = customers.getElementsByTagName(`name`)[0].getAttribute(`title`);
+                const nameCustomer = customers.getElementsByTagName(`name`)[0].childNodes[0]
+                    .nodeValue;
+                const add = customers.getElementsByTagName(`address`)[0].childNodes[0]
+                    .nodeValue;
+                const ph = customers.getElementsByTagName(`phone`)[0].childNodes[0]
+                    .nodeValue;
+                const odate = customers.getElementsByTagName(`orderDate`)[0].childNodes[0]
+                    .nodeValue;
+                const oid = customers.getElementsByTagName(`order`)[0].getAttribute(`orderID`);
+                const oby = customers.getElementsByTagName(`order`)[0].getAttribute(`orderBy`);
+                const iprice = customers.getElementsByTagName(`itemPrice`)[0].childNodes[0]
+                    .nodeValue;
+                const iqty = customers.getElementsByTagName(`itemQty`)[0].childNodes[0]
+                    .nodeValue;
+                var Email = "";
+                if (customers.getElementsByTagName(`email`)[0] != null)
+                    Email = customers.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+                else
+                    Email = "Not Gievm";
+
+                const htmlstring = `
+                       <h3>Customer ID =  ${cId}</h3>
+                       <li>name of the customers = : ${nameCustomer}</li>
+                       <li>address = : ${add}</li>
+                       <li>order date = : ${odate}</li>
+                       <li>order id = : ${oid}</li>
+                       <li>order by = : ${oby}</li>
+                       <li>title = : ${title}</li>
+                       <li>item price = : ${iprice}</li>
+                       <li>item quentity = : ${iqty}</li>
+                       <li>Email = : ${Email}</li>
+    
+                    `;
+                const value = listElement.innerHTML + htmlstring;
+                listElement.innerHTML = value;
+            }
+        }
+    xhr("customers.xml").then(displayData);
+</script>
+</body>
+</html>
