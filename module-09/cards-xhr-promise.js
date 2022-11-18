@@ -1,14 +1,26 @@
-const xhr = (url, method = `GET`) =>
+const xhr = (url, method = "GET") =>
   new Promise((resolve) => {
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        resolve(this.responseXML);
+        resolve(this);
       }
     };
     xhttp.open(method, url);
     xhttp.send();
   });
+
+// const xhr = (url, method = `GET`) =>
+//   new Promise((resolve) => {
+//     const xhttp = new XMLHttpRequest();
+//     xhttp.onreadystatechange = function () {
+//       if (this.readyState == 4 && this.status == 200) {
+//         resolve(this.responseXML);
+//       }
+//     };
+//     xhttp.open(method, url);
+//     xhttp.send();
+//   });
 
 function stringToNode(html) {
   const template = document.createElement(`template`);
