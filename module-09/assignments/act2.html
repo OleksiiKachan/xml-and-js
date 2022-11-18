@@ -1,77 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>People</title>
-    </head>
-    <body>
-        <ol id="cards"></ol>
-        <script></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+      </head>
+  <body>
+    <ol id="people"></ol>
+    <script>
+      const xhr = (url, method = `GET`) =>
+      new Promise ((resolve) => {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if (this.readyState === 4 && this.status ===200){
+                resolve(this);
+            }
+        };
+        xhttp.open (method, url);
+        xhttp.send()
+
+      });
+
+       ;
 
 
-            function stringToNode(html) {
-                const template = document.createElement(`template`);
-                html = html.trim();
-                template.innerHTML = html;
-                return template.content.firstChild;
+
+        function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
       }
 
-            function createCard(card){
-                const content=`<li>
-                    <article>
-                    <p>${card.id}</p>
-                    <h2>${card.firstname}</h2>
-                    <h2>${card.lastname}</h2>
-                    <p>${card.email}</p>
-                    <p>${card.gender}</p>
-                    <p>${card.ipaddress}</p>
-                    </article>+
-                    </li>`;
-                    return stringToNode(content);                
-            }
-
-            function displayData(xmlDoc){
-                const cards = xmlDoc.getElementsByTagName(`record`);
-                const list = document.getElementById(`cards`);
-
-                for(let index=0;index < cards.length; index++){
-                    const element = cards[index];
-                    const parsedCard = parseCard(element);
-
-                    const cardElement = createCard(parsedCard);
-                    list.appendChild(cardElement);
-                }
-            }
-            function parseCard(xml){
-                const id = xml.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
-                const firstname = xml.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
-                const lastname = xml.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
-                const email = xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
-                const gender = xml.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue;
-                const ipaddress = xml.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue;
-
-                return{
-                    id,
-                    firstname,
-                    lastname,
-                    email,
-                    gender,
-                    ipaddress,
-                };
-            }
 
 
-            const main=async()=>{
-                //console.log("hi");
-            const data=await fetch("people.xml");
-            const stringData=await data.text();
+        function displayData(xmlDoc){
+            const listElement = document.getElementById(`people`);
+            //const xmlDoc = xml.responseXML;
+            //console.log(this)
+        const peopleNode = xmlDoc.getElementsByTagName(`person`);
 
-            const parser=new DOMParser();
-            const parsed=parser.parseFromString(stringData,'text/xml');
+        for (let index = 0; index < peopleNode.length; index++) {
+          const personNode = peopleNode[index];
 
-            displayData(parsed);
-        };
+          const listItem = stringToNode(`<li>
+          
+          <h2>${
+              personNode.getElementsByTagName(`first_name`)[0].childNodes[0]
+                .nodeValue
+            } ${
+            personNode.getElementsByTagName(`last_name`)[0].childNodes[0]
+              .nodeValue
+          }</h2>
+          <p>${personNode.getAttribute(`ID`)} - ${
+            personNode.getElementsByTagName(`email`)[0].childNodes[0]
+              .nodeValue
+          }</p>
+          <p>${`ipaddress: ${
+            personNode.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue
+          }`}</p>
+          </li>`);
+          listElement.appendChild(listItem);
+        }
+      }
 
-        main();
-        </script>
-    </body>
+
+     // xhr("people.xml").then((data) => displayData(data.responseXML));
+
+     fetch ("people.xml")
+      .then((data)=> data.text())
+      .then((data)=> {
+        const parser = new DOMParser();
+        const parsed = parser.parseFromString(data, 'text/xml');
+        displayData(parsed);
+
+      });
+/*      
+//xhr("people.xml").then(displayData);
+    const main = async ()=>{      
+const data = await fetch ("people.xml")
+ const stringData = await  data.text()
+      
+        const parser = new DOMParser();
+        const parsed = parser.parseFromString(stringData, 'text/xml');
+        displayData(parsed);
+      
+      };
+main();
+ */
+          </script>
+
+  </body>
 </html>
