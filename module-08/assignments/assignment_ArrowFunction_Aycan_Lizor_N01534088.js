@@ -45,7 +45,8 @@ return new Promise (function (resolve) {
   generateData = (callback) => 
     
   timeout(1000, function () {
-      const data = Array.from({ length: 20 }, generateRandomNumber);
+      
+        const data = Array.from({ length: 20 }, generateRandomNumber);
       callback(data);
     });
 
