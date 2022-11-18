@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>People</title>
+    </head>
+    <body>
+        <ol id="cards"></ol>
+        <script></script>
+
+
+            function stringToNode(html) {
+                const template = document.createElement(`template`);
+                html = html.trim();
+                template.innerHTML = html;
+                return template.content.firstChild;
+      }
+
+            function createCard(card){
+                const content=`<li>
+                    <article>
+                    <p>${card.id}</p>
+                    <h2>${card.firstname}</h2>
+                    <h2>${card.lastname}</h2>
+                    <p>${card.email}</p>
+                    <p>${card.gender}</p>
+                    <p>${card.ipaddress}</p>
+                    </article>+
+                    </li>`;
+                    return stringToNode(content);                
+            }
+
+            function displayData(xmlDoc){
+                const cards = xmlDoc.getElementsByTagName(`record`);
+                const list = document.getElementById(`cards`);
+
+                for(let index=0;index < cards.length; index++){
+                    const element = cards[index];
+                    const parsedCard = parseCard(element);
+
+                    const cardElement = createCard(parsedCard);
+                    list.appendChild(cardElement);
+                }
+            }
+            function parseCard(xml){
+                const id = xml.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+                const firstname = xml.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+                const lastname = xml.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+                const email = xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+                const gender = xml.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue;
+                const ipaddress = xml.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue;
+
+                return{
+                    id,
+                    firstname,
+                    lastname,
+                    email,
+                    gender,
+                    ipaddress,
+                };
+            }
+
+
+            const main=async()=>{
+                //console.log("hi");
+            const data=await fetch("people.xml");
+            const stringData=await data.text();
+
+            const parser=new DOMParser();
+            const parsed=parser.parseFromString(stringData,'text/xml');
+
+            displayData(parsed);
+        };
+
+        main();
+        </script>
+    </body>
+</html>

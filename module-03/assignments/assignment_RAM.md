@@ -1,0 +1,2 @@
+The DTD, or Document Type Declaration, is used to specify the XML document's structure. All of the elements and their attributes are defined in the DTD.  The DTD must be enclosed in the!DOCTYPE.
+ xsd is used to explain and verify an XML document's content and structure. It is mostly used to specify what kinds of elements, properties, and data the document can contain. Each element, attribute, or data type in the document is checked against the information in the XSD to ensure that it meets the description.
