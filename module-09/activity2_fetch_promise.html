@@ -39,14 +39,10 @@
           listElement.appendChild(listItem);
         }
       }
-      const loadData = async () => {
-  const response = await fetch("people.xml");
-  const str = await response.text();
-  const xmlData = new DOMParser().parseFromString(str, "text/xml");
-  displayData(xmlData);
-};
-
-loadData();
+      fetch("people.xml")
+  .then((response) => response.text())
+  .then((str) => new DOMParser().parseFromString(str, "text/xml"))
+  .then(displayData);
     </script>
   </body>
 </html>
