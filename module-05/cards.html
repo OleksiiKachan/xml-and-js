@@ -6,15 +6,19 @@
   <body>
     <ol id="cards"></ol>
     <script>
+
+      const xhr=(url,method=`GET`)=>
+      new Promise((resolve)=> {
       const xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-          displayData(this.responseXML);
+          resolve(this.responseXML);
         }
       };
-      xhttp.open("GET", "cards.xml", true);
+      xhttp.open(method, url);
       xhttp.send();
-
+    });
+    
       function stringToNode(html) {
         const template = document.createElement(`template`);
         html = html.trim();
@@ -67,6 +71,8 @@
           list.appendChild(cardElement);
         }
       }
+
+      xhr("cards.xml").then(displayData);
     </script>
   </body>
 </html>

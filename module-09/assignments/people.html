@@ -47,7 +47,32 @@
 
             }
         }
-        xhttp("people.xml").then(displayData);
+        //promise
+       // xhttp("people.xml").then(displayData); 
+    
+       //fetch promise
+       /*fetch("people.xml")
+         .then((data) => data.text())
+         .then((data) => {
+
+         const parser = new DOMParser();
+         const parsed = parser.parseFromString(data, `text/xml`);
+
+      });*/
+      
+    //fetch async
+       const main=async() =>{
+       const data =await fetch("people.xml");
+       const stringData=await data.text();
+       
+        const parser=new DOMParser();
+        const parsed=parser.parseFromString(stringData,'text/xml');
+
+        displayData(parsed);
+       
+       };
+
+       main();
     </script>
 </body>
 </html>
