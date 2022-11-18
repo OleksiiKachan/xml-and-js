@@ -1,23 +1,16 @@
-const xhr = (url, method='GET') => 
-  new Promise((resolve) => {
-    const xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        resolve(this.responseXML);
-      }
-    };
-    xhttp.open(method, url);
-    xhttp.send();
-  });
+fetch("people.xml")
+  .then((response) => response.text())
+  .then((str) => new DOMParser().parseFromString(str, "text/xml"))
+  .then(displayData);
 
-  function stringToNode(html){
+function stringToNode(html){
     const template = document.createElement(`template`);
     html = html.trim();
     template.innerHTML = html;
     return template.content.firstChild;
-  }
+}
 
-  function displayData(xmlDoc){
+function displayData(xmlDoc){
     const listElement = document.getElementById(`people`);
 
     const PersonInfoNodes = xmlDoc.getElementsByTagName(`PersonInfo`);
@@ -47,21 +40,3 @@ const xhr = (url, method='GET') =>
     listElement.appendChild(listItem);
     }
 }
-
-  xhr("people.xml").then(displayData);
-
-const main = async () => {
-
-    const result = await fetch("people.xml");
-    const data = await result.text();
-    
-    fetch("people.xml")
-    .then((result) => result.text())
-    .then((data) => displayData(data))
-  
-    const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(data, "text/xml")
-    displayData(xmlDoc);
-  }
-
-  main();
