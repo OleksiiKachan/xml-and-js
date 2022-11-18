@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="people_list"></ol>
+    <script>
+       
+          
+        function displayData(xmlDoc) {
+            const listElement = document.getElementById("people_list");
+
+            
+            const peopleNodes = xmlDoc.getElementsByTagName(`people`);
+
+            for(let index=0;index<peopleNodes.length;index++)
+            {
+                const people = peopleNodes[index];
+                const firstName = people.getElementsByTagName(`first_name`)[0].childNodes[0]
+                .nodeValue;
+                const lastName = people.getElementsByTagName(`last_name`)[0].childNodes[0]
+                .nodeValue;
+                const gender = people.getElementsByTagName(`gender`)[0].childNodes[0]
+                .nodeValue;
+                const email = people.getElementsByTagName(`email`)[0].childNodes[0]
+                .nodeValue;
+                const ipaddress = people.getElementsByTagName(`ip_address`)[0].childNodes[0]
+                .nodeValue;
+                
+
+                const htmlstring=`<ul><li><p><b>First name: </b>${firstName}</p></li>
+                <li><p><b>last name: </b>${lastName}</h3></p>
+                <li><p><b>Gender: </b>${gender}</h3></p>
+                <li><p><b>Email: </b>${email}</h3></p>
+                <li><p><b>Ip address: </b>${ipaddress}</p></li></ul><hr>`;
+            
+                const value= people_list.innerHTML + htmlstring;
+                people_list.innerHTML = value;
+            }
+     }
+
+           fetch("people.xml")
+            .then((response) => response.text())
+            .then((str) => new DOMParser().parseFromString(str, "text/xml"))
+            .then(displayData);
+
+    </script>
+</body>
+</html>
