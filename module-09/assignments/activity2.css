@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin-top: 60px;
+}
+
+div {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+h1 {
+    font-size: 40px;
+    color: #444;
+}
+
+li h1 {
+    font-size: 30px;
+}
+
+li p {
+    font-size: 30px;
+}
+
+table {
+    margin: 0 auto;
+}
+
+td table,
+td table {
+    margin: 0 !important;
+}
+
+table td {
+    padding: 4px 8px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #999;
+    border-collapse: collapse;
+}
+
+th {
+    color: white;
+    background-color: #999;
+}
+
+th,
+td {
+    padding: 4px 8px;
+}
