@@ -144,7 +144,7 @@ const data = [{
 }
 ]
 
-const values = data.flatMap((item) => item.data);
+/*const values = data.flatMap((item) => item.data);
 const trip = values.map((t) => {
     return t.trips
 });
@@ -153,4 +153,7 @@ const totaltrip = trip.reduce((accum, r) => {
 }, 0);
 
 console.log("**********Total Trips************")
-console.log(totaltrip);
+console.log(totaltrip);*/
+
+const total = data.data.reduce((acc, { trips }) => acc + trips, 0);
+console.log(total);

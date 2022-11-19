@@ -90,7 +90,7 @@ const data = [
         ]
     }
 ];
-
+/*
 const arr = data.filter((d) => d.isActive === true);
 console.log("******************Active Accounts****************");
 console.log(arr);
@@ -115,4 +115,21 @@ const acc_name = data.map((acc) => {
     return acc.name
 });
 console.log("******************Comma Seperated****************");
-console.log(acc_name);
+console.log(acc_name);*/
+
+const activeAcc = data.filter(({ isActive }) => isActive);
+console.log(activeAcc);
+
+const balance = data
+    .map(({ balance }) => balance)
+    .reduce((acc, value) => (acc > value ? acc : value), 0);
+console.log(balance);
+
+const friends = data
+    .map(({ friends }) => friends)
+    .flat()
+    .map(({ name }) => name);
+console.log(friends);
+
+const names = data.map(({ name }) => name).join(", ");
+console.log(names);
