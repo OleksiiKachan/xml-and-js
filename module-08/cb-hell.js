@@ -11,7 +11,7 @@ function timeout(ms, callback) {
       callback();
     }, ms);
   });
-}
+}z
 
 function generateRandomNumber() {
   return Math.floor(Math.random() * 40);

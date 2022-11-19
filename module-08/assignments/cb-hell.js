@@ -23,6 +23,7 @@ const timeout = async(ms) => {
 
 
 
+
  
 
 /*------------------------------------*/
@@ -37,6 +38,26 @@ const timeout = async(ms) => {
 const generateRandomNumber = async () => {
       await Math.floor(Math.random()*40);
 }
+
+
+
+/*------------------------------------------------------------*/
+
+const generateData2 = async () => {
+  await timeout(1000);
+
+  const data = await new Promise
+  Array.from({ length:20 }).map(() => generateRandomNumber());
+
+  console.log(data);
+
+};
+
+generateData2();
+
+
+/*------------------------------------------------------------*/
+
 
 /*------------------------------------*/
 
@@ -75,6 +96,20 @@ const convertToFeet = async(meters) => {
   }
 
 /*------------------------------------*/
+
+/*------------------------------------------------------------*/
+
+const convertToFeet2 = async (meters, callback) => {
+  const feet = meters * 3.2808;
+
+  await timeout(3500);
+  
+  return feet;
+};
+
+
+
+/*------------------------------------------------------------*/
 
 /*
 function processData(data, callback) {
@@ -118,12 +153,27 @@ const logResult = (meters, feet) => {
 }
 */
 
-const main = () => {
-    console.log("Start");
-    const data = generateData();
-    processData(data);
-    console.log("Finish");
 
+/*------------------------------------------------------------*/
+
+const logResult2
+
+
+
+/*------------------------------------------------------------*/
+
+
+
+
+const main = async() => {
+    console.log("Start");
+    const data = await generateData2();
+    const converted = await processData (data);
+    converted.map(({converted, original}) =>{
+      logResult(original, converted);
+    });
+
+    console.log("Finish");
 }
 
 main();
