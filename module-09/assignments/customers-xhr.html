@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="customers.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div id="customers"></div>
+    <script>
+      const displayData = (xml) => {
+        const rootList = document.getElementById("customers");
+        const customers = xml.getElementsByTagName("customer");
+
+        for (let i = 0; i < customers.length; i++) {
+          const customer = customers[i];
+          const title = customer
+            .getElementsByTagName("name")[0]
+            .getAttribute("title");
+          const name =
+            title +
+            " " +
+            customer.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+          const address =
+            customer.getElementsByTagName("address")[0].childNodes[0].nodeValue;
+          const phone =
+            customer.getElementsByTagName("phone")[0].childNodes[0].nodeValue;
+          let email = "";
+          if (customer.getElementsByTagName("email")[0]) {
+            email =
+              customer.getElementsByTagName("email")[0].childNodes[0].nodeValue;
+          }
+          const ordersTable = createTable(
+            customer.getElementsByTagName("order")
+          );
+          let customerDiv = `<div><h1>${name}</h1>
+                            <address>${address}</address>
+                            <a href="tel:+1 ${phone}" class="fa fa-phone">   ${phone}</a></br>`;
+          if (email) {
+            customerDiv += `<a href="mailto:${email}" class="fa fa-envelope">   ${email}</a>`;
+          }
+          customerDiv += `${ordersTable}</div>`;
+          customerDiv = stringToNode(customerDiv);
+          rootList.appendChild(customerDiv);
+        }
+      };
+
+      function createTable(orders) {
+        let html = `<table border="1"> 
+                                <tr bgcolor="#9acd32">
+                                    <th>Order ID</th>
+                                    <th>Order by</th>
+                                    <th>Order date</th>
+                                    <th>Items</th>
+                                </tr>`;
+        for (let i = 0; i < orders.length; i++) {
+          const order = orders[i];
+          const orderID = order.getAttribute("orderID");
+          const orderBy = order.getAttribute("orderBy");
+          const orderDate =
+            order.getElementsByTagName("orderDate")[0].childNodes[0].nodeValue;
+          const items = createItemsList(order.getElementsByTagName("item"));
+          html += `<tr>
+                                <td>${orderID}</td>
+                                <td>${orderBy}</td>
+                                <td>${orderDate}</td>
+                                <td>${items}</td>
+                            </tr>`;
+        }
+
+        html += `</table>`;
+        return html;
+      }
+
+      function createItemsList(items) {
+        let html = "<ol>";
+        for (let i = 0; i < items.length; i++) {
+          const item = items[i];
+          const itemPrice =
+            item.getElementsByTagName("itemPrice")[0].childNodes[0].nodeValue;
+          const itemQty =
+            item.getElementsByTagName("itemQty")[0].childNodes[0].nodeValue;
+          html += `<li>${itemPrice}</br>${itemQty} pc.</li>`;
+        }
+        html += "</ol>";
+        return html;
+      }
+
+      function stringToNode(html) {
+        const temp = document.createElement("temp");
+        temp.innerHTML = html;
+        return temp.firstChild;
+      }
+
+      const xhr = (url, method = "GET") => {
+        return new Promise((resolve) => {
+          const xhttpr = new XMLHttpRequest();
+          xhttpr.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                resolve(this);
+            }
+          };
+          xhttpr.open(method, url, true);
+          xhttpr.send();
+        });
+      };
+
+      xhr("customers.xml").then((data) => displayData(data.responseXML));
+    </script>
+  </body>
+</html>
