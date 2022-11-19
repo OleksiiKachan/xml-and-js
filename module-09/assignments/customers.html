@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Customers</title>
+    <style>
+      .customer p + p {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      #customers {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .card {
+        width: 300px;
+        border: 1px solid lightblue;
+        border-radius: 16px;
+        padding: 16px;
+        margin: 8px;
+      }
+
+      .card .id {
+        font-weight: bold;
+        padding-bottom: 16px;
+        border-bottom: 1px lightgray solid;
+      }
+
+      .card .customer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card .customer p {
+        padding: 4px;
+        text-align: center;
+      }
+
+      .card .customer .circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50px;
+        background-color: lightblue;
+      }
+
+      .card .customer .name {
+        font-weight: bold;
+      }
+
+      .card .customer .id {
+        align-self: stretch;
+        margin-top: 0;
+      }
+
+      .orders .items {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+
+      .orders .items > p:nth-child(-n + 3) {
+        border-bottom: 1px solid lightgray;
+      }
+
+      .orders .items .info > p {
+        margin: 0;
+      }
+
+      .orders .order {
+        text-align: left;
+      }
+
+      .orders .order > p {
+        margin: 0;
+        padding-top: 4px;
+      }
+
+      .orders .order > p:first-child {
+        font-weight: bold;
+      }
+
+      .ordersTitle {
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        border-bottom: 1px solid lightgray;
+      }
+
+      .item_num {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="customers"></div>
+    <script src="customers-fetch-async.js"></script>
+    <!-- <script src="customers-fetch-then.js"></script> -->
+    <!-- <script src="customers-promise.js"></script> -->
+  </body>
+</html>
