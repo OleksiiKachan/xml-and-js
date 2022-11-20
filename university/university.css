@@ -1,0 +1,22 @@
+.list{
+    background-color: rgb(149, 177, 201);
+    border-radius: 10%;
+    padding: 3rem 0;
+    margin-bottom: 5rem;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+table, th, td{
+    border: 1px solid black;
+}
+
+th,td{
+    padding: 4px;
+}
