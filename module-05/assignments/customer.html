@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="assignment.css" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Customers</title>
 </head>
 <body>
-    <h2>Customer Information</h2>
-    <ol id="customers"></ol>
+    <h1>Customer Details</h1>
+    <ol id="customerList"></ol>
     <script>
-        const xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     displayData(this.responseXML);
                 }
             };
-
-      xhr.open("GET", "../customers.xml", true);
-      xhr.send();
+      xhttp.open("GET", "customers.xml", true);
+      xhttp.send();
         function displayData(xmlDoc) {
-            const list = document.getElementById("customers");
-            const customersNodes = xmlDoc.getElementsByTagName(`customer`);
+            const list = document.getElementById("customerList");
+            const zooNodes = xmlDoc.getElementsByTagName(`customer`);
             for(let index=0;index<customersNodes.length;index++)
             {
                 const customerDetails = customersNodes[index];
                 const custID = customerDetails.getAttribute(`custID`);
                 const title = customerDetails.getElementsByTagName(`name`)[0].getAttribute(`title`);
-                const firstName = customerDetails.getElementsByTagName(`name`)[0].childNodes[0]
+                const name = customerDetails.getElementsByTagName(`name`)[0].childNodes[0]
                 .nodeValue;
                 const address = customerDetails.getElementsByTagName(`address`)[0].childNodes[0]
                 .nodeValue;
@@ -45,31 +45,30 @@
                 if(customerDetails.getElementsByTagName(`email`)[0]!= null)
                      Email = customerDetails.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
                 else
-                    Email = "Email not provided";
-
-                const htmlstring=
-                `<h3>Customer - ${index+1}</h3>
-                <ul>
-                    <li><p><b>Customer ID: </b>${custID}</p></li>
-                    <li><p><b>Name: </b>${title+ " " + firstName}</p></li>
-                    <li><p><b>Address: </b>${address}</p></li>
-                    <li> <p><b>Phone: </b>${phone}</p></li>
-                    <li> <p><b>Email: </b>${Email}</p></li>
-                    
-                    <li> <p><b>Orders: </b> 
-                        <p>  Order Id:  ${orderID}</p>
-                        <p>  Order By:  ${orderBy}</p>
-                        <p>  Order Date:  ${orderdate}</p>
+                    Email = "Not Gievm";
+                const htmlstring=`<h3>Customer: ${index +1}</h3>
+                <div>
+                     <h2>Customer ID: ${custID}</h2>
+                     <h2>Name: ${title+ " " + name}</h2>
+                     <p>Address: ${address}</p>
+                     <p>Phone: ${phone}</p>
+                     <p>Email: ${Email}</p>
+                     <p>Orders:  
+                        <ul>
+                        <li><p>  Order Id:  ${orderID}</p></li>
+                        <li><p>  Order By:  ${orderBy}</p></li>
+                        <li><p>  Order Date:  ${orderdate}</p></li>
+                        </ul>
+                        </p>
                         <p>
-                            <li> <b>Items: </b></li>
-                                <ul style="circle">
+                         Items: 
+                                <ul style="star">
                                     <li> <p> itemsPrice:  ${itemprice}</li></p>
                                     <li> <p>  itemsQty:  ${itemqty}</p>  </li>
                                 </ul>
                         </p>
                     </li>
-                </ul><hr>`;
-
+                </div>`;
                 const value= list.innerHTML + htmlstring;
                 list.innerHTML = value;
             }

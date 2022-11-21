@@ -6,3 +6,9 @@
   - Using fetch API with .then()
   - Using fetch API with async/await
 - Attach screenshots of the output in your terminal
+
+![Alt text](../../../../../../C:/Users/Admin/xml-and-js/module-09/assignments/Assets/XHRoutput.PNG)
+
+![Alt text](../../../../../../C:/Users/Admin/xml-and-js/module-09/assignments/Assets/FetchOutput.PNG)
+
+![Alt text](../../../../../../C:/Users/Admin/xml-and-js/module-09/assignments/Assets/FetchAsyncOutput.PNG)
