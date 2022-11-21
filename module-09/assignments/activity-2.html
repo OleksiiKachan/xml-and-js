@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Data About Person!</h1>
+    <ol id="people"></ol>
+    <script>
+
+        const xhttp=(url,method=`GET`)=>
+        new Promise((resolve)=> {
+        const xhr=new XMLHttpRequest();
+        xhr.onreadystatechange=function(){
+            if(this.readyState===4 && this.status===200){
+                resolve(this.responseXML);
+            }
+        };
+        xhr.open(method,url);
+        xhr.send();
+    });
+
+        function stringToNode(html){
+            const template=document.createElement('template');
+            html=html.trim();
+            template.innerHTML=html;
+            return template.content.firstChild;
+        }
+
+        function displayData(xmlDoc){
+            const listPeople =document.getElementById('people');
+
+            const personDetailParse=xmlDoc.getElementsByTagName('people');
+
+            for(let index=0; index < personDetailParse.length;index++){
+                 const personParse =personDetailParse[index];
+                 const listPerson=stringToNode(`<li> 
+                    <h2> ${personParse.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue}
+                     ${personParse.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue}</h2>
+                     <p>${personParse.getElementsByTagName(`email`)[0].childNodes[0].nodeValue}</p>
+                     <p>${personParse.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue}</p>
+                     <p>${personParse.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue}</p>
+                      </li> `);
+                     listPeople.appendChild(listPerson);
+
+            }
+        }
+
+        fetch("people.xml")
+        .then((data) => data.text())
+         .then((data) => {
+
+         const parser = new DOMParser();
+         const parsed = parser.parseFromString(data, `text/xml`);
+
+         displayData(parsed);
+
+      });
+    </script>
+</body>
+</html>

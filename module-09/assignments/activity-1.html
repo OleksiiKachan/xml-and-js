@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Data About Customers!</h2>
+    <ol id="customers"></ol>
+    <script>
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    displayData(this.responseXML);
+                }
+            };
+      xhr.open("GET", "customers.xml", true);
+      xhr.send();
+        function displayData(xmlDoc) {
+            const list = document.getElementById("customers");
+            const customersNodes = xmlDoc.getElementsByTagName(`customer`);
+            for(let index=0;index<customersNodes.length;index++)
+            {
+                const custParse = customersNodes[index];
+                const customerId = custParse.getAttribute(`custID`);
+                const customerTitle = custParse.getElementsByTagName(`name`)[0].getAttribute(`title`);
+                const customerFirstName = custParse.getElementsByTagName(`name`)[0].childNodes[0]
+                .nodeValue;
+                const customerAddress = custParse.getElementsByTagName(`address`)[0].childNodes[0]
+                .nodeValue;
+                const customerPhone = custParse.getElementsByTagName(`phone`)[0].childNodes[0]
+                .nodeValue;
+                const customerOrderDate = custParse.getElementsByTagName(`orderDate`)[0].childNodes[0]
+                .nodeValue;
+                const customerOrderId = custParse.getElementsByTagName(`order`)[0].getAttribute(`orderID`);
+                const customerOrderBy = custParse.getElementsByTagName(`order`)[0].getAttribute(`orderBy`);
+                const customerItemPrice = custParse.getElementsByTagName(`itemPrice`)[0].childNodes[0]
+                .nodeValue;
+                const customerItemQty = custParse.getElementsByTagName(`itemQty`)[0].childNodes[0]
+                .nodeValue;
+                var customerEmail = "";
+                if(custParse.getElementsByTagName(`email`)[0]!= null)
+                     customerEmail = custParse.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+                else
+                    customerEmail = "Email not provided";
+                const htmlCustomers=
+                `<h3>Customer - ${index+1}</h3>
+                <ul>
+                    <li><p><b>Customer ID: </b>${customerId}</p></li>
+                    <li><p><b>Name: </b>${customerTitle+ " " + customerFirstName}</p></li>
+                    <li><p><b>Address: </b>${customerAddress}</p></li>
+                    <li> <p><b>Phone: </b>${customerPhone}</p></li>
+                    <li> <p><b>Email: </b>${customerEmail}</p></li>
+                    <li> <p><b>Orders: </b>
+                        <p>  Order Id:  ${customerOrderId}</p>
+                        <p>  Order By:  ${customerOrderBy}</p>
+                        <p>  Order Date:  ${customerOrderDate}</p>
+                        <p>
+                            <li> <b>Items: </b></li>
+                                <ul style="circle">
+                                    <li> <p> itemsPrice:  ${customerItemPrice}</li></p>
+                                    <li> <p>  itemsQty:  ${customerItemQty}</p>  </li>
+                                </ul>
+                        </p>
+                    </li>
+                </ul><hr>`;
+                const log= list.innerHTML + htmlCustomers;
+                list.innerHTML = log;
+            }
+        }
+    </script>
+</body>
+</html>
