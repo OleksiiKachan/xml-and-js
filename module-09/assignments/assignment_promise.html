@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <ul id="customers"></ul>
+        <script>
+
+            function stringToNode(html) {
+            const template = document.createElement(`template`);
+            html = html.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+            }
+
+            function displayData(xmlDoc) {
+                const listElement = document.getElementById(`customers`);
+
+                const customerNodes = xmlDoc.getElementsByTagName("customer");
+
+                for (let index = 0; index <= customerNodes.length; index++) {
+                    const customer = customerNodes[index];
+
+                    const listItem = document.createElement(`li`);
+
+                    const title = document.createElement(`h2`);
+                    title.appendChild(
+                        document.createTextNode(
+                            customer.getAttribute(`custID`)+
+                                ` - ` +
+                                customer.getElementsByTagName("name")[0].getAttribute (`title`)+
+                                    ` `+
+                                    customer.getElementsByTagName("name")[0].childNodes[0]
+                                        .nodeValue
+                        )
+                    );
+                    listItem.appendChild(title);
+
+                    const address = document.createElement(`p`);
+                    address.appendChild(
+                        document.createTextNode(
+                            `Address: ` + 
+                                customer.getElementsByTagName("address")[0].childNodes[0]
+                                    .nodeValue
+                        )
+                    );
+                    listItem.appendChild(address);
+
+                    const phone = document.createElement(`p`);
+                    phone.appendChild(
+                        document.createTextNode(
+                            `Phone: ` +
+                                customer.getElementsByTagName("phone")[0].childNodes[0]
+                                    .nodeValue
+                        )
+                    );
+                    listItem.appendChild(phone);
+
+                    const email = document.createElement(`p`);
+                    if (customer.getElementsByTagName("email")[0]==null)
+                    {
+                        email.appendChild(
+                            document.createTextNode(
+                                `Email: N/A`
+                            )
+                        );
+                    }
+                    else
+                    {
+                        email.appendChild(
+                            document.createTextNode(
+                                `Email: ` +
+                                    customer.getElementsByTagName("email")[0].childNodes[0]
+                                        .nodeValue
+                            )
+                        );
+                    }
+                    listItem.appendChild(email);
+
+                    const orderID = document.createElement(`p`);
+                    orderID.appendChild(
+                        document.createTextNode(
+                            `Order ID: ` +
+                                customer.getElementsByTagName("order")[0].getAttribute(`orderID`)  
+                        )
+                    );
+                    listItem.appendChild(orderID);
+
+                    const orderBy = document.createElement(`p`);
+                    orderBy.appendChild(
+                        document.createTextNode(
+                            `Order By: ` +
+                                customer.getElementsByTagName("order")[0].getAttribute (`orderBy`)
+                        )
+                    );
+                    listItem.appendChild(orderBy);
+
+                    const orderDate = document.createElement(`p`);
+                    orderDate.appendChild(
+                        document.createTextNode(
+                            `Order Date: `+
+                                customer.getElementsByTagName("orderDate")[0].childNodes[0]
+                                    .nodeValue
+                        )
+                    );
+                    listItem.appendChild(orderDate);
+
+                    const itemPrice = document.createElement(`p`);
+                    itemPrice.appendChild(
+                        document.createTextNode(
+                            `Item Price: ` +
+                                customer.getElementsByTagName("itemPrice")[0].childNodes[0]
+                                    .nodeValue
+                        )
+                    );
+                    listItem.appendChild(itemPrice);
+
+                    const itemQty = document.createElement(`p`);
+                    itemQty.appendChild(
+                        document.createTextNode(
+                            `Item Qty: ` +
+                                customer.getElementsByTagName("itemQty")[0].childNodes[0]
+                                    .nodeValue
+                        )
+                    );
+                    listItem.appendChild(itemQty);
+
+                    listElement.appendChild(listItem);
+                }
+            }
+            
+            fetch("customers.xml")
+                .then((response) => response.text())
+                .then((str) => new DOMParser().parseFromString(str, "text/xml"))
+                .then(displayData);
+        </script>
+    </body>
+</html> 
