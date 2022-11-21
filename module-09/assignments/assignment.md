@@ -6,3 +6,13 @@
   - Using fetch API with .then()
   - Using fetch API with async/await
 - Attach screenshots of the output in your terminal
+
+
+-- Output using promisified XHR
+![image_info](output-xhr.png)
+
+-- Output using fetch
+![image_info](output-fetch.png)
+
+-- Output using fetch with async/await
+![image_info](output-fetch-async.png)
