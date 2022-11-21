@@ -81,18 +81,17 @@
         }
       }
 
-      xhr("activity1.xml").then(displayData);
+      //xhr("activity1.xml").then(displayData);
 
-      //       const main = async () => {
-      //   const data = await fetch("cards.xml");
-      //   const stringData = await data.text();
+      const main = async () => {
+        const data = await fetch("cards.xml");
+        const stringData = await data.text();
 
-      //   const parser = new DOMParser();
-      //   const parsed = parser.parseFromString(stringData, 'text/html');
+        const parser = new DOMParser();
+        const parsed = parser.parseFromString(stringData, "text/html");
 
-      //   displayData(parsed);
-
-      // };
+        displayData(parsed);
+      };
     </script>
   </body>
 </html>
