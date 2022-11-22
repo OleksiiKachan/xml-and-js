@@ -6,3 +6,6 @@
   - Using fetch API with .then()
   - Using fetch API with async/await
 - Attach screenshots of the output in your terminal
+- ![image](XHR.png)
+- ![image](fetch_then.png)
+- ![image](async_await.png)

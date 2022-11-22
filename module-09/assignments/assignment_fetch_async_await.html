@@ -1,0 +1,80 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <ol id="record"></ol>
+        <script>
+            
+
+            function displayData(xmlDoc){
+                const record = xmlDoc.getElementsByTagName("customer");
+
+                const list = document.getElementById(`record`);
+
+                for(let index = 0; index < record.length; index++){
+                    const element = record[index];
+                    const parsedCustomer = parseCustomer(element);
+
+                    const customerElement = createCustomer(parsedCustomer);
+                    list.appendChild(customerElement);
+                }
+            }
+
+            function parseCustomer(xml){
+                const name = xml.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+                const address = xml.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+                const phone = xml.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+                var email = "";
+                if(xml.getElementsByTagName(`email`)[0] != null)
+                    email = xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+                else
+                    email = " ";
+                const orderID = xml.getElementsByTagName(`order`)[0].getAttribute(`orderID`);
+                const orderDate = xml.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
+                const itemprice = xml.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
+                const itemqty = xml.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
+
+                return {name,address,phone,email,orderID,orderDate,itemprice,itemqty};
+            }
+            function stringToNode(html){
+                const template = document.createElement("template");
+                html = html.trim();
+                template.innerHTML = html;
+                return template.content.firstChild;
+            }
+            function createCustomer(customer){
+                const content = `<li>
+                    <article>
+                        <h2>Name: ${customer.name}</h2>
+                        <p>Address: ${customer.address}</p>
+                        <p>Phone: ${customer.phone}</p>
+                        <p>e-mail: ${customer.email}</p>
+                        <ul>
+                            <article>
+                                <h3>Orders</h3>
+                            <li>                               
+                                <p>Order ID: ${customer.orderID}</p>
+                                <p>Order Date: ${customer.orderDate}</p>
+                                <p>Item Price: ${customer.itemprice}</p>
+                                <p>Item Quantity: ${customer.itemqty}</p>
+                            </li>
+                            </article>
+                        </ul>
+                    </artcile>
+                    </li>`;
+                return stringToNode(content);
+            }
+            const main = async () => {
+        const result = await fetch('customers.xml')
+        const data = await result.text()
+        const parser = new DOMParser()
+        const parsed = parser.parseFromString(data,'text/xml');
+        displayData(parsed);
+      }
+
+      main();
+        </script>
+
+    </body>
+</html>
