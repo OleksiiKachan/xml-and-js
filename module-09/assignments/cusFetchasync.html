@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <ol id="customer"></ol>
+    <script>
+   
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function Item(xmlDoc) {
+        const list = document.getElementById(`customer`);
+
+        const customerNodes = xmlDoc.getElementsByTagName(`customer`);
+        for (let index = 0; index < customerNodes.length; index++) {
+          const customer = customerNodes[index];
+          console.log(customer.getElementsByTagName(`order`))
+          const Item = stringToNode(`<li>
+            <h2>${
+                customer.getElementsByTagName(`name`)[0].attributes[0]
+              .nodeValue
+            } ${
+            customer.getElementsByTagName(`name`)[0].childNodes[0]
+              .nodeValue
+          }</h2>
+          <p> Customer_Address: ${customer.getElementsByTagName(`address`)[0].childNodes[0].nodeValue} </p>
+          <p> Customer_phone: ${customer.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue} </p>
+          <p>${`Customer_Email: ${
+            customer.getElementsByTagName(`email`)[0] ? customer.getElementsByTagName(`email`)[0].childNodes[0].nodeValue : ""
+          }`}</p>
+          <ul id="${customer.getAttribute('custID')}"><p>Order_Detail:</p> </ul> 
+          </li>`);
+          list.appendChild(Item);
+        }
+       Order(xmlDoc)
+      }
+      
+      function Order(xmlDoc) {
+        const order = xmlDoc.getElementsByTagName(`order`);
+        for (let index = 0; index < order.length; index++) {
+            const orders = order[index];
+            console.log(orders.getElementsByTagName(`items`)[0].children[0].getElementsByTagName('itemPrice')[0].childNodes[0].nodeValue)
+          const OElement = document.getElementById(`${ orders.getAttribute('orderBy')}`);
+          const orderItems = stringToNode(`
+          <li>
+           Date: ${orders.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue} 
+           Price: ${orders.getElementsByTagName(`items`)[0].children[0].getElementsByTagName('itemPrice')[0].childNodes[0].nodeValue} 
+           Qty: ${orders.getElementsByTagName(`items`)[0].children[0].getElementsByTagName('itemQty')[0].childNodes[0].nodeValue} 
+          </li>`);
+          OElement.appendChild(orderItems);
+        }
+      }
+      const load = async () => {
+        const detail = await fetch("customer.xml");
+        const data = await detail.text();
+        const xmldata = new DOMParser().parseFromString(data, "text/xml");
+        Item(xmldata);
+        };
+
+        load();
+    </script>
+  </body>
+</html>
