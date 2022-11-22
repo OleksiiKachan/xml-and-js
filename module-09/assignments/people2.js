@@ -49,19 +49,3 @@ const xhr = (url, method='GET') =>
 }
 
   xhr("people.xml").then(displayData);
-
-// const main = async () => {
-
-//     const result = await fetch("people.xml");
-//     const data = await result.text();
-    
-//     fetch("people.xml")
-//     .then((result) => result.text())
-//     .then((data) => displayData(data))
-  
-//     const parser = new DOMParser();
-//     const xmlDoc = parser.parseFromString(data, "text/xml")
-//     displayData(xmlDoc);
-//   }
-
-//   main();

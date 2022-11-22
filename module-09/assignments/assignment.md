@@ -6,3 +6,6 @@
   - Using fetch API with .then()
   - Using fetch API with async/await
 - Attach screenshots of the output in your terminal
+
+![validation](./validation.PNG)
+![browser_window](./validation2.PNG)
