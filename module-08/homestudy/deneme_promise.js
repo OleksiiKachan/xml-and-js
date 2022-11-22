@@ -15,7 +15,7 @@ const checkIfExists = (filename) => //filename içine alan promise yazıyoruz
 const checkIfFile = (filename) =>       //file mi kontrol ediyoruz
   new Promise((resolve, reject) => {    // kontrol ederken promise yazıyoruz
     fs.stat(filename, (err, stats) => { //dosyanın detaylarını iste
-      if (err) {                        // hafat varsa hata fırlat
+      if (err) {                        // hata varsa hata fırlat
         reject(err);
       }
       if (stats.isFile()) {             // bir dosya ise dosyayı dön

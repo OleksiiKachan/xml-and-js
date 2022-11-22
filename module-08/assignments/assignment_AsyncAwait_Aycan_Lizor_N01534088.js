@@ -65,7 +65,8 @@ const { resolve } = require("path");
 
   //-------------------------------------------------------------------------------
       
-    const processData = async (data) => await Promise.all(data.map((meters) => convertToFeet(meters).then((feet) => logResult(meters,feet))));
+    const processData = async (data) => 
+    await Promise.all(data.map((meters) => convertToFeet(meters).then((feet) => logResult(meters,feet))));
       
    //------------------------------------------------------------------------------ 
    

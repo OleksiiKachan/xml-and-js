@@ -31,11 +31,13 @@ function convertToFeet(meters, callback) {
   });
 }
 
+
 function processData(data, callback) {
   data.map(function (value) {
     callback(value);
   });
 }
+
 
 function logResult(meters, feet) {
   console.log(`Converted ${meters}m to ${feet}ft`);
