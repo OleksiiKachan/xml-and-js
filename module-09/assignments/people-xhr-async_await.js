@@ -11,11 +11,12 @@ const xhr = (url, method = 'GET') =>
             });
 
 
-            function displayData(xml) {
+            function displayData(xmlDoc) {
                 const listElement = document.getElementById(`people`);
 
-                const xmlDoc = xml.responseXML;
-                console.log(xml);
+                //const xmlDoc = xml.responseXML;
+                //console.log(xmlDoc);
+
                 const peopleNodes = xmlDoc.getElementsByTagName(`person`);
 
                 for (let index = 0; index < peopleNodes.length; index++) {
@@ -43,18 +44,29 @@ const xhr = (url, method = 'GET') =>
         
 
 //xhr
-xhr("people.xml").then((value) => displayData(value));
+//xhr("people.xml").then((value) => displayData(value));
+
+
+//fetch
+/*fetch ("people.xml")
+.then((value)=> value.text())
+.then((value)=> {
+  const parser = new DOMParser();
+  const parsed = parser.parseFromString(value, 'text/xml');
+  displayData(parsed);
+
+});*/
 
 
 
-/*const main = async() => {
+async function getResponse() {
+	const response = await fetch('people.xml');
+    var data1 = await response.text();
 
-const data = await fetch("people.http");
-const stringData = await data.text();
-
-    const parser = new DOMParser();
-    const parsed = parser.parseFromString(data, `text/xml`);
+    console.log(data1);
+	const parser = new DOMParser();
+    const parsed = parser.parseFromString(data1, 'text/xml');
     displayData(parsed);
-};
+}
 
-main();*/
+getResponse();
