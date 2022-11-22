@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 
-
-<!-----Http Request oluştur, dikkat et id istediğini ver ama aşğıda kullanacaksın unutma----------------->   
-    <ol id="customers"></ol> 
-    <script>
-        const xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                displayData(this.responseXML);
-                }
-            };
-            xhttp.open("GET", "customers.xml", true);
-            xhttp.send();
 
 ///--------------------------------------------------------------------------------------------////
 
@@ -84,9 +63,10 @@ function parseCard(xml) {    //Burada aslında 2.step başlıyor, dataları okum
                                         //şekil almış parsecard fonksiyonunda geçmiş her bir element.
         }
       }
-    </script>
-    
-  </body>
-  </html>                          
-                                    
 
+fetch("Assignment_Aycan_Lizor.xml")
+  .then((response) => response.text())
+  .then((str) => new DOMParser().parseFromString(str, "text/xml"))
+  .then(displayData);
+
+    
