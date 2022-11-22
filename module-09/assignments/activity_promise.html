@@ -77,19 +77,6 @@
 
         xhr("people.xml").then(displayData);
 
-
-
-    const main = async () => {
-        const result = await fetch("people.xml");
-        const stringData = await result.text();
-
-        const parser  = new DOMParser();
-        const parsed = parser.parseFromString(stringData, `text/xml`);
-        displayData(parsed);
-    };
-    main();
-
-
     </script>
 
 </body>
