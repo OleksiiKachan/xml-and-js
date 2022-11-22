@@ -27,3 +27,6 @@ console.log(pilots);
 const empire = pilots.filter((pilot) => pilot.faction === "Empire");
 
 console.log(empire);
+
+const empire_name = empire.map(({name}) => name);
+console.log(empire_name);

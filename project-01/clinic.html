@@ -3,20 +3,55 @@
 
 <head>
     <title>Clinic</title>
+    <style>
+        h1{
+            font-family: calibri;
+            font-weight: bold;
+            font-size: 50px;
+        }
+        p{
+            font-family: calibri;
+        }
+        #cid,#add{
+            margin-left:45px;
+        }
+        li{
+            list-style-type: none;
+            padding: 5px;
+            margin-bottom: 5px;
+            width: 40%;
+            border: 1px solid black;
+            border-radius: 8%;
+            background-color: lightgoldenrodyellow;
+            }
+        article{
+            display: flex;
+            flex-direction: column;
+            width:80%;
+            border: 1px solid black;
+            border-radius: 10%;
+            padding-left: 10px;
+            align-items: center;        
+        }
+        #emp{
+            width:40%;
+            margin-left:30px;
+            margin-bottom: 5px;
+        }
+        h3{
+            margin:0;
+            padding:0;
+            font-family: cambria;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
-
-    <div id="clinics">
-
-    </div>
-    <div id="emps">
-
-    </div>
-    <div id="drugs">
-
-    </div>
-
+    <h1>Clinics</h1>
+    <ol id="clinics"></ol>
     <script>
         const xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
@@ -41,9 +76,9 @@
 
                 `<li>
                     <artcile>
-                        <p>${clinic.id}</p>
-                        <p>Address: ${clinic.address}</p>
-                        <article>
+                        <p id="cid">${clinic.id}</p>
+                        <p id="add">Address: ${clinic.address}</p>
+                        <article id="emp">
                             <h3>Employees</h3>
                             <p>${clinic.emp}</p>
                         </article>
@@ -72,18 +107,14 @@
 
             for (let index = 0; index < xml.getElementsByTagName(`drug`).length; index++) {
                 var drug = drug +
-                    xml.getElementsByTagName(`manufacturer`)[index].childNodes[0].nodeValue + " " +
-                    xml.getElementsByTagName(`brand`)[index].childNodes[0].nodeValue + "  " +
-                    xml.getElementsByTagName(`name`)[index].childNodes[0].nodeValue + "  " +
-                    xml.getElementsByTagName(`code`)[index].childNodes[0].nodeValue + "  " +
-                    xml.getElementsByTagName(`diagnosisCode`)[index].childNodes[0].nodeValue + "  " +
-                    xml.getElementsByTagName(`diagnosisDescription`)[index].childNodes[0].nodeValue + "  " +
-                    xml.getElementsByTagName(`qty`)
-                    + "<br>";
+                    "Manufacturer: " +xml.getElementsByTagName(`manufacturer`)[index].childNodes[0].nodeValue + "<br>" +
+                    "Brand: " + xml.getElementsByTagName(`brand`)[index].childNodes[0].nodeValue + "<br>" +
+                    "Name: " + xml.getElementsByTagName(`name`)[index].childNodes[0].nodeValue + "<br>" +
+                    "Code: " + xml.getElementsByTagName(`code`)[index].childNodes[0].nodeValue + "<br>" +
+                    "Diagnosis Code: " + xml.getElementsByTagName(`diagnosisCode`)[index].childNodes[0].nodeValue + "<br>" +
+                    "Description: " + xml.getElementsByTagName(`diagnosisDescription`)[index].childNodes[0].nodeValue + "<br>" +
+                    "Quantity: " +xml.getElementsByTagName(`qty`)[index].childNodes[0].nodeValue + "<br><br>";
             }
-
-
-
             return { id, address, emp, drug };
 
         }
