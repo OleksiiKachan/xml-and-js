@@ -6,3 +6,8 @@
   - Using fetch API with .then()
   - Using fetch API with async/await
 - Attach screenshots of the output in your terminal
+
+-Customers_Async
+![Alt text](../../../../../../C:/Users/Finicky/xml-and-js/module-09/assets/customers_async.png)
+
+
