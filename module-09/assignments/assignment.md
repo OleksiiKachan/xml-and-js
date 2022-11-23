@@ -6,3 +6,7 @@
   - Using fetch API with .then()
   - Using fetch API with async/await
 - Attach screenshots of the output in your terminal
+
+![image info](../assignments/assignment1_1.png)
+![image info](../assignments/assignment1_2.png)
+![image info](../assignments/assignment1_3.png)
