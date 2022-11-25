@@ -26,7 +26,7 @@ const checkIfFile = (filename) =>       //file mi kontrol ediyoruz
     });
   });
 
-const readFile = (filename) => //dosyayı okumak için ynei pormise yarat
+const readFile = (filename) => //dosyayı okumak için yeni promise yarat
   new Promise((resolve, reject) => {
     fs.readFile(filename, null, (err, data) => { //dosya okurken hata varsa
       if (err) {                                    // hata fırlat

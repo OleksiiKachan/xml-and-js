@@ -37,8 +37,7 @@ console.log(empire_1);
 
 console.log(`using .reduce()`);
 
-const { rebels, empire } = pilots.reduce(
-  (accum, pilot) => {
+const { rebels, empire } = pilots.reduce((accum, pilot) => {
     if (pilot.faction === "Rebels") {
       accum.rebels.push(pilot);
     } else if (pilot.faction === "Empire") {
@@ -62,4 +61,14 @@ const nameArray = pilots
 .map(({name}) =>name);
 
 console.log(nameArray)
+
+const names= pilots.reduce((acc, {name}) =>{
+  if(acc.length >0){
+   return acc + ","+ name ;
+  } else{
+   return name;
+  }
+ });
+ 
+ console.log(names);
 

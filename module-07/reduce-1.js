@@ -46,7 +46,7 @@ const names= pilots.reduce((acc, {name}) =>{
  } else{
   return name;
  }
-}, "");
+});
 
 console.log(names);
 

@@ -36,12 +36,18 @@ const avg = (a, b) => new Promise((resolve) => {
 })
 
 const obj = {
+  
   name: "Marcus Aurelius",
+  
   split(sep = " ") {
     //return this.name.split(sep);
     return new Promise((resolve) => wait().then(() => resolve(this.name.split(sep))))
   },
+
+  
 };
+
+
 
 class Person {
   constructor(name) {
