@@ -1,5 +1,5 @@
-const clientId = `a5f261df31334b54bbdaf6a8cf18327d`;
-const clientSecret = `72dce1229f33421988f780a020f146cb`;
+const clientId = `b3020bc784724058aa5cf908b9ea35ce`;
+const clientSecret = `e824daf196c648ce8f68338e20b4c2b6`;
 
 const getToken = async () => {
   const result = await fetch("https://accounts.spotify.com/api/token", {
@@ -47,7 +47,7 @@ const loadGenres = async () => {
   const token = await getToken();
   const genres = await getGenres(token);
   const list = document.getElementById(`genres`);
-  genres.map(async ({ name, id, icons: [icon], href }) => {
+  genres.map(async ({ name, id, icons: [icon]}) => {
     const playlists = await getPlaylistByGenre(token, id);
     const playlistsList = playlists
       .map(
@@ -62,8 +62,8 @@ const loadGenres = async () => {
 
     if (playlists) {
       const html = `
-      <article class="genre-card">
-        <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
+      <article>
+        <img id="mainImage" src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
         <div>
           <h2>${name}</h2>
           <ol>
@@ -78,3 +78,4 @@ const loadGenres = async () => {
 };
 
 loadGenres();
+getTrackByPlayList();

@@ -1,32 +1,42 @@
-.genre-card {
+article {
   max-width: 100%;
   overflow: hidden;
-  display: flex;
-  background-color: #4daf64;
-  color: white;
+  background-color: #99EDC3 ;
+}
+#mainImage{
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
-.genre-card:not(:last-child) {
+article:not(:last-child) {
   margin-bottom: 15px;
 }
 
-.genre-card > div {
+article > div {
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
-.genre-card > div > a {
-  color: white;
+article > div > h2 {
+  color: red;
+  text-align: center;
   font-weight: bold;
+  font-size: 30px;
 }
 
 ol {
-  list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   overflow: auto;
   max-width: 100%;
+ list-style: none;
+  
+}
+li{
+  padding-left: 10px;
 }
