@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <ol id="students"></ol>
+    <script>
+        const xhr = (url, method = `GET`) =>
+      new Promise ((resolve) => {
+
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          resolve(this);
+        }
+      };
+      xhttp.open(method, url);
+      xhttp.send();
+
+    }); 
+
+      function stringToNode(html) {
+        const listElement = document.getElementById(`students`);
+
+        const xmlDoc = xml.responseXML;
+        const studentNodes = xmlDoc.getElementsByTagName("student");
+
+        for (let index = 0; index < studentNodes.length; index++) {
+          const student = studentNodes[index];
+
+          const listItem = document.createElement(`li`);
+
+          const title = document.createElement(`h2`);
+          title.appendChild(
+            document.createTextNode(
+              student.getElementsByTagName("firstname")[0].childNodes[0]
+                .nodeValue +
+                ` ` +
+                student.getElementsByTagName("lastname")[0].childNodes[0]
+                  .nodeValue
+            )
+          );
+          listItem.appendChild(title);
+
+          const subtitle = document.createElement(`p`);
+          subtitle.appendChild(
+            document.createTextNode(
+              student.getAttribute(`rollno`) +
+                ` - ` +
+                student.getElementsByTagName("nickname")[0].childNodes[0]
+                  .nodeValue
+            )
+          );
+          listItem.appendChild(subtitle);
+
+          const grade = document.createElement(`p`);
+          grade.appendChild(
+            document.createTextNode(
+              `Grade: ` +
+                student.getElementsByTagName("marks")[0].childNodes[0].nodeValue
+            )
+          );
+          listItem.appendChild(grade);
+
+          listElement.appendChild(listItem);
+        }
+      }
+
+      xhr("students.xml").then((data) => displayData(data.responseXML));
+      
+    </script>
+  </body>
+</html>
