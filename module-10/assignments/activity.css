@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    background: rgb(22, 25, 26);
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 250, 255, 1) 100%); */
+    padding: 1.5rem;
+}
+
+ol {
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+
+
+}
+
+li {
+    margin: 1rem;
+
+}
+
+li img {
+    border-top-left-radius: 5%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 5%;
+}
+
+li img:hover {
+    -moz-box-shadow: 0 0 10px rgb(255, 255, 255);
+    -webkit-box-shadow: 0 0 10px rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+h2 {
+    color: white;
+}
