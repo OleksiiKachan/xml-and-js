@@ -1,6 +1,7 @@
 function inc(a) {
   return a + 1;
 }
+const inc2 = (a) => new Promise((resolve)) => wait().then{()};
 
 const sum = function (a, b) {
   return a + b;
@@ -33,6 +34,7 @@ class Person {
     return this.name.split(sep);
   }
 }
+inc(5).then((value) => console.log('inc(5) = ${value}'));
 
 const person = Person.of("Marcus Aurelius");
 
