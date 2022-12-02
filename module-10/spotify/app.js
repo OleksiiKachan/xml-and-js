@@ -1,5 +1,5 @@
-const clientId = `a5f261df31334b54bbdaf6a8cf18327d`;
-const clientSecret = `72dce1229f33421988f780a020f146cb`;
+const clientId = `b4621a5afc324db68d001d2b1bcb638b`;
+const clientSecret = `ea4eec3c3b4c4be4823ebc6606e15c59`;
 
 const getToken = async () => {
   const result = await fetch("https://accounts.spotify.com/api/token", {
@@ -49,7 +49,9 @@ const loadGenres = async () => {
   const list = document.getElementById(`genres`);
   genres.map(async ({ name, id, icons: [icon], href }) => {
     const playlists = await getPlaylistByGenre(token, id);
-    const playlistsList = playlists
+    if(playlists.length)
+    {
+      const playlistsList = playlists
       .map(
         ({ name, external_urls: { spotify }, images: [image] }) => `
         <li>
@@ -58,6 +60,7 @@ const loadGenres = async () => {
           </a>
         </li>`
       )
+    
       .join(``);
 
     if (playlists) {
@@ -66,7 +69,7 @@ const loadGenres = async () => {
         <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
         <div>
           <h2>${name}</h2>
-          <ol>
+          <ul>
             ${playlistsList}
           </ol>
         </div>
@@ -74,6 +77,7 @@ const loadGenres = async () => {
 
       list.insertAdjacentHTML("beforeend", html);
     }
+  }
   });
 };
 

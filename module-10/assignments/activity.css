@@ -1,49 +1,49 @@
 div{
-  display: flex;
-  max-width: 100%;
-  overflow: auto;
-}
-article{
-  background-color:aqua;
-}
-
-img{
-  width:200px;
-  height:200px;
-  padding: 10px 10px;
-}
-h2{
-  padding: 10px 10px;
-
-}
-#in{
-  display: flex;
-  flex-direction: column;
-}
-.genre-card {
+    display: flex;
+    max-width: 100%;
+    overflow: auto;
+  }
+  article{
+    background-color:aqua;
+  }
+  
+  img{
+    width:200px;
+    height:200px;
+    padding: 10px 10px;
+  }
+  h2{
+    padding: 10px 10px;
+  
+  }
+  #in{
     display: flex;
     flex-direction: column;
-    background-color:azure;
-    color: rgb(20, 16, 16);
   }
-  
-  .genre-card:not(:last-child) {
-    margin-bottom: 15px;
-  }
-  
-  .genre-card > div {
+  .genre-card {
+      display: flex;
+      flex-direction: column;
+      background-color:azure;
+      color: rgb(20, 16, 16);
+    }
     
-  }
-  
-  .genre-card > div > a {
-    color: rgb(14, 11, 11);
-    font-weight: bold;
-  }
-  
-  ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
- 
-  }
-  
+    .genre-card:not(:last-child) {
+      margin-bottom: 15px;
+    }
+    
+    .genre-card > div {
+      
+    }
+    
+    .genre-card > div > a {
+      color: rgb(14, 11, 11);
+      font-weight: bold;
+    }
+    
+    ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+   
+    }
+    
