@@ -6,11 +6,11 @@ body{
     max-width: 100%;
     overflow: hidden;
     display: flex;
-    background-color: #a71230;
-    color: white;
+    background-color: maroon;
+    color: whitesmoke;
+    font-size: large;
     font-weight: 100;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: initial;
+    font-family: cursive;
   }
   
   .genre-card:not(:last-child) {
@@ -22,6 +22,7 @@ body{
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    border-radius: 50%;
   }
   
   .genre-card > div > a {
@@ -31,24 +32,16 @@ body{
   
   ol {
     list-style: none;
-    margin: 10;
-    padding: 10;
-    display: flex;
-    overflow: auto;
-    max-width: 100%;
-  }
-  li {
-    list-style: none;
-    margin: 10;
-    padding: 10;
+    margin: 0;
+    padding: 0;
     display: flex;
     overflow: auto;
     max-width: 100%;
   }
   img{
-    border-radius: 50%;
-    border-color: darkgoldenrod;
-    margin-top: 5px;
+    border-radius: 10%;
+    border-color: chartreuse;
+    border: 3px;
     padding: auto;
   }
   
