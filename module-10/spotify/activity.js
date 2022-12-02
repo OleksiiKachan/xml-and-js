@@ -1,5 +1,5 @@
-const clientId = `a5f261df31334b54bbdaf6a8cf18327d`;
-const clientSecret = `72dce1229f33421988f780a020f146cb`;
+const clientId = `d82cac5e974d45d0861bf2a4df22baff`;
+const clientSecret = `7a5590ea33de462996e98159098122f8`;
 
 const getToken = async () => {
   const result = await fetch("https://accounts.spotify.com/api/token", {
@@ -63,14 +63,15 @@ const loadGenres = async () => {
     if (playlists) {
       const html = `
       <article class="genre-card">
-        <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
-        <div>
+        <div><img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
+        </article>
+        
           <h2>${name}</h2>
           <ol>
             ${playlistsList}
           </ol>
         </div>
-      </article>`;
+      `;
 
       list.insertAdjacentHTML("beforeend", html);
     }
