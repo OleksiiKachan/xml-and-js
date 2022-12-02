@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+}
+.genre_card{
+    background-color: #97fc1b;
+}
+
+.genre_card > div > ol{
+    list-style: none;
+    margin: 0;
+
+}
+ol {
+    
+    display: flex;
+    overflow: auto;
+    max-width: 100%;
+  }
