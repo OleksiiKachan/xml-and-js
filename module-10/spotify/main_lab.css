@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    background-color: black;
+}
+
+article {
+    display: flex;
+    align-items: center;
+    background-color: #3c3c3c;
+    color: #41de79;
+    text-align: center;
+}
+
+article:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+article > div > img {
+    border-style: outset;
+    border-width: 10px;
+    border-color: #41de79;
+    margin: 20px;
+}
+
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+li {
+    flex-basis: 20%;
+}
+
+li img {
+    border-style: outset;
+    border-width: 5px;
+    border-color: #41de79;
+    margin: 10px;
+}
