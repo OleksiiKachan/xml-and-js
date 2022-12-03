@@ -1,0 +1,44 @@
+body{
+    background-color: beige;
+}
+
+article{
+    width: 360px;
+    margin: 40px;
+    display: inline-block;
+}
+
+div.genre{
+    position: relative;
+}
+
+div.genre > img{
+    height: 360px;
+    width: 360px;
+}
+
+div.genre > h2{
+    color: white;
+    font-family: cursive;
+    position:absolute;
+    top: 250px;
+    right: 130px;
+}
+
+ol{
+    margin: 0;
+    padding: 0;   
+}
+
+li{
+    list-style-type: none;
+    display:inline;
+    padding: 0;
+    margin: 0;
+}
+
+
+li img{
+    height: 120px;
+    width: 120px;
+}
