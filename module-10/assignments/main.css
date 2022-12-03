@@ -2,6 +2,11 @@ body{
     margin: 5px;
     background-color: black;
 }
+h1{
+  color: antiquewhite;
+  text-align: center;
+  font-family: cursive;
+}
 .genre-card {
     max-width: 100%;
     overflow: hidden;
@@ -22,7 +27,7 @@ body{
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
   }
   
   .genre-card > div > a {
@@ -39,7 +44,7 @@ body{
     max-width: 100%;
   }
   img{
-    border-radius: 10%;
+    border-radius: 50%;
     border-color: chartreuse;
     border: 3px;
     padding: auto;

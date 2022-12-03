@@ -66,7 +66,7 @@ const getToken = async () => {
         <article class="genre-card">
           <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
           <div>
-            <h2>${name}</h2>
+            <h2>${name} =>> </h2>
             <ol>
               ${playlistsList}
             </ol>
