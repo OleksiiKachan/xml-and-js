@@ -10,4 +10,8 @@
 -Customers_Async
 ![Alt text](../../../../../../C:/Users/Finicky/xml-and-js/module-09/assets/customers_async.png)
 
+-Customers_Fetch
+![Alt text](../../../../../../C:/Users/Finicky/xml-and-js/module-09/assets/customers_fetch.png)
 
+-Promised
+![Alt text](../../../../../../C:/Users/Finicky/xml-and-js/module-09/assets/promised.png)

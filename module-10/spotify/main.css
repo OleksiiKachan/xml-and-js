@@ -2,23 +2,23 @@
   max-width: 100%;
   overflow: hidden;
   display: flex;
-  background-color: #4daf64;
-  color: white;
+  background-color: #009c0a;
+  color: rgb(0, 0, 0);
 }
 
 .genre-card:not(:last-child) {
   margin-bottom: 15px;
 }
 
-.genre-card > div {
+.genre-card>div {
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
-.genre-card > div > a {
-  color: white;
+.genre-card>div>a {
+  color: rgb(255, 0, 0);
   font-weight: bold;
 }
 
