@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+}
+
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    overflow: auto;
+    max-width: 100%;
+}
+
+article {
+    display: inline-block;
+    background-color:rgb(22, 25, 26);
+    max-width: 100%;
+    color:white;
+    padding: 10px;
+}
+
+article > div{
+    padding: 10px 20px;
+    flex-direction: column;
+    overflow: hidden;
+    display: flex;
+}
+
+img{
+    border-radius: 8%;
+}
+article:not(:last-child) {
+    border-bottom: green 4px dotted;
+}
+
+img {
+    margin: 8px;
+}
