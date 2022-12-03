@@ -1,5 +1,5 @@
-const clientId = `a5f261df31334b54bbdaf6a8cf18327d`;
-const clientSecret = `72dce1229f33421988f780a020f146cb`;
+const clientId = `c1bbae9944934cce8e9a5ea48cf19431`;
+const clientSecret = `d3de3fb5de8b4b228481119c88f90334`;
 
 const getToken = async () => {
   const result = await fetch("https://accounts.spotify.com/api/token", {
@@ -27,6 +27,8 @@ const getGenres = async (token) => {
   const data = await result.json();
   return data.categories.items;
 };
+
+
 
 const getPlaylistByGenre = async (token, genreId) => {
   const limit = 10;
