@@ -108,6 +108,7 @@ article ol > li {
 
 #tracks .track-artist {
   margin: 0;
+  margin-top: 8px;
 }
 
 #tracks .play {
