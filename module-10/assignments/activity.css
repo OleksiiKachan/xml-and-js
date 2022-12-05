@@ -1,10 +1,6 @@
-div{
-    display: flex;
-    max-width: 100%;
-    overflow: auto;
-  }
+
   article{
-    background-color:aqua;
+    background-color:blueviolet;
   }
   
   img{
@@ -12,19 +8,33 @@ div{
     height:200px;
     padding: 10px 10px;
   }
-  h2{
-    padding: 10px 10px;
   
+  
+  #headerdiv{
+    margin-left:500px;
   }
-  #in{
-    display: flex;
-    flex-direction: column;
+  #trackid{
+    display:flex;
+  }
+
+  #trackli{
+    background-color: lightgreen;
+    
+    margin-right: 20px;
+    padding: 5px;
+  }
+  #inol{
+    display:flex;
+    margin-right: 10px;
+  }
+  #headerid{
+    padding-left: 400px;
   }
   .genre-card {
-      display: flex;
-      flex-direction: column;
-      background-color:azure;
+      overflow: auto;
+      background-color: lightgray;
       color: rgb(20, 16, 16);
+      width:100%
     }
     
     .genre-card:not(:last-child) {
@@ -44,6 +54,6 @@ div{
       list-style: none;
       margin: 0;
       padding: 0;
-   
+     
     }
     
