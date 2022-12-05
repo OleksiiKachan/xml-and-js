@@ -40,3 +40,12 @@ ol {
 li{
   padding-left: 10px;
 }
+p{
+  font-size: 20px;
+  font-weight: bolder;
+}
+.tracks {
+  text-align: left;
+  color:  red;
+  padding: 0;
+}
