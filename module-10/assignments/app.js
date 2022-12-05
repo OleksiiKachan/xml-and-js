@@ -29,7 +29,7 @@ const getGenres = async (token) => {
 };
 
 const getPlaylistByGenre = async (token, genreId) => {
-  const limit = 10;
+  const limit = 1;
 
   const result = await fetch(
     `https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`,
@@ -43,37 +43,63 @@ const getPlaylistByGenre = async (token, genreId) => {
   return data.playlists.items;
 };
 
+const getTracksByPlayList = async (token, playlistId) => {
+  const limit = 5;
+  const result = await fetch(
+    `https://api.spotify.com/v1/playlists/${playlistId}/tracks?limit=${limit}`,
+    {
+      method: "GET",
+      headers: { Authorization: "Bearer " + token },
+    }
+  );
+
+  const data = await result.json();
+  return data.items;
+};
+
+
 const loadGenres = async () => {
     const token = await getToken();
     const genres = await getGenres(token);
     const list = document.getElementById(`genres`);
     genres.map(async ({ name, id, icons: [icon], href }) => {
       const playlists = await getPlaylistByGenre(token, id);
-      const playlistItem = playlists
-        .map(
-          ({ name, external_urls: { spotify }, images: [image] }) => `
-          <li>
-            <a href="${spotify}" alt="${name}" target="_blank">
-              <img src="${image.url}" width="180" height="180"/>
-            </a>
-          </li>`
-        )
-        .join(``);
-  
+
+      Promise.all(playlists.map( async ({ id, name, external_urls: { spotify }, images: [image] }) => {
+              const tracks = await getTracksByPlayList(token, id);
+              const track = tracks.map(({track}) => `
+                <li>${track.name}</li>
+              `).join(``);
+
+            return `
+            <li>
+              <a href="${spotify}" alt="${name}" target="_blank">
+                <img src="${image.url}" width="180" height="180"/>
+                <ul>
+                ${track}
+                </ul>
+              </a>
+            </li>`
+        }
+      ))
+      .then(playlistItem => playlistItem.join(``))
+      .then(playlistItem => {
+        console.log(playlistItem);
       if (playlists.length) {
-        const html = `
-        <article>
-          <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
-          <div>
-            <h2>${name}</h2>
-            <ol>
-              ${playlistItem}
-            </ol>
-          </div>
-        </article>`;
-  
-        list.insertAdjacentHTML("beforeend", html);
-      }
+          const html = `
+          <article>
+            <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
+            <div>
+              <h2>${name}</h2>
+              <ol>
+                ${playlistItem}
+              </ol>
+            </div>
+          </article>`;
+    
+          list.insertAdjacentHTML("beforeend", html);
+        }
+      })
     });
   };
 
