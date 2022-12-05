@@ -67,9 +67,13 @@ const loadGenres = async () => {
 
       Promise.all(playlists.map( async ({ id, name, external_urls: { spotify }, images: [image] }) => {
               const tracks = await getTracksByPlayList(token, id);
-              const track = tracks.map(({track}) => `
-                <li>${track.name}</li>
-              `).join(``);
+              const track = tracks.map(({track}) => {
+                const artists = track.artists
+                  .map(({ name }) => name)
+                  .join(', ');
+                
+                return  `<li>${track.name} - ${artists}</li>`
+              }).join(``);
 
             return `
             <li>
