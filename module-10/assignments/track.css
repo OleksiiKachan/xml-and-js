@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.726);
+}
+
+article {
+    display: flex;
+    align-items: center;
+    background-color: #3c3c3c;
+    color: #7541de;
+    text-align: center;
+}
+
+article:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+article > div > img {
+    border-style: outset;
+    border-width: 10px;
+    border-color: #7541de;
+    margin: 20px;
+}
+
+.playlists {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+.playlist {
+    flex-basis: 33%;
+    display:block;
+}
+
+.playlist img {
+    border-style: outset;
+    border-width: 5px;
+    border-color: #7541de;
+    margin: 10px;
+}
+
+.tracks {
+    text-align:justify;
+    margin: 10px 10px 10px 30px;
+    padding: 0;
+}
