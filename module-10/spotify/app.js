@@ -29,7 +29,7 @@ const getGenres = async (token) => {
 };
 
 const getPlaylistByGenre = async (token, genreId) => {
-  const limit = 10;
+  const limit = 7;
 
   const result = await fetch(
     `https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`,
@@ -52,11 +52,11 @@ const loadGenres = async () => {
     const playlistsList = playlists
       .map(
         ({ name, external_urls: { spotify }, images: [image] }) => `
-        <li>
+        <ol>
           <a href="${spotify}" alt="${name}" target="_blank">
             <img src="${image.url}" width="180" height="180"/>
           </a>
-        </li>`
+        </ol>`
       )
       .join(``);
 
