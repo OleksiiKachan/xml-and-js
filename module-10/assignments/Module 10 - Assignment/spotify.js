@@ -44,10 +44,10 @@ const _getPlaylistByGenre = async (token, genreId) => {
     return data.playlists ? data.playlists.items : [];
 }
 
-const _getTracks = async (token, href) => {
+const _getTracks = async (token, tracksEndPoint) => {
     const limit = 5;
 
-    const result = await fetch(href + `?limit=${limit}`, {
+    const result = await fetch(`${tracksEndPoint}?limit=${limit}`, {
         method: 'GET',
         headers: {
             Authorization: "Bearer " + token
@@ -74,23 +74,24 @@ const displayGenres = async () => {
               if(tracksInPlaylists.length){
                   tracksList = tracksInPlaylists.map( ( { track}) => {
                       const artist = track.artists.map(({name}) => name);
-                      return `<li><a href="Song: ${track.external_urls}">${track.name}<br>Artist: ${track.artist}</a></li><br>`}).join(``);
+                      return `<li><a href="${spotify}"><strong>${track.name}</strong></a><br><a href="${spotify}">Artist: ${artist}</a></li>`}).join(``);
               }
-              return `<li><img src="${image.url}" width="100" height="100" alt="${name}" /><ol>${tracksList}</ol></li>`;
+              return `<li class="li"><img src="${image.url}" width="100" height="100" alt="${name}" /><ol>${tracksList}</ol></li>`;
           }))    
           .then(playlistsList => playlistsList.join(""))
           .then(playlistsList => {
-          const html = `
-              <article>
-                  <img src = "${icon.url}" width="${icon.width}" height="${icon.height}"/>
-                  <div>
-                      <h2>${name}</h2>
-                      <ol id=playlist>
-                          ${playlistsList}
-                      </ol>
-                  </div>
-              </article>`;
-  
+            const html = `
+        <article>
+        <div class="container">
+        <div class="genre">
+        <img src="${icon.url}" width="${icon.width}" height="${icon.height} alt="${name}" />
+        <h2>${name}</h2>
+        </div>
+        <ol>
+            ${playlistsList}
+        </ol>
+        </div>
+        </article>`
               list.insertAdjacentHTML("beforeend", html);
           })
       }
