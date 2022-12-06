@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    background-color: antiquewhite;
+    color: blueviolet;
+}
+
+
+#playlist {
+    list-style: none;
+    margin: o;
+    padding: 20px;
+    display: flex;
+    overflow: auto;
+    max-width: 100%;
+    border-radius: 8px;
+
+}
+
+#tracks {
+    width: 450;
+    max-width: 100%;
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+a {
+    color: #FFFFFF;
+}
+
+
+article {
+
+    display: block;
+    max-width: 100%;
+    color: #FFFFFF;
+    font-family: "Helvetica", "Arial", sans-serif;
+    border-style: solid;
+    border-width: 10px;
+    text-align: center;
+
+}
+
+article img {
+    margin: 10px;
+}
+
+
+
+#playlist {
+    margin: 10px;
+    padding: 10px;
+}
+
+li {
+
+    font-weight: bolder;
+    font-size: 14px;
+    text-align: left;
+}
+
+li a {
+    list-style: none;
+    margin: 10px;
+    padding: 0;
+    display: flex;
+    overflow: auto;
+    max-width: 100%;
+    text-decoration: none;
+    color: blueviolet;
+}
