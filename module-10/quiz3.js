@@ -15,7 +15,7 @@ const main2 = () => {
 }
     
     
-//main2();
+main2();
 
 
 
@@ -74,7 +74,6 @@ const users = [
     const test = async (x,y,z) => {
         const promise = new Promise ((resolve, reject) => {
     
-           
             if  (x,y,z) {
                 resolve ([x,y,z]);
             }
@@ -91,9 +90,9 @@ const users = [
     
     }
 
-    test(1,2,3);
-    test(`value`, 15, {})
-    test();
+    test(1,2,3); //gives you an array of 1,2,3
+    test(`value`, 15, {}) //gives you an array of `value`, 15, {}
+    test(); //gives you an Error printed
 
     
     
