@@ -1,0 +1,48 @@
+body{
+    margin:0;
+    background-color: black;
+  }
+
+  .genre-card > img{
+    display: flex;
+    padding:15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h2{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pimg{
+    border: solid white 3px;
+    margin: 6px;
+  }
+
+  .tracks{
+    list-style: none;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    justify-content: baseline;
+    overflow: hidden;
+   
+  }
+
+  .genre-card > div {
+    margin:0;
+  }
+
+  .genre-card > div > ol{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    
+  }
