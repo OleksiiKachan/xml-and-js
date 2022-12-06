@@ -1,0 +1,50 @@
+
+  body{
+    margin:0;
+    background-color: #7bd390;
+  }
+  
+  .genre-card > img{
+    display: block;
+    padding:15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h2{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(53, 27, 225);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .pimg{
+    border: solid rgb(105, 186, 135) 3px;
+    margin: 6px;
+  }
+
+  .tracks{
+    list-style: none;
+    color: rgb(6, 7, 6);
+    font-weight: bold;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    justify-content: baseline;
+    overflow: hidden;
+  }
+
+  .genre-card > div {
+    margin: 0;
+  }
+  
+  .genre-card > div > ol{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    overflow: scroll  ;
+  }
+
+  
