@@ -62,7 +62,7 @@ const loadGenres = async () => {
 
     if (playlists) {
       const html = `
-      <article class="genre-card">
+      <article class="list">
         <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
         <div>
           <h2>${name}</h2>

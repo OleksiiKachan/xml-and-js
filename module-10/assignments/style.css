@@ -30,3 +30,28 @@ ol {
   overflow: auto;
   max-width: 100%;
 }
+
+#tracks {
+  width:450;
+  max-width: 100%;
+  font-family: "Helvetica", "Arial", sans-serif;
+  text-align: center;
+}
+
+a{
+  color:#4daf64;
+}
+
+article {
+  background-color: #191414;
+  display: block;
+  max-width: 100%;
+  color:#FFFFFF;
+  font-family: "Arial", "Arial", sans-serif;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #1DB954;
+  text-align: left;
+
+}
+
