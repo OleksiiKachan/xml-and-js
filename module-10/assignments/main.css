@@ -5,10 +5,7 @@
   color: rgb(242, 242, 242);
 }
 
-body {
-  margin: 10px;
-  border: 5px solid black;
-}
+
 
 .genre-card > div > a {
   color: white;
