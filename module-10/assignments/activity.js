@@ -43,38 +43,58 @@ const getPlaylistByGenre = async (token, genreId) => {
   return data.playlists.items;
 };
 
+const getTracks = async(token, href) => {
+  const limit = 3;
+  const result = await fetch(href + `?limit=${limit}`, {
+    method: "GET",
+    headers: { Authorization: "Bearer " + token },
+  });
+
+  const data = await result.json();
+  return data.items;
+}
+
 const loadGenres = async () => {
   const token = await getToken();
   const genres = await getGenres(token);
   const list = document.getElementById(`genres`);
-  genres.map(async ({ name, id, icons: [icon], href }) => {
+  genres.map(async({name , icons: [icon], id}) => {
     const playlists = await getPlaylistByGenre(token, id);
-    const playlistsList = playlists
-      .map(
-        ({ name, external_urls: { spotify }, images: [image] }) => `
-        <li>
-          <a href="${spotify}" alt="${name}" target="_blank">
-            <img src="${image.url}" width="180" height="180"/>
-          </a>
-        </li>`
-      )
-      .join(``);
+    //console.log(playlists);
 
-    if (playlists) {
-      const html = `
-      <article class="genre-card">
-        <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
-        <div>
-          <h2>${name}</h2>
-          <ol>
-            ${playlistsList}
-          </ol>
-        </div>
-      </article>`;
+    if(playlists.length){
+        const playlistsList = Promise.all(playlists.map(async({name, external_urls: { spotify }, images: [image], tracks}) =>{
+            const tracksInPlaylists = await getTracks(token, tracks.href);
+            console.log(tracksInPlaylists);
 
-      list.insertAdjacentHTML("beforeend", html);
+            if(tracksInPlaylists.length){
+                tracksInPlaylistsList = tracksInPlaylists.map( ( { track}) => {
+                    const artist = track.artists.map(({name}) => name);
+                return `
+                <li><a href="${track.external_urls.spotify}"> ${track.name}<br>Artist(s): ${artist}<br>Album: ${track.album.name}<br>Popularity: ${track.popularity}</li><br>`
+                })
+                .join('');
+            }
+            return`
+            <li><a href="${spotify}"><img src="${image.url}" width="180" height="180" alt="${name}"/><ol id=tracks>${tracksInPlaylistsList}</ol></li>`;
+        }))    
+        .then(playlistsList => playlistsList.join(""))
+        .then(playlistsList => {
+        const html = `
+            <article>
+                <img src = "${icon.url}" width="${icon.width}" height="${icon.height}"/>
+                <div>
+                    <h2>${name}</h2>
+                    <ol id=playlist>
+                        ${playlistsList}
+                    </ol>
+                </div>
+            </article>`;
+
+            list.insertAdjacentHTML("beforeend", html);
+        })
     }
-  });
+});
 };
 
 loadGenres();
