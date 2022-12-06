@@ -1,0 +1,49 @@
+.genre-card {
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  background-color: #4d73af;
+  color: white;
+}
+
+body {
+  margin: 10px;
+  border: 5px solid black;
+}
+.genre-card:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.genre-card > div {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+}
+
+.genre-card > div > a {
+  color: white;
+  font-weight: bold;
+
+}
+
+article{
+  display: flex;
+}
+
+article > div {
+  display: flex;
+  flex-direction: column;
+}
+
+ol {
+  list-style: square;
+  border: 5px solid black;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  overflow: auto;
+  max-width: 100%;
+}
+
