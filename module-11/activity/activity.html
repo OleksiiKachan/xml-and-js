@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Spotify API</title>
+    <link rel="stylesheet" type="text/css" href="activity.css" />
+</head>
+
+<body>
+    <form onsubmit="onSubmit(event)" onreset="onReset()">
+        <input type="text" name="term" id="input-name-term" />
+        <button type="submit">Apply filters</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    <div id="filter"></div>
+    <div id="genres"></div>
+    </div>
+    <!-- <script type="text/javascript" src="ajax-renderer.js" ></script> -->
+    <script type="text/javascript" src="activity.js"></script>
+</body>
+
+</html>
