@@ -31,7 +31,7 @@ const getGenres = async (token) => {
 };
 
 const getPlaylistByGenre = async (token, genreId) => {
-  const limit = 10;
+  const limit = 14;
 
   const result = await fetch(
     `https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`,
@@ -42,7 +42,7 @@ const getPlaylistByGenre = async (token, genreId) => {
   );
 
   const data = await result.json();
-  return data.playlists ? data.playlists.items : [];
+  return data.playlists.items;
 };
 
 const loadGenres = async () => {
@@ -52,7 +52,6 @@ const loadGenres = async () => {
   _data = await Promise.all(
     genres.map(async (genre) => {
       const playlists = await getPlaylistByGenre(token, genre.id);
-
       return { ...genre, playlists };
     })
   );
@@ -60,7 +59,6 @@ const loadGenres = async () => {
 
 const renderGenres = (filterTerm) => {
   let source = _data;
-
   if (filterTerm) {
     console.log(filterTerm);
     const term = filterTerm.toLowerCase();
@@ -71,45 +69,43 @@ const renderGenres = (filterTerm) => {
   }
 
   const list = document.getElementById(`genres`);
-
-  const html = source.reduce((acc, { name, icons: [icon], playlists }) => {
+  const html = source.reduce((acc, { name, icons: [icons], playlists }) => {
     const playlistsList = playlists
       .map(
         ({ name, external_urls: { spotify }, images: [image] }) => `
-        <li>
-          <a href="${spotify}" alt="${name}" target="_blank">
-            <img src="${image.url}" width="180" height="180"/>
-          </a>
-        </li>`
+      <li>
+        <a href="${spotify}" alt="${name}" target="_blank">
+          <img class="sub-img  " src="${image.url}" width="180" height="180"/>
+        </a>
+      </li>`
       )
       .join(``);
-
     if (playlists) {
       return (
         acc +
-        `
-      <article class="genre-card">
-        <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
-        <div>
-          <h2>${name}</h2>
-          <ol>
-            ${playlistsList}
-          </ol>
-        </div>
-      </article>`
+        `<article class="genre-card">
+            <div class="main-image">
+              <img class = "cat-img" src="${icons.url}" alt="${name}"/>
+              </div>
+              <div class="list">
+                <h2>${name}</h2>
+                <ol>
+                  ${playlistsList}
+                </ol>
+              </div>
+            </article>`
       );
     }
   }, ``);
-
   list.innerHTML = html;
 };
-
 loadGenres().then(renderGenres);
 
 const onSubmit = (event) => {
   event.preventDefault();
-
   const term = event.target.term.value;
-
   renderGenres(term);
+};
+const onReset = () => {
+  renderGenres();
 };
