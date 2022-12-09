@@ -43,36 +43,64 @@ const getPlaylistByGenre = async (token, genreId) => {
   return data.playlists.items;
 };
 
+const getTracks = async (token, tracksUrl) => {
+  const limit = 5;
+
+  const result = await fetch(tracksUrl + `?limit=${limit}`, {
+    method: "GET",
+    headers: { Authorization: "Bearer " + token },
+  });
+
+  const data = await result.json();
+  return data.items;
+};
+
 const loadGenres = async () => {
   const token = await getToken();
   const genres = await getGenres(token);
   const list = document.getElementById(`genres`);
   genres.map(async ({ name, id, icons: [icon], href }) => {
     const playlists = await getPlaylistByGenre(token, id);
-    const playlistsList = playlists
-      .map(
-        ({ name, external_urls: { spotify }, images: [image] }) => `
-        <li>
+    Promise.all(playlists
+      .map(async ({ name, external_urls: { spotify }, images: [image], tracks }) => {
+        
+          const playlistTracks = await getTracks(token, tracks.href);
+          let tracksList = '';
+          if (playlistTracks) {
+            tracksList = playlistTracks
+              .map(({ track }) => {
+                const artists = track.artists
+                  .map(({ name }) => name)
+                  .join(', ');
+                return `<li id="trackli">${track.name} - ${artists}</li>`})
+              .join('');
+          }
+        return `
+        <li id="trackli">
           <a href="${spotify}" alt="${name}" target="_blank">
             <img src="${image.url}" width="180" height="180"/>
           </a>
+          <ol class="tracks">
+          ${tracksList}
+        </ol>
         </li>`
-      )
-      .join(``);
-
-    if (playlists) {
+        }))
+        .then(playlistsList => playlistsList.join(""))
+        .then(playlistsList => {
+   
       const html = `
       <article class="genre-card">
-        <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
-        <div id='in'>
+        <div id='headerdiv'>
+          <img id="mainpic" src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
           <h2>${name}</h2>
-          <ol> ${playlistsList} </ol>
-        
+        </div>
+        <div id='in'>
+          <ol id='inol'> ${playlistsList} </ol>
         </div>
       </article>`;
-
+    
       list.insertAdjacentHTML("beforeend", html);
-    }
+    })
   });
 };
 
