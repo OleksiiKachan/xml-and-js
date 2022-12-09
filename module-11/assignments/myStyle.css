@@ -1,0 +1,60 @@
+body{
+  margin: 0;
+  background-image: linear-gradient(red, yellow, green);
+}
+
+#playlist {
+  list-style: none;
+  margin: o;
+  padding: 20px;
+  display: flex;
+  overflow: auto;
+  max-width: 100%;
+  border-radius: 8px;
+
+}
+
+#tracks {
+  width:450;
+  max-width: 100%;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+a{
+  color:#FFFFFF;
+}
+
+
+
+article {
+  background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+  display: block;
+  max-width: 100%;
+  color:#FFFFFF;
+  font-family: "Helvetica", "Arial", sans-serif;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #1DB954;
+  text-align: center;
+
+}
+
+article img{
+  margin: 20px;
+}
+article > div{
+  padding: 10px 20px;
+  display: block;
+  flex-direction: column;
+  overflow: hidden;
+
+}
+
+article > img{
+  border-radius: 20%;
+
+}
+
+form {
+  margin: 15px;
+}
