@@ -113,3 +113,7 @@ const onSubmit = (event) => {
 
   renderGenres(term);
 };
+const onReset = (event)=>
+{
+  loadGenres().then(renderGenres);
+}
