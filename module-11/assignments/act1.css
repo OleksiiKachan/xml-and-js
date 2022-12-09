@@ -1,0 +1,47 @@
+body{
+    margin:0;
+    background-color: #708073;
+  }
+
+  .genre-card > img{
+    display: block;
+    padding:10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h2{
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(36, 36, 39);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pimg{
+    border: solid rgb(131, 53, 110) 3px;
+    margin: 6px;
+  }
+
+  .tracks{
+    list-style: none;
+    color: rgb(6, 7, 6);
+    font-weight: bold;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    justify-content: baseline;
+    overflow: hidden;
+  }
+
+  .genre-card > div {
+    margin: 0;
+  }
+
+  .genre-card > div > ol{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    overflow: scroll  ;
+  }
