@@ -85,8 +85,8 @@ const renderGenres = (filterTerm) => {
       )
       .join(``);
 
-
-
+      
+      
 
 
     if (playlists) {
@@ -118,3 +118,21 @@ const onSubmit = (event) => {
 
   renderGenres(term);
 };
+
+
+/*
+
+list.innerHTMK = html;
+
+const onSubmit = (event) => {
+  event.preventDefault();
+  const filterTerm = event.target.term.value;
+  renderGenres(filterTerm)
+};
+
+load().then.((data) =>
+{
+
+})
+
+*/
