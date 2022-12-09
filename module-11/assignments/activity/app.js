@@ -59,6 +59,8 @@ const loadGenres = async () => {
 };
 
 const renderGenres = (filterTerm) => {
+  const list = document.getElementById(`genres`);
+
   let source = _data;
 
   if (filterTerm) {
@@ -70,7 +72,6 @@ const renderGenres = (filterTerm) => {
     });
   }
 
-  const list = document.getElementById(`genres`);
 
   const html = source.reduce((acc, { name, icons: [icon], playlists }) => {
     const playlistsList = playlists
@@ -83,6 +84,10 @@ const renderGenres = (filterTerm) => {
         </li>`
       )
       .join(``);
+
+      
+      
+
 
     if (playlists) {
       return (
@@ -113,3 +118,6 @@ const onSubmit = (event) => {
 
   renderGenres(term);
 };
+
+
+
