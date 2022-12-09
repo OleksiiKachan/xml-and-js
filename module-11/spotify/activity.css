@@ -1,0 +1,16 @@
+ol {
+    list-style-type: lower-roman
+  }
+  
+  article {
+    display: flex;
+    margin-bottom: 15px;
+    background: rgb(89, 103, 104);
+  }
+  
+  h1 {
+    color: rgb(183, 244, 52);
+    font-weight: 900;
+  }
+  
+  
