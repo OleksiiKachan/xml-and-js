@@ -6,6 +6,10 @@
   color: white;
 }
 
+form {
+  margin-bottom: 15px;
+}
+
 .genre-card:not(:last-child) {
   margin-bottom: 15px;
 }
@@ -31,6 +35,4 @@ ol {
   max-width: 100%;
 }
 
-form {
-  margin-bottom: 15px;
-}
+

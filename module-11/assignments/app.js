@@ -45,9 +45,12 @@ const getPlaylistByGenre = async (token, genreId) => {
   return data.playlists ? data.playlists.items : [];
 };
 
+
 const loadGenres = async () => {
+  
   const token = await getToken();
   const genres = await getGenres(token);
+
 
   _data = await Promise.all(
     genres.map(async (genre) => {
@@ -75,6 +78,7 @@ const renderGenres = (filterTerm) => {
 
   const html = source.reduce((acc, { name, icons: [icon], playlists }) => {
     const playlistsList = playlists
+
       .map(
         ({ name, external_urls: { spotify }, images: [image] }) => `
         <li>
@@ -104,7 +108,8 @@ const renderGenres = (filterTerm) => {
       </article>`
       );
     }
-  }, ``);
+  }, 
+  ``);
 
   list.innerHTML = html;
 };
