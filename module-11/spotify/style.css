@@ -1,0 +1,77 @@
+.genre-card {
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    background-color: #4daf64;
+    color: white;
+  }
+  .genre-card:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .genre-card > div {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction:column;
+    
+  }
+  .genre-card > div > a {
+    color: white;
+    font-weight: bold;
+  }
+  .genre-card > div > img {
+    border-style: ridge; /*change the style*/
+    border-width: 2px;
+    border-color: #41de79;
+    margin: 20px;
+    
+  }
+  /*.genre-card:hover{
+    background-color: yellowgreen;
+  }*/
+  .playlists {
+    
+    margin-left: 10px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+  }
+  
+  .playlist {
+    flex-basis: 33%;
+    display: flex;
+  }
+  
+  .playlist img {
+    border-style: outset;
+    border-width: 5px;
+    border-color: #41de79;
+    margin: 10px;
+  }
+  .playlist {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  
+  
+  .tracks {
+    list-style:decimal;
+    font-family: "Georgia", Times, serif;
+    text-align: left;
+    margin: 10px 10px 10px 30px;
+    padding: 0;
+    font-size: 16px;
+    
+    color:black;
+  }
+  
+  .tracks:hover{
+    transform: scale(1.1);
+    font-size: 16px;
+    font-weight:bold;
+    color:whitesmoke;
+  }
+  

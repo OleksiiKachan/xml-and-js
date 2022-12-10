@@ -1,5 +1,5 @@
-const clientId = `a5f261df31334b54bbdaf6a8cf18327d`;
-const clientSecret = `72dce1229f33421988f780a020f146cb`;
+const clientId = `0c64de82e6674784bd60a39457e22852`;
+const clientSecret = `5ef0627159e6477198f09d04dc35018b`;
 
 let _data = [];
 
@@ -57,7 +57,7 @@ const loadGenres = async () => {
     })
   );
 };
-
+/*Render Function* */
 const renderGenres = (filterTerm) => {
   let source = _data;
 
