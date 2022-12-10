@@ -145,28 +145,27 @@ const loadGenres = async () => {
   console.log(_data)
 }
 
-const main = async () => {
-  await loadGenres()
-
-  renderData()
-}
-
 const renderData = (filterText) => {
-  const renderHtml =  _data.filter(data => !filterText || data.name.toLowerCase().includes(filterText)).map(({name, icon, playlists, token}) => {
+  const showPlaylist = document.getElementById('with-playlist').checked
+
+  const renderHtml =  
+  _data
+  .filter(data => !filterText || data.name.toLowerCase().includes(filterText))
+  .map(({name, icon, playlists, token}) => {
     if (playlists.length) {
-      const playlistItem = playlists.map(({ name, images: [image], tracks: { href } }) => {
-          //return `<li><a href="${spotify}"><img src="${image.url}" width="180" height="180" alt="${name}" </li>` 
-          return `<li onClick="displayTracks('${token}', '${href}')"><img src="${image.url}" width="180" height="180" alt="${name}" /></li>` 
-        })
-  
+      const playlistItem = showPlaylist && playlists.map(({ name, images: [image], tracks: { href } }) => {
+        return `<li onClick="displayTracks('${token}', '${href}')"><img src="${image.url}" width="180" height="180" alt="${name}" /></li>` 
+      })
+
       const html = `
         <article>
           <div class="genre">
             <img src="${icon.url}" width="${icon.width}" height="${icon.height} alt="${name}" </img>
             <h2>${name}</h2>
           </div>
+          
           <ol>
-            ${playlistItem.join(``)}
+            ${showPlaylist ? playlistItem.join(``) : `` }
           </ol>
         </article>`
       
@@ -188,6 +187,12 @@ const submitHandler = (event) => {
 }
 
 const resetHandler = () => {
+  renderData()
+}
+
+const main = async () => {
+  await loadGenres()
+
   renderData()
 }
 

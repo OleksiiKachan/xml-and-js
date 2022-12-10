@@ -7,12 +7,23 @@
 <body>
   <h1>Spotify</h1>
   <form onsubmit="submitHandler(event)" onreset="resetHandler()">
-    <input type="text" name="genre" id="genre"></input>
-    <div class="form-buttons"">
+    <div>
+      <label for="genre">Genre: </label>
+      <input type="text" name="genre" id="genre"></input>
+    </div>
+
+    <div class="radio-button">
+      <input type="radio" id="with-playlist" name="fav_language" value="WITH_PLAYLIST" checked>
+      <label for="with-playlist">With Playlist</label><br>
+      <input type="radio" id="without-playlist" name="fav_language" value="WITHOUT_PLAYLIST">
+      <label for="without-playlist">Without Playlist</label><br>
+    </div>
+    
+    <div class="form-buttons">
       <button type="Submit">Submit</button>
       <button type="reset">Reset</button>
     </div>
-   
+
   </form>
   
   <div id="genres"></div>

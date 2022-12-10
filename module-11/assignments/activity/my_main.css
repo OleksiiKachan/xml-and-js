@@ -40,6 +40,21 @@ form input {
   padding: 8px;
 }
 
+label[for="genre"] {
+  font-family: sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
+.radio-button {
+  margin-top: 16px;
+  color: white;
+}
+
+#genre {
+  width: 80%;
+}
+
 #genres {
   max-width: 100%;
   display: grid;
@@ -47,8 +62,6 @@ form input {
   margin: 8px;
   grid-template-columns: 1fr 1fr 1fr;
 }
-
-
 
 article {
   display: flex;
