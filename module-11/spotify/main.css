@@ -10,14 +10,14 @@
   margin-bottom: 15px;
 }
 
-.genre-card > div {
+.genre-card>div {
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
-.genre-card > div > a {
+.genre-card>div>a {
   color: white;
   font-weight: bold;
 }

@@ -28,6 +28,8 @@ const getGenres = async (token) => {
   return data.categories.items;
 };
 
+
+
 const getPlaylistByGenre = async (token, genreId) => {
   const limit = 10;
 
