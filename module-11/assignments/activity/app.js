@@ -142,15 +142,19 @@ const loadGenres = async () => {
     }
   }))
 
+  _data[1].playlists = []
+
   console.log(_data)
 }
 
 const renderData = (filterText) => {
   const showPlaylist = document.getElementById('with-playlist').checked
+  const showGenreWithPlaylist = document.getElementById('genre-with-playlist').checked
 
   const renderHtml =  
   _data
   .filter(data => !filterText || data.name.toLowerCase().includes(filterText))
+  .filter(data => showGenreWithPlaylist ? data.playlists.length > 0 : data.playlists.length === 0)
   .map(({name, icon, playlists, token}) => {
     if (playlists.length) {
       const playlistItem = showPlaylist && playlists.map(({ name, images: [image], tracks: { href } }) => {
@@ -171,7 +175,13 @@ const renderData = (filterText) => {
       
       return html
     } else {
-      return undefined
+      console.log("Genre without playlist")
+      return `<article>
+        <div class="genre">
+          <img src="${icon.url}" width="${icon.width}" height="${icon.height} alt="${name}" </img>
+          <h2>${name}</h2>
+        </div>
+      </article>`
     }
   });
   

@@ -63,6 +63,14 @@ label[for="genre"] {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+input[id="without-playlist"] {
+  margin-left: 32px;
+}
+
+input[id="genre-without-playlist"] {
+  margin-left: 32px;
+}
+
 article {
   display: flex;
   flex-direction: column;
