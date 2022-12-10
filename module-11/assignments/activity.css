@@ -1,0 +1,33 @@
+body{
+    background-color:bisque;
+}
+
+.genre-card {
+   display: inline;
+
+    
+    
+  }
+  
+  .genre-card:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  
+  .genre-card > div {
+
+    padding: 10px 20px;
+    display:inline-block;
+    
+  }
+  
+  .genre-card > div > a {
+    
+    font-weight: bold;
+  }
+  
+ 
+  
+  form {
+    margin: 15px;
+  }
+  
