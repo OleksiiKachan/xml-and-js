@@ -44,15 +44,14 @@ const getPlaylistByGenre = async (token, genreId) => {
   const data = await result.json();
   return data.playlists ? data.playlists.items : [];
 };
-const getTracks = async (token, playlistId) => {
+
+const getTracksFromPlaylist = async (token, tracksUrl) => {
   const limit = 5;
-  const result = await fetch(
-    `https://api.spotify.com/v1/playlists/${playlistId}/tracks?limit=${limit}`,
-    {
+
+  const result = await fetch(tracksUrl + `?limit=${limit}`, {
       method: "GET",
       headers: { Authorization: "Bearer " + token },
-    }
-  );
+  });
 
   const data = await result.json();
   return data.items;
@@ -61,76 +60,79 @@ const getTracks = async (token, playlistId) => {
 const loadGenres = async () => {
   const token = await getToken();
   const genres = await getGenres(token);
-  
+
   _data = await Promise.all(
-    genres.map(async (genre) => {
-      const playlists = await getPlaylistByGenre(token, genre.id);
-      const playlistTracks = await Promise.all(playlists.map(async (playlist) => {
-          const tracksAll= await getTracks(token, playlist.id);
-          return {...playlist, tracksAll};
-      }))
-      
-      return { ...genre, playlists: playlistTracks };
-    })
+      genres.map(async (genre) => {
+          let playlists = await getPlaylistByGenre(token, genre.id);
+          playlists = await Promise.all(playlists.map(async (playlist) => {
+              const playlistTracks = await getTracksFromPlaylist(token, playlist.tracks.href);
+              return { ...playlist, playlistTracks };
+          }));
+
+          return { ...genre, playlists };
+      })
   );
 };
-
 const renderGenres = (filterTerm) => {
   let source = _data;
 
   if (filterTerm) {
-    console.log(filterTerm);
-    const term = filterTerm.toLowerCase();
-    source = source.filter(({ name }) => {
-      console.log(name.toLowerCase().includes(term));
-      return name.toLowerCase().includes(term);
-    });
+      const term = filterTerm.toLowerCase();
+      source = source.filter(({ name }) => {
+          return name.toLowerCase().includes(term);
+      });
   }
 
-  const list = document.getElementById(`genres`);
+  const list = document.getElementById("genres");
+  list.innerHTML = "";
 
-  const html = source.reduce((acc, { name, icons: [icon], playlists }) => {
-    const playlistsList = playlists
-      .map(
-        ({ name, external_urls: { spotify }, images: [image] , tracksAll}) => {
-          
-          const track = tracksAll.map(({track}) => {
-            const artists = track.artists
-            .map(({ name }) => name)
-            .join(', ');
+  source.map(({ name, icons: [icon], playlists }) => {
 
-          return  `<li>${track.name} - ${artists}</li>`
-        }).join(``);
+      if (playlists.length) {
+          const playlistsList = playlists
+              .map(
+                  ({ name, external_urls: { spotify }, images: [image], playlistTracks }) => {
+                      let tracksList = '';
+                      if (playlistTracks) {
+                          tracksList = playlistTracks
+                              .map(({ track }) => {
+                                  const artists = track.artists
+                                      .map(({ name }) => name)
+                                      .join(', ');
+                                  return `<li class="trackli"><span id="trackname">${track.name} -</span> ${artists}</li>`
+                              })
+                              .join('');
+                      }
+                      return `
+                          <li class="playlist">
+                          <a href="${spotify}" target="_blank">
+                              <img src="${image.url}" width="180" height="180" alt="${name}"/>
+                          </a>
+                          <ol class="tracks">
+                              ${tracksList}
+                          </ol>
+                      </li>`
+                  })
+              .join("");
 
-       return ` <li>
-          <a href="${spotify}" alt="${name}" target="_blank">
-            <img src="${image.url}" width="180" height="180"/>
-          </a>
-          <ol class="tracks">
-          ${track}
-        </ol>
-        </li>`
-          }
-      )
-    if (playlists) {
-      return (
-        acc +
-        `
-      <article class="genre-card">
-        <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
-        <div>
-          <h2>${name}</h2>
-          <div id='in'>
-          <ol id='inol'> ${playlistsList} </ol>
-        </div>
-        </div>
-      </article>`
-      );
-    }
-  }, ``);
+          const html = `
+          <article>
+              <div id="headerdiv">
+                  <h2>${name}</h2>
+                  <img src="${icon.url}" width="${icon.width}" height="${icon.height}"/>
+              </div>
+              <div id="in">
+                <ol id="inol">
+                    ${playlistsList}
+                </ol>
+              </div>
+          </article>`;
 
-  list.innerHTML = html;
-};
+          list.insertAdjacentHTML("beforeend", html);
+      }
+  });
+}
+
 
 loadGenres().then(renderGenres);
 
@@ -142,6 +144,3 @@ const onSubmit = (event) => {
   renderGenres(term);
 };
 
-const onreset = () => {
-    renderGenres();
-}
