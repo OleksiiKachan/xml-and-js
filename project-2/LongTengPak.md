@@ -1,0 +1,3 @@
+- I take part in getting live rates, historical data and crypto company list and loading these data into html
+- Coinlayer API is returning objects so I have to use Object.keys(), Object.values() and Object.entries() to get each data
+- In getHistoricalData(), I use the input of the user to search for historical data of a specific cryptocurrency and specific date. So I have to get the index of the interested data and then use this index to get the data

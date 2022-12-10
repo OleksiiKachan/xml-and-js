@@ -62,11 +62,9 @@ const loadGenres = async () => {
     const token = await getToken();
     const genres = await getGenres(token);
     const list = document.getElementById(`genres`);
-    genres.map(async ({ name, id, icons: [icon], href }) => {
-      const playlists = await getPlaylistByGenre(token, id);
+    genres.map(async ({ name, id, icons: [icon], href ,playlists}) => {
 
-      Promise.all(playlists.map( async ({ id, name, external_urls: { spotify }, images: [image] }) => {
-              const tracks = await getTracksByPlayList(token, id);
+      playlists.map(  ({ id, name, external_urls: { spotify }, images: [image] ,tracks}) => {
               const track = tracks.map(({track}) => {
                 const artists = track.artists
                   .map(({ name }) => name)
@@ -85,7 +83,7 @@ const loadGenres = async () => {
               </a>
             </li>`
         }
-      ))
+      )
       .then(playlistItem => playlistItem.join(``))
       .then(playlistItem => {
         console.log(playlistItem);
@@ -108,3 +106,4 @@ const loadGenres = async () => {
   };
 
 loadGenres();
+

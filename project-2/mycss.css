@@ -1,0 +1,54 @@
+Body{
+    font-family: "Helvetica", "Arial", sans-serif;
+    color: white;
+    background-color: rgb(0, 110, 253);
+    font-weight: bold;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    margin: 20px;
+}
+
+#rate {
+    margin: 20px;
+    padding: 0;
+    display: flex;
+    overflow: auto;
+    max-width: 100%;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid rgb(17, 0, 253);
+}
+
+p{
+    padding:10px; 
+    border: 2px solid rgba(0, 0, 255, 0.329);
+    background-color: rgba(199, 223, 255, 0.514);
+    text-align: center;
+}
+#hist{
+    margin:20px;
+}
+
+label{
+    width: 110px;
+    display: inline-block;
+}
+
+#list{
+    overflow-x:auto;
+    margin: 20px;
+    text-align: center;
+    overflow:scroll; 
+    height:400px;
+}
+
+table{
+    width:100%;
+    text-align: center;
+    background-color: rgba(199, 223, 255, 0.514);
+}
