@@ -7,10 +7,11 @@ const renderTable = (data) => {
 
   if (withFilters) {
     const params = new URLSearchParams(window.location.search);
-    const nameTerm = params.get(`name`).toLowerCase();
+    const nameTerm = params.get(`name`).toLowerCase(); // burada actual value elde ettik, büyük harfle yazsak bile filter çalışacak
     const inputControl = document.getElementById(`input-name-term`);
     inputControl.value = nameTerm;
 
+    //her seferinde filter çalıştırdığımızda datalar tekrar yüklenir, sadece 1 kez fetch yapmak daha mantıklı
     source = source.filter(({ name }) => name.toLowerCase().includes(nameTerm));
   }
 

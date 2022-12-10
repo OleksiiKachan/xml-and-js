@@ -10,7 +10,8 @@ const clientSecret = `601d610f90914ab2bd25f467c6b17dce`;
 
 //Private module
 const getToken = async () => {
-  const result = await fetch("https://accounts.spotify.com/api/token", { //buradaki link endpoint, buna fetch API method deniyor. 
+  const result = await fetch("https://accounts.spotify.com/api/token", //buradaki link endpoint, buna fetch API method deniyor. 
+  { 
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",    //we need to specifiy the required content including clientId and clientSecret
@@ -29,8 +30,7 @@ const getToken = async () => {
 //Get a track https://api.spotify/v1/tracks/{id}
 
 const getGenres = async (token) => {    //Bu metotla categorileri çağırıyoruz
-  const result = await fetch(
-    `https://api.spotify.com/v1/browse/categories?locale=sv_US`,
+  const result = await fetch(`https://api.spotify.com/v1/browse/categories?locale=sv_US`,
     {
       method: "GET",
       headers: { Authorization: "Bearer " + token },
@@ -43,9 +43,7 @@ const getGenres = async (token) => {    //Bu metotla categorileri çağırıyoru
 
 const getPlaylistByGenre = async (token, genreId) => {  //Bu metotle playlist elde ediyoruz ve json olarak dönüyor galiba
   const limit = 10;
-
-  const result = await fetch(
-    `https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`,
+  const result = await fetch(`https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`,
     {
       method: "GET",
       headers: { Authorization: "Bearer " + token },

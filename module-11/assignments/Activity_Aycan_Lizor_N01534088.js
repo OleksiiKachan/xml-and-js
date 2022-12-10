@@ -1,5 +1,5 @@
-const clientId = `a5f261df31334b54bbdaf6a8cf18327d`;
-const clientSecret = `72dce1229f33421988f780a020f146cb`;
+const clientId = `ee16a4609beb48a297c451f707020470`;
+const clientSecret = `601d610f90914ab2bd25f467c6b17dce`;
 
 let _data = [];
 
@@ -44,6 +44,67 @@ const getPlaylistByGenre = async (token, genreId) => {
   const data = await result.json();
   return data.playlists ? data.playlists.items : []; //if statement
 };
+
+  //------------------------------------------------------------------------------------------
+  const getTracks = async (token, href) => {
+    href += '?limit=10'
+    const result = await fetch(href, {
+      method: 'GET',
+      headers: {
+        Authorization: "Bearer " + token
+      }
+    })
+  
+    const data = await result.json()
+    return data.items
+  }
+  
+  const closeTracks = () => {
+    const track = document.getElementById('tracks')
+    if (track) document.body.removeChild(track)
+  }
+  
+  const displayTracks = async (token, href) => {
+    const tracks = await getTracks(token, href)
+  
+    closeTracks()
+  
+    
+  
+    const trackListItem =  tracks.map(( { track }) => {
+      const { name, external_urls: { spotify } } = track
+      const artists = track.artists.map(artist => artist.name).join(`, `)
+  
+      return `
+        <li>
+          <div class="info">
+            <h2>${name}</h2>
+            <h3>${artists}</h3>
+            <h3>${spotify}</h3>
+
+          </div>
+          
+        </li>
+      `
+    }).join(``);
+  
+    const trackDiv = document.createElement('div')
+    trackDiv.id = 'tracks'
+  
+    const html = `
+        <p onClick="closeTracks()">Close</p>
+        <h2>Tracks</h2>
+        <ol>
+          ${trackListItem}
+        <ol>
+    `
+  
+    trackDiv.insertAdjacentHTML('beforeend', html)
+  
+    document.body.appendChild(trackDiv)
+  }
+
+  ///-------------------------------------------------
 
 const loadGenres = async () => {
   const token = await getToken();
