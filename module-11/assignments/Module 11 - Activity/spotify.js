@@ -1,10 +1,9 @@
 const clientId = "d333b69db5db43bc9782a89516c0aa86";
 const clientSecret = "91ad3ed3f498403eb66d9d4f740a5ee5";
 
-const _data = [];
+let _data = [];
 
 const _getToken = async () => {
-
     const result = await fetch("https://accounts.spotify.com/api/token", {
         method: "POST",
         headers: {
@@ -16,7 +15,7 @@ const _getToken = async () => {
 
     const data = await result.json()
     return data.access_token;
-}
+};
 
 const _getGenres = async (token) => {
     const result = await fetch(`https://api.spotify.com/v1/browse/categories/`, {
@@ -27,9 +26,8 @@ const _getGenres = async (token) => {
     });
 
     const data = await result.json();
-
     return data.categories.items;
-}
+};
 
 const _getPlaylistByGenre = async (token, genreId) => {
     const limit = 10;
@@ -42,24 +40,8 @@ const _getPlaylistByGenre = async (token, genreId) => {
     });
 
     const data = await result.json();
-
     return data.playlists ? data.playlists.items : [];
-}
-
-const _getTracks = async (token, tracksEndPoint) => {
-    const limit = 5;
-
-    const result = await fetch(`${tracksEndPoint}?limit=${limit}`, {
-        method: 'GET',
-        headers: {
-            Authorization: "Bearer " + token
-        }
-    });
-
-    const data = await result.json();
-
-    return data.items;
-}
+};
 
 const displayGenres = async () => {
     const token = await _getToken();
@@ -70,7 +52,7 @@ const displayGenres = async () => {
             const playlists = await _getPlaylistByGenre(token, genre.id);
             return { ...genre, playlists };
         })
-    )
+    );
 };
 
 const filterGenres = (filterTerm) => {
@@ -85,8 +67,8 @@ const filterGenres = (filterTerm) => {
     }
 
     const html = source.reduce((acc, { name, icons: [icon], playlists }) => {
-        const playlistsList = playlists.map(({ name, external_urls: { spotify }, images: [image], playlistTracks }) => `
-        <li class="li"><img src="${image.url}" width="100" height="100" alt="${name}" /><ol>${tracksList}</ol></li>`
+        const playlistsList = playlists.map(({ external_urls: { spotify }, images: [image] }) => `
+        <a href="${spotify}"><li class="li"><img src="${image.url}" width="100" height="100" /></li></a>`
         ).join(``);
 
         if (playlists) {
@@ -94,7 +76,7 @@ const filterGenres = (filterTerm) => {
             <article>
             <div class="container">
             <div class="genre">
-            <img src="${icon.url}" width="${icon.width}" height="${icon.height} alt="${name}" />
+            <img src="${icon.url}" width="${icon.width}" height="${icon.height}" />
             <h2>${name}</h2>
             </div>
             <ol>
@@ -105,7 +87,7 @@ const filterGenres = (filterTerm) => {
             );
         }
     }, ``);
-    list.innerHTML(html);
+    list.innerHTML = html;
 };
 
 displayGenres().then(filterGenres);
@@ -114,4 +96,4 @@ const onSubmit = (e) => {
     e.preventDefault();
     const term = e.target.term.value;
     filterGenres(term);
-}
+};

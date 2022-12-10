@@ -27,7 +27,6 @@ article {
 .genre > img {
     height: 200px;
     width: 300px;
-    border-radius: 20px;
     border-top: 1px solid #908e8e;
     border-bottom: 1px solid #908e8e;
     border-left: 1px solid #908e8e;
@@ -44,12 +43,15 @@ article {
 }
 
 .container ol {
-    margin: 0;
-    padding-bottom: 20px;
+    margin-top: 70px;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 60%;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.container ol li {
+    margin-bottom: 20px;
+    margin-right: 120px;
 }
 
 ol li {
@@ -70,7 +72,6 @@ ol li {
 }
 
 .li {
-    width: 100%;
     list-style-type: none;
     display: flex;
     margin: 0;
@@ -80,10 +81,8 @@ ol li {
 }
 
 li img {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
     height: auto;
-    width: 300px;
+    width: 200px;
     opacity: 0.8;
 }
 
