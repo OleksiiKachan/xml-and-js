@@ -114,13 +114,17 @@ const getToken = async () => {
       })
     }
     
+
+
     const list = document.getElementById('genres');
   
-    source.map(  ({name, icons: [icon], id, playlists, tracksList}) => {
+
+
+    const html = source.map(  ({name, icons: [icon], playlists}) => {
       // const playlists = await getPlaylistByGenre(token, id)
       // console.log(playlists)
   
-
+      
       if (playlists.length) {
 
         let playlistItem = playlists.map(
@@ -164,7 +168,7 @@ const getToken = async () => {
 
           // console.log(playlistItem);
   
-          const html = `
+          return `
           <article>
             <div class="genre">
             <img src="${icon.url}" width="${icon.width}" height="${icon.height} alt="${name}" </img>
@@ -176,9 +180,14 @@ const getToken = async () => {
             
           </article>`
         
-        list.insertAdjacentHTML('beforeend', html)
+        // list.insertAdjacentHTML('beforeend', html)
       }
-    })
+    }).join('');
+
+
+    console.log('this');
+    console.log(html);
+    list.innerHTML = html;
   }
   
   loadGenres().then(renderGenres);
