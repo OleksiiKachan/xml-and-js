@@ -120,66 +120,92 @@ const renderGenres =  (filterTerm) => {
   
 
   const list = document.getElementById('genres');
+  const rBtnGenresAndPlaylists = document.getElementById('genresAndPlaylists');
+  
+  
+  let html;
+  
+  if(rBtnGenresAndPlaylists.checked){
 
-  const html = source.map( ({name, icons: [icon], playlists}) => {
-
-    
-    if (playlists.length) {
-
-      let playlistItem = playlists.map(
-        ({ name, external_urls: { spotify }, images: [image], tracksList }) => {
-          const tracksHtml = tracksList.reduce((acc, {track})=> {
+    html = source.map( ({name, icons: [icon], playlists}) => {
+  
+      
+      if (playlists.length) {
+  
+        let playlistItem = playlists.map(
+          ({ name, external_urls: { spotify }, images: [image], tracksList }) => {
+            const tracksHtml = tracksList.reduce((acc, {track})=> {
+              
+              if(!track)
+                return acc + "";
+  
+              const artistsNames = track.artists.reduce((acc, {name}) => acc === "" ? name : acc + ", " + name , "");
+              
+              return acc + `
+              <li>
+                <img src="./play-button.png" width="30px" height="30px" alt="Play button" />
+                <div>
+                  <span class="trackName">${track.name}</span>
+                  <span class="trackDuration">&nbsp;&nbsp;&nbsp;&nbsp; ${millisecondsToMinutesAndSeconds(track.duration_ms)}</span>
+                  <br>
+                  <span class="trackArtists">Artists: ${artistsNames}<span>
+                </div>
+              </li>
+              `;
+            }, "");
             
-            if(!track)
-              return acc + "";
-
-            const artistsNames = track.artists.reduce((acc, {name}) => acc === "" ? name : acc + ", " + name , "");
-            
-            return acc + `
+            return `
             <li>
-              <img src="./play-button.png" width="30px" height="30px" alt="Play button" />
-              <div>
-                <span class="trackName">${track.name}</span>
-                <span class="trackDuration">&nbsp;&nbsp;&nbsp;&nbsp; ${millisecondsToMinutesAndSeconds(track.duration_ms)}</span>
-                <br>
-                <span class="trackArtists">Artists: ${artistsNames}<span>
-              </div>
-            </li>
-            `;
-          }, "");
-          
+              <a href="${spotify}">
+                <img src="${image.url}" width="180" height="180" alt="${name}" />
+                <div class="tracksOLWrapper">
+                  <ol class="tracksOL">
+                    ${tracksHtml}
+                  </ol>
+                </div>
+              </a>
+            </li>`
+          }
+          ).join('');
+  
+  
           return `
-          <li>
-            <a href="${spotify}">
-              <img src="${image.url}" width="180" height="180" alt="${name}" />
-              <div class="tracksOLWrapper">
-                <ol class="tracksOL">
-                  ${tracksHtml}
-                </ol>
-              </div>
-            </a>
-          </li>`
-        }
-        ).join('');
+          <article>
+            <div class="genre">
+            <img src="${icon.url}" width="${icon.width}" height="${icon.height} alt="${name}" </img>
+            <h2>${name}</h2>
+            </div>
+            <ol class="playlistOL">
+              ${playlistItem}
+            </ol>
+            
+          </article>`
+      }
+  
+    }).join('');
 
 
-        return `
-        <article>
-          <div class="genre">
-          <img src="${icon.url}" width="${icon.width}" height="${icon.height} alt="${name}" </img>
-          <h2>${name}</h2>
-          </div>
-          <ol class="playlistOL">
-            ${playlistItem}
-          </ol>
-          
-        </article>`
-    }
+  }else{
 
-  }).join('');
+    html = source.map( ({name, icons: [icon], playlists}) => {
+  
+      return `
+      <article class="genresOnly">
+        <div class="genre">
+        <img src="${icon.url}" width="${icon.width}" height="${icon.height} alt="${name}" </img>
+        <h2>${name}</h2>
+        </div>
+        
+      </article>`
+  
+
+    }).join('');
 
 
-  console.log('before innerHtml');
+  }
+
+
+
   list.innerHTML = html;
 }
 

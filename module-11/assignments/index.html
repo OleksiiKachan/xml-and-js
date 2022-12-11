@@ -9,9 +9,20 @@
 </head>
 <body>
     <form onsubmit="onSubmit(event)">
-        <label for="input-filter-term">Find genre</label> 
+        <label for="input-filter-term">Find genre: </label> 
         <input type="text" name="term" id="input-filter-term" placeholder="Enter name to filter">
-        <button type="submit">Apply filters</button>
+        
+        
+        <span id="radioBtnsTitle"> View: </span>
+
+        <input type="radio" id="onlyGenres" name="View" value="onlyGenres">
+        <label for="onlyGenres">Only Genres</label>
+        <input type="radio" id="genresAndPlaylists" name="View" value="genresAndPlaylists" checked>
+        <label for="genresAndPlaylists">Genres and Playlists</label>
+
+        
+        <button type="submit" id="submitFilters">Apply filters</button>
+    
     </form>
     <div id="genres"></div>
     <script src="../assignments/app.js"></script>

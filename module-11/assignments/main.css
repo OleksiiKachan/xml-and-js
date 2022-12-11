@@ -6,9 +6,7 @@ body{
 
 
 article{
-    /* width: 360px; */
     margin: 60px 40px; 
-    /* display: inline-block; */
 }
 
 article > ol {
@@ -39,6 +37,16 @@ div.genre > h2{
 }
 
 
+/* For genres only radiobutton */
+article.genresOnly{
+    display: inline-block;
+}
+
+article.genresOnly > div.genre{
+    bottom: 0px;
+}
+/* Genres only radiobutton ends */
+
 
 
 ol.playlistOL{
@@ -48,7 +56,6 @@ ol.playlistOL{
 
 .playlistOL > li{
     list-style-type: none;
-    /* display:inline; */
     padding: 0;
     margin: 20px;
 }
@@ -75,4 +82,17 @@ ol.tracksOL > li{
 
 ol.tracksOL > li > div {
     display: inline-block;
+}
+
+
+
+
+
+span#radioBtnsTitle{
+    margin-left: 40px;
+}
+
+
+button#submitFilters{
+    margin-left: 40px;
 }
