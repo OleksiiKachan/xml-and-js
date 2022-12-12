@@ -1,0 +1,49 @@
+#main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.card{
+    background-color: #effcf1;
+    border-radius: 10%;
+    width: 350px;
+    height: 250px;
+    padding: 2rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+.icon{
+    background-color: #d0f4da;
+    border-radius: 10%;
+    width: 45%;
+    height: 45%;
+    
+}
+.symbol{
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+    color: #043c0c;
+}
+
+.name{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    color: #043c0c;
+}
+
+.max_supply{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 3rem;
+    color: #043c0c;
+}
+
+.number-max-supply{
+    font-size: 30px;
+    font-weight: bold;
+    color: #5daf3e;
+    margin-left: 2rem;
+    font-style: italic;
+}
