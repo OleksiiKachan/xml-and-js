@@ -85,49 +85,70 @@ const renderGenres = (filterTerm) => {
     const list = document.getElementById("genres");
     list.innerHTML = "";
 
+    const opt_genres = document.getElementById("select_genres").checked;
+    const opt_tracklists = document.getElementById("select_tracklists").checked;
+    const opt_all = document.getElementById("select_all").checked;
     source.map(({ name, icons: [icon], playlists }) => {
 
         if (playlists.length) {
-            const playlistsList = playlists
+            let playlistsList = '';
+
+            if (opt_tracklists || opt_all) {
+
+                if (opt_all){
+                    playlists = playlists.slice(0, 9);
+                }
+            playlistsList = playlists
                 .map(
-                    ({ name, external_urls: { spotify }, images: [image], playlistTracks }) => {
-                        let tracksList = '';
-                        if (playlistTracks) {
-                            tracksList = playlistTracks
-                                .map(({ track }) => {
-                                    const artists = track.artists
-                                        .map(({ name }) => name)
-                                        .join(', ');
-                                        return `<li class="track">${track.name} - ${artists}</li>`})
-                                        .join('');
-          }
-          return`
-          <li class="playlist">
-                <a href="${spotify}" alt="${name}" target="_blank">
-                    <img src="${image.url}" width="180" height="180" alt="${name}"/>
-                </a>
-                <ol class="tracks">
-                  ${tracksList}
-                </ol>
-            </li>`;
-      })  
-      .join("");
-      
-        const html = `
-        <article class="genre-card">
-                <div>
-                    <h2>${name}</h2>
-                    <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
-                </div>
+                    ({ name, external_urls: { spotify }, images: [image], playlistTracks }) => 
+                        buildPlaylist(name, spotify, image.url, playlistTracks, opt_all))
+                    .join("");
+                playlistsList = `
                 <ol class="playlists">
-                    ${playlistsList}
-                </ol>
-            </article>`;
-        
-        list.insertAdjacentHTML("beforeend", html);
-    }
-      });
-    }
+                ${playlistsList}
+                </ol>`;
+            }
+         const article_class = opt_genres ? 'genre_no_playlists' : 'genre_with_playlists';
+            
+         const html = `
+            <article class="genre-card">
+                    <div>
+                        <h2>${name}</h2>
+                        <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
+                    </div>
+                    <ol class="playlists">
+                        ${playlistsList}
+                    </ol>
+                </article>`;
+            
+            list.insertAdjacentHTML("beforeend", html);
+            }
+        });
+     }
+   const buildPlaylist = (playlist_name, playlist_url, playlist_image_url, playlistTracks, opt_all) => {
+        let tracksList = '';
+        const tracksListHtml = opt_all ? `
+        <li class="playlist_with_tracks">` : `<li class="playlist_no_tracks">`;
+            if (playlistTracks && opt_all) {
+                tracksList = playlistTracks
+                    .map(({ track }) => {
+                        const artists = track.artists
+                            .map(({ name }) => name)
+                            .join(', ');
+                            return `<li class="track">${track.name} - ${artists}</li>`
+                    })
+                .join('');
+                tracksList = `<ol class="tracks">${tracksList}</ol>`;
+          }
+          return tracksListHtml + `
+        <a href="${playlist_url}" target="_blank">
+            <img src="${playlist_image_url}" width="180" height="180" alt="${playlist_name}"/>
+        </a>
+        ${tracksList}
+    </li>`;
+}
+      
+       
   
 
 
@@ -140,5 +161,6 @@ const onSubmit = (event) => {
 };
 
 const onReset = () => {
+    document.getElementById("opt_all").checked = true;
     renderGenres();
 };

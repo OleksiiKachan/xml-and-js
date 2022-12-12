@@ -7,8 +7,8 @@
     <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
   <body>
-    <form onsubmit="onSubmit(event)">
-      <label for="input-filter-term">Find genre</label>
+    <form onsubmit="onSubmit(event)" onreset="onReset()">
+      <label for="input-filter-term">Find genre: </label>
       <input
         type="text"
         name="term"
@@ -16,6 +16,15 @@
         placeholder="Enter value"
       />
       <button type="submit">Apply filters</button>
+      <button type="reset">Reset</button>
+      <div id="radio_buttons">
+        <input type="radio" id="select_all" name="display" value="Show tracklists" checked>
+        <label for="select_all">Show trackLists</label>
+        <input type="radio" id="select_tracklists" name="display" value="Hide tracklists">
+        <label for="select_tracklists">Hide trackList</label>
+        <input type="radio" id="select_genres" name="display" value="Hide playlists">
+        <label for="select_genres">Hide playLists</label>
+      </div>
     </form>
       <div id="genres"></div>
     </div>

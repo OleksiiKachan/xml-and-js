@@ -37,6 +37,26 @@
     justify-content: space-evenly;
     
   }
+  .genre_with_playlists:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.genre_no_playlists {
+    margin-bottom: 15px;
+}
+.genre_no_playlists > div > img {
+  margin: 20px 30px;
+}
+.playlist_with_tracks {
+  flex-basis: 33%;
+  display: flex;
+}
+
+.playlist_no_tracks {
+  flex-basis: 20%;
+  display: flex;
+}
+
   
   .playlist {
     flex-basis: 33%;
