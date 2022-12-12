@@ -8,14 +8,19 @@
   </head>
   <body>
     <form onsubmit="onSubmit(event)">
-      <label for="input-filter-term">Find genre</label>
-      <input
-        type="text"
-        name="term"
-        id="input-filter-term"
-        placeholder="Enter value"
-      />
-      <button type="submit">Apply filters</button>
+        <label for="input-filter-term">Find genre</label>
+        <input type="text" name="term" id="input-filter-term" placeholder="Enter value"/>
+        <br>
+        <input type="radio" id="show" name="display" checked>
+        <label for="select_all">Show_all</label>
+        <br>
+        <input type="radio" id="hide_tracklists" name="display">
+        <label for="select_tracklists">Show only Playlists</label>
+        <br>
+        <input type="radio" id="hide_playlist" name="display">
+        <label for="select_genres">Show only genre</label>
+        <br>
+       <button type="submit">Apply filters</button>
     </form>
     <div id="genres"></div>
     <script src="activity.js" type="text/javascript"></script>

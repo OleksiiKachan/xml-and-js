@@ -85,53 +85,69 @@ const renderGenres = (filterTerm) => {
 
     const list = document.getElementById("genres");
     list.innerHTML = "";
+    
+    const forgenres = document.getElementById("hide_playlist").checked;
+    const fortracklists = document.getElementById("hide_tracklists").checked;
+    const forall = document.getElementById("show").checked;
 
     source.map(({ name, icons: [icon], playlists }) => {
 
-        if (playlists.length) {
-            const playlistsList = playlists
+      if (playlists.length) {
+          let playlistsList='';
+          if (fortracklists || forall) {
+           
+            if (forall){
+                playlists = playlists.slice(0, 9);
+            }
+            playlistsList = playlists
                 .map(
-                    ({ name, external_urls: { spotify }, images: [image], playlistTracks }) => {
-                        let tracksList = '';
-                        if (playlistTracks) {
-                            tracksList = playlistTracks
-                                .map(({ track }) => {
-                                    const artists = track.artists
-                                        .map(({ name }) => name)
-                                        .join(', ');
-              return `
-              <li><a href="${track.external_urls.spotify}"> 
-              ${track.name}<br>
-              Artist_name: ${artists}<br>
-              Album_name: ${track.album.name}
-              </li><br>`
-              })
-              .join('');
+                    ({ name, external_urls: { spotify }, images: [image], playlistTracks }) => 
+                      getPlaylist(name, spotify, image.url, playlistTracks, forall))
+                      .join("");
+                      playlistsList=`<ol>${playlistsList}</ol>`;
           }
-          return`
-          <li><a href="${spotify}"><img src="${image.url}" width="100" height="100" alt="${name}"/>
-          <ol id=tracks>${tracksList}
-          </ol></li>`;
-      })  
-      .join("");
-      
-        const html = `
+    
+         const html = `
          <article class="genre-card">
-          <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
-          <div>
-            <h2>${name}</h2>
-            <ol>
-              ${playlistsList}
-            </ol>
-          </div>
-        </article>`;
+            <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
+            <div>
+              <h2>${name}</h2>
+              <ol>
+                 ${playlistsList}
+              </ol>
+           </div>
+          </article>`;
         
-        list.insertAdjacentHTML("beforeend", html);
-    }
-      });
-    }
-  
+         list.insertAdjacentHTML("beforeend", html);
+      }
+    });
+}
 
+const getPlaylist = (playlist_name, playlist_url, playlist_image_url, playlistTracks, forall) => {
+  let tracksList = '';
+  
+  if (playlistTracks && forall) {
+      tracksList = playlistTracks
+          .map(({ track }) => { 
+            const artists = track.artists
+            .map(({ name }) => name)
+            .join(', ');
+            return `
+            <li><a href="${track.external_urls.spotify}"> 
+            ${track.name}<br>
+            Artist_name: ${artists}<br>
+            Album_name: ${track.album.name}
+            </li><br>`
+          })
+          .join('');
+  }
+  return`
+  <li><a href="${playlist_url}"><img src="${playlist_image_url}" width="100" height="100" alt="${playlist_name}"/>
+  <ol id=tracks>
+  ${tracksList}
+  </ol>
+  </li>`;
+}
 
 loadGenres().then(renderGenres);
 
