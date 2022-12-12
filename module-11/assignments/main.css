@@ -1,0 +1,62 @@
+body{
+    margin: 5px;
+    background-color: black;
+}
+h1{
+  color: antiquewhite;
+  text-align: center;
+  font-family: cursive;
+}
+.genre-card {
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    background-color: maroon;
+    color: whitesmoke;
+    font-size: large;
+    font-weight: 100;
+    font-family: cursive;
+    border: 5px solid yellow;
+  }
+  
+  .genre-card:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  
+  .genre-card > div {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /*border-radius: 50%;*/
+  }
+  
+  .genre-card > div > a {
+    color: white;
+    font-weight: bold;
+  }
+  
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    overflow: auto;
+    max-width: 100%;
+  }
+  img{
+    border-radius: 50%;
+    border-color: chartreuse;
+    border: 5px;
+    padding: auto;
+  }
+  label{
+    color: blanchedalmond;
+  }
+  table{
+    align-items: center;
+    align-content: center;
+  }
+  button{
+    background-color: green;
+  }
