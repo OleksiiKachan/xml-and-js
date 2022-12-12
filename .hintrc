@@ -9,6 +9,12 @@
         "document-title": "off"
       }
     ],
-    "meta-viewport": "off"
+    "meta-viewport": "off",
+    "axe/name-role-value": [
+      "default",
+      {
+        "button-name": "off"
+      }
+    ]
   }
 }
