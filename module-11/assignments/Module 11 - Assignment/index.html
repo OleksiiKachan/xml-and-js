@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 11 - Assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Spotify App</h1>
+    <h3>(Module 11 - Assignment)</h3>
+    <form onsubmit="onSubmit(event)">
+        <label for="filter-term">Find Genre:</label>
+        <input type="text" name="term" id="filter-term" size="30" placeholder="Enter a value" /><br /><br />
+        <input type="radio" name="filter" id="show_playlists">
+        <label for="show_playlists">Show Playlists</label>
+        <input type="radio" name="filter" id="hide_playlists">
+        <label for="hide_playlists">Hide Playlists</label>
+        <input type="radio" name="filter" id="show_all">
+        <label for="show_all">Show All</label><br /><br />
+        <input type="submit" value="Search" />
+        <input type="reset" value="Reset" />
+    </form><br /><br />
+    <div id="genres"></div>
+    <script src="spotify.js"></script>
+</body>
+
+</html>
