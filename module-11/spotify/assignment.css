@@ -1,0 +1,21 @@
+ol {
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+  
+  }
+  h2 {
+    color: rgb(235, 239, 3);
+  }
+  article {
+    display:inline-flexbox;
+    align-items: center;
+    text-align: center;
+    
+    background: rgb(77, 83, 83);
+  }
+  
+  playlist {
+    color: rgb(235, 239, 3);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
