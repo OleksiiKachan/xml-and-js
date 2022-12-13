@@ -8,7 +8,17 @@
   </head>
   <body>
     <form onsubmit="onSubmit(event)" onreset="onReset()">
+      <label for="input-filter-term">Find genre: </label>
       <input type="text" name="term" id="input-name-term"/>
+
+      <span id="radioBtnsTitle"> View: </span>
+
+      <input type="radio" id="genresAndPlaylists" name="View" value="genresAndPlaylists" checked>
+      <label for="genresAndPlaylists">Genres and Playlists</label>
+      <input type="radio" id="onlyGenres" name="View" value="onlyGenres">
+      <label for="onlyGenres">Only Genres</label>
+      
+
       <button type="submit">Apply filters</button>
       <button type="reset">Reset</button>
     </form>
