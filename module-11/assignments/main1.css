@@ -34,3 +34,20 @@ ol {
 form {
   margin-bottom: 15px;
 }
+
+button {
+  background-color: #41de79;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+#radio_buttons {
+  margin: 10px;
+}
+
+#genres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
