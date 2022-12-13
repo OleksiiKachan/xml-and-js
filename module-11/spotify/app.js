@@ -104,6 +104,7 @@ const renderGenres = (filterTerm) => {
   list.innerHTML = html;
 };
 
+
 loadGenres().then(renderGenres);
 
 const onSubmit = (event) => {

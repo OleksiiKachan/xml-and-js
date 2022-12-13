@@ -1,6 +1,7 @@
 const clientId = `64cee1a4e6af4ac1928fdc101a255fd7`;
 const clientSecret = `0431afb4ce78483c9a6930e080718905`;
 
+
 const getToken = async () => {
     const result = await fetch("https://accounts.spotify.com/api/token", {
       method: "POST",
@@ -27,6 +28,7 @@ const getToken = async () => {
       return data.categories.items;
   };
   
+
   const getPlaylistByGenre = async (token, genreId) => {
       const limit = 10;
       const result = await fetch(`https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`, {
@@ -57,13 +59,22 @@ const getToken = async () => {
   
       const list = document.getElementById('genres');
   
-      genres.map(async ({name, icons: [icon], id}) => {
+      _data = await Promise.all(genres.map(async ({name, icons: [icon], id}) => {
           const playlists = await getPlaylistByGenre(token, id);
+
+          return { ...genres, playlists };
+        }));
+
+        const renderGenres = (playlists) => {
+          let source = _data;
           //console.log(playlists);
           if(playlists.length){
             Promise.all(playlists.map( async ({ name, external_urls: { spotify }, images: [image], tracks }) => {
             const tracksInPlaylist = await getTracks(token, tracks.href);
             //console.log(tracks); 
+
+
+
             let tracksListinPlaylist = '';
             if(tracksInPlaylist.length){
                tracksListinPlaylist = tracksInPlaylist.map(({track}) => {
@@ -94,7 +105,16 @@ const getToken = async () => {
               list.insertAdjacentHTML(`beforeend`, html);
           })  
           }
-      });
+          list.innerHTML = html;
+      };
   };
-  
-  loadGenres();
+
+
+        
+loadGenres().then(renderGenres);
+const onSubmit = (event) => {
+  event.preventDefault();
+  const term = event.target.term.value;
+  renderGenres(term);
+}
+          
