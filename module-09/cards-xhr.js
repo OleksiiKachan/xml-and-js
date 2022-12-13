@@ -29,8 +29,8 @@ function createCard(card) {
 }
 
 function parseCard(xml) {
-  const number = xml.getElementsByTagName(`number`)[0].childNodes[0].nodeValue;
-  const type = xml.getElementsByTagName(`type`)[0].childNodes[0].nodeValue;
+  const number = xml.getElementsByTagName(`number`)[0].childNodes[0].nodeValue;// nodeValue =text, bunu yazmazsan object döner,
+  const type = xml.getElementsByTagName(`type`)[0].childNodes[0].nodeValue;//childnodes array döner, sadece 1 eleman olsa bile.
   const currency =
     xml.getElementsByTagName(`currency`)[0].childNodes[0].nodeValue;
   const balance =

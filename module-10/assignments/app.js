@@ -11,21 +11,22 @@ const getToken = async () => {
     body: "grant_type=client_credentials",
   });
 
-  const data = await result.json();
-  return data.access_token;
+  const data = await result.json(); 
+  return data.access_token; //specifly calling API, spotify documentation
 };
 
-const getGenres = async (token) => {
+const getGenres = async (token) => { // to see the categories, it is the same Genres and categories.
   const result = await fetch(
-    `https://api.spotify.com/v1/browse/categories?locale=sv_US`,
+    `https://api.spotify.com/v1/browse/categories?locale=sv_US`, //after ?, eveyrthing is parameters
     {
-      method: "GET",
+      method: "GET", //it is API documentations, get or post. GET, all your paremeters open parsely
       headers: { Authorization: "Bearer " + token },
     }
   );
 
   const data = await result.json();
-  return data.categories.items;
+  console.log(data);
+  return data.categories.items; //specifly calling API, spotify documentation
 };
 
 const getPlaylistByGenre = async (token, genreId) => {

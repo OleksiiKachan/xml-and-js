@@ -1,8 +1,10 @@
-const clientId = `Aycan`;
-const clientSecret = `0Vqsmhnm7A3DovSlWZ1gQ`;
+const clientId = `ee16a4609beb48a297c451f707020470`;
+const clientSecret = `601d610f90914ab2bd25f467c6b17dce`;
+
+let dataArray = [];
 
 const getToken = async () => {
-    const result = await fetch("https://www.carboninterface.com/account/api_credentials", {
+    const result = await fetch("https://accounts.spotify.com/api/token", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -15,6 +17,7 @@ const getToken = async () => {
     return data.access_token;
   }
   
+  
   const getGenres = async (token) => {
     const result = await fetch(`https://api.spotify.com/v1/browse/categories/`, {
       method: 'GET',
@@ -24,8 +27,7 @@ const getToken = async () => {
     })
   
     const data = await result.json()
-  
-    return data.categories.items;
+     return data.categories.items;
   }
   
   const getPlaylistByGenre = async (token, genreId) => {
@@ -67,7 +69,6 @@ const getToken = async () => {
   
     closeTracks()
   
-    
   
     const trackListItem =  tracks.map(( { track }) => {
       const { name, external_urls: { spotify } } = track
@@ -108,6 +109,12 @@ const getToken = async () => {
     const token = await getToken()
     const genres = await getGenres(token);
   
+    dataArray = await Promise.all(genres.map(async (genre) => {
+        const playlists = await getPlaylistByGenre(token, genre.id);
+        return { ...genre, playlists };
+      })
+    ); 
+
     const list = document.getElementById('genres')
     const tracks = document.getElementById('tracks')
   
@@ -122,28 +129,104 @@ const getToken = async () => {
           }))
   
         const html = 
-        `<article>
+        `<div>
             <div class="genre">
             <img src="${icon.url}" width="${icon.width}" height="${icon.height} alt="${name}" </img>
             <h2>${name}</h2>
             </div>
-            <ol>
-              ${playlistItem.join(``)}
-            </ol>
-            <h2>Tracks>
-            <ol>
-            <ol>
             
-          </article>`
-        
+              ${playlistItem.join(``)}
+             <h2>Tracks>
+                   
+          </div>`
         list.insertAdjacentHTML('beforeend', html)
       }
     })
+
+
+    const renderGenres = (filterTerm) => {
+      let source = dataArray;
+      const genreWith = document.getElementById("with");
+      const genreWithout = document.getElementById("without");
+    
+      console.log(source);
+    
+      if (filterTerm) {
+        console.log(filterTerm);
+        const term = filterTerm.toLowerCase();
+        source = source.filter(({ name }) => {
+          console.log(name.toLowerCase().includes(term));
+          return name.toLowerCase().includes(term);
+        });
+      }
+      if (genreWith.checked) {
+        source = source.filter((obj) => {
+          if (obj.playlists.length !== 0) return obj;
+        });
+        console.log(source);
+      }
+      if (genreWithout.checked) {
+      }
+      const genreslist = document.getElementById(`genres`);
+      const page = source.reduce((acc, { name, icons: [icons], playlists }) => {
+      const playlistsList = playlists.map(({ name, external_urls: { spotify }, images: [image] }) => `
+          <li>
+            <a href="${spotify}" alt="${name}" target="_blank">
+              <img class="sub-img  " src="${image.url}" width="180" height="180"/>
+            </a>
+          </li>`
+          ).join(``);
+    
+        if (!without.checked) {
+          return (acc +
+            `<article class="genre-card">
+                <div class="main-image">
+                  <img class = "cat-img" src="${icons.url}" alt="${name}"/>
+                  </div>
+                  <div class="list">
+                    <h2>${name}</h2>
+                    <ol>
+                      ${playlistsList}
+                    </ol>
+                  </div>
+                </article>`
+          );
+        } else {
+          return (acc +
+            `<article class="genre-card">
+                <div class="main-image">
+                  <img class = "cat-img" src="${icons.url}" alt="${name}"/>
+                  </div>
+                  <div class="list">
+                    <h2>${name}</h2>
+                   
+                  </div>
+                </article>`
+          );
+        }
+      }, ``);
+     
+      genreslist.innerHTML = page;
+    };
+    loadGenres().then(renderGenres);
+    
+    
+    const onReset = () => {
+      renderGenres();
+    };
+
+    const onSubmit = (event) => {
+      event.preventDefault();
+      const term = event.target.term.value;
+    
+      renderGenres(term);
+    };
+    
   }
   
   const main = async () => {
     await loadGenres()
   }
   
-  main()
+  main();
   
