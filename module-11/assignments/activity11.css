@@ -1,0 +1,19 @@
+body {
+    margin:10px;
+    border: 3px salmon;
+    font: 1em sans-serif;
+}
+
+ol {
+    list-style:inside;
+   margin: 2px;
+   padding: 10px;
+    border: 2px solid rgb(241, 240, 240); 
+    display:inline-block;
+}
+
+article {
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background:linear-gradient(90deg, rgb(16, 80, 55) 0%, rgb(16, 119, 83) 35%, rgb(42, 74, 81) 100%);
+}
