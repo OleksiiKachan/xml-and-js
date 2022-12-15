@@ -1,5 +1,5 @@
 const _ApiKey = "pyaseITWbCkB7Eny9zy4cA";
-const _IsProd = false; //Controls what data to retrieve - actual API or mock
+const _IsProd = true; //Controls what data to retrieve - actual API or mock
 
 let _data = [];
 let _current_term = '';
