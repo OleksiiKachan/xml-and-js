@@ -9,7 +9,6 @@ const getVehicleMakes = async () => {
     const result = await fetch(`https://www.carboninterface.com/api/v1/vehicle_makes`,{
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json',
             Authorization: "Bearer " + _ApiKey
         }
     });
@@ -23,7 +22,6 @@ const getVehicleModelsByMake = async(makeId) => {
     const result = await fetch(`https://www.carboninterface.com/api/v1/vehicle_makes/${makeId}/vehicle_models`,{
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json',
             Authorization: "Bearer " + _ApiKey
         }
     });
