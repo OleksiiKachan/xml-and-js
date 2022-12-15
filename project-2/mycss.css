@@ -30,13 +30,17 @@ p{
     background-color: rgba(199, 223, 255, 0.514);
     text-align: center;
 }
-#hist{
-    margin:20px;
+
+#search_data{
+    display: flex;
 }
 
+
+
 label{
-    width: 110px;
+    width: 150px;
     display: inline-block;
+    margin-left:30px;
 }
 
 #list{
@@ -44,7 +48,7 @@ label{
     margin: 20px;
     text-align: center;
     overflow:scroll; 
-    height:400px;
+    height:350px;
 }
 
 table{
