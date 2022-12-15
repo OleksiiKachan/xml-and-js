@@ -1,0 +1,22 @@
+# Project 2
+
+- Generate html file from API data
+    - Read API data, which is stored in `_data` variable 
+    - Generate an article for each manufacturer
+    - Add manufacturers' logos
+    - Remove all duplicate models from each manufacturer
+    - Generate a list of models for each manufacturer
+    - Generate text with emission data for each model based on the unit selection (controlled by radio buttons)
+- Add filters and controls
+    - Add filter input and buttons to allow a user to search for a specific manufacturer
+    - Implement filtering of manufacturers
+    - Add radio buttons to allow a user to choose in which units data should be displayed
+    - Implement onclick action listeners for buttons to apply filter
+    - Implement onchange action listener for radio buttons to change display units
+- Implement UI
+    - Write css file
+    - Add logos images
+- Improvement to API usage
+    - Usage of Carboninterface API for the emission data is limited to 200 requests per month. Initially, we wanted to display 10 manufacturers with 10 models each. But this generates 100 API requests per page load, so after just 2 page loads, a new account had to be created. Therefore, we decided to decrease the number of manufacturers to 4 and the number of models to 5 (20 API requests in total).
+    - There was no point in retrieving actual data from API while developing a UI. I disabled the API calls for the emission data and mocked results with the static JSON (taken from API documentation examples). API calls for manufacturer and model lists are free, so I could work on UI without worrying.
+    - Add `_IsProd` variable that allows to easily switch between actual and mock data
