@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coinlayer API</title>
+    <link rel="stylesheet" type="text/css" href="mycss.css" />
+  </head>
+  <body>
+    <h1>coinlayer</h1>
+    
+    <div id="hist">
+      <h2>Historical Data</h2>
+      <label>Date: </label><input type="date" id="txtDate"><br>
+      <label>Symbol: </label><input type="text" id="txtSymbol">
+      <button id="btnSubmit">Submit</button>
+    </div>
+    <br>
+    <div id="liveRates">
+    </div>
+    <form onsubmit="onSubmit(event)" onreset="onReset()">
+      <label>Search Live Rate: </label><input
+        type="text"
+        name="name"
+        id="input-name-term"
+        placeholder="enter name"
+      />
+      <button type="submit">Apply filters</button>
+      <button type="reset">Reset</button>
+    </form>
+    <br>
+    <div id="cryptoList">
+    </div>
+    <form onsubmit="onSubmit2(event)" onreset="onReset2()">
+      <label>Search Available Cryptocurrency: </label><input
+        type="text"
+        name="name"
+        id="input-name-term2"
+        placeholder="enter name"
+      />
+      <button type="submit">Apply filters</button>
+      <button type="reset">Reset</button>
+    </form>   
+    <script src="myjs.js" type="text/javascript"></script>
+  </body>
+</html>
