@@ -1,11 +1,11 @@
 const accessKey = '05eda655830de5fdf3ba53afea1fc41b'
 
-let _data
+let _dataRates 
 
 const loadData = async () => {
   const result = await fetch(`http://api.coinlayer.com/live?access_key=${accessKey}`)
 
-  _data = await result.json()
+  _dataRates = await result.json()
 }
 
 const renderData = async () => {
@@ -15,7 +15,7 @@ const renderData = async () => {
   const amountFrom = document.getElementById('amount')
   const convertedTo = document.getElementById('converted-to')
 
-  Object.keys(_data.rates).forEach((crypto) => {
+  Object.keys(_dataRates.rates).forEach((crypto) => {
     const optionForFrom = document.createElement('option')
     const optionForTo = document.createElement('option')
     optionForFrom.text = crypto
@@ -36,8 +36,8 @@ const renderData = async () => {
     const toCurrency = to_select.value
     const amount = amountFrom.value
 
-    const amountInUSD = _data.rates[fromCurrency] * amount
-    const toAmountRateInUSD = _data.rates[toCurrency]
+    const amountInUSD = _dataRates.rates[fromCurrency] * amount
+    const toAmountRateInUSD = _dataRates.rates[toCurrency]
 
     if (toAmountRateInUSD !== 0) {
       const convertedAmount = amountInUSD / toAmountRateInUSD
