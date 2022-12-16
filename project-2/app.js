@@ -1,12 +1,12 @@
 // const clientId = `a5f261df31334b54bbdaf6a8cf18327d`;
 // const clientSecret = `72dce1229f33421988f780a020f146cb`;
 
-const clientId = `1c8207eef1e34c4a800ab67ab48a92c7`;
-const clientSecret = `ad92f2460db64eb0856fe519771d9e99`;
+const clientId = `UZ5PlChLW20Qab1RbzIHreg3gmscH65QXC5KZPSbERweU8iRQi`;
+const clientSecret = `PrN1MCTZrVTc0PUgbNkENRD6d6gCnU61Jp812kyC`;
 
 
 const getToken = async () => {
-  const result = await fetch("https://accounts.spotify.com/api/token", {
+  const result = await fetch("https://api.petfinder.com/v2/oauth2/token", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
@@ -19,9 +19,9 @@ const getToken = async () => {
   return data.access_token;
 };
 
-const getGenres = async (token) => {
+const getTypes = async (token) => {
   const result = await fetch(
-    `https://api.spotify.com/v1/browse/categories?locale=sv_US`,
+    `https://api.petfinder.com/v2/types`,
     {
       method: "GET",
       headers: { Authorization: "Bearer " + token },
@@ -29,14 +29,15 @@ const getGenres = async (token) => {
   );
 
   const data = await result.json();
-  return data.categories.items;
+  return data.types
+  ;
 };
 
-const getPlaylistByGenre = async (token, genreId) => {
+const getBreedByType = async (token, href) => {
   const limit = 10;
 
   const result = await fetch(
-    `https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`,
+    `https://api.petfinder.com${href}?limit=${limit}`,
     {
       method: "GET",
       headers: { Authorization: "Bearer " + token },
@@ -44,15 +45,15 @@ const getPlaylistByGenre = async (token, genreId) => {
   );
 
   const data = await result.json();
-  return data.playlists.items;
+  return data.breeds;
 };
 
 const loadGenres = async () => {
   const token = await getToken();
-  const genres = await getGenres(token);
+  const types = await getTypes(token);
   const list = document.getElementById(`genres`);
-  genres.map(async ({ name, id, icons: [icon], href }) => {
-    const playlists = await getPlaylistByGenre(token, id);
+  types.map(async ({ name, type}) => {
+    const breeds = await getBreedByType(token, type);
     const playlistsList = playlists
       .map(
         ({ name, external_urls: { spotify }, images: [image] }) => `
@@ -64,7 +65,7 @@ const loadGenres = async () => {
       )
       .join(``);
 
-    // if (playlists) {
+    if (playlists) {
       const html = `
       <article class="genre-card">
         <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
@@ -77,8 +78,44 @@ const loadGenres = async () => {
       </article>`;
 
       list.insertAdjacentHTML("beforeend", html);
-   // }
+    }
   });
 };
 
-loadGenres();
+//loadGenres();
+const main = async () => {
+    const token = await getToken();
+    const types = await getTypes(token);
+    const list = document.getElementById(`genres`);
+    types.map(async ({ name, _links, genders}) => {
+      const breed = await getBreedByType(token, _links.breeds.href);
+      //console.log(breed);
+      const BreedList = breed.map(({ name }) => `<ul>
+           <li>
+             ${name}
+           </li>
+           </ul>`
+         )
+         .join(``);
+      if (BreedList) {
+      const html = `
+      <article class="genre-card">
+        <div>
+          <h2>${name}</h2>
+          <h3>Genders:</h3>
+          <ul>${genders}</ul>
+          <h3>Breeds:</h3>
+          <ol>
+          
+            ${BreedList}
+          </ol>
+        </div>
+      </article>`;
+
+      list.insertAdjacentHTML("beforeend", html);
+     }
+    });
+
+}
+
+main();
