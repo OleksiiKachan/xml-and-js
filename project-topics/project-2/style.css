@@ -1,0 +1,86 @@
+.search-wrapper {
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    align-items: center;
+    height: 64px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0px 8px 20px rgb(0 0 0 / 6%);
+    width: 35%;
+    padding: 16px;
+    justify-content: space-between;
+    }
+    
+    input {
+      font-size: 1rem;
+      height: 100%;
+      padding: 0;
+      background: #fff;
+      background: transparent;
+      font-size: 16px;
+      border: 1px solid transparent;
+      width: 80%;
+    }
+  
+    .search-container{
+      width: 80%;
+      border-right: 2px solid gray;
+      border-radius: 1px;
+    }
+    
+    .fa{
+      color: #9e9ea7;
+    }
+    .btn{
+      border: 1px solid transparent;
+      border-radius: 50px;
+      height: 20px;
+      width: 20px;
+      font-size: 10px;
+    }
+  
+    .submit{
+      border: 1px solid transparent;
+      background: transparent;
+      cursor: pointer;
+      text-transform: capitalize;
+    }
+  
+    body{
+      background: black;
+    }
+  
+    form{
+  
+      display: flex;
+      justify-content: center;
+  
+    }
+  
+  
+    #mainImage{
+      
+      height: 300px;
+      box-shadow: 0 1px 5px 0 #d8d8d8;
+      border-radius: 5px;
+      width: 203px;
+      object-fit: contain;
+  
+    }
+  
+    .card{
+          width: 203px;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 24px;
+          margin: 24px;
+    }
+  
+    #results{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
