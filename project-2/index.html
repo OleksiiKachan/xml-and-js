@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <title>Cat API Data</title>
+</head>
+<body>
+    <form onsubmit="onSubmit(event)" onreset="onReset()">
+        <label for="input-term">Find Cat:</label>
+        <input
+          type="text"
+          name="term"
+          id="input-term"
+        /><br>
+        <br>
+        <br>
+        <button type="submit">Search</button>
+        
+       </form>
+    <div class="maincontent">
+  <table class="table" >
+    <thead>
+      <tr>
+        <th scope="col">Height</th>
+        <th scope="col">Id</th>
+        <th scope="col">Image</th>
+        <th scope="col">Width</th>
+        <th scope="col">Breeds</th>
+      </tr>
+    </thead>
+    <tbody id="table_body">
+      <tr>
+        <td>name</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  <script src="project-2.js"></script>
+</body>
+</html>
