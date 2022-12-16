@@ -1,0 +1,3 @@
+- I have created Js file.
+- Use fetch to call api. The api give the movie information by movie title.
+- Based on response of api, the html is generated for movie details and it will appned at main html where div id is "movie"
