@@ -1,0 +1,49 @@
+body{
+  margin:10px;
+  border: 3px solid lightgray;
+  background-color: rgb(117, 101, 197);
+}
+
+h1{
+  text-align: center;
+}
+
+form{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:medium;
+  margin: 5px;
+  padding: 5px;
+  border-bottom: 1px solid grey;
+}
+img{
+  width: 100px;
+}
+button{
+  color:black;
+  background-color: aliceblue;
+  width: 100px;
+  height: 20px;
+}
+label{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+input{
+  width: 200px;
+}
+table{
+  margin-top: 20px;
+  padding: 5px;
+  font-size: medium;
+  border-collapse: collapse;
+}
+th{
+  margin: 10px;
+}
+td{
+  padding: 20px;
+}
+
+
+
+
