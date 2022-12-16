@@ -12,6 +12,7 @@ const getToken = async () => {
     });
 
     const data = await result.json();
+    console.log(data);
     return data.access_token;
 };
 
@@ -25,7 +26,7 @@ const getGenres = async (token) => {
     );
 
     const data = await result.json();
-    //console.log(data);
+    console.log(data);
     return data.categories.items;
 };
 
@@ -41,7 +42,7 @@ const getPlaylistByGenre = async (token, genreId) => {
     );
 
     const data = await result.json();
-    //console.log(data);
+    console.log(data);
     return data.playlists.items;
 };
 
@@ -57,12 +58,15 @@ const getTracks = async (token, playlistId) => {
     );
 
     const data = await result.json();
-    console.log(data);    
-    let obj = {
-        track_names: await data.items.map((track_info) => track_info.track.name),
-        track_artists: await data.items.map((track_info) => (track_info.track.artists.map((artist) => artist.name)))
+    console.log(data);   
+    let tracks = {
+        track_names: await data.items.map((item) => item.track.name),
+        track_artists: await data.items.map((item) => (item.track.artists.map((artist) => artist.name)))
     }
-    return obj;
+    console.log("tracks yazdir")
+    console.log(tracks);
+    return tracks;
+   
    
 };
 
@@ -75,8 +79,8 @@ const loadGenres = async () => {
     genres.map(async ({ name, id, icons: [icon], href }) => {
         
         const playlists = await getPlaylistByGenre(token, id);
-        const all_tracks = await Promise.all(playlists.map(async (playlist) => { 
-            const tracks = await (getTracks(token, playlist.id))
+        const all_tracks = await Promise.all(playlists.map(async (item) => { 
+            const tracks = await (getTracks(token, item.id))
             return display_tracks_info(tracks)
         }))
 
@@ -107,40 +111,37 @@ const loadGenres = async () => {
         }
     });
 
-
-
-
-
-
-
 };
 
 
-
 function display_tracks_info(tracks) {
-
-    return `${track_name_artists(tracks.track_names, tracks.track_artists)}`
-
-
-}
-function track_name_artists(track_names, track_artists) {
     let name_artists = [];
 
-    for (let i = 0; i < track_names.length; i++) {
-        name_artists[i] = `Track name: ${track_names[i]}, Track artists: ${track_artists[i]}<br>`
+    for (let i = 0; i < tracks.track_names.length; i++) {
+        name_artists[i] = `Track name: ${tracks.track_names[i]}, Track artists: ${tracks.track_artists[i]}<br>`
     }
 
     return name_artists.join("");
+
+    //return `${track_name_artists(tracks.track_names, tracks.track_artists)}`
+
+
 }
+// function track_name_artists(track_names, track_artists) {
+//     let name_artists = [];
+
+//     for (let i = 0; i < track_names.length; i++) {
+//         name_artists[i] = `Track name: ${track_names[i]}, Track artists: ${track_artists[i]}<br>`
+//     }
+
+//     return name_artists.join("");
+// }
 
 function display(all_tracks) {
     let res = all_tracks[0]
     all_tracks.shift();
     return res;
 }
-
-
-
 
 
 loadGenres();

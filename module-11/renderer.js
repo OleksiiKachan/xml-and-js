@@ -4,7 +4,7 @@ const renderTable = (data) => {
   let source = data;
 
   const withFilters = Boolean(window.location.search);//Filtre calistiginda 'true' degeri donuyor
-  //console.log(withFilters);                           //filtre calismadan önce 'false' donuyor
+  console.log(withFilters);                           //filtre calismadan önce 'false' donuyor
   
 
   if (withFilters) {
@@ -31,7 +31,7 @@ fetch(`./data.json`)
   .then((data) => data.json()) //fetch string aliyor, busnu json cevirmek gerekli
   .then((data) => { //aldigin datayi renderTable() fonksiyonuna gonder, yani datalari tabloya yaz
     renderTable(data);
-    //console.log(`data loaded`);
+    console.log(`data loaded`);
   });
 
 const onReset = () => {

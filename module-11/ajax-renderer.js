@@ -21,6 +21,11 @@ const renderTable = (nameTerm) => {
   console.log(`data rendered`);
 };
 
+
+
+
+
+
 fetch(`./data.json`)
   .then((data) => data.json())
   .then((data) => {

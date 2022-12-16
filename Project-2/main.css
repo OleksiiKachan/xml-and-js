@@ -1,32 +1,16 @@
-.genre-card {
-  max-width: 100%;
-  overflow: hidden;
-  display: flex;
-  background-color: #4daf64;
-  color: white;
+.card{
+  border: 2px solid;
+  width: 50%;
+  background-color:cornflowerblue;
+  margin-left: 25%;
+
 }
 
-.genre-card:not(:last-child) {
-  margin-bottom: 15px;
+h1{
+  margin-left:40% ;
+  color: beige;
 }
 
-.genre-card > div {
-  padding: 10px 20px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.genre-card > div > a {
-  color: white;
-  font-weight: bold;
-}
-
-ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  overflow: auto;
-  max-width: 100%;
+body{
+  background-color: black;
 }
