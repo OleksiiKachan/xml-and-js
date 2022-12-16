@@ -1,5 +1,5 @@
-const clientId = `a5f261df31334b54bbdaf6a8cf18327d`;
-const clientSecret = `72dce1229f33421988f780a020f146cb`;
+const clientId = `29ca85123d7e4eecad44896eabac1fc5`;
+const clientSecret = `67752983f5c44996b97bb4c19fabfb4d`;
 
 let _data = [];
 
@@ -104,6 +104,7 @@ const renderGenres = (filterTerm) => {
   list.innerHTML = html;
 };
 
+//
 loadGenres().then(renderGenres);
 
 const onSubmit = (event) => {
