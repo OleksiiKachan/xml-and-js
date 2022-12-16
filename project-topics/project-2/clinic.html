@@ -1,334 +1,62 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
-
-
 <head>
-
     <meta charset="UTF-8" />
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
-
     <link rel="stylesheet" href="clinic.css" />
-
     <title>clinic</title>
-
 </head>
 
-
-
 <body>
-    
-<form onsubmit="onSubmit(event)" onreset="onReset()">
-    <label for="input-term">Find Company Logo:</label>
-    <input type="text" name="term" id="input-term" placeholder="Enter company name" />
-    <button type="submit">Search</button>
-    <button type="reset">Clear</button>
- </form>
-    <!-- <h1>Drug</h1>
-
-
-
+  <h1>Drug</h1>
     <h2>1. Adverse events</h2>
-
-
-
-    <h3 style="color:blue; font-size:25px;"> Adverse events report </h3>
-
+    <h3 id="title"> Adverse events report </h3>
     <div id="container" style="font: italic bold 18px/30px Georgia, serif;"> </div>
-
     <br>
-
-
-
-    <h3 style="color:blue; font-size:25px;">One adverse event report with a drug from a certain pharmacologic class</h3>
-
+    <h3 id="title">One adverse event report with a drug from a certain pharmacologic class</h3>
     <div id="datapharmacologic" style="font: italic bold 15px/30px Georgia, serif;"></div>
-
     <br>
-
-
-
-    <h3 style="color:blue; font-size:25px;">Count of patient reactions</h3>
-
+    <h3 id="title">Count of patient reactions</h3>
     <div id="rection" style="font: italic bold 15px/30px Georgia, serif;"> </div>
-
     <br>
-
-
-
-
-
     <h2>2. Product labelling</h2>
-
-
-
-    <h3 style="color:blue; font-size:25px;">Count of drug labeling, by product type</h3>
-
+    <h3 id="title">Count of drug labeling, by product type</h3>
     <div id="Countofdrug" style="font: italic bold 15px/30px Georgia, serif;"> </div>
-
     <br>
-
-
-
-
     <h2>3. NDC directory</h2>
-
-
-
-    <h3 style="color:blue; font-size:25px;">One product</h3>
-
+    <h3 id="title"style="color:blue; font-size:25px;">One product</h3>
     <div id="oneProductComtainer" style="font: italic bold 18px/30px Georgia, serif;"> </div>
-
     <br>
-
-
-
     <h2>4. Recall Enforcement Reports</h2>
-
-
-
-    <h3 style="color:blue; font-size:25px;"> pharma recall container </h3>
-
+    <h3 id="title"> pharma recall container </h3>
     <div id="pharmaRecallcontainer" style="font: italic bold 15px/30px Georgia, serif;"></div>
-
     <br>
-
-
-
     <h2>5. drug @FDA</h2><br>
-
-
-
-    <h3 style="color:blue; font-size:25px;">Count of sponsors</h3>
-
+    <h3 id="title">Count of sponsors</h3>
     <div id="DrugsFDA" style="font: italic bold 15px/30px Georgia, serif;"></div>
-
     <br>
-
-
-
-
     <h1>Food</h1>
-
-
-
     <h2>1. Recall Enforcement Reports</h2>
-
-
-
-    <h3 style="color:blue; font-size:25px;">One enforcement report</h3>
-
+    <h3 id="title">One enforcement report</h3>
     <div id="healthhazard" style="font: italic bold 15px/30px Georgia, serif;"> </div>
-
     <br>
-
-
-
-    <h3 style="color:blue; font-size:25px;">One enforcement report of a certain health hazard class</h3>
-
+    <h3 id="title">One enforcement report of a certain health hazard class</h3>
     <div id="reporthealthhazardreport" style="font: italic bold 15px/30px Georgia, serif;"></div>
-
     <br>
-
-
-
-    <h3 style="color:blue; font-size:25px;"> Count of voluntary vs. mandated enforcement reports </h3>
-
+    <h3 id="title"> Count of voluntary vs. mandated enforcement reports </h3>
     <div id="reportcounthealthhazardreport" style="font: italic bold 15px/30px Georgia, serif;"></div>
-
     <br>
-
-
-
     <h2>2. Adverse Events</h2>
-
-
-
-    <h3 style="color:blue; font-size:25px;"> Count of consumer reactions</h3>
-
+    <h3 id="title"> Count of consumer reactions</h3>
     <div id="consumer" style="font: italic bold 15px/30px Georgia, serif;"> </div>
-
     <br>
 
 
 
     <script src="clinic.js"></script>
-
 </body>
-
-
-
-</html>
-<!DOCTYPE html>
-
-<html lang="en">
-
-
-
-<head>
-
-    <meta charset="UTF-8" />
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-
-
-    <link rel="stylesheet" href="clinic.css" />
-
-    <title>clinic</title>
-
-</head>
-
-
-
-<body>
-    <form onsubmit="onSubmit(event)" onreset="onReset()">
-    <label for="input-term">Find Company Logo:</label>
-    <input type="text" name="term" id="input-term" placeholder="Enter company name" />
-    <button type="submit">Search</button>
-    <button type="reset">Clear</button>
-    </form>
-
-    <h1>Drug</h1>
-
-
-
-    <h2>1. Adverse events</h2>
-
-
-
-    <h3 style="color:blue; font-size:25px;"> Adverse events report </h3>
-
-    <div id="container" style="font: italic bold 18px/30px Georgia, serif;"> </div>
-
-    <br>
-
-
-
-    <h3 style="color:blue; font-size:25px;">One adverse event report with a drug from a certain pharmacologic class</h3>
-
-    <div id="datapharmacologic" style="font: italic bold 15px/30px Georgia, serif;"></div>
-
-    <br>
-
-
-
-    <h3 style="color:blue; font-size:25px;">Count of patient reactions</h3>
-
-    <div id="rection" style="font: italic bold 15px/30px Georgia, serif;"> </div>
-
-    <br>
-
-
-
-
-
-    <h2>2. Product labelling</h2>
-
-
-
-    <h3 style="color:blue; font-size:25px;">Count of drug labeling, by product type</h3>
-
-    <div id="Countofdrug" style="font: italic bold 15px/30px Georgia, serif;"> </div>
-
-    <br>
-
-
-
-
-    <h2>3. NDC directory</h2>
-
-
-
-    <h3 style="color:blue; font-size:25px;">One product</h3>
-
-    <div id="oneProductComtainer" style="font: italic bold 18px/30px Georgia, serif;"> </div>
-
-    <br>
-
-
-
-    <h2>4. Recall Enforcement Reports</h2>
-
-
-
-    <h3 style="color:blue; font-size:25px;"> pharma recall container </h3>
-
-    <div id="pharmaRecallcontainer" style="font: italic bold 15px/30px Georgia, serif;"></div>
-
-    <br>
-
-
-
-    <h2>5. drug @FDA</h2><br>
-
-
-
-    <h3 style="color:blue; font-size:25px;">Count of sponsors</h3>
-
-    <div id="DrugsFDA" style="font: italic bold 15px/30px Georgia, serif;"></div>
-
-    <br>
-
-
-
-
-    <h1>Food</h1>
-
-
-
-    <h2>1. Recall Enforcement Reports</h2>
-
-
-
-    <h3 style="color:blue; font-size:25px;">One enforcement report</h3>
-
-    <div id="healthhazard" style="font: italic bold 15px/30px Georgia, serif;"> </div>
-
-    <br>
-
-
-
-    <h3 style="color:blue; font-size:25px;">One enforcement report of a certain health hazard class</h3>
-
-    <div id="reporthealthhazardreport" style="font: italic bold 15px/30px Georgia, serif;"></div>
-
-    <br>
-
-
-
-    <h3 style="color:blue; font-size:25px;"> Count of voluntary vs. mandated enforcement reports </h3>
-
-    <div id="reportcounthealthhazardreport" style="font: italic bold 15px/30px Georgia, serif;"></div>
-
-    <br>
-
-
-
-    <h2>2. Adverse Events</h2>
-
-
-
-    <h3 style="color:blue; font-size:25px;"> Count of consumer reactions</h3>
-
-    <div id="consumer" style="font: italic bold 15px/30px Georgia, serif;"> </div>
-
-    <br> -->
-
-
-
-    <script src="clinic.js"></script> 
-
-</body>
-
-
 
 </html>
