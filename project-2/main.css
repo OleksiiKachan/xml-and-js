@@ -1,0 +1,28 @@
+body{
+    margin: 20px 20px;
+    background-color: lightcyan;
+}
+#results{
+    border-style: solid;
+    border: 3px;
+}
+
+h2,h3{
+    font-family:calibri;
+}
+
+.id{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+h4{
+    font-family: cambria;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+p{
+    margin-top: 0;
+    padding-top: 0;
+}
