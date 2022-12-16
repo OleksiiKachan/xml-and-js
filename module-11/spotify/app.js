@@ -1,5 +1,5 @@
-const clientId = `a5f261df31334b54bbdaf6a8cf18327d`;
-const clientSecret = `72dce1229f33421988f780a020f146cb`;
+const clientId = ` 5f168a6053a8451583cb6b4a0a3134f1`;
+const clientSecret = `b66e51f64e2e4c4d95c07727d0c80780`;
 
 let _data = [];
 
@@ -14,10 +14,12 @@ const getToken = async () => {
   });
 
   const data = await result.json();
+  console.log(data,"data")
   return data.access_token;
 };
 
 const getGenres = async (token) => {
+  console.log(token,"token recieved")
   const result = await fetch(
     `https://api.spotify.com/v1/browse/categories?locale=sv_US`,
     {
