@@ -1,0 +1,32 @@
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  body{
+    background-color: rgb(245, 250, 252);
+  }
+  design {
+    
+    border: 1px solid darkgray;
+    border-radius: 10px;
+    padding: 40px;
+  
+    display: flex;
+    flex-direction: column;
+  
+    max-width: 800px;
+    background-color: rgb(215, 204, 204);
+  }
+  
+
+  
+  h2 {
+    margin: 40px 0;
+    font-size: 32px;
+  }
+  

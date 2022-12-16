@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="retail.css" />
+    </head>
+  <body>
+    
+    <ol id="ret"></ol>
+    <script>
+        
+        
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                displayData(this.responseXML);
+            }
+        };
+        xhr.open("GET", "retail.xml", true);
+        xhr.send();
+
+        function stringToNode(html)
+        {
+          const template = document.createElement(`template`);
+          html = html.trim();
+          template.innerHTML = html;
+          return template.content.firstChild;
+        }
+
+        function displayData(xmlDoc) 
+        {
+            const listElement = document.getElementById("ret");
+            const retNodes = xmlDoc.getElementsByTagName(`data`);
+
+            for (let i = 0; i < retNodes.length; i++) 
+            {
+                const retailNode = retNodes[i];
+                const listItem = stringToNode
+                (`<li> <design>
+                  
+                  <p>${`<b>Address</b> : ${retailNode.getElementsByTagName(`city`)[0].childNodes[0].nodeValue } ,
+                   ${retailNode.getElementsByTagName(`country`)[0].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`street`)[0].childNodes[0].nodeValue } `}</p> 
+
+                   <p>${`<b>Employees</b> : ${retailNode.getElementsByTagName(`empType`)[0].childNodes[0].nodeValue } ,
+                   ${retailNode.getElementsByTagName(`firstName`)[0].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`lastName`)[0].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`id`)[0].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`position`)[0].childNodes[0].nodeValue } `}</p> 
+
+                   <p>${`<b>Employees</b> : ${retailNode.getElementsByTagName(`empType`)[1].childNodes[0].nodeValue } ,
+                   ${retailNode.getElementsByTagName(`firstName`)[1].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`lastName`)[1].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`id`)[1].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`position`)[1].childNodes[0].nodeValue } `}</p> 
+
+                   <p>${`<b>Employees</b> : ${retailNode.getElementsByTagName(`empType`)[2].childNodes[0].nodeValue } ,
+                   ${retailNode.getElementsByTagName(`firstName`)[2].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`lastName`)[2].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`id`)[2].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`position`)[2].childNodes[0].nodeValue } `}</p> 
+                  
+                   <p>${`<b>ID :</b> : ${retailNode.getElementsByTagName(`id`)[0].childNodes[0].nodeValue }`}
+
+                    <p>${`<b>Products :</b> : ${retailNode.getElementsByTagName(`euroPrice`)[1].childNodes[0].nodeValue } ,
+                   ${retailNode.getElementsByTagName(`id`)[1].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`name`)[1].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`poundPrice`)[1].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`qty`)[1].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`usdPrice`)[1].childNodes[0].nodeValue } `}</p> 
+                  
+                   <p>${`<b>Products :</b> : ${retailNode.getElementsByTagName(`euroPrice`)[2].childNodes[0].nodeValue } ,
+                   ${retailNode.getElementsByTagName(`id`)[2].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`name`)[2].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`poundPrice`)[2].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`qty`)[2].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`usdPrice`)[2].childNodes[0].nodeValue } `}</p>
+
+                   <p>${`<b>Products :</b> : ${retailNode.getElementsByTagName(`euroPrice`)[3].childNodes[0].nodeValue } ,
+                   ${retailNode.getElementsByTagName(`id`)[3].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`name`)[3].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`poundPrice`)[3].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`qty`)[3].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`usdPrice`)[3].childNodes[0].nodeValue } `}</p> 
+
+                   <p>${`<b>Products :</b> : ${retailNode.getElementsByTagName(`euroPrice`)[4].childNodes[0].nodeValue } ,
+                   ${retailNode.getElementsByTagName(`id`)[4].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`name`)[4].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`poundPrice`)[4].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`qty`)[4].childNodes[0].nodeValue },
+                   ${retailNode.getElementsByTagName(`usdPrice`)[4].childNodes[0].nodeValue } `}</p> 
+                    </design>
+                `);
+
+                listElement.appendChild(listItem);
+            }
+        }
+
+        const loadProducts = async() => {
+	try {
+		const respuest = await fetch(`https://api.kroger.com/v1/products?filter.brand={{BRAND}}&filter.term={{TERM}}&filter.locationId={{LOCATION_ID}}`);
+	
+		console.log(respuest);
+
+		// if the awswer if yes
+		if(respuest.status === 200){
+			const datos = await respuest.json();
+			
+			let products = '';
+			datos.results.forEach(products => {
+				products += `
+					<div class="product">
+						<h3 class="title">${products.title}</h3>
+					</div>
+				`;
+			});
+
+			document.getElementById('contenedor').innerHTML = products;
+
+		} else if(respuesta.status === 400){
+			console.log('error1');
+		} else if(respuesta.status === 403){
+			console.log('error3');
+		} else {
+			console.log('error4');
+		}
+
+	} catch(error){
+		console.log(error);
+	}
+
+}
+
+
+   </script>
+</body>
+
+</html>
