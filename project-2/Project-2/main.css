@@ -1,0 +1,16 @@
+.card{
+  border: 2px solid;
+  width: 50%;
+  background-color:cornflowerblue;
+  margin-left: 25%;
+
+}
+
+h1{
+  margin-left:40% ;
+  color: beige;
+}
+
+body{
+  background-color: black;
+}
