@@ -5,7 +5,6 @@ h2{
     text-decoration: underline;
     font-size: 30px;
 }
-
 h1{
     font-family: Georgia, serif;
     font-size: 35px;
@@ -14,7 +13,6 @@ h1{
     border-bottom: 1px solid black;
     padding-bottom: 5px;
 }
-
 #title
 {
     color:blue;

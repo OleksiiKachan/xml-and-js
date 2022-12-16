@@ -33,7 +33,6 @@ const displayData = (data) => {
         document.getElementById('container').innerHTML= result;
     });
 };
-
 const pharmacologicclass = async () => {
     const res = await fetch(
         `https://api.fda.gov/drug/event.json?search=patient.drug.openfda.pharm_class_epc:"nonsteroidal+anti-inflammatory+drug"&limit=1`
