@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #edede9;
+}
+
+/* Filters */
+form {
+    background-color: #329159;
+    padding: 20px;
+    font-size: 26px;
+
+}
+
+form label {
+    font-family: sans-serif;
+    color: #edede9;
+}
+
+.filter_header {
+    font-weight: bold;
+}
+
+form input {
+    font-size: 24px;
+    border-radius: 7px;
+    border: 0 solid #329159;
+    padding: 2px 10px;
+
+}
+
+form button {
+    font-size: 24px;
+    padding: 1px 30px;
+    border-radius: 7px;
+    background-color: #edede9;
+    border-color: #edede9;
+    color: #329159;
+}
+
+#radio_buttons {
+    margin-top: 15px;
+}
+
+/* Main body */
+.manufacturer {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    background-color: #80b998;
+}
+
+.models {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.model_descr {
+    color: #329159;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-bottom: 0;
+}
+
+.emission {
+    font-size: 26px;
+    margin-top: 0;
+}

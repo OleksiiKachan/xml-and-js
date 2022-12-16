@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Carbon Emissions</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<body>
+    <form onsubmit="onSubmit(event)" onreset="onReset(event)">
+      <label class="filter_header" for="input-filter-term">Find manufacturer: </label>
+      <input
+        type="text"
+        name="term"
+        id="input-filter-term"
+        placeholder="Enter value"
+      />
+      <button type="submit">Apply</button>
+      <button type="reset">Reset</button>
+      <div id="radio_buttons">
+        <label class="filter_header" for="radio_buttons">Select units: </label>
+        <input type="radio" id="opt_kg" name="units" onchange="onChange()" value="Kg" checked>
+        <label for="opt_kg">Kg</label>
+        <input type="radio" id="opt_g" name="units" onchange="onChange()" value="G">
+        <label for="opt_g">G</label>
+        <input type="radio" id="opt_lb" name="units" onchange="onChange()" value="Lb">
+        <label for="opt_lb">Lb</label>
+        <input type="radio" id="opt_mt" name="units" onchange="onChange()" value="Mt">
+        <label for="opt_mt">Mt</label>
+      </div>
+      
+    </form>
+    <div id="manufacturers"></div>
+    <script src="./app.js"></script>
+</body>
+</html>
