@@ -1,32 +1,39 @@
-.genre-card {
-    max-width: 100%;
-    overflow: hidden;
-    display: flex;
-    background-color: #4daf64;
-    color: white;
+h2 {
+
+    color: rgb(68, 223, 25);
+
+    font-family: "Lucida Console", "Courier New", monospace;
+
+    font-style: italic;
+
+    text-decoration: underline;
+
+    font-size: 30px;
+
 }
 
-.genre-card:not(:last-child) {
-    margin-bottom: 15px;
+.card
+{
+    color: black;
+    font-style: inherit;
+
+}
+.card h1{
+    color: blue;
 }
 
-.genre-card>div {
-    padding: 10px 20px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
+h1 {
 
-.genre-card>div>a {
-    color: white;
-    font-weight: bold;
-}
+    font-family: Georgia, serif;
 
-ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    overflow: auto;
-    max-width: 100%;
+    font-size: 35px;
+
+    color: rgb(123, 19, 19);
+
+    text-align: center;
+
+    border-bottom: 1px solid black;
+
+    padding-bottom: 5px;
+
 }
