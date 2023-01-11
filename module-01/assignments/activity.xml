@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>​
+<people>
+    <mySelf>​
+        <name>Yogesh Kakkar</name>
+        <Education>B.Tech in Computer Science</Education>
+        <School>Humber</School>
+        <Email>yogeshkakkar521@gmail.com</Email>
+        <hobbies>
+        <hobby>Watching Netflix</hobby>
+        <hobby>Working-Out</hobby>
+        </hobbies>
+        <Address>Etude Dr at Goreway Dr</Address>
+    </mySelf>
+    <person1>
+        <name>sam</name>
+        <Education>B.Tech in Computer Science</Education>
+        <School>Humber</School>
+        <Email>sam521@gmail.com</Email>
+        <hobbies>
+        <hobby>Watching Netflix</hobby>
+        <hobby>Working-Out</hobby>
+        </hobbies>
+        <Address>50 hayden street</Address>
+    </person1>
+    <person2>
+        <name>tom</name>
+        <Education>B.Tech in Computer Science</Education>
+        <School>Humber</School>
+        <Email>tom521@gmail.com</Email>
+        <hobbies>
+        <hobby>Watching Netflix</hobby>
+        <hobby>Working-Out</hobby>
+        </hobbies>
+        <Address>52 hayden street</Address>
+    </person2>
+    <person3>
+        <name>sibi</name>
+        <Education>B.Tech in Computer Science</Education>
+        <School>Humber</School>
+        <Email>sibi521@gmail.com</Email>
+        <hobbies>
+        <hobby>Watching Netflix</hobby>
+        <hobby>Working-Out</hobby>
+        </hobbies>
+        <Address>53 hayden street</Address>
+    </person3>
+    <person4>
+        <name>ram</name>
+        <Education>B.Tech in Computer Science</Education>
+        <School>Humber</School>
+        <Email>ram521@gmail.com</Email>
+        <hobbies>
+        <hobby>Watching Netflix</hobby>
+        <hobby>Working-Out</hobby>
+        </hobbies>
+        <Address>54 hayden street</Address>
+    </person4>
+    <person5>
+        <name>marry</name>
+        <Education>B.Tech in Computer Science</Education>
+        <School>Humber</School>
+        <Email>marry521@gmail.com</Email>
+        <hobbies>
+        <hobby>Watching Netflix</hobby>
+        <hobby>Working-Out</hobby>
+        </hobbies>
+        <Address>55 hayden street</Address>
+    </person5>
+    <person6>
+        <name>kerry</name>
+        <Education>B.Tech in Computer Science</Education>
+        <School>Humber</School>
+        <Email>kerry521@gmail.com</Email>
+        <hobbies>
+        <hobby>Watching Netflix</hobby>
+        <hobby>Working-Out</hobby>
+        </hobbies>
+        <Address>56 hayden street</Address>
+    </person6>
+    <person7>
+        <name>jerry</name>
+        <Education>B.Tech in Computer Science</Education>
+        <School>Humber</School>
+        <Email>jerry521@gmail.com</Email>
+        <hobbies>
+        <hobby>Watching Netflix</hobby>
+        <hobby>Working-Out</hobby>
+        </hobbies>
+        <Address>57 hayden street</Address>
+    </person7>
+    <person8>
+        <name>sharry</name>
+        <Education>B.Tech in Computer Science</Education>
+        <School>Humber</School>
+        <Email>sharry521@gmail.com</Email>
+        <hobbies>
+        <hobby>Watching Netflix</hobby>
+        <hobby>Working-Out</hobby>
+        </hobbies>
+        <Address>58 hayden street</Address>
+    </person8>
+    <person9>
+        <name>jam</name>
+        <Education>B.Tech in Computer Science</Education>
+        <School>Humber</School>
+        <Email>jam521@gmail.com</Email>
+        <hobbies>
+        <hobby>Watching Netflix</hobby>
+        <hobby>Working-Out</hobby>
+        </hobbies>
+        <Address>59 hayden street</Address>
+    </person9>
+    
+</people>
