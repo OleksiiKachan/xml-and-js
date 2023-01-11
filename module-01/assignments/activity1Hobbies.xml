@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<studentData>
+  <individual>
+    <nameInfo>
+      <fName>Garima</fName>
+      <lName>Wadhwa</lName>
+    </nameInfo>
+    <hobbiesInfo>
+      <hobby>Photography</hobby>
+      <hobby>Dancing</hobby>
+    </hobbiesInfo>
+  </individual>
+  <individual>
+    <nameInfo>
+      <fName>Priya</fName>
+      <lName>Sachdev</lName>
+    </nameInfo>
+    <hobbiesInfo>
+      <hobby>BasketBall</hobby>
+      <hobby>Singing</hobby>
+    </hobbiesInfo>
+  </individual>
+</studentData>
