@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<head>
+    <title> eveluation 2 </title>
+    <link rel="stylesheet" href="eva2CSS.css">
+</head>
+
+<body>
+    <form id="form1">
+
+        <div>
+            <label for="mail"> Your Email: </label>
+            <input type="text" id="mail"/> <br>
+        </div>
+        
+        <div>
+            <label for="date"> Date of Visit: </label>
+            <input type="date" id="visitdate"/> <br>
+        </div>
+
+        <label for="comment"> Your Comment: </label> <br>
+        <textarea rows="4" cols="50" name="comment"> </textarea>
+
+        <input type="button" onclick="displayAll()" value="Send your feedback">
+    </form>
+
+    <h2 id="detail"></h2>
+
+    <script src="eva2JavaScript.js"></script>
+</body>
+
+</html>
