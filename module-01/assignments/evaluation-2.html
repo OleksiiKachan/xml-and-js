@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>Evaluation - 2</title>
+    <style>
+        form {
+            background-color: lightgoldenrodyellow;
+            border: 1px solid black
+        }
+
+        .row {
+            margin: 20px auto 20px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" method="get">
+        <div class="row">
+            <label for="email">Your Email *:</label>
+            <input type="email" name="" id="email">
+        </div>
+
+        <div class="row">
+            <label for="date">Date of Visit:</label>
+            <input type="date" name="" id="date">
+        </div>
+
+        <div class="row">
+            <label for="comment">Your Comment:</label><br>
+            <textarea name="" id="comment" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="row">
+            <input type="button" value="Send your Feedback" onclick="collect()">
+        </div>
+    </form>
+
+    <script>
+        function collect() {
+            let email = document.getElementById("email").value;
+            let date = document.getElementById("date").value;
+            let comment = document.getElementById("comment").value;
+
+            let text = "Your data are: \nEmail: " + email + "\nDate: " + date + "\nComment: " + comment;
+
+            alert(text);
+        }
+    </script>
+</body>
+
+</html>
