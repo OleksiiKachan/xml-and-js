@@ -1,0 +1,25 @@
+<?xml verson="1.0" encoding="utf-8">
+<data>
+<people>
+<name>
+    <firstName>Sirui</firstName>
+    <lastName>Zhang</lastName>
+</name>
+<hobbies>
+    <hobby>Hiking</hobby>
+    <hobby>Reading</hobby>
+    <hobby>Travel</hobby>
+</hobbies>
+</people>
+<people>
+<name>
+    <firstName>Sirui</firstName>
+    <lastName>Zhang</lastName>
+</name>
+<hobbies>
+    <hobby>Hiking</hobby>
+    <hobby>Reading</hobby>
+    <hobby>Travel</hobby>
+</hobbies>
+</people>
+</data>
