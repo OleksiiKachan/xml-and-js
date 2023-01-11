@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Class Activity</title>
+</head>
+<body>
+    <div id="main_div1">
+        <h1>WELCOME TO ITC5202</h1>
+        <h2 id="name"></h2>
+        <button type="button" onclick="sayMyName()">Click here to display my name</button>
+    </div>
+    <script src="./main.js"></script>
+    <div id="main_div2">
+        <form action="">
+            <label for="e_mail">Your E-mail: </label>
+            <input type="email" id="e_mail" name="e_mail">
+            <br>
+            <br>
+            <label for="_date">Date of Visit: </label>
+            <input type="date" id="_date" name="_date">
+            <br>
+            <br>
+            <label for="comment">Your Comment:</label>
+            <br>
+            <br>
+            <textarea name="comment" id="comment" cols="40" rows="5"></textarea>
+            <br>
+            <br>
+            <button type="button" onclick="sendFeedback()">Send your Feedback</button>
+        </form>
+    </div>
+    <div id="response">
+        <h3 id="ent_mail"></h3>
+        <h3 id="ent_date"></h3>
+        <p id="ent_comment"></p>
+    </div>
+</body>
+</html>

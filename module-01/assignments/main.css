@@ -1,0 +1,22 @@
+#main_div1 {
+    padding: 5px;
+    margin: 5px;
+}
+#main_div1 label {
+    padding: 2px;
+}
+
+#main_div2 {
+    padding: 5px;
+    margin: 5px;
+    background-color: beige;
+    border: solid black 2px;
+    width: 60%;
+}
+#main_div2 label {
+    padding: 2px;
+}
+
+#response {
+    color: red;
+}
