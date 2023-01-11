@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<data>
+    <person>
+        <name>
+            <fname> Amos </fname>
+            <lname> Chew </lname>
+        </name>
+        <hobbies>
+            <hobby> 1. Bouldering/ Rock Climbing </hobby>
+            <hobby> 2. Sports (Tennis/Soccer/Badminton) </hobby>
+            <hobby> 3. Vid Games (League of Legends, TFT, Smash Bros) </hobby>
+        </hobbies>
+    </person>
+
+    <person>
+        <name>
+            <fname> Person2 </fname>
+            <lname> Person2 </lname>
+        </name>
+        <hobbies>
+            <hobby> 1. Hobby2 </hobby>
+            <hobby> 2. Hobby2 </hobby>
+            <hobby> 3. Hobby2 </hobby>
+        </hobbies>
+
+
+    </person>
+
+        <person>
+        <name>
+            <fname> Person3 </fname>
+            <lname> Person3 </lname>
+        </name>
+        <hobbies>
+            <hobby> 1. Hobby3 </hobby>
+            <hobby> 2. Hobby3 </hobby>
+            <hobby> 3. Hobby3 </hobby>
+        </hobbies>
+    </person>
+
+
+</data>
+
+<!-- NOTE: YOU CAN ONLY HAVE ONE ROOT TAG (* in this case its <data>) -->

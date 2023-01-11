@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<data>
+
+    <title>
+        <fcol>| Empno |</fcol>
+        <scol>| Empname |</scol>
+        <tcol>| Salary |</tcol>
+    </title>
+
+    <dash>
+        <fcol>| ----- |</fcol>
+        <scol>| ------- |</scol>
+        <tcol>| ------ |</tcol>
+    </dash>
+
+    <person>
+        <fcol>| 1001 |</fcol>
+        <scol>| Alex    |</scol>
+        <tcol>| 3000   |</tcol>
+    </person>
+
+    <person>
+        <fcol>| 1002 |</fcol>
+        <scol>| Sarah   |</scol>
+        <tcol>| 4000   |</tcol>
+    </person>
+
+    <person>
+        <fcol>| 1003 |</fcol>
+        <scol>| Peter   |</scol>
+        <tcol>| 3500   |</tcol>
+    </person>
+
+</data>
