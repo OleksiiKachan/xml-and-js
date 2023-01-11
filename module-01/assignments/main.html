@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .borderdiv{
+    width: 590px;
+   margin: 20px 50px 20px 50px;;
+   background-color: lightgreen;
+   border: 2px solid black;
+   padding: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="borderdiv">
+    <form>
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="Visit">Date of Visit:</label>
+        <input type="date" id="Date" name="Date">
+        <br>
+        <label for="comment">Your Comment:</label>
+        <br>
+        <input type="text"><br><br>
+            <button onclick="myFunction()">Send your Feedback</button>
+      </form>
+    </div>
+    <script>
+        function myFunction() {
+    alert("Form Submitted ");
+    
+  }
+    </script>
+</body>
+</html>
