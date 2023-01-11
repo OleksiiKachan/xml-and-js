@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<activity>
+    <students>
+        <student>
+            <fullname>
+                <fname>Ishan</fname>
+                <lname>Joshi</lname>
+            </fullname>
+            <favpasttime>
+                <pasttime>Book Reading</pasttime>
+                <pasttime>Swimming</pasttime>
+                <pasttime>Outdoor Sports</pasttime>
+            </favpasttime>
+        </student>
+        <student>
+            <fullname>
+                <fname>Joshi</fname>
+                <lname>Ishan</lname>
+            </fullname>
+            <favpasttime>
+                <pasttime>Movies</pasttime>
+                <pasttime>Swimming</pasttime>
+                <pasttime>Cricket</pasttime>
+            </favpasttime>
+        </student>
+    </students>
+
+</activity>

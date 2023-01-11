@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Evaluate 2
+        </title>
+        <style>
+            form{
+            background-color: lightyellow;
+        }
+        </style>
+        
+    </head>
+    <body>
+        <form>
+            <label for="email">Your email*:</label>
+            <input type="text" id="email"><br>
+            <label for="date">Date of Visit:</label>
+            <input type="text" id="date" value="mm/dd/yyyy"><br>
+            <label for="com">Your comment:</label><br>
+            <textarea id="com" cols="30" rows="10"></textarea><br>
+            <button onclick="myFunction()">Send your Feedback</button>
+            <p id="dis"></p>
+          </form>
+        <script>
+            function myFunction() {
+                document.getElementById('dis').innerHTML=document.getElementById("email").value;
+            }
+            </script>
+    </body>
+</html>
