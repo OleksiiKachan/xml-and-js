@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<myMessage>
-  <subject>This is a welcome message</subject>
-  <date>Jan 31, 2018</date>
-</myMessage>
+<data> <!--root element: There can only be one-->>
+  <student> <!--another element for a particular student-->>
+    <id> N01551523 </id>
+
+    <name> 
+      <firstName> Krushal </firstName>
+      <lastName> Dobariya </lastName>
+    </name>
+
+    <hobbies>
+      <hobby> Listening to Garba </hobby>
+      <hobby> Working </hobby>
+    </hobbies>
+
+    <education>
+      <college> Humber College </college>
+    </education>
+  </student>
+  
+ </data>
