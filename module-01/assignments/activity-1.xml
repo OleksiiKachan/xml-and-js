@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mineIntro>
+    <name>
+        <firstName>Smit</firstName>
+        <lastName>Bhatiya</lastName>
+    </name>
+    <education>
+        <university>Uka Tarasadia University</university>
+        <highestEdu>Bechalors</highestEdu>
+        <passingYear>2021</passingYear>
+    </education>
+    <hobbies>
+        <hobby> 1 </hobby>
+        <detail> I really like to explore more and more cities as well as places and want to know about their culture and beauty </detail>
+    </hobbies>
+    <homeCountry>
+        <country>India</country>
+        <homeTown>Gujarat</homeTown>
+    </homeCountry>
+</mineIntro>
