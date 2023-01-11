@@ -1,0 +1,26 @@
+<!-- activity 2 -->
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<data>
+    <categories>
+        <title> Empno </title>
+        <titleData> 1001 </titleData>
+        <titleData> 1002 </titleData>
+        <titleData> 1003 </titleData>
+    </categories>
+
+    <categories>
+        <title> Empname </title>
+        <titleData> Alex </titleData>
+        <titleData> Sarah </titleData>
+        <titleData> Peter </titleData>
+    </categories>
+
+    <categories>
+        <title> Salary </title>
+        <titleData> 3000 </titleData>
+        <titleData> 4000 </titleData>
+        <titleData> 3500 </titleData>
+    </categories>
+</data>
