@@ -1,0 +1,71 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evalution2</title>
+</head>
+<body>
+    <br>
+    <form id="form1">
+        Enter Your Email : <input type="email" id="email"  name="Email">
+        <br><br>
+        Date of Visit : <input type="date" name="date" id="DfV"><br><br>
+        Your Comment : <br><br>
+        <textarea name="Comment" id="text1" cols="40" rows="5"></textarea>
+
+        <input type="button" value="Send Your Feedback" id="btn1">
+    </form>
+    <span id="result"></span>
+    <script>
+        function sendFeedback(params) {
+            let text1=document.getElementById("email").value
+            let text2=document.getElementById("DfV").value
+            let text3=document.getElementById("text1").value
+
+            let result = text1 + " " + text2 + " " + text3
+            document.getElementById("result").textContent=result
+
+            
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluation2</title>
+</head>
+<body>
+    <br>
+    <label for="Email">Enter Your Email:</label>
+    <input type="email" id="email" name="emailId" ><br><br>
+  
+    <label for="Date of Visit">Date of Visit:</label>
+    <input type="date" id="date" name="dateVisit" ><br><br>
+  
+    <label for="Your Comment">Your Comment:</label> <br>
+    <textarea type="text" id="comment" name="Comment" cols="15" rows="4"> </textarea><br>
+  
+    <input type="button" onclick="sendFeedback()" id="myBtn" name="Jay" value="Submit Feddback"> <br>
+  
+    <span id="Result"></span>
+  
+  
+  <script>
+      function sendFeedback() {
+          var Text1 = document.getElementById("email").value;          
+          var Text2 = document.getElementById("date").value;
+          var Text3 = document.getElementById("comment").value;
+          var result = Text1 + ' ' + Text2 + ' ' + Text3;
+          document.getElementById('Result').textContent = result;
+           
+      }
+  </script>
+</body>
+</html>
