@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            background-color: beige;
+            border: solid 1px;
+            width: 325px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <form action="">
+            <label for="email">Your Email *: </label>
+            <input name="email" type="text"><br><br>
+            <label for="date">Date of Visit: </label>
+            <input type="date" name="date" id="date"><br><br>
+            <label for="cmt">Your Comment:</label><br>
+            <textarea name="cmt" id="cmt" cols="40" rows="10"></textarea><br><br>
+            <input type="button" value="Send Feedback" onclick="feedback()">
+        </form>
+        <p id="para"></p>
+        <script>
+            function feedback(){
+                let feedback = document.getElementById("cmt").value;     
+                document.getElementById("para").innerHTML=feedback;
+            }
+        </script>
+    </div>
+</body>
+</html>
