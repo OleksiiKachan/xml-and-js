@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>​
+
+1. Create a simple XML file which describes you and your interests/hobbies
+
+2. How to structure the data in previous activity in order to have Name/Hobbies for a group of 10 people?
+<list>
+    <person>
+    <name>
+        <firstName>Milap</firstName>
+        <lastName>Singh</lastName>
+    </name>
+    <address>
+        <city>Toronto</city>
+        <state>Ontario</state>
+    </address>
+    <contactInfo>
+        <phnNo>+1233445556</phnNo>
+        <email>abc@gmail.com</email>
+    </contactInfo>
+    <hobbies>Singing
+    </hobbies>
+    <hobbies>Playing Guitar
+    </hobbies>
+    <hobbies>Photography
+    </hobbies>
+
+    </person>
+
+    <person>
+    <name>
+        <firstName>Milap</firstName>
+        <lastName>Singh</lastName>
+    </name>
+    <address>
+        <city>Toronto</city>
+        <state>Ontario</state>
+    </address>
+    <contactInfo>
+        <phnNo>+1233445556</phnNo>
+        <email>abc@gmail.com</email>
+    </contactInfo>
+    <hobbies>Singing
+    </hobbies>
+    <hobbies>Playing Guitar
+    </hobbies>
+    <hobbies>Photography
+    </hobbies>
+
+    </person>
+    <person>
+    <name>
+        <firstName>Milap</firstName>
+        <lastName>Singh</lastName>
+    </name>
+    <address>
+        <city>Toronto</city>
+        <state>Ontario</state>
+    </address>
+    <contactInfo>
+        <phnNo>+1233445556</phnNo>
+        <email>abc@gmail.com</email>
+    </contactInfo>
+    <hobbies>Singing
+    </hobbies>
+    <hobbies>Playing Guitar
+    </hobbies>
+    <hobbies>Photography
+    </hobbies>
+
+    </person>
+</list>
+
