@@ -1,0 +1,39 @@
+<html>
+
+    <head>
+        <style>
+            #css {
+                background-color: bisque;
+                border: 3px solid;
+                padding: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Feedback Form</h1>
+        <form id="css">
+            <label>Your Email*: </label>
+            <input type="text" id="email"><br><br>
+            <label>Date of visit: </label>
+            <input type="date" id="date"><br><br>
+            <label>Your comment:</label><br>
+            <textarea rows="6" cols="45" id="feedback"></textarea><br><br>
+            <button onclick="showData()">Send Your Feedback</button>
+        </form><br><br>
+
+        <p id="Data"></p>
+
+        <script>
+            function showData() {
+                let email = document.getElementById("email").value;
+                let d1 = document.getElementById("date").value;
+                let fb = document.getElementById("feedback").value;
+                document.getElementById("Data").innerHTML = email;
+                document.getElementById("Data").innerHTML = d1;
+                document.getElementById("Data").innerHTML = fb;
+            }
+        </script>
+    </body>
+
+</html>
