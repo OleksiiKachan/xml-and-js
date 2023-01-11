@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,textarea,button{
+            margin-top: 0.5em;
+        }
+
+        form{
+            background-color:beige;
+            border: 1px solid;
+            width: 300px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <form id="formData">
+            <label for="">Your Email</label>
+            <input id="email" type="email" name="email"><br>
+            <label for="">Date of Visit</label>
+            <input id="date" type="date" name="date"><br>
+            <label for="">Your Comment:</label><br>
+            <textarea  name="comment" id="comment" cols="30" rows="4"></textarea><br>
+            <button type="submit" >Send your feedback</button>
+        </form>
+    </main>
+    <script>
+        formData.addEventListener('submit',(e)=>{
+            e.preventDefault();
+            printDetail();
+        })
+
+        function printDetail(){
+   
+    email = document.getElementById('email').value
+    console.log(email);
+    date = document.getElementById('date').value
+    console.log(date);
+    comment = document.getElementById('comment').value
+    console.log(comment);
+}    </script>
+</body>
+</html>
