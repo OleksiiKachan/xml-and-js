@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>​
+<data>
+<person1> 
+<name> Mohammad Anwaruddin </name> 
+<Age> 26 </Age>
+<email> anwaruddinmohammad19@gmail.com </email>
+<aboutMe> I am from India and has arrived Canada in Sept 2022 as an International Student and has completed first Semester at Humber.
+ I worked as a Support Executive for 3.5 years with TCS company and i dont have much knowledge about javascript and XML. 
+</aboutMe>
+<college> Humber IGS </college>
+<studentId> N01553149 <studentId>
+<courseNAME> Information Technology and Solutions </courseNAME>
+<pLanguage> XML and JavaScript </pLanguage>
+<hobbies>
+    <hobbie1> I like to play Cricket a lot </hobbie1>
+    <hobbie2> I love listening Music </hobbie2>
+    <hobbie3> I like Spending my time in doing Programming <hobbie3>
+    <hobbie4> I like to explore new places and Travel a lot </hobbie4>
+ </hobbies>
+<goals> I want to become a web developer </goals>
+</person1>
+
+<person2>
+<name> John </name>
+<Age> 25 </Age>
+<email> john@gmail.com </email>
+<aboutJohn> John is from india  
+</aboutJohn>
+<college> Humber IGS </college>
+<studentId> N01553156 <studentId>
+<courseNAME> Information Technology and Solutions </courseNAME>
+<pLanguage> XML and JavaScript </pLanguage>
+<hobbies>
+    <hobbie1> John to play Table Tennis </hobbie1>
+    <hobbie2> John Loves watching movies </hobbie2>
+ </hobbies>
+ </person2>
+
+
+ <person3>
+<name> Alex </name>
+<Age> 27 </Age>
+<email> alex@gmail.com </email>
+<aboutJohn> Alex is from india  
+</aboutJohn>
+<college> Humber IGS </college>
+<studentId> N01553136 <studentId>
+<courseNAME> Information Technology and Solutions </courseNAME>
+<pLanguage> XML and JavaScript </pLanguage>
+<hobbies>
+    <hobbie1> Alex likes to play Snooker </hobbie1>
+    <hobbie2> Alex Loves watching movies </hobbie2>
+ </hobbies>
+ </person3>
+
+</data>
