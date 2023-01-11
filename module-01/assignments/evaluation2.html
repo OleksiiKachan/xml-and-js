@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evaluation2</title>
+    <style>
+      .formbody {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        margin: 30px 550px;
+        padding: 30px;
+        border: 2px solid black;
+        /* border-radius: 2em; */
+        background-color: rgba(255, 255, 0, 0.878);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="formbody">
+      <form action="submit">
+        <label for="email">Your Email: </label>
+        <input type="email" name="email" id="email" required />
+
+        <br />
+        <br />
+
+        <label for="date">Date Of Visit: </label>
+        <input type="date" name="date" id="date" />
+
+        <br />
+        <br />
+
+        <label for="comt">Your Comment: </label>
+        <br />
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+
+        <br />
+        <br />
+
+        <button type="submit">Send Your Feedback</button>
+      </form>
+    </div>
+  </body>
+</html>
