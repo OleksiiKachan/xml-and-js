@@ -5,15 +5,29 @@
 <people>​
   <person>
     <name>
-        <firstName>Ronak</firstName>
-        <lastName>Mangroliya</lastName>
+      <firstName>Ronak</firstName>
+      <lastName>Mangroliya</lastName>
     </name>
     <hobbies>
-        <hobby>Sports</hobby>
-        <hobby>Movies</hobby>
+      <hobby>Sports</hobby>
+      <hobby>Movies</hobby>
     </hobbies>
     <interests>
-        <interest>i want to become a web developer</interest>
+      <interest>I want to become a web developer</interest>
+    </interests>
+  </person>
+  
+  <person>
+    <name>
+      <firstName>John</firstName>
+      <lastName>Smith</lastName>
+    </name>
+    <hobbies>
+      <hobby>Cricket</hobby>
+      <hobby>Movies</hobby>
+    </hobbies>
+    <interests>
+      <interest>I love playing a sports</interest>
     </interests>
   </person>​
 </people>

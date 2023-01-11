@@ -1,33 +1,23 @@
 <!-- activity1 -->
 
-<?xml version="1.0" encoding="utf-8"?>​
+<?xml version="1.0" encoding="utf-8"?>
 
 <data>
-    <category>
-        <lable>Empno</lable>
-        <categoryData>
-            <rawData>1001</rawData>
-            <rawData>1002</rawData>
-            <rawData>1003</rawData>
-        </categoryData>
-    </category>
+    <employee>
+        <empno>1001</empno>
+        <empname>Alex</empname>
+        <salary>3000</salary>
+    </employee>
 
-    <category>
-        <lable>Empname</lable>
-        <categoryData>
-            <rawData>Salary</rawData>
-            <rawData>Sarah</rawData>
-            <rawData>Peter</rawData>
-        </categoryData>
-    </category>
+    <employee>
+        <empno>1002</empno>
+        <empname>Sarah</empname>
+        <salary>4000</salary>
+    </employee>
 
-    <category>
-        <lable>Salary</lable>
-        <categoryData>
-            <rawData>3000</rawData>
-            <rawData>4000</rawData>
-            <rawData>3500</rawData>
-        </categoryData>
-    </category>
-</data>​
-</people>
+    <employee>
+        <empno>1003</empno>
+        <empname>Peter</empname>
+        <salary>3500</salary>
+    </employee>
+</data>
