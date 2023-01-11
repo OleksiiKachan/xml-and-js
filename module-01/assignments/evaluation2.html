@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Evaluation 2</title>
+        <style>
+            #detail{
+                background-color: rgb(247, 247, 127);
+                border: solid;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="detail">
+            <label>Your Email*:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label>Date of Visit:</label>
+            <input type="date" id="date" name="visitdate"><br><br>
+            <label>Your Comment:</label><br>
+            <textarea name="comment"  id="cmt" rows="4" cols="50"></textarea><br>
+            <button name="btn1" onclick="feedback()">Send your Feedback</button>
+            <!--<h3 id="nm"></h3>-->
+        </div>
+    </body>
+    <script>
+        function feedback(){
+            let email = document.getElementById("email");
+            let date = document.getElementById("date");
+            let cmt = document.getElementById("cmt");
+            console.log(email.value);
+            console.log(date.value);
+            console.log(cmt.value);
+        }
+    </script>
+</html>
