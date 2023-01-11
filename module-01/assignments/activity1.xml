@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+    <name>Naitik Panchal</name>
+    <college>Humber College IGS</college>
+    <course>Information Technology Solutions</course>
+    <year>
+    <firstyear>
+        <semester>Semester 1</semester>
+        <semester>Semester 2</semester>
+    </firstyear>
+    <secondyear>
+        <semester>Semester 3</semester>
+        <semester>Semester 4</semester>
+    </secondyear>
+    </year>
+</data>
