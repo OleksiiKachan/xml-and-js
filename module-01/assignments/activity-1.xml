@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+    <person>
+        <name>
+            <fullname>
+                <firstname>
+                    Kishan
+                </firstname>
+                <lastname>
+                    Patel
+                </lastname>
+            </fullname>
+        </name>
+        <description>
+            I am a Programmer by Profession.
+        </description>
+        <interests>
+            <hobby>Video Games</hobby>
+            <hobby>Cooking</hobby>
+        </interests>
+    </person>
+    <person>
+        <name>
+            <fullname>
+                <firstname>
+                    Ronak
+                </firstname>
+                <lastname>
+                    Patel
+                </lastname>
+            </fullname>
+        </name>
+        <description>
+            I am a Programmer by Profession.
+        </description>
+        <interests>
+            <hobby>Chatting</hobby>
+            <hobby>Cooking</hobby>
+        </interests>
+    </person>
+    <person>
+        <name>
+            <fullname>
+                <firstname>
+                    Ravi
+                </firstname>
+                <lastname>
+                    Patel
+                </lastname>
+            </fullname>
+        </name>
+        <description>
+            I am a app developer by profession.
+        </description>
+        <interests>
+            <hobby>Sports</hobby>
+            <hobby>Cooking</hobby>
+        </interests>
+    </person>
+    <person>
+        <name>
+            <fullname>
+                <firstname>
+                    Rishi
+                </firstname>
+                <lastname>
+                    Patel
+                </lastname>
+            </fullname>
+        </name>
+        <description>
+            I am a Cook by Profession.
+        </description>
+        <interests>
+            <hobby>Experimental Cooking</hobby>
+            <hobby>Cooking</hobby>
+        </interests>
+    </person>
+    <person>
+        <name>
+            <fullname>
+                <firstname>
+                    Zeel
+                </firstname>
+                <lastname>
+                    Patel
+                </lastname>
+            </fullname>
+        </name>
+        <description>
+            I am a violenist by Profession.
+        </description>
+        <interests>
+            <hobby>Music</hobby>
+            <hobby>Cooking</hobby>
+        </interests>
+    </person>
+    <person>
+        <name>
+            <fullname>
+                <firstname>
+                    Mayur
+                </firstname>
+                <lastname>
+                    Patel
+                </lastname>
+            </fullname>
+        </name>
+        <description>
+            I am a Buisnessman by Profession.
+        </description>
+        <interests>
+            <hobby>Playing Games</hobby>
+            <hobby>Eating</hobby>
+        </interests>
+    </person>
+    <person>
+        <name>
+            <fullname>
+                <firstname>
+                    Avani
+                </firstname>
+                <lastname>
+                    Patel
+                </lastname>
+            </fullname>
+        </name>
+        <description>
+            I am a Meta-Influencer by Profession.
+        </description>
+        <interests>
+            <hobby>Creating TikTok Videos</hobby>
+            <hobby>Editing Videos</hobby>
+        </interests>
+    </person>
+    <person>
+        <name>
+            <fullname>
+                <firstname>
+                    Avi
+                </firstname>
+                <lastname>
+                    Patel
+                </lastname>
+            </fullname>
+        </name>
+        <description>
+            I am a Football Player by Profession.
+        </description>
+        <interests>
+            <hobby>Sports</hobby>
+            <hobby>Hiking</hobby>
+        </interests>
+    </person>
+    <person>
+        <name>
+            <fullname>
+                <firstname>
+                    Robbin
+                </firstname>
+                <lastname>
+                    Patel
+                </lastname>
+            </fullname>
+        </name>
+        <description>
+            I am a Professional driver by Profession.
+        </description>
+        <interests>
+            <hobby>Driving</hobby>
+            <hobby>Modify Cars</hobby>
+        </interests>
+    </person>
+    <person>
+        <name>
+            <fullname>
+                <firstname>
+                    Abby
+                </firstname>
+                <lastname>
+                    Patel
+                </lastname>
+            </fullname>
+        </name>
+        <description>
+            I am a Teacher by Profession.
+        </description>
+        <interests>
+            <hobby>Reading</hobby>
+            <hobby>Writing</hobby>
+        </interests>
+    </person>
+</data>
