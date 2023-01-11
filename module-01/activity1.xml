@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<people>
+  <person>
+     <name>
+         <firstName>Rolita</firstName>
+         <lastName>Quadras</lastName>
+      </name>
+      <hobbies>
+         <hobby>listening to music</hobby>
+         <hobby>Reading books</hobby>
+      </hobbies>
+      <education>Bachelors of Engineeering in Computer</education>
+      <country>India</country>
+  </person>
+  <person>
+     <name>
+         <firstName>Rolson</firstName>
+         <lastName>Quadras</lastName>
+      </name>
+      <hobbies>
+         <hobby>listening to motivational speakers</hobby>
+         <hobby>Reading novels</hobby>
+      </hobbies>
+      <education>Bachelors of Engineeering in Electronics</education>
+      <country>India</country>
+  </person>
+  <person>
+     <name>
+         <firstName>Sweedal</firstName>
+         <lastName>Dsouza</lastName>
+      </name>
+      <hobbies>
+         <hobby>Likes walking</hobby>
+         <hobby>Plying football</hobby>
+      </hobbies>
+      <education>Bachelors of Engineeering in Computer</education>
+      <country>Mexico</country>
+  </person>
+    <person>
+     <name>
+         <firstName>Delita</firstName>
+         <lastName>Quadras</lastName>
+      </name>
+      <hobbies>
+         <hobby>Loves to do yoga</hobby>
+         <hobby>Watching animation</hobby>
+      </hobbies>
+      <education>Bachelors of Engineeering in mechanics</education>
+      <country>Indonesia</country>
+  </person>
+  <person>
+     <name>
+         <firstName>Flavia</firstName>
+         <lastName>Quadras</lastName>
+      </name>
+      <hobbies>
+         <hobby>Playing vollyball</hobby>
+         <hobby>Reading novels</hobby>
+      </hobbies>
+      <education>Bachelors of Engineeering in Information science</education>
+      <country>US</country>
+  </person>
+  <person>
+     <name>
+         <firstName>Veronica</firstName>
+         <lastName>Dsouza</lastName>
+      </name>
+      <hobbies>
+         <hobby>Loves to cook</hobby>
+         <hobby>Watching netflix</hobby>
+      </hobbies>
+      <education>Bachelors of Engineeering in Arts </education>
+      <country>India</country>
+  </person>
+  <person>
+     <name>
+         <firstName>Janet</firstName>
+         <lastName>Sequeira</lastName>
+      </name>
+      <hobbies>
+         <hobby>listening to hollywood music</hobby>
+         <hobby>Reading books</hobby>
+      </hobbies>
+      <education>Bachelors of Engineeering in Commerce</education>
+      <country>Dubai</country>
+  </person>
+  <person>
+     <name>
+         <firstName>Floyd</firstName>
+         <lastName>Dsouza</lastName>
+      </name>
+      <hobbies>
+         <hobby>Playing Instrument</hobby>
+         <hobby>Reading novels</hobby>
+      </hobbies>
+      <education>Bachelors of Engineeering in Computer</education>
+      <country>India</country>
+  </person>
+  <person>
+     <name>
+         <firstName>Flavin</firstName>
+         <lastName>Quadras</lastName>
+      </name>
+      <hobbies>
+         <hobby>Playing cricket</hobby>
+         <hobby>Reading books</hobby>
+      </hobbies>
+      <education>Bachelors of Engineeering in Arts</education>
+      <country>India</country>
+  </person>
+ <person>
+     <name>
+         <firstName>Deril</firstName>
+         <lastName>Menezes</lastName>
+      </name>
+      <hobbies>
+         <hobby>Playing online games</hobby>
+         <hobby>Loves surfing on online</hobby>
+      </hobbies>
+      <education>Bachelors of Engineeering in mechanics</education>
+      <country>Kuwait</country>
+  </person>
+</people>
