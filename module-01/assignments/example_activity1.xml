@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>​
+<myself>​
+
+  <subject> About Myself</subject>​
+  <name>
+    <firstname>Vimal</firstname>
+    <Lastname>Radadiya</Lastname>
+  </name>
+
+  <hobbies>
+    <hobby1>Cricket</hobby1>
+    <hobby1>Music</hobby1>
+    <hobby1>Reading</hobby1>
+  </hobbies>
+
+  <interest>
+    <interest1>Data Engineering</interest1>
+    <interest1>Big Data Analytics</interest1>
+  </interest>
+</myself>

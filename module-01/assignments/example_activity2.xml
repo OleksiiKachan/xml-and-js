@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>​
+
+<data>
+    <datacategories>
+        <category1>Empno</category1>
+        <categorydata>
+            <data1>1001</data1>
+            <data1>1002</data1>
+            <data1>1003</data1>
+        </categorydata>
+
+        <category2>Empname</category2>
+        <categorydata>
+            <data1>Salary</data1>
+            <data1>Sarah</data1>
+            <data1>Peter</data1>
+        </categorydata>
+
+
+        <category3>Salary</category3>
+        
+        <categorydata>
+            <data1>3000</data1>
+            <data1>4000</data1>
+            <data1>3500</data1>
+        </categorydata>
+
+    </datacategories>
+</data>
