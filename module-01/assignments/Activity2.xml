@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <employee>
-    <emp1>
+    <emp>
         <Empno>1001</Empno>
         <Empname>Alex</Empname>
         <Salary>3000</Salary>
-    </emp1>
-    <emp2>
+    </emp>
+    <emp>
         <Empno>1002</Empno>
         <Empname>Sarah</Empname>
         <Salary>4000</Salary>
-    </emp2>
-    <emp3>
+    </emp>
+    <emp>
         <Empno>1003</Empno>
         <Empname>Peter</Empname>
         <Salary>3500</Salary>
-    </emp3>
+    </emp>
 </employee>

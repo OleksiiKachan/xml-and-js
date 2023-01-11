@@ -1,20 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
+<people>
 <person>​
-  <name>
-    <firstname>Sibi</firstname>
-    <lastname>Saraswathi Mohan</lastname>
-  </name>
-  <education>
-    <qualifications>Bachelors</qualifications>
-    <college>Government College of Technology</college>
-  </education>
-  <native>India</native>​
-  <dob>1999</dob>
-  <hobbies>
-    <hobby>Playing</hobby>
-    <hobby>Work</hobby>
-    <hobby>Reading</hobby>
-    <hobby>Cooking</hobby>
-  </hobbies>
-  <interest>Exploring new things</interest>
+    <name>
+        <firstname>Sibi</firstname>
+        <lastname>Saraswathi Mohan</lastname>
+    </name>
+    <education>
+        <qualifications>Bachelors</qualifications>
+        <college>Government College of Technology</college>
+    </education>
+    <native>India</native>​
+    <dob>1999</dob>
+    <hobbies>
+        <hobby>Playing</hobby>
+        <hobby>Work</hobby>
+        <hobby>Reading</hobby>
+        <hobby>Cooking</hobby>
+    </hobbies>
+    <interest>Exploring new things</interest>
 </person>
+<person>​
+    <name>
+        <firstname>Thiagu</firstname>
+        <lastname> Mohan</lastname>
+    </name>
+    <education>
+        <qualifications>Bachelors</qualifications>
+        <college>Bannari college of Technology</college>
+    </education>
+    <native>India</native>​
+    <dob>1996</dob>
+    <hobbies>
+        <hobby>Playing</hobby>
+        <hobby>Work</hobby>
+        <hobby>Reading</hobby>
+        <hobby>Coding</hobby>
+    </hobbies>
+    <interest>Enjoy the life</interest>
+</person>
+</people>
