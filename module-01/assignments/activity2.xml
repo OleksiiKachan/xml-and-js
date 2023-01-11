@@ -1,35 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <data>
-
-    <title>
-        <fcol>| Empno |</fcol>
-        <scol>| Empname |</scol>
-        <tcol>| Salary |</tcol>
-    </title>
-
-    <dash>
-        <fcol>| ----- |</fcol>
-        <scol>| ------- |</scol>
-        <tcol>| ------ |</tcol>
-    </dash>
-
     <person>
-        <fcol>| 1001 |</fcol>
-        <scol>| Alex    |</scol>
-        <tcol>| 3000   |</tcol>
+        <Empno>1001</Empno>
+        <Empname>Alex</Empname>
+        <Salary>3000</Salary>
     </person>
 
     <person>
-        <fcol>| 1002 |</fcol>
-        <scol>| Sarah   |</scol>
-        <tcol>| 4000   |</tcol>
+        <Empno>1002</Empno>
+        <Empname>Sarah</Empname>
+        <Salary>4000</Salary>
     </person>
 
     <person>
-        <fcol>| 1003 |</fcol>
-        <scol>| Peter   |</scol>
-        <tcol>| 3500   |</tcol>
+        <Empno>1003</Empno>
+        <Empname>Peter</Empname>
+        <Salary>3500</Salary>
     </person>
 
 </data>
