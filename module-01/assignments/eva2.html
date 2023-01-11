@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        my page
+    </title>
+
+    <style>
+        body {
+            background-color:khaki;
+        }
+    </style>
+</head>
+<body>
+<form id="myform" action="index.html">
+    <br><label for="email">Your email*:</label>
+    <input type="email" id="email" name="email"><br>
+
+    <br><br>  <label for="date">Date of visit:</label>
+    <input type="date" id="date" name="date"><br>
+
+    <br><br><label for="comment">Your comment:</label>
+    <br><textarea rows="5" cols="50" name="comment" id="comment"></textarea><br>
+
+    <br><br><button onclick="myfinction()">Send me your feedback</button>
+</form>
+
+<p id="demo"></p>
+<script>
+function myFunction() {
+  var x = document.getElementById("myForm").action;
+  document.getElementById("demo").innerHTML = x;
+}
+</script>
+</body>
+</html>
