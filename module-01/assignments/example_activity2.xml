@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>​
 
-<data>
-    <datacategories>
-        <category1>Empno</category1>
-        <categorydata>
-            <data1>1001</data1>
-            <data1>1002</data1>
-            <data1>1003</data1>
-        </categorydata>
+<Persondata>
+    <employeedata>
+        <empno> 1001 </empno>
+        <empname> Alex </empname>
+        <salary> 3000 </salary>
+    </employeedata>
 
-        <category2>Empname</category2>
-        <categorydata>
-            <data1>Salary</data1>
-            <data1>Sarah</data1>
-            <data1>Peter</data1>
-        </categorydata>
+    <employeedata>
+        <empno> 1002 </empno>
+        <empname> Sarah </empname>
+        <salary> 4000 </salary>
+    </employeedata>
 
-
-        <category3>Salary</category3>
-        
-        <categorydata>
-            <data1>3000</data1>
-            <data1>4000</data1>
-            <data1>3500</data1>
-        </categorydata>
-
-    </datacategories>
-</data>
+    <employeedata>
+        <empno> 1003 </empno>
+        <empname> Peter </empname>
+        <salary> 3500 </salary>
+    </employeedata>
+</Persondata>
