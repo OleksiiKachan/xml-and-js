@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>​
 <people>
-    <mySelf>​
+    <person>​
         <name>Yogesh Kakkar</name>
         <Education>B.Tech in Computer Science</Education>
         <School>Humber</School>
@@ -10,7 +10,7 @@
         <hobby>Working-Out</hobby>
         </hobbies>
         <Address>Etude Dr at Goreway Dr</Address>
-    </mySelf>
+    </person>
     <person1>
         <name>sam</name>
         <Education>B.Tech in Computer Science</Education>
