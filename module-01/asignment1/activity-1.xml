@@ -6,16 +6,33 @@
   <person>
     <name>
         <firstName>Jay</firstName>
-        <lastName>Jay</lastName>
+        <lastName>Doshi</lastName>
     </name>
+    
     <hobbies>
         <hobby>playing cricket</hobby>
         <hobby>movies</hobby>
     </hobbies>
 
-    <interests>
-        <interest>become a software devloper in goalable company</interest>
-    </interests>
+    <skills>
+        <skill>C/C++</skill>
+        <skill>Java</skill>
+    </skills>
+  </person>​
+
+    <person>
+    <name>
+        <firstName>Smith</firstName>
+        <lastName>Glen</lastName>
+    </name>
     
+    <hobbies>
+        <hobby>movies</hobby>
+    </hobbies>
+
+    <<skills>
+        <skill>C/C++</skill>
+        <skill>Java</skill>
+    </skills>
   </person>​
 </people>

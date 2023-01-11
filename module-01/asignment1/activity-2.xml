@@ -3,24 +3,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <data>
-    <categories>
-        <title> Empno </title>
-        <titleData> 1001 </titleData>
-        <titleData> 1002 </titleData>
-        <titleData> 1003 </titleData>
-    </categories>
+    <employee>
+        <empno> 1001 </empno>
+        <empname> Alex </empname>
+        <salary> 3000 </salary>
+    </employee>
 
-    <categories>
-        <title> Empname </title>
-        <titleData> Alex </titleData>
-        <titleData> Sarah </titleData>
-        <titleData> Peter </titleData>
-    </categories>
+    <employee>
+        <empno> 1002 </empno>
+        <empname> Sarah </empname>
+        <salary> 4000 </salary>
+    </employee>
 
-    <categories>
-        <title> Salary </title>
-        <titleData> 3000 </titleData>
-        <titleData> 4000 </titleData>
-        <titleData> 3500 </titleData>
-    </categories>
+    <employee>
+        <empno> 1003 </empno>
+        <empname> Peter </empname>
+        <salary> 3500 </salary>
+    </employee>
 </data>
