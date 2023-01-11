@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>evaluation 2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+       #heading{
+        font-family: sans-serif;
+       }
+        #container{
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid black;
+        }
+        #userInfo{
+            margin-left: 10px;
+            background-color: beige;
+            padding-top: 15px;
+            margin-bottom: 0px;
+        }
+        #hr1{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h3 id="heading">
+        Evaluation 2
+    </h3>
+    <hr id="hr1">
+    <div id="container">
+        <form id="userInfo">
+            <label for="email">
+                Your Email *:
+            </label>
+            <input type="text" name="email" id="email">
+            <br>
+            <br>
+            <label for="dateOfVisit">
+                Date of Visit:
+            </label>
+            <input type="text" name="dateOfVisit" id="dateOfVisit" placeholder="mm/dd/yyyy">
+            <br>
+            <br>
+            <label for="comment">
+                Your Comment:
+            </label><br>
+            <textarea rows="5" cols="30" id="comment" name="comment"></textarea>
+            <br>
+            <br>
+            <input type="button" name="submitDetails" id="submitDetails" onclick="showDetails();" value="Send your Feedback">
+            <p id="userDetails"></p>
+        </form>
+        
+    </div>
+    
+</body>
+<script>
+    document.getElementById("userDetails").innerHTML = "";
+    function showDetails(){
+      let email =  document.getElementById("email").value
+      let dateOfVisit =  document.getElementById("dateOfVisit").value
+      let comment =  document.getElementById("comment").value
+      console.log(email)
+      console.log(dateOfVisit)
+      console.log(comment)
+      let userDetails = email + `<br>` + dateOfVisit + `<br>` + comment
+        document.getElementById("userDetails").innerHTML = userDetails;
+    }
+</script>
+</html>

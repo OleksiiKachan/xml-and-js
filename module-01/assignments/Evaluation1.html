@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>evaluation 1</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        #heading{
+        font-family: sans-serif;
+       }
+        #hr2{
+            background-color: blue;
+            width: 95%;
+            margin-left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h3 id="heading">
+        Evaluation 1
+    </h3>
+    <hr>
+    <hr id="hr2">
+    <h4>Welcome to ITC5202</h4>
+    <input type="button" name="clickHere" id="clickHere" onclick="displayName();" value="Click here to display my name">
+    <p id="showName"></p>
+</body>
+<script>
+    function displayName(){
+        document.getElementById("showName").innerHTML = "Aanal Panchal"
+    }
+</script>
+</html>
