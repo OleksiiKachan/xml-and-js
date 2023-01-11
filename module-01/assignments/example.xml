@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<intro>
+<personIntro>
+<name>
+<firstName>Nisha</firstName>
+<lastName>Soni</lastName>
+</name>
+<student>
+<collegeName>Humber College </collegeName>
+<courseName> ITS </courseName>
+</student>
+<interests>
+<interest>music </interest>
+<interest> travel </interest>
+</interests>
+<age>24</age>
+</personIntro>
+
+<personIntro>
+<name>
+<firstName>Aditi</firstName>
+<lastName>Acharya</lastName>
+</name>
+<student>
+<collegeName>Humber College </collegeName>
+<courseName> ITS </courseName>
+</student>
+<interests>
+<interest> dance </interest>
+<interest> read </interest>
+</interests>
+<age>23</age>
+</personIntro>
+
+<personIntro>
+<name>
+<firstName>jay</firstName>
+<lastName>darji</lastName>
+</name>
+<student>
+<collegeName>Humber College </collegeName>
+<courseName> ITS </courseName>
+</student>
+<interests>
+<interest> sing </interest>
+<interest> game </interest>
+</interests>
+<age>22</age>
+</personIntro>
+<personIntro>
+<name>
+<firstName>dharit</firstName>
+<lastName>patel</lastName>
+</name>
+<student>
+<collegeName>Humber College </collegeName>
+<courseName> ITS </courseName>
+</student>
+<interests>
+<interest> read</interest>
+<interest> watching movie </interest>
+</interests>
+<age>24</age>
+</personIntro>
+
+<personIntro>
+<name>
+<firstName>krishna</firstName>
+<lastName>patel</lastName>
+</name>
+<student>
+<collegeName> Lambton </collegeName>
+<courseName> Database development </courseName>
+</student>
+<interests>
+<interest> eating </interest>
+<interest> programming </interest>
+</interests>
+<age>23</age>
+</personIntro>
+
+<personIntro>
+<name>
+<firstName>sahil</firstName>
+<lastName>patel</lastName>
+</name>
+<student>
+<collegeName>conestoga College </collegeName>
+<courseName> web development </courseName>
+</student>
+<interests>
+<interest> Travel </interest>
+<interest> dance </interest>
+</interests>
+<age>25</age>
+</personIntro>
+
+<personIntro>
+<name>
+<firstName>Foram</firstName>
+<lastName>patel</lastName>
+</name>
+<student>
+<collegeName>Fanshawe College </collegeName>
+<courseName> information technology </courseName>
+</student>
+<interests>
+<interest> work out </interest>
+<interest> read </interest>
+</interests>
+<age>24</age>
+</personIntro>
+
+<personIntro>
+<name>
+<firstName>jay</firstName>
+<lastName>joshi</lastName>
+</name>
+<student>
+<collegeName>dalhousie</collegeName>
+<courseName> cyber security </courseName>
+</student>
+<interests>
+<interest> shooting </interest>
+<interest> gaming </interest>
+</interests>
+<age>23</age>
+</personIntro>
+
+<personIntro>
+<name>
+<firstName>Mishva</firstName>
+<lastName>soni</lastName>
+</name>
+<student>
+<collegeName>seneca College </collegeName>
+<courseName> business analytics </courseName>
+</student>
+<interests>
+<interest> movie </interest>
+<interest> dance </interest>
+</interests>
+<age>21</age>
+</personIntro>
+
+<personIntro>
+<name>
+<firstName>pranshu</firstName>
+<lastName>soni</lastName>
+</name>
+<student>
+<collegeName>centenial College </collegeName>
+<courseName> information security </courseName>
+</student>
+<interests>
+<interest> travel </interest>
+<interest> chess </interest>
+</interests>
+<age>20</age>
+</personIntro>
+</intro>
