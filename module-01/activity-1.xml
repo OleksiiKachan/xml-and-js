@@ -1,0 +1,20 @@
+<!--Prolog declaration-->
+<?xml version="1.0" encoding="utf-8"?>
+<data><!--Root-->
+    <courses>
+        <course>XML and Javascript</course>
+        <course>PL/SQL</course>
+    </courses>
+    <courseRoom>
+        <number>4521</number>
+        <number>4501</number>
+    </courseRoom>
+    <faculty>
+        <firstName>Sejal</firstName>
+        <lastName>Patel</lastName>
+    </faculty>
+    <faculty>
+        <firstName>Ram</firstName>
+        <lastName>Dave</lastName>
+    </faculty>
+</data>
