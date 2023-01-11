@@ -1,0 +1,102 @@
+<?xml version="1.8" encoding="utf-8"?>
+<persondata>
+<person>
+    <name>Ryan Prasad</name>
+    <hobbies>
+        <hobby1>Sports</hobby1>
+        <hobby2>Coins Collection</hobby2>
+    </hobbies>
+    <dob>July 30, 2000</dob>
+    <country>India</country>
+</person>
+
+<person>
+    <name>Jeff Pereira</name>
+    <hobbies>
+        <hobby1>gaming</hobby1>
+        <hobby2>singing</hobby2>
+    </hobbies>
+    <dob>Aug 16, 1999</dob>
+    <country>Thailand</country>
+</person>
+
+<person>
+    <name>Yash Vaz</name>
+    <hobbies>
+        <hobby1>sports</hobby1>
+        <hobby2>dancing</hobby2>
+    </hobbies>
+    <dob>May 6, 1999</dob>
+    <country>Japan</country>
+</person>
+
+<person>
+    <name>Sara Shaikh</name>
+    <hobbies>
+        <hobby1>Gossiping</hobby1>
+        <hobby2>Sumo Wrestling</hobby2>
+    </hobbies>
+    <dob>Apr 8, 2004</dob>
+    <country>Uganda</country>
+</person>
+
+<person>
+    <name>Aishwarya Sreenivasan</name>
+    <hobbies>
+        <hobby1>drawing</hobby1>
+        <hobby2>anime</hobby2>
+    </hobbies>
+    <dob>Sep 18, 1999</dob>
+    <country>New Zealand</country>
+</person>
+
+<person>
+    <name>Colin Pereira-Vaz</name>
+    <hobbies>
+        <hobby1>programming</hobby1>
+        <hobby2>studying</hobby2>
+    </hobbies>
+    <dob>Sep 05, 1990</dob>
+    <country>Canada</country>
+</person>
+
+<person>
+    <name>Samad Abdul</name>
+    <hobbies>
+        <hobby1>Cricket</hobby1>
+        <hobby2>Craft</hobby2>
+    </hobbies>
+    <dob>Dec 30, 2011</dob>
+    <country>UAE</country>
+</person>
+
+<person>
+    <name>Tejas Sakpal</name>
+    <hobbies>
+        <hobby1>programming</hobby1>
+        <hobby2>drawing</hobby2>
+    </hobbies>
+    <dob>Sep 18, 1999</dob>
+    <country>Botswana</country>
+</person>
+
+<person>
+    <name>Kajal Shukla</name>
+    <hobbies>
+        <hobby1>dancing</hobby1>
+        <hobby2>Craft</hobby2>
+    </hobbies>
+    <dob>Mar 3, 2022</dob>
+    <country>Brazil</country>
+</person>
+
+<person>
+    <name>Joel Jackson</name>
+    <hobbies>
+        <hobby1>sports</hobby1>
+        <hobby2>coding</hobby2>
+    </hobbies>
+    <dob>Oct 30, 2015</dob>
+    <country>USA</country>
+</person>
+</persondata>
