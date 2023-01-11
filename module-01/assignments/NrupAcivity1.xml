@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+    <individual>
+        <name>
+            <firstname>Nrup</firstname>
+            <lastname>Patel</lastname>
+        </name>
+        <interests>
+            <atHome>
+                Gaming, Coding.
+            </atHome>
+            <outside>
+                Football(Soccer), 
+            </outside>
+        </interests>
+    </individual>
+</data>
