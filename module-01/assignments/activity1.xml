@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<activity1>
+
+<myIntroduction>
+    <name>Jaikumar Anilkumar Darji</name>
+    <personalInformation>
+    <birthDate>3rd March 2000</birthDate>
+    <age>22 years</age>
+    <college>Humber College</college>
+    <currentStatus>Student</currentStatus>
+    </personalInformation>
+    <description>I Completed my Bachelors in Computer Application,I don't have any prior expirience in IT field,
+                 its been a challenge for me to learn new things in this field</description>
+    <hobbies>1.Explore New places 2.Playing Games</hobbies>
+</myIntroduction>
+
+<groupData>
+<first>
+<name>Dharit</name>
+<hobbies>Play Football</hobbies>
+</first> 
+<second>
+<name>Nisha</name>
+<hobbies>Listen Music</hobbies>
+</second>
+<third>
+<name>Aditi</name>
+<hobbies>Reading Book</hobbies>
+</third>
+<fourth>
+<name>Nrup</name>
+<hobbies>Watching Streams</hobbies>
+</fourth>
+<fifth>
+<name>Glen</name>
+<hobbies>Dancing</hobbies>
+</fifth>
+
+</groupData>
+
+</activity1>
