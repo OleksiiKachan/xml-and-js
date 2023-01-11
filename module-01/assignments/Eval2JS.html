@@ -1,0 +1,46 @@
+<html>
+
+    <head>
+        <style>
+            #css {
+                background-color: rgb(228, 227, 127);
+                border: 2px solid;
+                padding: 20px;
+                
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Feedback Form</h1>
+        <form id="css">
+            <label>Your Email*: </label>
+            <input type="text" id="email"><br><br>
+            <label>Date of visit: </label>
+            <input type="date" id="date"><br><br>
+            <label>Your comment:</label><br>
+            <textarea rows="6" cols="45" id="feedback"></textarea><br><br>
+            <button onclick="showData()">Send Your Feedback</button>
+        </form><br><br>
+
+        <p id="Data"></p>
+
+        <script>
+            function showData() {
+                let email = document.getElementById("email").value;
+                var email_val = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;  
+                //other validations required code  
+                if(email==''){  
+                alert("Your Email is invalid");  
+                } 
+                else{  
+                alert("Your account has been created successfully...");  
+                }  
+            }
+        </script>
+    </body>
+
+</html> 
+</script>  
+</body>  
+</html>  

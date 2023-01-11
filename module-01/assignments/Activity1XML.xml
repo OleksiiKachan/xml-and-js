@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<person>​
+  <name>
+    <firstname>Sibi</firstname>
+    <lastname>Saraswathi Mohan</lastname>
+  </name>
+  <education>
+    <qualifications>Bachelors</qualifications>
+    <college>Government College of Technology</college>
+  </education>
+  <native>India</native>​
+  <dob>1999</dob>
+  <hobbies>
+    <hobby>Playing</hobby>
+    <hobby>Work</hobby>
+    <hobby>Reading</hobby>
+    <hobby>Cooking</hobby>
+  </hobbies>
+  <interest>Exploring new things</interest>
+</person>
