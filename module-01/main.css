@@ -1,0 +1,11 @@
+form{
+    background-color: cornsilk;
+    margin-bottom: 10%;
+    margin-left: 5%;
+}
+
+body{
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+}

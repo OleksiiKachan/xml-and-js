@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluation 2</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+
+    <h2>Evaluation 2</h2>
+
+<form id="form">
+	<label for="name">Your Email *: </label>
+    <input type="text" name="Your Email" id="youremail" placeholder="">
+    <br><br>
+	<label for="date">Date of Visits: </label>
+	<input type="text" id="date" value="" placeholder="mm/dd/yyyy"><br><br>
+
+    <label for="comments">Your Comment: </label><br>
+    <textarea name = "comments here"></textarea>
+
+	<br><br>
+    <button  onclick="myFunction()">Send Your Feedback</button>
+    <div id="popcode"></div>
+</form>
+<script>
+function myFunction() {
+    var strText = document.getElementById("youremail").value;
+    var strText1 = document.getElementById("txtEmail").value;
+    
+    }
+</script>
+</body>
+</html>
