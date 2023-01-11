@@ -1,42 +1,18 @@
-<?xml verson="1.0" encoding="utf-8">
-<title>
-    <t>Empno</t>
-    <t>Empname</t>
-    <t>Salary</t>
-</title>
-
+<?xml verson="1.0" encoding="utf-8"?>
 <employee>
-<empNo>
-    <employeeNumber>1001</employeeNumber>
-</empNo>
-<empName>
-    <employeeName>Alex</employeeName>
-</empName>
-<salary>
-    <sal>3000</sal>
-</salary>
+<empNo>1001</empNo>
+<empName>Alex</empName>
+<salary>3000</salary>
 </employee>
 
 <employee>
-<empNo>
-    <employeeNumber>1002</employeeNumber>
-</empNo>
-<empName>
-    <employeeName>Sarah</employeeName>
-</empName>
-<salary>
-    <sal>4000</sal>
-</salary>
+<empNo>1002</empNo>
+<empName>Sarah</empName>
+<salary>4000</salary>
 </employee>
 
 <employee>
-<empNo>
-    <employeeNumber>1003</employeeNumber>
-</empNo>
-<empName>
-    <employeeName>Peter</employeeName>
-</empName>
-<salary>
-    <sal>5000</sal>
-</salary>
+<empNo>1003</empNo>
+<empName>Peter</empName>
+<salary>5000</salary>
 </employee>

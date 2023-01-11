@@ -3,25 +3,29 @@
     <script src ="js/validation.js">
         display();
         function display(){
-            var email=document.getElementById("email")
-            var date=document.getElementById("date")
-            var comments=document.getElementById("comments")
-            document.write
+            var email=document.getElementById("email").value;
+            var date=document.getElementById("date").value;
+            var comments=document.getElementById("comments").value;
+            document.write(email, date, comments);
         }
+    </script>
     <style>
+        body{
+            margin: 50px;
+        }
         form{
-            background-color: yellow
+            background-color:cornsilk
         }
     </style>
 </head>
 <body>
     <form methof="get" action="evaluation-2.md">
-        Your Email*:<input type="text" id="email">
-        Date of Visit: <input type="text" id="date" placeholder="mm/dd/yyy">
+        Your Email*:<input type="text" id="email"><br>
+        Date of Visit: <input type="text" id="date" placeholder="mm/dd/yyy"><br>
         <tr>
-        <td>Your Comments:</td>
+        <td>Your Comments:</td><br>
         <td><textarea name="comments" id="comments" cols="100" rows="10"></textarea></td>
-        </tr>
+        </tr><br><br>
         <input type="button" id="feedback" value="Send your feedback" onClick="display()">
 
 </body>
