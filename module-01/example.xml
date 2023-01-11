@@ -1,5 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<myMessage>
+<!--<?xml version="1.0" encoding="utf-8"?> <-PROLOG 
+<myMessage> <- ROOT ELEMENT
   <subject>This is a welcome message</subject>
   <date>Jan 31, 2018</date>
-</myMessage>
+</myMessage>-->
+<!--1. Should always begin with prolog
+    2. SHOULD ONLY HAVE ONE ROOT ELEMENT
+    3. we can structure the xml anyway we want -->
+
+<?xml version="1.0" encoding="utf-8"?>
+<people> <!--ROOT ELEMENT-->
+  
+</people>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?> <!--ROOT ELEMENT-->
+<emp_data>
+    <employee>
+        <empNo>1001</empNo>
+        <empName>Alex</empName>
+        <empSalary>3000</empSalary>
+    </employee>
+    <employee>
+        <empNo>1002</empNo>
+        <empName>Sarah</empName>
+        <empSalary>4000</empSalary>
+    </employee>
+    <employee>
+        <empNo>1003</empNo>
+        <empName>Peter</empName>
+        <empSalary>3500</empSalary>
+    </employee>
+</emp_data>
