@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list>
+<people>
+    <name>
+          <firstName>Glenn</firstName>
+          <lastname>Machado</lastname>
+    </name>
+    <age>23</age>
+    <country>Canada</country>
+    <email>glennmachado@gmail.com</email>
+    <hobby>playing Football</hobby>
+</people>
+<people>
+    <name>
+          <firstName>Dharit</firstName>
+          <lastname>Patel</lastname>
+    </name>
+    <age>24</age>
+    <country>Canada</country>
+    <email>dharitpatel@gmail.com</email>
+    <hobby>swimmimg</hobby>
+</people>
+<people>
+    <name>
+          <firstName>Gurlal</firstName>
+          <lastname>singh</lastname>
+    </name>
+    <age>24</age>
+    <country>Canada</country>
+    <email>gurlalsingh@gmail.com</email>
+    <hobby>cricket</hobby>
+</people>
+<people>
+    <name>
+          <firstName>Nisha</firstName>
+          <lastname>Soni</lastname>
+    </name>
+    <age>23</age>
+    <country>Canada</country>
+    <email>nishasoni@gmail.com</email>
+    <hobby>chess</hobby>
+</people>
+<people>
+    <name>
+          <firstName>jay</firstName>
+          <lastname>kumar</lastname>
+    </name>
+    <age>25</age>
+    <country>Canada</country>
+    <email>jaykumar@gmail.com</email>
+    <hobby>dancing</hobby>
+</people>
+<people>
+    <name>
+          <firstName>aditi</firstName>
+          <lastname>acharya</lastname>
+    </name>
+    <age>23</age>
+    <country>Canada</country>
+    <email>aditiarchaya@gmail.com</email>
+    <hobby>singing</hobby>
+</people>
+<people>
+    <name>
+          <firstName>Kim</firstName>
+          <lastname>Machado</lastname>
+    </name>
+    <age>22</age>
+    <country>Canada</country>
+    <email>kimmachado@gmail.com</email>
+    <hobby>playing games</hobby>
+</people>
+<people>
+    <name>
+          <firstName>Prince</firstName>
+          <lastname>Dmello</lastname>
+    </name>
+    <age>26</age>
+    <country>Canada</country>
+    <email>dmelloprince@gmail.com</email>
+    <hobby>watching movies</hobby>
+</people>
+<people>
+    <name>
+          <firstName>Clive</firstName>
+          <lastname>Machado</lastname>
+    </name>
+    <age>18</age>
+    <country>Canada</country>
+    <email>clivemachado@gmail.com</email>
+    <hobby>coding</hobby>
+</people>
+<people>
+    <name>
+          <firstName>Sania</firstName>
+          <lastname>Machado</lastname>
+    </name>
+    <age>19</age>
+    <country>Canada</country>
+    <email>saniamachado@gmail.com</email>
+    <hobby>playing cards</hobby>
+</people>
+</list>
