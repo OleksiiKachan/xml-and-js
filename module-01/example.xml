@@ -1,5 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<myMessage>
-  <subject>This is a welcome message</subject>
-  <date>Jan 31, 2018</date>
-</myMessage>
+<people>
+  <person>
+     <name>
+         <firstName>Rolita</firstName>
+         <lastName>Quadras</lastName>
+      </name>
+      <hobbies>
+         <hobby>listening to music</hobby>
+         <hobby>Reading books</hobby>
+      </hobbies>
+  </person>
+   <person>
+     <name>
+         <firstName>Rolson</firstName>
+         <lastName>Dsouza</lastName>
+      </name>
+      <hobbies>
+         <hobby>Watching movies online</hobby>
+         <hobby>Grooving to bollywood music</hobby>
+      </hobbies>
+  </person>
+   <person>
+     <name>
+         <firstName>Sweedal</firstName>
+         <lastName>Platina</lastName>
+      </name>
+      <hobbies>
+         <hobby>Listening to motivational speakers</hobby>
+         <hobby>Morning walks</hobby>
+      </hobbies>
+  </person>
+  <person>
+     <name>
+         <firstName>Janet</firstName>
+         <lastName>Sequeira</lastName>
+      </name>
+      <hobbies>
+         <hobby>Loves jogging</hobby>
+         <hobby>Watching netflix on mobile</hobby>
+      </hobbies>
+  </person>
+  <person>
+     <name>
+         <firstName>Flavin</firstName>
+         <lastName>Montero</lastName>
+      </name>
+      <hobbies>
+         <hobby>Playing Instrument</hobby>
+         <hobby>Reading books</hobby>
+      </hobbies>
+  </person>
+  <person>
+     <name>
+         <firstName>Floyd</firstName>
+         <lastName>Dsouza</lastName>
+      </name>
+      <hobbies>
+         <hobby>listening to music></hobby>
+         <hobby>Playing football</hobby>
+      </hobbies>
+  </person>
+  <person>
+     <name>
+         <firstName>Sonal</firstName>
+         <lastName>Mendonsa</lastName>
+      </name>
+      <hobbies>
+         <hobby>listening to hollywood music></hobby>
+         <hobby>Watching animation></hobby>
+      </hobbies>
+  </person>
+  <person>
+     <name>
+         <firstName>Flavia</firstName>
+         <lastName>Quadras</lastName>
+      </name>
+      <hobbies>
+         <hobby>Creating websites</hobby>
+         <hobby>Reading novels</hobby>
+      </hobbies>
+  </person>
+  <person>
+     <name>
+         <firstName>Delita</firstName>
+         <lastName>Quadro</lastName>
+      </name>
+      <hobbies>
+         <hobby>Watching comdey shows></hobby>
+         <hobby>Loves cycling</hobby>
+      </hobbies>
+  </person>
+  <person>
+     <name>
+         <firstName>Deril</firstName>
+         <lastName>Menezes</lastName>
+      </name>
+      <hobbies>
+         <hobby>Playing games</hobby>
+         <hobby>Reading books</hobby>
+      </hobbies>
+  </person>
+
+
