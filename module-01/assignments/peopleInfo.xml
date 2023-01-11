@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<personList>
+    <person>
+        <personName>
+            <fname>Aanal</fname>
+            <lname>Panchal</lname>
+        </personName>
+        <contactInfo>
+            <email>aanalpanchal1998@gmail.com</email>
+            <phone>+1234567890</phone>
+        </contactInfo>
+        <address>
+            <houseNumber>1</houseNumber>
+            <street>123 street</street>
+            <city>Toronto</city>
+            <postalCoad>M9V 3T1</postalCoad>
+            <province>ON</province>
+        </address>
+        <instituteInfo>
+            <instituteName>Humber</instituteName>
+            <facultyName>
+                Faculty of Applied Science
+            </facultyName>
+            <courseInfo>
+                <courseName>Information Technology Solution</courseName> 
+                <courseIntake>Sept2022</courseIntake>
+            </couserInfo>
+        </instituteInfo>
+        <personIntrests>
+            <intrest>
+                Listening music
+            </intrest>
+            <intrest>
+                Learning new things
+            </intrest>
+        </personIntrests>
+    </person>
+    <person>
+        <personName>
+            <fname>Rutu</fname>
+            <lname>Dave</lname>
+        </personName>
+        <contactInfo>
+            <email>test@gmail.com</email>
+            <phone>+1234567891</phone>
+        </contactInfo>
+        <address>
+            <houseNumber>11</houseNumber>
+            <street>222 street</street>
+            <city>Toronto</city>
+            <postalCoad>M9V 3T1</postalCoad>
+            <province>ON</province>
+        </address>
+        <instituteInfo>
+            <instituteName>Humber</instituteName>
+            <facultyName>
+                Faculty of Applied Science
+            </facultyName>
+            <courseInfo>
+                <courseName>Information Technology Solution</courseName> 
+                <courseIntake>Sept2022</courseIntake>
+            </couserInfo>
+        </instituteInfo>
+        <personIntrests>
+            <intrest>
+                Reading
+            </intrest>
+            <intrest>
+                Travelling
+            </intrest>
+        </personIntrests>
+    </person>
+</personList>
