@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<details>
+   <student>
+    <name>Likith</name>
+    <hobbies>Photography</hobbies>
+    <place>
+        <country>India</country>
+        <city>Vizag</city>
+    </place>
+   </student>
+   <student>
+    <name>John</name>
+    <hobbies>Cooking</hobbies>
+    <place>
+        <country>Italy</country>
+    </place>
+    <food>Pizza</food>
+   </student>
+   <student>
+    <name>Paul</name>
+    <hobbies>Painting</hobbies>
+    <place>
+        <country>Canada</home>
+        <city>Toronto</city>
+    </place>
+   </student> 
+   <student>
+    <name>Kevin</name>
+    <hobbies>Travelling</hobbies>
+    <place>
+        <country>China</home>
+        <favourite_place>Bali</favourite_place>
+    </place>
+   </student>
+
+</details>
