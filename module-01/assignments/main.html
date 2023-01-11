@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to ITC5202</title>
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+
+    <h1>Welcome to ITC5202</h1>
+    <button onclick="ShowName()">Click here to display my name</button>
+    <div id="result1"></div>
+
+    <form>
+        <label for="Email">Your Email *:</label>
+        <input type="text" id="email"/><br/>
+        <br>
+        <label for="Date">Date of Visit :</label>
+        <input type="date" id="datevisit"/><br/>
+        <br>
+        <label for="Comments">Your Comment :</label>
+        <br>
+        <textarea rows="4" cols="40" id="comment"/></textarea>
+        <br><br>
+        <input type="button" value="Send your Feedback" onclick="sendFeedBack()"/>
+    </form>
+    
+    <div id="result2"></div>
+    <div id="result3"></div>
+    <div id="result4"></div>
+
+    <script>
+        function ShowName(){
+        let disply = 'My name is Teerawut Sangpueng';
+        document.getElementById('result1').innerHTML = disply;
+        }
+
+        function sendFeedBack(){
+            let email = document.getElementById("email").value;
+            let datevisit = document.getElementById("datevisit").value;
+            let comments = document.getElementById("comment").value;
+            document.getElementById('result2').innerHTML = `${email}`;
+            document.getElementById('result3').innerHTML = `${datevisit}`;
+            document.getElementById('result4').innerHTML = `${comments}`;
+            
+        }
+
+    </script>
+    
+</body>
+</html>
