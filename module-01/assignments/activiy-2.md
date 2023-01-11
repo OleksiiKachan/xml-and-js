@@ -18,41 +18,25 @@ Try to display/represent the following Data in XML format
 <table>
 <row>
     <col>
-        <col1>| Emp no |</col1>
-        <col2> Empname </col2>
-        <col3>| Salary |</col3>
+        <num>| 1001 |</num>
+        <name> Alex </name>
+        <salary>| 3000 |</salary>
     </col>
 </row>
 
 <row>
     <col>
-        <col1>| ----- |</col1>
-        <col2> ------- </col2>
-        <col3>| ------ |</col3>
+        <num>| 1002 |</num>
+        <name> Sarah </name>
+        <salary>| 4000 |</salary>
     </col>
 </row>
 
 <row>
     <col>
-        <col1>| 1001 |</col1>
-        <col2> Alex </col2>
-        <col3>| 3000 |</col3>
-    </col>
-</row>
-
-<row>
-    <col>
-        <col1>| 1002 |</col1>
-        <col2> Sarah </col2>
-        <col3>| 4000 |</col3>
-    </col>
-</row>
-
-<row>
-    <col>
-        <col1>| 1003 |</col1>
-        <col2> Peter </col2>
-        <col3>| 3500 |</col3>
+        <num>| 1003 |</num>
+        <name> Peter </name>
+        <salary>| 3500 |</salary>
     </col>
 </row>
 
