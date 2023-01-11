@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+    <person>
+        <name>
+            <firstName>Leon</firstName>
+            <lastName>Schedlin Czarlinski</lastName> 
+        </name>
+        <hobbies>
+            <hobby>Play Soccer</hobby>
+            <hobby>Play Board Games</hobby>
+            <hobby>Walk my dogs</hobby>
+        </hobbies>
+    </person>
+    <person>
+        <name>
+            <firstName>firstName1</firstName>
+            <lastName>lastName1</lastName> 
+        </name>
+        <hobbies>
+            <hobby>hobby1</hobby>
+            <hobby>hobby2</hobby>
+            <hobby>hobby3</hobby>
+        </hobbies>
+    </person>
+    <person>
+        <name>
+            <firstName>firstName2</firstName>
+            <lastName>lastName2</lastName> 
+        </name>
+        <hobbies>
+            <hobby>hobby1</hobby>
+            <hobby>hobby2</hobby>
+            <hobby>hobby3</hobby>
+        </hobbies>
+    </person>
+    <person>
+        <name>
+            <firstName>firstName3</firstName>
+            <lastName>lastName3</lastName> 
+        </name>
+        <hobbies>
+            <hobby>hobby1</hobby>
+            <hobby>hobby2</hobby>
+            <hobby>hobby3</hobby>
+        </hobbies>
+    </person>
+</data>
