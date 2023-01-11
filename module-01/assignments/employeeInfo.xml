@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <employeeInfo>
-    <headers>
-        <header>
-            Empno
-        </header>
-        <header>
-            Empname
-        </header>
-        <header>
-            Salary
-        </header>
-    </headers>
     <employees>
         <employee>
             <empNo>1001</empNo>
