@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <form id="form">
+        Your Email: <input type="email" id="email"><br><br>
+        Date of Visit: <input type="date" id="date"><br><br>
+        Your Comment: <br> <textarea rows="4" cols="50" id="comment"></textarea><br><br>
+        <input type="button" onclick="displayMe()" id="myBtn" value="Send your feedback"> <br><br>
+        display result : <text id="displayText"></text>
+    </form>
+</body>
+
+<script>
+    function displayMe() {
+        var email = document.getElementById("email").value;
+        var date = document.getElementById("date").value;
+        var cmt = document.getElementById("comment").value;
+        var display = email + ' ' + date + ' ' + cmt;
+        document.getElementById('displayText').textContent = display;
+    }
+</script>
+
+</html>

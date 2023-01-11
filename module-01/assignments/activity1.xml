@@ -1,0 +1,19 @@
+<!-- activity1 -->
+
+<?xml version="1.0" encoding="utf-8"?>​
+
+<people>​
+  <person>
+    <name>
+        <firstName>Ronak</firstName>
+        <lastName>Mangroliya</lastName>
+    </name>
+    <hobbies>
+        <hobby>Sports</hobby>
+        <hobby>Movies</hobby>
+    </hobbies>
+    <interests>
+        <interest>i want to become a web developer</interest>
+    </interests>
+  </person>​
+</people>
