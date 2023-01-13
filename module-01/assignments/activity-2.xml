@@ -1,4 +1,5 @@
 <?xml verson="1.0" encoding="utf-8"?>
+<root>
 <employee>
 <empNo>1001</empNo>
 <empName>Alex</empName>
@@ -16,3 +17,4 @@
 <empName>Peter</empName>
 <salary>5000</salary>
 </employee>
+</root>
