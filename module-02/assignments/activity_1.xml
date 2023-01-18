@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<customers>
+    <customer_details>
+        <customer_name>Rorie Demanche</customer_name>
+        <!--Store contact numbers in simple format, do not add special characters as they are only for easy readability {for back-end}-->
+        <contact contact = "home_phone">17101534949</contact>
+        <contact contact = "work_phone">15033193558</contact>
+        <contact contact = "mobile_phone">11827481667</contact>
+        <email>rdemanche0@foxnews.com</email>
+    </customer_details>
+    <customer_details>
+        <customer_name>Kelcey Surman</customer_name>
+        <contact contact = "home_phone">12499267376</contact>
+        <contact contact = "work_phone">12083636588</contact>
+        <contact contact = "mobile_phone">19825366860</contact>
+        <email>ksurman1@usnews.com</email>
+    </customer_details>
+    <customer_details>
+        <customer_name>Simon Heddan</customer_name>
+        <contact contact = "home_phone">16878084290</contact>
+        <contact contact = "work_phone">16048157810</contact>
+        <contact contact = "mobile_phone">19241743271</contact>
+        <email>sheddan2@alexa.com</email>
+    </customer_details>
+    <customer_details>
+        <customer_name>Chan Supple</customer_name>
+        <contact contact = "home_phone">15771652495</contact>
+        <contact contact = "work_phone">15479347337</contact>
+        <contact contact = "mobile_phone">13676670747</contact>
+        <email>csupple3@123-reg.co.uk</email>
+    </customer_details>
+</customers>

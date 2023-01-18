@@ -1,0 +1,9 @@
+customers - root
+
+customer = array, element
+    custID = attr, string
+name = element, string  
+    title = attr, string
+address = string, element
+phone = string, element
+email = string, element
