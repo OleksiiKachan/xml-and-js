@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/css" href="style.css"?>
-<!DOCTYPE customers 
-[
+
+<!DOCTYPE customers [
   <!ELEMENT customers (customer+)>
-  <!ELEMENT customer (name, address, phone, email?, orders)>
+  <!ELEMENT customer (name, address, phone, email?,orders)>
   <!ATTLIST customer custID ID #REQUIRED>
   <!ELEMENT name (#PCDATA)>
-  <!ATTLIST name title (Mr.|Mrs.|Ms.) #REQUIRED>
+  <!ATTLIST name title CDATA #REQUIRED>
   <!ELEMENT address (#PCDATA)>
   <!ELEMENT phone (#PCDATA)>
   <!ELEMENT email (#PCDATA)>
   <!ELEMENT orders (order+)>
   <!ELEMENT order (orderDate, items)>
   <!ATTLIST order orderID ID #REQUIRED>
-  <!ATTLIST order orderBy IDREF #REQUIRED>
+  <!ATTLIST order orderBy CDATA #REQUIRED>
   <!ELEMENT orderDate (#PCDATA)>
   <!ELEMENT items (item+)>
   <!ELEMENT item (itemPrice, itemQty)>
@@ -27,7 +27,7 @@
       <![CDATA[
       41 West Plankton Avenue
       Orlando, FL 32820
-      ]]>]
+      ]]>
     </address>
     <phone>(407) 555-3476</phone>
     <email>jk@example.net</email>
@@ -49,7 +49,7 @@
       <![CDATA[
       41 West Plankton Avenue
       Orlando, FL 32820
-      ]]>]
+      ]]>
     </address>
     <phone>(407) 555-1234</phone>
     <orders>

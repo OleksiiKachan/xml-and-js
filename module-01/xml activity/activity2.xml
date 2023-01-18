@@ -1,5 +1,17 @@
 <?xml version = "1.0" encoding ="UTF-8"?>
 <data>
+    <people>
+        <person num = "1001">
+            <name>Alex</name>
+            <Salary>3000</Salary>
+        </person>
+        <person num = "1002"></person>
+    </people>
+
+
+
+
+
     <Empno>
         <Emp>1001</Emp>
         <Emp>1002</Emp>
