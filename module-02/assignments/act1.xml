@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This document contains the  details of businessman -->
+<business>
+   <person>
+    <name>Rorie Demanche</name>
+    <number type="home">17101534949</number>
+    <number type="work">15033193558</number>
+    <number type="mobile">11827481667</number>
+    <email>rdemanche0@foxnews.com</email>
+   </person>
+   <person>
+    <name>Kelcey Surman</name>
+    <number type="home">12499267376</number>
+    <number type="work">12083636588</number>
+    <number type="mobile">19825366860 </number>
+    <email>ksurman1@usnews.com</email>
+   </person>
+   <person>
+    <name>Simon Heddan</name>
+    <number type="home">17101534949</number>
+    <number type="work">16048157810</number>
+    <number type="mobile">19241743271</number>
+    <email>sheddan2@alexa.com</email>
+   </person>
+   <person>
+    <name>Chan Supple</name>
+    <number type="home">15771652495</number>
+    <number type="work">15479347337</number>
+    <number type="mobile">3676670747 </number>
+    <email>csupple3@123-reg.co.uk</email>
+   </person>
+</business>
