@@ -13,3 +13,5 @@ And add following element to each product
 Save to `mobule-2/assignments/activiy-2.xml`
 
 _Tip_: Use character data
+
+
