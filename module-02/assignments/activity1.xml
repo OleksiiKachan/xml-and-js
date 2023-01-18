@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<peoples>
+    <person>
+        <name>Rorie Demanche</name>
+        <phones>
+            <phone type="home">17101534949</phone>
+            <phone type="work">15033193558</phone>
+            <phone type="mobile">11827481667</phone>
+        </phones>
+        <email>rdemanche0@foxnews.com</email>
+    </person>
+    <person>
+        <name>Kelcey Surman</name>
+        <phones>
+            <phone type="home">12499267376</phone>
+            <phone type="work">12083636588</phone>
+            <phone type="mobile">19825366860</phone>
+        </phones>
+        <email>ksurman1@usnews.com</email>
+    </person>
+    <person>
+        <name>Simon Heddan</name>
+        <phones>
+            <phone type="home">16878084290</phone>
+            <phone type="work">16048157810</phone>
+            <phone type="mobile">19241743271</phone>
+        </phones>
+        <email>sheddan2@alexa.com</email>
+    </person>
+    <person>
+        <name>Chan Supple</name>
+        <phones>
+            <phone type="home">15771652495</phone>
+            <phone type="work">15479347337</phone>
+            <phone type="mobile">13676670747</phone>
+        </phones>
+        <email>csupple3@123-reg.co.uk</email>
+    </person>
+</peoples>
