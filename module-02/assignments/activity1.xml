@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<businessCards>
+  <card cardID="100">
+    <name title="Mr.">Rorie Demanche</name>
+    <phoneNum>
+    <phoneNum type="home">
+    <cntryCode>1</cntryCode>
+    <areacode>710</areacode>
+    <cityCode>153</cityCode>
+    <uniqNum>4949</uniqNum>
+    </phoneNum>
+    <phoneNum>
+    <phoneNum type="work">
+    <cntryCode>1</cntryCode>
+    <areacode>503</areacode>
+    <cityCode>319</cityCode>
+    <uniqNum>3558</uniqNum>
+    </phoneNum>
+    <phoneNum>
+    <phoneNum type="mobile">
+    <cntryCode>1</cntryCode>
+    <areacode>182</areacode>
+    <cityCode>748</cityCode>
+    <uniqNum>1667</uniqNum>
+    </phoneNum>
+    </phoneNum>
+    <email>rdemanche0@foxnews.com</email>
+  </card>
+  <card cardID="101">
+    <name title="Mr.">Kelcey Surman</name>
+    <phoneNum>
+    <phoneNum type="home">
+    <cntryCode>1</cntryCode>
+    <areacode>249</areacode>
+    <cityCode>926</cityCode>
+    <uniqNum>7376</uniqNum>
+    </phoneNum>
+    <phoneNum>
+    <phoneNum type="work">
+    <cntryCode>1</cntryCode>
+    <areacode>208</areacode>
+    <cityCode>363</cityCode>
+    <uniqNum>6588</uniqNum>
+    </phoneNum>
+    <phoneNum>
+    <phoneNum type="mobile">
+    <cntryCode>1</cntryCode>
+    <areacode>982</areacode>
+    <cityCode>536</cityCode>
+    <uniqNum>6860</uniqNum>
+    </phoneNum>
+    </phoneNum>
+    <email>ksurman1@usnews.com</email>
+  </card>
+  <card cardID="102">
+    <name title="Mr.">Simon Heddan</name>
+    <phoneNum>
+    <phoneNum type="home">
+    <cntryCode>1</cntryCode>
+    <areacode>687</areacode>
+    <cityCode>808</cityCode>
+    <uniqNum>4290</uniqNum>
+    </phoneNum>
+    <phoneNum>
+    <phoneNum type="work">
+    <cntryCode>1</cntryCode>
+    <areacode>604</areacode>
+    <cityCode>815</cityCode>
+    <uniqNum>7810</uniqNum>
+    </phoneNum>
+    <phoneNum>
+    <phoneNum type="mobile">
+    <cntryCode>1</cntryCode>
+    <areacode>924</areacode>
+    <cityCode>174</cityCode>
+    <uniqNum>3271</uniqNum>
+    </phoneNum>
+    </phoneNum>
+    <email>sheddan2@alexa.com</email>
+  </card>
+  <card cardID="103">
+    <name title="Mr.">Chan Supple</name>
+    <phoneNum>
+    <phoneNum type="home">
+    <cntryCode>1</cntryCode>
+    <areacode>577</areacode>
+    <cityCode>165</cityCode>
+    <uniqNum>2495</uniqNum>
+    </phoneNum>
+    <phoneNum>
+    <phoneNum type="work">
+    <cntryCode>1</cntryCode>
+    <areacode>547</areacode>
+    <cityCode>934</cityCode>
+    <uniqNum>7337</uniqNum>
+    </phoneNum>
+    <phoneNum>
+    <phoneNum type="mobile">
+    <cntryCode>1</cntryCode>
+    <areacode>367</areacode>
+    <cityCode>667</cityCode>
+    <uniqNum>0747</uniqNum>
+    </phoneNum>
+    </phoneNum>
+    <email>csupple3@123-reg.co.uk</email>
+  </card>
+</businessCards>
