@@ -1,6 +1,5 @@
-<!--Prolog declaration-->
 <?xml version="1.0" encoding="utf-8"?>
-<data><!--Root-->
+<data>
     <courses>
         <course>XML and Javascript</course>
         <course>PL/SQL</course>

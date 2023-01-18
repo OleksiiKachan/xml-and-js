@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Prolog declaration-->
+<data><!--Root(only one root)-->
+    <person>
+        <name>Rorie Demanche</name>
+        <phone category="home">16878084290</phone>
+         <phone category="work">15033193558</phone>
+        <phone category="mobile">1827481667</phone>
+        <email>rdemanche0@foxnews.com</email>
+    </person>
+    <person>
+        <name>Kelcey Surman</name>
+        <phone category="home">12499267376</phone>
+         <phone category="work">12083636588</phone>
+        <phone category="mobile">19825366860</phone>
+        <email>ksurman1@usnews.com</email>
+    </person>
+    <person>
+        <name>Simon Heddan</name>
+        <phone category="home">16878084290</phone>
+         <phone category="work">16048157810</phone>
+        <phone category="mobile">19241743271</phone>
+        <email>sheddan2@alexa.com</email>
+    </person>
+     <person>
+        <name>Chan Supple</name>
+        <phone category="home"> (577) 165-2495</phone>
+         <phone category="work"> (547) 934-7337</phone>
+        <phone category="mobile">(367) 667-0747</phone>
+        <email>csupple3@123-reg.co.uk</email>
+    </person>
+</data>

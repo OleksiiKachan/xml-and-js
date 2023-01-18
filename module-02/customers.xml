@@ -2,6 +2,7 @@
 <?xml-stylesheet type="text/css" href="style.css"?>
 <!DOCTYPE customers 
 [
+  <!--Implied is optional-->
   <!ELEMENT customers (customer+)>
   <!ELEMENT customer (name, address, phone, email?, orders)>
   <!ATTLIST customer custID ID #REQUIRED>
@@ -27,7 +28,7 @@
       <![CDATA[
       41 West Plankton Avenue
       Orlando, FL 32820
-      ]]>]
+      ]]>
     </address>
     <phone>(407) 555-3476</phone>
     <email>jk@example.net</email>
@@ -49,7 +50,7 @@
       <![CDATA[
       41 West Plankton Avenue
       Orlando, FL 32820
-      ]]>]
+      ]]>
     </address>
     <phone>(407) 555-1234</phone>
     <orders>
