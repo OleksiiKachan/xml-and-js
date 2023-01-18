@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<cards> <!--root element-->
+
+    <name> Rorie Demanche </name> <!--Here the name is an imp details, so should not be used as an attribute-->
+    <phone type="home"> 7101534949 </phone> <!--Here the type is the meta data, attribute, for specifying similar data of another type-->
+    <phone type="work"> 5033193558 </phone>
+    <phone type="mobile"> 1827481667 </phone>
+    <mail> rdemanche0@foxnews.com </mail>
+
+    <name> Kelcey Surman </name> 
+    <phone type="home"> 2499267376 </phone>
+    <phone type="work"> 2083636588 </phone>
+    <phone type="mobile"> 9825366860 </phone>
+    <mail> ksurman1@usnews.com </mail>
+
+    <name> "Simon Heddan" </name>
+    <phone type="home"> 6878084290 </phone>
+    <phone type="work"> 6048157810 </phone>
+    <phone type="mobile"> 9241743271 </phone>
+    <mail> sheddan2@alexa.com </mail>
+
+    <name> "Chan Supple" </name>
+    <phone type="home"> 5771652495 </phone>
+    <phone type="work"> 5479347337 </phone>
+    <phone type="mobile"> 3676670747 </phone>
+    <mail> csupple3@123-reg.co.uk </mail>
+
+</cards>
