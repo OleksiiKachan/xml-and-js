@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+    <person>
+    <name>
+        <firstName>Nitish</firstName>
+        <lastName>Sharma</lastName>
+</name>
+<hobbies>
+    <hobby>Programming</hobby>
+    <hobby>Gymming</hobby>
+    <hobby>Reading</hobby>
+</hobbies>
+</person>
+</data>
