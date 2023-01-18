@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -28,7 +28,8 @@
     </menuItem>
     <menuItem>
       <itemName>
-        <originalName> Fresh Mornin' Sampler </originalname>
+        <originalName> Fresh Mornin' Sampler
+        </originalname>
         <oldName> Mornin' Sampler </oldName>
       </itemName>
       <description>
@@ -41,14 +42,15 @@
       <price>6.95</price>
       <indicator>&#9829;</indicator>  <!-- heart healthy -->
       <indicator>&#9830;</indicator>  <!-- low-sodium -->
-      <indicator>&#9824;</indicator>  <!-- vegan -->  
+      <indicator>&#9824;</indicator>  <!-- vegan -->
     </menuItem>
   </menu>
   <menu>
     <category>Lite and Quick</category>
     <menuItem>
       <itemName>
-        <name> Oatmeal Breakfast </originalName>
+        <name> Oatmeal Breakfast
+        </originalName>
       </itemName>
       <description>
         <![CDATA[
@@ -61,7 +63,7 @@
       <price>6.95</price>
       <indicator>&#9829;</indicator>  <!-- heart healthy -->
       <indicator>&#9830;</indicator>  <!-- low-sodium -->
-      <indicator>&#9824;</indicator>  <!-- vegan -->  
+      <indicator>&#9824;</indicator>  <!-- vegan -->
     </menuItem>
     <menuItem>
       <itemName>
