@@ -1,0 +1,44 @@
+<!--
+Module 2 Activity 1 
+Sibi Saraswathi Mohan
+n01539502
+--> 
+<?xml version="1.0" encoding="utf-8"?>
+<people>
+    <person>
+        <name>Rorie Demanche</name>
+        <contact>
+            <contact type="home">7101534949</contact>
+            <contact type="work">5033193558</contact>
+            <contact type="mobile">1827481667</contact>
+            <contact type="email">rdemanche0@foxnews.com</contact>
+        </contact>
+    </person>
+    <person>
+        <name>Kelcey Surman</name>
+        <contact>
+            <contact type="home">2499267376</contact>
+            <contact type="work">12083636588</contact>
+            <contact type="mobile">9825366860</contact>
+            <contact type="email">ksurman1@usnews.com</contact>
+        </contact>
+    </person>
+    <person>
+        <name>Simon Heddan</name>
+        <contact>
+            <contact type="home">6878084290 </contact>
+            <contact type="work">6048157810</contact>
+            <contact type="mobile">19241743271</contact>
+            <contact type="email">sheddan2@alexa.com</contact>
+         </contact>
+    </person>
+    <person>
+        <name>Chan Supple</name>
+        <contact>
+            <contact type="home">15771652495</contact>
+            <contact type="work">15479347337</contact>
+            <contact type="mobile">13676670747</contact>
+            <contact type="email">csupple3@123-reg.co.uk</contact>
+         </contact>
+    </person>
+</people>
