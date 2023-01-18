@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<persons>
+<employee>
+<name> Rorie Demanche</name>
+<contact id ="phone">1234567890</contact>
+<contact id ="work">1234567890</contact>
+<contact id ="mobile">1234567890</contact>
+<email>rorie@gmail.com</email>
+</employee>
+
+<employee>
+<name> kaycey surman</name>
+<contact id ="phone">1234567890</contact>
+<contact id ="work">1234567890</contact>
+<contact id ="mobile">1234567890</contact>
+<email>kaycey@gmail.com</email>
+</employee>
+
+<employee>
+<name> simon hayden</name>
+<contact id ="phone">1234567890</contact>
+<contact id ="work">1234567890</contact>
+<contact id ="mobile">1234567890</contact>
+<email>simon@gmail.com</email>
+</employee>
+
+<employee>
+<name> chan supple</name>
+<contact id ="phone">1234567890</contact>
+<contact id ="work">1234567890</contact>
+<contact id ="mobile">1234567890</contact>
+<email>chan@gmail.com</email>
+</employee>
+</persons>
