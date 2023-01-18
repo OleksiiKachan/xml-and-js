@@ -4,7 +4,7 @@
 [
   <!ELEMENT customers (customer+)>
   <!ELEMENT customer (name, address, phone, email?, orders)>
-  <!ATTLIST customer custID ID #REQUIRED>
+  <!ATTLIST customer custID CDATA #REQUIRED>
   <!ELEMENT name (#PCDATA)>
   <!ATTLIST name title (Mr.|Mrs.|Ms.) #REQUIRED>
   <!ELEMENT address (#PCDATA)>
@@ -12,14 +12,15 @@
   <!ELEMENT email (#PCDATA)>
   <!ELEMENT orders (order+)>
   <!ELEMENT order (orderDate, items)>
-  <!ATTLIST order orderID ID #REQUIRED>
-  <!ATTLIST order orderBy IDREF #REQUIRED>
+  <!ATTLIST order orderID CDATA #REQUIRED>
+  <!ATTLIST order orderBy CDATA #REQUIRED>
   <!ELEMENT orderDate (#PCDATA)>
   <!ELEMENT items (item+)>
   <!ELEMENT item (itemPrice, itemQty)>
   <!ELEMENT itemPrice (#PCDATA)>
   <!ELEMENT itemQty (#PCDATA)>
 ]>
+
 <customers>
   <customer custID="cust201">
     <name title="Mr.">John Michael</name>
@@ -49,7 +50,7 @@
       <![CDATA[
       41 West Plankton Avenue
       Orlando, FL 32820
-      ]]>]
+      ]]>
     </address>
     <phone>(407) 555-1234</phone>
     <orders>
