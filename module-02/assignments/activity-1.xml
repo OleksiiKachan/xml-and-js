@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<person>
+    <students>
+        <student>
+            <name>Rorie Demanche</name>
+            <contact number="home">17101534949</contact>
+            <contact number="work">15033193558</contact>
+            <contact number="mobile">11827481667</contact>
+            <email>rdemanche0@foxnews.com</email>
+        </student>
+        <student>
+            <name>Kelcey Surman</name>
+            <contact number="home">12499267376</contact>
+            <contact number="work">12083636588</contact>
+            <contact number="mobile">19825366860</contact>
+            <email>ksurman1@usnews.com</email>
+        </student>
+        <student>
+            <name>Simon Heddan</name>
+            <contact number="home">16878084290</contact>
+            <contact number="work">16048157810</contact>
+            <contact number="mobile">19241743271</contact>
+            <email>sheddan2@alexa.com</email>
+        </student>
+        <student>
+            <name>Chan Supple</name>
+            <contact number="home">15771652495</contact>
+            <contact number="work">15479347337</contact>
+            <contact number="mobile">13676670747</contact>
+            <email>csupple3@123-reg.co.uk</email>
+        </student>
+    </students>
+
+</person>
