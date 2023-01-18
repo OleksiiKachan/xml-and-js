@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<business> <!-- here is the root tag which is business-->
+    <businessCards> <!-- her ethe business card defined-->
+        <card> <!-- there are many cards inside business card tag.-->
+            <name>Rorie Demanche</name><!-- Here is the name data entered-->
+            <phone phoneType="home">7101534949</phone> <!-- here the phone data is entered but the attributes are different-->
+            <phone phoneType="work">503319558</phone>
+            <phone phoneType="mobile">1827481667</phone>
+            <email>rdemanche0@foxnews.com</email>
+        </card>
+        <card>
+            <name>Kelcey Surman</name>
+            <phone phoneType="home">2499267376</phone>
+            <phone phoneType="work">2083636588</phone>
+            <phone phoneType="mobile">9825366860</phone>
+            <email>ksurman1@usnews.com</email>
+        </card>
+        <card>
+            <name>Simon Heddan</name>
+            <phone phoneType="home">6878084290</phone>
+            <phone phoneType="work">6048157810</phone>
+            <phone phoneType="mobile">9241743271</phone>
+            <email>sheddan2@alexa.com</email>
+        </card>
+        <card>
+            <name>Chan Supple</name>
+            <phone phoneType="home">5771652495</phone>
+            <phone phoneType="work">5479347337</phone>
+            <phone phoneType="mobile">3676670747</phone>
+            <email>csupple3@123-reg.co.uk</email>
+        </card>
+    </businessCards>
+</business>
