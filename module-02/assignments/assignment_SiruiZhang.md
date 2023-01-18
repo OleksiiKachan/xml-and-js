@@ -1,22 +1,22 @@
-# Assignment 1
-
-1. Open `module-2/assignments/assignment.xml` in your browser. Are there any errors? Explain the error and fix it.
+Question 1: 
  1)There is space between elective and Date. (11)
  2)The element tag is not match with the end-tag, need to change the "n" to beee "N".(31)
  3)The element tag is not match with the end-tag, need to change from "origianlName" to "name" same as the front tag. (51)
 
-2. What is the use of CDATA block in this document?
-    To let the system store the contect as it is purely, since there is special character in this document.
-3. Add comment line to the end of file which contains you name and student id.
-    Added. <!--My name: Sirui Zhang, My humber id:n01536920-->
-4. Identify prolog, document body, and epilog in the document. Are there any processing instructions?
+ Question 2:
+ To let the system store the contect as it is purely, since there is special character in this document.
+
+ Question 3:
+ Added. <!--My name: Sirui Zhang, My humber id:n01536920-->
+
+ Question 4:
     prolog is always the first part in the XML, line 1.
     document body is hierachy tree structure from "<menuInfo>" to "</menuInfo>" .
     epilog is the comment that I just added during question 3.
-    There is no processing instructions in this XML file.
-5. Add inline DTD for this document.
-    Added. 
-  <!DOCTYPE menuInfo [
+    There is no processing instructions in this XML file at this moment, but will have one for style.css on Question 7.
+
+Question 5:
+<!DOCTYPE menuInfo [
   <!ELEMENT menuInfo (title, summary, effectiveDate, menu+)>
   <!ELEMENT title (#PCDATA)>
   <!ELEMENT summary (#PCDATA) >
@@ -32,14 +32,11 @@
   <!ELEMENT originalName (#PCDATA)>
   <!ELEMENT oldName (#PCDATA)>
 ]>
-6. Verify that file is well-formed and valid.
-    Did valid via the website.
-7. Create `style.css` file and link it to the file. Add the following styles to the .css:
 
-- Change font-size of `originalName`
-- Display each `category` on the new line
-- Add any other css-rule
+Question 6:
+![](../../../OneDrive/%E6%A1%8C%E9%9D%A2/valid.png)
 
+Question 7:
 orginal-Name{
     font-size: larger;
     display: block;
@@ -66,4 +63,3 @@ category{
 }te-space: pre-line;
 }
 
-Create `module-2/assignments/assignment_YOURNAME.md` and add your theory answers. Add screenshots of each step to the file (Refer `module-1/assignments/evaluation-1.md` on how to add image to md file)

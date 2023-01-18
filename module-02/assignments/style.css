@@ -1,0 +1,24 @@
+orginal-Name{
+    font-size: larger;
+    display: block;
+}
+title{
+    font-size: xx-large;
+    font-weight: bold;
+    display: block;
+}
+menu{
+    display: block;
+}
+itemName{
+    display: block;
+    font-weight: bold;
+}
+name{
+    display: block;
+    font-weight: bold;
+}
+category{
+    display: block;
+    font-size: large;
+}
