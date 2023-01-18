@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cards>
+    <card>
+        <name>
+            <firstName>Rorie</firstName>
+            <lastName>Demanche</lastName>
+        </name>
+        <phone type="home">17101534949</phone>
+        <phone type="work">15033193558</phone>
+        <phone type="mobile">11827481667</phone>
+        <email>rdemanche0@foxnews.com</email>
+    </card>
+    <card>
+        <name>
+            <firstName>Kelcey</firstName>
+            <lastName>Surman</lastName>
+        </name>
+        <phone type="home">12499267376</phone>
+        <phone type="work">12083636588</phone>
+        <phone type="mobile">19825366860</phone>
+        <email>ksurman1@usnews.com</email>
+    </card>
+    <card>
+        <name>
+            <firstName>Simon</firstName>
+            <lastName>Heddan</lastName>
+        </name>
+        <phone type="home">16878084290</phone>
+        <phone type="work">16048157810</phone>
+        <phone type="mobile">19241743271</phone>
+        <email>sheddan2@alexa.com</email>
+    </card>
+    <card>
+        <name>
+            <firstName>Kelcey</firstName>
+            <lastName>Supple</lastName>
+        </name>
+        <phone type="home">15771652495</phone>
+        <phone type="work">15479347337</phone>
+        <phone type="mobile">13676670747</phone>
+        <email>csupple3@123-reg.co.uk</email>
+    </card>
+</cards>
