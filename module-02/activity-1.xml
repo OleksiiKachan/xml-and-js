@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bcards>
+<bperson>
+    <contact type = "home">17101534949</contact>
+    <contact type = "work">15033193558</contact>
+    <contact type = "mobile">11827481667</contact>
+    <contact type = "email">17101534949</contact>
+</bperson>
+
+<bperson>
+    <name>Kelcey Surman</name>
+    <contact type = "home">12499267376</contact>
+    <contact type = "work">12083636588</contact>
+    <contact type = "mobile">19825366860</contact>
+    <contact type = "email">ksurman1@usnews.com</contact>
+</bperson>
+
+<bperson>
+    <name>Simon Heddan</name>
+    <contact type = "home">1688084290</contact>
+    <contact type = "work">16048157810</contact>
+    <contact type = "mobile">19241743271</contact>
+    <contact type = "email">sheddan2@alexa.com</contact>
+</bperson>
+
+<bperson>
+    <name>Chan Supple</name>
+    <contact type = "home">15771652495</contact>
+    <contact type = "work">15479347337</contact>
+    <contact type = "mobile">13676670747</contact>
+    <contact type = "email">csupple3@123-reg.co.uk</contact>
+</bperson>
+</bcards>

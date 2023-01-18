@@ -7,3 +7,7 @@ Try to display/represent the following Data in XML format
 | 1001  | Alex    | 3000   |
 | 1002  | Sarah   | 4000   |
 | 1003  | Peter   | 3500   |
+
+<people>
+    <person num= "1001">
+    
