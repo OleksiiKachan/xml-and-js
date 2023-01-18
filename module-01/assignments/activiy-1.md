@@ -4,7 +4,8 @@
 
 2. How to structure the data in previous activity in order to have Name/Hobbies for a group of 10 people?
 
-<?xml version="1.0" encoding="utf-8"?>​
+<?xml version="1.0" encoding="utf-8"?>
+​
 <myData>
 ​
     <person>
