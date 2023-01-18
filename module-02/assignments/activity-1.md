@@ -39,3 +39,38 @@ Design single xml file to store all the following business cards
 - csupple3@123-reg.co.uk
 
 ---
+
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<people>
+    <contact>
+    <name>Rorie Demanche</name>
+    <phoneNumber type="home">7101534949</phoneNumber>
+    <phoneNumber type="work">5033193558</phoneNumber>
+    <phoneNumber type="mobile">1827481667</phoneNumber>
+    <email>rdemanche0@foxnews.com</email>
+    </contact>
+    <contact>
+    <name>Kelcey Surman</name>
+    <phoneNumber type="home">2083636588</phoneNumber>
+    <phoneNumber type="work">5033193558</phoneNumber>
+    <phoneNumber type="mobile">9825366860</phoneNumber>
+    <email>ksurman1@usnews.com</email>
+    </contact>
+    <contact>
+    <name>Simon Heddan</name>
+    <phoneNumber type="home">6878084290</phoneNumber>
+    <phoneNumber type="work">6048157810</phoneNumber>
+    <phoneNumber type="mobile">9241743271</phoneNumber>
+    <email>sheddan2@alexa.com</email>
+    </contact>
+    <contact>
+    <name>Chan Supple</name>
+    <phoneNumber type="home">5771652495</phoneNumber>
+    <phoneNumber type="work">5479347337</phoneNumber>
+    <phoneNumber type="mobile">3676670747</phoneNumber>
+    <email>csupple3@123-reg.co.uk</email>
+    </contact>
+
+</people>
