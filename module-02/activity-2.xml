@@ -9,6 +9,12 @@
     <price>&#8364;26.79</price>
     <productItems>1200, 1201, 1202, 1203, 1204, 1205, 1206</productItems>
   </product>
+    <message>
+<![CDATA[
+  For further information, please visit <our website> or call us on #905-111-2222 &amp; +1-800-111- 2222
+]]>
+</message>
+
   <product>
     <productName>Car Curiosity Basket</productName>
     <manufacturer>SJB Pet Boutique</manufacturer>
@@ -18,6 +24,12 @@
     <price>&#8364;11.90</price>
     <productItems>4430, 6500, 4434</productItems>
   </product>
+    <message>
+<![CDATA[
+  For further information, please visit <our website> or call us on #905-111-2222 &amp; +1-800-111- 2222
+]]>
+</message>
+
   <product>
     <productName>Piggy Snuggle Basket</productName>
     <manufacturer>ACME</manufacturer>
@@ -34,4 +46,10 @@
     <price>&#8364;10.61</price>
     <productItems>3230, 3232, 3250</productItems>
   </product>
+<message>
+<![CDATA[
+  For further information, please visit <our website> or call us on #905-111-2222 &amp; +1-800-111- 2222
+]]>
+</message>
+
 </products>
