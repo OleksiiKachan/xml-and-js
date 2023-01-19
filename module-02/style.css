@@ -5,3 +5,13 @@ name {
 * {
   display: block;
 }
+
+originalName {
+  font-size: large;
+}
+category {
+content: "\a";
+}
+title {
+  color: blueviolet;
+}
