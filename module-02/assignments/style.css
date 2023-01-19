@@ -1,0 +1,50 @@
+/*
+Name: Wenhao Fang
+ID: n01555914
+*/
+
+/* Change font-size of `originalName` */
+name[type="original"] {
+  font-weight: bold;
+}
+
+/* Display each `category` on the new line */
+category {
+  display: block;
+}
+
+/* Add any other css-rule */
+title {
+  display: block;
+  font-size: larger;
+  font-weight: bolder;
+  padding: 10px 5px;
+}
+
+summary,
+effectiveDate {
+  display: block;
+  padding: 5px 5px;
+}
+
+menu {
+  display: block;
+  padding: 10px 10px;
+}
+
+menuItem {
+  display: block;
+  padding: 10px 10px;
+}
+
+name,
+description {
+  display: block;
+  padding: 0px 5px;
+}
+
+price {
+  display: block;
+  color: red;
+  padding: 0px 5px;
+}

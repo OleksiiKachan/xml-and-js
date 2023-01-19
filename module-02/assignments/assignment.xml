@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<!DOCTYPE menuInfo [
+  <!ELEMENT menuInfo (title, summary, effectiveDate, menu+ )>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT summary (#PCDATA)>
+  <!ELEMENT effectiveDate (#PCDATA)>
+  <!ELEMENT menu (category, menuItem+ )>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT menuItem (name+,description,price,indicator* )>
+  <!ELEMENT name (#PCDATA)>
+  <!ATTLIST name type (original|old) #REQUIRED>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT indicator (#PCDATA)>
+  <!ATTLIST indicator category CDATA #REQUIRED>
+]>
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -12,10 +28,8 @@
   <menu>
     <category>Traditional Favorites</category>
     <menuItem>
-      <itemName>
-        <originalName> Rise n' Shine</originalName>
-        <oldName> Shine </oldName>
-      </itemName>
+      <name type="original">Rise n' Shine</name>
+      <name type="old">Shine</name>
       <description>
         <![CDATA[
         Two Eggs* cooked to order with Grits, Gravy and Homemade Buttermilk
@@ -27,10 +41,8 @@
       <price>7.95</price>
     </menuItem>
     <menuItem>
-      <itemName>
-        <originalname> Fresh Mornin' Sampler </originalname>
-        <oldName> Mornin' Sampler </oldName>
-      </itemName>
+      <name type="original">Fresh Mornin' Sampler </name>
+      <name type="old">Mornin' Sampler </name>
       <description>
         <![CDATA[
         Low-Fat Vanilla Yogurt and Seasonal Fruit topped with our Honey Granola
@@ -39,17 +51,15 @@
         ]]>
       </description>
       <price>6.95</price>
-      <indicator>&#9829;</indicator>  <!-- heart healthy -->
-      <indicator>&#9830;</indicator>  <!-- low-sodium -->
-      <indicator>&#9824;</indicator>  <!-- vegan -->  
+      <indicator category="heart healthy">&#9829;</indicator>
+      <indicator category="low-sodium">&#9830;</indicator>
+      <indicator category="vegan">&#9824;</indicator>
     </menuItem>
   </menu>
   <menu>
     <category>Lite and Quick</category>
     <menuItem>
-      <itemName>
-        <originalName> Oatmeal Breakfast </originalName>
-      </itemName>
+      <name type="original">Oatmeal Breakfast</name>
       <description>
         <![CDATA[
         Our Oatmeal is served warm with your choice of Fried Apples, Pecans, Raisins,
@@ -59,15 +69,13 @@
         ]]>
       </description>
       <price>6.95</price>
-      <indicator>&#9829;</indicator>  <!-- heart healthy -->
-      <indicator>&#9830;</indicator>  <!-- low-sodium -->
-      <indicator>&#9824;</indicator>  <!-- vegan -->  
+      <indicator category="heart healthy">&#9829;</indicator>
+      <indicator category="low-sodium">&#9830;</indicator>
+      <indicator category="vegan">&#9824;</indicator>
     </menuItem>
     <menuItem>
-      <itemName>
-        <originalName> Chester's Meat Platter </originalName>
-        <oldName> Chester Platter </oldName>
-      </itemName>
+      <name type="original">Chester's Meat Platter</name>
+      <name type="old">Chester Platter </name>
       <description>
         <![CDATA[
         Country Ham, Pork Chops or Steak* grilled to order, Three Eggs* cooked
@@ -76,7 +84,8 @@
         ]]>
       </description>
       <price>12.95</price>
-      <indicator>&#9832;</indicator>  <!-- Low-carb -->
+      <indicator category="low-carb">&#9832;</indicator>
     </menuItem>
   </menu>
 </menuInfo>
+<!-- Name: Wenhao Fang; ID: n01555914 -->
