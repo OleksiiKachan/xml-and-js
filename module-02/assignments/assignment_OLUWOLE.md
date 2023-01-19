@@ -5,14 +5,15 @@
 Yes there are some errors and you can find the error codes and explanations below:
 
 Line 11: <effective Date>03/12/2016</effective Date>
-Attribute name "Date" associated with an element type "effective" must be followed by the ' = ' character.
+The element type "effectiveDate" must have the same opening tag and must be matching the end-tag </effectiveDate>
+There should be no space.
 
 Line 31:  <originalName> Fresh Mornin' Sampler </originalname>
-The element type "originalName" must be terminated by the matching end-tag "</originalName>"
+The element type "originalName" must have the same opening tag and must be matching the end-tag "</originalName>"
 
 
 Line 51:  <name> Oatmeal Breakfast </originalName>
-The element type "name" must be terminated by the matching end-tag "</name>
+The element type "originalName" must have the same opening tag and must be matching the end-tag.
 
 
 
