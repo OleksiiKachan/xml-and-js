@@ -1,0 +1,22 @@
+*{
+    background-color: black;
+    color: white;
+}
+
+originalName{
+    font-size: 25px;
+    display: block;
+    color: yellow;
+}
+
+category{
+    display: block;
+    color: yellowgreen;
+
+}
+
+description{
+    font-style: italic;
+    font-size: 15px;
+
+}
