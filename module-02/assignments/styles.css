@@ -1,0 +1,19 @@
+* {
+    display: block;
+}
+
+originalName {
+    font-size: 14pt;
+    font-weight: bold;
+}
+  
+summary{
+    font-size: 13pt;
+    font-style: italic;
+}
+
+category, title{
+    font-size: 14pt;
+    font-weight: bold;
+    color: blue;
+}
