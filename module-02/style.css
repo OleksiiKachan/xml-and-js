@@ -5,3 +5,15 @@ name {
 * {
   display: block;
 }
+
+originalName{
+  font-size: x-large;
+}
+
+category{
+  content: "\a";
+}
+
+menu{
+  background-color: grey;
+}

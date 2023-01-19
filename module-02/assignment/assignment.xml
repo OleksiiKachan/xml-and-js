@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml-stylesheet type="text/css" href= "style.css"?>
+<!DOCTYPE menuInfo
+[
+
+<!ELEMENT menuInfo (title, summary, effective?, menu+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT summary (#PCDATA)>
+<!ELEMENT effective (#PCDATA)>
+<!ATTLIST effective type CDATA #REQUIRED>
+<!ELEMENT menu (category+, menuItem+)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT menuItem (itemName+, description?, price?, indicator*)>
+<!ELEMENT itemName (originalName?, oldName?, name?)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT indicator (#PCDATA)>
+<!ELEMENT originalName (#PCDATA) >
+<!ELEMENT oldName (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+]>
+
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -8,12 +29,12 @@
     up just the way you like them!!
     ]]>
   </summary>
-  <effective Date>03/12/2016</effective Date>
+  <effective type="Date">03/12/2016 </effective>
   <menu>
     <category>Traditional Favorites</category>
     <menuItem>
       <itemName>
-        <originalName> Rise n' Shine</originalName>
+        <originalName> Rise n' Shine </originalName>
         <oldName> Shine </oldName>
       </itemName>
       <description>
@@ -28,7 +49,7 @@
     </menuItem>
     <menuItem>
       <itemName>
-        <originalName> Fresh Mornin' Sampler </originalname>
+        <originalName> Fresh Mornin' Sampler </originalName>
         <oldName> Mornin' Sampler </oldName>
       </itemName>
       <description>
@@ -39,16 +60,16 @@
         ]]>
       </description>
       <price>6.95</price>
-      <indicator>&#9829;</indicator>  <!-- heart healthy -->
-      <indicator>&#9830;</indicator>  <!-- low-sodium -->
-      <indicator>&#9824;</indicator>  <!-- vegan -->  
+      <indicator>♥</indicator>  <!-- heart healthy -->
+      <indicator>♦</indicator>  <!-- low-sodium -->
+      <indicator>♠</indicator>  <!-- vegan -->  
     </menuItem>
   </menu>
   <menu>
     <category>Lite and Quick</category>
     <menuItem>
       <itemName>
-        <name> Oatmeal Breakfast </originalName>
+        <name> Oatmeal Breakfast </name>
       </itemName>
       <description>
         <![CDATA[
@@ -59,9 +80,9 @@
         ]]>
       </description>
       <price>6.95</price>
-      <indicator>&#9829;</indicator>  <!-- heart healthy -->
-      <indicator>&#9830;</indicator>  <!-- low-sodium -->
-      <indicator>&#9824;</indicator>  <!-- vegan -->  
+      <indicator>♥</indicator>  <!-- heart healthy -->
+      <indicator>♦</indicator>  <!-- low-sodium -->
+      <indicator>♠</indicator>  <!-- vegan -->  
     </menuItem>
     <menuItem>
       <itemName>
@@ -76,7 +97,11 @@
         ]]>
       </description>
       <price>12.95</price>
-      <indicator>&#9832;</indicator>  <!-- Low-carb -->
+      <indicator>♨</indicator>  <!-- Low-carb -->
     </menuItem>
   </menu>
 </menuInfo>
+<!-- 
+  Name : Mohammad Anwaruddin
+  Student Id : N01553149
+-->
