@@ -1,4 +1,9 @@
-# Assignment - Module
+# Module02 - Assignment
+
+- Name: Wenhao Fang
+- ID: n01555914
+
+---
 
 1. Open `module-2/assignments/assignment.xml` in your browser. Are there any errors? Explain the error and fix it.
 
@@ -71,8 +76,12 @@
 
 - **Result**: ![code](./pic/6.result.png)
 
+---
+
 7. Create `style.css` file and link it to the file. Add the following styles to the .css:
 
 - Css codes: ![css](./pic/7.css.png)
 
 - Display in browser: ![display](./pic/7.display_css.png)
+
+---
