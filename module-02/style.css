@@ -1,7 +1,17 @@
-name {
-  font-weight: bold;
-}
-
 * {
+  background-color: aqua;
   display: block;
+}
+menuInfo {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+originalName, oldName{
+  font-size: larger;
+  font-style: italic;
+}
+category{
+  margin:auto;
+}
+title{
+  text-align: center;
 }
