@@ -8,9 +8,10 @@
     ![image info](../assignments/error_2.png)
     1.3 The open tab of the element was writen wrong. I changed to "originalName"
     ![image info](../assignments/error_3.png)
-    After the modification there were no erros 
+    After the modification there were no errors 
     ![image info](../assignments/noerror.png) 
 2. The use of the CDATA in this document is to store sumary of the menu and descriptions of the items. Since CDATA is a section that may contain most markup characters, such as <, >, there is no need to use entity reference
+3. Added on line 102.
 4. The document has a prolog and a document body, but there is no epilog. There is no processing instructions as well. But on item number 7 I created a css as processing instructions. The identifications are in the xml file.
 5. in the xml file and validated in the XML validator
     ![image info](../assignments/finalValidation.png)
