@@ -1,0 +1,14 @@
+*{
+    background-color: #2A5164;
+    display: block;
+}
+
+category{
+    display: block;
+    padding: 30px;
+}
+
+originalName{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
