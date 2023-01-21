@@ -1,0 +1,19 @@
+originalName{
+    font-size: 25px;
+}
+
+category::before{
+    content: "\a";
+    white-space: pre;
+}
+
+category{
+    color: rgb(109, 74, 32);
+    font-weight: bold;
+}
+
+price{
+    color: rgb(69, 50, 50);
+    font-style: italic;
+    background-color: rgb(129, 113, 113);
+}
