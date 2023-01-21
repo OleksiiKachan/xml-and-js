@@ -5,3 +5,19 @@ name {
 * {
   display: block;
 }
+
+originalName {
+  font-size: 30px;
+}
+
+category {
+  display: block;
+}
+
+description {
+  color: red;
+}
+
+menu {
+  padding-left: 20px;
+}
