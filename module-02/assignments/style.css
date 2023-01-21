@@ -1,0 +1,28 @@
+title{
+    font-size: x-large;
+    font-weight: bold;
+    color:rgb(182, 47, 47);
+    
+}
+
+category{
+    color: rgb(195, 64, 64);
+}
+
+originalName{
+    font-size: large;
+    font-weight: bold;
+}
+
+oldName{
+    font-size: medium;
+    color: rgb(62, 63, 63);
+}
+
+*{
+    display: block;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: left;
+    margin-left: 2px;
+    padding: 1.5px;
+}
