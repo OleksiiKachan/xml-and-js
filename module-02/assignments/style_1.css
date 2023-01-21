@@ -1,0 +1,20 @@
+name {
+    font-weight: bold;
+    font-style: italic;
+}
+  
+* {
+    display: block;
+    text-align: center;
+}
+
+originalName{
+    font-size: xx-large;
+    font-family: 'Courier New';
+}
+
+oldName{
+    font-size: large;
+    font-family: 'Lucida Sans';
+    background-color: lightblue;
+}
