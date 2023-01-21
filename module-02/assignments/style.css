@@ -1,0 +1,25 @@
+originalName{
+    font-size: 25px;
+}
+
+menu::before,::after{
+    content: "\a";
+    white-space: pre;
+}
+
+category::after{
+    content:"\a";
+    white-space: pre;
+}
+
+category{
+    font-size: 40px;
+}
+
+description{
+    color: lightgreen;
+}
+
+originalName{
+    color: red;
+}
