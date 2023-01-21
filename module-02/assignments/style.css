@@ -1,0 +1,33 @@
+/* Change the font-size of original Name */
+originalName {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: rgb(218, 10, 10);
+}
+
+/* Display each catagory on new line */
+menu {
+  display: block;
+  padding: 10px 5px;
+}
+
+/* Any other Css-rules */
+
+title,
+summary,
+effectiveDate,
+menuItem {
+  display: block;
+  padding: 10px 5px;
+}
+
+category,
+itemName,
+originalName,
+oldName,
+description,
+price,
+indicator {
+  display: block;
+  padding: 5px 5px;
+}
