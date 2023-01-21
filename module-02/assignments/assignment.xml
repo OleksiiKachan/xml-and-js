@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<!DOCTYPE menuInfo
+[
+<!ELEMENT menuInfo (title,summary,Date,menu+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT summary (#PCDATA)>
+<!ELEMENT Date (#PCDATA)>
+<!ATTLIST Date type (effective) #REQUIRED>
+<!ELEMENT menu (category,menuItem+)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT menuItem (itemName,description,price,indicator*)>
+<!ELEMENT itemName (originalName,oldName?)>
+<!ELEMENT originalName (#PCDATA)>
+<!ELEMENT oldName (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT indicator (#PCDATA)>
+
+
+]>
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -8,7 +28,8 @@
     up just the way you like them!!
     ]]>
   </summary>
-  <effective Date>03/12/2016</effective Date>
+  <!--<effective Date>03/12/2016</effective Date>-->
+  <Date type="effective">03/12/2016</Date> <!--added attribute type for the element Date which describes the feature of the element Date -->
   <menu>
     <category>Traditional Favorites</category>
     <menuItem>
@@ -28,7 +49,9 @@
     </menuItem>
     <menuItem>
       <itemName>
-        <originalName> Fresh Mornin' Sampler </originalname>
+        <!--<originalName> Fresh Mornin' Sampler </originalname>-->
+        <originalName> Fresh Mornin' Sampler </originalName> <!--closing tag was not proper it should be same as the opening tag 
+        which is originalName-->
         <oldName> Mornin' Sampler </oldName>
       </itemName>
       <description>
@@ -48,7 +71,9 @@
     <category>Lite and Quick</category>
     <menuItem>
       <itemName>
-        <name> Oatmeal Breakfast </originalName>
+        <!--<name> Oatmeal Breakfast </originalName>-->
+        <originalName> Oatmeal Breakfast </originalName> <!--element originalName is not opened properly instead name tag is used. It is changed 
+        to originalName-->
       </itemName>
       <description>
         <![CDATA[

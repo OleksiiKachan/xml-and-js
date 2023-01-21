@@ -1,0 +1,15 @@
+originalName {
+    font-weight: bold;
+    font-size: large;
+    color: aquamarine;
+    text-align: center;
+    
+  }
+
+  category::before {
+    content: "\a";
+    white-space: pre;
+  }
+  
+ 
+  
