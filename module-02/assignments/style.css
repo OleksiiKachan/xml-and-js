@@ -1,0 +1,25 @@
+originalName {
+    font-size: 20px;
+}
+
+/* for new line */
+category::before{
+    content: "\a";
+    white-space: pre
+}
+
+price {
+    color: rgb(225, 70, 70);
+    font-weight: 500;
+    box-shadow: 0px 1px 1px 1px;
+}
+
+description {
+    font-style: italic;
+    background-color: lightgreen;
+}
+
+oldName {
+    font-size: 18px;
+    background-color: lightsalmon;
+}
