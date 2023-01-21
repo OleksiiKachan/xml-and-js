@@ -1,0 +1,25 @@
+
+
+
+
+*{
+    background-color:blanchedalmond;
+    color:brown;
+}
+originalName {
+    font-size: 20px;
+    display: block;
+}
+
+category {
+    display: block;
+}
+  
+title{
+    color: darkgreen;
+    font-weight: bold;
+    font-size: x-large;
+    display: block;
+}
+
+  

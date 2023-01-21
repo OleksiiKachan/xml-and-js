@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml-stylesheet type="text/css" href="D:\xml-and-js\module-02\assignments\style.css"?>
+<!--Prolog -->
+
+<!DOCTYPE menuInfo [
+  <!ELEMENT menuInfo (title,summary,effective,menu+)>     <!--menu+ means menu can be 1 or more as per REGEx rules -->
+  <!ELEMENT title (#PCDATA)>                    
+  <!ELEMENT summary (#PCDATA)>
+  <!ELEMENT effective (#PCDATA)>
+  <!ATTLIST effective type CDATA #REQUIRED>
+  <!ELEMENT menu (category?,menuItem+)>         <!-- in category?, ? means that category element can be 0 or 1-->
+  <!ELEMENT category (#PCDATA)>                 
+  <!ELEMENT menuItem (itemName+,description,price,indicator*)>  <!-- indicator* means indicator can be 0 or more -->
+  <!ELEMENT itemName (originalName,oldName?)>   <!-- oldName? means 0 or 1 oldName element -->
+  <!ELEMENT originalName (#PCDATA)>
+  <!ELEMENT oldName (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT indicator (#PCDATA)>
+]>
 <menuInfo>
+  <!-- Document Body-->
   <title>Chester's Breakfast Menu</title>
   <summary>
     <![CDATA[
@@ -8,7 +28,7 @@
     up just the way you like them!!
     ]]>
   </summary>
-  <effective Date>03/12/2016</effective Date>
+  <effective type = "Date">03122016</effective>   <!-- Date can be stored as number hence special character "/" needs to be removed-->
   <menu>
     <category>Traditional Favorites</category>
     <menuItem>
@@ -28,7 +48,7 @@
     </menuItem>
     <menuItem>
       <itemName>
-        <originalName> Fresh Mornin' Sampler </originalname>
+        <originalName> Fresh Mornin' Sampler </originalName>
         <oldName> Mornin' Sampler </oldName>
       </itemName>
       <description>
@@ -48,7 +68,7 @@
     <category>Lite and Quick</category>
     <menuItem>
       <itemName>
-        <name> Oatmeal Breakfast </originalName>
+        <originalName> Oatmeal Breakfast </originalName>
       </itemName>
       <description>
         <![CDATA[
@@ -80,3 +100,7 @@
     </menuItem>
   </menu>
 </menuInfo>
+<!-- This is Epilog
+  Name:Garry Mittal
+  Student Id: N01552883
+-->
