@@ -1,0 +1,12 @@
+originalName {
+    font-size: 20px;
+  }
+  
+category::before {
+    content: "\a";
+    white-space: pre;
+}
+
+title {
+    text-align: center;
+}
