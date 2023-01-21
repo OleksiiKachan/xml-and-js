@@ -1,0 +1,21 @@
+*{
+    display: block;
+    background-color: beige;
+    font-size: large;
+}
+title{
+    font-size: 35px;
+    font-weight: bold;
+    color: rgb(76, 55, 144);
+}
+originalName{
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(82, 82, 141);
+}
+category{
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(75, 60, 32);
+}
