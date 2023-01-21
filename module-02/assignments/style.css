@@ -1,0 +1,14 @@
+originalName {
+    font-size: 24px;
+}
+
+category::before {
+    content: "\a";
+    white-space: pre
+}
+
+oldName{
+    color: brown;
+    font-size: 20px;
+    font-weight: 500;
+}
