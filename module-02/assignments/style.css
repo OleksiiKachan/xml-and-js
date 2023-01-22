@@ -1,0 +1,23 @@
+originalName{
+    font-size: 30px;
+}
+
+category::before{
+    content: "\a";
+    white-space: pre;
+
+}
+
+price{
+
+    font-style: italic;
+    font-weight: bold;
+    color: chocolate;
+}
+
+description{
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+menuInfo{
+    background-color: lightpink;
+}
