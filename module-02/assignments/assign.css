@@ -1,0 +1,19 @@
+ 
+ originalName {
+    font-size:larger;
+    font-weight: bolder;
+    
+  }
+
+  * {
+    display:block;
+  }
+  
+  * {
+    background-color:bisque;
+
+  }
+  title {
+    font-weight: bolder;
+    font-size: 2em;
+  }

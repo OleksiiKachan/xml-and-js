@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="assign.css"?>
+<!DOCTYPE menuInfo
+[
+  <!ELEMENT menuInfo (title,summary,effective,menu+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT summary (#PCDATA)>
+  <!ELEMENT effective (#PCDATA)>
+  <!ATTLIST effective Date CDATA #REQUIRED>
+  <!ELEMENT menu (category,menuItem+)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT menuItem (itemName,description,price,indicator*)>
+  <!ELEMENT itemName (originalName,oldName?)>
+  <!ELEMENT oldName (#PCDATA)>
+  <!ELEMENT originalName (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT indicator (#PCDATA)>
+]>
+  
+
+
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -8,12 +29,12 @@
     up just the way you like them!!
     ]]>
   </summary>
-  <effective Date>03/12/2016</effective Date>
+  <effective Date ="CDA">03/12/2016</effective>
   <menu>
     <category>Traditional Favorites</category>
     <menuItem>
       <itemName>
-        <originalName> Rise n' Shine</originalName>
+        <originalName>Rise n' Shine</originalName>
         <oldName> Shine </oldName>
       </itemName>
       <description>
@@ -28,7 +49,7 @@
     </menuItem>
     <menuItem>
       <itemName>
-        <originalName> Fresh Mornin' Sampler </originalname>
+        <originalName> Fresh Mornin' Sampler </originalName>
         <oldName> Mornin' Sampler </oldName>
       </itemName>
       <description>
@@ -48,7 +69,7 @@
     <category>Lite and Quick</category>
     <menuItem>
       <itemName>
-        <name> Oatmeal Breakfast </originalName>
+        <originalName> Oatmeal Breakfast </originalName>
       </itemName>
       <description>
         <![CDATA[
@@ -80,3 +101,6 @@
     </menuItem>
   </menu>
 </menuInfo>
+
+<!-- Milap Singh -->
+<!-- N01552120 -->
