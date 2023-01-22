@@ -2,11 +2,10 @@
 <?xml-stylesheet type="text/css" href="style.css"?>
 <!DOCTYPE menuInfo
 [
-<!ELEMENT menuInfo (title,summary,Date,menu+)>
+<!ELEMENT menuInfo (title,summary,effectiveDate,menu+)>
 <!ELEMENT title (#PCDATA)>
 <!ELEMENT summary (#PCDATA)>
-<!ELEMENT Date (#PCDATA)>
-<!ATTLIST Date type (effective) #REQUIRED>
+<!ELEMENT effectiveDate (#PCDATA)>
 <!ELEMENT menu (category,menuItem+)>
 <!ELEMENT category (#PCDATA)>
 <!ELEMENT menuItem (itemName,description,price,indicator*)>
@@ -28,8 +27,8 @@
     up just the way you like them!!
     ]]>
   </summary>
-  <!--<effective Date>03/12/2016</effective Date>-->
-  <Date type="effective">03/12/2016</Date> <!--added attribute type for the element Date which describes the feature of the element Date -->
+  <effectiveDate>03/12/2016</effectiveDate> <!--removed space in the tag effective date to effectiveDate-->
+  
   <menu>
     <category>Traditional Favorites</category>
     <menuItem>

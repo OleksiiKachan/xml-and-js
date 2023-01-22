@@ -4,7 +4,7 @@
 ![image info](error2.png)
 ![image info](error3.png)
 
-1st error occurred because the attribute was not mentioned for the element date. Once it is changed it became fine.
+1st error occurred because the tag had space between effective Date which got changed to effectiveDate.
 2nd error occured because the closing tag originalName was not in the same case as opening tag once changed it became fine.
 3rd error occured because the openening tage didn't have originalName instead it had Name. Once changed it worked.
 
