@@ -1,0 +1,11 @@
+originalName{
+    font-size: larger;
+    color: red;
+}
+category {
+    display: block;
+  }
+
+* {
+    background-color:bisque;
+}
