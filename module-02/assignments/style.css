@@ -1,0 +1,20 @@
+originalName{
+    font-size: 30px;
+}
+
+category::before{
+    content: "\a";
+    white-space: pre;
+
+}
+
+price{
+    color: green;
+}
+
+menuItem{
+    background-color:lightgoldenrodyellow;
+}
+price::before{
+    content: "$";  
+}
