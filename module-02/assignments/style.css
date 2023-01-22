@@ -1,0 +1,16 @@
+*{
+    background-color: antiquewhite;
+}
+
+originalName{
+    font-size: 1.3em;
+}
+category,price,description,menuItem{
+    display: block;
+}
+
+indicator{
+    margin: 1.2em;
+}
+
+
