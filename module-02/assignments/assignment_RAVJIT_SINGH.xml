@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<!DOCTYPE menuInfo
+[
+  <!ELEMENT menuInfo (title, summary, effective_Date, menu+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT summary (#PCDATA)>
+  <!ELEMENT effective_Date (#PCDATA)>
+  <!ELEMENT menu  (category, menuItem+)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT menuItem (itemName, description, price, indicator*)>
+  <!ELEMENT itemName (originalName, oldName?)>
+  <!ELEMENT originalName (#PCDATA)>
+  <!ELEMENT oldName (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT indicator (#PCDATA)>
+]>
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -9,7 +26,7 @@
     ]]>
   </summary>
   <effective_Date>03/12/2016</effective_Date>
-  <menu>
+  <menu> <!--1-->
     <category>Traditional Favorites</category>
     <menuItem>
       <itemName>
@@ -44,7 +61,7 @@
       <indicator>&#9824;</indicator>  <!-- vegan -->  
     </menuItem>
   </menu>
-  <menu>
+  <menu><!--2-->
     <category>Lite and Quick</category>
     <menuItem>
       <itemName>
@@ -80,3 +97,5 @@
     </menuItem>
   </menu>
 </menuInfo>
+
+<!--RAVJIT SINGH N01542323-->
