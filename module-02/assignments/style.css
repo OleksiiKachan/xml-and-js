@@ -1,0 +1,17 @@
+originalName {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+  }
+  category {
+    display: block;
+  }
+  title {
+    color: green;
+    font-size : 40px;
+    background-color : powderblue;
+}
+summary {
+    color: burlywood;
+    background-color : gray;
+    width: 100%;
+}
