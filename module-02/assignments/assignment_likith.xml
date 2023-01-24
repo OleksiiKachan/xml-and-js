@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml-stylesheet type="text/css" href="style.css" ?>
+<!DOCTYPE menuInfo
+[
+<!ELEMENT menuInfo (title,summary,effective?,menu+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT summary (#PCDATA)>
+<!ELEMENT effective (#PCDATA)>
+<!ATTLIST effective type CDATA #REQUIRED>
+<!ELEMENT menuItem (itemName+,description?,price?,indicator*)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT indicator (#PCDATA)>
+<!ELEMENT menu (category+,menuItem+)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT itemName (originalName?,oldName?,name?)>
+<!ELEMENT originalName (#PCDATA)>
+<!ELEMENT oldName (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+]>
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -8,7 +27,7 @@
     up just the way you like them!!
     ]]>
   </summary>
-  <effectiveDate>03/12/2016</effectiveDate>
+  <effective type="date">03/12/2016</effective>
   <menu>
     <category>Traditional Favorites</category>
     <menuItem>

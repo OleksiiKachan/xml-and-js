@@ -5,3 +5,14 @@ name {
 * {
   display: block;
 }
+
+originalName{
+font-size: medium;
+}
+category{
+  content: '\a';
+}
+
+itemName{
+  font-style: italic;
+}
