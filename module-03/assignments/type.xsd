@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.rg/2001/XMLSchema">
+    <xs:element name="menuInfo" type="MenuInfoType">
+        <xs:complexType name="MenuInfoType">
+            <xs:sequence>
+                <xs:element name="title" type="xs:string"/>
+                <xs:element name="summary" type="xs:string"/>
+                <xs:element name="effectiveDate" type="xs:string"/>
+                <xs:element name="menu" minOccurs="0"j maxOccurs="unbounded"/>
+            </xs:sequence
+        </xs:complexType>
+
+        <xs:complexType name="menuType">
+            <xs:sequence>
+                <xs:element name="category" typs="xs:string"/>
+                <xs:element name="menuInfo" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="MenuItemType">
+            <xs:sequence>
+                <xs:element name="itemName" type="itemType"/>
+                <xs:element name="description type="xs:string"/>
+                <xs:element name="price" type="xs:decimal"/>
+                    <xs:extension base="
+                <xs:element name=
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
