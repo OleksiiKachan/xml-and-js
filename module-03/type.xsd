@@ -9,7 +9,7 @@
         <xs:element name="effectiveDate" type="xs:string" />
         <xs:element name="menu" type="MenuType" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
-    </xs:complexType>
+  </xs:complexType>
 
   <xs:complexType name="MenuType">
       <xs:sequence>
@@ -22,15 +22,7 @@
     <xs:sequence>
         <xs:element name="itemName" type="ItemNameType"/>
         <xs:element name="description" type="xs:string" />
-        <xs:element name="price">
-          <xs:complexType>
-            <xs:simpleContent>
-              <xs:extension base="xs:decimal">
-                <xs:attribute name="currency" type="xs:string"/>
-              </xs:extension>
-            </xs:simpleContent>
-          </xs:complexType>
-        </xs:element>
+        <xs:element name="price" type="PriceType">
         <xs:element name="indicator" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
@@ -41,5 +33,13 @@
       <xs:element name="oldName" type="xs:string" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
     <xs:attribute name="updateAt" type="xs:date" />
+  </xs:complexType>
+
+  <xs:complexType name="PriceType">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="currency" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
 </xs:schema>
