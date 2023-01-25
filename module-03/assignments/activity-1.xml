@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<employeeList  xmlns=" urn:corp:list" xmlns:es = "urn:corp:emp" xmlns:ds="urn:corp:dep ">
+  <personList>
+    <es:empID>E0000001</empID>
+    <ds:name>Sales</name>
+    <es:name>John Smith</name>
+  </personList>
+  <personList>
+    <es:empID>E0000002</empID>
+    <ds:name>Development</name>
+    <es:name>Ichiro Tanaka</name>
+  </personList>
+  <personList>
+    <es:empID>E0000003</empID>
+    <ds:name>Development</name>
+    <es:name>Jiro Suzuki</name>
+  </personList>
+  <personList>
+    <es:empID>E0000004</empID>
+    <ds:name>Administrative</name>
+    <es:name>Saburo Takahashi</name>
+  </personList>
+</employeeList>
+
+
