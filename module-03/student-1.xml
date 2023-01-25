@@ -1,0 +1,16 @@
+<root>
+<cs:student xmlns:cs="uri" xmlns:el="uri">
+<!--
+    cs
+-->
+<cs:language>c#</cs:language>
+</student>
+
+<el:student xmlns:el="uri">
+<!--
+    el
+-->
+<el:language>Spanish</el:language>
+</el:student>
+
+</root>
