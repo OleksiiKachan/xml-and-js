@@ -5,9 +5,9 @@
     <manufacturer id="sjb-pet">SJB Pet Boutique</manufacturer>
     <description>Something for every day of the week</description>
     <prices>
-      <price>US$35.99</price>
-      <price>CAD$44.99</price>
-      <price>&#8364;26.79</price>
+      <price currency="USD">US$35.99</price>
+      <price currency="CAD">44.99</price>
+      <price currency="EUR">26.79</price>
     </prices>
     <productItems>1200, 1201, 1202, 1203, 1204, 1205, 1206</productItems>
   </product>
