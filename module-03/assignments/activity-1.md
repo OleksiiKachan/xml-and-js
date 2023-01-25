@@ -1,26 +1,27 @@
 # Activity 1
 
 ```xml
-<employeeList>
+<?xml version="1.0" encoding="utf-8"?>
+<employeeList  xmlns="urn:corp:list"  xmlns:emp="urn:corp:emp" xmlns:dep="urn:corp:dep">
   <personList>
-    <empID>E0000001</empID>
-    <name>Sales</name>
-    <name>John Smith</name>
+    <emp:empID>E0000001</emp:empID>
+    <dep:name>Sales</dep:name>
+    <emp:name>John Smith</emp:name>
   </personList>
   <personList>
-    <empID>E0000002</empID>
-    <name>Development</name>
-    <name>Ichiro Tanaka</name>
+    <emp:empID>E0000002</emp:empID>
+    <dep:name>Development</dep:name>
+    <emp:name>Ichiro Tanaka</emp:name>
   </personList>
   <personList>
-    <empID>E0000003</empID>
-    <name>Development</name>
-    <name>Jiro Suzuki</name>
+    <emp:empID>E0000003</emp:empID>
+    <dep:name>Development</dep:name>
+    <emp:name>Jiro Suzuki</emp:name>
   </personList>
   <personList>
-    <empID>E0000004</empID>
-    <name>Administrative</name>
-    <name>Saburo Takahashi</name>
+    <emp:empID>E0000004</emp:empID>
+    <dep:name>Administrative</dep:name>
+    <emp:name>Saburo Takahashi</emp:name>
   </personList>
 </employeeList>
 ```
