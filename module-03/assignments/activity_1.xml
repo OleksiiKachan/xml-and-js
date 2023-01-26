@@ -1,0 +1,51 @@
+<!--Declaring every namespace mannually-->
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<emp_list:employeeList xmlns:emp_list = "URN" xmlns:emp_name = "URN" xmlns:dep_name = "">
+  <emp_list:personList>
+    <emp_name:empID>E0000001</emp_name:empID>
+    <dep_name:name>Sales</dep_name:name>
+    <emp_name:name>John Smith</emp_name:name>
+  </emp_list:personList>
+  <emp_list:personList>
+    <emp_name:empID>E0000002</emp_name:empID>
+    <dep_name:name>Development</dep_name:name>
+    <emp_name:name>Ichiro Tanaka</emp_name:name>
+  </emp_list:personList>
+  <emp_list:personList>
+    <emp_name:empID>E0000003</emp_name:empID>
+    <dep_name:name>Development</dep_name:name>
+    <emp_name:name>Jiro Suzuki</emp_name:name>
+  </emp_list:personList>
+  <emp_list:personList>
+    <emp_name:empID>E0000004</emp_name:empID>
+    <dep_name:name>Administrative</dep_name:name>
+    <emp_name:name>Saburo Takahashi</emp_name:name>
+  </emp_list:personList>
+</emp_list:employeeList>
+-->
+
+<!--Default namespace declaration-->
+<?xml version="1.0" encoding="utf-8"?>
+<employeeList xmlns = "Default Namespace" xmlns:emp_name = "URN" xmlns:dep_name = "URN">
+  <personList>
+    <emp_name:empID>E0000001</emp_name:empID>
+    <dep_name:name>Sales</dep_name:name>
+    <emp_name:name>John Smith</emp_name:name>
+  </personList>
+  <personList>
+    <emp_name:empID>E0000002</emp_name:empID>
+    <dep_name:name>Development</dep_name:name>
+    <emp_name:name>Ichiro Tanaka</emp_name:name>
+  </personList>
+  <personList>
+    <emp_name:empID>E0000003</emp_name:empID>
+    <dep_name:name>Development</dep_name:name>
+    <emp_name:name>Jiro Suzuki</emp_name:name>
+  </personList>
+  <personList>
+    <emp_name:empID>E0000004</emp_name:empID>
+    <dep_name:name>Administrative</dep_name:name>
+    <emp_name:name>Saburo Takahashi</emp_name:name>
+  </personList>
+</employeeList>
