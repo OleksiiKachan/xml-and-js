@@ -21,6 +21,7 @@
 <xs:attribute name="shippable" type="xs:boolean" />
 </xs:complexType>
 
+
 <xs:complexType name="manufaturerType">
 <xs:simpleContent>
 <xs:extension base="xs:string">
