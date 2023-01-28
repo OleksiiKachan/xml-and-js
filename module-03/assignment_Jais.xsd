@@ -6,6 +6,7 @@
                 <xs:element name="product" type="ProductType" />
             </xs:sequence>
         </xs:complexType>
+        
 
         <xs:complexType name="ProductType">
             <xs:sequence>
@@ -15,7 +16,6 @@
             <xs:attribute name="description" type="xs:string" use="required" />
             <xs:attribute name="product_image" type="xs:string" use="required" />
         </xs:complexType>
-
 
         <xs:complexType name="CatalogItemType">
             <xs:sequence>
