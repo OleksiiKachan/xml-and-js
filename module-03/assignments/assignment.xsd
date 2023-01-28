@@ -1,0 +1,60 @@
+<!--We are defining the prolog in the first two lines-->
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Catalog is the Root element and it is defined as complex type named as "catalogType"
+We are mentioning this as complex type because it has attributes and elements-->
+    <xs:element name="catalog" type="catalogType" />
+    <xs:complexType name="catalogType">
+        <xs:sequence>
+<!-- Here we are presenting the child element which has unbounded no of occurences-->
+            <xs:element name="product" type="productType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+<!-- Similaryly ProductType has attributes and child element and we are describing as follows-->
+    <xs:complexType name="productType">
+        <xs:sequence>
+<!--Catalog Item has unbounded no of occurences which act as a sub element-->
+            <xs:element name="catalog_item" type="catalogItemType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+<!-- Following are the attributes of productType-->
+        <xs:attribute name="product_id" type="xs:ID" use="required"/>
+        <xs:attribute name="description" type="xs:string" use="required"/>
+        <xs:attribute name="product_image" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="catalogItemType">
+    <!--CatalogItemType has three child and one attribute that are-->
+        <xs:sequence>
+            <xs:element name="item_number" type="xs:string"/>
+            <xs:element name="price" type="xs:decimal"/>
+            <xs:element name="size" type="sizeType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <!-- This line specifies an attribute called "gender". The attribute is mentioned as 
+        simple type because it is specified to string values Men and Women.The XML 
+        document should have any of these two in the value section.-->
+        <xs:attribute name="gender" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Men" />
+                    <xs:enumeration value="Women" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <!-- The following  Color Swatch is the child element of size and description is the
+    attribute of size which has unbounded number of occurences with string type -->
+    <xs:complexType name="sizeType">
+        <xs:sequence>
+            <xs:element name="color_swatch" type="color_SwatchType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="description" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="color_SwatchType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="image" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>

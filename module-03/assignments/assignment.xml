@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Here is the code for DTD and catalog is the root element and it has 
+one product element-->
+<!DOCTYPE catalog 
+[
+  <!ELEMENT catalog (product)>
+<!-- Product element has only one attribute named as catalog_item-->
+  <!ELEMENT product (catalog_item+)>
+<!--Product element has three attributes and they are
+product_id , description and product image-->
+  <!ATTLIST product product_id ID #REQUIRED>
+  <!ATTLIST product description CDATA #REQUIRED>
+  <!ATTLIST product product_image CDATA #REQUIRED>
+<!--Catalog item has three sub tags and they are item number, price and size-->
+  <!ELEMENT catalog_item (item_number,price,size+)>
+  <!-- Catalog item has two attributes one is men and other is women which is mandatory-->
+  <!ATTLIST catalog_item gender (Men | Women) #REQUIRED>
+  <!ELEMENT item_number (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!--Size has one sub tag and one attribute where the below as follows-->
+  <!ELEMENT size (color_swatch+)>
+  <!ATTLIST size description (Small | Medium | Large | ExtraLarge) #REQUIRED>
+  <!--Color Swatch has one attribute that is image-->
+  <!ELEMENT color_swatch (#PCDATA)>
+  <!ATTLIST color_swatch image CDATA #REQUIRED>
+]>
 <catalog>
   <product product_id="e4892f6a-7cce-11ec-90d6-0242ac120003" description="Cardigan Sweater" product_image="cardigan.jpg">
     <catalog_item gender="Men">
@@ -31,7 +56,7 @@
         <color_swatch image="navy_cardigan.jpg">Navy</color_swatch>
         <color_swatch image="black_cardigan.jpg">Black</color_swatch>
       </size>
-      <size description="Extra Large">
+      <size description="ExtraLarge">
         <color_swatch image="burgundy_cardigan.jpg">Burgundy</color_swatch>
         <color_swatch image="black_cardigan.jpg">Black</color_swatch>
       </size>
