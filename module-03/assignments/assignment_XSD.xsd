@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<xs:schema xmlns:xs = "http://www.w3.org/2001/XMLSchema">
+    <xs:element name = "catalog" type = "catalog_info"/>
+
+    <xs:complexType name = "catalog_info">
+        <xs:sequence>
+            <xs:element name = "product" type = "product_info"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name = "product_info">
+        <xs:sequence>
+            <xs:element name = "catalog_item" minOccurs = "0" maxOccurs = "unbounded" type = "catalog_item_info"/>
+        </xs:sequence>
+        <xs:attribute name = "product_id" type = "xs:Name"/>
+        <xs:attribute name = "description" type  = "xs:normalizedString"/>
+        <xs:attribute name = "product_image" type = "xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name = "catalog_item_info">
+        <xs:sequence>
+            <xs:element name = "item_number" type = "xs:string"/>
+            <xs:element name = "price" type = "xs:decimal"/>
+            <xs:element name = "size" type = "different_size"/>
+        </xs:sequence>
+        <xs:attribute name = "gender" type = "xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name = "different_size">
+        <xs:sequence>
+            <xs:element name = "color_swatch" minOccurs = "0" maxOccurs = "unbounded">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base = "xs:normalizedString">
+                            <xs:attribute name = "image" type = "xs:string"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name = "description" type = "xs:normalizedString"/>
+    </xs:complexType>
+</xs:schema>
+
+<!--In my opinion I found XSD quite confusing as the syntx make it quite repetetive and quite difficult to understand at a glance, but practicaly it is more descriptive in nature and gives us more flexibility in defining data and attribute types. Plus point is that there are no strict nomenclature to define data relation. That part is quite easy.-->
