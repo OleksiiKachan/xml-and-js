@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8">
+
+<ij:schema xmlns:ij="http://www.w3.org/2001/XMLSchema">
+
+    <ij:element name="catalog">
+        <ij:complexType>
+            <ij:sequence>
+                <ij:element name="product" type="productType" />
+            </ij:sequence>
+        </ij:complexType>
+    </ij:element>
+
+    <ij:complexType name="productType">
+        <ij:sequence>
+            <ij:element name="catalog_item" type="catalog_itemType" minOccurs="0" maxOccurs="unbounded" />
+        </ij:sequence>
+        <ij:attribute name="product_id" type="ij:string" />
+        <ij:attribute name="description" type="ij:string" />
+        <ij:attribute name="product_image" type="ij:string" />
+    </ij:complexType>
+
+    <ij:complexType name="catalog_itemType">
+        <ij:sequence>
+            <ij:element name="item_number" type="ij:string" />
+            <ij:element name="price" type="ij:float" />
+            <ij:element name="size" type="sizeType" minOccurs="0" maxOccurs="unbounded" />
+        </ij:sequence>
+        <ij:attribute name="gender" type="ij:string" />
+    </ij:complexType>
+
+    <ij:complexType name="sizeType">
+        <ij:sequence>
+            <ij:element name="color_swatch" type="color_swatchType" minOccurs="0"
+                maxOccurs="unbounded" />
+        </ij:sequence>
+        <ij:attribute name="description" type="ij:string" />
+    </ij:complexType>
+
+    <ij:complexType name="color_swatchType">
+        <ij:simpleContent>
+            <ij:extension base="ij:string">
+                <ij:attribute name="image" type="ij:string" />
+            </ij:extension>
+        </ij:simpleContent>
+    </ij:complexType>
+</ij:schema>
