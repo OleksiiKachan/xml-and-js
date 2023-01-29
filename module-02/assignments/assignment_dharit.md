@@ -9,6 +9,10 @@
 
 CDATA stands for character data, it indicated that the data inside of it should be treated as XML markup. It is useful when we want to omit loads of special character. In this document, it is used to take the string inside the summary tag and print the string as it is.
 
+# question 3
+
+![image info](3-comment.png)
+
 # question 4
 
 prolog: Any declaration before document's root element treated as prolog.
@@ -19,9 +23,11 @@ document body: The doument body contains of all the tags inside the single root 
 This document does not contain any epilog.
 
 The is one processing instructions in this document which is the xml declaration to include 'style.css'
+![image info](4.4%20-processing_instruction.png)
 
-# question 5
+# question 6
 ![image info](6.1.png)
 ![image info](6.2.png)
 
-# question 6 
+# question 7
+![image info](7-addCSS.png)
