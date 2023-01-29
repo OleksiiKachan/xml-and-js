@@ -2,7 +2,7 @@
 <products>
   <product sku="BOS12DDF2" createdAt="2020-12-23T09:23:44" shippable="true">
     <productName>Dog Shirt Gift Basket</productName>
-    <manufacturer id="sjb-pet">SJB Pet Boutique</manufacturer>
+    <manufacturer id="+-pet">SJB Pet Boutique</manufacturer>
     <description>Something for every day of the week</description>
     <prices>
       <price>US$35.99</price>

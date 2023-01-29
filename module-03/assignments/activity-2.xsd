@@ -3,7 +3,6 @@
 
 
     <xs:element name="products" type="productsType"/>
-
         <xs:complexType name="productsType">
             <xs:sequence>
                 <xs:element name="product" type="productType" minOccurs="0" maxOccurs="unbounded"/>
