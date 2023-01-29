@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
     <xs:element name="products" type="productsType"/>
 
     <xs:complexType name="productsType">
@@ -16,7 +18,6 @@
             <xs:element name="prices" type="pricesType"/>
             <xs:element name="productItems"/>
         </xs:sequence>
-
         <xs:attribute name="sku" type="xs:string"/>
         <xs:attribute name="createdAt" type="xs:dateTime" />
         <xs:attribute name="shippable" type="xs:boolean"/>
@@ -29,12 +30,11 @@
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
-
     
     <xs:complexType name="pricesType" >
         <xs:sequence>
             <xs:element name="price" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
-    </xs:complexType>
+    </xs:complexType> 
 
-</xs:schema>
+</xs:schema> 
