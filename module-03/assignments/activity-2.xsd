@@ -2,9 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="products" type="productsType"/>
     <xs:complexType name="productsType">
-        <xs:sequence>
-            <xs:element name="product" type="productType" minOccurs="0" maxOccurs="unbounded"/>		
-        </xs:sequence>
+        <xs:element name="product" type="productType"/>		
     </xs:complexType>
     <xs:complexType name="productType">
         <xs:sequence>
