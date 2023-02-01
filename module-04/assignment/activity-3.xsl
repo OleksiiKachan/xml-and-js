@@ -8,6 +8,7 @@
     <table border="1">
         <tr bgcolor="#9acd32">
             <th>productName</th>
+            <th>sku</th>
             <th>manufacturer</th>
             <th>description</th>
             <th>price</th>
@@ -20,6 +21,7 @@
 <xsl:for-each select="products/product">
 <tr>
     <td><xsl:value-of select="productName"/></td>
+    <td><xsl:value-of select="@sku"/></td>
     <td><xsl:value-of select="manufacturer"/></td>
     <td><xsl:value-of select="description"/></td>
     <td><xsl:value-of select="prices/price[1]"/></td>
