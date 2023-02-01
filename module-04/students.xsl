@@ -20,6 +20,7 @@ tell processor to process the entire document with this template.
       <body> 
         <h2>Students</h2> 
 				
+        <!-- 
         <table border="1"> 
           <tr bgcolor="#9acd32"> 
             <th>Roll No</th> 
@@ -28,16 +29,21 @@ tell processor to process the entire document with this template.
             <th>Nick Name</th> 
             <th>Marks</th> 
           </tr> 
-				
+				-->
+
+        
+
           <!-- for-each processing instruction 
             Looks for each element matching the XPath expression 
           --> 
+          
           <xsl:for-each select="class/student"> 
+          <!-- 
             <tr> 
               <td> 
-                <!-- value-of processing instruction 
+                  value-of processing instruction 
                   process the value of the element matching the XPath expression 
-                --> 
+                
                 <xsl:value-of select="@rollno"/> 
               </td> 
               <td><xsl:value-of select="firstname"/></td> 
@@ -45,8 +51,16 @@ tell processor to process the entire document with this template.
               <td><xsl:value-of select="nickname"/></td> 
               <td><xsl:value-of select="marks"/></td> 
 						</tr> 
+          -->
+
+            <a> Roll No </a> - <xsl:value-of select="@rollno"/> 
+            <a> First Name </a> - <xsl:value-of select="firstname"/>
+            <a> Last Name </a> - <xsl:value-of select="lastname"/>
+            <a> Nick Name </a> - <xsl:value-of select="nickname"/>
+            <a> Marks </a> - <xsl:value-of select="marks"/>
+
           </xsl:for-each> 
-        </table> 
+         
       </body> 
     </html> 
   </xsl:template>  
