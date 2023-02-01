@@ -17,36 +17,61 @@ tell processor to process the entire document with this template.
     --> 
 		
     <html> 
+      <style>
+        .main{
+          background-color: #2596be;
+          float:center; 
+          display:inline-block; 
+          width: 90%;
+          margin-right: 5%;
+          margin-left: 5%;
+          margin-bottom: 1%;
+          margin-top: 1%;
+        }
+        .main h3{
+          float: left; 
+          width: 20%; 
+          display: inline-block;
+          text-align: center;
+        }
+      </style>
       <body> 
-        <h2>Students</h2> 
+         <h1>Class of Students'xx</h1>
+
+         <div class="main">
+              <h3>Roll No</h3>
+              <h3>First Name</h3>
+              <h3>Last Name</h3>
+              <h3>Nick Name</h3>
+              <h3>Marks</h3>
+         </div>
+        <!-- <h2>Students</h2> 
 				
         <table border="1"> 
-          <tr bgcolor="#9acd32"> 
+          <tr bgcolor="#457"> 
             <th>Roll No</th> 
             <th>First Name</th> 
             <th>Last Name</th> 
             <th>Nick Name</th> 
             <th>Marks</th> 
-          </tr> 
+          </tr>  -->
 				
           <!-- for-each processing instruction 
             Looks for each element matching the XPath expression 
           --> 
+          <div class="main">
           <xsl:for-each select="class/student"> 
-            <tr> 
-              <td> 
                 <!-- value-of processing instruction 
                   process the value of the element matching the XPath expression 
                 --> 
-                <xsl:value-of select="@rollno"/> 
-              </td> 
-              <td><xsl:value-of select="firstname"/></td> 
-              <td><xsl:value-of select="lastname"/></td> 
-              <td><xsl:value-of select="nickname"/></td> 
-              <td><xsl:value-of select="marks"/></td> 
-						</tr> 
+            
+              <h3><xsl:value-of select="@rollno"/></h3>
+              <h3><xsl:value-of select="firstname"/></h3>
+              <h3><xsl:value-of select="lastname"/></h3>
+              <h3><xsl:value-of select="nickname"/></h3>
+              <h3><xsl:value-of select="marks"/></h3>						
           </xsl:for-each> 
-        </table> 
+        </div>
       </body> 
     </html> 
   </xsl:template>  
