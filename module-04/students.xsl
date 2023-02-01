@@ -23,8 +23,8 @@ tell processor to process the entire document with this template.
         <table border="1"> 
           <tr bgcolor="#9acd32"> 
             <th>Roll No</th> 
-            <th>First Name</th> 
-            <th>Last Name</th> 
+            <th>Full Name</th> 
+            <!-- <th>Last Name</th>  -->
             <th>Nick Name</th> 
             <th>Marks</th> 
           </tr> 
@@ -40,8 +40,8 @@ tell processor to process the entire document with this template.
                 --> 
                 <xsl:value-of select="@rollno"/> 
               </td> 
-              <td><xsl:value-of select="firstname"/></td> 
-              <td><xsl:value-of select="lastname"/></td> 
+              <td><xsl:value-of select="concat(firstname,' ' ,lastname)"/></td> 
+              <!-- <td><xsl:value-of select="lastname"/></td>  -->
               <td><xsl:value-of select="nickname"/></td> 
               <td><xsl:value-of select="marks"/></td> 
 						</tr> 
