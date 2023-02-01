@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<list:employeeList xmlns:list="urn:corp:list" xmlns:emp="urn:corp:emp" xmlns:dep="urn:corp:dep">
+<employeeList xmlns:list="urn:corp:list" xmlns:emp="urn:corp:emp" xmlns:dep="urn:corp:dep">
   <list:personList>
     <emp:empID>E0000001</emp:empID>
     <dep:name>Sales</dep:name>
@@ -20,4 +20,4 @@
     <dep:name>Administrative</dep:name>
     <emp:name>Saburo Takahashi</emp:name>
   </list:personList>
-</list:employeeList>
+</employeeList>

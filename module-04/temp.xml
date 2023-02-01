@@ -1,0 +1,19 @@
+<?xml ?>
+<bookstore>
+    <book>
+        <title lang="en">1</title>
+    </book>
+    <book><title lang="fr">2</title></book>
+</bookstore>
+
+
+/bookstore/book
+bookstore/book
+//book
+
+//book/title/text()
+//title[@lang='en']/..
+
+//title/@lang
+
+
