@@ -18,7 +18,7 @@ tell processor to process the entire document with this template.
 		
     <html> 
       <body> 
-        <h2>Students</h2> 
+        <h2>Students 2</h2> 
 				
         <table border="10"> 
           <tr bgcolor="green"> 
