@@ -10,3 +10,7 @@ Generate folowing XPath queries for `module-4/products.xml` file
 Save your answers into `module-4/assignments/activity-1_STUDENTID.md` and attach screenshots
 
 You can use <https://www.freeformatter.com/xpath-tester.html> to test your answers
+1. ![image info](activity1-1.png)
+2. ![image info](activity1-2.png)
+3. ![image info](activity1-3.png)
+4. ![image info](activity1-4.png)
