@@ -21,13 +21,12 @@
                 </xs:complexType>
             </xs:element>
             <xs:element name = "description" type = "xs:string"/>
-            <xs:element name = "prices" type = "differentPrices"/>
+            <xs:element name = "prices" minOccurs = "0" maxOccurs = "unbounded" type = "differentPrices"/>
             <xs:element name = "productItems" type = "xs:string"/>
         </xs:sequence>
         <xs:attribute name = "sku" type = "xs:string"/>
         <xs:attribute name = "createdAt" type = "xs:dateTime"/>
         <xs:attribute name = "shippable" type = "xs:boolean"/>
-        <xs:attribute name = "id" type = "xs:Name"/>
     </xs:complexType>
 
     <xs:complexType name = "differentPrices">

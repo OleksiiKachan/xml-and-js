@@ -20,3 +20,17 @@
     <marks>90</marks>
   </student>
 </class>
+
+<!--
+  Concat function is required to join text from two elements: firstname and lastname
+  i. concat(//student[1]/firstname/text(), ' ', //student[1]/lastname/text())
+
+  Last element in an array is obtained using last():
+  ii. (//student)[last()]
+
+  Count of the elements is obtained using count():
+  iii. count(//nickname)
+
+  Conditional query is obtained:
+  iv. //student[@rollno = "593"]/nickname
+-->

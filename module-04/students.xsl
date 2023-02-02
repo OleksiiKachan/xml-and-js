@@ -14,9 +14,12 @@ tell processor to process the entire document with this template.
     <!-- HTML tags 
       Used for formatting purpose. Processor will skip them and browser 
       will simply render them. 
-    --> 
+    -->
+
 		
     <html> 
+      <head>
+      </head>
       <body> 
         <h2>Students</h2> 
 				

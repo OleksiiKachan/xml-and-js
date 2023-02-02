@@ -21,7 +21,7 @@
         <xs:sequence>
             <xs:element name = "item_number" type = "xs:string"/>
             <xs:element name = "price" type = "xs:decimal"/>
-            <xs:element name = "size" type = "different_size"/>
+            <xs:element name = "size" minOccurs = "0" maxOccurs = "unbounded" type = "different_size"/>
         </xs:sequence>
         <xs:attribute name = "gender" type = "xs:string"/>
     </xs:complexType>
