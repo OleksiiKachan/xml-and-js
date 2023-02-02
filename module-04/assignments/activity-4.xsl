@@ -4,10 +4,9 @@
     <xsl:template match="/"> 
         <html> 
             <body>
-                <h2>Products</h2>
+                <h2>Products 1</h2>
                     <ol>
-                        <xsl:for-each select="products/product"> 
-                        <xsl:if test=" ">
+                        <xsl:for-each select="products/product[@shippable='true']"> 
                         <li>
                             <ul>
                                 <li>
@@ -16,24 +15,43 @@
                                 <li>
                                     <xsl:value-of select="manufacturer"/>
                                 </li>
+                                <xsl:if test="description">
+                                    <li>
+                                        <xsl:value-of select="description"/>
+                                    </li>
+                                </xsl:if>
+                                <ul>
+                                    <li>
+                                        <xsl:value-of select="prices/price[1]"/>
+                                    </li>
+                                </ul>
+                            </ul>
+                            </li>
+                        </xsl:for-each>
+                    </ol>
+                        <h2>Products 2</h2>
+                        <ol>
+                        <xsl:for-each select="products/product"> 
+                        <xsl:if test="manufacturer[@id='acme']">
+                        <li>
+                            <ul>
                                 <li>
-                                    <xsl:value-of select="description"/>
+                                    <xsl:value-of select="productName"/>
                                 </li>
-                                <xsl:for-each select="//product/prices"> 
+                                <li>
+                                    <xsl:value-of select="manufacturer"/>
+                                </li>
                                     <ul>
                                         <li>
-                                            <xsl:value-of select="price"/>
+                                            <xsl:value-of select="prices/price[1]"/>
+                                        </li>
+                                        <li>
+                                            <xsl:value-of select="prices/price[3]"/>
                                         </li>
                                     </ul>
-                                </xsl:for-each>                            
-                                <li>
-                                    <xsl:value-of select="productItems"/>
-                                </li>
-                            </ul>
-                        </li>
-                        
+                                </ul>
+                            </li>
                         </xsl:if>
-                        
                         </xsl:for-each>
                     </ol>
             </body>
