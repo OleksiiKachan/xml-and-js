@@ -52,5 +52,5 @@
           </table> 
       </body> 
     </html> 
-  </xsl:template>  
+  </xsl:template>
 </xsl:stylesheet>
