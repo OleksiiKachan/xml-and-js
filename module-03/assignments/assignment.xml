@@ -12,7 +12,7 @@
 <!ELEMENT item_number (#PCDATA)>
 <!ELEMENT price (#PCDATA)>
 <!ELEMENT size (color_swatch+)>
-<!ATTLIST size description (Medium |Large |Small| Extra-Large) #REQUIRED >
+<!ATTLIST size description CDATA #REQUIRED>
 <!ELEMENT color_swatch (#PCDATA)>
 <!ATTLIST color_swatch image CDATA #REQUIRED>
 ]>
@@ -48,10 +48,12 @@
         <color_swatch image="navy_cardigan.jpg">Navy</color_swatch>
         <color_swatch image="black_cardigan.jpg">Black</color_swatch>
       </size>
-      <size description="Extra-Large">
+      <size description="Extra Large">
         <color_swatch image="burgundy_cardigan.jpg">Burgundy</color_swatch>
         <color_swatch image="black_cardigan.jpg">Black</color_swatch>
       </size>
     </catalog_item>
   </product>
 </catalog>
+
+<!-- Dharit Patel (n01544180) -->
