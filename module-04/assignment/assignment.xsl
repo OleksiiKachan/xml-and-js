@@ -10,11 +10,11 @@
             <li><article>
                 <h3>Proudct ID: <xsl:value-of select="@product_id"/></h3>
             </article></li>
-            <li>
+            <li><article>
                 <p>Description: <xsl:value-of select="@description"/></p>
-            </li>
+            </article></li>
         
-            <li><table border="1">
+            <li><article><table border="1">
                 <tr>
                    <th>item number</th>
                    <th>price</th>
@@ -125,7 +125,7 @@
                         </xsl:for-each>
 
 
-            </table></li>
+            </table></article></li>
         </xsl:for-each>
         </ul>
     </body>
