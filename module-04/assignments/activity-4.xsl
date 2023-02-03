@@ -38,9 +38,11 @@
                                 <li>
                                     <xsl:value-of select="productName"/>
                                 </li>
-                                <li>
-                                    <xsl:value-of select="manufacturer"/>
-                                </li>
+                                <xsl:if test="description">
+                                    <li>
+                                        <xsl:value-of select="description"/>
+                                    </li>
+                                </xsl:if>
                                     <ul>
                                         <li>
                                             <xsl:value-of select="prices/price[1]"/>
