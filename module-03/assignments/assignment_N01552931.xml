@@ -6,7 +6,7 @@
 <!ELEMENT product (catalog_item+)>
 <!ATTLIST product product_id ID #REQUIRED>
 <!ATTLIST product description CDATA #REQUIRED>
-<!ATTLIST product product_image CDATA #REQUIRED>
+<!ATTLIST nodproduct product_image CDATA #REQUIRED>
 <!ELEMENT catalog_item (item_number, price, size+)>
 <!ATTLIST catalog_item gender CDATA #REQUIRED>
 <!ELEMENT item_number (#PCDATA)>

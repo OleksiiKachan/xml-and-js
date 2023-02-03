@@ -19,6 +19,16 @@ tell processor to process the entire document with this template.
     <html> 
       <body> 
         <h2>Students</h2> 
+        
+        <xsl:for-each select="class/student">
+          <xsl:value-of select="@rollno"/>
+          <xsl:value-of select="firstname"/>
+          <xsl:value-of select="lastname"/>
+          <xsl:value-of select="nickname"/>
+          <xsl:value-of select="marks"/>
+        </xsl:for-each>
+
+
 				
         <table border="1"> 
           <tr bgcolor="#9acd32"> 
@@ -28,7 +38,7 @@ tell processor to process the entire document with this template.
             <th>Nick Name</th> 
             <th>Marks</th> 
           </tr> 
-				
+	
           <!-- for-each processing instruction 
             Looks for each element matching the XPath expression 
           --> 
