@@ -15,38 +15,20 @@ tell processor to process the entire document with this template.
       Used for formatting purpose. Processor will skip them and browser 
       will simply render them. 
     --> 
-		
     <html> 
       <body> 
         <h2>Students</h2> 
-				
-        <table border="1"> 
-          <tr bgcolor="#9acd32"> 
-            <th>Roll No</th> 
-            <th>First Name</th> 
-            <th>Last Name</th> 
-            <th>Nick Name</th> 
-            <th>Marks</th> 
-          </tr> 
-				
           <!-- for-each processing instruction 
             Looks for each element matching the XPath expression 
           --> 
-          <xsl:for-each select="class/student"> 
-            <tr> 
-              <td> 
-                <!-- value-of processing instruction 
-                  process the value of the element matching the XPath expression 
-                --> 
-                <xsl:value-of select="@rollno"/> 
-              </td> 
-              <td><xsl:value-of select="firstname"/></td> 
-              <td><xsl:value-of select="lastname"/></td> 
-              <td><xsl:value-of select="nickname"/></td> 
-              <td><xsl:value-of select="marks"/></td> 
-						</tr> 
-          </xsl:for-each> 
-        </table> 
+        <xsl:for-each select="class/student">
+          <h4>Roll Number: <xsl:value-of select="@rollno"/></h4>
+          <ul>
+            <li><xsl:value-of select="firstname"/><xsl:value-of select="lastname"/></li>
+            <li>Call Me: <xsl:value-of select="nickname"/></li>
+            <li>Marks: <xsl:value-of select="marks"/></li>
+          </ul>
+        </xsl:for-each>
       </body> 
     </html> 
   </xsl:template>  
