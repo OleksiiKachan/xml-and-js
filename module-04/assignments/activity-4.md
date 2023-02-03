@@ -15,4 +15,4 @@
 
 **Columns**: Product name, Description, USD price, Euro price
 
-**Condition**: manufacturer id is "acme"
+**Condition**: manufacturer id is "acme".
