@@ -30,7 +30,7 @@
                     </xsl:for-each>
                 </table>
 
-                         <h1> Table-2 : Acme </h1>
+                         <h1> Table-2 : Acme </>
                 <table border="2">
                          <tr>
                             <th>Product name</th>
