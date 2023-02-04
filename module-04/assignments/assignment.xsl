@@ -9,7 +9,7 @@
                 <style>
                     th
                     {
-                        background-color:#FFD26F;
+                        background-color: #FFD26F;
                     }
                     td
                     {
