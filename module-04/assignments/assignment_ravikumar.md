@@ -31,3 +31,4 @@
 5. Thought process:
 
 -   Here we have used tag <xsl:for-each> which used to render data while it is in list form. <xsl:if> is used to categorised the small, medium, large category. also we used some html tags like <h3> <ui> <ul>.
+
