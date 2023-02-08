@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer's</title>
+  </head>
+  <body>
+    <ol id="list"></ol>
+
+    <p id="text"></p>
+    <p id="text1"></p>
+    <p id="text2"></p>
+    <script>
+      const xhr = new XMLHttpRequest();
+      const parser = new DOMParser();
+
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhr.open("GET", "customers.xml", true);
+      xhr.send();
+
+      const displayData = (xmlDoc) => {
+        // const listElement = document.getElementById("list");
+
+        // const students = xmlDoc.getElementsByTagName('student');
+
+        // for(let index=0; index<students.length; index++){
+        //     const listItem = document.createElement('li');
+
+        //     const student = students[index];
+
+        //     const title = document.createElement('h2');
+
+        //     const name = student.getElementsByTagName("firstname")[0].childNodes[0].nodeValue +
+        //                 + "" +
+        //                 student.getElementsByTagName("lastname")[0].childNodes[0].nodeValue;
+
+        //     title.appendChild.document.createTextNode(name);
+        //     listItem.appendChild(title);
+
+        //     const subtitle = document.createElement('p');
+        //     const subtitleValue = 'rollno - ' + student.attributes.rollno.value;
+
+        //     subtitle.appendChild.document.createTextNode(subtitleValue);
+        //     listItem.appendChild(subtitle);
+
+        //     const
+
+        // }
+        document.getElementById("text").innerHTML =
+          xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+
+        document.getElementById("text1").innerHTML =
+          xmlDoc.getElementsByTagName("name")[0].attributes[0].nodeValue;
+      };
+    </script>
+  </body>
+</html>

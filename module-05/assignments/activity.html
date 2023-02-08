@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peoples</title>
+    <style>
+      /* td {
+        background-color: #bface2;
+      } */
+      td {
+        color: #3d1766;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="pdata" border="1">
+      <tr>
+        <td>Full Name</td>
+        <td>Email</td>
+        <td>Gender</td>
+        <td>Id Address</td>
+      </tr>
+    </table>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "people.xml", true);
+      xhttp.send();
+
+      function parsedata(xml) {
+        const fname =
+          xml.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+        const lname =
+          xml.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+        const email =
+          xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+        const gender =
+          xml.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue;
+        const ip_address =
+          xml.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue;
+
+        return {
+          fname,
+          lname,
+          email,
+          gender,
+          ip_address,
+        };
+      }
+
+      function createrow(row) {
+        const content = `<tr>
+          <td>${row.fname} ${row.lname}</td>
+          <td>${row.email}</td>
+          <td>${row.gender}</td>
+          <td>${row.ip_address}</td>
+        </tr>`;
+
+        return stringToNode(content);
+      }
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function displayData(xmlDoc) {
+        const people = xmlDoc.getElementsByTagName(`people`);
+
+        const table = document.getElementById(`pdata`);
+
+        for (let index = 0; index < people.length; index++) {
+          const element = people[index];
+          const parsedrec = parsedata(element);
+
+          const peopleElement = createrow(parsedrec);
+          table.appendChild(peopleElement);
+        }
+      }
+    </script>
+  </body>
+</html>
