@@ -1,0 +1,90 @@
+<!--
+    MODULE 5: ACTIVITY
+    RAVJIT SINGH
+    N01542323
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People</title>
+    <style>
+        table, th, td {
+            border: 2px solid;
+            width: 50%;
+            border-collapse: collapse;
+        }
+        th {
+            background-color: #0F0;
+        }
+        tr:nth-child(odd) {background-color: #d1cece;}
+    </style>
+</head>
+<body>
+    <article>
+        <table id = "people_details">
+            <tr>
+                <th>Full Name</th>
+                <th>E-mail</th>
+                <th>Gender</th>
+                <th>IP-Address</th>
+            </tr>
+        </table>
+    </article>
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                displayData(this.responseXML);
+            }
+        };
+        xhttp.open("GET", "people.xml", true);
+        xhttp.send();
+
+        function stringToNode(html){
+            const template = document.createElement(`template`);
+            html = html.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+        }
+
+        function create_info(person){
+            const content = `<tr>
+                <td>${person.fullName}</td>
+                <td>${person.email_id}</td>
+                <td>${person.gender}</td>
+                <td>${person.ip_address}</td>
+            </tr>`;
+
+            return stringToNode(content);
+        }
+
+        function people_info(xml){
+            const fullName = xml.getElementsByTagName(`firstName`)[0].childNodes[0].nodeValue + " " + xml.getElementsByTagName(`lastName`)[0].childNodes[0].nodeValue;
+            const email_id = xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+            const gender = xml.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue;
+            const ip_address = xml.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue;
+
+            return {
+                fullName,
+                email_id,
+                gender,
+                ip_address,
+            };
+        }
+
+        function displayData(xmlDocument){
+            const table_for_items = document.getElementById(`people_details`);
+            const people_doc = xmlDocument.getElementsByTagName(`person`);
+            for (let i = 0; i < people_doc.length; i++) {
+                const element = people_doc[i];
+                const parsed_people_info = people_info(element);
+                const created_people = create_info(parsed_people_info);
+                table_for_items.appendChild(created_people);
+            }
+        }
+    </script>
+</body>
+</html>

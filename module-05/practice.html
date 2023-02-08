@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEEK 5</title>
+</head>
+<body>
+    <p id="title_from_name_tag"></p>
+    <script>
+        const xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200){
+                console.log(this.responseXML);
+                displayData(this.responseXML);
+            } 
+        };
+        xhr.open("GET", "customers.xml", true);
+        xhr.send();
+
+        const displayData = (xmlDoc) => {
+            document.getElementById(`title_from_name_tag`).innerHTML = xmlDoc.getElementsByTagName("name")[0].getAttribute('title');
+        };
+    </script>
+</body>
+</html>

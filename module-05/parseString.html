@@ -4,7 +4,8 @@
     <p id="text"></p>
 
     <script>
-      const text = `<customer custID="cust201">
+      /*Text is the name of the variable given for passing the argument to 'parser.parseFromString()'*/
+      const text = `<customer custID="cust201"> 
     <name title="Mr.">John Michael</name>
     <address>
       41 West Plankton Avenue, Orlando, FL 32820
@@ -27,8 +28,10 @@
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(text, "text/xml");
 
+      // document.getElementById("text").innerHTML =
+      //   xmlDoc.getElementsByTagName("email")[0].childNodes[0].nodeValue;
       document.getElementById("text").innerHTML =
-        xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+        xmlDoc.getElementsByTagName("name")[0].getAttribute('title');
     </script>
   </body>
 </html>
