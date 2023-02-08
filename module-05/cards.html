@@ -17,7 +17,7 @@
 
       function stringToNode(html) {
         const template = document.createElement(`template`);
-        html = html.trim();
+        html = html.trim(); //removes extra spaces from end of string- clean data
         template.innerHTML = html;
         return template.content.firstChild;
       }
