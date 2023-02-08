@@ -16,7 +16,13 @@
       function displayData(xml) {
         const xmlDoc = xml.responseXML;
         document.getElementById("text").innerHTML =
+          // xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue + " " +
+          // xmlDoc.getElementsByTagName("name")[0].getAttribute("title");
+          xmlDoc.getElementsByTagName("name")[0].getAttribute("title") + " " +
           xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+          
+          
+          
       }
     </script>
   </body>
