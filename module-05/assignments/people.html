@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 05 - Activity</title>
+</head>
+
+<body>
+    <ol id="list"></ol>
+
+    <script>
+        const xmlReq = new XMLHttpRequest();
+        xmlReq.onreadystatechange = function () 
+        {
+            if (this.readyState == 4 && this.status == 200) 
+            {
+                displayXML(xmlReq.responseXML);
+            }
+        }
+        xmlReq.open("GET", "people.xml", true);
+        xmlReq.send();
+        function displayXML(response) 
+        {
+            const ppls = response.getElementsByTagName("people");
+
+            const list = document.getElementById("list");
+
+            for (var i = 0; i < ppls.length; i++) 
+            {
+                const pplDict = xmlDict(ppls[i]); 
+                const pplNode = createStrTag(pplDict);
+                const pplList = createHTML(pplNode);
+                list.appendChild(pplList);
+            }
+            function xmlDict(xmlEle) 
+            {
+                const fullname = xmlEle.getElementsByTagName("first_name")[0].childNodes[0].nodeValue
+                    + " " + xmlEle.getElementsByTagName("last_name")[0].childNodes[0].nodeValue;
+
+                return { fullname };
+            }
+
+            function createStrTag(dict) 
+            {
+                const content = `
+                    <li>${dict.fullname}</li>
+                `;
+
+                return content;
+            }
+            function createHTML(strTag) 
+            {
+                let tempNode = document.createElement("tempNode");
+                strTag = strTag.trim();
+                tempNode.innerHTML = strTag;
+                return tempNode.firstChild; 
+            }
+        }
+    </script>
+</body>
+</html>

@@ -2,16 +2,16 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">   
     <xsl:template match="/"> 
     <html>
-        <head>
-            <style>
-                th{
-                    background-color:#BFACE2;
+    <head>
+        <style>
+            th{
+                background-color:#BFACE2;
                 }
-                td{
-                    color: #3D1766;
+            td{
+                color: #3D1766;
                 }
-            </style>
-            <title>Catalog</title>
+        </style>
+        <title>Catalog</title>
         </head>
         <body>
             <h1>Catalog</h1>
