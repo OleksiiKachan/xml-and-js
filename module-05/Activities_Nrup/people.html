@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <ol id="persons"></ol>
+        <script>
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function()
+            {
+                if(this.readyState === 4 && this.status === 200)
+                {
+                    displayData(this.responseXML);
+                }
+            };
+            xhttp.open("GET", "people.xml", true);
+            xhttp.send();
+
+            function stringToNode(html)
+            {
+                const template = document.createElement(`template`);
+                html = html.trim();
+                template.innerHTML = html;
+                return template.content.firstChild;
+            }
+
+            function createPerson(pers)
+            {
+                const content =
+                `
+                    <li>
+                        <article>
+                            <p>First Name: ${pers.firstname}</p>
+                            <p>Last Name: ${pers.lastname}</p>
+                            <p>Email: ${pers.email}</p>
+                            <hr/>
+                        </article>
+                    </li>
+                `;
+                //I also tried adding the attributes from the HTML file but I could not resolve the error for printing the attributes
+                // I used <p>ID: ${pers.id}</p> but I know it will not work because it is not an element 
+                return stringToNode(content);
+            }
+
+            function parsePerson(xml)
+            {
+                const firstname =
+                    xml.getElementsByTagName(`firstname`)[0].childNodes[0].nodeValue;
+                const lastname = 
+                    xml.getElementsByTagName(`lastname`)[0].childNodes[0].nodeValue;
+                const email = 
+                    xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+
+                /*const id = 
+                    xml.getElementsByTagName(`person`)[0].attributes.id.value;*/
+
+                return{
+                    firstname,
+                    lastname,
+                    email,
+                };
+            }
+
+            function displayData(xmlDoc)
+            {
+                const persons = xmlDoc.getElementsByTagName(`person`);
+
+                const list = document.getElementById(`persons`);
+
+                for(let index = 0 ; index < persons.length ; index++)
+                {
+                    const element = persons[index];
+                    const parsedPerson = parsePerson(element);
+
+                    const personElement = createPerson(parsedPerson);
+                    list.appendChild(personElement);
+                }
+            }
+
+        </script>
+    </body>
+</html>

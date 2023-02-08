@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="text"></p>
+        <script>
+            const xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function()
+            {
+                if(this.readyState === 4 && this.status === 200)
+                {
+                    displayData(this.responseXML);
+                    //console.log(displayData);
+                    //console.log(this.responseXML.getElementsByTagName('name'))
+                    // document.getElementById('text').innerHTML =
+                    //  this.responseXML.getElementsByTagName('name')[0].childNodes[0].nodeValue;
+                    // document.getElementById('text').innerHTML =
+                    // this.responseXML.getElementsByTagName('name')[0].attributes.title.value;
+                }
+            };
+            xhr.open("GET", "../customers.xml", true);
+            xhr.send();
+            const displayData = (xmlDoc) => {
+                //const xmlDoc = xml.responseXML;
+                document.getElementById('text').innerHTML = 
+                xmlDoc.getElementsByTagName('name')[0].attributes.title.value;
+            }
+        </script>
+    </body>
+</html>
