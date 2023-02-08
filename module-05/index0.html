@@ -3,14 +3,21 @@
   <body>
     <ol id="students"></ol>
     <script>
-      const xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
+      const xhr = new XMLHttpRequest();
+      //xhttp.onreadystatechange = function () {
+        xhr.onreadystatechange = function (){
         if (this.readyState == 4 && this.status == 200) {
           displayData(this.responseXML);
+
+          //const xmlDoc = this.responseXML;
+
+          //console.log(xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue)
+          //document.getElementById('text').innerHTML =
+          //xml.getElementsByTagName("name")[0].childNodes[0].nodeValue;
         }
       };
-      xhttp.open("GET", "students.xml", true);
-      xhttp.send();
+      xhr.open("GET", "students.xml", true);
+      xhr.send();
 
       function stringToNode(html) {
         const template = document.createElement(`template`);

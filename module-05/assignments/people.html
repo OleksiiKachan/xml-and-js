@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <ol id="list"></ol>
+    <script>
+      const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function (){
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhr.open("GET", "people.xml", true);
+      xhr.send();
+
+      const parsePeople =people =>{
+        const fullName=people.getElementsByTagName('firstname')[0].childNodes[0].nodeValue
+        + ' '+
+        people.getElementsByTagName('lastname')[0].childNodes[0].nodeValue
+        ;
+
+        return peopleObject ={fullName};
+      };
+
+      const stringToNode = value =>{
+        const template=document.createElement('template');
+        const html= value.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      const createPeople = (parsedPeople) =>{
+        const content = `
+        <li>
+            <article>
+            <h3>${parsedPeople.fullName}</h3>
+            </article>
+
+        </li>
+        `;
+
+        return stringToNode(content);
+      };
+
+      const displayData =(xmlDoc) =>{
+        const list=document.getElementById('list');
+
+        const ppls = xmlDoc.getElementsByTagName('person');
+
+        for(let index = 0; index < ppls.length; index++){
+            const people = ppls[index];
+            const parsedPeople=parsePeople(people);
+
+            const peopleElement=createPeople(parsedPeople);
+            list.appendChild(peopleElement);
+        }
+      }
+
+      </script>
+      </body>
+      </html>

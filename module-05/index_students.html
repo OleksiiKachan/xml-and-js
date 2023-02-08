@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <ol id="students"></ol>
+    <script>
+      const xhr = new XMLHttpRequest();
+      //xhttp.onreadystatechange = function () {
+        xhr.onreadystatechange = function (){
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhr.open("GET", "students.xml", true);
+      xhr.send();
+
+      const displayData=(xmlDoc)=>{
+        const listElement = document.getElementById("list");
+        const students=xmlDoc.getElementsByTagName("studnet");
+
+        for (let index = 0; index<students.length; index++){
+            const listItem = document.createElement('li');
+            const student=students[index];
+            const name = student.getElementsByTagName('firstname')[0].childNodes[0]
+            .nodeValue+
+            " "+
+            student.getElementsByTagName('lastname')[0].childNodes[0].nodeValue;
+
+            title.appendChild(document.createTextNode(name));
+            const subtitle= document.createElement('p');
+            const subtitleValue='rollno - '+ student.attributes.rollno.value;
+            subtitle.appendChild(document.createTextNode(subtitleValue));
+            listItem.appendChild(subtitle);
+
+
+            const grade = document.createElement('p');
+            const gradeValue = 'Grade: '+ student.getElementsByTagName('marks')[0].childNodes[0].value;
+            grade.appendChild(document.createTextNode(gradeValue));
+            listItem.appendChild(grade);
+
+            listElement.appendChild(listItem);
+        }
+      }
+    </script>
+  </body>
+</html>
