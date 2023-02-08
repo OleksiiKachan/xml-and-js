@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <meta charset="UTF-8"> -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="result"></p>
+
+    <script>
+        const text = `<customer custID="cust201">
+    <name title="Mr.">John Michael</name>
+    <address>
+      41 West Plankton Avenue, Orlando, FL 32820
+    </address>
+    <phone>(407) 555-3476</phone>
+    <email>jk@example.net</email>
+    <orders>
+      <order orderID="or1089" orderBy="cust201">
+        <orderDate>2021-06-03</orderDate>
+        <items>
+          <item>
+            <itemPrice>$35.99</itemPrice>
+            <itemQty>3</itemQty>
+          </item>
+        </items>
+      </order>
+    </orders>
+  </customer>`;
+
+        const domParser = new DOMParser();
+        const xmlStr = domParser.parseFromString(text, 'text/xml');
+
+        var name = xmlStr.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+        // var name = xmlStr.getElementsByTagName("name");
+        console.log(name);
+
+        // document.getElementById("result").innerText =
+        //     xmlStr.getElementsByTagName("name")[0];
+
+
+
+
+
+    </script>
+</body>
+
+</html>

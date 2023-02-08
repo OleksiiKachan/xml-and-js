@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 05 - Activity</title>
+</head>
+
+<body>
+    <ol id="list"></ol>
+
+    <script>
+        const xmlReq = new XMLHttpRequest();
+
+        //if ready then display
+        xmlReq.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                displayXML(xmlReq.responseXML);
+
+            }
+        }
+
+        xmlReq.open("GET", "people.xml", true);//set open arguments
+        xmlReq.send();//send request
+
+
+        function displayXML(response) {
+            const ppls = response.getElementsByTagName("people");//get the people element
+
+            const list = document.getElementById("list");//get the list tag
+
+            for (var i = 0; i < ppls.length; i++) {//loop for items in people elements
+
+                const pplDict = xmlDict(ppls[i]); //convert xml element to json dict
+                const pplNode = createStrTag(pplDict);//convert json dict to string tag
+                const pplList = createHTML(pplNode);//convert string tag to html
+                // console.log(pplList);
+                list.appendChild(pplList);//append each list to the list tag
+            }
+
+            function xmlDict(xmlEle) {
+                //get full name
+                const fullname = xmlEle.getElementsByTagName("first_name")[0].childNodes[0].nodeValue
+                    + " " + xmlEle.getElementsByTagName("last_name")[0].childNodes[0].nodeValue;
+                // console.log(fullname);
+
+                return { fullname };
+            }
+
+            function createStrTag(dict) {
+
+                //join json dict to string
+                const content = `
+                    <li>${dict.fullname}</li>
+                `;
+
+                return content;
+            }
+
+            function createHTML(strTag) {
+
+                //create a temp node
+                let tempNode = document.createElement("tempNode");
+                strTag = strTag.trim();
+                tempNode.innerHTML = strTag;//create html elements by setting innerHTML into the temp node
+                // console.log(tempNode);
+                return tempNode.firstChild; //the first child node is the one expected
+            }
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
