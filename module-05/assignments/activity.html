@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <!-- Created By : Naitik Panchal -->
+    <!-- N-No: N01512962 -->
+</head>
+<body>
+    <table id="peopleData" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>e-mail</th>
+            <th>Gender</th>
+            <th>IP address</th>
+        </tr>
+    </table>
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                displayData(this.responseXML);
+            }
+        };
+        xhttp.open("GET", "people.xml", true);
+        xhttp.send();
+
+        const displayData = (xml) =>{
+            const people = xml.getElementsByTagName(`person`);
+            const tableData = document.getElementById(`peopleData`);
+            for(let index = 0; index < people.length; index++)
+            {
+                const person = people[index];
+                const parsedPeopleData = parseData(person);
+                const tableData = createTable(parsedPeopleData);
+                peopleData.appendChild(tableData);
+            }
+        }
+
+        const createTable = (person) => {
+            const content = `<tr>
+                <td>${person.personID}</td>
+                <td>${person.firstName} ${person.lastName}</td>
+                <td>${person.email}</td>
+                <td>${person.gender}</td>
+                <td>${person.ipAddress}</td>
+            </tr>`;
+
+            return stringToNode(content);
+        }
+        const parseData = (xml) => {
+            const personID = xml.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+            const firstName= xml.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+            const lastName= xml.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+            const email= xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+            const gender= xml.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue;
+            const ipAddress= xml.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue;
+
+            return {personID,firstName,lastName,email,gender,ipAddress};
+        }
+        function stringToNode(content) {
+            const template = document.createElement(`template`);
+            const html = content.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+           }
+    </script>
+</body>
+
+</html>
