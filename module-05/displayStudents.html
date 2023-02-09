@@ -55,6 +55,14 @@
           );
           listItem.appendChild(grade);
 
+          const nickName = document.createElement('p');
+          nickName.appendChild(
+            document.createTextNode(
+              'Nickname : ' + 
+              student.getElementsByTagName("nickname")[0].nodeValue     )
+          );
+          listItem.appendChild(nickName);
+      
           listElement.appendChild(listItem);
         }
       }

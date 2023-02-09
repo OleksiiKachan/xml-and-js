@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>doc</title>
+  </head>
+  <body>
+    <ul id="people"></ul>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "people.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createPeople(people) {
+        const content = 
+        `<li>
+          <article>
+            <p>ID: ${people.id}</p>
+            <p>Full Name:</strong> ${people.first_name} ${people.last_name}<p>
+          </article>
+        </li>`;
+
+        return stringToNode(content);
+      }
+
+      function parsePeople(xml) {
+        
+        const id =
+          xml.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+        const first_name =
+          xml.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+        const last_name =
+          xml.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+
+        return {
+            id,
+            first_name,
+            last_name,
+        };
+      }
+
+      function displayData(xmlDoc) {
+        const people = xmlDoc.getElementsByTagName(`person`);
+
+        const list = document.getElementById(`people`);
+
+        for (let i= 0; i < people.length; i++) {
+          const element = people[i];
+          
+          const parsedPeople = parsePeople(element);
+
+          const peopleElement = createPeople(parsedPeople);
+          list.appendChild(peopleElement);
+        }
+      }
+    </script>
+  </body>
+</html>
