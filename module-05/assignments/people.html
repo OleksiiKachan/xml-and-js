@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./people.css" />
+    </head>
+    <body>
+        <table id="people"></table>
+        <script>
+            const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+
+          displayData(this.responseXML);
+        }
+      };
+
+      xhttp.open("GET" , "people.xml" , true);
+      xhttp.send();
+
+      function stringToNode(html){
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createPerson(person) {
+        const content = 
+      `<tr>
+        <td>${person.firstname}</td>
+        <td>${person.lastname}</td>
+        <td>${person.email}</td>
+        <td>${person.gender}</td>
+        <td>${person.ipaddress}</td>
+        </tr>`; 
+            return stringToNode(content);
+        }
+
+        function parsepeople(xml) {
+          const firstname = 
+            xml.getElementsByTagName(`firstname`)[0].childNodes[0].nodeValue;
+          const lastname = 
+            xml.getElementsByTagName(`lastname`)[0].childNodes[0].nodeValue;
+          const email = 
+             xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;   
+          const gender = 
+              xml.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue;
+          const ipaddress = 
+              xml.getElementsByTagName(`ipaddress`)[0].childNodes[0].nodeValue;
+
+           return {
+            
+            
+            firstname,
+            lastname,
+            email,
+            gender,
+            ipaddress
+        };
+    }
+
+    function displayData(xmlDocument) {
+
+      const table_for_items = xmlDoc.getElementById(`people_details`);      
+      for (let i = 0; i< people_doc.lemgth ; i++) {
+        const element = people_doc[i];
+        const parsed_people_info = people_info(element);
+        const created_people_info = create_info(parsed_people_info);
+        table_for_items.appendChild(created_people);
+      }
+        
+    }
+    
+    </script>
+    </body>
+    </html>
