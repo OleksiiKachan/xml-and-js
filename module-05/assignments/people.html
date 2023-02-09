@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <table id="result" border="1">
+            <tr>
+                <th>Full Name</th>
+            </tr>
+        </table>
+    
+        <script>
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function()
+            {
+                if(this.readyState === 4 && this.status === 200)
+                {
+                    displayAllPerson(this.responseXML);
+                }
+            };
+            xhr.open("GET", "people.xml", true);
+            xhr.send();
+
+            function displayAllPerson(xml)
+            {
+                
+                const personNodes = xml.getElementsByTagName('person');
+                const listElement = document.getElementById('result');
+
+                for(let index = 0 ; index < personNodes.length ; index++)
+                {
+                    const element = personNodes[index];
+                    const person = parsePerson(element);
+                    const personElement = createPerson(person);
+                    listElement.appendChild(personElement);
+                }
+            }
+
+            function stringToNode(html)
+            {
+                const template = document.createElement(`template`);
+                html = html.trim();
+                template.innerHTML = html;
+                return template.content.firstChild;
+            }
+
+            function createPerson(person)
+            {
+                const content =
+                `<tr>
+                    <td>${person.firstname}  ${person.lastname}</td>
+                </tr>`;
+
+                 return stringToNode(content);
+            }
+
+            function parsePerson(xml)
+            {
+                const firstname = xml.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+                const lastname = xml.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+                    
+                return{
+                    firstname,
+                    lastname
+                };
+            }
+
+        </script>
+    </body>
+</html>
