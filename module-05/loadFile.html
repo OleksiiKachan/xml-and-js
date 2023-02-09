@@ -15,8 +15,15 @@
 
       function displayData(xml) {
         const xmlDoc = xml.responseXML;
-        document.getElementById("text").innerHTML =
-          xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+        var x,i,txt;
+        txt="";
+       
+        x=xmlDoc.getElementsByTagName("name");
+        for(i=0;i<x.length;i++){
+            txt += x[i].getAttribute('title') +"<br>";
+          }
+          document.getElementById("text").innerHTML =txt;
+        
       }
     </script>
   </body>
