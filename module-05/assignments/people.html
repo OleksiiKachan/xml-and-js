@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity</title>
+</head>
+
+<body>
+    <ol id="list"></ol>
+
+    <script>
+        const xmlReq = new XMLHttpRequest();
+
+        //if ready then display
+        xmlReq.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                displayXML(xmlReq.responseXML);
+
+            }
+        }
+
+        xmlReq.open("GET", "people.xml", true);//set open arguments
+        xmlReq.send();//send request
+
+
+        function displayXML(response) {
+            const people_list = response.getElementsByTagName("people");//get the people element
+
+            const list = document.getElementById("list");//get the list tag
+
+            for (var i = 0; i < people_list.length; i++) {//loop for items in people elements
+
+                const people_data = createItm(people_list[i]); //convert xml element to json dict
+                const people_node = createtrim(people_data);//convert json dict to string tag
+                const people_itmes = crHTML(people_node);//convert string tag to html
+                // console.log(people_itmes);
+                list.appendChild(people_itmes);//append each list to the list tag
+            }
+
+            function createItm(xmlItems) {
+                //get full name
+                const fullname = xmlItems.getElementsByTagName("first_name")[0].childNodes[0].nodeValue
+                    + " " + xmlItems.getElementsByTagName("last_name")[0].childNodes[0].nodeValue;
+                // console.log(fullname);
+
+                return { fullname };
+            }
+
+            function createtrim(data) {
+
+                //join json data to string
+                const content = `
+                    <li>${data.fullname}</li>
+                `;
+
+                return content;
+            }
+
+            function crHTML(trim) {
+
+                //create a temp node
+                let tempNode = document.createElement("tempNode");
+                trim = trim.trim();
+                tempNode.innerHTML = trim;//create html elements by setting innerHTML into the temp node
+                // console.log(tempNode);
+                return tempNode.firstChild; //the first child node is the one expected
+            }
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
