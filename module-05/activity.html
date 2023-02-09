@@ -1,3 +1,6 @@
+<!-- Name: Ronak A Mangroliya
+    StudentID: N01530634 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +10,11 @@
     <title>Document</title>
 </head>
 <body>
+   
     <table id="people" border="1px">
         <tr>
-            <td>Full Name</td>
+            <td><b>Full Name</b></td>
+            
         </tr>
     </table>
     <script>
@@ -22,25 +27,26 @@
         xhttp.open('GET', 'people.xml', true);
         xhttp.send();
 
-       const createPersonRow = (parsedPerson) => {
+       function createPersonRow (parsedPerson){
             const content = `
                 <tr>
-                  <td>${parsedPerson.first_name} ${parsedPerson.last_name}</td> 
-                   
+                  <td>${parsedPerson.firstName} ${parsedPerson.lastName}</td> 
+                    
                 </tr>
             `;
 
             return stringToNode(content);
        }
 
-       const parsePerson = (person) => {
-            const first_name = person.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
-            const last_name = person.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+       function parsePerson(person) {
+            const first_Name = person.getElementsByTagName(`firstName`)[0].childNodes[0].nodeValue;
+            const last_Name = person.getElementsByTagName(`lastName`)[0].childNodes[0].nodeValue;
+            
 
-            return {first_name, last_name, email, gender, ip_Address};
+            return {first_Name, last_Name};
        }
 
-       function stringToNode(content) {
+        function stringToNode(content){
         const template = document.createElement(`template`);
         const html = content.trim();
         template.innerHTML = html;

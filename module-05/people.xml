@@ -2,82 +2,82 @@
 <people>
     <person>
         <id>1</id>
-        <first_name>Husain</first_name>
-        <last_name>Zeale</last_name>
+        <firstName>Husain</firstName>
+        <lastName>Zeale</lastName>
         <email>hzeale0@odnoklassniki.ru</email>
         <gender>Male</gender>
-        <ip_Address>143.237.191.245</ip_Address>
+        <ipAddress>143.237.191.245</ipAddress>
     </person>
     <person>
         <id>2</id>
-        <first_name>Michale</first_name>
-        <last_name>Delgado</last_name>
+        <firstName>Michale</firstName>
+        <lastName>Delgado</lastName>
         <email>mdelgado1@paginegialle.it</email>
         <gender>Male</gender>
-        <ip_Address>144.2.126.19</ip_Address>
+        <ipAddress>144.2.126.19</ipAddress>
     </person>
     <person>
         <id>3</id>
-        <first_name>Gaspard</first_name>
-        <last_name>Upwood</last_name>
+        <firstName>Gaspard</firstName>
+        <lastName>Upwood</lastName>
         <email>gupwood2@fastcompany.com</email>
         <gender>Male</gender>
-        <ip_Address>147.85.27.165</ip_Address>
+        <ipAddress>147.85.27.165</ipAddress>
     </person>
     <person>
         <id>4</id>
-        <first_name>Gussy</first_name>
-        <last_name>Dowzell</last_name>
+        <firstName>Gussy</firstName>
+        <lastName>Dowzell</lastName>
         <email>gdowzell3@ox.ac.uk</email>
         <gender>Male</gender>
-        <ip_Address>22.201.167.239</ip_Address>
+        <ipAddress>22.201.167.239</ipAddress>
     </person>
     <person>
         <id>5</id>
-        <first_name>Gussy</first_name>
-        <last_name>Dowzell</last_name>
+        <firstName>Gussy</firstName>
+        <lastName>Dowzell</lastName>
         <email>gdowzell3@ox.ac.uk</email>
         <gender>Male</gender>
-        <ip_Address>22.201.167.239</ip_Address>
+        <ipAddress>22.201.167.239</ipAddress>
     </person>
     <person>
         <id>6</id>
-        <first_name>Tess</first_name>
-        <last_name>Sainte Paul</last_name>
+        <firstName>Tess</firstName>
+        <lastName>Sainte Paul</lastName>
         <email>tsaintepaul5@xinhuanet.com</email>
         <gender>Female</gender>
-        <ip_Address>58.80.74.111</ip_Address>
+        <ipAddress>58.80.74.111</ipAddress>
     </person>
     <person>
         <id>7</id>
-        <first_name>Germaine</first_name>
-        <last_name>Winnett</last_name>
+        <firstName>Germaine</firstName>
+        <lastName>Winnett</lastName>
         <email>gwinnett6@parallels.com</email>
         <gender>Genderqueer</gender>
-        <ip_Address>224.15.42.167</ip_Address>
+        <ipAddress>224.15.42.167</ipAddress>
     </person>
     <person>
         <id>8</id>
-        <first_name>Mei</first_name>
-        <last_name>Swansbury</last_name>
+        <firstName>Mei</firstName>
+        <lastName>Swansbury</lastName>
         <email>mswansbury7@uol.com.br</email>
         <gender>Female</gender>
-        <ip_Address>191.235.203.177</ip_Address>
+        <ipAddress>191.235.203.177</ipAddress>
     </person>
     <person>
         <id>9</id>
-        <first_name>Brietta</first_name>
-        <last_name>Greenfield</last_name>
+        <firstName>Brietta</firstName>
+        <lastName>Greenfield</lastName>
         <email>bgreenfield8@qq.com</email>
         <gender>Male</gender>
-        <ip_Address>72.108.253.70</ip_Address>
+        <ipAddress>72.108.253.70</ipAddress>
     </person>
     <person>
         <id>10</id>
-        <first_name>Guinna</first_name>
-        <last_name>Dagnan</last_name>
+        <firstName>Guinna</firstName>
+        <lastName>Dagnan</lastName>
         <email>gdagnan9@thetimes.co.uk</email>
         <gender>Female</gender>
-        <ip_Address>108.233.202.64</ip_Address>
-    </person>
+        <ipAddress>108.233.202.64</ipAddress>
+    </person>            
 </people>
