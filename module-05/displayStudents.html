@@ -46,6 +46,12 @@
           );
           listItem.appendChild(subtitle);
 
+          const nickname = document.createElement(`p`);
+          const nick = `NickName: `+students.getElementsByTagName(`nickname`)[0].childNodes[0].nodeValue;
+          nickname.appendChild(document.createTextNode(nick));
+          listItem.appendChild(nickname);
+
+
           const grade = document.createElement(`p`);
           grade.appendChild(
             document.createTextNode(
@@ -54,6 +60,8 @@
             )
           );
           listItem.appendChild(grade);
+
+          
 
           listElement.appendChild(listItem);
         }

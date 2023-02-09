@@ -1,49 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <body>
-    <ol id="students"></ol>
-    <script>
-      const xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          displayData(this.responseXML);
-        }
-      };
-      xhttp.open("GET", "students.xml", true);
-      xhttp.send();
 
-      function stringToNode(html) {
-        const template = document.createElement(`template`);
-        html = html.trim();
-        template.innerHTML = html;
-        return template.content.firstChild;
+<body>
+  <ol id="students"></ol>
+
+  <p id="text"></p>
+  <script>
+
+    const xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) {
+
+
+        displayData(this.responseXML);
+
+
       }
+    };
 
-      function displayData(xmlDoc) {
-        const listElement = document.getElementById(`students`);
+    xhr.open("GET", "customers.xml", true);
+    xhr.send();
 
-        const studentNodes = xmlDoc.getElementsByTagName(`student`);
-        for (let index = 0; index < studentNodes.length; index++) {
-          const studentNode = studentNodes[index];
-          const listItem = stringToNode(`<li>
-            <h2>${
-              studentNode.getElementsByTagName(`firstname`)[0].childNodes[0]
-                .nodeValue
-            } ${
-            studentNode.getElementsByTagName(`lastname`)[0].childNodes[0]
-              .nodeValue
-          }</h2>
-          <p>${studentNode.getAttribute(`rollno`)} - ${
-            studentNode.getElementsByTagName(`nickname`)[0].childNodes[0]
-              .nodeValue
-          }</p>
-          <p>${`Grade: ${
-            studentNode.getElementsByTagName(`marks`)[0].childNodes[0].nodeValue
-          }`}</p>
-          </li>`);
-          listElement.appendChild(listItem);
-        }
-      }
-    </script>
-  </body>
+
+    const displayData = (xmlDoc) => {
+
+
+      document.getElementById('text').innerHTML = xmlDoc.getElementsByTagName("name")[0].getAttribute("title") + xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+    };
+
+  const text =`<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="./customers.xsl"?>
+<customers>
+  <customer custID="cust201">
+    <name title="Mr.">John Michael</name>
+    <address>
+      41 West Plankton Avenue, Orlando, FL 32820
+    </address>
+    <phone>(407) 555-3476</phone>
+    <email>jk@example.net</email>
+    <orders>
+      <order orderID="or1089" orderBy="cust201">
+        <orderDate>2021-06-03</orderDate>
+        <items>
+          <item>
+            <itemPrice>$35.99</itemPrice>
+            <itemQty>3</itemQty>
+          </item>
+        </items>
+      </order>
+    </orders>
+  </customer>
+  <customer custID="cust202">
+    <name title="Mrs.">Sarah Michael</name>
+    <address>
+      41 West Plankton Avenue, Orlando, FL 32820
+    </address>
+    <phone>(407) 555-1234</phone>
+    <orders>
+      <order orderID="or1090" orderBy="cust202">
+        <orderDate>2021-10-10</orderDate>
+        <items>
+          <item>
+            <itemPrice>$45.99</itemPrice>
+            <itemQty>1</itemQty>
+          </item>
+        </items>
+      </order>
+    </orders>
+  </customer>
+</customers>`;
+    
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(text,'text/xml');
+
+    
+
+  </script>
+</body>
+
 </html>
