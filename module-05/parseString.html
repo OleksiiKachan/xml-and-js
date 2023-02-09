@@ -28,6 +28,7 @@
       const xmlDoc = parser.parseFromString(text, "text/xml");
 
       document.getElementById("text").innerHTML =
+      xmlDoc.getElementsByTagName("name")[0].getAttribute("title") +" " +
         xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
     </script>
   </body>

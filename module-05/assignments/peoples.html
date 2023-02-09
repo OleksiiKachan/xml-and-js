@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Person document</title>
+</head>
+<body>
+    <table id="people" border="1px">
+        <tr>
+            <td><b><i>Full Name</i></b></td>
+        </tr>
+    </table>
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if(this.readyState == 4 && this.status == 200) {
+                displayData(this.responseXML);
+            }
+        }
+        xhttp.open('GET', 'people.xml', true);
+        xhttp.send();
+
+       function createRow (parsedData) {
+            const content = `
+                <tr>
+                  <td>${parsedData.firstName} ${parsedData.lastName}</td> 
+                </tr>
+            `;
+
+            return stringToNode(content);
+       }
+
+       function parseData (person) {
+            const firstName = person.getElementsByTagName(`firstName`)[0].childNodes[0].nodeValue;
+            const lastName = person.getElementsByTagName(`lastName`)[0].childNodes[0].nodeValue;
+
+            return {firstName, lastName};
+       }
+
+        function stringToNode (content) {
+        const template = document.createElement(`template`);
+        const html = content.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+       }
+
+       function displayData(xmlDoc) {
+            const table = document.getElementById(`people`);
+            const persons = xmlDoc.getElementsByTagName(`person`);
+            for(let i=0; i< persons.length; i++) {
+                const person = persons[i];
+                const parsedData = parseData(person);
+                const personElementRow = createRow(parsedData);
+                table.appendChild(personElementRow);
+            }
+       }
+    </script>
+</body>
+</html>
