@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> Assignment Week 5 </title>
+  </head>
+  <body>
+    <table id="people" border="1">
+      <tr>
+        <th> Name </th>
+        <td> Email </td>
+        <td> Gender </td>
+        <td> IP Address </td> 
+      </tr>
+    </table>
+    <script>
+
+        const xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                displayData(this.responseXML);
+            }
+        };
+
+        xhttp.open("GET", "people.xml", true);
+        xhttp.send();
+
+        // Converting string to node
+      const stringToNode = (html) => {
+        const template = document.createElement(`template`); // creating empty node
+        html = html.trim(); // removing empty data that we don't need.
+        
+        template.innerHTML = html;
+        return template.content.firstChild; // returning the first child node.
+      }
+
+        function createTable (individual) {
+        // Injecting card data into it. 
+        const content = `<tr>
+                            <th> ${individual.fname} ${individual.lname} </th>
+                            <td> ${individual.email} </td>
+                            <td> ${individual.gender} </td>
+                            <td> ${individual.ip} </td>
+                        </tr>`;
+
+        return stringToNode(content); 
+      }
+
+        function parseTable (person) {
+        const fname = person.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+        const lname = person.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+        const email = person.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+        const gender = person.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue;
+        const ip = person.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue;
+
+        return { fname, lname, email, gender, ip };
+      }
+
+        function displayData (xmlDoc) {
+        const people = xmlDoc.getElementsByTagName(`individual`);
+
+        const list = document.getElementById(`people`);
+
+        for (let index = 0; index < people.length; index++) {
+
+          // Breaking down into parts.
+          const element = people[index]; // Take obj and convert into JSON.
+          const parsedTable = parseTable(element); //
+
+          const personElement = createTable(parsedTable);
+          list.appendChild(personElement);
+        }
+      }
+      
+    </script>
+  </body>
+</html>

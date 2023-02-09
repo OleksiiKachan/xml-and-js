@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <ol id="list"></ol>
+    <script>
+
+        const xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                displayData(this.responseXML);
+            }
+        };
+
+        xhr.open("GET", "cutomers.xml", true); // Loading an xml file
+        xhr.send();
+
+        const displayData = (xmlDoc) => {
+            const listElement = document.getElementById("list");
+
+            const students = xmlDoc.getElementByTagName(`student`);
+
+            for(let index = 0; index < students/length; index++) {
+                const list = document.createElement(`li`);
+
+                const student = students[index];
+
+                const title = document.createElement(`h2`);
+
+                const name = student.getElementByTagName(`firstname`)[0].childNodes[0].nodeValue
+                 + " " + student.getElementByTagName('lastname')
+
+                listElement.appendChild(title);
+
+                console.log(student);
+
+                listElement.appendChild(listItem);
+            }
+        }
+
+      
+    </script>
+  </body>
+</html>

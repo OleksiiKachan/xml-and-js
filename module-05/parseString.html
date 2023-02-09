@@ -24,9 +24,10 @@
     </orders>
   </customer>`;
 
-      const parser = new DOMParser();
+      const parser = new DOMParser(); // Parsing html string
       const xmlDoc = parser.parseFromString(text, "text/xml");
 
+      // Here no need to create a function.
       document.getElementById("text").innerHTML =
         xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
     </script>

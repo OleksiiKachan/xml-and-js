@@ -15,17 +15,20 @@
       xhttp.open("GET", "cards.xml", true);
       xhttp.send();
 
+      // Converting string to node
       function stringToNode(html) {
-        const template = document.createElement(`template`);
-        html = html.trim();
+        const template = document.createElement(`template`); // creating empty node
+        html = html.trim(); // removing empty data that we don't need.
+        // const html = value.trim();
         template.innerHTML = html;
-        return template.content.firstChild;
+        return template.content.firstChild; // returning the first child node.
       }
 
       function createCard(card) {
+        // Injecting card data into it. 
         const content = `<li>
   <article>
-    <p>${card.type}</p>
+    <p>${card.type}</p> 
     <h2>${card.number}</h2>
     <div>
       ${card.balance} ${card.currency}
@@ -33,18 +36,21 @@
   </article>
 </li>`;
 
-        return stringToNode(content);
+        return stringToNode(content); //
       }
 
-      function parseCard(xml) {
+      function parseCard(card) {
         const number =
-          xml.getElementsByTagName(`number`)[0].childNodes[0].nodeValue;
+          card.getElementsByTagName(`number`)[0].childNodes[0].nodeValue;
         const type =
-          xml.getElementsByTagName(`type`)[0].childNodes[0].nodeValue;
+          card.getElementsByTagName(`type`)[0].childNodes[0].nodeValue;
         const currency =
-          xml.getElementsByTagName(`currency`)[0].childNodes[0].nodeValue;
+          card.getElementsByTagName(`currency`)[0].childNodes[0].nodeValue;
         const balance =
-          xml.getElementsByTagName(`balance`)[0].childNodes[0].nodeValue;
+          card.getElementsByTagName(`balance`)[0].childNodes[0].nodeValue;
+
+        //const cardObj = { number, type, currency, balance }; same thing
+        //return cardObj;
 
         return {
           number,
@@ -60,8 +66,10 @@
         const list = document.getElementById(`cards`);
 
         for (let index = 0; index < cards.length; index++) {
-          const element = cards[index];
-          const parsedCard = parseCard(element);
+
+          // Breaking down into parts.
+          const element = cards[index]; // Take obj and convert into JSON.
+          const parsedCard = parseCard(element); //
 
           const cardElement = createCard(parsedCard);
           list.appendChild(cardElement);
