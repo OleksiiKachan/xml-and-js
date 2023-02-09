@@ -56,7 +56,15 @@
           listItem.appendChild(grade);
 
           listElement.appendChild(listItem);
-        }
+      const nick = document.createElement(`p`);
+      nick.appendChild(
+        document.createTextNode(
+          'Nick Name: ' + student.getElementsByTagName("nickname")[0].childNodes[0].nodeValue
+        )
+      );
+      listItem.appendChild(nick);
+      listElement.appendChild(listItem);
+      }
       }
     </script>
   </body>

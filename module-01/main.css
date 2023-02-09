@@ -6,6 +6,7 @@ form{
 
 body{
     border: 2px;
-    border-color: black;
+    border-color: rgb(222, 41, 89);
     border-style: solid;
+    color: aliceblue;
 }

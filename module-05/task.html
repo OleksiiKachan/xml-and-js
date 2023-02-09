@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <p id="text"></p>
+  <p id="text1"></p>
+
+  
+  <script>
+const xhr = new XMLHttpRequest();
+console.log(this);
+xhr.onreadystatechange = function (){
+    if (this.readyState == 4 && this.status == 200){
+        displayData(this);
+        // console.log(this.responseXML.getElementsByTagName('name'));
+        // console.log(this.responseXML.getElementsByTagName('name')[0].getAttribute("title"));
+        // document.getElementById('text').innerHTML = this.responseXML.getElementsByTagName('name')[0].getAttribute("title");
+        // document.getElementById('text').innerHTML = this.responseXML.getElementsByTagName('name')[0].childNodes[0].nodeValue;
+        
+
+    }
+};
+xhr.open("GET", "customers.xml", true);
+xhr.send();
+
+const displayData = (res) =>{
+    const xmlDoc = res.responseXML;
+    document.getElementById('text1').innerHTML = xmlDoc.getElementsByTagName('name')[0].attributes.title.nodeValue;
+    document.getElementById('text').innerHTML = xmlDoc.getElementsByTagName('name')[0].childNodes[0].nodeValue;
+
+};
+
+  </script>
+
+
+</body>
+</html>
