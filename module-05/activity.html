@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="people" border="1px">
+        <tr>
+            <td>Full Name</td>
+        </tr>
+    </table>
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if(this.readyState == 4 && this.status == 200) {
+                displayData(this.responseXML);
+            }
+        }
+        xhttp.open('GET', 'people.xml', true);
+        xhttp.send();
+
+       const createPersonRow = (parsedPerson) => {
+            const content = `
+                <tr>
+                  <td>${parsedPerson.first_name} ${parsedPerson.last_name}</td> 
+                   
+                </tr>
+            `;
+
+            return stringToNode(content);
+       }
+
+       const parsePerson = (person) => {
+            const first_name = person.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+            const last_name = person.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+
+            return {first_name, last_name, email, gender, ip_Address};
+       }
+
+       function stringToNode(content) {
+        const template = document.createElement(`template`);
+        const html = content.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+       }
+
+       function displayData(xmlDoc) {
+            const table = document.getElementById(`people`);
+            const persons = xmlDoc.getElementsByTagName(`person`);
+            for(let i=0; i< persons.length; i++) {
+                const person = persons[i];
+                const parsedPerson = parsePerson(person);
+                const personElementRow = createPersonRow(parsedPerson);
+                table.appendChild(personElementRow);
+            }
+        }
+    </script>
+</body>
+</html>
