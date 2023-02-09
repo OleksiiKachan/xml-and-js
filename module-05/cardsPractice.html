@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="cards.css" />
+  </head>
+  <body>
+    <p id="list"></p>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "cards.xml", true);
+      xhttp.send();
+
+   
+
+      const parseCard = card =>{
+        //
+
+        const cardObject ={number,type, currency, balance};
+        //cardObject.number=number;
+
+      }
+
+
+
+      const createCard =(parseCard) =>{
+
+    
+      }
+
+
+
+      const displayData = (xmlDoc) =>{
+        const list = document.getElementById('list');
+
+        const cards=xmlDoc.getElementById("record");
+
+        for(let index=0;index < cards.length; index++){
+
+        }
+      }
+      
+    </script>
+  </body>
+</html>

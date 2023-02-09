@@ -9,6 +9,7 @@
           displayData(this.responseXML);
         }
       };
+
       xhttp.open("GET", "students.xml", true);
       xhttp.send();
 
@@ -41,6 +42,9 @@
             studentNode.getElementsByTagName(`marks`)[0].childNodes[0].nodeValue
           }`}</p>
           </li>`);
+
+          console.log(studentNode);
+
           listElement.appendChild(listItem);
         }
       }
