@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <table border="2">
+      <tr>
+        <th>Name</th>  
+      </tr>
+      <tr>
+        <td>   </td>
+    </tr>
+    </table>
+    <script>
+      const xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhr.open("GET", "people.xml", true);
+      xhr.send();
+
+      const stringToNode = (value) => {
+        const html = value.trim();
+        const template = document.createElement(`template`);
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      const createPerson = (name) => {
+        const content = `
+        <table>
+            <tr>
+                <td>
+              ${name.firstName} ${name.lastName}
+                </td> 
+        </tr>
+        </table> 
+        `;
+
+        return stringToNode(content);
+      }
+
+      const parseInfo = (person) => {
+      
+        const firstName = person.getElementsByTagName(`firstName`)[0].childNodes[0].nodeValue;
+        const lastName = person.getElementsByTagName(`lastName`)[0].childNodes[0].nodeValue;
+     
+        return {
+     
+          firstName,
+          lastName,
+       
+        };
+      }
+
+      const displayData = (xmlDoc) => {
+        const people = xmlDoc.getElementsByTagName(`person`);
+        const tableElement = document.getElementById(`pTable`);
+
+
+        for (let index = 0; index < people.length; index++) {
+          const person = people[index];
+
+          const parsedName = parseName(person);
+          const personElement = createPerson(parsedName);
+
+          tableElement.appendChild(personElement);
+        }
+      }
+
+    </script>
+  </body>
+</html>
