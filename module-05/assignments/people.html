@@ -61,7 +61,9 @@
 
     function displayData(xmlDocument) {
 
-      const table_for_items = xmlDoc.getElementById(`people_details`);      
+      const table_for_items = xmlDoc.getElementById(`people_details`);
+      const people_doc = xmlDoc.getElementsByTagName(`person`);
+      
       for (let i = 0; i< people_doc.lemgth ; i++) {
         const element = people_doc[i];
         const parsed_people_info = people_info(element);

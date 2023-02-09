@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+    <person>
+         <mobile>"+1 (182) 748-1667"</mobile>
+        <name>Rorie Demanche</name>
+        <home>+1 (710) 153-4949</home>
+        <work>+1 (503) 319-3558</work>
+        <email>rdemanche0@foxnews.com</email>
+    </person>
+
+
+    <person> 
+        <mobile>"+1 (982) 536-6860"</mobile>
+        <name>Kelcy Surnam</name>
+        <home>+1 (249) 926-737</home>
+        <work>+1 (208) 363-6588</work>
+        <email>ksurman1@usnews.com</email>
+        </person>
+
+        <person>
+
+         <mobile>"+1 (924) 174-3271"</mobile>
+            <name>Simon Hadden</name>
+            <home>+1 (687) 808-4290 </home>
+            <work>+1 (604) 815-7810</work>
+            <email>sheddan2@alexa.com</email>
+            </person>
+
+            <person>
+
+             <mobile>"+1 (367) 667-0747"</mobile>
+                <name>Chan Supple</name>
+                <home>+1 (577) 165-2495</home>
+                <work>+1 (547) 934-7337 </work>
+                <email>csupple3@123-reg.co.uk</email>
+                </person>
+</data>
