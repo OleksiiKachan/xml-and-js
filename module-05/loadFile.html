@@ -2,21 +2,27 @@
 <html>
   <body>
     <p id="text"></p>
+    <p id="text2"></p>
 
     <script>
       const xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
+          console.log(this);
           displayData(this);
         }
       };
       xhttp.open("GET", "customers.xml", true);
       xhttp.send();
 
+
       function displayData(xml) {
         const xmlDoc = xml.responseXML;
-        document.getElementById("text").innerHTML =
-          xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+        document.getElementById("text").innerHTML = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+        var nameElement = xmlDoc.getElementsByTagName("name")[0];
+        var title = nameElement.getAttribute("title");
+        var name = nameElement.childNodes[0].nodeValue;
+        document.getElementById("text").innerHTML = title + " " + name;
       }
     </script>
   </body>
