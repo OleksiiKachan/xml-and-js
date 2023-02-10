@@ -15,8 +15,13 @@
 
       function displayData(xml) {
         const xmlDoc = xml.responseXML;
-        document.getElementById("text").innerHTML =
-          xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+        document.getElementById("text").innerHTML = "";
+        for (let index = 0; index < xmlDoc.getElementsByTagName("name").length; index++) {
+          document.getElementById("text").innerHTML += `<br>` + xmlDoc.getElementsByTagName("name")[index].attributes.title.value
+        }
+        // document.getElementById("text").innerHTML =
+        //   xmlDoc.getElementsByTagName("name")[0].attributes.title.value;
+        // console.log(xmlDoc.getElementsByTagName("name")[0].attributes.title.value)
       }
     </script>
   </body>
