@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Customer Information</title>
+    <link rel="stylesheet" href="customers.css"/>
+  </head>
+  <body>
+      <div id="customerProfile"><h3> Clients and Orders</h3></div>
+      <script>
+        const xhttp= new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+          if(this.readyState == 4 && this.status == 200){
+            displayData(this.responseXML);
+          }
+        };
+        xhttp.open("GET", "customers.xml", true);
+        xhttp.send();
+
+        function stringToNode(value){
+          const template = document.createElement("template");
+          const html = value.trim();
+          template.innerHTML = html;
+          return template.content.firstChild;
+        }
+
+        function createProfile(profile){
+          const content = 
+          `<article>
+            <div class="profile-info"> 
+              <p>Client ID: ${profile.custid}</p>
+              <p>Name: ${profile.title} ${profile.name}</p>
+              <p>Phone: ${profile.phone}</p>
+              <p>E-mail: ${profile.email}</p>
+              <p>Address: ${profile.address}</p>
+            </div>
+
+            <table id="ordersTable">
+              <thead>
+                <th>Order ID</th>
+                <th>Order Date</th>
+                <th>Item Price</th>
+                <th>Quantity</th>
+              </thead>
+              <tbody>
+                <td>${profile.orderID}</td>
+                <td>${profile.orderDate}</td>
+                <td>${profile.itemPrice}</td>
+                <td>${profile.itemQty}</td>
+              </tbody>
+            </table>
+          </article>`;
+
+              return stringToNode(content);
+        }
+
+        function parseProfile(xml){
+          const title = xml.getElementsByTagName("name")[0].getAttribute("title");
+          const name = xml.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+          const custid = xml.getAttribute("custID");
+          const phone = xml.getElementsByTagName("phone")[0].childNodes[0].nodeValue;
+          var email = "";
+          if (xml.getElementsByTagName("email")[0] != null)
+          email = xml.getElementsByTagName("email")[0].childNodes[0].nodeValue;
+          else email="N/A";
+          const address = xml.getElementsByTagName("address")[0].childNodes[0].nodeValue;
+          const orderID = xml.getElementsByTagName("order")[0].getAttribute("orderID");
+          const orderDate = xml.getElementsByTagName("orderDate")[0].childNodes[0].nodeValue;
+          const itemPrice = xml.getElementsByTagName("itemPrice")[0].childNodes[0].nodeValue;
+          const itemQty = xml.getElementsByTagName("itemQty")[0].childNodes[0].nodeValue;
+
+          return {title, name, custid, phone, email, address, orderID, orderDate, itemPrice, itemQty};
+        }
+
+
+        function displayData(xml){
+          const customerProfile = document.getElementById("customerProfile");
+          const customers = xml.getElementsByTagName('customer');
+
+          for (let index = 0; index < customers.length; index++) {
+          const customer = customers[index];
+          const profile = parseProfile(customer);
+          const customerElement = createProfile(profile);
+          customerProfile.appendChild(customerElement);
+          }
+        }
+    </script>
+</body>
+</html>
