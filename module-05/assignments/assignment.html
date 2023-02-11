@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <ol id="list"></ol>
+        <script>
+
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function (){
+            if (this.readyState == 4 && this.status == 200) {
+            displayData(this.responseXML);
+                }
+            };
+            xhr.open("GET", "customers.xml", true);
+            xhr.send();
+
+                    
+      const displayData =(xmlDoc) =>{
+        const list=document.getElementById('list');
+
+        const customer = xmlDoc.getElementsByTagName('customer');
+
+        for(let index = 0; index < customer.length; index++){
+            const customers = customer[index];
+
+            const parsedCustomers=parseCustomers(customers);
+
+            const customerElement=createCustomers(parsedCustomers);
+            list.appendChild(customerElement);
+        }
+      }
+
+      const stringToNode = value =>{
+                 const template=document.createElement('template');
+                 const html= value.trim();
+                 template.innerHTML = html;
+                 return template.content.firstChild;
+            }
+
+
+            const parseCustomers =customers =>{
+                const name=customers.getElementsByTagName('name')[0].childNodes[0].nodeValue;
+                const address=customers.getElementsByTagName('address')[0].childNodes[0].nodeValue;
+                const phone=customers.getElementsByTagName('phone')[0].childNodes[0].nodeValue;
+                const orderDate=customers.getElementsByTagName('orderDate')[0].childNodes[0].nodeValue;
+                const itemPrice=customers.getElementsByTagName('itemPrice')[0].childNodes[0].nodeValue;
+                const itemQty=customers.getElementsByTagName('itemQty')[0].childNodes[0].nodeValue;
+
+                const custID=customers.getAttribute(`custID`);
+                const title=customers.getAttribute(`title`);
+                const orderID=customers.getAttribute(`orderID`);
+                
+
+                return {
+                    name,
+                    address,
+                    phone,
+                    orderDate,
+                    itemPrice,
+                    itemQty,
+                    custID,
+                    title,
+                    orderID
+                };
+            }
+
+
+            const createCustomers = (parsedCustomers) =>{
+        const content = `
+        <li>
+            <article>
+
+            <h3>Name: ${parsedCustomers.name} -${parsedCustomers.title}
+                <div>--- ${parsedCustomers.custID}</div></h3>
+            <div>phone: ${parsedCustomers.phone}</div>
+            <div>address: ${parsedCustomers.address}</div>
+            <br>
+            
+            <div>order ID: ${parsedCustomers.orderID}</div>
+            <div>order date: ${parsedCustomers.orderDate}</div>
+            <div>item Price: ${parsedCustomers.itemPrice}</div>
+            <div>itemQty: ${parsedCustomers.itemQty}</div>
+            <br>
+
+
+
+            </article>
+
+        </li>
+        `;
+
+        return stringToNode(content);
+      };
+
+
+
+
+        </script>
+    </body>
+</html>
