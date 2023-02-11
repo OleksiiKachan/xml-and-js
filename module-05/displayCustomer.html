@@ -1,0 +1,112 @@
+<html>
+  <head>
+    <title>List of Customers</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-weight: bold;
+      }
+    
+      th, td {
+        border: 2px solid black;
+        padding: 7px;
+        text-align: left;
+        
+      }
+    
+      th {
+        background-color: #33860a;
+        color: white;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <table id="customerList">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+    <script>
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "customers.xml", true);
+
+      xhr.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+          const customers = xhr.responseXML.getElementsByTagName("customer");
+
+          for (let index = 0; index < customers.length; index++) {
+            name = customers[index].getElementsByTagName("name")[0].textContent;
+            address = customers[index].getElementsByTagName("address")[0].textContent;
+            phone = customers[index].getElementsByTagName("phone")[0].textContent;
+            email = customers[index].getElementsByTagName("email")[0] ? customers[index].getElementsByTagName("email")[0].textContent : "N/A";
+
+            orders = customers[index].getElementsByTagName("orders")[0];
+            let orderTable = "";
+            if (orders) {
+              orderTable = `
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Order ID</th>
+                      <th>Order Date</th>
+                      <th>Items</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+              `;
+
+              order = orders.getElementsByTagName("order");
+              for (let len = 0; len < order.length; len++) {
+                orderID = order[len].getAttribute("orderID");
+                orderDate = order[len].getElementsByTagName("orderDate")[0].textContent;
+                item = order[len].getElementsByTagName("item")[0];
+                itemPrice = item.getElementsByTagName("itemPrice")[0].textContent;
+                itemQty = item.getElementsByTagName("itemQty")[0].textContent;
+
+                orderTable += `
+                  <tr>
+                    <td>${orderID}</td>
+                    <td>${orderDate}</td>
+                    <td>
+                      ${itemPrice} x ${itemQty}
+                    </td>
+                  </tr>
+                `;
+              }
+              orderTable += `
+              </tbody>
+            </table>
+          `;
+        }
+
+        const customerRow = `
+          <tr>
+            <td>${name}</td>
+            <td>${address}</td>
+            <td>${phone}</td>
+            <td>${email}</td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              ${orderTable}
+            </td>
+          </tr>
+        `;
+
+        document.querySelector("#customerList tbody").innerHTML += customerRow;
+      }
+    }
+  };
+
+  xhr.send();
+</script>
