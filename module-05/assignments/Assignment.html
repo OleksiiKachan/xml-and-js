@@ -1,0 +1,151 @@
+<! DOCTYPE html>
+<html laang="en">
+
+
+    <head>
+    </head>
+
+
+        <body>
+
+            <table border="10" id="customersData" bgcolor="#708090">
+                <tr>
+                    <th>Customer ID</th>
+                    <th> Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Orders</th>
+                    <th>Items</th>
+                </tr>
+
+            </table>
+
+            <script>
+
+        const xhttp= new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+          if(this.readyState == 4 && this.status == 200){
+            displayData(this.responseXML);
+          }
+        };
+        xhttp.open("GET", "../customers.xml", true);
+        xhttp.send();
+
+        stringToNode = (content)=> {
+         const template = document.createElement('template');
+         content = content.trim();
+         template.innerHTML = content;
+         return template.content.firstChild;
+        }
+
+
+        CustomerInformation=(customer) =>
+       {
+         const content = `
+         <tr>
+         <td align="center">   ${customer.id}  </td>
+         <td align="center">   ${customer.title} ${customer.name}  </td>
+         <td align="center">   ${customer.address} </td>
+         <td align="center">   ${customer.phone}   </td>
+         <td align="center">   ${customer.email}   </td>
+         <td>
+           <table border="5" bgcolor="#708090">
+            <tr>
+                <th> OrderID: </th>
+                <th> OrderBy</th>
+                <th> OrderDate </th>
+            </tr>
+             <tr>
+               <td align="center"> ${customer.orderID}</td>
+               <td align="center"> ${customer.orderBy}</td>
+               <td align="center"> ${customer.orderDate}</td>
+             </tr>
+           
+           </table>
+         </td>
+         <td>
+           <table border="5" bgcolor="#708090">
+            <tr>
+                <th> Item price </th>
+                <th> Item quantity </th>
+            </tr>
+            <tr>
+            </tr>
+             <tr>
+               <td align="center"> ${customer.itemPrice}</td>
+               <td align="center"> ${customer.itemQty}</td>
+            </tr>
+            <tr>
+               
+             </tr>
+           </table>
+         </td>
+       </tr>
+         `;
+              return stringToNode(content);
+        }
+
+        parseInfo=(element)=>{
+         const id = element.attributes[0].nodeValue;
+         const title =
+           element.getElementsByTagName("name")[0].attributes[0].nodeValue;
+         const name =
+           element.getElementsByTagName('name')[0].childNodes[0].nodeValue;
+         const address =
+           element.getElementsByTagName('address')[0].childNodes[0].nodeValue;
+         const phone =
+           element.getElementsByTagName('phone')[0].childNodes[0].nodeValue;
+
+         if (!element.getElementsByTagName('email')[0]) {
+           var email = "email is not present.";
+         } 
+         else
+          {
+           var email =
+             element.getElementsByTagName('email')[0].childNodes[0].nodeValue;
+         }
+
+         const orderID =
+           element.getElementsByTagName('order')[0].attributes[0].nodeValue;
+         const orderBy =
+           element.getElementsByTagName('order')[0].attributes[1].nodeValue;
+         const orderDate =
+           element.getElementsByTagName('orderDate')[0].childNodes[0].nodeValue;
+         const itemPrice =
+           element.getElementsByTagName('itemPrice')[0].childNodes[0].nodeValue;
+         const itemQty =
+           element.getElementsByTagName('itemQty')[0].childNodes[0].nodeValue;
+
+         return {
+           id,
+           title,
+           name,
+           address,
+           phone,
+           email,
+           orderID,
+           orderBy,
+           orderDate,
+           itemPrice,
+           itemQty,
+         };
+       }
+
+       function displayData(xmlDoc) {
+         const customers = xmlDoc.getElementsByTagName('customer');
+         const list = document.getElementById('customersData');
+
+         for (let position = 0; position < customers.length; position++) {
+           const element = customers[position];
+           const parsedCustomer = parseInfo(element);
+
+           const customerElement = CustomerInformation(parsedCustomer);
+           list.appendChild(customerElement);
+         }
+       }
+            </script>
+
+        </body>
+
+</html>

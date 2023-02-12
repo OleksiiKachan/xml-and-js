@@ -19,32 +19,25 @@
       xhr.open("GET", "people.xml", true);
       xhr.send();
 
-      const stringToNode = (value) => {
+      const stringToNode = (html) => {
         const html = value.trim();
-        const template = document.createElement(`template`);
+        const template = document.createElement("template");
         template.innerHTML = html;
         return template.content.firstChild;
       }
 
-      const createPerson = (name) => {
-        const content = `
-        <table>
-            <tr>
-                <td>
-              ${name.firstName} ${name.lastName}
-                </td> 
-        </tr>
-        </table> 
-        `;
+      const createPerson = (person)  => {
+        const content = 
+        `<tr>
+                <td> ${person.firstName} ${person.lastName}</td> 
+                </tr>`;
 
         return stringToNode(content);
       }
 
-      const parseInfo = (person) => {
-      
-        const firstName = person.getElementsByTagName(`firstName`)[0].childNodes[0].nodeValue;
-        const lastName = person.getElementsByTagName(`lastName`)[0].childNodes[0].nodeValue;
-     
+      const parseName = (xml) => {     
+        const firstName = xml.getElementsByTagName("first_name")[0].childNodes[0].nodeValue;
+        const lastName = xml.getElementsByTagName("last_name")[0].childNodes[0].nodeValue;
         return {
      
           firstName,
@@ -54,17 +47,17 @@
       }
 
       const displayData = (xmlDoc) => {
-        const people = xmlDoc.getElementsByTagName(`person`);
-        const tableElement = document.getElementById(`pTable`);
+        const people = xmlDoc.getElementsByTagName('person');
+        const list = document.getElementById('people');
 
 
         for (let index = 0; index < people.length; index++) {
-          const person = people[index];
+          const element = people[index];
 
-          const parsedName = parseName(person);
+          const parsedName = parseName(element);
           const personElement = createPerson(parsedName);
 
-          tableElement.appendChild(personElement);
+          list.appendChild(personElement);
         }
       }
 
