@@ -39,3 +39,15 @@
     </orders>
   </customer>
 </customers>
+
+<!--
+  custID
+  name
+  address
+  email
+  orders:
+    orderID
+    orderDate
+    itemQty
+    itemPrice
+-->

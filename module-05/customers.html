@@ -1,0 +1,93 @@
+<!--
+    STUDENT NAME: RAVJIT SINGH
+    STUDENT ID: N01542323
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table, th, td {
+            border: 2px solid;
+            border-collapse: collapse;
+        }
+        #customerTable{
+            width: 75%;
+        }
+        th {
+            background-color: #0F0;
+        }
+        tr:nth-child(odd) {
+            background-color: #e4e3e3;
+        }
+        h1{
+            text-decoration: underline;
+        }
+    </style>
+    <title>CUSTOMERS</title>
+</head>
+<body>
+    <h1>CUSTOMERS</h1>
+    <table id = "customerTable">
+        <tr>
+            <th>Customer ID</th>
+            <th>Customer Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Orders</th>
+        </tr>
+    </table>
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                displayData(this.responseXML);
+            }
+        };
+        xhttp.open("GET", "customers.xml", true);
+        xhttp.send();
+
+        function stringToNode(html){
+            const template = document.createElement(`template`);
+            html = html.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+        }
+
+        function displayData(xmlDoc){
+            const listElement = document.getElementById(`customerTable`);
+
+            const customerNodes = xmlDoc.getElementsByTagName(`customer`);
+            const orderNodes = xmlDoc.getElementsByTagName(`order`);
+            const itemNodes = xmlDoc.getElementsByTagName(`item`);
+
+            for(let index = 0; index < customerNodes.length; index++) {
+                const current_customerNode = customerNodes[index];
+                const current_orderNode = orderNodes[index];
+                const current_itemNode = itemNodes[index];
+
+                const listItem = stringToNode(
+                    `<tr>
+                        <td>${current_customerNode.getAttribute(`custID`)}</td>
+                        <td>${current_customerNode.getElementsByTagName(`name`)[0].childNodes[0].nodeValue}</td>
+                        <td>${current_customerNode.getElementsByTagName(`address`)[0].childNodes[0].nodeValue}</td>
+                        <td>${current_customerNode.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue}</td>
+                        <td>
+                            <ul>
+                                <li><b>Order ID: </b>${current_orderNode.getAttribute(`orderID`)}</li>
+                                <li><b>Order-date: </b>${current_orderNode.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue}</li>
+                                <li><b>Item Quantity: </b>${current_itemNode.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue}</li>
+                                <li><b>Item Price: </b>${current_itemNode.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue}</li>
+                            </ul>
+                        </td>
+                    </tr>`
+                )
+
+                listElement.append(listItem);
+            }
+        }
+    </script>
+</body>
+</html>
