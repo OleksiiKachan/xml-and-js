@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>Assigntment5</title>
+        <style>
+            h2{
+                text-decoration: underline;
+                color: brown;
+            }
+        </style>
+    </head>
+  <body>
+    <h2>Order List</h2>
+
+    <table id="custTable">
+      <tr>
+        <th>Order Number</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Ordered On</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+
+    </table>
+    <script>
+      const xmlReq = new XMLHttpRequest();
+      xmlReq.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          renderData(this.responseXML);
+        }
+      };
+      xmlReq.open("GET", "../customers.xml", true);
+      xmlReq.send();
+
+      const stringToNode = (value) => {
+        const html = value.trim();
+        const template = document.createElement(`template`);
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      const createCustomer = (info) => {
+        const content = `
+          <tr>
+            <td>${info.orderID}</td>
+            <td>${info.fName}</td>
+            <td>${info.address}</td>
+            <td>${info.phone}</td>
+            <td>${info.email}</td>
+            <td>${info.orderDate}</td>
+            <td>${info.itemQty}</td>
+            <td>${info.itemPrice}</td>
+          </tr>
+        `;
+
+        return stringToNode(content);
+      }
+
+      const parseinfo = (people) => {
+        const title = people.getElementsByTagName(`name`)[0].attributes[`title`].nodeValue;
+        const name = people.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+        const fName = title + " " + name;
+        const address = people.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+        const phone = people.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+        const email_attribute = people.getElementsByTagName(`email`)[0];
+        if (email_attribute != null) {
+          email = people.getElementsByTagName(`email`)[0].childNodes[0].nodeValue
+        } else {
+          email = "";
+        };
+        const order = people.getElementsByTagName(`order`)[0]
+        const orderID = order.attributes[`orderID`].nodeValue.toUpperCase();
+        const orderDate = order.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
+        const item = order.getElementsByTagName(`item`)[0]
+        const itemPrice = item.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
+        const itemQty = item.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
+
+        return {
+          fName,
+          address,
+          phone,
+          email,
+          orderID,
+          orderDate,
+          itemPrice,
+          itemQty
+        };
+      }
+
+      const renderData = (xmlDoc) => {
+        const customers = xmlDoc.getElementsByTagName(`customer`);
+        const listElement = document.getElementById(`custTable`);
+
+
+        for (let index = 0; index < customers.length; index++) {
+          const customer = customers[index];
+
+          const parsedinfo = parseinfo(customer);
+          const customerElement = createCustomer(parsedinfo);
+
+          listElement.appendChild(customerElement);
+        }
+      }
+
+    </script>
+  </body>
+</html>
