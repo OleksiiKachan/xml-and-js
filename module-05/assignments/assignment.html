@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="assignment.css" />
+    </head>
+    <body>
+        <ol id = "custList"></ol>
+        <script>
+            const custxht = new XMLHttpRequest();
+            custxht.onreadystatechange = function(){
+                if(this.readyState === 4 && this.status === 200){
+                    displayData(this.responseXML);
+                }
+            };
+            custxht.open("GET","customers.xml",true);
+            custxht.send();
+
+            function stringToNode(mycontent)
+            {
+                const template = document.createElement(`template`);
+                mycontent = mycontent.trim();
+                template.innerHTML = mycontent;
+                return template.content.firstChild;
+            }
+            function makeCustomerList(rec)
+            {
+                const content = `<li>
+                    <article>
+                        <p>Customer ID: ${rec.custID}</p>
+                        <p>Customer Name: ${rec.title} ${rec.name}</p>
+                        
+                        <p>Customer Address: ${rec.addr}</p>
+                        <p>Customer Phone Number: ${rec.phn}</p>
+                        <p>Customer Email: ${rec.email}</p>
+                        <p>OrderID: ${rec.ordr}</p>
+                        <p>Order By: ${rec.ordrBy}</p>
+                        <p>Order Date: ${rec.orderdt}</p>
+                        <p>Order Price ${rec.price}</p>
+                        <p>Order Quantity ${rec.qty}</p>
+
+                    </article>
+                    </li>`;
+                return stringToNode(content);
+
+            }
+
+            function parsedRecord(xml)
+            {
+                const custID = xml.getAttribute(`custID`);
+                const title = xml.getElementsByTagName(`name`)[0].getAttribute(`title`);
+                
+                const name = xml.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+                const addr = xml.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+                const phn = xml.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+                const email = xml.getElementsByTagName(`email`)[0]?xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue:"EMail Not Found";
+                const ordr = xml.getElementsByTagName(`order`)[0].getAttribute(`orderID`);
+                const ordrBy = xml.getElementsByTagName(`order`)[0].getAttribute(`orderBy`);
+                const orderdt = xml.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
+                const price = xml.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
+                const qty = xml.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
+                
+                
+                
+                
+                return{
+                    custID,
+                    title,
+                    name,
+                    addr,
+                    phn,
+                    email,
+                    ordr,
+                    ordrBy,
+                    orderdt,
+                    price,
+                    qty,
+                };
+
+            }
+            function displayData(xmlDoc){
+                const custrec = xmlDoc.getElementsByTagName(`customer`);
+                const list = document.getElementById(`custList`);
+
+                for(let ind = 0;ind<custrec.length;ind++)
+                {
+                    const el = custrec[ind];
+                    const parsedRec = parsedRecord(el);
+
+                    const custElement = makeCustomerList(parsedRec);
+                    list.appendChild(custElement);
+                }
+            }
+        </script>
+    </body>
+</html>
