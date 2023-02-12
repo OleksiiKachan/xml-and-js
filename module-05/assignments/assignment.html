@@ -46,8 +46,8 @@
                 const itemQty=customers.getElementsByTagName('itemQty')[0].childNodes[0].nodeValue;
 
                 const custID=customers.getAttribute(`custID`);
-                const title=customers.getAttribute(`title`);
-                const orderID=customers.getAttribute(`orderID`);
+                const title=customers.getElementsByTagName('name')[0].getAttribute(`title`);
+                const orderID=customers.getElementsByTagName('order')[0].getAttribute(`orderID`);
                 
 
                 return {
@@ -69,8 +69,8 @@
         <li>
             <article>
 
-            <h3>Name: ${parsedCustomers.name} -${parsedCustomers.title}
-                <div>--- ${parsedCustomers.custID}</div></h3>
+            <div><h3>Name: ${parsedCustomers.name} --- ${parsedCustomers.custID}</h3></div>
+            <div><h4>Title: ${parsedCustomers.title}</h4></div>
             <div>phone: ${parsedCustomers.phone}</div>
             <div>address: ${parsedCustomers.address}</div>
             <br>
