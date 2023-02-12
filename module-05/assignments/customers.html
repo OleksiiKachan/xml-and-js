@@ -106,10 +106,6 @@
                             const itemPrice = xmlDoc.getElementsByTagName(`itemPrice`);
                             const itemQty = xmlDoc.getElementsByTagName(`itemQty`);
 
-                            // document.createTextNode(
-                            //               `Item price: ` + itemPrice[index].childNodes[0].data + ` ` +
-                            //               `Item Quantity: ` + itemQty[index].childNodes[0].data
-                            //        )
                             const price = document.createElement(`li`)
                             price.appendChild(
                                    document.createTextNode(`Item price: ` + itemPrice[index].childNodes[0].data)
