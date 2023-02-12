@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Customers</title>
+  </head>
+  <body>
+    <table id="customersTable" border="2">
+        <tr>
+            <th>Customer ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Order ID</th>
+            <th>Order Date</th>
+            <th>Item Price</th>
+            <th>Item Qty</th>
+        </tr>
+    </table>
+    <ol id="customersTable"></ol>
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+        };
+        xhttp.open("GET", "../customers.xml", true);
+        xhttp.send();
+
+        function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+        }
+
+        function createCustomer(customer) {
+        const content = `
+        <tr>
+            <td>${customer.custId}</td>
+            <td>${customer.name}</td>
+            <td>${customer.address}</td>
+            <td>${customer.phone}</td>
+            <td>${customer.email}</td>
+            <td>${customer.orderId}</td>
+            <td>${customer.orderDate}</td>
+            <td>${customer.itemPrice}</td>
+            <td>${customer.itemQty}</td>
+        </tr>
+        `;
+
+        /*const content = `<li>
+    <article>
+        <p>${customer.custId}</p>
+        <h2>${customer.name}</h2>
+        <div>
+            ${customer.address} 
+        </div>
+        <div>
+            ${customer.phone}
+        </div>
+        <div>
+            ${customer.email}
+        </div>
+    </article>
+    <article>
+        <p>${customer.orderId}</p>
+        <p>${customer.orderDate}</p>
+        <div>
+            ${customer.itemPrice} ${customer.itemQty}
+        </div>
+    </article>
+</li>`;*/
+
+        return stringToNode(content);
+        }
+
+        const parseCustomer = (customer) => {
+            const custId = customer.getAttribute(`custID`);
+            const name = customer.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+            const address = customer.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+            const phone = customer.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+            const email = customer.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+            const orderId= customer.getElementsByTagName(`order`)[0].getAttribute(`orderID`);
+            const orderDate = customer.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
+            const itemPrice = customer.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
+            const itemQty = customer.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
+            return {custId,name, address, phone, email,orderId,orderDate,itemPrice,itemQty};
+       }
+
+
+
+        function displayData(xmlDoc) {
+        
+        const custTable = document.getElementById(`customersTable`);
+
+        const customer=xmlDoc.getElementsByTagName(`customer`);
+
+        for (let index = 0; index < customer.length; index++) {
+
+          const element = customer[index];
+          const parsedCustomer = parseCustomer(element);
+          const customersElement = createCustomer(parsedCustomer);
+          custTable.appendChild(customersElement);
+
+        }
+      }
+
+    </script>
+  </body>
+</html>
