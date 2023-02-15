@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+        }
+        
+        li:not(:last-child) {
+            margin-bottom: 20px;
+        }
+        
+        article {
+            background-color: rgb(149, 147, 147);
+            border: 0px solid rgb(0, 0, 0);
+            
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+        }
+        
+        p {
+            margin: 10px 0px;
+            font-size: 16px;
+            color: rgb(0, 0, 0);
+        }
+
+        a {
+            font-size: 16px;
+            color: rgb(0, 0, 0);
+        }
+        
+        h2 {
+            margin: 40px 0;
+            font-size: 32px;
+        }
+        
+        article > div {
+            align-self: flex-end;
+            font-weight: bold;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Books Catalog</h1>
+        <ol id="books"></ol>
+        <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+            displayData(this.responseXML);
+            }
+        };
+        xhttp.open("GET", "Question11.xml", true);
+        xhttp.send();
+
+        function stringToNode(html) {
+            const template = document.createElement(`template`);
+            html = html.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+        }
+
+        function createBook(b) {
+            const content = `<li>
+    <article>
+        <div>${b.category}</div>
+        <h2>${b.title}</h2>
+        <p>
+        Authors: ${b.a_name}
+        </p>
+        <a>
+            Book was written in
+            ${b.year}
+        </a>
+        <a>Retail price is
+            $${b.price}</a>
+    </article>
+    </li>`;
+
+            return stringToNode(content);
+        }
+
+        function parseBook(xml) {
+            const category =
+            xml.getElementsByTagName(`category`)[0].childNodes[0].nodeValue;
+            const title =
+            xml.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
+            const author =
+            xml.getElementsByTagName(`author`)[0].childNodes[0].nodeValue;
+            const year =
+            xml.getElementsByTagName(`year`)[0].childNodes[0].nodeValue;
+            const price =
+            xml.getElementsByTagName(`price`)[0].childNodes[0].nodeValue;
+            const a_name =
+            xml.getElementsByTagName(`a_name`)[0].childNodes[0].nodeValue;
+
+            return {
+                category,
+            title,
+            author,
+            year,
+            price,
+            a_name,
+            };
+        }
+
+        function displayData(xmlDoc) {
+            const books = xmlDoc.getElementsByTagName(`book`);
+
+            const list = document.getElementById(`books`);
+
+            for (let index = 0; index < books.length; index++) {
+
+            const element = books[index];
+            const parsedBook = parseBook(element);
+            const bookElement = createBook(parsedBook);
+            list.appendChild(bookElement);
+            }
+        }
+        </script>
+    </body>
+</html>
