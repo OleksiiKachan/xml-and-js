@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Q05</title>
+    <link rel="stylesheet" href="q03style.css" />
+  </head>
+  <body>
+    <h1>Books Catalog</h1>
+
+    <div id="data"></div>
+    <script>
+      // get the list element
+      const dataDiv = document.getElementById("data");
+
+      // create an object of XMLHttpRequest class
+      var xmlReq = new XMLHttpRequest();
+
+      //if the xml is ready
+      xmlReq.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          renderData(this.responseXML); //pass xml to the method
+        }
+      };
+
+      //set url and method
+      xmlReq.open("GET", "./q03.xml", true);
+      xmlReq.send(); //send request
+
+      /**
+       * Convert xml to Json structure.
+       * Extract the data fromt the xml and assign to a Json dict.
+       *
+       * @param (xmlElement) The acquired xml element
+       */
+      function xmlToJsonDict(element) {
+        const title =
+          element.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+        const year =
+          element.getElementsByTagName("year")[0].childNodes[0].nodeValue;
+        const price =
+          element.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+        const category =
+          element.getElementsByTagName("category")[0].childNodes[0].nodeValue;
+
+        const authors = element.getElementsByTagName("author");
+        console.log(authors.length);
+
+        var authorList = [];
+        for (var i = 0; i < authors.length; i++) {
+          let name = authors[i].childNodes[0].nodeValue;
+          authorList.push(name);
+        }
+
+        // console.log(authorList);
+
+        var result = {
+          title,
+          year,
+          authorList,
+          price,
+          category,
+        };
+
+        return result;
+      }
+
+      /**
+       * Convert Json dict to html in a string.
+       *
+       * @param (json) the json dict to be converted.
+       */
+      function jsonDictToHtmlStr(dict) {
+        const content = `
+        <article>
+      <p class="cat">${dict.category}</p>
+
+      <h3>${dict.title}</h3>
+      <p>${dict.authorList}</p>
+      <p>Book was written in ${dict.year}</p>
+      <p>Retail price is $ ${dict.price}</p>
+    </article>`;
+        return content;
+      }
+
+      /**
+       *Convert html string to html element.
+       *
+       * @param (String) the html in string form to be converted.
+       */
+      function strToHtml(strHtml) {
+        let temp = document.createElement("temElement");
+        strHtml = strHtml.trim();
+        temp.innerHTML = strHtml;
+        console.log(temp.firstChild);
+        return temp.firstChild;
+      }
+
+      /**
+       * Render data in xml to html
+       *
+       * @param (xml) The xml to be rendered.
+       */
+      function renderData(responseXML) {
+        const book = responseXML.getElementsByTagName("book");
+        //loop all customer elements
+        for (let i = 0; i < book.length; i++) {
+          const customer_Dict = xmlToJsonDict(book[i]); //from xml to json
+
+          // console.log(customer_Dict);
+
+          const customer_Str = jsonDictToHtmlStr(customer_Dict); //from json to str
+          const customer_HtmlElement = strToHtml(customer_Str); //from str to html
+
+          dataDiv.appendChild(customer_HtmlElement); //append html to the list
+        }
+      }
+    </script>
+  </body>
+</html>

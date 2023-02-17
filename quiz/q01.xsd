@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Q01
+    name: Wenhao Fang 
+    id: n01555914 
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="bookinfo" type="BookinfoType" />
+
+    <xs:complexType name="BookinfoType">
+        <xs:sequence>
+            <xs:element name="book" type="BookType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="BookType">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string" />
+            <xs:element name="authors" type="AuthorsType" />
+            <xs:element name="year" type="xs:string" />
+            <xs:element name="price" type="xs:string" />
+            <xs:element name="category" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AuthorsType">
+        <xs:sequence>
+            <xs:element name="author" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
