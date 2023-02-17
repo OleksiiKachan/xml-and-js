@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <ol id="book"></ol>
+        <script>
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function()
+            {
+                if (this.readyState == 4 && this.status == 200)
+                {
+                    displayData(this.responseXML);
+
+                }
+            };
+
+            xhttp.open("GET", "..//books.xml", true);
+            xhttp.send();
+
+            function stringToNode(html)
+            {
+                const template = document.createElement(`template`);
+                html = html.trim();
+                template.innerHTML = html;
+                return template.content.firstChild;
+            }
+
+            function displayData(xmlDoc)
+            {
+                const listElement = document.getElementByTagName(`book`);
+                const userNodes = document.getElementsByTagName(`book`);
+                
+                for (let index = 0; index < userNodes.length; index++)
+                {
+                    const uderNode = userNodes[index];
+                    console.log(userNode.getElementsByTagName(`name`))
+                    const userNode = userNodes[index];
+                    const listItem = stringToNode(`<li type="i">
+                    <h1>${
+                    userNode.getElementsByTagName(`name`)[0].attributes[0].nodeValue
+                    } 
+                    </h1>
+
+                    <p> Author: ${userNode.getElementsByTagName(`author`)[0].childNodes[0].nodeValue} </p>
+                    <p> Year ${userNode.getElementsByTagName(`Year`)[0].childNodes[0].nodeValue} </p>
+                    <p>${`Price: ${
+                        userNode.getElementsByTagName(`Price`).childNodes[0].nodeValue
+                    }`}</p>
+                    </li>`;
+
+                    
+                
+
+                    listElement.appendChild(listItem);
+                }
+                displayBookData(xmlDoc)
+            }
+      
+            function displayBookData(xmlDoc) 
+            {
+                const bookNodes = xmlDoc.getElementsByTagName(`book`);
+                for (let index = 0; index < bookNodes.length; index++) 
+                {
+                    const bookNode = bookNodes[index];
+                    console.log(bookNode.getElementsByTagName(`name`)[0].children[0].getElementsByTagName('name')[0].childNodes[0].nodeValue)
+                    `<li>
+                    <p> Author: ${bookNode.getElementsByTagName(`Author`)[0].childNodes[0].nodeValue} </p>
+                    <p> Year: ${bookNode.getElementsByTagName(`Year`)[0].childNodes[0].nodeValue} </p>
+                    <p> Retail Price: ${bookNode.getElementsByTagName(`Price`)[0].childNodes[0].nodeValue} </p>
+                    </li>`);
+                    bookElement.appendChild(orderBooks);
+                }
+            }
+        </script>
+    </body>
+</html>
+                
+
+        
