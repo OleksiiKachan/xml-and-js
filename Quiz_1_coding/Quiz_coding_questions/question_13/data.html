@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* border-radius: 10px; */
+        }
+        
+        li:not(:last-child) {
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+        
+        article {
+            border: 0px solid rgb(255, 255, 255);
+            /* background-color: rgb(196, 196, 196); */
+            border-radius: 10px;            
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+        }
+        
+        p {
+            margin: 6px 0px;
+            font-size: 16px;
+            margin-left: 7px;
+            color: rgb(0, 0, 0);
+        }
+
+        a {
+            font-size: 16px;
+            margin-left: 7px;
+            color: rgb(0, 0, 0);
+            
+        }
+        
+        h2 {
+            margin: 40px 0;
+            font-size: 32px;
+            
+            
+        }
+        
+        /* article > div {
+            align-self: flex-end;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-top: 10px;
+            color: black
+        } */
+        </style>
+    </head>
+    <body>
+        <h1>Books Catalog</h1>
+        <ol id="books"></ol>
+        <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+            displayData(this.responseXML);
+            }
+        };
+        xhttp.open("GET", "data.xml", true);
+        xhttp.send();
+
+         stringToNode=(htmldata)=> {
+            const template = document.createElement(`template`);
+            htmldata = htmldata.trim();
+            template.innerHTML = htmldata;
+            return template.content.firstChild;
+        }
+
+        function createBook(b) {
+            const content = `<li>
+    <article>
+        
+        <h2>${b.title}</h2>
+        <a>
+            Book was written in
+            ${b.year}
+        </a>
+        <a>Retail price is
+            $${b.price}</a>
+    </article>
+    </li>`;
+
+            return stringToNode(content);
+        }
+
+         parseBook=(xml)=> {
+            const category =
+            xml.getElementsByTagName(`category`)[0].childNodes[0].nodeValue;
+            const title =
+            xml.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
+            const author =
+            xml.getElementsByTagName(`author`)[0].childNodes[0].nodeValue;
+            const year =
+            xml.getElementsByTagName(`year`)[0].childNodes[0].nodeValue;
+            const price =
+            xml.getElementsByTagName(`price`)[0].childNodes[0].nodeValue;
+            const name =
+            xml.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+
+            return {
+                category,
+            title,
+            author,
+            year,
+            price,
+            name,
+            };
+        }
+
+         displayData=(xmlDoc)=>{
+            const books = xmlDoc.getElementsByTagName(`book`);
+
+            const booklist = document.getElementById(`books`);
+
+            for (let index = 0; index < books.length; index++) {
+
+            const element = books[index];
+            const parsedBook = parseBook(element);
+            const bookElement = createBook(parsedBook);
+            booklist.appendChild(bookElement);
+            }
+        }
+        </script>
+    </body>
+</html>
