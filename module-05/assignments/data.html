@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="books.css" />
+  </head>
+  <body>
+    <h2>Books Catalog</h2>
+    <div id="books">
+
+    </div>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "data.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createBookCard(book) {
+        const content = `
+        <div class="card">
+          <h3 class="category">${book.category}</h3>
+          <div class="container">
+            <h2>${book.title}</h2> 
+            <p> Authors: ${book.author}</p> 
+            <p> Book was written in ${book.year} <br> Retail price is ${book.price}</p> 
+         </div>
+       </div>
+       <br>`;
+
+        return stringToNode(content);
+      }
+
+      function parseBookCard(xml) {
+        let author = '';
+        const authors = xml.getElementsByTagName(`author`);
+        for (let index = 0; index < authors.length; index++) {
+          const element = authors[index];
+          author += element.innerHTML+' , '
+        }
+
+        const title =
+          xml.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
+
+        const year =
+          xml.getElementsByTagName(`year`)[0].childNodes[0].nodeValue;
+
+
+        const price =
+          xml.getElementsByTagName(`price`)[0].childNodes[0].nodeValue;
+        const category =
+          xml.getElementsByTagName(`category`)[0].childNodes[0].nodeValue;
+
+        return {
+            title,
+            author,
+            year,
+            price,
+            category
+        };
+      }
+
+      function displayData(xmlDoc) {
+        const books = xmlDoc.getElementsByTagName(`book`);
+
+        const list = document.getElementById(`books`);
+
+        for (let index = 0; index < books.length; index++) {
+          const element = books[index];
+          const parsedBook = parseBookCard(element);
+
+          const bookElement = createBookCard(parsedBook);
+          list.appendChild(bookElement);
+        }
+      }
+    </script>
+  </body>
+</html>
