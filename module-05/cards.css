@@ -32,4 +32,5 @@ h2 {
 
 article > div {
   align-self: flex-end;
+  font-weight: bold;
 }
