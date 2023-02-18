@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="quiz1.css" />
+    </head>
+    <body>
+        <p id = "p1"></p>
+        <script>
+            const custxht = new XMLHttpRequest();
+            custxht.onreadystatechange = function(){
+                if(this.readyState === 4 && this.status === 200){
+                    displayData(this.responseXML);
+                }
+            };
+            custxht.open("GET","quiz1.xml",true);
+            custxht.send();
+
+            function stringToNode(mycontent)
+            {
+                const template = document.createElement(`template`);
+                mycontent = mycontent.trim();
+                template.innerHTML = mycontent;
+                return template.content.firstChild;
+            }
+            function makeBookList(rec)
+            {
+                const content = `
+                    <article>
+                        <h4>${rec.ctg}</h4>
+                        <h2>${rec.title}</h2>
+                        <p>Authors: ${rec.author}</p>
+                        <p>Book was written in: ${rec.year}</p>
+                        <p>Retail price is: ${rec.price} </p>
+
+                    </article>
+                    <br>
+                    
+                    `;
+                return stringToNode(content);
+
+            }
+
+            function parsedRecord(xml)
+            {
+               
+                
+                
+                const title  = xml.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
+                const author = xml.getElementsByTagName(`author`)[0].childNodes[0].nodeValue;
+                const year = xml.getElementsByTagName(`year`)[0].childNodes[0].nodeValue;
+                const price = xml.getElementsByTagName(`price`)[0].childNodes[0].nodeValue;
+                const ctg = xml.getElementsByTagName(`category`)[0].childNodes[0].nodeValue;
+
+                             
+                
+                
+                
+                return{
+                    title,
+                    author,
+                    year,
+                    price,
+                    ctg,
+                };
+
+            }
+            function displayData(xmlDoc){
+                const bookrec = xmlDoc.getElementsByTagName(`bookrecord`);
+                const list = document.getElementById(`p1`);
+
+                for(let ind = 0;ind<bookrec.length;ind++)
+                {
+                    const el = bookrec[ind];
+                    const parsedRec = parsedRecord(el);
+
+                    const bookElement = makeBookList(parsedRec);
+                    list.appendChild(bookElement);
+                }
+            }
+        </script>
+    </body>
+</html>
