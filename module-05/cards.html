@@ -58,13 +58,15 @@
         const cards = xmlDoc.getElementsByTagName(`record`);
 
         const list = document.getElementById(`cards`);
-
+        console.log(list);
         for (let index = 0; index < cards.length; index++) {
           const element = cards[index];
           const parsedCard = parseCard(element);
 
           const cardElement = createCard(parsedCard);
+          console.log(cardElement);
           list.appendChild(cardElement);
+
         }
       }
     </script>
