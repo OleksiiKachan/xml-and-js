@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<head>
+    <title>Customer Information</title>
+    <link rel="stylesheet" href="customers.css"/>
+</head>
+
+<body>
+    <div id="customerProfile"><h3>Clients and Orders</h3></div>
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function()
+        {
+            if(this.readyState == 4 && this.status == 200)
+            {
+                displayData(this.responseXML);
+            }
+        };
+        xhttp.open("GET", "customers.xml", true);
+        xhttp.send();
+
+        function stringToNode(value)
+        {
+            const template = document.createElement("template");
+            const html = value.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+        }
+
+        function createProfile(profile)
+        {
+            const orders = profile.orders;
+            let orderList = '';
+            for (let i=0; i<orders.length; i++)
+            {
+                const items = orders[i].items;
+                let itemList = `<table id="ordersTable">
+                                <thead>
+                                    <th>Item Price</th>
+                                    <th>Item Quantity</th>
+                                </thead>`;
+                for(let j=0; j<items.length; j++)
+                {
+                    itemList += `<tbody>
+                                    <td>${items[j].itemPrice}</td>
+                                    <td>${items[j].itemQty}</td>
+                                 </tbody>`;
+                }
+                itemList += `</table>`;
+                orderList += `<p>Order ID: ${orders[i].orderID}</p>
+                              <p>Order date: ${orders[i].orderDate}</p>`;
+                orderList += itemList;
+            }
+            const content = 
+            `<article>
+                <div class="profile-info">
+                    <p>Name: ${profile.title} ${profile.name}</p>
+                    <p>Phone: ${profile.phone}</p>
+                    <p>E-mail: ${profile.email}</p>
+                    <p>Address: ${profile.address}</p>
+                </div>
+                <div> 
+                ${orderList}
+                </div>
+            </article>`;
+            
+            return stringToNode(content);
+        }
+
+        function parseProfile(xml)
+        {
+            const title = xml.getElementsByTagName("name")[0].getAttribute("title");
+            const name = xml.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+            const phone = xml.getElementsByTagName("phone")[0].childNodes[0].nodeValue;
+            let email = "";
+            if (xml.getElementsByTagName("email")[0] != null)
+                email = xml.getElementsByTagName("email")[0].childNodes[0].nodeValue;
+            else email="N/A";
+            const address = xml.getElementsByTagName('address')[0].childNodes[0].nodeValue;
+
+            const orderNodes = xml.getElementsByTagName("order");
+            let orders = [];
+            for (let i = 0; i < orderNodes.length; i++) 
+            {
+                const orderID = orderNodes[i].getAttribute("orderID");
+                const orderDate = orderNodes[i].getElementsByTagName("orderDate")[0].childNodes[0].nodeValue;
+                const itemNodes = orderNodes[i].getElementsByTagName("item");
+                let items = [];
+                for (let j = 0; j < itemNodes.length; j++) 
+                {
+                    const itemPrice = itemNodes[j].getElementsByTagName("itemPrice")[0].childNodes[0].nodeValue;
+                    const itemQty = itemNodes[j].getElementsByTagName("itemQty")[0].childNodes[0].nodeValue;
+                    items.push({ itemPrice, itemQty });
+                }
+                orders.push({ orderID, orderDate, items });
+            }
+            return { title, name, phone, email,  address, orders };
+        }
+
+        function displayData(xml){
+            const customerProfile = document.getElementById("customerProfile");
+            const customers = xml.getElementsByTagName("customer");
+
+            for (let index = 0; index < customers.length; index++) 
+            {
+                const customer = customers[index];
+                const profile = parseProfile(customer);
+                const customerElement = createProfile(profile);
+                customerProfile.appendChild(customerElement);
+            }
+        }
+    </script>
+</body>

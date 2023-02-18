@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="Question13_data.xsl"?>
+<books>
+    <book>
+        <title>Everyday Italian</title>
+        <author> <![CDATA[
+                Giada De Laurentiis                
+                ]]>
+        </author>
+        <year>2005</year>
+        <price>30.0</price>
+        <category>cooking</category>
+    </book>
+
+    <book>
+        <title>Harry Potter</title>
+        <author> <![CDATA[
+                J K. Rowling
+                ]]>
+        </author>
+        <year>2005</year>
+        <price>29.99</price>
+        <category>children</category>
+    </book>
+
+    <book>
+        <title>XQuery Kick Start</title>
+        <author> <![CDATA[
+                James McGovern, Per Bothner, Kurt Cagle, James Linn, Vaidyanathan Nagarajan
+                ]]>
+        </author>
+        <year>2003</year>
+        <price>49.99</price>
+        <category>web</category>
+    </book>   
+
+    <book>
+        <title>Learning XML</title>
+        <author> <![CDATA[
+                Erik T. Ray
+                ]]>
+        </author>
+        <year>2005</year>
+        <price>39.95</price>
+        <category>web</category>
+    </book>   
+</books>

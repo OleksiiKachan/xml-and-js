@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Books Catalog</title>
+    <link rel="stylesheet" href="books.css" />
+  </head>
+  <body>
+    <h1>Books Catalog</h1>
+    <ol id="books"></ol>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "books.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createBook(book) {
+        const content = `<li>
+        <article>
+          <p class="category">${book.category}</p>
+          <h2>${book.title}</h2>
+          <p class="authors"> Authors: ${book.author}</p>
+          <p> Book was writen in: ${book.year}</p>
+          <p>Retail price is: ${book.price}
+          </article>
+          </li>`;
+        return stringToNode(content);
+      }
+
+      function parseBook(xml) {
+        const category = xml.getElementsByTagName('category')[0].childNodes[0].nodeValue;
+        const title = xml.getElementsByTagName('title')[0].childNodes[0].nodeValue;
+        const author = xml.getElementsByTagName('author')[0].childNodes[0].nodeValue;
+        const year = xml.getElementsByTagName('year')[0].childNodes[0].nodeValue;
+        const price = xml.getElementsByTagName('price')[0].childNodes[0].nodeValue;
+
+        return {
+          category,
+          title,
+          author,
+          year,
+          price,
+        };
+      }
+
+      function displayData(xmlDoc) {
+        const books = xmlDoc.getElementsByTagName('book');
+
+        const list = document.getElementById('books');
+
+        for (let index = 0; index < books.length; index++) {
+          const element = books[index];
+          const parsedBook = parseBook(element);
+
+          const bookElement = createBook(parsedBook);
+          list.appendChild(bookElement);
+        }
+      }
+    </script>
+  </body>
+</html>
