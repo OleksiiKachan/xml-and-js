@@ -2,5 +2,5 @@
 ## Leon Czarlinski n01541167
 
 - Convert products.xml into json​
-![href](../assignments/assignmentProducts.xml) <!--This is the XML files-->
-![href](../assignments/assignmentProducts.json) <!--This is the JSON file-->
+- [X] This is the producst XML file: [href](../assignments/assignmentProducts.xml)
+- [X] This is the producst JSON file [href](../assignments/assignmentProducts.json)
