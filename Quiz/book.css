@@ -1,0 +1,13 @@
+ .book-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    width: 400px;
+    height: 250px;
+  }
+  .category {
+    text-align: right;
+  }

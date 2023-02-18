@@ -1,0 +1,39 @@
+/* Center the list of books */
+#books {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  /* Style each book */
+  .book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .book h2 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .book p {
+    margin: 5px 0;
+    padding: 0;
+  }
+  
+  .book .author {
+    font-style: italic;
+  }
+  
+  .book .price {
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="book.css" />
+  <title>Book Details</title>
+</head>
+<body>
+  <div id="books-container"></div>
+
+  <script>
+    fetch('books_Q11.xml')
+      .then(response => response.text())
+      .then(data => {
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(data, 'application/xml');
+        const books = xml.getElementsByTagName('book');
+
+        for (let index = 0; index < books.length; index++) {
+          const book = books[index];
+          const title = book.getElementsByTagName('title')[0].textContent;
+          const authors = book.getElementsByTagName('author');
+          const year = book.getElementsByTagName('year')[0].textContent;
+          const price = book.getElementsByTagName('price')[0].textContent;
+          const category = book.getElementsByTagName('category')[0].textContent;
+
+          const card = document.createElement('div');
+          card.className = 'book-card';
+
+          const categoryElement = document.createElement('div');
+          categoryElement.className = 'category';
+          categoryElement.textContent = category;
+          card.appendChild(categoryElement);
+
+          const titleElement = document.createElement('h2');
+          titleElement.textContent = title;
+          card.appendChild(titleElement);
+
+          const authorElement = document.createElement('p');
+          authorElement.textContent = `Authors: ${Array.from(authors).map(a => a.textContent).join(', ')}`;
+          card.appendChild(authorElement);
+
+          const yearElement = document.createElement('p');
+          yearElement.textContent = `Book was written in ${year}`;
+          card.appendChild(yearElement);
+
+          const priceElement = document.createElement('p');
+          priceElement.textContent = `Retail price is ${price}`;
+          card.appendChild(priceElement);
+          const booksContainer = document.getElementById('books-container');
+          booksContainer.appendChild(card);
+        }
+      })
+      .catch(error => console.log(error));
+  </script>
+</body>
+</html>
