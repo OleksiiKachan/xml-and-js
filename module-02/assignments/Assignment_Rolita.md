@@ -1,6 +1,28 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<?xml-stylesheet type="text/css" href="style.css"?>
-<!DOCTYPE menuInfo 
+1.
+There are 3 errors.
+error at line 11 : there waqs space between the xml element effective date.Elements cannot have space.Removed space and replaced as effectiveDate.
+error at line 31 - opening and ending tag mismatch for originalname and originalName. corrected as OriginalName.
+error  at line 51 - opening and ending tag mismatch for originalname and Name. corrected as OriginalName.
+
+2.
+There are special characters such as  the ‘ character , the “ character etc. These Special characters,  can be inserted into XML document by using a character reference; the syntax is: &#nnn;Some symbols also can be identified using an entity reference; the syntax is: &entity; Instead of modifying data by using references we can keep the data as it is in CDATA block. By adding the section which contains special characters inside CDATA Block makes those Character data will not be processed by xml parser , but instead is treated as pure data content.
+
+3. 
+comment line added in xml
+<!--
+  Name  :  Rolita Flavia Quadras
+  ID : N01553713
+-->
+
+4.
+Prolog provides information about the document itself 
+• XML declaration : <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+• Processing instructions : <?xml-stylesheet type="text/css" href="style.css"?>
+• Comments lines : <!--
+  Name  :  Rolita Flavia Quadras
+  ID : N01553713
+-->
+• Document type declaration (DTD) : <!DOCTYPE menuInfo 
 [
   <!ELEMENT menuInfo (title,summary,effectiveDate,menu+)>
   <!ELEMENT title (#PCDATA)>
@@ -15,7 +37,9 @@
   <!ELEMENT description (#PCDATA)>
   <!ELEMENT price (#PCDATA)>
   <!ELEMENT indicator (#PCDATA)>
+  
 ]>
+document body: Document body contains the document’s content in a hierarchical tree structure
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -97,7 +121,67 @@
     </menuItem>
   </menu>
 </menuInfo>
+epilog :  Epilog is optional and contains any final comments or processing instructions
 <!--
   Name  :  Rolita Flavia Quadras
   ID : N01553713
 -->
+
+5.
+inline DTD is added.
+<!DOCTYPE menuInfo 
+[
+  <!ELEMENT menuInfo (title,summary,effectiveDate,menu+)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT summary (#PCDATA)>
+  <!ELEMENT effectiveDate (#PCDATA)>
+  <!ELEMENT menu (category,menuItem+)>
+  <!ELEMENT category (#PCDATA)>
+  <!ELEMENT menuItem (itemName,description,price,indicator*)>
+  <!ELEMENT itemName (originalName,oldName*)>
+  <!ELEMENT originalName (#PCDATA)>
+  <!ELEMENT oldName (#PCDATA)>
+  <!ELEMENT description (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT indicator (#PCDATA)>
+]>
+
+6.
+File verified through DTD validator. No errors and it is well formed.
+
+7. 
+css file is created and Changed font-size of `originalName`,Displayed each `category` on the new line
+
+originalName {
+    font-size: 1.3em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: chocolate;
+}
+
+  category {
+    display: block;
+    font-size: 1.5em;
+    font-style: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-variant: small-caps;
+    color: red;
+    }
+
+    * {
+        background-color: beige;
+    }
+
+
+images:
+![image info](../assets/cdata.png)
+![image info](../assets/comment.png)
+![image info](../assets/cssStyle.png)
+![image info](../assets/docbody.png)
+![image info](../assets/doctype.png)
+![image info](../assets/dtdValidator.png)
+![image info](../assets/error1.png)
+![image info](../assets/error2.png)
+![image info](../assets/error3.png)
+![image info](../assets/ProcessingInst.png)
+![image info](../assets/SuccessfullValidated.png)
+![image info](../assets/XMLDeclaration.png)

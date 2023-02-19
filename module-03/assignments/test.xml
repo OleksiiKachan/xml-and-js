@@ -1,0 +1,14 @@
+<root xmlns:cs="urn:cs-student" xmlns:el="urn:el-student">
+<cs:student>
+    <!--
+        cs
+    -->
+    <cs:language>en</cs:language>
+</cs:student>
+<el:student>
+    <!--
+        el
+    -->
+    <el:language>en</el:language>
+</el:student>
+</root>
