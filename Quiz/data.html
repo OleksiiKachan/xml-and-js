@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+  <body>
+    <h1>Books Catalog</h1>
+    <p id="text"></p>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayMovie(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "data.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createCard(card) {
+        const content = `<ol>
+  <article>
+    <div>${card.category}</div>
+    <h2>${card.title}</h2>
+    <p>
+      Authors: 
+      ${card.author}
+    </p>
+    <a>
+        Book was written in
+        ${card.year}
+    </a>
+    <p>Retail price is
+        $${card.price}
+    </p>
+  </article>
+</ol>`;
+
+        return stringToNode(content);
+      }
+
+      function parseCard(xml) {
+        const category =
+          xml.getElementsByTagName(`category`)[0].childNodes[0].nodeValue;
+        const title =
+          xml.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
+        const author =
+          xml.getElementsByTagName(`author`)[0].childNodes[0].nodeValue;
+        const year =
+          xml.getElementsByTagName(`year`)[0].childNodes[0].nodeValue;
+        const price =
+          xml.getElementsByTagName(`price`)[0].childNodes[0].nodeValue;
+
+        return {
+          category,
+          title,
+          author,
+          year,
+          price,
+        };
+      }
+
+      function displayMovie(xmlDoc) {
+        const cards = xmlDoc.getElementsByTagName(`movie`);
+
+        const list = document.getElementById(`text`);
+
+        for (let index = 0; index < cards.length; index++) {
+          const element = cards[index];
+          const parsedCard = parseCard(element);
+
+          const cardElement = createCard(parsedCard);
+          list.appendChild(cardElement);
+        }
+      }
+    </script>
+  </body>
+</html>
