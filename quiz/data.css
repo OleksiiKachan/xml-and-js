@@ -1,0 +1,49 @@
+
+/*  Rutwa Dave 
+    n01551519
+    css file*/
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: flex-start;
+  }
+  
+  li:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  
+  article {
+    background-color: darkgray;
+    border-radius: 10px;
+    padding: 20px;
+  
+    display: flex;
+    flex-direction: column;
+  
+    max-width: 300px;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 12px;
+   
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    
+    margin: 20px 0;
+    font-size: 30px;
+  }
+  
+  article > div> p {
+    
+    margin: 0;
+    padding: 0;
+  }
+
+  h4{
+    text-align: right;
+  }
+  
