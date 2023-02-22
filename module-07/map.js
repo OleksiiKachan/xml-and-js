@@ -27,6 +27,11 @@ const officersIds_2 = officers.map((officer) => {
   return officer.id;
 });
 
+//OR
+// const officersIds_2 = officers.map((item)) => item.id);
+//OR
+// const officersIds_2 = officers.map(({ id })) => id);
+
 console.log(officersIds_2);
 
 // const officersIds_3 = officers.map((officer) => officer.id);
@@ -37,7 +42,23 @@ console.log(officersIds_2);
 
 // console.log(officersIds_4);
 
+
+// const ids = officers.map(({id, name}) => {
+//  const[firstName, lastName] = item.name.split(' ');
+
+  // return{
+  //   id,
+  //   firstName,
+  //   lastName
+  // }
+
+  // console.log(ids);
+//
+//})
+
 const numbers = [1, 2, 3, 4, 5, 6];
 const evenNumbers = numbers.map((number) => {
   return number % 2 === 0;
 });
+
+// const evenNumbers = numbers.filter((item) => !Boolean(item % 2));
