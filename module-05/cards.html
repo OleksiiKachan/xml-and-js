@@ -55,7 +55,7 @@
       }
 
       function displayData(xmlDoc) {
-        const cards = xmlDoc.getElementsByTagName(`record`);
+        const cards = Array.from(xmlDoc.getElementsByTagName(`record`));
 
         const list = document.getElementById(`cards`);
 
