@@ -55,17 +55,24 @@
       }
 
       function displayData(xmlDoc) {
-        const cards = xmlDoc.getElementsByTagName(`record`);
+        const cards = Array.from(xmlDoc.getElementsByTagName(`record`));
 
         const list = document.getElementById(`cards`);
 
-        for (let index = 0; index < cards.length; index++) {
-          const element = cards[index];
-          const parsedCard = parseCard(element);
+        cards
+        .map(parseCard)
+        .map(createCard)
+        .map((cardElement) => list.appendChild(cardElement));
+        
 
-          const cardElement = createCard(parsedCard);
-          list.appendChild(cardElement);
-        }
+
+        // for (let index = 0; index < cards.length; index++) {
+        //   const element = cards[index];
+        //   const parsedCard = parseCard(element);
+
+        //   const cardElement = createCard(parsedCard);
+        //   list.appendChild(cardElement);
+        // }
       }
     </script>
   </body>

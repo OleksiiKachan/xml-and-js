@@ -23,7 +23,7 @@ const pilots = [
 
 console.log("Source:");
 console.log(pilots);
-
+                                        // 'pilot' = can be named anything
 const totalYears = pilots.reduce((accum, pilot) => {
   return accum + pilot.years;
 }, 0);
