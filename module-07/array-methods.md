@@ -36,6 +36,15 @@ But all these `for` methods only itterate through array and do not return anythi
 const officersIds = officers.map((officer) => {
   return officer.id;
 });
+
+const officersIds = officers.map((id, name) => {
+  const[firstName, lastName] = name.split(` `)
+  return{
+    id,
+    firstName,
+    lastName
+  }
+});
 ```
 
 **Note**: Keep in mind that the resulting array will always be the same length as the original array.
