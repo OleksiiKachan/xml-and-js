@@ -81,9 +81,7 @@ const data = [
     }
   ];
 
-  console.log(data);
-
-  const info = data.map(({id, first_name, last_name, gender, ip_address}) => {
+  const parsed = data.map(({id, first_name, last_name, gender, ip_address}) => {
 
   return{
     id,
@@ -94,7 +92,7 @@ const data = [
   };
   
   });
-  console.log(info);
+  console.log(parsed);
 
-  const lastID = info.filter(item => item.id > 5);
-  console.log(lastID);
+  const filtered = parsed.filter(item => item.id > 5);
+  console.log(filtered);
