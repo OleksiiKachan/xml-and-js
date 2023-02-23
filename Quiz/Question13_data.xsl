@@ -24,6 +24,12 @@
                         <h2><xsl:value-of select="title"/></h2>
                         <p>Book was writen in: <xsl:value-of select="year"/></p>
                         <p>Retail price is $<xsl:value-of select="price"/></p>
+                        <p> Authors:
+                        <xsl:for-each select="authors/author">
+                            <xsl:if test="position() &gt; 1">,</xsl:if>
+                            <xsl:value-of select="."/>    
+                        </xsl:for-each>
+                        </p>
                     </article>
                 </li>
             </xsl:for-each>
