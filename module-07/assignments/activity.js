@@ -90,9 +90,9 @@ const data = [
 console.log(parsed);
 
  //filter method
-  const filtered = data.filter((item) => item.id > 5);
+const filtered = data.filter((item) => item.id > 5);
 console.log("ID'S grater than 5")
-  console.log(filtered);
+console.log(filtered);
 
 
   
