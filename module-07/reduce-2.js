@@ -35,7 +35,19 @@ const empire_1 = pilots.filter((pilot) => pilot.faction === "Empire");
 console.log(rebels_1);
 console.log(empire_1);
 
+/*
 console.log(`using .reduce()`);
+
+const result = pilots.reduce((acc,item)=>{
+  if (pilot.faction === "Rebels") {
+    accum.rebels.push(pilot);
+  } else if (pilot.faction === "Empire") {
+    accum.empire.push(pilot);
+  }
+
+  return accum;
+},{empire:[],rebels:[]});*/
+
 
 const { rebels, empire } = pilots.reduce(
   (accum, pilot) => {
