@@ -97,5 +97,4 @@ const data = people.map(({id, first_name, last_name, gender, ip_address})  => {
   //console.log(data);
 
   const parsed  = data.filter((item) => item.id>5);
-
   console.log(parsed);
