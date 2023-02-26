@@ -5,15 +5,39 @@ const data = [
     { born: 1901, died: 1989 },
   ];
 
-const calculatedAge = data.map(({born, died}) => {
+
+const age = data.map(({born, died}) => {
     let age = died - born;
     return {
      born, died, age   
     };
 });
+console.log("CALCULATED AGE ->");
+console.log(age);
 
-console.log(calculatedAge);
+console.log("AGE ABOVE 75 ->");
+const filtered = age.filter((ageCheck) => ageCheck.age > 75);
+console.log(filtered);
 
-const filteredAge = calculatedAge.filter((ageCheck) => ageCheck.age > 75);
-console.log(filteredAge);
+console.log("OLDEST OF ALL ->");
+const oldest = filtered.reduce((acc, age) => {
+  if (age.age > acc) {
+      acc = age;
+  }
+  return acc;
+}, 0);
+console.log(oldest);
 
+//Chaining
+console.log("Output after chaining ->");
+const chainedAge = data
+                    .map(({born, died}) => died - born)
+                    .filter((ageCheck) => ageCheck > 75)
+                    .reduce((acc, ageVar) => {
+                      if (ageVar > acc) {
+                          acc = ageVar;
+                      }
+                      return acc;
+                    }, 0);
+    
+                    console.log(chainedAge);
