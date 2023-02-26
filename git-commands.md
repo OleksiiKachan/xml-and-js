@@ -8,6 +8,7 @@ git checkout -b "<branch-name>"
 
 ## How to commit the asssignment/activity
 
+
 ```bash
 git checkout main
 git checkout -b "module-1/activity-1"
