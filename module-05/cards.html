@@ -55,11 +55,16 @@
       }
 
       function displayData(xmlDoc) {
-        const cards = xmlDoc.getElementsByTagName(`record`);
+        const cards = Array.from(xmlDoc.getElementsByTagName(`record`));
 
         const list = document.getElementById(`cards`);
 
+  cards.map(parseCard)
+  .filter((item)=>item.balance>0)
+  .map(createCard).map((cardElement)=>list.appendChild(cardElement));
+
         for (let index = 0; index < cards.length; index++) {
+
           const element = cards[index];
           const parsedCard = parseCard(element);
 
