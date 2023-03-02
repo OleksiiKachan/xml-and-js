@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="project.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <h2 class="page-header">Software Companies</h2>
+    </div>
+
+    <ol id="companyList"></ol>
+
+    <script>
+      const xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhr.open("GET", "project-1.xml", true);
+      xhr.send();
+
+      const stringToNode = (value) => {
+        const html = value.trim();
+        const template = document.createElement(`template`);
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      const createApps = (apps) => {
+        const content = `
+        <table class="apps">
+          <thead>
+            <tr class="table-headers">
+              <th>App Name</th>
+              <th>Latest Version</th>
+              <th>App ID</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+        </table>
+        `;
+
+        const tableNode = stringToNode(content);
+        const tableBody = document.createElement(`tbody`);
+        tableBody.classList.add(`body`);
+
+        for (let i = 0; i < apps.length; i++) {
+          const app = apps[i];
+
+          const row = document.createElement(`tr`);
+          const name = document.createElement(`td`);
+          name.appendChild(
+            document.createTextNode(
+              app.appName
+            )
+          );
+          row.appendChild(name);
+
+          const version = document.createElement(`td`);
+          version.appendChild(
+            document.createTextNode(
+              app.currentVersion
+            )
+          );
+          row.appendChild(version);
+
+          const appID = document.createElement(`td`);
+          appID.appendChild(
+            document.createTextNode(
+              app.appId
+            )
+          );
+          row.appendChild(appID);
+
+          const url = document.createElement(`td`);
+          const link = document.createElement(`a`);
+          link.setAttribute('href', app.url);
+          link.appendChild(
+            document.createTextNode(
+              app.url
+            )
+          );
+          url.appendChild(link);
+          row.appendChild(url);
+          tableBody.appendChild(row);
+          tableNode.appendChild(tableBody);
+        };
+        const divElement = document.createElement(`div`);
+        const headerDivElement = document.createElement(`div`);
+        headerDivElement.classList.add(`header-title`);
+        const tableHeader = document.createElement(`h3`);
+        tableHeader.appendChild(
+          document.createTextNode(
+            'Applications'
+          )
+        );
+        headerDivElement.appendChild(tableHeader);
+
+        divElement.appendChild(headerDivElement);
+        divElement.appendChild(tableNode);
+
+        return divElement;
+      }
+
+      const createCompany = (company) => {
+        const content = `
+        <li>
+          <article>
+            <p class="company-name">${company.companyName}</p>
+            <p class="company-info"><b> Stock Symbol:</b> ${company.stockSymbol} </p>
+            <p class="company-info">
+              Domain: <a href=https://www.${company.domain}> ${company.domain} </a>
+            </p>
+          </article>
+        </li>
+        `;
+
+        return stringToNode(content);
+      }
+
+      const createEmployees = (employees) => {
+        const content = `
+        <table class="employees">
+          <thead>
+            <tr class="table-headers">
+              <th>Employee ID</th>
+              <th>Name</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th colspan="2">Department</th>
+              <th colspan="2">Device Address</th>
+            </tr>
+            <tr class="subtable-headers">
+              <th />
+              <th />
+              <th />
+              <th />
+              <th>Department</th>
+              <th>Position</th>
+              <th>IP</th>
+              <th>Mac</th>
+            </tr>
+          </thead>
+        </table>
+        `;
+
+        const tableNode = stringToNode(content);
+        const tableBody = document.createElement(`tbody`);
+        tableBody.classList.add(`body`);
+
+        for (let i = 0; i < employees.length; i++) {
+          const employee = employees[i];
+
+          const row = document.createElement(`tr`);
+
+          const empID = document.createElement(`td`);
+          empID.appendChild(
+            document.createTextNode(
+              employee.employeeId
+            )
+          );
+          row.appendChild(empID);
+
+          const fullName = document.createElement(`td`);
+          fullName.appendChild(
+            document.createTextNode(
+              employee.firstName + ` ` + employee.lastName
+            )
+          );
+          row.appendChild(fullName);
+
+          const userName = document.createElement(`td`);
+          userName.appendChild(
+            document.createTextNode(
+              employee.userName
+            )
+          );
+          row.appendChild(userName);
+
+          const email = document.createElement(`td`);
+          const link = document.createElement(`a`);
+          link.setAttribute('href', `mailto: ${employee.email}`);
+          link.appendChild(
+            document.createTextNode(
+              employee.email
+            )
+          );
+          email.appendChild(link);
+          row.appendChild(email);
+
+          const department = document.createElement(`td`);
+          department.appendChild(
+            document.createTextNode(
+              employee.department
+            )
+          );
+          row.appendChild(department);
+
+          const occupation = document.createElement(`td`);
+          occupation.appendChild(
+            document.createTextNode(
+              employee.occupation
+            )
+          );
+          row.appendChild(occupation);
+
+          const ip = document.createElement(`td`);
+          ip.appendChild(
+            document.createTextNode(
+              employee.ip
+            )
+          );
+          row.appendChild(ip);
+
+          const mac = document.createElement(`td`);
+          mac.appendChild(
+            document.createTextNode(
+              employee.mac
+            )
+          );
+          row.appendChild(mac);
+          tableBody.appendChild(row);
+          tableNode.appendChild(tableBody);
+        };
+        const divElement = document.createElement(`div`);
+        const headerDivElement = document.createElement(`div`);
+        headerDivElement.classList.add(`header-title`);
+        const tableHeader = document.createElement(`h3`);
+        tableHeader.appendChild(
+          document.createTextNode(
+            'Employees'
+          )
+        );
+
+        headerDivElement.appendChild(tableHeader);
+        divElement.appendChild(headerDivElement);
+        divElement.appendChild(tableNode);
+
+        return divElement;
+      }
+
+      const parseCompany = (company) => {
+        const companyName = company.getElementsByTagName(`companyName`)[0].childNodes[0].nodeValue;
+        const stockSymbol = company.getElementsByTagName(`stockSymbol`)[0].childNodes[0].nodeValue;
+        const domain = company.getElementsByTagName(`domain`)[0].childNodes[0].nodeValue;
+
+        return {
+          companyName,
+          stockSymbol,
+          domain
+        };
+      }
+
+      const parseApps = (appsNode) => {
+        apps = [];
+
+        for (let i = 0; i < appsNode.length; i++) {
+          const app = appsNode[i];
+          const appId = app.getElementsByTagName(`appId`)[0].childNodes[0].nodeValue;
+          const appName = app.getElementsByTagName(`appName`)[0].childNodes[0].nodeValue;
+          const currentVersion = app.getElementsByTagName(`currentVersion`)[0].childNodes[0].nodeValue;
+          const url = app.getElementsByTagName(`url`)[0].childNodes[0].nodeValue;
+
+          appHash = {
+            appId,
+            appName,
+            currentVersion,
+            url
+          }
+
+          apps.push(appHash);
+        }
+
+        return apps;
+      }
+
+      const parseEmployees = (employeesNode) => {
+        employees = [];
+
+        for (let i = 0; i < employeesNode.length; i++) {
+          const employee = employeesNode[i];
+          const employeeId = employee.getElementsByTagName(`employeeId`)[0].childNodes[0].nodeValue;
+          const firstName = employee.getElementsByTagName(`firstName`)[0].childNodes[0].nodeValue;
+          const lastName = employee.getElementsByTagName(`lastName`)[0].childNodes[0].nodeValue;
+          const email = employee.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+          const userName = employee.getElementsByTagName(`userName`)[0].childNodes[0].nodeValue;
+          const occupation = employee.getElementsByTagName(`occupation`)[0].childNodes[0].nodeValue;
+          const department = employee.getElementsByTagName(`department`)[0].childNodes[0].nodeValue;
+          const ip = employee.getElementsByTagName(`ip`)[0].childNodes[0].nodeValue;
+          const mac = employee.getElementsByTagName(`mac`)[0].childNodes[0].nodeValue;
+
+          employeesHash = {
+            employeeId,
+            firstName,
+            lastName,
+            email,
+            userName,
+            occupation,
+            department,
+            ip,
+            mac
+          }
+
+          employees.push(employeesHash);
+        }
+
+        return employees;
+      }
+
+      const displayData = (xmlDoc) => {
+        const companies = xmlDoc.getElementsByTagName(`company`);
+        const listElement = document.getElementById(`companyList`);
+
+        for (let i = 0; i < companies.length; i++) {
+          const company = companies[i];
+          const apps = company.getElementsByTagName(`app`);
+          const employees = company.getElementsByTagName(`employee`);
+
+          const parsedCompanyData = parseCompany(company);
+          const parsedAppsData = parseApps(apps);
+          const parsedEmployeesData = parseEmployees(employees);
+          const sortedEmployeesData = parsedEmployeesData.sort((a,b) => (a.department > b.department) ? 1 : ((b.department > a.department) ? -1 : 0))
+
+          const companyElement = createCompany(parsedCompanyData);
+          const appsElement = createApps(parsedAppsData);
+          const employeesElement = createEmployees(sortedEmployeesData);
+
+          companyElement.appendChild(appsElement);
+          companyElement.appendChild(employeesElement);
+
+          listElement.appendChild(companyElement);
+        }
+      }
+    </script>
+  </body>
+</html>
