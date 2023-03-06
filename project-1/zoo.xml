@@ -1,0 +1,1230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="zoo.xsl"?>
+<!-- inline DTD -->
+<!DOCTYPE zoos [
+<!ELEMENT zoos (zoo+)>
+
+<!ELEMENT zoo (id, openTime, closeTime, location, animals+, employees+)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT openTime (#PCDATA)>
+<!ELEMENT closeTime (#PCDATA)>
+<!ELEMENT location (city, region, counry)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT region (#PCDATA)>
+<!ELEMENT counry (#PCDATA)>
+<!ELEMENT animals (giveName, commonName, scientificName, dob, sex)>
+<!ELEMENT giveName (#PCDATA)>
+<!ELEMENT commonName (#PCDATA)>
+<!ELEMENT scientificName (#PCDATA)>
+<!ELEMENT dob (#PCDATA)>
+<!ELEMENT sex (#PCDATA)>
+<!ELEMENT employees (id, firstName, lastName, dob, position)>
+<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT position (#PCDATA)>
+
+]>
+
+<!-- XML -->
+<zoos>
+    <zoo>
+        <id>5c96afec-320a-47df-b819-fee84075cf9e</id>
+        <openTime>13:03</openTime>
+        <closeTime>21:45</closeTime>
+        <location>
+            <city>Antigonish</city>
+            <region>Nova Scotia</region>
+            <counry>Canada</counry>
+        </location>
+        <animals>
+            <giveName>Kelby</giveName>
+            <commonName>Wagtail, african pied</commonName>
+            <scientificName>Motacilla aguimp</scientificName>
+            <dob>2015-02-12</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Bent</giveName>
+            <commonName>Armadillo, seven-banded</commonName>
+            <scientificName>Dasypus septemcincus</scientificName>
+            <dob>2013-07-27</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Hughie</giveName>
+            <commonName>Red-necked phalarope</commonName>
+            <scientificName>Phalaropus lobatus</scientificName>
+            <dob>2021-02-24</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Buffy</giveName>
+            <commonName>Brush-tailed phascogale</commonName>
+            <scientificName>Phascogale tapoatafa</scientificName>
+            <dob>2008-09-01</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Gradeigh</giveName>
+            <commonName>Defassa waterbuck</commonName>
+            <scientificName>Kobus defassa</scientificName>
+            <dob>2002-02-18</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Mozelle</giveName>
+            <commonName>Sarus crane</commonName>
+            <scientificName>Grus antigone</scientificName>
+            <dob>2016-09-27</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Dukie</giveName>
+            <commonName>White-lipped peccary</commonName>
+            <scientificName>Tayassu pecari</scientificName>
+            <dob>2017-07-18</dob>
+            <sex>Male</sex>
+        </animals>
+        <employees>
+            <id>13947974-9607-4f9f-aa04-b0ee67e26cd9</id>
+            <firstName>Anders</firstName>
+            <lastName>Faragan</lastName>
+            <dob>1981-01-02</dob>
+            <position>Developer II</position>
+        </employees>
+        <employees>
+            <id>5f60de00-a979-40cb-a2da-8b3cc97aa2fa</id>
+            <firstName>Elita</firstName>
+            <lastName>Topling</lastName>
+            <dob>1972-11-10</dob>
+            <position>Software Engineer IV</position>
+        </employees>
+        <employees>
+            <id>683f2906-185f-4655-a3d0-080931ff48ab</id>
+            <firstName>Merry</firstName>
+            <lastName>Dawidman</lastName>
+            <dob>1987-05-19</dob>
+            <position>Nurse</position>
+        </employees>
+    </zoo>
+    <zoo>
+        <id>63494c41-ea16-4efd-a275-aab9d009c833</id>
+        <openTime>16:13</openTime>
+        <closeTime>18:11</closeTime>
+        <location>
+            <city>Niverville</city>
+            <region>Manitoba</region>
+            <counry>Canada</counry>
+        </location>
+        <animals>
+            <giveName>Kelvin</giveName>
+            <commonName>Brazilian tapir</commonName>
+            <scientificName>Tapirus terrestris</scientificName>
+            <dob>2017-12-15</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Pippy</giveName>
+            <commonName>Cockatoo, sulfur-crested</commonName>
+            <scientificName>Cacatua galerita</scientificName>
+            <dob>2005-03-22</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Filippa</giveName>
+            <commonName>Sea birds (unidentified)</commonName>
+            <scientificName>unavailable</scientificName>
+            <dob>2013-03-11</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Marilin</giveName>
+            <commonName>Secretary bird</commonName>
+            <scientificName>Sagittarius serpentarius</scientificName>
+            <dob>2002-05-08</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Mannie</giveName>
+            <commonName>Blue and yellow macaw</commonName>
+            <scientificName>Ara ararauna</scientificName>
+            <dob>2018-04-04</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Gaby</giveName>
+            <commonName>Tortoise, asian foreset</commonName>
+            <scientificName>Manouria emys</scientificName>
+            <dob>2013-01-30</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Yolanda</giveName>
+            <commonName>Whale, killer</commonName>
+            <scientificName>Orcinus orca</scientificName>
+            <dob>2006-04-09</dob>
+            <sex>Female</sex>
+        </animals>
+        <employees>
+            <id>475b7cff-3fad-47ee-a0d0-8707f0c71c35</id>
+            <firstName>Pen</firstName>
+            <lastName>Frisby</lastName>
+            <dob>1978-05-11</dob>
+            <position>Help Desk Technician</position>
+        </employees>
+        <employees>
+            <id>ca5d5b0c-e371-4707-be22-cbb7c7ac34ac</id>
+            <firstName>Penn</firstName>
+            <lastName>Risso</lastName>
+            <dob>1992-07-09</dob>
+            <position>VP Accounting</position>
+        </employees>
+        <employees>
+            <id>24f75a34-ca7e-49dc-8908-39ec10d0cb58</id>
+            <firstName>Catina</firstName>
+            <lastName>Ahren</lastName>
+            <dob>1975-05-28</dob>
+            <position>Graphic Designer</position>
+        </employees>
+    </zoo>
+    <zoo>
+        <id>d3ca91ad-be1a-4689-8688-ec455403a1c6</id>
+        <openTime>12:35</openTime>
+        <closeTime>21:13</closeTime>
+        <location>
+            <city>Kissimmee</city>
+            <region>Florida</region>
+            <counry>United States</counry>
+        </location>
+        <animals>
+            <giveName>Casey</giveName>
+            <commonName>Oystercatcher, blackish</commonName>
+            <scientificName>Haematopus ater</scientificName>
+            <dob>2005-06-16</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Evered</giveName>
+            <commonName>Penguin, fairy</commonName>
+            <scientificName>Eudyptula minor</scientificName>
+            <dob>2021-05-09</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Gerrard</giveName>
+            <commonName>Oystercatcher, blackish</commonName>
+            <scientificName>Haematopus ater</scientificName>
+            <dob>2011-01-08</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Sarah</giveName>
+            <commonName>Cape clawless otter</commonName>
+            <scientificName>Aonyx capensis</scientificName>
+            <dob>2007-11-02</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Pavlov</giveName>
+            <commonName>Tayra</commonName>
+            <scientificName>Eira barbata</scientificName>
+            <dob>2021-11-17</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Genia</giveName>
+            <commonName>Boa, emerald green tree</commonName>
+            <scientificName>Boa caninus</scientificName>
+            <dob>2018-05-23</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Thurston</giveName>
+            <commonName>Sociable weaver</commonName>
+            <scientificName>Philetairus socius</scientificName>
+            <dob>2004-07-18</dob>
+            <sex>Male</sex>
+        </animals>
+        <employees>
+            <id>59d7775a-32f5-4985-a168-71ce640a0243</id>
+            <firstName>Carly</firstName>
+            <lastName>Bluck</lastName>
+            <dob>1973-10-03</dob>
+            <position>Human Resources Manager</position>
+        </employees>
+        <employees>
+            <id>80ff56d5-27ec-4638-8982-08ba6971078e</id>
+            <firstName>Codee</firstName>
+            <lastName>Bow</lastName>
+            <dob>1974-07-31</dob>
+            <position>Executive Secretary</position>
+        </employees>
+        <employees>
+            <id>90c79732-9a54-4d87-8c79-dd3f62c4027c</id>
+            <firstName>Alexandro</firstName>
+            <lastName>Barehead</lastName>
+            <dob>1971-09-28</dob>
+            <position>Desktop Support Technician</position>
+        </employees>
+    </zoo>
+    <zoo>
+        <id>06a94b12-3882-4379-ab07-4b14898e3980</id>
+        <openTime>6:44</openTime>
+        <closeTime>18:17</closeTime>
+        <location>
+            <city>Boissevain</city>
+            <region>Manitoba</region>
+            <counry>Canada</counry>
+        </location>
+        <animals>
+            <giveName>Lenette</giveName>
+            <commonName>White rhinoceros</commonName>
+            <scientificName>Ceratotherium simum</scientificName>
+            <dob>2012-04-08</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Garrek</giveName>
+            <commonName>Netted rock dragon</commonName>
+            <scientificName>Ctenophorus ornatus</scientificName>
+            <dob>2004-03-15</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Flynn</giveName>
+            <commonName>Red-breasted nuthatch</commonName>
+            <scientificName>Sitta canadensis</scientificName>
+            <dob>2017-02-15</dob>
+            <sex>Bigender</sex>
+        </animals>
+        <animals>
+            <giveName>Jacinta</giveName>
+            <commonName>Gull, pacific</commonName>
+            <scientificName>Gabianus pacificus</scientificName>
+            <dob>2010-12-22</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Karena</giveName>
+            <commonName>Spoonbill, european</commonName>
+            <scientificName>Platalea leucordia</scientificName>
+            <dob>2006-02-18</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Tuesday</giveName>
+            <commonName>Fox, savanna</commonName>
+            <scientificName>Dusicyon thous</scientificName>
+            <dob>2002-08-11</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Alden</giveName>
+            <commonName>Burrowing owl</commonName>
+            <scientificName>Speotyte cuniculata</scientificName>
+            <dob>2018-12-14</dob>
+            <sex>Male</sex>
+        </animals>
+        <employees>
+            <id>fbe5d3de-c13b-46da-b3b2-7c745afd885d</id>
+            <firstName>Lorry</firstName>
+            <lastName>Orehead</lastName>
+            <dob>1970-04-22</dob>
+            <position>Software Test Engineer IV</position>
+        </employees>
+        <employees>
+            <id>e738c01d-cea5-4d51-b54e-c47afe43ae7c</id>
+            <firstName>Christian</firstName>
+            <lastName>Giacovetti</lastName>
+            <dob>1997-04-15</dob>
+            <position>Chemical Engineer</position>
+        </employees>
+        <employees>
+            <id>b49d839b-9f4c-4dc4-a769-e2971bd7d852</id>
+            <firstName>Pennie</firstName>
+            <lastName>Mapam</lastName>
+            <dob>1985-03-01</dob>
+            <position>Internal Auditor</position>
+        </employees>
+    </zoo>
+    <zoo>
+        <id>edc5f09e-9d4d-454a-897e-56f51a770e36</id>
+        <openTime>8:21</openTime>
+        <closeTime>18:51</closeTime>
+        <location>
+            <city>Tacoma</city>
+            <region>Washington</region>
+            <counry>United States</counry>
+        </location>
+        <animals>
+            <giveName>Janessa</giveName>
+            <commonName>Spider, wolf</commonName>
+            <scientificName>Lycosa godeffroyi</scientificName>
+            <dob>2011-08-07</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Bertie</giveName>
+            <commonName>Grenadier, common</commonName>
+            <scientificName>Uraeginthus granatina</scientificName>
+            <dob>2021-01-25</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Stefan</giveName>
+            <commonName>Great egret</commonName>
+            <scientificName>Casmerodius albus</scientificName>
+            <dob>2016-03-30</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Burty</giveName>
+            <commonName>Cormorant, little</commonName>
+            <scientificName>Phalacrocorax niger</scientificName>
+            <dob>2001-07-13</dob>
+            <sex>Bigender</sex>
+        </animals>
+        <animals>
+            <giveName>Monte</giveName>
+            <commonName>Deer, mule</commonName>
+            <scientificName>Odocoileus hemionus</scientificName>
+            <dob>2010-07-29</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Candace</giveName>
+            <commonName>Turtle (unidentified)</commonName>
+            <scientificName>unavailable</scientificName>
+            <dob>2020-08-30</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Bernarr</giveName>
+            <commonName>Square-lipped rhinoceros</commonName>
+            <scientificName>Ceratotherium simum</scientificName>
+            <dob>2001-09-10</dob>
+            <sex>Male</sex>
+        </animals>
+        <employees>
+            <id>fa5e2361-8137-4645-adda-48dc5d8550e6</id>
+            <firstName>Rod</firstName>
+            <lastName>Wimmers</lastName>
+            <dob>1992-01-26</dob>
+            <position>Desktop Support Technician</position>
+        </employees>
+        <employees>
+            <id>49e8488c-4414-4ca2-95f7-c0e01413bee8</id>
+            <firstName>Horatia</firstName>
+            <lastName>Senett</lastName>
+            <dob>1976-08-28</dob>
+            <position>Developer I</position>
+        </employees>
+        <employees>
+            <id>dcdfa260-ec50-4a66-a5c8-3b9687d465cf</id>
+            <firstName>Jacquelin</firstName>
+            <lastName>Lightwing</lastName>
+            <dob>1974-10-30</dob>
+            <position>Administrative Officer</position>
+        </employees>
+    </zoo>
+    <zoo>
+        <id>7ffe29d2-b76e-432a-861e-50551763cbcb</id>
+        <openTime>20:05</openTime>
+        <closeTime>21:40</closeTime>
+        <location>
+            <city>Dallas</city>
+            <region>Texas</region>
+            <counry>United States</counry>
+        </location>
+        <animals>
+            <giveName>Melamie</giveName>
+            <commonName>Squirrel, arctic ground</commonName>
+            <scientificName>Spermophilus parryii</scientificName>
+            <dob>2012-07-23</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Roland</giveName>
+            <commonName>Insect, stick</commonName>
+            <scientificName>Leprocaulinus vipera</scientificName>
+            <dob>2001-04-21</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Alonzo</giveName>
+            <commonName>Francolin, coqui</commonName>
+            <scientificName>Francolinus coqui</scientificName>
+            <dob>2011-09-05</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Crystie</giveName>
+            <commonName>Cape cobra</commonName>
+            <scientificName>Naja nivea</scientificName>
+            <dob>2009-01-11</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Delmore</giveName>
+            <commonName>Four-striped grass mouse</commonName>
+            <scientificName>Rhabdomys pumilio</scientificName>
+            <dob>2006-04-25</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Camille</giveName>
+            <commonName>Badger, eurasian</commonName>
+            <scientificName>Meles meles</scientificName>
+            <dob>2021-07-02</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Zerk</giveName>
+            <commonName>Whale, killer</commonName>
+            <scientificName>Orcinus orca</scientificName>
+            <dob>2016-04-29</dob>
+            <sex>Male</sex>
+        </animals>
+        <employees>
+            <id>5c21b414-db3a-4607-af16-f4eaac80b145</id>
+            <firstName>Rhett</firstName>
+            <lastName>Lymer</lastName>
+            <dob>1987-04-22</dob>
+            <position>Sales Associate</position>
+        </employees>
+        <employees>
+            <id>abbae514-547a-4ceb-82a1-ea2934f25a77</id>
+            <firstName>Kristel</firstName>
+            <lastName>Sighard</lastName>
+            <dob>1980-04-25</dob>
+            <position>Human Resources Assistant IV</position>
+        </employees>
+        <employees>
+            <id>e3f3f3d7-f11f-435a-a195-c0b7f34c7ad4</id>
+            <firstName>Fairlie</firstName>
+            <lastName>Bromidge</lastName>
+            <dob>1993-06-25</dob>
+            <position>Safety Technician I</position>
+        </employees>
+    </zoo>
+    <zoo>
+        <id>72d06611-3e9b-4a59-9c86-8861faa98743</id>
+        <openTime>10:53</openTime>
+        <closeTime>20:24</closeTime>
+        <location>
+            <city>Greensboro</city>
+            <region>North Carolina</region>
+            <counry>United States</counry>
+        </location>
+        <animals>
+            <giveName>Glendon</giveName>
+            <commonName>Gull, lava</commonName>
+            <scientificName>Larus fuliginosus</scientificName>
+            <dob>2016-03-31</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Tiffani</giveName>
+            <commonName>Sandhill crane</commonName>
+            <scientificName>Grus canadensis</scientificName>
+            <dob>2004-12-20</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Cort</giveName>
+            <commonName>White-throated kingfisher</commonName>
+            <scientificName>Halcyon smyrnesis</scientificName>
+            <dob>2010-02-27</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Peggie</giveName>
+            <commonName>Curlew, black</commonName>
+            <scientificName>Haematopus ater</scientificName>
+            <dob>2000-10-13</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Denver</giveName>
+            <commonName>Squirrel, smith&#x27;s bush</commonName>
+            <scientificName>Paraxerus cepapi</scientificName>
+            <dob>2015-06-17</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Riley</giveName>
+            <commonName>Green-backed heron</commonName>
+            <scientificName>Butorides striatus</scientificName>
+            <dob>2004-10-23</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Tatiania</giveName>
+            <commonName>Hawk, galapagos</commonName>
+            <scientificName>Buteo galapagoensis</scientificName>
+            <dob>2001-05-16</dob>
+            <sex>Female</sex>
+        </animals>
+        <employees>
+            <id>0899c460-7750-4718-9cc8-4430b6a850b0</id>
+            <firstName>Benson</firstName>
+            <lastName>Feldstein</lastName>
+            <dob>1992-07-13</dob>
+            <position>Software Consultant</position>
+        </employees>
+        <employees>
+            <id>70f263ee-ad9f-4a97-a9d1-c47fd39c5c24</id>
+            <firstName>Mata</firstName>
+            <lastName>Fouracres</lastName>
+            <dob>1976-07-06</dob>
+            <position>Administrative Officer</position>
+        </employees>
+        <employees>
+            <id>905c72ad-d340-403f-b619-c93f17fac0ec</id>
+            <firstName>Deirdre</firstName>
+            <lastName>Bagster</lastName>
+            <dob>1969-05-27</dob>
+            <position>Accounting Assistant I</position>
+        </employees>
+    </zoo>
+    <zoo>
+        <id>45e36948-f985-43f7-8007-491697edea98</id>
+        <openTime>14:32</openTime>
+        <closeTime>20:46</closeTime>
+        <location>
+            <city>Phoenix</city>
+            <region>Arizona</region>
+            <counry>United States</counry>
+        </location>
+        <animals>
+            <giveName>Oren</giveName>
+            <commonName>Anaconda (unidentified)</commonName>
+            <scientificName>Eunectes sp.</scientificName>
+            <dob>2013-08-21</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Bastian</giveName>
+            <commonName>Lizard, desert spiny</commonName>
+            <scientificName>Sceloporus magister</scientificName>
+            <dob>2016-04-30</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Allison</giveName>
+            <commonName>Eland, common</commonName>
+            <scientificName>Taurotagus oryx</scientificName>
+            <dob>2008-11-09</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Madelaine</giveName>
+            <commonName>Yellow-billed hornbill</commonName>
+            <scientificName>Tockus flavirostris</scientificName>
+            <dob>2007-08-14</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Darrell</giveName>
+            <commonName>Sociable weaver</commonName>
+            <scientificName>Philetairus socius</scientificName>
+            <dob>2022-05-20</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Umberto</giveName>
+            <commonName>Tayra</commonName>
+            <scientificName>Eira barbata</scientificName>
+            <dob>2015-06-16</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Evonne</giveName>
+            <commonName>Ring-necked pheasant</commonName>
+            <scientificName>Phasianus colchicus</scientificName>
+            <dob>2013-11-25</dob>
+            <sex>Female</sex>
+        </animals>
+        <employees>
+            <id>e4da307f-e307-43f7-8d1f-fcf0d98aea63</id>
+            <firstName>Pauly</firstName>
+            <lastName>Brunton</lastName>
+            <dob>1991-11-14</dob>
+            <position>Staff Scientist</position>
+        </employees>
+        <employees>
+            <id>6f9e19d1-2ca0-4562-ab94-b02fc617a369</id>
+            <firstName>Vivianne</firstName>
+            <lastName>Methley</lastName>
+            <dob>1972-06-13</dob>
+            <position>Help Desk Technician</position>
+        </employees>
+        <employees>
+            <id>0e2e6ea9-7c3a-41c8-8af6-49bd4d8f38bd</id>
+            <firstName>Lauren</firstName>
+            <lastName>Moorerud</lastName>
+            <dob>1981-08-06</dob>
+            <position>Nuclear Power Engineer</position>
+        </employees>
+    </zoo>
+    <zoo>
+        <id>d04a611b-f2bb-402b-a815-6ead79dad113</id>
+        <openTime>17:17</openTime>
+        <closeTime>20:22</closeTime>
+        <location>
+            <city>Santa Ana</city>
+            <region>California</region>
+            <counry>United States</counry>
+        </location>
+        <animals>
+            <giveName>Paulie</giveName>
+            <commonName>Goat, mountain</commonName>
+            <scientificName>Oreamnos americanus</scientificName>
+            <dob>2004-06-22</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Isidora</giveName>
+            <commonName>Anteater, giant</commonName>
+            <scientificName>Myrmecophaga tridactyla</scientificName>
+            <dob>2008-10-18</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Amerigo</giveName>
+            <commonName>Canada goose</commonName>
+            <scientificName>Branta canadensis</scientificName>
+            <dob>2005-09-08</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Darrin</giveName>
+            <commonName>Bear, polar</commonName>
+            <scientificName>Ursus maritimus</scientificName>
+            <dob>2002-06-24</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Prinz</giveName>
+            <commonName>Stilt, black-winged</commonName>
+            <scientificName>Himantopus himantopus</scientificName>
+            <dob>2017-01-31</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Filmore</giveName>
+            <commonName>Red-winged hawk (unidentified)</commonName>
+            <scientificName>unavailable</scientificName>
+            <dob>2020-11-13</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Arlee</giveName>
+            <commonName>Nutcracker, clark&#x27;s</commonName>
+            <scientificName>Nucifraga columbiana</scientificName>
+            <dob>2013-01-26</dob>
+            <sex>Female</sex>
+        </animals>
+        <employees>
+            <id>25a49ab0-1439-49cc-b8d9-b8683df74a7f</id>
+            <firstName>Leeland</firstName>
+            <lastName>Kewish</lastName>
+            <dob>1995-11-10</dob>
+            <position>Financial Analyst</position>
+        </employees>
+        <employees>
+            <id>96de1826-f17d-4429-9f23-2b5aaebb9809</id>
+            <firstName>Owen</firstName>
+            <lastName>Johnke</lastName>
+            <dob>1997-01-03</dob>
+            <position>VP Sales</position>
+        </employees>
+        <employees>
+            <id>091f5ed5-bce9-46a8-80fa-50da40fbe76d</id>
+            <firstName>Glenden</firstName>
+            <lastName>Greaves</lastName>
+            <dob>1997-06-05</dob>
+            <position>Senior Developer</position>
+        </employees>
+    </zoo>
+    <zoo>
+        <id>d3d2e002-ce92-46dc-9761-cde67f154073</id>
+        <openTime>14:40</openTime>
+        <closeTime>21:37</closeTime>
+        <location>
+            <city>Tampa</city>
+            <region>Florida</region>
+            <counry>United States</counry>
+        </location>
+        <animals>
+            <giveName>Hector</giveName>
+            <commonName>Eastern boa constrictor</commonName>
+            <scientificName>Acrantophis madagascariensis</scientificName>
+            <dob>2014-10-03</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Rowney</giveName>
+            <commonName>Elegant crested tinamou</commonName>
+            <scientificName>Eudromia elegans</scientificName>
+            <dob>2014-10-24</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Arman</giveName>
+            <commonName>Anteater, australian spiny</commonName>
+            <scientificName>Tachyglossus aculeatus</scientificName>
+            <dob>2012-01-29</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Sheffield</giveName>
+            <commonName>Common long-nosed armadillo</commonName>
+            <scientificName>Dasypus novemcinctus</scientificName>
+            <dob>2010-11-19</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Sim</giveName>
+            <commonName>Elephant, african</commonName>
+            <scientificName>Loxodonta africana</scientificName>
+            <dob>2018-11-14</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Gunner</giveName>
+            <commonName>Steenbuck</commonName>
+            <scientificName>Raphicerus campestris</scientificName>
+            <dob>2000-12-27</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Kiersten</giveName>
+            <commonName>Swallow-tail gull</commonName>
+            <scientificName>Creagrus furcatus</scientificName>
+            <dob>2003-04-26</dob>
+            <sex>Female</sex>
+        </animals>
+        <employees>
+            <id>93e56f55-ea47-42c8-9fd7-ccc948229763</id>
+            <firstName>Melanie</firstName>
+            <lastName>Abernethy</lastName>
+            <dob>1983-01-19</dob>
+            <position>Financial Analyst</position>
+        </employees>
+        <employees>
+            <id>0556995b-3612-408d-b6d0-ad2e68b142cf</id>
+            <firstName>Karlotta</firstName>
+            <lastName>Dowdle</lastName>
+            <dob>1971-12-08</dob>
+            <position>Budget/Accounting Analyst III</position>
+        </employees>
+        <employees>
+            <id>8cd7da11-ebed-4dd6-8c36-cf18128f480e</id>
+            <firstName>Feodor</firstName>
+            <lastName>Fearneley</lastName>
+            <dob>1969-07-18</dob>
+            <position>Budget/Accounting Analyst II</position>
+        </employees>
+    </zoo>
+    <zoo>
+        <id>dc11c866-0087-4850-ba22-957577e83702</id>
+        <openTime>18:25</openTime>
+        <closeTime>19:03</closeTime>
+        <location>
+            <city>Stonewall</city>
+            <region>Manitoba</region>
+            <counry>Canada</counry>
+        </location>
+        <animals>
+            <giveName>Erwin</giveName>
+            <commonName>Black-crowned night heron</commonName>
+            <scientificName>Nycticorax nycticorax</scientificName>
+            <dob>2015-01-24</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Vassili</giveName>
+            <commonName>Dove, white-winged</commonName>
+            <scientificName>Zenaida asiatica</scientificName>
+            <dob>2014-01-27</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Darell</giveName>
+            <commonName>Blue catfish</commonName>
+            <scientificName>Ictalurus furcatus</scientificName>
+            <dob>2013-02-16</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Kirstyn</giveName>
+            <commonName>Red squirrel</commonName>
+            <scientificName>Tamiasciurus hudsonicus</scientificName>
+            <dob>2004-04-05</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Abba</giveName>
+            <commonName>Owl, madagascar hawk</commonName>
+            <scientificName>Ninox superciliaris</scientificName>
+            <dob>2013-10-03</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Hyacinth</giveName>
+            <commonName>Wallaby, bennett&#x27;s</commonName>
+            <scientificName>Macropus rufogriseus</scientificName>
+            <dob>2011-03-23</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Hershel</giveName>
+            <commonName>Ring-tailed lemur</commonName>
+            <scientificName>Lemur catta</scientificName>
+            <dob>2005-10-05</dob>
+            <sex>Male</sex>
+        </animals>
+        <employees>
+            <id>6f383126-519e-4632-a5bb-4fcf70ff0141</id>
+            <firstName>Leslie</firstName>
+            <lastName>Pantecost</lastName>
+            <dob>1998-01-12</dob>
+            <position>Help Desk Technician</position>
+        </employees>
+        <employees>
+            <id>8dc60e50-e1de-4140-8d9c-42402274f8ab</id>
+            <firstName>Lissy</firstName>
+            <lastName>Gethyn</lastName>
+            <dob>1987-04-10</dob>
+            <position>Statistician III</position>
+        </employees>
+        <employees>
+            <id>d1a8f825-8157-445e-8e93-eed3264e5a12</id>
+            <firstName>Dermot</firstName>
+            <lastName>Bean</lastName>
+            <dob>1979-12-02</dob>
+            <position>Senior Quality Engineer</position>
+        </employees>
+    </zoo>
+    <zoo>
+        <id>edfebc8c-5017-4c15-a9c5-a0ce1314e6c8</id>
+        <openTime>16:48</openTime>
+        <closeTime>20:58</closeTime>
+        <location>
+            <city>Lethbridge</city>
+            <region>Alberta</region>
+            <counry>Canada</counry>
+        </location>
+        <animals>
+            <giveName>Dudley</giveName>
+            <commonName>Asian elephant</commonName>
+            <scientificName>Elephas maximus bengalensis</scientificName>
+            <dob>2017-06-06</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Vernice</giveName>
+            <commonName>Puku</commonName>
+            <scientificName>Kobus vardonii vardoni</scientificName>
+            <dob>2001-09-04</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Tod</giveName>
+            <commonName>Blue racer</commonName>
+            <scientificName>Coluber constrictor foxii</scientificName>
+            <dob>2005-07-27</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Ricardo</giveName>
+            <commonName>Tortoise, galapagos</commonName>
+            <scientificName>Geochelone elephantopus</scientificName>
+            <dob>2017-07-18</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Verina</giveName>
+            <commonName>Bison, american</commonName>
+            <scientificName>Bison bison</scientificName>
+            <dob>2012-01-26</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Fayina</giveName>
+            <commonName>Goose, cape barren</commonName>
+            <scientificName>Cereopsis novaehollandiae</scientificName>
+            <dob>2006-10-30</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Gnni</giveName>
+            <commonName>Black-tailed deer</commonName>
+            <scientificName>Odocoileus hemionus</scientificName>
+            <dob>2019-09-21</dob>
+            <sex>Female</sex>
+        </animals>
+        <employees>
+            <id>d4cebc57-67aa-48f2-9efc-314cd7612a02</id>
+            <firstName>Jandy</firstName>
+            <lastName>Gommery</lastName>
+            <dob>1989-03-25</dob>
+            <position>Professor</position>
+        </employees>
+        <employees>
+            <id>7f05392d-a7f3-40c8-8579-2b1c25b7dddc</id>
+            <firstName>Clerissa</firstName>
+            <lastName>Khoter</lastName>
+            <dob>1981-02-22</dob>
+            <position>Dental Hygienist</position>
+        </employees>
+        <employees>
+            <id>f1f458ba-f0d5-464c-9571-f4732e22c86f</id>
+            <firstName>Gregory</firstName>
+            <lastName>Hacun</lastName>
+            <dob>1969-03-03</dob>
+            <position>Research Associate</position>
+        </employees>
+    </zoo>
+    <zoo>
+        <id>708de8b8-15db-46b6-bc2d-9ff169faac80</id>
+        <openTime>7:52</openTime>
+        <closeTime>20:03</closeTime>
+        <location>
+            <city>Honolulu</city>
+            <region>Hawaii</region>
+            <counry>United States</counry>
+        </location>
+        <animals>
+            <giveName>Torre</giveName>
+            <commonName>Verreaux&#x27;s sifaka</commonName>
+            <scientificName>Propithecus verreauxi</scientificName>
+            <dob>2010-06-15</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Gaven</giveName>
+            <commonName>Barbet, levaillant&#x27;s</commonName>
+            <scientificName>Trachyphonus vaillantii</scientificName>
+            <dob>2020-03-30</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Bary</giveName>
+            <commonName>American marten</commonName>
+            <scientificName>Martes americana</scientificName>
+            <dob>2006-02-03</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Adam</giveName>
+            <commonName>Lion, california sea</commonName>
+            <scientificName>Zalophus californicus</scientificName>
+            <dob>2015-05-08</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Valentijn</giveName>
+            <commonName>Crab-eating raccoon</commonName>
+            <scientificName>Procyon cancrivorus</scientificName>
+            <dob>2022-02-09</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Mill</giveName>
+            <commonName>Fairy penguin</commonName>
+            <scientificName>Eudyptula minor</scientificName>
+            <dob>2006-04-25</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Louisa</giveName>
+            <commonName>Guanaco</commonName>
+            <scientificName>Lama guanicoe</scientificName>
+            <dob>2006-09-19</dob>
+            <sex>Female</sex>
+        </animals>
+        <employees>
+            <id>1bb09472-1df2-4bad-a7e1-f830bb93e84d</id>
+            <firstName>Melita</firstName>
+            <lastName>Grinyakin</lastName>
+            <dob>1981-01-27</dob>
+            <position>Executive Secretary</position>
+        </employees>
+        <employees>
+            <id>4978a93e-6d93-4282-b879-d452672bf9ba</id>
+            <firstName>Tisha</firstName>
+            <lastName>Burles</lastName>
+            <dob>1986-04-02</dob>
+            <position>Software Test Engineer IV</position>
+        </employees>
+        <employees>
+            <id>aead0f5e-5169-4e6d-b56b-d5b2e0c9391a</id>
+            <firstName>Johannah</firstName>
+            <lastName>Duckers</lastName>
+            <dob>1991-11-17</dob>
+            <position>Legal Assistant</position>
+        </employees>
+    </zoo>
+    <zoo>
+        <id>b8e2f8ca-571b-4ff4-88f4-43f4298b9a0b</id>
+        <openTime>9:50</openTime>
+        <closeTime>20:14</closeTime>
+        <location>
+            <city>Chicago</city>
+            <region>Illinois</region>
+            <counry>United States</counry>
+        </location>
+        <animals>
+            <giveName>Sheffy</giveName>
+            <commonName>Macaw, blue and gold</commonName>
+            <scientificName>Ara ararauna</scientificName>
+            <dob>2009-12-04</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Caterina</giveName>
+            <commonName>Grebe, little</commonName>
+            <scientificName>Tachybaptus ruficollis</scientificName>
+            <dob>2019-12-11</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Ofelia</giveName>
+            <commonName>European spoonbill</commonName>
+            <scientificName>Platalea leucordia</scientificName>
+            <dob>2014-06-18</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Nomi</giveName>
+            <commonName>Owl, madagascar hawk</commonName>
+            <scientificName>Ninox superciliaris</scientificName>
+            <dob>2010-01-28</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Abigael</giveName>
+            <commonName>Malay squirrel (unidentified)</commonName>
+            <scientificName>unavailable</scientificName>
+            <dob>2019-11-24</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Sid</giveName>
+            <commonName>Common wallaroo</commonName>
+            <scientificName>Macropus robustus</scientificName>
+            <dob>2009-04-08</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Skippy</giveName>
+            <commonName>Peccary, collared</commonName>
+            <scientificName>Tayassu tajacu</scientificName>
+            <dob>2004-03-08</dob>
+            <sex>Male</sex>
+        </animals>
+        <employees>
+            <id>c1ddd75e-abe8-494b-a015-f1cc0658900c</id>
+            <firstName>Antonin</firstName>
+            <lastName>Howell</lastName>
+            <dob>1986-07-27</dob>
+            <position>Senior Quality Engineer</position>
+        </employees>
+        <employees>
+            <id>0b1761fa-19d2-4343-bdba-db8b876a611c</id>
+            <firstName>Aarika</firstName>
+            <lastName>Pogosian</lastName>
+            <dob>1991-07-15</dob>
+            <position>Analog Circuit Design manager</position>
+        </employees>
+        <employees>
+            <id>47c5d935-6675-4299-b862-134c7a700301</id>
+            <firstName>Belicia</firstName>
+            <lastName>Miko</lastName>
+            <dob>1990-01-18</dob>
+            <position>Web Designer II</position>
+        </employees>
+    </zoo>
+    <zoo>
+        <id>00cc73eb-bd65-4443-bbc7-e662bd0774cc</id>
+        <openTime>7:41</openTime>
+        <closeTime>19:57</closeTime>
+        <location>
+            <city>Brampton</city>
+            <region>Ontario</region>
+            <counry>Canada</counry>
+        </location>
+        <animals>
+            <giveName>Ryon</giveName>
+            <commonName>Grey lourie</commonName>
+            <scientificName>Lorythaixoides concolor</scientificName>
+            <dob>2014-10-29</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Brittan</giveName>
+            <commonName>Otter, oriental short-clawed</commonName>
+            <scientificName>Aonyx cinerea</scientificName>
+            <dob>2017-02-26</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Raffaello</giveName>
+            <commonName>Dove, emerald-spotted wood</commonName>
+            <scientificName>Turtur chalcospilos</scientificName>
+            <dob>2016-10-06</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Harris</giveName>
+            <commonName>White-winged tern</commonName>
+            <scientificName>Chlidonias leucopterus</scientificName>
+            <dob>2018-11-07</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Gibbie</giveName>
+            <commonName>Black kite</commonName>
+            <scientificName>Milvus migrans</scientificName>
+            <dob>2001-04-23</dob>
+            <sex>Male</sex>
+        </animals>
+        <animals>
+            <giveName>Roxane</giveName>
+            <commonName>Common seal</commonName>
+            <scientificName>Phoca vitulina</scientificName>
+            <dob>2006-04-30</dob>
+            <sex>Female</sex>
+        </animals>
+        <animals>
+            <giveName>Thorin</giveName>
+            <commonName>Lapwing, southern</commonName>
+            <scientificName>Vanellus chilensis</scientificName>
+            <dob>2012-01-01</dob>
+            <sex>Male</sex>
+        </animals>
+        <employees>
+            <id>f44e5927-e633-4ea5-a855-737acd9ed262</id>
+            <firstName>Arin</firstName>
+            <lastName>Heilds</lastName>
+            <dob>1981-08-13</dob>
+            <position>Community Outreach Specialist</position>
+        </employees>
+        <employees>
+            <id>c2217692-2f74-4563-9f29-8b32702a86ca</id>
+            <firstName>Lammond</firstName>
+            <lastName>Darlasson</lastName>
+            <dob>1987-09-20</dob>
+            <position>Analyst Programmer</position>
+        </employees>
+        <employees>
+            <id>4fbfed0c-f421-4373-991d-0aad63803716</id>
+            <firstName>Nelly</firstName>
+            <lastName>Besset</lastName>
+            <dob>1975-02-26</dob>
+            <position>Junior Executive</position>
+        </employees>
+    </zoo>
+</zoos>
