@@ -1,0 +1,12 @@
+table, th, td{
+    border: 1px solid darkgreen;
+}
+
+th{
+    background-color:rgb(204, 236, 149);
+    font-family:serif;
+}
+
+div{
+    font-family:serif
+}
