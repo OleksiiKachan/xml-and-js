@@ -1,0 +1,64 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="root" type="rootType"/>
+  <xs:complexType name="rootType">
+    <xs:sequence>
+      <xs:element type="recordType" name="record" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="recordType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="currency"/>
+      <xs:element type="addressType" name="address"/>
+      <xs:element type="stocksType" name="stocks" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="accountsType" name="accounts" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addressType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="street"/>
+      <xs:element type="xs:string" name="city"/>
+      <xs:element type="xs:string" name="region"/>
+      <xs:element type="xs:string" name="country"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="stocksType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="symbol"/>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="sector"/>
+      <xs:element type="xs:string" name="industry"/>
+      <xs:element type="xs:string" name="marketCap"/>
+      <xs:element type="xs:float" name="price"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="accountsType">
+    <xs:sequence>
+      <xs:element type="holderType" name="holder"/>
+      <xs:element type="bankType" name="bank"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="holderType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="firstName"/>
+      <xs:element type="xs:string" name="lastName"/>
+      <xs:element type="xs:string" name="gender"/>
+      <xs:element type="xs:string" name="occupation"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="bankType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="iban"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  
+  
+</xs:schema>

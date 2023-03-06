@@ -8,7 +8,7 @@
     - Create xsd for created xml file
   - Create xslt to display data in the table format
   - HTML & JS
-    - Create html file
+  - Create html file
     - Dynamically load data from your xml into html
   - Documentation
     - `team.md` - list of team members
