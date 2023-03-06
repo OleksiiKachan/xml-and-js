@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Zoo Data</title>
+    <link rel="stylesheet" href="zoo.css">
+  </head>
+  <body>
+    <table id="zoo_data">
+      <tr>
+        <th>Zoo ID</th>
+        <th>Open Time</th>
+        <th>Close Time</th>
+        <th>City</th>
+        <th>Region</th>
+        <th>Country</th>
+        <th>Animals</th>
+        <th>Employees</th>
+      </tr>
+    </table>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "zoo.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function create_zoo_data(zoo) {
+        let animalsData = ``;
+        for (let animal of zoo.animals) {
+          animalsData += `<tr>
+                            <td>${animal.givename}</td>
+                             <td>${animal.commonName}</td>
+                             <td>${animal.scientificName}</td>
+                             <td>${animal.dob}</td>
+                             <td>${animal.sex}</td>
+                         </tr>`;
+        }
+
+        let animalsTable = `<table>
+                              <tr> 
+                                <th>Give Name</th> 
+                                <th>Common Name</th>
+                                <th>Scientific Name</th> 
+                                <th>Date of Birth</th>
+                                <th>Sex</th>
+                              </tr>                 
+                                ${animalsData}
+                              </table>`;
+
+        let employeesData = ``;
+        for (let employee of zoo.employees) {
+          employeesData += `<tr>
+                            <td>${employee.id}</td>
+                            <td>${employee.firstName}</td>
+                            <td>${employee.lastName}</td>
+                            <td>${employee.dob}</td>
+                            <td>${employee.position}</td>
+                          </tr>`;
+        }
+
+        let employeesTable = ` <table>
+                                <tr> 
+                                  <th>Employee ID</th> 
+                                  <th>First Name</th>
+                                  <th>Last Name</th> 
+                                  <th>dob</th>
+                                  <th>Position</th>
+                                </tr>  
+				                      ${employeesData}               
+                            </table>`;
+
+        const content = `
+                        <tr>
+                          <td>${zoo.id}</td>
+                          <td>${zoo.openTime}</td>
+	                  	    <td>${zoo.closeTime}</td>
+	                  	    <td>${zoo.city}</td>
+                          <td>${zoo.region}</td>
+	                  	    <td>${zoo.country}</td>
+	                  	    <td>${animalsTable}</td>
+	                  	    <td>${employeesTable}</td>
+                        </tr>
+        `;
+
+        return stringToNode(content);
+      }
+
+      function displayData(xml) {
+        const xmlDoc = xml.documentElement;
+        const zooList = xmlDoc.getElementsByTagName("zoo");
+
+        for (let i = 0; i < zooList.length; i++) {
+          const zoo = {
+            id: zooList[i].getElementsByTagName(`id`)[0].childNodes[0]
+              .nodeValue,
+            openTime:
+              zooList[i].getElementsByTagName(`openTime`)[0].childNodes[0]
+                .nodeValue,
+            closeTime:
+              zooList[i].getElementsByTagName(`closeTime`)[0].childNodes[0]
+                .nodeValue,
+            city: zooList[i].getElementsByTagName(`city`)[0].childNodes[0]
+              .nodeValue,
+            region:
+              zooList[i].getElementsByTagName(`region`)[0].childNodes[0]
+                .nodeValue,
+            country:
+              zooList[i].getElementsByTagName(`counry`)[0].childNodes[0]
+                .nodeValue,
+            animals: [],
+            employees: [],
+          };
+
+          const animalList = zooList[i].getElementsByTagName("animals");
+          for (let j = 0; j < animalList.length; j++) {
+            const animal = {
+              givename:
+                animalList[j].getElementsByTagName(`giveName`)[0].childNodes[0]
+                  .nodeValue,
+              commonName:
+                animalList[j].getElementsByTagName(`commonName`)[0]
+                  .childNodes[0].nodeValue,
+              scientificName:
+                animalList[j].getElementsByTagName(`scientificName`)[0]
+                  .childNodes[0].nodeValue,
+              dob: animalList[j].getElementsByTagName(`dob`)[0].childNodes[0]
+                .nodeValue,
+              sex: animalList[j].getElementsByTagName(`sex`)[0].childNodes[0]
+                .nodeValue,
+            };
+            zoo.animals.push(animal);
+          }
+
+          const employeeList = zooList[i].getElementsByTagName("employees");
+          for (let k = 0; k < employeeList.length; k++) {
+            const employee = {
+              id: employeeList[k].getElementsByTagName(`id`)[0].childNodes[0]
+                .nodeValue,
+              firstName:
+                employeeList[k].getElementsByTagName(`firstName`)[0]
+                  .childNodes[0].nodeValue,
+              lastName:
+                employeeList[k].getElementsByTagName(`lastName`)[0]
+                  .childNodes[0].nodeValue,
+              dob: employeeList[k].getElementsByTagName(`dob`)[0].childNodes[0]
+                .nodeValue,
+              position:
+                employeeList[k].getElementsByTagName(`position`)[0]
+                  .childNodes[0].nodeValue,
+            };
+            zoo.employees.push(employee);
+          }
+
+          const tableRow = create_zoo_data(zoo);
+          document.getElementById("zoo_data").appendChild(tableRow);
+        }
+      }
+    </script>
+  </body>
+</html>
