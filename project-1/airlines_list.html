@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <ol id="airlines"></ol>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          displayData(this);
+        }
+      };
+      xhttp.open("GET", "airlines.xml", true);
+      xhttp.send();
+
+      function displayData(xml) {
+        const listElement = document.getElementById(`airlines`);
+
+        const xmlDoc = xml.responseXML;
+        const airlineNodes = xmlDoc.getElementsByTagName("info");
+        let k=0;
+        let p=0;
+        for (let index = 0; index < airlineNodes.length; index++) {
+          const student = airlineNodes[index];
+
+          const listItem = document.createElement(`li`);
+
+          const title = document.createElement(`h2`);
+          title.appendChild(
+            document.createTextNode(
+              student.getElementsByTagName("name")[0].childNodes[0]
+                .nodeValue 
+            )
+          );
+          listItem.appendChild(title);
+
+          const subtitle = document.createElement(`h3`);
+          subtitle.appendChild(
+            document.createTextNode(
+            
+                student.getElementsByTagName("id")[0].childNodes[0]
+                  .nodeValue
+            )
+          );
+          listItem.appendChild(subtitle);
+
+          const address = document.createElement(`p`);
+          address.appendChild(
+            document.createTextNode(
+              `Address: ` +
+                student.getElementsByTagName("street")[0].childNodes[0].nodeValue
+                +
+                `, ` + 
+                student.getElementsByTagName("city")[0].childNodes[0].nodeValue
+                +
+                `, ` + 
+                student.getElementsByTagName("region")[0].childNodes[0].nodeValue
+                +
+                `, ` + 
+                student.getElementsByTagName("country")[0].childNodes[0].nodeValue
+            )
+          );
+          listItem.appendChild(address);
+          const parkNodes = xmlDoc.getElementsByTagName("park");
+          for (let i = k; i < k+3; i++) {
+          const park = parkNodes[i];
+          const parkid = document.createElement(`h4`);
+          parkid.appendChild(
+            document.createTextNode(
+                `Park ID: ` +
+                park.getElementsByTagName("id")[0].childNodes[0]
+                  .nodeValue
+            )
+          );
+          listItem.appendChild(parkid);
+
+          const routeType = document.createElement(`p`);
+          routeType.appendChild(
+            document.createTextNode(
+                `Route Type: ` +
+                park.getElementsByTagName("routeType")[0].childNodes[0]
+                  .nodeValue
+            )
+          );
+          listItem.appendChild(routeType);
+
+          const time = document.createElement(`p`);
+          time.appendChild(
+            document.createTextNode(
+              `Manufacturer: ` +
+              park.getElementsByTagName("manufacturer")[0].childNodes[0].nodeValue
+              +
+                ` , Year - ` + 
+                 
+                park.getElementsByTagName("year")[0].childNodes[0].nodeValue
+            )
+          );
+          listItem.appendChild(time);
+
+          }
+
+          const routeNodes = xmlDoc.getElementsByTagName("routes");
+          for (let j = p; j < p+2; j++) {
+          const route = routeNodes[j];
+          const vehicle = document.createElement(`h4`);
+          vehicle.appendChild(
+            document.createTextNode(
+                `Vehicle ID: ` +
+                route.getElementsByTagName("vehicle")[0].childNodes[0]
+                  .nodeValue
+                  
+            )
+          );
+          listItem.appendChild(vehicle);
+
+          const departure = document.createElement(`p`);
+          departure.appendChild(
+            document.createTextNode(
+                  ` Departure Details: ` +
+                route.getElementsByTagName("airport")[0].childNodes[0]
+                  .nodeValue
+                  +
+                  `, ` +
+                route.getElementsByTagName("city")[0].childNodes[0]
+                  .nodeValue
+                  +
+                  `, ` +
+                route.getElementsByTagName("country")[0].childNodes[0]
+                  .nodeValue
+            )
+          );
+          listItem.appendChild(departure);
+
+          const destination = document.createElement(`p`);
+          destination.appendChild(
+            document.createTextNode(
+                  ` Destination:   Details: ` +
+                route.getElementsByTagName("airport")[1].childNodes[0]
+                  .nodeValue
+                  +
+                  `, ` +
+                route.getElementsByTagName("city")[1].childNodes[0]
+                  .nodeValue
+                  +
+                  `, ` +
+                route.getElementsByTagName("country")[1].childNodes[0]
+                  .nodeValue
+                  
+            )
+          );
+          listItem.appendChild(destination);
+
+          }
+
+          listElement.appendChild(listItem);
+          p=p+2;
+          k=k+3;
+        }
+      }
+    </script>
+  </body>
+</html>

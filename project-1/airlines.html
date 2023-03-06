@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <title>Airplines</title>
+     <link rel="stylesheet" href="airlines.css">
+   </head>
+   <body>
+     <table id="airplane_data">
+       <tr>
+         <th>ID</th>
+         <th>Name</th>
+         <th>Street</th>
+         <th>City</th>
+         <th>Region</th>
+         <th>Country</th>
+         <th>Park</th>
+         <th>Routes</th>
+		 <th>Departure</th>
+		 <th>Destination</th>
+       </tr>
+     </table>
+     <script>
+       const xhttp = new XMLHttpRequest();
+       xhttp.onreadystatechange = function () {
+         if (this.readyState == 4 && this.status == 200) {
+           displayData(this.responseXML);
+         }
+       };
+       xhttp.open("GET", "airlines.xml", true);
+       xhttp.send();
+
+       function stringToNode(html) {
+         const template = document.createElement(`template`);
+         html = html.trim();
+         template.innerHTML = html;
+         return template.content.firstChild;
+       }
+    // Function for the Park Elements
+       function create_airplane_data(info) {
+         let parkData = ``;
+         for (let parks of info.park) {
+			parkData += `<tr>
+                             <td>${parks.id}</td>
+                              <td>${parks.routeType}</td>
+                              <td>${parks.manufacturer}</td>
+                              <td>${parks.year}</td>
+                          </tr>`;
+         }
+
+         let parkTable = `<table>
+                               <tr> 
+                                 <th>ID</th> 
+                                 <th>RouteType</th>
+                                 <th>Manufacturer</th> 
+                                 <th>Year</th>
+                               </tr>                 
+                                 ${parkData}
+                               </table>`;
+
+         let routesData = ``;
+         for (let route of info.routes) {
+			routesData += `<tr>
+                             <td>${route.vehicle}</td>
+                           </tr>`;
+         }
+
+         let routesTable = ` <table>
+                                 <tr> 
+                                   <th>Vechicle ID</th> 
+                                 </tr>  
+ 				                      ${routesData}               
+                             </table>`;
+			
+							 
+		
+		let departureData = ``;
+         for (let departures of info.departure) {
+			departureData += `<tr>
+                             <td>${departures.airport}</td>
+							 <td>${departures.city}</td>
+							 <td>${departures.country}</td>
+                           </tr>`;
+         }
+
+         let departureTable = ` <table>
+                                 <tr> 
+                                   <th>Airport</th>
+								   <th>City</th> 
+								   <th>Country</th> 
+                                 </tr>  
+ 				                      ${departureData}               
+                             </table>`;
+
+		let destinationData = ``;
+         for (let destinations of info.destination) {
+			destinationData += `<tr>
+                             <td>${destinations.airport}</td>
+							 <td>${destinations.city}</td>
+							 <td>${destinations.country}</td>
+                           </tr>`;
+         }
+
+         let destinationTable = ` <table>
+                                 <tr> 
+                                   <th>Airport</th>
+								   <th>City</th> 
+								   <th>Country</th> 
+                                 </tr>  
+ 				                      ${destinationData}               
+                             </table>`;
+
+         const content = `
+                         <tr>
+                           <td>${info.id}</td>
+                           <td>${info.name}</td>
+ 	                  	    <td>${info.street}</td>
+ 	                  	    <td>${info.city}</td>
+                           <td>${info.region}</td>
+ 	                  	    <td>${info.country}</td>
+ 	                  	    <td>${parkTable}</td>
+ 	                  	    <td>${routesTable}</td>
+							<td>${departureTable}</td>
+							<td>${destinationTable}</td>
+                         </tr>
+         `;
+
+         return stringToNode(content);
+       }
+        // Function for the Displaying the data
+       function displayData(xml) {
+         const xmlDoc = xml.documentElement;
+         const infoList = xmlDoc.getElementsByTagName("info");
+
+         for (let i = 0; i < infoList.length; i++) {
+           const info = {
+             id: infoList[i].getElementsByTagName(`id`)[0].childNodes[0]
+               .nodeValue,
+			name:
+			infoList[i].getElementsByTagName(`name`)[0].childNodes[0]
+                 .nodeValue,
+			street:
+			infoList[i].getElementsByTagName(`street`)[0].childNodes[0]
+                 .nodeValue,
+             city: infoList[i].getElementsByTagName(`city`)[0].childNodes[0]
+               .nodeValue,
+             region:
+			 infoList[i].getElementsByTagName(`region`)[0].childNodes[0]
+                 .nodeValue,
+             country:
+			 infoList[i].getElementsByTagName(`country`)[0].childNodes[0]
+                 .nodeValue,
+             park: [],
+             routes: [],
+			 departure: [],
+			 destination: [],
+           };
+
+           const animalList = infoList[i].getElementsByTagName("park");
+           for (let j = 0; j < animalList.length; j++) {
+             const parks = {
+				id:
+                 animalList[j].getElementsByTagName(`id`)[0].childNodes[0]
+                   .nodeValue,
+				routeType:
+                 animalList[j].getElementsByTagName(`routeType`)[0]
+                   .childNodes[0].nodeValue,
+				manufacturer:
+                 animalList[j].getElementsByTagName(`manufacturer`)[0]
+                   .childNodes[0].nodeValue,
+				year: animalList[j].getElementsByTagName(`year`)[0].childNodes[0]
+                 .nodeValue,
+             };
+             info.park.push(parks);
+           }
+
+           const routeList = infoList[i].getElementsByTagName("routes");
+           for (let k = 0; k < routeList.length; k++) {
+             const route = {
+				vehicle: routeList[k].getElementsByTagName(`vehicle`)[0].childNodes[0]
+                 .nodeValue,
+			
+             };
+             info.routes.push(route);
+			 
+           }
+
+		   const departureList = infoList[i].getElementsByTagName("departure");
+           for (let k = 0; k < departureList.length; k++) {
+             const departures = {
+				airport: departureList[k].getElementsByTagName(`airport`)[0].childNodes[0]
+                 .nodeValue,
+				 city: departureList[k].getElementsByTagName(`city`)[0].childNodes[0]
+                 .nodeValue,
+				 country: departureList[k].getElementsByTagName(`country`)[0].childNodes[0]
+                 .nodeValue,
+             };
+             info.departure.push(departures);
+			 
+           }
+
+		   const destinationList = infoList[i].getElementsByTagName("destination");
+           for (let k = 0; k < destinationList.length; k++) {
+             const destinations = {
+				airport: destinationList[k].getElementsByTagName(`airport`)[0].childNodes[0]
+                 .nodeValue,
+				 city: destinationList[k].getElementsByTagName(`city`)[0].childNodes[0]
+                 .nodeValue,
+				 country: destinationList[k].getElementsByTagName(`country`)[0].childNodes[0]
+                 .nodeValue,
+             };
+             info.destination.push(destinations);
+			 
+           }
+           
+           const tableRow = create_airplane_data(info);
+           document.getElementById("airplane_data").appendChild(tableRow);
+         }
+       }
+     </script>
+   </body>
+ </html>
