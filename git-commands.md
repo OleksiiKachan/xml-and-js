@@ -10,9 +10,9 @@ git checkout -b "<branch-name>"
 
 ```bash
 git checkout main
-git checkout -b "module-1/activity-1"
+git checkout -b "module-7/assignment-7"
 git add *
-git commit -m "complete activity 1"
+git commit -m "complete assignment-7"
 git push
 ```
 
