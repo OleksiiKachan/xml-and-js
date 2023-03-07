@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE airlines
+[
+    <!ELEMENT airlines (airline+)>
+    <!ELEMENT airline (id,name,street?,city,region,country,parks,routes)>
+    <!ELEMENT id (#PCDATA)>
+    <!ELEMENT city (#PCDATA)>
+    <!ELEMENT country (#PCDATA)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT street (#PCDATA)>
+    <!ELEMENT region (#PCDATA)>
+    <!ELEMENT parks (park+)>
+    <!ELEMENT park (parking_id,manufacturer,routeType,year)>
+    <!ELEMENT parking_id (#PCDATA)>
+    <!ELEMENT manufacturer (#PCDATA)>
+    <!ELEMENT routeType (#PCDATA)>
+    <!ELEMENT year (#PCDATA)>
+    <!ELEMENT routes (route+)>
+    <!ELEMENT route (vehicle,departure,destination)>
+    <!ELEMENT vehicle (#PCDATA)>
+    <!ELEMENT departure (dep_airport,dep_city,dep_region?,dep_country)>
+    <!ELEMENT dep_airport (#PCDATA)>
+    <!ELEMENT dep_city (#PCDATA)>
+    <!ELEMENT dep_region (#PCDATA)>
+    <!ELEMENT dep_country (#PCDATA)>
+    <!ELEMENT destination (dest_airport?,dest_city?,dest_region?,dest_country?)>
+    <!ELEMENT dest_airport (#PCDATA)>
+    <!ELEMENT dest_city (#PCDATA)>
+    <!ELEMENT dest_country (#PCDATA)>
+    <!ELEMENT dest_region (#PCDATA)>
+]>
