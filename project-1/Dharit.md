@@ -1,0 +1,4 @@
+
+## Team Contribution to the project
+
+In this Airline project, my part was doing the XSL File where  I first created table in which i first added all the header of the table. Next, I created a loop to add all the values which are easy like id, name, street, city, region and country by the help of <xsl:value-of>. After that, I will add all value which are multiple for example park and route. To added the value of park, I have create an another table and loop the park in it. For the Route , I also create a table in which I added the the value of vehicle, destination and departure. While doing this I faced the issue while creating the table all bring all the data in the table format.Where I had mention all the table headings and then moved to each of the data for the xml file.
