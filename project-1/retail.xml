@@ -27,7 +27,7 @@
 <retailDetails>
   <dataRows>
     <id>1</id>
-    <address>
+    <address> 
       <street>57901 Rowland Drive</street>
       <city>Catamayo</city>
       <country>Ecuador</country>

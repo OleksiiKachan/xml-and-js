@@ -39,7 +39,7 @@
 
       xhr.open("GET", "retail.xml", true);
       xhr.send();
-      
+
       function displayData(xmlDoc) {
         const retailDetails = xmlDoc.getElementsByTagName(`dataRows`);
         var table="<tr><th>ID</th><th>Address</th><th>Employee Details</th><th>Product Details</th></tr>";
@@ -63,7 +63,7 @@
           retailDetails[i].getElementsByTagName("id")[0].childNodes[0].nodeValue + "</td>" + 
           "<td> Street :  " +
           retailDetails[i].getElementsByTagName("street")[0].childNodes[0].nodeValue + 
-          "<br>City :  " +
+          "<br>City :  " + 
           retailDetails[i].getElementsByTagName("city")[0].childNodes[0].nodeValue + 
           "<br>Country :  " +
           retailDetails[i].getElementsByTagName("country")[0].childNodes[0].nodeValue + "</td>" + 
