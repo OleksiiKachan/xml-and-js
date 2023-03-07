@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        td, th {
+            width: 300px;
+        }
+    </style>
+  <body>
+    <div id= "library">
+    <center><h1>Library Catelog</h1></center>
+    <table border="1"> 
+        <tr>
+            <th> ID</th>
+            <th>  Name</th>
+            <th> Specialty </th>
+            <th> Address </th>
+            <th> Catelog </th>
+          </tr>
+    </table>
+    </div>
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            displaylibrary(this.responseXML);
+        }
+      };
+      xhttp.open("GET", "./library_project.xml", true);
+      xhttp.send();
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function displayCatalog(xmlDoc, id) {
+        console.log(id)
+        const listElement = document.getElementById(id);
+
+        const bookNodes = xmlDoc.getElementsByTagName(`book`);
+        
+        for (let index = 0; index < bookNodes.length; index++) {
+          const bookNode = bookNodes[index];
+          // <td>${bookNode.getElementsByTagName(`id`)[0].childNodes[0].nodeValue}</td>
+          const listItem = stringToNode(`
+          <tr>
+            <td>${id}</td>
+            <td>${bookNode.getElementsByTagName(`isbn`)[0].childNodes[0].nodeValue}</td>
+            <td>${bookNode.getElementsByTagName(`title`)[0].childNodes[0].nodeValue}</td>
+            <td>${bookNode.getElementsByTagName(`description`)[0].childNodes[0].nodeValue} </td>
+            <td>${bookNode.getElementsByTagName(`genre`)[0].childNodes[0].nodeValue} </td>
+            <td>${bookNode.getElementsByTagName(`author`)[0].childNodes[0].nodeValue} </td>
+            <td>${bookNode.getElementsByTagName(`year`)[0].childNodes[0].nodeValue} </td>
+            <td>${bookNode.getElementsByTagName(`availability`)[0].childNodes[0].nodeValue} </td>
+        </tr>`);
+          listElement.appendChild(listItem);
+        }
+      }
+
+      function displaylibrary(xmlDoc) {
+        const listElement = document.getElementById(`library`);
+
+        const lbNodes = xmlDoc.getElementsByTagName(`element`);
+        
+        for (let index = 0; index < lbNodes.length; index++) {
+          const lbNode = lbNodes[index];
+          const addressNode = lbNode.getElementsByTagName(`address`)[0];
+          const id = lbNode.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+          const listItem = stringToNode(`
+          <div>
+          <table border="1">
+          <tr>
+            <td>${id}</td>
+            <td>${lbNode.getElementsByTagName(`name`)[0].childNodes[0].nodeValue}</td>
+            <td>${lbNode.getElementsByTagName(`specialty`)[0].childNodes[0].nodeValue}</td>
+            <td>
+            <p>
+                ${addressNode.getElementsByTagName(`street`)[0].childNodes[0].nodeValue} &nbsp
+                ${addressNode.getElementsByTagName(`region`)[0].childNodes[0].nodeValue} &nbsp
+                ${addressNode.getElementsByTagName(`city`)[0].childNodes[0].nodeValue} &nbsp
+                ${addressNode.getElementsByTagName(`country`)[0].childNodes[0].nodeValue} &nbsp
+            </p>
+            </td>
+            <td><center><button id=btn_${id} type="button"> See Catalog</button></center> </td>
+            </table>
+        </tr>
+        </table>
+        <table style=display:none id=${id}> 
+            <tr>
+            <th> Libraby ID</th>
+            <th> ISBN </th>
+            <th> Title </th>
+            <th> Description </th>
+            <th> genre </th>
+            <th> author </th>
+            <th> year </th>
+            <th> availability </th>
+          </tr>
+            </table></div>`);
+        console.log(listItem)
+          listElement.appendChild(listItem);
+          document.getElementById(`btn_${id}`).onclick = function() {showHide(id)};
+          displayCatalog(lbNode, id)
+        }
+      }
+      const showHide = (id) =>  {
+        const element =  document.getElementById(id);
+        const btn = document.getElementById(`btn_${id}`);
+        console.log(element)
+        if (element.style.display === 'none') {
+            element.style.display = 'block'
+            btn.innerHTML = 'Hide Catalog'
+        } else {
+            element.style.display = 'none'
+            btn.innerHTML = 'See Catalog'
+        }
+      }
+    </script>
+  </body>
+</html>
