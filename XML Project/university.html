@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+       <title>Universities</title>
+</head>
+
+<body>
+       <h2>List of Universities</h2>
+       <ul id="universities"></ul>
+       <script>
+              const xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function () {
+                     if (this.readyState == 4 && this.status == 200) {
+                            displayData(this);
+                     }
+              };
+              xhttp.open("GET", "./university.xml", true);
+              xhttp.send();
+
+              function displayData(xml) {
+                     const listElement = document.getElementById(`universities`);
+
+                     const xmlDoc = xml.responseXML;
+                     const universityNodes = xmlDoc.getElementsByTagName("university");
+                     for (let index = 0; index < universityNodes.length; index++) {
+                            const university = universityNodes[index];
+                            const listItem = document.createElement(`li`);
+
+                            const title = document.createElement(`h2`);
+                            title.appendChild(
+                                   document.createTextNode(
+                                          university.getElementsByTagName("name")[0].childNodes[0]
+                                                 .nodeValue
+                                   )
+                            );
+                            listItem.appendChild(title);
+
+                            const address = document.createElement(`p`);
+                            address.appendChild(
+                                   document.createTextNode(
+                                          university.getElementsByTagName("address")[0].childNodes[0]
+                                                 .nodeValue + ` , ` + university.getElementsByTagName("city")[0].childNodes[0]
+                                                 .nodeValue + ` , ` + university.getElementsByTagName("region")[0].childNodes[0]
+                                                 .nodeValue + ` , ` + university.getElementsByTagName("country")[0].childNodes[0].nodeValue + ` , ` + university.getElementsByTagName("zipCode")[0].childNodes[0]
+                                                 .nodeValue
+                                   )
+                            );
+                            listItem.appendChild(address);
+
+                            const courseTitle = document.createElement(`h3`);
+                            courseTitle.appendChild(
+                                   document.createTextNode(
+                                          `Courses offered:`
+                                   )
+                            );
+                            listItem.appendChild(courseTitle);
+                            createCourseTable(listItem, university);
+
+                            const studentTitle = document.createElement(`h3`);
+                            studentTitle.appendChild(
+                                   document.createTextNode(
+                                          `Student Info:`
+                                   )
+                            );
+                            listItem.appendChild(studentTitle);
+                            createStudentTable(listItem, university);
+
+                            const facultyTitle = document.createElement(`h3`);
+                            facultyTitle.appendChild(
+                                   document.createTextNode(
+                                          `Faculty Info:`
+                                   )
+                            );
+                            listItem.appendChild(facultyTitle);
+                            createFacultyTable(listItem, university);
+
+                            listElement.appendChild(listItem);
+                     }
+
+                     
+              }
+
+              function createCourseTable(listItem, university) {
+                            const tbl = document.createElement('table');
+                            tbl.style.border = '1px solid black';
+                            let tableHeader = ["id", "title", "description"];
+                            let thead = document.createElement('thead');
+                            for (var i = 0; i < tableHeader.length; i++) {
+                                   thead.appendChild(document.createElement("th")).
+                                          appendChild(document.createTextNode(tableHeader[i]));
+                            }
+                            tbl.appendChild(thead);
+                            
+                            const courses = university.getElementsByTagName("courses")
+                            for (let i = 0; i < courses.length; i++) {
+                                   const tr = tbl.insertRow();
+                                   const id = tr.insertCell();
+                                   id.appendChild(document.createTextNode(
+                                          courses[i].getElementsByTagName("id")[0].childNodes[0]
+                                                 .nodeValue
+                                   ));
+                                   id.style.border = '1px solid black';
+                                   id.style.padding = '2px';
+
+                                   const title = tr.insertCell();
+                                   title.appendChild(document.createTextNode(
+                                          courses[i].getElementsByTagName("title")[0].childNodes[0]
+                                                 .nodeValue
+                                   ));
+                                   title.style.border = '1px solid black';
+                                   title.style.padding = '2px';
+
+                                   const description = tr.insertCell();
+                                   description.appendChild(document.createTextNode(
+                                          courses[i].getElementsByTagName("description")[0].childNodes[0]
+                                                 .nodeValue
+                                   ));
+                                   description.style.border = '1px solid black';
+                                   description.style.padding = '2px';
+
+                            }
+                            listItem.appendChild(tbl);
+                     }
+
+                     function createStudentTable(listItem, university) {
+                            const tbl = document.createElement('table');
+                            tbl.style.border = '1px solid black';
+                            let tableHeader = ["id", "firstName", "lastName","dob","email"];
+                            let thead = document.createElement('thead');
+                            for (var i = 0; i < tableHeader.length; i++) {
+                                   thead.appendChild(document.createElement("th")).
+                                          appendChild(document.createTextNode(tableHeader[i]));
+                            }
+                            tbl.appendChild(thead);
+
+                            const students = university.getElementsByTagName("students")
+                            for (let i = 0; i < students.length; i++) {
+                                   const tr = tbl.insertRow();
+                                   const id = tr.insertCell();
+                                   id.appendChild(document.createTextNode(
+                                          students[i].getElementsByTagName("id")[0].childNodes[0]
+                                                 .nodeValue
+                                   ));
+                                   id.style.border = '1px solid black';
+                                   id.style.padding = '2px';
+
+                                   const firstName = tr.insertCell();
+                                   firstName.appendChild(document.createTextNode(
+                                          students[i].getElementsByTagName("firstName")[0].childNodes[0]
+                                                 .nodeValue
+                                   ));
+                                   firstName.style.border = '1px solid black';
+                                   firstName.style.padding = '2px';
+
+                                   const lastName = tr.insertCell();
+                                   lastName.appendChild(document.createTextNode(
+                                          students[i].getElementsByTagName("lastName")[0].childNodes[0]
+                                                 .nodeValue
+                                   ));
+                                   lastName.style.border = '1px solid black';
+                                   lastName.style.padding = '2px';
+
+                                   const dob = tr.insertCell();
+                                   dob.appendChild(document.createTextNode(
+                                          students[i].getElementsByTagName("dob")[0].childNodes[0]
+                                                 .nodeValue
+                                   ));
+                                   dob.style.border = '1px solid black';
+                                   dob.style.padding = '2px';
+
+                                   const email = tr.insertCell();
+                                   email.appendChild(document.createTextNode(
+                                          students[i].getElementsByTagName("email")[0].childNodes[0]
+                                                 .nodeValue
+                                   ));
+                                   email.style.border = '1px solid black';
+
+                            }
+                            listItem.appendChild(tbl);
+                     }
+
+                     function createFacultyTable(listItem, university) {
+                            const tbl = document.createElement('table');
+                            tbl.style.border = '1px solid black';
+                            let tableHeader = ["id", "firstName", "lastName","email","phoneNumber"];
+                            let thead = document.createElement('thead');
+                            for (var i = 0; i < tableHeader.length; i++) {
+                                   thead.appendChild(document.createElement("th")).
+                                          appendChild(document.createTextNode(tableHeader[i]));
+                            }
+                            tbl.appendChild(thead);
+                            const faculty = university.getElementsByTagName("faculty")
+                            for (let i = 0; i < faculty.length; i++) {
+                                   const tr = tbl.insertRow();
+                                   const id = tr.insertCell();
+                                   id.appendChild(document.createTextNode(
+                                          faculty[i].getElementsByTagName("id")[0].childNodes[0]
+                                                 .nodeValue
+                                   ));
+                                   id.style.border = '1px solid black';
+                                   id.style.padding = '2px';
+
+                                   const firstName = tr.insertCell();
+                                   firstName.appendChild(document.createTextNode(
+                                          faculty[i].getElementsByTagName("firstName")[0].childNodes[0]
+                                                 .nodeValue
+                                   ));
+                                   firstName.style.border = '1px solid black';
+                                   firstName.style.padding = '2px';
+
+                                   const lastName = tr.insertCell();
+                                   lastName.appendChild(document.createTextNode(
+                                          faculty[i].getElementsByTagName("lastName")[0].childNodes[0]
+                                                 .nodeValue
+                                   ));
+                                   lastName.style.border = '1px solid black';
+                                   lastName.style.padding = '2px';
+
+                                   const email = tr.insertCell();
+                                   email.appendChild(document.createTextNode(
+                                          faculty[i].getElementsByTagName("email")[0].childNodes[0]
+                                                 .nodeValue
+                                   ));
+                                   email.style.border = '1px solid black';
+                                   email.style.padding = '2px';
+
+                                   const phoneNumber = tr.insertCell();
+                                   phoneNumber.appendChild(document.createTextNode(
+                                          faculty[i].getElementsByTagName("phoneNumber")[0].childNodes[0]
+                                                 .nodeValue
+                                   ));
+                                   phoneNumber.style.border = '1px solid black';
+                                   phoneNumber.style.padding = '2px';
+
+                            }
+                            listItem.appendChild(tbl);
+                     }
+
+       </script>
+</body>
+<style>
+       th{
+              border: 1px solid black;
+              padding: 2px;
+              text-transform: capitalize;
+              background-color: lightgray;
+       }
+</style>
+
+</html>

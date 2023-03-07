@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <xs:element name="universities" type="UniversitiesType"></xs:element>
+
+    <xs:complexType name="UniversitiesType">
+        <xs:sequence>
+            <xs:element name="university" type="UniversityType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="UniversityType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"></xs:element>
+            <xs:element name="addresses" type="AddressesType"></xs:element>
+            <xs:element name="courses" type="CoursesType"  minOccurs="0" maxOccurs="unbounded"></xs:element>
+            <xs:element name="students" type="StudentsType"  minOccurs="0" maxOccurs="unbounded"></xs:element>
+            <xs:element name="faculty" type="FacultyType"  minOccurs="0" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AddressesType">
+        <xs:sequence>
+            <xs:element name="address" type="xs:string"></xs:element>
+            <xs:element name="city" type="xs:string"></xs:element>
+            <xs:element name="region" type="xs:string"></xs:element>
+            <xs:element name="country" type="xs:string"></xs:element>
+            <xs:element name="zipCode" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CoursesType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"></xs:element>
+            <xs:element name="title" type="xs:string"></xs:element>
+            <xs:element name="description" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="StudentsType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"></xs:element>
+            <xs:element name="firstName" type="xs:string"></xs:element>
+            <xs:element name="lastName" type="xs:string"></xs:element>
+            <xs:element name="dob" type="xs:string"></xs:element>
+            <xs:element name="email" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="FacultyType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"></xs:element>
+            <xs:element name="firstName" type="xs:string"></xs:element>
+            <xs:element name="lastName" type="xs:string"></xs:element>
+            <xs:element name="email" type="xs:string"></xs:element>
+            <xs:element name="phoneNumber" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
