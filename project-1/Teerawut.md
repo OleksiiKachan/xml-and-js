@@ -13,3 +13,5 @@ I created the XSLT that transforms an XML file containing information about bank
 Screenshot:
 ![image info](../project-1/assets/HTML_Output.png)
 ![image info](../project-1/assets/XML_Output.png)
+![image info](../project-1/assets/XML_Validation.png)
+![image info](../project-1/assets/XSD_Validation.png)
