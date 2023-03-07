@@ -1,0 +1,4 @@
+- I was responsible for creating the html file for the given xml file.
+- Here unorders list is used to display the data of all the university and under that different tables are created for courses, students and faculty info.
+- I've created different methods for creating the tables of courses, students and faculties.
+- I've used insertRow and insertCell methods to insert data into the table element.
