@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <header>
+        <link rel="stylesheet" href="bank.css"/>
+        <h1>Bank details</details></h1>
+    </header>
+
+    <body>
+        <ol id="bankData"></ol>
+
+        <script>
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function (){
+            if (this.readyState == 4 && this.status == 200) {
+            displayData(this.responseXML);
+            }
+            };
+
+            xhr.open("GET", "bank.xml", true);
+            xhr.send();
+
+            const parseBank = bank =>{
+                const id=bank.getElementsByTagName('id')[0].childNodes[0].nodeValue;
+                const name=bank.getElementsByTagName('name')[0].childNodes[0].nodeValue;
+                const street=bank.getElementsByTagName('street')[0].childNodes[0].nodeValue;
+                const city=bank.getElementsByTagName('city')[0].childNodes[0].nodeValue;
+                const region=bank.getElementsByTagName('region')[0].childNodes[0].nodeValue;
+                const country=bank.getElementsByTagName('country')[0].childNodes[0].nodeValue;
+
+                const clientId = bank.getElementsByTagName('clients')[0].getElementsByTagName('id')[0].childNodes[0].nodeValue;
+
+                return bankData={
+                    id,
+                    name,
+                    street,
+                    city,
+                    region,
+                    country,
+                    clientId
+                };
+            }
+
+            const parseClients = (clientsNode) =>{
+                clients = [];
+
+                for(let i = 0; i < clientsNode.length; i++ ){
+                    const client = clientsNode[i];
+                    const clientId = client.getElementsByTagName('id')[0].childNodes[0].nodeValue;
+                    const firstName = client.getElementsByTagName('firstName')[0].childNodes[0].nodeValue;
+                    const lastName = client.getElementsByTagName('lastName')[0].childNodes[0].nodeValue;
+                    const email = client.getElementsByTagName('email')[0].childNodes[0].nodeValue;
+                    const phoneNumber = client.getElementsByTagName('phoneNumber')[0].childNodes[0].nodeValue;
+
+                    clientData = {
+                        clientId,
+                        firstName,
+                        lastName,
+                        email,
+                        phoneNumber
+                    }
+
+                    clients.push(clientData);
+                }
+
+                return clients;
+            }
+
+            const parseCards = (cardsNode) => {
+                cards = [];
+
+                for (let i = 0; i < cardsNode.length; i++){
+
+                    const card = cardsNode[i];
+                    const number = card.getElementsByTagName('number')[0].childNodes[0].nodeValue;
+                    const type = card.getElementsByTagName('type')[0].childNodes[0].nodeValue;
+                    const cvv = card.getElementsByTagName('cvv')[0].childNodes[0].nodeValue;
+                    const expiresAt = card.getElementsByTagName('expiresAt')[0].childNodes[0].nodeValue;
+
+                    cardsData = {
+                        number,
+                        type,
+                        cvv,
+                        expiresAt
+                    }
+                    cards.push(cardsData)
+                }
+                return cards;
+            }
+
+
+            const stringToNode = value =>{
+                const template=document.createElement('template');
+                const html= value.trim();
+                template.innerHTML = html;
+                return template.content.firstChild;
+            }
+
+            const createBankData = (parsedbank) =>{
+        const content = `
+            <li>
+            <article>
+                <h1>${parsedbank.name}</h1>
+                <div>ID: ${parsedbank.id}</div>
+                <div>Street: ${parsedbank.street}</div>
+                <div>City: ${parsedbank.city}</div>
+                <div>Region: ${parsedbank.region}</div>
+                <div>Country: ${parsedbank.country}</div>
+                </article><br>
+            </li>
+        `;
+
+            return stringToNode(content);
+        };
+
+        const createClientsData = (clients) => {
+            const content = `
+            
+            <table class="clients">
+                <tr>
+                    <th>Client ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th colspan="4">Card 1 Details</th>
+                    <th colspan="4">Card 2 Details</th>
+                </tr>   
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Number</th>
+                    <th>Type</th>
+                    <th>CVV</th>
+                    <th>Expires At</th>
+                    <th>Number</th>
+                    <th>Type</th>
+                    <th>CVV</th>
+                    <th>Expires At</th>
+                </tr>       
+            </table>
+          `;
+
+          const tableNode = stringToNode(content);
+          const tableBody = document.createElement(`tbody`);
+          tableBody.classList.add(`body`);
+
+          for (let i = 0; i <clients.length; i++){
+            const client = clients[i];
+
+            const row = document.createElement(`tr`);
+            const id = document.createElement(`td`);
+            id.appendChild(
+                document.createTextNode(client.clientId)
+            );
+
+            row.appendChild(id);
+
+            const firstName = document.createElement(`td`);
+            firstName.appendChild(
+                document.createTextNode(
+                    client.firstName
+                )
+            );
+            row.appendChild(firstName);
+
+            const  lastName = document.createElement(`td`);
+            lastName.appendChild(
+                document.createTextNode(
+                    client.lastName
+                )
+            );
+            row.appendChild(lastName);
+
+            const Email = document.createElement(`td`);
+            Email.appendChild(
+                document.createTextNode(
+                    client.email
+                )
+            );
+            row.appendChild(Email);
+
+            const phoneNumber = document.createElement(`td`);
+            phoneNumber.appendChild(
+                document.createTextNode(
+                    client.phoneNumber
+                )
+            );
+            row.appendChild(phoneNumber);
+
+
+            const card = cards[i];
+
+            const number = document.createElement(`td`)
+            number.appendChild(
+                document.createTextNode(
+                    card.number
+                )
+            );
+            row.appendChild(number);
+
+            const type = document.createElement(`td`)
+           type.appendChild(
+                document.createTextNode(
+                    card.type
+                )
+            );
+            row.appendChild(type);
+
+            const cvv = document.createElement(`td`)
+            cvv.appendChild(
+                document.createTextNode(
+                    card.cvv
+
+                )
+            );
+            row.appendChild(cvv);
+
+            const expiresAt = document.createElement(`td`)
+            expiresAt.appendChild(
+                document.createTextNode(
+                    card.expiresAt
+                )
+            );
+            row.appendChild(expiresAt);
+
+            const card1 = cards[i+1];
+
+            const number1 = document.createElement(`td`)
+            number1.appendChild(
+                document.createTextNode(
+                    card1.number
+                )
+            );
+            row.appendChild(number1);
+
+            const type1 = document.createElement(`td`)
+           type1.appendChild(
+                document.createTextNode(
+                    card1.type
+                )
+            );
+            row.appendChild(type1);
+
+            const cvv1 = document.createElement(`td`)
+            cvv1.appendChild(
+                document.createTextNode(
+                    card1.cvv
+
+                )
+            );
+            row.appendChild(cvv1);
+
+            const expiresAt1 = document.createElement(`td`)
+            expiresAt1.appendChild(
+                document.createTextNode(
+                    card1.expiresAt
+                )
+            );
+            row.appendChild(expiresAt1);
+
+            tableBody.appendChild(row);
+            tableNode.appendChild(tableBody);
+            };
+
+            const divElement = document.createElement(`div`);
+            const headerElement = document.createElement(`div`);
+            headerElement.classList.add(`title`);
+            const tableHeader = document.createElement(`h2`);
+            tableHeader.appendChild(
+                document.createTextNode(
+                    'Clients Information: '
+                )
+            );
+            headerElement.appendChild(tableHeader);
+
+            divElement.appendChild(headerElement);
+            divElement.appendChild(tableNode);
+
+            return divElement;
+
+        }  
+
+        const displayData =(xmlDoc) =>{
+        const list=document.getElementById('bankData');
+
+        const banks = xmlDoc.getElementsByTagName('bank');
+
+        for(let index = 0; index < banks.length; index++){
+            const bank = banks[index];
+            const clients = bank.getElementsByTagName('clients');
+            const cards = bank.getElementsByTagName('cards');
+
+            const parsedbank=parseBank(bank);
+            const parsedClients = parseClients(clients);
+            const parsedCards = parseCards(cards);
+
+            const bankElement=createBankData(parsedbank);
+            const clientElement= createClientsData(parsedClients);
+
+            bankElement.appendChild(clientElement);
+            list.appendChild(bankElement);
+
+        };
+    }
+
+        </script>
+    </body>
+</html>
