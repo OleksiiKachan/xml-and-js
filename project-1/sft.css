@@ -11,8 +11,9 @@ table {
 }
 
 .header-title {
-  font-weight: 700;
+  font-weight: 950;
   color: #923596;
+  text-align: center;
 }
 
 thead {
