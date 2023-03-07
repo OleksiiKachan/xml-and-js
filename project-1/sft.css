@@ -1,0 +1,55 @@
+body{
+  background-color: #f2f5da;
+}
+
+table {
+  
+  border: 2px solid rgb(200, 200, 200);
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+}
+
+.header-title {
+  font-weight: 700;
+  color: #923596;
+}
+
+thead {
+  font-family: Palatino, URW Palladio L, serif;
+  background-color: #923596;
+  color: #fff;
+  text-align: center;
+}
+
+.company-name {
+  font-weight: 800;
+  font-size: 24px;
+  color: #923596;
+  margin-bottom: 2px;
+}
+
+tbody {
+  background-color: #ccf7fc;
+}
+
+td,th {
+  border: 5px solid rgb(190, 190, 190);
+  padding: 5px 10px;
+}
+
+td {
+  text-align: center;
+}
+
+.page-header {
+  font-weight: 900;
+  color: #923596;
+  padding-left: 24px;
+  font-size: 30px;
+}
+
+
+
+
+

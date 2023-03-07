@@ -1,0 +1,23 @@
+<!ELEMENT software (JSON_ARRAY+)>
+<!ELEMENT JSON_ARRAY (cName, stockSymbol, domain, apps, employees)>
+<!ELEMENT cName (#PCDATA)>
+<!ELEMENT stockSymbol (#PCDATA)>
+<!ELEMENT domain (#PCDATA)>
+<!ELEMENT apps (app+)>
+<!ELEMENT app (appsID, appsName, currentVersion, url)>
+<!ELEMENT appsID (#PCDATA)>
+<!ELEMENT appsName (#PCDATA)>
+<!ELEMENT currentVersion (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT employees (employee+)>
+<!ELEMENT employee (eID, fName, lName, email, userName, occupation, department, device)>
+<!ELEMENT eID (#PCDATA)>
+<!ELEMENT fName (#PCDATA)>
+<!ELEMENT lName (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT userName (#PCDATA)>
+<!ELEMENT occupation (#PCDATA)>
+<!ELEMENT department (#PCDATA)>
+<!ELEMENT device (ip, mac)>
+<!ELEMENT ip (#PCDATA)>
+<!ELEMENT mac (#PCDATA)>
