@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Index</title>
+  </head>
+
+  <body>
+    <table id="cInfo" border="1px">
+      <tr>
+        <th rowspan="2"> ID </th>
+        <th rowspan="2" class="address"> Address </th>
+        <th colspan="4"> Employee Details </th>
+        <th colspan="6"> Product Details </th>
+      </tr>
+      
+      <tr>
+        <th class="employee-details"> ID </th>
+        <th class="employee-details"> Name </th>
+        <th class="employee-details"> Position </th>
+        <th class="employee-details"> Type </th>
+        <th class="product-details"> ID </th>
+        <th class="product-details"> Name </th>
+        <th class="product-details"> Qty </th>
+        <th class="product-details"> USD Price </th>
+        <th class="product-details"> Euro Price </th>
+        <th class="product-details"> Pound Price </th>
+      </tr>
+    </table>
+
+    <script>
+      const xhr = new XMLHttpRequest();
+
+      xhr.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200) {
+          displayData(this.responseXML);
+        }
+      };
+
+      xhr.open("GET", "retail.xml", true);
+      xhr.send();
+      
+      function displayData(xmlDoc) {
+        const retailDetails = xmlDoc.getElementsByTagName(`dataRows`);
+        var table="<tr><th>ID</th><th>Address</th><th>Employee Details</th><th>Product Details</th></tr>";
+        
+        var emp =[];
+        var prod =[];
+
+        const employees = xmlDoc.getElementsByTagName(`employees`);
+        const products = xmlDoc.getElementsByTagName(`products`);
+
+        for(i=0;i<employees.length;i++) {
+          emp.push(xmlDoc.getElementsByTagName("employees")[i]);
+        }
+
+        for(i=0;i<products.length;i++) {
+          prod.push(xmlDoc.getElementsByTagName("products")[i]);
+        }
+        
+        for (i = 0; i<retailDetails.length; i++) {
+          table += "<tr><td> " +
+          retailDetails[i].getElementsByTagName("id")[0].childNodes[0].nodeValue + "</td>" + 
+          "<td> Street :  " +
+          retailDetails[i].getElementsByTagName("street")[0].childNodes[0].nodeValue + 
+          "<br>City :  " +
+          retailDetails[i].getElementsByTagName("city")[0].childNodes[0].nodeValue + 
+          "<br>Country :  " +
+          retailDetails[i].getElementsByTagName("country")[0].childNodes[0].nodeValue + "</td>" + 
+          "<td><br>ID : " +
+            
+          emp[i].id + 
+          "<br>First Name : " +
+          emp[i].getElementsByTagName("firstName")[0].childNodes[0].nodeValue +
+          "<br>Last Name : " +
+          emp[i].getElementsByTagName("lastName")[0].childNodes[0].nodeValue +
+          "<br>Position : " +
+          emp[i].getElementsByTagName("position")[0].childNodes[0].nodeValue +
+          "<br>Type : " +
+          emp[i].getElementsByTagName("empType")[0].childNodes[0].nodeValue + "</td>" +
+          "<td>ID: " + 
+          prod[i].id +
+          "<br>Name: " + 
+          prod[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+          "<br>Quantity: " + 
+          prod[i].getElementsByTagName("qty")[0].childNodes[0].nodeValue +
+          "<br>USD Price: " + 
+          prod[i].getElementsByTagName("usdPrice")[0].childNodes[0].nodeValue +
+          "<br>Euro Price: " + 
+          prod[i].getElementsByTagName("euroPrice")[0].childNodes[0].nodeValue +
+          "<br>Pound Price: " + 
+          prod[i].getElementsByTagName("poundPrice")[0].childNodes[0].nodeValue +
+          "</td></tr>";
+        }
+        
+        document.getElementById("cInfo").innerHTML = table;
+      }
+    </script>
+  </body>
+</html>

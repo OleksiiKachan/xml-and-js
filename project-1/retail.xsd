@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="retailDetails"/>
+
+    <xs:complexType name="retailType">
+    <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="dataRows" type="dataRowsType"/>
+    </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="dataRowsType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:integer"/>
+            <xs:element name="address" type="addressType"/>
+            <xs:element name="employees" type="employeesType" maxOccurs="unbounded"/>
+            <xs:element name="products" type="productsType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="addressType">
+        <xs:sequence>
+            <xs:element name="street" type="xs:string"/>
+            <xs:element name="city" type="xs:string"/>
+            <xs:element minOccurs="0" name="region" type="xs:string" />
+            <xs:element name="country" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="employeesType">
+        <xs:sequence>
+            <xs:element name="firstName" type="xs:string"/>
+            <xs:element name="lastName" type="xs:string"/>
+            <xs:element name="position" type="xs:string"/>
+            <xs:element name="empType" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="productsType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="qty" type="xs:integer"/>
+            <xs:element name="usdPrice" type="xs:string"/>
+            <xs:element name="euroPrice" type="xs:string"/>
+            <xs:element name="poundPrice" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string"/>
+    </xs:complexType>
+</xs:schema>

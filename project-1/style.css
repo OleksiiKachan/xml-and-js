@@ -1,0 +1,53 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+#cInfo{
+    border-collapse: collapse;
+    width: auto;
+}
+
+#cInfo th, #cInfo td{
+    text-align: center;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+#cInfo th{
+    background-color: #008CBA;
+    color: white;
+}
+
+.id{
+    font-weight: bold;
+}
+
+.address{
+    text-align: left;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+#cInfo td:nth-child(6), td:nth-child(10), td:nth-child(12), td:nth-child(13), td:nth-child(14){
+    text-align: right;
+} 
+
+#cInfo td:nth-child(13), td:nth-child(114), td:nth-child(15){
+    font-weight: bold;
+} 
+
+#cInfo td:nth-child(11){
+    font-style: italic;
+}
+
+
+.employee-details, .product-details{
+    vertical-align: top;
+}
+
+
+
+
