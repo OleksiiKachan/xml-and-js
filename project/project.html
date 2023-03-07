@@ -1,0 +1,166 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Automotive</h1>
+    <table  border="1px">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Street</td>
+            <td>City</td>
+            <td>Region</td>
+            <td>Country</td>
+            <td>Car Models</td>
+            <td>Cars</td>
+        </tr>
+        <tbody id="automotives"></tbody>
+    </table>
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if(this.readyState == 4 && this.status == 200) {
+                displayData(this.responseXML);
+            }
+        }
+        xhttp.open('GET', "project.xml", true);
+        xhttp.send();
+
+       const createDataRow = (automotive) => {
+            const content = `
+                <tr>
+                  <td>${automotive.showId}</td> 
+                  <td>${automotive.showName}</td> 
+                  <td>${automotive.street}</td> 
+                  <td>${automotive.city}</td>  
+                  <td>${automotive.region}</td>
+                  <td>${automotive.country}</td>
+                  <td>
+                    <table border="1px">
+                        <tr>
+                            <td>ID</td>
+                            <td>Name</td>
+                            <td>Year</td>
+                            <td>Usd Price</td>
+                            <td>Cad Price</td>
+                            <td>Euro Price</td>
+                            <td>Pound Price</td>
+                        </tr>
+                        ${getCarModelsRow(automotive.carModels)}
+                    </table>                    
+                  </td>
+                  <td>
+                    <table border="1px">
+                        <tr>
+                            <td>Vin</td>
+                            <td>Color</td>
+                            <td>Buyer</td>
+                        </tr>
+                        ${getCarsRow(automotive.cars)}
+                    </table>                    
+                  </td>
+                </tr>
+            `;
+
+            return stringToNode(content);
+       }
+
+       function getCarModelsRow(carModelsData) {
+            let rows = ``;
+            carModelsData.forEach(data => {
+                rows += `<tr>
+                        <td>${data.carId}</td>
+                        <td>${data.carName}</td>
+                        <td>${data.year}</td>
+                        <td>${data.usdPrice}</td>
+                        <td>${data.cadPrice}</td>
+                        <td>${data.euroPrice}</td>
+                        <td>${data.poundPrice}</td>
+                    </tr>`;
+            });
+            return rows;
+       }
+
+       function getCarsRow(carsData) {
+            let rows = ``;
+            carsData.forEach(data => {
+                rows += `<tr>
+                        <td>${data.vin}</td>
+                        <td>${data.color}</td>
+                        <td>${data.buyer}</td>
+                    </tr>`;
+            });
+            return rows;
+       }
+
+       const parseData = (data) => {
+            const id = (data.getElementsByTagName(`showId`).length != 0 )? (data.getElementsByTagName(`showId`)[0].childNodes[0].nodeValue) : "" ;
+            const name = (data.getElementsByTagName(`showName`).length != 0)? (data.getElementsByTagName(`showName`)[0].childNodes[0].nodeValue) : "" ;
+            const street = (data.getElementsByTagName(`street`).length != 0) ? data.getElementsByTagName(`street`)[0].childNodes[0].nodeValue : "";
+            const city = (data.getElementsByTagName(`city`).length != 0) ? data.getElementsByTagName(`city`)[0].childNodes[0].nodeValue : "";
+            const region = (data.getElementsByTagName(`region`).length != 0) ?  data.getElementsByTagName(`region`)[0].childNodes[0].nodeValue : "";
+            const country = (data.getElementsByTagName(`country`).length != 0) ?  data.getElementsByTagName(`country`)[0].childNodes[0].nodeValue : "";
+            const carModels = getCarModels(data);
+            const cars = getCars(data); 
+            return {id, name, street, city, region, country, carModels, cars};
+       }
+
+       function getCarModels(data) {
+            const dataCarModels = data.getElementsByTagName(`carModel`);
+            let dataReturn = [];
+            if(dataCarModels.length > 0) {
+                for(let i=0 ; i< dataCarModels.length; i++) {
+                    dataReturn.push({ 
+                        cid:  (dataCarModels[i].getElementsByTagName(`carId`).length != 0) ?  dataCarModels[i].getElementsByTagName(`carId`)[0].childNodes[0].nodeValue : "",
+                        cname:  (dataCarModels[i].getElementsByTagName(`carName`).length != 0) ?  dataCarModels[i].getElementsByTagName(`carName`)[0].childNodes[0].nodeValue : "",
+                        year:  (dataCarModels[i].getElementsByTagName(`year`).length != 0) ?  dataCarModels[i].getElementsByTagName(`year`)[0].childNodes[0].nodeValue : "",
+                        usdPrice:  (dataCarModels[i].getElementsByTagName(`usdPrice`).length != 0) ?  dataCarModels[i].getElementsByTagName(`usdPrice`)[0].childNodes[0].nodeValue : "",
+                        cadPrice:  (dataCarModels[i].getElementsByTagName(`cadPrice`).length != 0) ?  dataCarModels[i].getElementsByTagName(`cadPrice`)[0].childNodes[0].nodeValue : "",
+                        euroPrice:  (dataCarModels[i].getElementsByTagName(`euroPrice`).length != 0) ?  dataCarModels[i].getElementsByTagName(`euroPrice`)[0].childNodes[0].nodeValue : "",
+                        poundPrice:  (dataCarModels[i].getElementsByTagName(`poundPrice`).length != 0) ?  dataCarModels[i].getElementsByTagName(`poundPrice`)[0].childNodes[0].nodeValue : ""
+                    })
+                };
+            } 
+            return dataReturn;
+            }
+
+            function getCars(data) {
+            const dataCars = data.getElementsByTagName(`car`);
+            let dataReturn = [];
+            if(dataCars.length > 0) {
+                for(let i=0 ; i<dataCars.length; i++) {
+                    dataReturn.push({ 
+                        vin: (dataCars[i].getElementsByTagName(`vin`).length != 0) ?  dataCars[i].getElementsByTagName(`vin`)[0].childNodes[0].nodeValue : "",
+                        color: (dataCars[i].getElementsByTagName(`color`).length != 0) ?  dataCars[i].getElementsByTagName(`color`)[0].childNodes[0].nodeValue : "",
+                        buyer: (dataCars[i].getElementsByTagName(`buyer`).length != 0) ?  dataCars[i].getElementsByTagName(`buyer`)[0].childNodes[0].nodeValue : ""
+                    })
+                };
+            } 
+            return dataReturn;
+            }
+
+       function stringToNode(content) {
+        const template = document.createElement(`template`);
+        const html = content.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+       }
+
+       function displayData(xmlDoc) {
+            const table = document.getElementById(`automotive`);
+            const carsData = xmlDoc.getElementsByTagName(`showRoom`);
+            for(let i=0; i< carsData.length; i++) {
+                const data = carsData[i];
+                const parsedData = parseData(data);
+                const dataElementRow = createDataRow(parsedData);
+                console.log(dataElementRow);
+                table.append(dataElementRow);
+            }
+        }
+    </script>    
+</body>
+</html>
