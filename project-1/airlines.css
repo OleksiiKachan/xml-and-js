@@ -1,0 +1,29 @@
+/*Css for our html file*/
+#tableAirlines {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  #tableAirlines th,
+  #tableAirlines td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  #tableAirlines th {
+    background-color: #f2f2f2;
+    color: #000000;
+  }
+  
+  #tableAirlines tr:nth-child(even) {
+    background-color: #cbc8c8;
+  }
+  
+  #tableAirlines tr:hover {
+    background-color: #d3d0d0;
+  }
+  
+  #result td {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+  }

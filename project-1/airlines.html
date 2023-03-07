@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="airlines.css">
+    </head>
+    <body>
+        <h1>Airlines</h1>
+        <table id="tableAirlines" border="1">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>Region</th>
+                <th>Country</th>
+                <th>Parks</th>
+                <th>Routes</th>
+            </tr>
+            <tbody id="result">
+            </tbody>
+        </table>
+
+        <script>
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    displayData(this.responseXML);
+                }
+            };
+            xhttp.open("GET", "airlines.xml", true);
+            xhttp.send();
+
+            const displayData = (xml) =>{
+            const allAirline = xml.getElementsByTagName('airline');
+            const tableDisplay = document.getElementById('result');
+            for(let index=0; index < allAirline.length; index++)
+            {
+                    const airline = allAirline[index];
+                    const parsedAirlinesData = parseData(airline);                    
+                    const tableData = createTable(parsedAirlinesData);
+                    tableDisplay.append(tableData);}
+            }
+
+            const parseData = (xml) =>{
+                const id = xml.getElementsByTagName('id')[0].childNodes[0].nodeValue;
+                const name = xml.getElementsByTagName('name')[0].childNodes[0].nodeValue;
+                const street = xml.getElementsByTagName('street')[0].childNodes[0].nodeValue;
+                const city = xml.getElementsByTagName('city')[0].childNodes[0].nodeValue;
+                const region = xml.getElementsByTagName('region')[0].childNodes[0].nodeValue;
+                const country = xml.getElementsByTagName('country')[0].childNodes[0].nodeValue;
+                parksData = xml.getElementsByTagName('park');
+                routesData = xml.getElementsByTagName('route');
+            park = [];
+            route = [];
+
+            for(i=0;i<parksData.length;i++){
+                const parks= {
+                    parking_id: xml.getElementsByTagName('parking_id')[i].childNodes[0].nodeValue,
+                    manufacturer: xml.getElementsByTagName('manufacturer')[i].childNodes[0].nodeValue,
+                    routeType: xml.getElementsByTagName('routeType')[i].childNodes[0].nodeValue,
+                    year: xml.getElementsByTagName('year')[i].childNodes[0].nodeValue,
+                }
+                park.push(parks);
+            }
+
+            for(i=0;i<routesData.length;i++){
+                const routes= {
+                    vehicle: xml.getElementsByTagName('vehicle')[i].childNodes[0].nodeValue,
+                    dep_airport: xml.getElementsByTagName('dep_airport')[i].childNodes[0].nodeValue,
+                    dep_city: xml.getElementsByTagName('dep_city')[i].childNodes[0].nodeValue,
+                    dep_region: xml.getElementsByTagName('dep_region')[i] ? xml.getElementsByTagName('dep_region')[i].childNodes[0].nodeValue : 'N/A',
+                    dep_country: xml.getElementsByTagName('dep_country')[i].childNodes[0].nodeValue,
+                    dest_airport: xml.getElementsByTagName('dest_airport')[i].childNodes[0].nodeValue,
+                    dest_city: xml.getElementsByTagName('dest_city')[i].childNodes[0].nodeValue,
+                    dest_region: xml.getElementsByTagName('dest_region')[i] ? xml.getElementsByTagName('dest_region')[i].childNodes[0].nodeValue : 'N/A',
+                    dest_country: xml.getElementsByTagName('dest_country')[i].childNodes[0].nodeValue
+                }
+                route.push(routes);
+            }
+
+                return {id,name,street,city,region,country,park,route};
+            }
+
+            /*for(let i = 0; i < parks.length; i++){
+                        const park = parks[i];
+                        const parsedParksData = parseParksData(park);
+                        const parseParkData = createParkTable(parsedParksData);
+                        tablePark.appendChild(parseParkData);
+                    }
+                    for(let i = 0; i < parks.length; i++){
+                        const route = routes[i];                        
+                        const parsedRoutesData = parseRoutesData(airline);
+                    }*/
+ 
+
+
+            function stringToNode(content) {
+                const template = document.createElement(`template`);
+                const html = content.trim();
+                template.innerHTML = html;
+                return template.content.firstChild;
+            }
+
+            const createTable = (airline) =>{
+                let content= `<tr>
+                    <td>${airline.id}</td>
+                    <td>${airline.name}</td>
+                    <td>${airline.street}</td>
+                    <td>${airline.city}</td>
+                    <td>${airline.region}</td>
+                    <td>${airline.country}</td>
+                    <td>
+                        <table border="1">
+                        <tr>
+                            <th>Parking id</th>
+                            <th>Manufacturer</th>
+                            <th>Route Type</th>
+                            <th>Year</th>
+                        </tr>`;
+
+                for(let park of airline.park){
+                content +=`<tr>
+                    <td>${park.parking_id}</td>
+                    <td>${park.manufacturer}</td>
+                    <td>${park.routeType}</td>
+                    <td>${park.year}</td>
+                    </tr>`;
+                }
+
+                content += `</table></td>`;
+                content += `<td><table border="1">
+            <tr>
+                <th>Vehicle</th>
+                <th>Departing Airport</th>
+                <th>Departing City</th>
+                <th>Departing Region</th>
+                <th>Departing Country</th>
+                <th>Destination Airport</th>
+                <th>Destination City</th>
+                <th>Destination Region</th>
+                <th>Destination Country</th>
+            <tr>`;
+            
+                for(let route of airline.route){
+                content +=  
+            `
+            <tr>
+                <td>${route.vehicle}</td>
+                <td>${route.dep_airport}</td>
+                <td>${route.dep_city}</td>
+                <td>${route.dep_region}</td>
+                <td>${route.dep_country}</td>
+                <td>${route.dest_airport}</td>
+                <td>${route.dest_city}</td>
+                <td>${route.dest_region}</td>
+                <td>${route.dest_country}</td>
+            </tr>`;
+            }
+               content += `</table></td></tr>`;
+                return stringToNode(content);
+            }
+        </script>
+    </body>
+</html>
