@@ -26,24 +26,18 @@ console.log(pilots);
 
 const { rebels, empire } = pilots.reduce(
   (acc, item) => {
-    let type;
     if (item.faction === `Empire`) {
-      type = `empire`;
+      acc.empire.push(item);
     } else if (item.faction === `Rebels`) {
-      type = `rebels`;
+      acc.rebels.push(item);
     }
-
-    if (acc[type] && acc[type].length > 0) {
-      acc[type] = acc[type] + ", " + item.name;
-    } else {
-      acc[type] = item.name;
-    }
-
     return acc;
   },
-  { rebels: "", empire: "" }
+  { rebels: [], empire: [] }
 );
 
-const names = rebels.map((item) => item.name).join(", ");
+const rebelNames = rebels.map((item) => item.name).join(", ");
+const empireNames = empire.map((item) => item.name).join(", ");
 
 console.log(rebels, empire);
+console.log(rebelNames, empireNames);
