@@ -1,6 +1,6 @@
-const fs = require("fs"); //相当于import
+const fs = require("fs"); 
 
-const filename = `${__dirname}/books.json`; //绝对路径
+const filename = `${__dirname}/books.json`; 
 
 fs.exists(filename, (exists) => {
   if (exists) {
