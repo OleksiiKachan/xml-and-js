@@ -3,10 +3,10 @@
     <xsl:template match="/">
         <html>
             <head>
-                <title>Automotive Data</title>
+                <title>Automotive</title>
             </head>
             <body>
-                <h1>Automotive</h1>
+                <h1>ShowRoom</h1>
                 <table border="1">
                     <tr>
                         <th>ShowRoom ID</th>
@@ -35,9 +35,7 @@
         </html>
     </xsl:template>
 
-    <xsl:template match="carModels">
-        <table border = "1">
-            
+    <xsl:template match="carModels">  
             <xsl:for-each select="carModel">
                 <ul>
                     <li>Car ID : <xsl:value-of select="carId" /></li>
@@ -49,19 +47,15 @@
                     <li>Pound Price : <xsl:value-of select="poundPrice" /></li>
                 </ul>
             </xsl:for-each>
-        </table>        
+        
     </xsl:template>
-
     <xsl:template match="cars">
-        <table border = "1">
-          
             <xsl:for-each select="car">
                 <ul>
                     <li>VIN : <xsl:value-of select="vin" /></li>
                     <li>Color : <xsl:value-of select="color" /></li>
                     <li>Buyer : <xsl:value-of select="buyer" /></li>
                 </ul>
-            </xsl:for-each>
-        </table>        
+            </xsl:for-each>  
     </xsl:template>
 </xsl:stylesheet>
