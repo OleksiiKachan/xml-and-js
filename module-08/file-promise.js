@@ -24,7 +24,7 @@ const checkIfFile = (filename) =>
         reject("This location contains not a file");
       }
     });
-  });
+  }); 
 
 const readFile = (filename) =>
   new Promise((resolve, reject) => {
