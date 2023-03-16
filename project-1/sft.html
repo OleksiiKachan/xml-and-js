@@ -20,14 +20,15 @@
       };
       xhr.open("GET", "sft.xml", true);
       xhr.send();
-
+      
+      // defining a func that takes string as its argument
       const stringToNode = (value) => {
-        const html = value.trim();
-        const template = document.createElement(`template`);
-        template.innerHTML = html;
+        const html = value.trim(); // remove whitespace from string
+        const template = document.createElement(`template`); // creating a new template element
+        template.innerHTML = html; //setting the inner element
         return template.content.firstChild;
       }
-
+      //we defined a function taking an array of apps
       const createApps = (apps) => {
         const content = `
         <table class="apps">
@@ -41,14 +42,15 @@
           </thead>
         </table>
         `;
-
+        // using the stringToNode function, we created a HTML node from the content string 
         const tableNode = stringToNode(content);
         const tableBody = document.createElement(`tbody`);
-        tableBody.classList.add(`body`);
-
+        tableBody.classList.add(`body`); // we add a class of body to tbody element
+        
+        //using for loop through each app object in the apps array
         for (let i = 0; i < apps.length; i++) {
-          const app = apps[i];
-
+          const app = apps[i]; //to get current app object
+          //creating tr, td element for app data
           const row = document.createElement(`tr`);
           const name = document.createElement(`td`);
           name.appendChild(
@@ -57,7 +59,7 @@
             )
           );
           row.appendChild(name);
-
+          //creating td element for app version, appending it to row
           const version = document.createElement(`td`);
           version.appendChild(
             document.createTextNode(
@@ -65,7 +67,7 @@
             )
           );
           row.appendChild(version);
-
+          //creating td element for appsID
           const appsID = document.createElement(`td`);
           appsID.appendChild(
             document.createTextNode(
@@ -73,7 +75,7 @@
             )
           );
           row.appendChild(appsID);
-
+          //creating td element for 
           const url = document.createElement(`td`);
           const link = document.createElement(`a`);
           link.setAttribute('href', app.url);
@@ -200,9 +202,7 @@
 
           const occupation = document.createElement(`td`);
           occupation.appendChild(
-            document.createTextNode(
               employee.occupation
-            )
           );
           row.appendChild(occupation);
 
