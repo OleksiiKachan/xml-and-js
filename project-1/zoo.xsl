@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+<!-- match or link the attribute with xml elements(/ for whole doc) Xpath -->
   <xsl:template match="/">
     <html>
       <head>
