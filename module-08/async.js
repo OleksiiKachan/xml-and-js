@@ -5,6 +5,7 @@ function timeout(ms) {
     }, ms);
   });
 }
+// const timeout = (ms = 1500) => new Promise(resolve => setTimeout(resolve,ms));
 
 async function inc(a) {
   await timeout(2000);
@@ -57,6 +58,7 @@ class Person {
 
 const person = new Person("Marcus Aurelius");
 
+//anonymous function
 (async () => {
   console.log("await inc(5) =", await inc(5));
   console.log("await sum(1, 3) =", await sum(1, 3));
