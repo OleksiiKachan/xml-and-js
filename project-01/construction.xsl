@@ -82,3 +82,21 @@
 </xsl:template>
 
 </xsl:stylesheet>
+
+<!--
+Used the xslt to transform the xml data into an HTML table
+
+The table has 10 columns: Start Date, End Date, Street, City, Region, Country, Contractors, Workers, Equipments (Qty), and Supplies (Qty).
+
+**The template matching the root element "/" creates the HTML document, sets the title to "Construction Data," and applies templates to each building element.
+
+The template matching the building element creates a table row with data cells for each child element. 
+The values of the Start Date, End Date, Street, City, Region, and Country elements are output in separate data cells. 
+
+The Contractors element is output in its own data cell.
+
+The Workers, Equipments, and Supplies elements are output in their own data cells, with the values of their child elements 
+
+Used additional templates for formatting the output of the Workers, Equipments, and Supplies child elements of a building element. 
+
+These templates are used in the apply-templates elements in the building template. -->

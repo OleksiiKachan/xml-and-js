@@ -64,3 +64,10 @@
     </xs:sequence>
   </xs:complexType>
 </xs:schema>
+
+<!-- 
+  Defined root element
+  Defined complex type for the various elements
+  Each of them defines structure of the element and its sub-element.
+“buildingsType" defines the structure of the top-level element called buildings. 
+-->

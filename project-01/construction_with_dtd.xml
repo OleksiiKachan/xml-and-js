@@ -24,6 +24,18 @@
   <!ELEMENT supply (material, qty)>
   <!ELEMENT material (#PCDATA)>
 ]>
+
+<!-- 
+First off, I needed to understand the structure of the XML file and the types of elements and attributes that were present.
+
+I created a root element called "buildings" that contained one or more "building" elements. 
+
+Each "building" element was defined as having child elements for "startDate", "endDate",
+ "address", "contractors", "workers", "equipments", and "supplies".
+
+Overall I used the <!ELEMENT> declaration to define the structure of the XML file and specified the allowed child elements
+and their content. I also used the (#PCDATA) declaration to indicate that some elements can only contain plain text. -->
+
 <buildings>
   <building>
     <startDate>2007-08-19</startDate>
