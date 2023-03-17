@@ -1,5 +1,9 @@
+const wait = (ms = 1000) => new Promise((resolve) => setTimeout(resolve, ms));
+     
+
+
 function inc(a) {
-  return a + 1;
+  return  wait().then(() => a + 1);
 }
 
 const sum = function (a, b) {

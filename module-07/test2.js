@@ -1,4 +1,4 @@
-const numbers = [1,2,3,4,5,6,];
+// const numbers = [1,2,3,4,5,6,];
 
 // const evenNumbers = numbers.filter((item) => {
 //     return item % 2 === 0; //return true or false
@@ -6,15 +6,19 @@ const numbers = [1,2,3,4,5,6,];
 
 // evenNumbers = numbers.filter((item) => !Boolean(item % 2)); //same as item % 2 === 0
 
-const evenNumbers = numbers
+// const evenNumbers = numbers
 
-.map((item) => {
-    if(item % 2 === 0){
-    return item;
-} else {
-    return null;
-}
-})
+// .map((item) => {
+//     if(item % 2 === 0){
+//     return item;
+// } else {
+//     return null;
+// }
+// })
 
-.filter((item) => Boolean(item));
-console.log(evenNumbers);
+// .filter((item) => Boolean(item));
+// console.log(evenNumbers);
+
+// const fn = () => console.log("important function");
+// const another = fn;
+// another("another function");

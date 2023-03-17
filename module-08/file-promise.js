@@ -37,7 +37,7 @@ const readFile = (filename) =>
     });
   });
 
-const safeReadFile = (filename) =>
-  checkIfExists(filename).then(checkIfFile).then(readFile);
+// const safeReadFile = (filename) =>
+  checkIfExists(filename).then(checkIfFile).then(readFile).then((data)=>console.log(data));
 
-safeReadFile(filename).then(console.log).catch(console.error);
+// safeReadFile(filename).then(console.log).catch(console.error);
