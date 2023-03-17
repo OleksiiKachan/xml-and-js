@@ -1,3 +1,9 @@
+const p = (ms = 3000) => {
+  new Promise((resolve, reject) => {
+    setTimeout(resolve(), ms);
+  })
+} 
+
 function inc(a) {
   return a + 1;
 }
