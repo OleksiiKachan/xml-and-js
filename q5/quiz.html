@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> QUIZ - 1 </title>
+    <link rel="stylesheet" href="books.css" />
+  </head>
+  <body>
+
+    <div id="books"></div>
+    
+    <script>
+
+        const xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                displayData(this.responseXML);
+            }
+        };
+
+        xhttp.open("GET", "data.xml", true);
+        xhttp.send();
+
+        // Converting string to node
+        const stringToNode = (html) => {
+        const template = document.createElement(`template`); // creating empty node
+        html = html.trim(); // removing empty data that we don't need.
+        
+        template.innerHTML = html;
+        return template.content.firstChild; // returning the first child node.
+      }
+
+      function createTable (book) {
+        
+        const content = ` <article>
+        <div><p> ${book.category} </p>
+                         <h2> ${book.title} </h2>   
+                        <div> Authors: ${book.author}</div>
+                        <div> Book was written in ${book.year}</div>
+                        <div> Retail price is $ ${book.price}</div>
+                        </article>
+        </div>`;
+
+        return stringToNode(content); 
+      }
+
+      function parseTable (book) {
+        const title = book.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
+        const author = book.getElementsByTagName(`author`)[0].childNodes[0].nodeValue;
+        const year = book.getElementsByTagName(`year`)[0].childNodes[0].nodeValue;
+        const price = book.getElementsByTagName(`price`)[0].childNodes[0].nodeValue;
+        const category = book.getElementsByTagName(`category`)[0].childNodes[0].nodeValue;
+
+        return { title, author, year, price, category };
+      }
+
+      function displayData (xmlDoc) {
+        const book = xmlDoc.getElementsByTagName(`book`);
+
+        const list = document.getElementById(`books`);
+
+        for (let index = 0; index < book.length; index++) {
+
+          // Breaking down into parts.
+          const element = book[index]; // Take obj and convert into JSON.
+          const parsedTable = parseTable(element); //
+
+          const bookElement = createTable(parsedTable);
+          list.appendChild(bookElement);
+        }
+      }
+      
+    </script>
+  </body>
+</html>
