@@ -20,10 +20,11 @@ const executor = (resolve, reject) => {
 const promise = new Promise(executor);
 
 /**
- * Executes promise
+ * Executes promise 
  * .then -> resolved callback
  * .catch -> rejected callback
  */
 promise
   .then((value) => console.log(value))
   .catch((error) => console.error(error));
+  
