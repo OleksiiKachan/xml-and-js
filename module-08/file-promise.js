@@ -41,3 +41,9 @@ const safeReadFile = (filename) =>
   checkIfExists(filename).then(checkIfFile).then(readFile);
 
 safeReadFile(filename).then(console.log).catch(console.error);
+
+checkIfExists(filename)
+.then(() => checkIfFile(filename))
+.then(() => readFile(filename))
+.then((data) => console.log(data))
+.catch((error) => console.log(error));
