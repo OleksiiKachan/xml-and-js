@@ -153,14 +153,20 @@ const xhr = new XMLHttpRequest();
 
             function displayData(xml)
             {
-                const buildingsListing = document.getElementById("buildingsListing");
-                const buildings = xml.getElementsByTagName("building");
+                const buildings = Array.from(xml.getElementsByTagName(`building`));
+                const list = document.getElementById(`buildingsListing`);
 
-                for(let i = 0; i < buildings.length; i++)
-                {
-                    const building = buildings[i];
-                    const info = parseInfo(building);
-                    const buildingElement = createBuilding(info);
-                    buildingsListing.appendChild(buildingElement)
-                }
+                buildings.map(parseInfo).map(createBuilding).map((buildingElement) => list.appendChild(buildingElement));
+                
+                // const buildingsListing = document.getElementById("buildingsListing");
+                // const buildings = xml.getElementsByTagName("building");
+
+
+                // for(let i = 0; i < buildings.length; i++)
+                // {
+                //     const building = buildings[i];
+                //     const info = parseInfo(building);
+                //     const buildingElement = createBuilding(info);
+                //     buildingsListing.appendChild(buildingElement)
+                // }
             }

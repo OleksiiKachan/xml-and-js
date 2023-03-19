@@ -91,8 +91,9 @@ const people = [
     };
   });
 
-//   console.log(parsed);
+  // console.log(parsed);
 
   const filtered = parsed.filter(item => item.id > 5);
+  const filtered2 = people.filter(x => x.id > 5 );
 
-  console.log(filtered);
+  console.log(filtered2);

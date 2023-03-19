@@ -71,10 +71,13 @@
             const title = xml.getElementsByTagName("name")[0].getAttribute("title");
             const name = xml.getElementsByTagName("name")[0].childNodes[0].nodeValue;
             const phone = xml.getElementsByTagName("phone")[0].childNodes[0].nodeValue;
-            let email = "";
-            if (xml.getElementsByTagName("email")[0] != null)
-                email = xml.getElementsByTagName("email")[0].childNodes[0].nodeValue;
-            else email="N/A";
+            //Using filter
+            const emailNode = Array.from(xml.getElementsByTagName("email")).filter(node => node.parentNode === xml)[0];
+            const email = emailNode ? emailNode.childNodes[0].nodeValue : "N/A";
+            // let email = "";
+            // if (xml.getElementsByTagName("email")[0] != null)
+            //     email = xml.getElementsByTagName("email")[0].childNodes[0].nodeValue;
+            // else email="N/A";
             const address = xml.getElementsByTagName('address')[0].childNodes[0].nodeValue;
 
             const orderNodes = xml.getElementsByTagName("order");
