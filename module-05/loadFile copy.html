@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <p id="title"></p>
     <p id="text"></p>
 
     <script>
@@ -16,12 +15,11 @@
       xhttp.send();
 
       function displayData(xml) {
-        const xmlDoc = xml.responseXML;
-        document.getElementById("text").innerHTML = xmlDoc.getElementsByTagName("name")[0].getAttribute("title") + " " +
-          xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
-        
-        document.getElementById("title").innerHTML =
-          xmlDoc.getElementsByTagName("name")[0].getAttribute("title");
+        var xmlDoc = xml.responseXML;
+        var nameElement = xmlDoc.getElementsByTagName("name")[0];
+        var title = nameElement.getAttribute("title");
+        var name = nameElement.childNodes[0].nodeValue;
+        document.getElementById("text").innerHTML = title + " " + name;
       }
     </script>
   </body>

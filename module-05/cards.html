@@ -17,21 +17,22 @@
 
       function stringToNode(html) {
         const template = document.createElement(`template`);
-        html = html.trim();
+        html = html.trim(); //trim removes extra data out of the string
         template.innerHTML = html;
         return template.content.firstChild;
       }
 
       function createCard(card) {
-        const content = `<li>
-  <article>
-    <p>${card.type}</p>
-    <h2>${card.number}</h2>
-    <div>
-      ${card.balance} ${card.currency}
-    </div>
-  </article>
-</li>`;
+        const content = 
+        `<li>
+        <article>
+        <p>${card.type}</p>
+        <h2>${card.number}</h2>
+        <div>
+            ${card.balance} ${card.currency}
+        </div>
+        </article>
+        </li>`;
 
         return stringToNode(content);
       }
@@ -46,12 +47,7 @@
         const balance =
           xml.getElementsByTagName(`balance`)[0].childNodes[0].nodeValue;
 
-        return {
-          number,
-          type,
-          currency,
-          balance,
-        };
+        return {number, type, currency, balance};
       }
 
       function displayData(xmlDoc) {
