@@ -1,0 +1,30 @@
+article{
+  padding: 20px;
+  border: 1px solid grey;
+  margin: 10px;
+  }
+
+.profile-info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+
+#ordersTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#ordersTable th {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+#ordersTable td {
+  background-color: lightgray;
+  padding: 10px;
+}
