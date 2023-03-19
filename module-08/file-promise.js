@@ -12,16 +12,28 @@ const checkIfExists = (filename) =>
     });
   });
 
-const checkIfFile = (filename) =>
+// const checkIfFile = (filename) =>
+//   new Promise((resolve, reject) => {
+//     fs.stat(filename, (err, stats) => {
+//       if (err) {
+//         reject(err);
+//       }
+//       if (stats.isFile()) {
+//         resolve(filename);
+//       } else {
+//         reject("This location contains not a file");
+//       }
+//     });
+//   });
+
+  const checkIfFile = (filename) =>
   new Promise((resolve, reject) => {
     fs.stat(filename, (err, stats) => {
-      if (err) {
-        reject(err);
+      if (err || !stats.isFile()) {
+        reject(err || "This location contains not a file");
       }
-      if (stats.isFile()) {
+      else {
         resolve(filename);
-      } else {
-        reject("This location contains not a file");
       }
     });
   });
@@ -32,7 +44,6 @@ const readFile = (filename) =>
       if (err) {
         reject(err);
       }
-
       resolve(JSON.parse(data));
     });
   });
