@@ -3,10 +3,9 @@
 <books>
     <book>
         <title>Everyday Italian</title>
-        <author> <![CDATA[
-                Giada De Laurentiis                
-                ]]>
-        </author>
+        <authors>
+            <author>Giada De Laurentiis</author>
+        </authors>
         <year>2005</year>
         <price>30.0</price>
         <category>cooking</category>
@@ -14,10 +13,9 @@
 
     <book>
         <title>Harry Potter</title>
-        <author> <![CDATA[
-                J K. Rowling
-                ]]>
-        </author>
+        <authors>
+            <author>J K. Rowling</author>
+        </authors>
         <year>2005</year>
         <price>29.99</price>
         <category>children</category>
@@ -25,10 +23,13 @@
 
     <book>
         <title>XQuery Kick Start</title>
-        <author> <![CDATA[
-                James McGovern, Per Bothner, Kurt Cagle, James Linn, Vaidyanathan Nagarajan
-                ]]>
-        </author>
+        <authors>
+            <author>James McGovern</author>
+            <author>Per Bothner</author>
+            <author>Kurt Cagle</author>
+            <author>James Linn</author>
+            <author>Vaidyanathan Nagarajan</author>
+        </authors>
         <year>2003</year>
         <price>49.99</price>
         <category>web</category>
@@ -36,10 +37,9 @@
 
     <book>
         <title>Learning XML</title>
-        <author> <![CDATA[
-                Erik T. Ray
-                ]]>
-        </author>
+        <authors>
+            <author>Erik T. Ray</author>
+        </authors>
         <year>2005</year>
         <price>39.95</price>
         <category>web</category>
