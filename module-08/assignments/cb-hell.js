@@ -14,9 +14,10 @@ const convertToFeet = async (meters) => {
   return feet;
 };
 
+
 const processData = async (data) => {
   const result = await Promise.all(data.map(async (value) => {
-    return value;
+    return convertToFeet(value);
   }));
   return result;
 };
@@ -25,16 +26,10 @@ const logResult = (meters, feet) => console.log(`Converted ${meters}m to ${feet}
 
 const main = async () => {
   console.log("Start");
-  let counter = 0;
   const data = await generateData();
-  await Promise.all(data.map(async (value) => {
-    const result = await convertToFeet(value);
-    logResult(value, result);
-    counter++;
-    if (counter === data.length) {
-      console.log("Finish");
-    }
-  }));
-}
+  const processedData = await processData(data);
+  processedData.forEach((feet, i) => logResult(data[i], feet));
+  console.log("Finish");
+};
 
 main();

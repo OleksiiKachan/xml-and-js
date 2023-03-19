@@ -75,20 +75,20 @@ function generateData(callback) {
    console.log("Finish");
  }
 
- const main = () => {
-    console.log("Start");
-    let counter = 0;
-    generateData((data) => {
-      processData(data, (value) => {
-        convertToFeet(value, (result) => {
-          logResult(value, result);
-          counter++;
-          if (counter === data.length) {
-            console.log("Finish");
-          }
-        });
-      });
-    });
-  }
+//  const main = () => {
+//     console.log("Start");
+//     let counter = 0;
+//     generateData((data) => {
+//       processData(data, (value) => {
+//         convertToFeet(value, (result) => {
+//           logResult(value, result);
+//           counter++;
+//           if (counter === data.length) {
+//             console.log("Finish");
+//           }
+//         });
+//       });
+//     });
+//   }
 
 main();
