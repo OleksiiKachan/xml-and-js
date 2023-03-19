@@ -21,7 +21,7 @@ const timeout = (ms, callback) => {
   }
   
   const convertToFeet = async meters => {
-    return new Promise(resolve => {..
+    return new Promise(resolve => {
       const feet = meters * 3.2808;
       timeout(3500, () => {
         resolve(feet);
