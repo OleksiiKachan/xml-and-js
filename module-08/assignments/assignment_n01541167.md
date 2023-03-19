@@ -10,3 +10,4 @@
 
 ### Attach screenshot of the output in your terminal
 - [X] to check the print as image [ClickHere](assignment_output.png)
+- [X] to check the print as gif [ClickHere](assignment_output.mkv)
