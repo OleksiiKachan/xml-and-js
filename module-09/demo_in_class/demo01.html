@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   const loadData = async () => {
+      //     const response = await fetch("cards.xml");
+      //     const str = await response.text();
+      //     const xmlData = new DOMParser().parseFromString(str, "text/xml");
+      //     displayData(xmlData);
+      //   };
+
+      //   loadData();
+
+      // 以上代码可以融合
+      const loadData = async () => {
+        const data = await fetch("cards.xml")
+          .then((result) => result.text())
+          .then((data) => new DOMParser().parseFromString(str, "text/xml"));
+        displayData(xmlData);
+      };
+
+      loadData();
+    </script>
+  </body>
+</html>
