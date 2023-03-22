@@ -17,6 +17,17 @@
     </table>
     <script>
 
+            const xhr = (url,method='GET') => new Promise((resolve) => {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                resolve(this.responseXML);
+                }
+            };
+            xhttp.open(method, url);
+            xhttp.send();
+            }
+        );
         const displayData = (xml) =>{
             const people = xml.getElementsByTagName(`person`);
             const tableData = document.getElementById(`peopleData`);
@@ -57,11 +68,33 @@
             return template.content.firstChild;
         }
 
+        // Using XHR
         // xhr("people.xml").then(displayData);
-        fetch("people.xml", {method:'GET'})
-        .then((response) => response.text())
-        .then((strData) => new DOMParser().parseFromString(strData, "text/xml"))
-        .then(displayData);
+
+        // // USING fetch
+        // fetch("people.xml", {method:'GET'})
+        // .then((result) => result.text())
+        // .then((strData) => new DOMParser().parseFromString(strData, "text/xml"))
+        // .then(displayData);
+
+        // USING async-await
+        // const loadData = async () => {
+        //     const result = await fetch("people.xml");
+        //     const str = await result.text();
+        //     const xmlData = new DOMParser().parseFromString(str, "text/xml");
+        //     displayData(xmlData);
+        // };
+        // loadData();
+
+        //  Using async await and .then
+        const loadData = async() => {
+            const result = await fetch("people.xml")
+            .then((result) => result.text())
+            .then((strData) => new DOMParser().parseFromString(strData, "text/xml"))
+               .then(displayData);
+        };
+        loadData();
+
     </script>
 </body>
 </html>
