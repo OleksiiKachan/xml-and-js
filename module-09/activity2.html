@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <link rel="stylesheet" href="cards.css" /> -->
+  </head>
+  <body>
+    <ol id="people"></ol>
+    <script>
+    //   const xhr = (url, method = `GET`) =>
+    //   new Promise((resolve) => {
+    //     const xhttp = new XMLHttpRequest();
+    //   xhttp.onreadystatechange = function () {
+    //     if (this.readyState == 4 && this.status == 200) {
+    //       resolve(this.responseXML);
+    //      }
+    //   };
+    //   xhttp.open(method, url);
+    //   xhttp.send();
+    // });
+
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createPeople(people) {
+        const content = `<li>
+  <article>
+    <p>${people.first_name + '' + people.last_name}</p>
+    
+  </article>
+</li>`;
+
+        return stringToNode(content);
+      }
+
+      function parsePeople(xml) {
+        const first_name =
+          xml.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+        const last_name =
+          xml.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+       
+
+        return {
+          first_name,
+          last_name,
+         
+        };
+      }
+
+      function displayData(xmlDoc) {
+        const people = xmlDoc.getElementsByTagName(`row`);
+
+        const list = document.getElementById(`people`);
+
+        for (let index = 0; index < people.length; index++) {
+          const element = people[index];
+          const parsedPeople = parsePeople(element);
+
+          const PeopleElement = createPeople(parsedPeople);
+          list.appendChild(PeopleElement);
+        }
+      }
+
+    //   xhr("people_activity.xml").then((data) =>  displayData(data));
+
+
+    //method-1
+
+    // fetch("./people_activity.xml")
+    // .then((response) => response.text())
+    // .then((str) => new DOMParser().parseFromString(str, "text/xml"))
+    // .then(displayData);
+
+    //method-2
+
+    // const loadData = async () => {
+    // const response = await fetch ("./people_activity.xml");
+    // const str = await response.text();
+    // const xmldata =new DOMParser().parseFromString(str,"text/xml");
+    // displayData(xmldata);
+    // }
+    // loadData();
+
+    //method-3
+        const loadData = async () => {
+        const fetchData = await fetch("./people_activity.xml")
+          .then((data) => data.text())
+          .then((strData) =>
+            new DOMParser().parseFromString(strData, "text/xml")
+          );
+
+        displayData(fetchData);
+      };
+      loadData();
+
+
+   
+    
+    </script>
+  </body>
+</html>
