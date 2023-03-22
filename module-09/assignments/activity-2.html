@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Customers</title>
+  </head>
+  <body>
+    <table id="peopleTable" width="100%" border="1">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>IP Address</th>
+      </tr>
+    </table>
+    <script>
+       const xhr = (url, method = `GET`) =>
+  new Promise((resolve) => {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        resolve(this.responseXML);
+      }
+    };
+    xhttp.open(method, url);
+    xhttp.send();
+  });
+
+        function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+        }
+
+        function createPerson(person) {
+        const content = `
+        <tr>
+          <td>${person.first} ${person.last}</td>
+          <td>${person.email}</td>
+          <td>${person.gender}</td>
+          <td>${person.ip}</td>
+        </tr>
+        `;
+
+        return stringToNode(content);
+        }
+
+        const parsePerson = (person) => {
+            const first = person.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+            const last = person.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+            const email = person.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+            const gender = person.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue;
+            const ip = person.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue;
+            return {first, last, email, gender, ip};
+       }
+
+
+
+        function displayData(xmlDoc) {
+        
+        const people = document.getElementById('peopleTable');
+
+        const person=xmlDoc.getElementsByTagName("person");
+
+        for (let index = 0; index < person.length; index++) {
+
+          const element = person[index];
+          const parsedPerson = parsePerson(element);
+          const peopleElement = createPerson(parsedPerson);
+          people.appendChild(peopleElement);
+
+        }
+      }
+
+      fetch("people.xml", {method:'GET'})
+        .then((response) => response.text())
+        .then((data) => new DOMParser().parseFromString(data, "text/xml"))
+        .then(displayData);
+
+    </script>
+  </body>
+</html>
