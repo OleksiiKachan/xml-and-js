@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <ul id="cInfo"></ul>
+    <script>
+
+const xhr = (url, method = `GET`) => new Promise((resolve) => {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            resolve(this.responseXML);
+            }
+        };
+        xhttp.open(method, url);
+        xhttp.send();
+    });
+
+  function stringToNode(html) {
+    const template = document.createElement(`template`);
+    html = html.trim();
+    template.innerHTML = html;
+
+    return template.content.firstChild;
+  }
+
+  function createData(card) {
+    const content = `<li>
+      <article>
+        <h1><li>${card.name}</li></h1>
+        <ul>
+            <li>${card.customer}</li>
+            <li>${card.address}</li>
+            <li>${card.phone}</li>
+            <li>${card.email}</li>
+            <li>Orders</li>
+            <ul>
+              <li>${card.order}</li>
+              <li>${card.orderDate}</li>
+            </ul>
+            <li>Items</li>
+            <ul>
+              <li>${card.itemPrice}</li>
+              <li>${card.itemQty}</li>
+            </ul>
+          </ul>
+      </article>
+    </li>`;
+
+    return stringToNode(content);
+  }
+
+  function parseData(xml) {
+    const customer =
+      xml.getElementsByTagName(`order`)[0].attributes[1].nodeValue;
+    const name =
+      xml.getElementsByTagName(`name`)[0].attributes[0].nodeValue + xml.getElementsByTagName(`name`)[0].childNodes[0].data;
+    const address =
+      xml.getElementsByTagName(`address`)[0].childNodes[0].data;
+    const phone =
+      xml.getElementsByTagName(`phone`)[0].childNodes[0].data;
+    if(xml.getElementsByTagName(`email`)[0] != undefined) {
+      var email = 
+        xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+    } else {
+      var email = "NA";
+    }
+    const order =
+      xml.getElementsByTagName(`order`)[0].attributes[0].nodeValue;
+    const orderDate =
+      xml.getElementsByTagName(`orderDate`)[0].childNodes[0].data;
+    const itemPrice =
+      xml.getElementsByTagName(`itemPrice`)[0].childNodes[0].data;
+    const itemQty =
+      xml.getElementsByTagName(`itemQty`)[0].childNodes[0].data;
+
+    return {
+      customer,
+      name,
+      address,
+      phone,
+      email,
+      order,
+      orderDate,
+      itemPrice,
+      itemQty
+    };
+  }
+
+  function displayData(xmlDoc) {
+    const customerInfo = xmlDoc.getElementsByTagName(`customer`);
+    const list = document.getElementById(`cInfo`);
+
+    for (let index = 0; index < customerInfo.length; index++) {
+      const element = customerInfo[index];
+      const parsePersonInfo = parseData(element);
+
+      const cardElement = createData(parsePersonInfo);
+      list.appendChild(cardElement);
+    }
+  }
+
+  xhr("customers.xml").then(displayData);
+</script>
+</body>
+</html>
