@@ -6,3 +6,6 @@
   - Using fetch API with .then()
   - Using fetch API with async/await
 - Attach screenshots of the output in your terminal
+![image info](/module-09/assignments/output-assignment-promise.png)
+![image info](/module-09/assignments/output-assignment-fetch-then.png)
+![image info](/module-09/assignments/output-assignment-fetch-await.png)
