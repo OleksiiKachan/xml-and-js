@@ -57,13 +57,16 @@
             }
         }
 
-        fetch("people.xml")
+        const loadData = async () => {
+        const fetchData = await fetch("people.xml")
             .then((data) => data.text())
             .then((data) => {
                 const parser = new DOMParser();
                 const parsed = parser.parseFromString(data, 'text/xml');
                 displayData(parsed);
             });
+        };
+        loadData(); 
     </script>
 </body>
 </html>
