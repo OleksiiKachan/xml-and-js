@@ -1,10 +1,3 @@
-# Activity 2
-
-- Take your module-5 activity​
-- Replace XHR with fetch()​
-
-![image info](/module-09/assignments/output.png)
-
 function parsePeople(xml){
     const fullName=xml.getElementsByTagName('firstname')[0].childNodes[0].nodeValue
     + ' '+

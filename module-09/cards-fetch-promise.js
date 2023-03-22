@@ -53,3 +53,17 @@ fetch("cards.xml")
   .then((response) => response.text())
   .then((str) => new DOMParser().parseFromString(str, "text/xml"))
   .then(displayData);
+
+  //fetch('cards.xml',{method: 'GET'})
+  //  .then((result) => result.text())
+  //  .then((str) => new DOMParser().parseFromString(str, "text/xml"))
+  //  .then(displayData);
+
+  //const main = async()=>{
+  //const reuslt = await fetch(`cards.xml`);
+  //const String = await result.text();
+  //xmlDom = new DOMParser().parseFromString(dataString, 'text.xml');
+  //displayData(xmlDom);
+  //};
+
+  //main()

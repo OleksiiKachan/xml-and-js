@@ -1,27 +1,32 @@
-# Activity 2
-
-- Take your module-5 activity​
-- Replace XHR with fetch()​
-
-![image info](/module-09/assignments/output.png)
-
-function parsePeople(xml){
-    const fullName=xml.getElementsByTagName('firstname')[0].childNodes[0].nodeValue
-    + ' '+
-    xml.getElementsByTagName('lastname')[0].childNodes[0].nodeValue
-    ;
-
-    return peopleObject ={fullName};
+const xhr = (url, method = `GET`) =>
+  new Promise((resolve) => {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        resolve(this.responseXML);
+      }
     };
+    xhttp.open(method, url);
+    xhttp.send();
+  });
 
-    function stringToNode(html) {
+      function parsePeople(xml){
+        const fullName=xml.getElementsByTagName('firstname')[0].childNodes[0].nodeValue
+        + ' '+
+        xml.getElementsByTagName('lastname')[0].childNodes[0].nodeValue
+        ;
+
+        return peopleObject ={fullName};
+      };
+
+      function stringToNode(html) {
         const template = document.createElement(`template`);
         html = html.trim();
         template.innerHTML = html;
         return template.content.firstChild;
       }
 
-    function createPeople(people){
+      function createPeople(people){
         const content = `
         <li>
             <article>
@@ -32,9 +37,9 @@ function parsePeople(xml){
         `;
 
         return stringToNode(content);
-    };
+      };
 
-    function displayData(xmlDoc){
+      function displayData(xmlDoc){
         const list=document.getElementById('list');
 
         const ppls = xmlDoc.getElementsByTagName('person');
@@ -48,11 +53,4 @@ function parsePeople(xml){
         }
     }
 
-    const loadData = async () => {
-        const response = await fetch("people.xml");
-        const str = await response.text();
-        const xmlData = new DOMParser().parseFromString(str, "text/xml");
-        displayData(xmlData);
-      };
-      
-      loadData();
+      xhr("people.xml").then(displayData)
