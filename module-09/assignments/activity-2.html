@@ -57,15 +57,31 @@
           list.appendChild(cardElement);
         }
       }
+      // Method 1
+        // const loadData = async () => {
+        // const fetchData = await fetch("people.xml");
+        // const strData = await fetchData.text();
+        // const xmlData = new DOMParser().parseFromString(strData,"text/xml");
+        // };
 
-      const loadData = async () => {
-        const fetchData = await fetch("people.xml");
-        const strData = await fetchData.text();
-        const xmlData = new DOMParser().parseFromString(strData,"text/xml");
-        displayData(xmlData);
-      };
+        //   loadData();
 
-      loadData();      
+        // Method 2
+        //   const loadData = async () => {
+        //     const fetchData = await fetch("people.xml")
+        //     .then((data) => data.text())
+        //     .then((strData) => new DOMParser().parseFromString(strData,"text/xml"));
+            
+        //     displayData(fetchData);
+        //   };
+
+        //   loadData();
+
+        // Method 3
+        //   fetch("people.xml")
+        //   .then((data) => data.text())
+        //   .then((strData) => new DOMParser().parseFromString(strData,"text/xml"))
+        //   .then(displayData);
     </script>
   </body>
 </html>
