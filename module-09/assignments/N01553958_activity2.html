@@ -1,0 +1,127 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>People</title>
+    <style>
+      td {
+        background-color: rgb(255, 205, 205);
+        color: black;
+        text-align: center;
+      }
+      th {
+        background-color:rgb(232, 255, 224);
+        text-align:center;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="pdata" border="1">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>IP_Address</th>
+        </tr>
+    </table>
+    <script>
+      const xhr = (url, method = `GET`) =>
+        new Promise((resolve) => {
+          const xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              resolve(this.responseXML);
+            }
+          };
+          xhttp.open(method, url);
+          xhttp.send();
+        });
+
+      function parsedata(xml) {
+        const fname =
+          xml.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+         const lname =
+          xml.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+        const email =
+          xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+        const gender =
+          xml.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue;
+          const ip_address =
+          xml.getElementsByTagName('ip_address')[0].childNodes[0].nodeValue;
+        return {
+          fname,
+          lname,
+          email,
+          gender,
+          ip_address
+        };
+      }
+
+      function createrow(row) {
+        const content = `<tr>
+          <td>${row.fname} </td>
+          <td>${row.lname}</td>
+          <td>${row.email}</td>
+          <td>${row.gender}</td>
+          <td>${row.ip_address}</td>
+        </tr>`;
+
+        return stringToNode(content);
+      }
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function displayData(xmlDoc) {
+        const people = xmlDoc.getElementsByTagName(`people`);
+
+        const table = document.getElementById(`pdata`);
+
+        for (let index = 0; index < people.length; index++) {
+          const element = people[index];
+          const parsedrec = parsedata(element);
+
+          const peopleElement = createrow(parsedrec);
+          table.appendChild(peopleElement);
+        }
+      }
+       //Method-1
+       fetch("Deeya_people.xml")
+        .then((response) => response.text())
+        .then((str) => new DOMParser().parseFromString(str, "text/xml"))
+        .then(displayData);
+
+        /* 
+        Method-2
+        const loadData = async () => { 
+            const response = await fetch("module_9_people.xml");
+            const str = await response.text();
+            const xmlData = new DOMParser().parseFromString(str, "text/xml");
+            displayData(xmlData);
+        };
+           loadData();
+
+        Method-3
+           const loadData = async () => {
+             const fetchData = await fetch("./people_activity-1.xml")
+               .then((data) => data.text())
+               .then((strData) =>
+                 new DOMParser().parseFromString(strData, "text/xml")
+               );
+
+             displayData(fetchData);
+           };
+           loadData();
+
+      xhr("module-09/assignments/Deeya_people.xml").then(displayData);
+      */
+    </script>
+  </body>
+</html>
