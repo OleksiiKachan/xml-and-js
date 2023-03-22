@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <table id="pInfo"></table>
+    <script>
+      const xhr = (url, method = `GET`) => new Promise((resolve) => {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            resolve(this.responseXML);
+        }
+        };
+        xhttp.open(method, url);
+        xhttp.send();
+  });
+
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createData(card) {
+        const content = `<tr>
+          <article>
+              <td>${card.firstname} ${card.lastname}</td>
+              <td>${card.email}</td>
+              <td>${card.gender}</td>
+              <td>${card.ip_address}</td>
+          </article>
+        </tr>`;
+
+        return stringToNode(content);
+      }
+
+      function parseData(xml) {
+        const firstname =
+          xml.getElementsByTagName(`firstname`)[0].childNodes[0].nodeValue;
+        const lastname =
+          xml.getElementsByTagName(`lastname`)[0].childNodes[0].nodeValue;
+        const email =
+          xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+        const gender =
+          xml.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue;
+          const ip_address =
+          xml.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue;
+
+        return {
+          firstname,
+          lastname,
+          email,
+          gender,
+          ip_address
+        };
+      }
+
+      function displayData(xmlDoc) {
+        const personInfo = xmlDoc.getElementsByTagName(`personInfo`);
+        const list = document.getElementById(`pInfo`);
+
+        for (let index = 0; index < personInfo.length; index++) {
+          const element = personInfo[index];
+          const parsedCard = parseData(element);
+
+          const cardElement = createData(parsedCard);
+          list.appendChild(cardElement);
+        }
+      }
+
+      xhr("people.xml").then(displayData);
+    </script>
+  </body>
+</html>
