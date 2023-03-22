@@ -2,7 +2,18 @@ const timeout = async(ms) => {
 	return setTimeout(() => ms);
 };
 
+function generateRandomNumber() {
+  return Math.floor(Math.random() * 40);
+}
+
 const generateRandomNumber = (()=>Math.floor(Math.random() * 40));
+
+function generateData(callback) {
+  timeout(1000, function () {
+    const data = Array.from({ length: 20 }, generateRandomNumber);
+    callback(data);
+  });
+}
 
 const generateData = async() => {
 	await timeout(1000);
