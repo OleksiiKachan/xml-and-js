@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peoples</title>
+    <style>
+      td {
+        color: #3d1766;
+      }
+      th {
+        background-color: #bface2;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="pdata" border="1">
+      <tr>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Id Address</th>
+      </tr>
+    </table>
+    <script>
+      function parsedata(xml) {
+        const fname =
+          xml.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+        const lname =
+          xml.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+        const email =
+          xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+        const gender =
+          xml.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue;
+        const ip_address =
+          xml.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue;
+
+        return {
+          fname,
+          lname,
+          email,
+          gender,
+          ip_address,
+        };
+      }
+
+      function createrow(row) {
+        const content = `<tr>
+          <td>${row.fname} ${row.lname}</td>
+          <td>${row.email}</td>
+          <td>${row.gender}</td>
+          <td>${row.ip_address}</td>
+        </tr>`;
+
+        return stringToNode(content);
+      }
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function displayData(xmlDoc) {
+        const people = xmlDoc.getElementsByTagName(`people`);
+
+        const table = document.getElementById(`pdata`);
+
+        for (let index = 0; index < people.length; index++) {
+          const element = people[index];
+          const parsedrec = parsedata(element);
+
+          const peopleElement = createrow(parsedrec);
+          table.appendChild(peopleElement);
+        }
+      }
+
+      //Method-1
+      //   fetch("./people_activity-1.xml")
+      //     .then((response) => response.text())
+      //     .then((str) => new DOMParser().parseFromString(str, "text/xml"))
+      //     .then(displayData);
+
+      //Method-2
+      //   const loadData = async () => {
+      //     const response = await fetch("./people_activity-1.xml");
+      //     const str = await response.text();
+      //     const xmlData = new DOMParser().parseFromString(str, "text/xml");
+      //     displayData(xmlData);
+      //   };
+      //   loadData();
+
+      //Method-3
+      const loadData = async () => {
+        const fetchData = await fetch("./people_activity-1.xml")
+          .then((data) => data.text())
+          .then((strData) =>
+            new DOMParser().parseFromString(strData, "text/xml")
+          );
+
+        displayData(fetchData);
+      };
+      loadData();
+    </script>
+  </body>
+</html>
