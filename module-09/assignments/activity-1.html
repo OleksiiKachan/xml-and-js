@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <ol id="namelist"></ol>
+    <script>
+        const xhr = (url, method = `GET`) =>
+            new Promise((resolve) => {
+                const xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState === 4 && this.status === 200) {
+                        resolve(this.responseXML);
+                    }
+                };
+                xhttp.open(method, url);
+                xhttp.send();
+            });
+
+        function stringToNode(html) {
+            const template = document.createElement(`template`);
+            html = html.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+        }
+
+        function makePeopleList(rec) {
+            const content = `<li>
+                <article>
+                   
+                    <p>${rec.id}</p>
+                    <p>${rec.firstname} ${rec.lastname}</p>
+                    <p>${rec.email}</p>
+                    <p>${rec.gndr} </p>
+                    <p>${rec.ipadd}</p>
+                    
+                    
+                </article>
+                </li>`;
+
+            return stringToNode(content);
+        }
+
+        function parsedRecord(xml) {
+            const firstname = xml.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+            const lastname = xml.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+            const id = xml.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+            const email = xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+            const gndr = xml.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue;
+            const ipadd = xml.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue;
+            return {
+                id,
+                firstname,
+                lastname,
+                email,
+                gndr,
+                ipadd,
+            };
+        }
+        function displayData(xmlDoc) {
+            console.log(xmlDoc)
+            const rowrec = xmlDoc.getElementsByTagName(`row`);
+            const list = document.getElementById(`namelist`);
+
+            for (let ind = 0; ind < rowrec.length; ind++) {
+                const el = rowrec[ind];
+                const parsedRec = parsedRecord(el);
+
+                const recElement = makePeopleList(parsedRec);
+                list.appendChild(recElement);
+
+            }
+
+        }
+
+        xhr("people.xml").then(displayData);
+        
+
+        
+
+
+    </script>
+</body>
+
+</html>
