@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 09 - Assignment - Fecth Async</title>
+  </head>
+
+  <body>
+    <h2>Module 09 - Assignment - Fetch Async</h2>
+
+    <ol id="data"></ol>
+
+    <script>
+      // get the list element
+      const dataDiv = document.getElementById("data");
+
+      /**
+       * Convert xml to Json structure.
+       * Extract the data fromt the xml and assign to a Json dict.
+       *
+       * @param (xmlElement) The acquired xml element
+       */
+      function xmlToJsonDict(element) {
+        const custID = element.getAttribute("custID");
+        const name =
+          element.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+        const title = element
+          .getElementsByTagName("name")[0]
+          .getAttribute("title");
+        const address =
+          element.getElementsByTagName("address")[0].childNodes[0].nodeValue;
+        const phone =
+          element.getElementsByTagName("phone")[0].childNodes[0].nodeValue;
+        let email;
+        if (element.getElementsByTagName("email").length != 0) {
+          email =
+            element.getElementsByTagName("email")[0].childNodes[0].nodeValue;
+        } else {
+          email = "N/A";
+        }
+
+        const order = element.getElementsByTagName("orders")[0].childNodes[1];
+        const orderID = order.getAttribute("orderID");
+        const orderBy = order.getAttribute("orderBy");
+        const orderDate =
+          order.getElementsByTagName("orderDate")[0].childNodes[0].nodeValue;
+
+        const item = order.getElementsByTagName("items")[0].childNodes[1];
+        const price =
+          item.getElementsByTagName("itemPrice")[0].childNodes[0].nodeValue;
+        const quantity =
+          item.getElementsByTagName("itemQty")[0].childNodes[0].nodeValue;
+
+        var result = {
+          custID,
+          name,
+          title,
+          address,
+          phone,
+          email,
+          orderID,
+          orderBy,
+          orderDate,
+          item,
+          price,
+          quantity,
+        };
+
+        // console.log(order);
+        // console.log(orderID);
+        // console.log(orderBy);
+        // console.log(orderDate);
+        // console.log(price);
+        // console.log(quantity);
+
+        return result;
+      }
+
+      /**
+       * Convert Json dict to html in a string.
+       *
+       * @param (json) the json dict to be converted.
+       */
+      function jsonDictToHtmlStr(dict) {
+        const content = `
+            <li>
+            <ul>
+                <li><h3><span>${dict.title}</span>${dict.name}</h3></li>
+                <li>${dict.custID}</li>
+                <li>${dict.phone}</li>
+                <li>${dict.address}</li>
+                <li>${dict.email}</li>
+                <li><h4>Order Info:</h4>
+                    <ul>
+                        <li>${dict.orderID}</li>
+                        <li>${dict.orderBy}</li>
+                        <li>${dict.orderDate}</li>
+                        <li><h5>Item Info:</h5>
+                            <ul>
+                                <li>${dict.price}</li>
+                                <li>${dict.quantity}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+                `;
+        return content;
+      }
+
+      /**
+       *Convert html string to html element.
+       *
+       * @param (String) the html in string form to be converted.
+       */
+      function strToHtml(strHtml) {
+        let temp = document.createElement("temElement");
+        strHtml = strHtml.trim();
+        temp.innerHTML = strHtml;
+        // console.log(temp);
+        // console.log(temp.childNodes);
+        // console.log(temp.children[0]);
+        // console.log(temp.firstChild);
+        return temp.firstChild;
+      }
+
+      /**
+       * Render data in xml to html
+       *
+       * @param (xml) The xml to be rendered.
+       */
+      function renderData(responseXML) {
+        const customer_XmlList = responseXML.getElementsByTagName("customer");
+
+        //loop all customer elements
+        for (let i = 0; i < customer_XmlList.length; i++) {
+          const customer_Dict = xmlToJsonDict(customer_XmlList[i]); //from xml to json
+          const customer_Str = jsonDictToHtmlStr(customer_Dict); //from json to str
+          const customer_HtmlElement = strToHtml(customer_Str); //from str to html
+
+          dataDiv.appendChild(customer_HtmlElement); //append html to the list
+        }
+      }
+
+      console.log("Fecth asyncs");
+
+      // async function
+      var filename = "customers.xml";
+      const main = async (filename) => {
+        const response = await fetch(filename);
+        // console.log("response:", response);
+
+        const xmlStr = await response.text();
+        // console.log("text():", xmlStr);
+
+        const xmlElements = new DOMParser().parseFromString(xmlStr, "text/xml");
+        // console.log("xmlElements:", xmlElements);
+
+        renderData(xmlElements);
+      };
+
+      main(filename);
+    </script>
+  </body>
+</html>
