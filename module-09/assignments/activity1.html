@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="people" border="1px" cellspacing="0" cellpadding="20">
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Id Address</th>
+        </tr>
+    </table>
+    <script>
+        const xhr = (url, method = `GET`) => 
+            new Promise((resolve) => {
+                const xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                  if(this.readyState == 4 && this.status == 200) {
+                    resolve(this.responseXML);
+                }
+            };
+            xhttp.open('GET', '../../module-05/assignments/people.xml', true);
+            xhttp.send();
+        })
+
+
+        xhr(`people.xml`).then(displayPerson);
+
+        function displayPerson(xmlDoc) {
+            const tableElement = document.getElementById(`people`);
+            const persons = xmlDoc.getElementsByTagName(`person`);
+            for(let i=0; i< persons.length; i++) {
+                const person = persons[i];
+                const parsedPerson = parsePerson(person);
+                const personElement = createPerson(parsedPerson);
+                tableElement.appendChild(personElement);
+            }
+        }
+
+        
+       const parsePerson = (person) => {
+
+            const firstName = person.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+            const lastName = person.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+            const email = person.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+            const gender = person.attributes[1].nodeValue;
+            const ipAddress = person.getElementsByTagName(`ip_address`)[0].childNodes[0].nodeValue;
+
+            return {firstName, lastName, email, gender, ipAddress};
+       }
+
+       const createPerson = (parsedPerson) => {
+            const content = `
+                <tr>
+                  <td>${parsedPerson.firstName} ${parsedPerson.lastName}</td> 
+                  <td>${parsedPerson.email}</td> 
+                  <td>${parsedPerson.gender}</td>  
+                  <td>${parsedPerson.ipAddress}</td>   
+                </tr>
+            `;
+
+            return stringToNode(content);
+       }
+
+       function stringToNode(content) {
+        const template = document.createElement(`template`);
+        const html = content.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+       }
+    </script>
+</body>
+</html>
