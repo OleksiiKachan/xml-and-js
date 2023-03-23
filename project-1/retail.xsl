@@ -66,7 +66,7 @@
                     <th>Type</th>
 
                   </tr>                 
-                  <xsl:for-each select="employee"> 
+                  <xsl:for-each select="//employee"> 
                     <tr>
                      <td><xsl:value-of select="empid"/></td>
                       <td><xsl:value-of select="firstName"/></td>
