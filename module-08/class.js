@@ -110,3 +110,6 @@
 
 // obj.split().then((data) => console.log("obj.split() =", data));
 // person.then((person) => person.split()).then((data) => console.log("person.split() =", data));
+
+
+
