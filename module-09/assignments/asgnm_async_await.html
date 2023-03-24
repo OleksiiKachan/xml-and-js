@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <ol id="customerData"></ol>
+    <script>
+      const xhr = (url, method = "GET") => {
+        new Promise((resolve) => {
+          const xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              resolve(this.responseXML);
+            }
+          };
+          xhttp.open(method, url);
+          xhttp.send();
+        });
+      };
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function Customer_Data(customer) {
+        const content = `
+  <article>
+    <div>Customer Id: ${customer.custID}</div>
+    <h2>Full Name: ${customer.cust_title} ${customer.cust_name}</h2>
+    <div>Address: ${customer.cust_address}</div>
+    <div>Phone: ${customer.cust_phone}</div>
+    <div>Email: ${customer.email}</div>
+    <ul>
+    <li>OrderID: ${customer.order_ID}</li>
+    <li>OrderBy: ${customer.order_By}</li>
+    <li>OrderDate: ${customer.order_Date}</li>
+    </ul>
+    <div>Item price: ${customer.item_Price}</div>
+    <div>Item quamtity: ${customer.item_Qty}</div>
+    <br>
+  </article>
+`;
+
+        return stringToNode(content);
+      }
+
+      function parseData(xml) {
+        const custID = xml.getAttribute(`custID`);
+        const cust_title = xml
+          .getElementsByTagName(`name`)[0]
+          .getAttribute("title");
+        const cust_name =
+          xml.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+        const cust_address =
+          xml.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+        const cust_phone =
+          xml.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+
+        try {
+          var email =
+            xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+        } catch (error) {
+          var email = " ";
+        }
+
+        const order_ID = xml
+          .getElementsByTagName(`order`)[0]
+          .getAttribute("orderID");
+        const order_By = xml
+          .getElementsByTagName(`order`)[0]
+          .getAttribute("orderBy");
+        const order_Date =
+          xml.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
+        const item_Price =
+          xml.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
+        const item_Qty =
+          xml.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
+
+        return {
+          custID,
+          cust_title,
+          cust_name,
+          cust_address,
+          cust_phone,
+          email,
+          order_ID,
+          order_By,
+          order_Date,
+          item_Price,
+          item_Qty,
+        };
+      }
+
+      function displayData(xmlDoc) {
+        const customer = xmlDoc.getElementsByTagName(`customer`);
+        const cust_list = document.getElementById(`customerData`);
+        for (let index = 0; index < customer.length; index++) {
+          const e = customer[index];
+          const p_Customer = parseData(e);
+          const e_customer = Customer_Data(p_Customer);
+          cust_list.appendChild(e_customer);
+        }
+      }
+
+      // Using async/await method
+      const loadData = async () => {
+        const response = await fetch("customers.xml");
+        const str = await response.text();
+        const xmlData = new DOMParser().parseFromString(str, "text/xml");
+        displayData(xmlData);
+      };
+
+      loadData();
+    </script>
+  </body>
+</html>
