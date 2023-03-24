@@ -1,0 +1,168 @@
+<!-- Vimal Radadiya -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>Module_9 Assignment</title>
+    <style>
+        th {
+            color: aliceblue;
+          background-color: #3b5368;
+        }
+        td {
+          color: #171a22;
+          background-color: rgb(118, 179, 100);
+        }
+      </style>
+  </head>
+  <body>
+    <table id="Customerinfo" border="2">
+      <tr>
+        <th>Customer Id</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Order</th>
+        <th>Items</th>
+      </tr>
+    </table>
+
+    <script>
+      const xhr = (url, method=`GET`)  =>new Promise((resolve)=>{
+        const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            resolve(this.responseXML);
+        }
+      };
+      xhttp.open(method, url ,true);
+      xhttp.send();
+      });
+
+
+      function stringToNode(content) {
+        const template = document.createElement(`template`);
+        html = content.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function cust_info(data) {
+        const content = `
+        <tr>
+        <td>${data.id}</td>
+        <td>${data.title} ${data.name}</td>
+        <td>${data.address}</td>
+        <td>${data.phone}</td>
+        <td>${data.email}</td>
+        <td>
+          <table>
+            <tr>
+              <td>OrderID: ${data.orderID}</td>
+            </tr>
+            <tr>
+              <td>OrderBy: ${data.orderBy}</td>
+            </tr>
+            <tr>
+              <td>OrderDate: ${data.orderDate}</td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <td>Item price: ${data.itemPrice}</td>
+           </tr>
+           <tr>
+              <td>Item quantity: ${data.itemQty}</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+        `;
+
+        return stringToNode(content);
+      }
+
+      function parseInfo(element) {
+        const id = element.attributes[0].nodeValue;
+        const title =
+          element.getElementsByTagName("name")[0].attributes[0].nodeValue;
+        const name =
+          element.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+        const address =
+          element.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+        const phone =
+          element.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+
+        if (!element.getElementsByTagName(`email`)[0]) {
+          var email = "No email found.";
+        } else {
+          var email =
+            element.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+        }
+
+        const orderID =
+          element.getElementsByTagName(`order`)[0].attributes[0].nodeValue;
+        const orderBy =
+          element.getElementsByTagName(`order`)[0].attributes[1].nodeValue;
+        const orderDate =
+          element.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
+        const itemPrice =
+          element.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
+        const itemQty =
+          element.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
+
+        return {
+          id,
+          title,
+          name,
+          address,
+          phone,
+          email,
+          orderID,
+          orderBy,
+          orderDate,
+          itemPrice,
+          itemQty,
+        };
+      }
+
+      function displayData(xml) {
+        const customerdata = xml.getElementsByTagName(`customer`);
+        const list = document.getElementById(`Customerinfo`);
+
+        for (let index = 0; index < customerdata.length; index++) {
+          const customerelement = customerdata[index];
+          const customerparsed = parseInfo(customerelement);
+
+          const customer_info = cust_info(customerparsed);
+          list.appendChild(customer_info);
+        }
+      }
+
+      
+      //***1. Using promisified XHR
+    //   xhr(`customers.xml`).then((data)=> displayData(data));
+
+      
+    //***2. Using fetch API with .then()
+    //   fetch(`customers.xml`,{method:`GET`})
+    //     .then((response) => response.text())
+    //     .then((data)=> new DOMParser().parseFromString(data,`text/xml`))
+    //     .then((xmldoc)=>displayData(xmldoc));
+
+       
+    //***3. Using fetch API with async/await
+      const main = async()=>{
+       const xmlDoc = await fetch(`customers.xml`,{method:`GET`})
+         .then((response) => response.text())
+        .then((data)=> new DOMParser().parseFromString(data,`text/xml`));
+        displayData(xmlDoc)
+      };  
+
+      main();
+    </script>
+  </body>
+</html>
