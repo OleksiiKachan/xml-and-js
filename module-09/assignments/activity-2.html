@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>doc</title>
+  </head>
+  <body>
+    <ul id="people"></ul>
+  
+    <script>
+     function stringToNode(html) {
+     const template = document.createElement(`template`);
+     html = html.trim();
+     template.innerHTML = html;
+     return template.content.firstChild;
+    }
+
+  function createPeople(people) {
+    const content = 
+    `<li>
+      <article>
+        <p><strong>ID:</strong> ${people.id}</p>
+        <p><strong>Full Name:</strong> ${people.first_name} ${people.last_name}<p>
+      </article>
+    </li>`;
+
+    return stringToNode(content);
+  }
+
+
+  function displayData(xmlDoc) {
+    const people = xmlDoc.getElementsByTagName(`person`);
+
+    const list = document.getElementById(`people`);
+
+    for (let index = 0; index < people.length; index++) {
+      const element = people[index];
+      debugger;
+      const parsedPeople = parsePeople(element);
+
+      const peopleElement = createPeople(parsedPeople);
+      list.appendChild(peopleElement);
+    }
+  }
+
+  
+  function parsePeople(xml) {
+    debugger;
+    const id =
+      xml.getElementsByTagName(`id`)[0].childNodes[0].nodeValue;
+    const first_name =
+      xml.getElementsByTagName(`first_name`)[0].childNodes[0].nodeValue;
+    const last_name =
+      xml.getElementsByTagName(`last_name`)[0].childNodes[0].nodeValue;
+
+    return {
+        id,
+        first_name,
+        last_name,
+    };
+  }
+
+  // Fetch api 
+  // fetch("people.xml")
+  // .then((response) => response.text())
+  // .then((data) => new DOMParser().parseFromString(data, "text/xml"))
+  // .then((data) => displayData(data));
+
+  // ASYNC-AWAIT
+  // const main = async() => {
+  // const response = await fetch("people.xml");
+  // const data = await response.text();
+  // const xmlDoc = new DOMParser().parseFromString(data, 'text/xml');
+  // displayData(xmlDoc);
+  // }
+
+  //
+  const main = async() => {
+  const response = await fetch("people.xml")
+  .then((response) => response.text())
+  .then((data) => new DOMParser().parseFromString(data, 'text/xml'))
+  .then((data) => displayData(data));
+  }
+
+  main();
+   </script>
+  </body>
+</html>

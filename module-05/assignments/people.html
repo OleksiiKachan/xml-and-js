@@ -43,15 +43,22 @@
         return stringToNode(content);
       }
 
+      const xhr = (url, method = `GET`) =>new Promise((resove) =>{const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {if(this.readyState == 4 && this.status == 200) {resove(this.responseXML);}};
+    xhttp.open(method, url);xhttp.send();});
+    xhr("people.xml").then(displayData);
+
+   xhr(`people.xml`).then((data) => displayData(data));
+
 
       function displayData(xmlDoc) {
         const people = xmlDoc.getElementsByTagName(`people`);
 
         const list = document.getElementById(`text`);
 
-        for (let index = 0; index < people.length; index++) {
+       for (let index = 0; index < people.length; index++) {
           const element = people[index];
-          const parsedPeople = parsePeople(element);
+        const parsedPeople = parsePeople(element);
 
           const peopleElement = PeopleDetail(parsedPeople);
           list.appendChild(peopleElement);
@@ -60,3 +67,4 @@
     </script>
   </body>
 </html>
+
