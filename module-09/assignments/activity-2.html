@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        border: 1px solid black;
+        font-family: sans-serif;
+      }
+
+      th,
+      td {
+        text-align: center;
+        padding: 5px;
+        border: 1px solid black;
+      }
+
+      th {
+        background-color: #333;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="peopleTable" border="1px">
+      <tr>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Id Address</th>
+      </tr>
+    </table>
+    <script>
+     
+      const createTableRow = (perosn) => {
+        const content = `
+                <tr>
+                  <td>${perosn.firstName} ${perosn.lastName}</td> 
+                  <td>${perosn.email}</td> 
+                  <td>${perosn.gender}</td>  
+                  <td>${perosn.IPAddress}</td>   
+                </tr>
+            `;
+
+        return stringToNode(content);
+      };
+
+      const parsePerson = (person) => {
+        const firstName =
+          person.getElementsByTagName(`firstName`)[0].childNodes[0].nodeValue;
+        const lastName =
+          person.getElementsByTagName(`lastName`)[0].childNodes[0].nodeValue;
+        const email =
+          person.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+        const gender =
+          person.getElementsByTagName(`gender`)[0].childNodes[0].nodeValue;
+        const IPAddress =
+          person.getElementsByTagName(`ipAddress`)[0].childNodes[0].nodeValue;
+
+        return { firstName, lastName, email, gender, IPAddress };
+      };
+
+      function stringToNode(content) {
+        const template = document.createElement(`template`);
+        const html = content.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function displayData(xmlDoc) {
+        const table = document.getElementById(`peopleTable`);
+        const persons = xmlDoc.getElementsByTagName(`person`);
+        for (let i = 0; i < persons.length; i++) {
+          const person = persons[i];
+          const parsedPerson = parsePerson(person);
+          const personRow = createTableRow(parsedPerson);
+          table.appendChild(personRow);
+        }
+      }
+
+       //Method-1: using chain
+        fetch('people.xml')
+        .then((response) => response.text())
+        .then((data) => new DOMParser().parseFromString(data, 'text/xml'))
+        .then((xmlData) => displayData(xmlData));
+
+        //Method-2: Using Async Await
+        // const loadData = async () => {
+        //     const response = await fetch('people.xml');
+        //     const data = await response.text();
+        //     const xmlData = await new DOMParser().parseFromString(data, 'text/xml');
+        //     displayData(xmlData);
+        // }
+
+        // loadData();
+
+        //Method-3: Using Async Await and chain
+        // const loadData = async () => await fetch('people.xml')
+        //     .then((response) => response.text())
+        //     .then((data) => new DOMParser().parseFromString(data, 'text/xml'));
+
+        // loadData().then(xmlData => displayData(xmlData));
+
+    </script>
+  </body>
+</html>
