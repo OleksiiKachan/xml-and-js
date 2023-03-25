@@ -39,4 +39,3 @@ function displayData(xmlDoc){
 }
 
 fetch("customers.xml").then((response) => response.text()).then((str) => new DOMParser().parseFromString(str, "text/xml")).then(displayData);
-fetch("customers.xml").then((response) => response.text()).then((str) => new DOMParser().parseFromString(str, "text/xml")).then();
