@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <h1>Assignment with Async-Await</h1>
+    <style>
+        li{border-style: solid;
+            border-color: red;
+            background-color: yellow;}
+    </style>
+</head>
+<body>
+    <div id="cust_data"></div>
+    <script>
+    const xhr = (url,method = "GET") =>{
+      new Promise((resolve)=>{
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            resolve(this.responseXML);
+          }
+        };
+        xhttp.open(method, url);
+        xhttp.send();
+      });
+    };
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      } 
+      function createCustomerInfo(customer) {
+        const content = `<li>
+        <article>
+            <div>${customer.id}</div>
+            <h2>${customer.title} ${customer.name}</h2>
+            <div>${customer.address}</div>
+            <div>${customer.phone}</div>
+            <div>${customer.email}</div>
+            <h4>OrderID: ${customer.orderID}</h4>
+            <h4>OrderBy: ${customer.orderBy}</h4>
+            <h4>OrderDate: ${customer.orderDate}</h4>
+            <div>Item price: ${customer.itemPrice}</div>
+            <div>Item quamtity: ${customer.itemQty}</div>
+            <br>
+        </article>
+        </li>`;
+
+        return stringToNode(content);
+      }
+
+      function parseInfo(dl) {
+        const id =
+          dl.getAttribute(`custID`)
+        const title =
+          dl.getElementsByTagName(`name`)[0].getAttribute("title");
+        const name =
+          dl.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+        const address =
+          dl.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+        const phone =
+          dl.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+
+          if(dl.getElementsByTagName(`email`)[0]){
+            var email =
+              dl.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+          }
+          else{
+            var email = "No email address"
+          }
+
+
+        const orderID =
+          dl.getElementsByTagName(`order`)[0].getAttribute("orderID");
+        const orderBy =
+          dl.getElementsByTagName(`order`)[0].getAttribute("orderBy");
+        const orderDate =
+          dl.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
+        const itemPrice =
+          dl.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
+        const itemQty =
+          dl.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
+
+
+        return {
+          id,
+          title,
+          name,
+          address,
+          phone,
+          email,
+          orderID,
+          orderBy,
+          orderDate,
+          itemPrice,
+          itemQty
+
+        };
+
+      }
+
+      function displayData(xmlDoc) {
+
+        const cust_list = xmlDoc.getElementsByTagName(`customer`);
+        const cust_list2 = document.getElementById(`cust_data`);
+        for (let j = 0; j < cust_list.length; j++) {
+          const items = cust_list[j];
+          const cust = parseInfo(items);
+          const cust_items = createCustomerInfo(cust);
+          cust_list2.appendChild(cust_items);
+
+        }
+      }
+      const main = async () => {
+            const xmlDoc = await fetch(`module_9_customers.xml`, { method: `GET` })
+                .then((response) => response.text())
+                .then((customer) => new DOMParser().parseFromString(customer, `text/xml`));
+            displayData(xmlDoc)
+        };  
+        main();
+    </script>
+</body>
+</html>
+
