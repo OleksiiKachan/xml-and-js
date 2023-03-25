@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <ul id="cInfo"></ul>
+    <script>
+        
+    function xhrFetchXml(url) {
+        return new Promise((resolve, reject) => {
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    if(resolve) {
+                        resolve(this.responseXML);
+                    } else {
+                        reject(new Error(`Not able to fetch the data ${url}: ${this.status} ${this.statusText}`));
+                    }
+                }
+            };
+
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        });
+    }
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+
+        return template.content.firstChild;
+      }
+
+      function createData(card) {
+        const content = `<li>
+          <article>
+            <h1><li>Name: ${card.name}</li></h1>
+            <ul>
+                <li> Customer ID: ${card.customer}</li>
+                <li> Address: ${card.address}</li>
+                <li> Phone: ${card.phone}</li>
+                <li> Email: ${card.email}</li>
+                <li>Orders</li>
+                <ul>
+                  <li> Order ID: ${card.order}</li>
+                  <li> Order Date: ${card.orderDate}</li>
+                </ul>
+                <li>Items</li>
+                <ul>
+                  <li> Item Price: ${card.itemPrice}</li>
+                  <li>Item Quantity: ${card.itemQty}</li>
+                </ul>
+              </ul>
+          </article>
+        </li>`;
+
+        return stringToNode(content);
+      }
+
+      function parseData(xml) {
+        const customer =
+          xml.getElementsByTagName(`order`)[0].attributes[1].nodeValue;
+        const name =
+          xml.getElementsByTagName(`name`)[0].attributes[0].nodeValue + xml.getElementsByTagName(`name`)[0].childNodes[0].data;
+        const address =
+          xml.getElementsByTagName(`address`)[0].childNodes[0].data;
+        const phone =
+          xml.getElementsByTagName(`phone`)[0].childNodes[0].data;
+        if(xml.getElementsByTagName(`email`)[0] != undefined) {
+          var email = 
+            xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+        } else {
+          var email = "NA";
+        }
+        const order =
+          xml.getElementsByTagName(`order`)[0].attributes[0].nodeValue;
+        const orderDate =
+          xml.getElementsByTagName(`orderDate`)[0].childNodes[0].data;
+        const itemPrice =
+          xml.getElementsByTagName(`itemPrice`)[0].childNodes[0].data;
+        const itemQty =
+          xml.getElementsByTagName(`itemQty`)[0].childNodes[0].data;
+
+        return { customer, name, address, phone, email, order, orderDate, itemPrice, itemQty };
+      }
+
+      function displayData(xmlDoc) {
+        const customerInfo = xmlDoc.getElementsByTagName(`customer`);
+        const list = document.getElementById(`cInfo`);
+
+        for (let index = 0; index < customerInfo.length; index++) {
+          const element = customerInfo[index];
+          const parsePersonInfo = parseData(element);
+
+          const cardElement = createData(parsePersonInfo);
+          list.appendChild(cardElement);
+        }
+      }
+
+      // Using fetch API with async/await
+      async function fetchingData() {
+        const response = await fetch('customers.xml');                            // Waiting the fetch to complete
+        const text = await response.text();                                       // Storing response object and waiting for response
+        const data = (new window.DOMParser()).parseFromString(text, "text/xml");  // Once its been extracted then parsed 
+        displayData(data);
+    }
+
+      fetchingData().catch(error => console.error(error));
+
+    </script>
+  </body>
+</html>
