@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Assignment</title>
     <!-- Created By : Naitik Panchal -->
@@ -18,9 +17,8 @@
         }
     </style>
 </head>
-
 <body>
-    <h2>Module 9 - Assignment using XHR </h2>
+    <h2>Module 9 - Assignment using fetch </h2>
     <table border="1" id="customersData">
         <tr>
             <th>Customer ID</th>
@@ -35,28 +33,16 @@
         </tr>
     </table>
     <script>
-        const xhr = (url, method = 'GET') => new Promise((resolve) => {
-            const xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    resolve(this.responseXML);
-                }
-            };
-            xhttp.open(method, url);
-            xhttp.send();
-        }
-        );
-
-        const displayData = (xml) => {
+        const displayData = (xml) =>{
             const customers = xml.getElementsByTagName(`customer`);
             const custData = document.getElementById(`customersData`);
             console.log(custData);
-            for (let index = 0; index < customers.length; index++) {
+            for(let index = 0; index < customers.length; index++){
                 console.log(index);
                 const customer = customers[index];
                 const parsedCustomersData = parseData(customer);
                 const tableData = createTable(parsedCustomersData);
-                console.log("completed" + index);
+                console.log("completed"+index);
                 custData.appendChild(tableData);
             }
         }
@@ -76,13 +62,13 @@
             const name = xml.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
             const address = xml.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
             const phone = xml.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
-            const email = xml.getElementsByTagName(`email`)[0] ? xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue : 'N/A';
+            const email = xml.getElementsByTagName(`email`)[0] ? xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue:'N/A';
             const orderID = xml.getElementsByTagName(`order`)[0].getAttribute(`orderID`);
             const orderDate = xml.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
             const itemPrice = xml.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
             const itemQuantity = xml.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
             console.log(xml);
-            return { customerID, title, name, address, phone, email, orderID, orderDate, itemPrice, itemQuantity };
+            return {customerID, title, name, address, phone, email, orderID, orderDate, itemPrice, itemQuantity};
         }
 
         const createTable = (customer) => {
@@ -99,8 +85,12 @@
             </tr>`;
             return stringToNode(content);
         }
-        xhr("customers.xml").then(displayData);
+
+        fetch("customers.xml", {method:'GET'})
+        .then((result) => result.text())
+        .then((strData) => new DOMParser().parseFromString(strData, "text/xml"))
+        .then(displayData);
+
     </script>
 </body>
-
 </html>
