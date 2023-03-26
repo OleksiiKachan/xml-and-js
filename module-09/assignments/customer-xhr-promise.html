@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Data</title>
+  </head>
+
+  <body>
+    <ul id="customerData"></ul>
+    <script>
+      //  promisified XHR
+      const xhr = (url, method = `GET`) => {
+        return new Promise((resolve) => {
+          const xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              resolve(this.responseXML);
+            }
+          };
+          xhttp.open(method, url);
+          xhttp.send();
+        });
+      };
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createCustomerInfo(customer) {
+        const data = `
+          <li>
+            <h2>${customer.title} ${customer.name}</h2>
+            <p><strong>Customer ID:</strong> ${customer.id}</p>
+            <p><strong>Address:</strong> ${customer.address}</p>
+            <p><strong>Phone:</strong> ${customer.phone}</p>
+            <p><strong>Email:</strong> ${customer.email}</p>
+            <h3>Order</h3>
+            <ul>
+              <li>OrderID: ${customer.orderID}</li>
+              <li>OrderBy: ${customer.orderBy}</li>
+              <li>OrderDate: ${customer.orderDate}</li>
+            </ul>
+            <h3>Items</h3>
+            <ul>
+              <li>Item price: ${customer.itemPrice}</li>
+              <li>Item quantity: ${customer.itemQty}</li>
+            </ul>
+          </li>
+        `;
+
+        return stringToNode(data);
+      }
+      function customerParseData(element) {
+            const id = element.attributes[0].nodeValue;
+            const title =
+                element.getElementsByTagName("name")[0].attributes[0].nodeValue;
+            const name =
+                element.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+            const address =
+                element.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+
+            const phone = element.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+            if (element.getElementsByTagName(`email`)[0]) 
+            {
+                var email = element.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+            } 
+            else 
+            {
+                var email = "Email is not provided.";
+            }
+            const orderID = element.getElementsByTagName(`order`)[0].attributes[0].nodeValue;
+            const orderBy = element.getElementsByTagName(`order`)[0].attributes[1].nodeValue;
+            const orderDate = element.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
+            const itemPrice = element.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
+            const itemQty = element.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
+
+            return {
+                id,
+                title,
+                name,
+                address,
+                phone,
+                email,
+                orderID,
+                orderBy,
+                orderDate,
+                itemPrice,
+                itemQty,
+            };
+        }
+
+        function displayData(xmlDoc) {
+            const customerData = xmlDoc.getElementsByTagName(`customer`);
+            const list = document.getElementById(`customerData`);
+            for (let i = 0; i < customerData.length; i++) {
+                const element = customerData[i];
+                const parsedCustomerData = customerParseData(element);
+                const customersData = createCustomerInfo(parsedCustomerData);
+                list.appendChild(customersData);
+            }
+        }
+        // call promissfied XHR
+      xhr("customers.xml").then(displayData);
+    </script>
+</body>
+</html>

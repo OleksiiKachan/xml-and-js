@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Data</title>
+</head>
+
+<body>
+    <ul id="customerData">
+    </ul>
+
+    <script>
+
+        //  promisified XHR
+        const xhr = (url, method = `GET`) => {
+        return new Promise((resolve) => {
+          const xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              resolve(this.responseXML);
+            }
+          };
+          xhttp.open(method, url);
+          xhttp.send();
+        });
+      };
+
+
+        function stringToNode(html) {
+            const template = document.createElement(`template`);
+            html = html.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+        }
+
+        function createCustomerInfo(customer) {
+            const data = `
+        <li>
+        <strong>Customer ID:</strong> ${customer.id}<br>
+        <strong>Full Name:</strong> ${customer.title} ${customer.name}<br>
+        <strong>Address:</strong> ${customer.address}<br>
+        <strong>Phone:</strong> ${customer.phone}<br>
+        <strong>Email:</strong> ${customer.email}<br>
+        <strong>Order ID:</strong> ${customer.orderID}<br>
+        <strong>Order By:</strong> ${customer.orderBy}<br>
+        <strong>Order Date:</strong> ${customer.orderDate}<br>
+        <strong>Item Price:</strong> ${customer.itemPrice}<br>
+        <strong>Item Quantity:</strong> ${customer.itemQty}<br>
+      </li>
+        `;
+
+            return stringToNode(data);
+        }
+
+        function customerParseData(element) {
+            const id = element.attributes[0].nodeValue;
+            const title =
+                element.getElementsByTagName("name")[0].attributes[0].nodeValue;
+            const name =
+                element.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+            const address =
+                element.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+
+            const phone = element.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+            if (element.getElementsByTagName(`email`)[0]) 
+            {
+                var email = element.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+            } 
+            else 
+            {
+                var email = "Email is not provided.";
+            }
+            const orderID = element.getElementsByTagName(`order`)[0].attributes[0].nodeValue;
+            const orderBy = element.getElementsByTagName(`order`)[0].attributes[1].nodeValue;
+            const orderDate = element.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
+            const itemPrice = element.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
+            const itemQty = element.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
+
+            return {
+                id,
+                title,
+                name,
+                address,
+                phone,
+                email,
+                orderID,
+                orderBy,
+                orderDate,
+                itemPrice,
+                itemQty,
+            };
+        }
+
+        function displayData(xmlDoc) {
+  const customerData = xmlDoc.getElementsByTagName(`customer`);
+  const list = document.createElement(`ul`);
+  for (let i = 0; i < customerData.length; i++) {
+    const element = customerData[i];
+    const parsedCustomerData = customerParseData(element);
+    const customerInfo = createCustomerInfo(parsedCustomerData);
+    const listItem = document.createElement(`li`);
+    listItem.appendChild(customerInfo);
+    list.appendChild(listItem);
+  }
+  document.body.appendChild(list);
+}
+
+  const loadData = async () => {
+        const response = await fetch("customers.xml");
+        const str = await response.text();
+        const xmlData = new DOMParser().parseFromString(str, "text/xml");
+        displayData(xmlData);
+      };
+
+</script>
+</body>
+</html>
