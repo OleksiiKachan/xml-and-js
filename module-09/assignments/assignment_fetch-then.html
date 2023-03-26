@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>customers</title>
+  </head>
+  <body>
+    <ul id="customers"></ul>
+    <script>
+
+      // fetch API with .then()
+      fetch("customers.xml")
+      .then((response) => response.text())
+      .then((str) => new DOMParser().parseFromString(str, "text/xml"))
+      .then((data) => displayData(data));
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createCustomer(customer) {
+        const content = 
+        `<li>
+          <article>
+            <h2>${customer.title} ${customer.name}</h2>
+            <h3>Customer ID : ${customer.custID}</h3>
+            <p><strong>Address: </strong> ${customer.address}</p>
+            <p><strong>Phone: </strong> ${customer.phone}<p>
+            <p><strong>e-mail: </strong>${customer.emailText}</p>
+            <p><strong>Order ID: </strong>${customer.orderID}</p>
+            <p><strong>Order By: </strong>${customer.orderBy}</p>
+            <p><strong>Order Date: </strong>${customer.orderDate}</p>
+            <p><strong>Item Price: </strong>${customer.itemPrice}</p>
+            <p><strong>Item Quantity: </strong>${customer.itemQty}</p>
+          </article>
+        </li>`;
+
+        return stringToNode(content);
+      }
+
+
+      function displayData(xmlDoc) {
+        const customers = xmlDoc.getElementsByTagName(`customer`);
+
+        const list = document.getElementById(`customers`);
+
+        for (let index = 0; index < customers.length; index++) {
+          const element = customers[index];
+          //debugger;
+          const parsedCustomer = parseCustomer(element);
+
+          const customerElement = createCustomer(parsedCustomer);
+          list.appendChild(customerElement);
+        }
+      }
+
+      
+      function parseCustomer(xml) {
+        let orderID, orderDate ,itemPrice, itemQty= "";
+        const custID =
+          xml.attributes.custID.nodeValue;
+          const name =
+          xml.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+          const title =
+          xml.getElementsByTagName("name")[0].attributes.title.nodeValue;
+          const address =
+          xml.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+          const phone =
+          xml.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+          const email =
+          xml.getElementsByTagName(`email`);
+          let emailText = "";
+          if(email.length>0)
+          {
+            emailText=email[0].childNodes[0].nodeValue;
+          }
+          const orderItems = xml.getElementsByTagName(`order`);
+         // console.log(orderItems.length)
+         // console.log(orderItems)
+          for (let j = 0; j < orderItems.length; j++) 
+          {
+            const orderElement = orderItems[j];
+            orderID =orderElement.attributes.orderID.nodeValue;
+            orderBy =orderElement.attributes.orderBy.nodeValue;
+            orderDate = orderElement.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
+            const items = orderElement.getElementsByTagName(`item`);
+            for (let k = 0; k < items.length; k++)
+            {
+              const itemElement = items[k];
+              itemPrice = itemElement.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
+              itemQty = itemElement.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
+              
+            }
+          }
+
+        return {
+            custID,
+            title,
+            name,
+            address,
+            phone,
+            emailText,
+            orderID,
+            orderBy,
+            orderDate,
+            itemPrice,
+            itemQty,
+        };
+
+      }
+    </script>
+  </body>
+</html>
