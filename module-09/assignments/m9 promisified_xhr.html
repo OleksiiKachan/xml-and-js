@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta hhtp-equiv = "X-UA-Compatible" content = "IE-edge">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <style>
+            table, th, td {
+                border: 5px solid;
+                border-collapse: collapse;
+            }
+            #customerTable{
+                width: 75%;
+
+            }
+            th {
+                background-color: green;
+            }
+
+            tr:nth-child(odd) {
+                background-color: white;
+            }
+
+            h1 {
+                text-decoration: bold;
+            }
+        </style>
+        <title> Customers(Fetch operation)</title>
+    </head>
+
+    <body>
+        <h1>List of Customers</h1>
+        <table id = "customerTable">
+            <tr>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Orders</th>
+            </tr>
+        </table>
+        
+        <script type = "text/javascript" src = "./module-09/assignments/m9 promisified_xhr.js"></script>
+
+    </body>
+</html>
