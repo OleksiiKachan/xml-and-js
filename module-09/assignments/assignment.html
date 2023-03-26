@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Assignment5</title>
+  </head>
+  <body>
+    <ul id="Customers"></ul>
+    <script>
+      //   const xhttp = new XMLHttpRequest();
+      //   xhttp.onreadystatechange = function () {
+      //     if (this.readyState == 4 && this.status == 200) {
+      //       displayData(this.responseXML);
+      //     }
+      //   };
+      //   xhttp.open("GET", "customers.xml", true);
+      //   xhttp.send();
+
+      function makeRequest(method, url) {
+        return new Promise(function (resolve, reject) {
+          const xhr = new XMLHttpRequest();
+          xhr.open(method, url);
+          xhr.onload = function () {
+            if (this.status >= 200 && this.status < 300) {
+              resolve(xhr.responseXML);
+            } else {
+              reject({
+                status: this.status,
+                statusText: xhr.statusText,
+              });
+            }
+          };
+          xhr.onerror = function () {
+            reject({
+              status: this.status,
+              statusText: xhr.statusText,
+            });
+          };
+          xhr.send();
+        });
+      }
+
+      function stringToNode(html) {
+        const template = document.createElement(`template`);
+        html = html.trim();
+        template.innerHTML = html;
+        return template.content.firstChild;
+      }
+
+      function createCustomer(customer) {
+        const content = `
+        <li>
+        <article>
+            <p>${customer.CustId}</p>
+            <p>${customer.title} ${customer.name}</p>
+            <p>${customer.address}</p>
+            <p>${customer.phone}</p>
+            <p>${customer.email}</p>
+            <div>
+                ${customer.orderID}${customer.orderBy}${customer.orderDate}${customer.itemPrice}${customer.itemQty}
+            </div>
+        </article>
+      </li>`;
+
+        return stringToNode(content);
+      }
+
+      function parseCustomers(xml) {
+        const CustId = xml.attributes[0].nodeValue;
+        const title =
+          xml.getElementsByTagName("name")[0].attributes[0].nodeValue;
+        const name =
+          xml.getElementsByTagName(`name`)[0].childNodes[0].nodeValue;
+        const address =
+          xml.getElementsByTagName(`address`)[0].childNodes[0].nodeValue;
+        const phone =
+          xml.getElementsByTagName(`phone`)[0].childNodes[0].nodeValue;
+
+        if (!xml.getElementsByTagName(`email`)[0]) {
+          var email = "Not Availabale";
+        } else {
+          var email =
+            xml.getElementsByTagName(`email`)[0].childNodes[0].nodeValue;
+        }
+
+        const orderID =
+          xml.getElementsByTagName(`order`)[0].attributes[0].nodeValue;
+        const orderBy =
+          xml.getElementsByTagName(`order`)[0].attributes[1].nodeValue;
+        const orderDate =
+          xml.getElementsByTagName(`orderDate`)[0].childNodes[0].nodeValue;
+        const itemPrice =
+          xml.getElementsByTagName(`itemPrice`)[0].childNodes[0].nodeValue;
+        const itemQty =
+          xml.getElementsByTagName(`itemQty`)[0].childNodes[0].nodeValue;
+
+        return {
+          CustId,
+          title,
+          name,
+          address,
+          phone,
+          email,
+          orderID,
+          orderBy,
+          orderDate,
+          itemPrice,
+          itemQty,
+        };
+      }
+
+      function displayData(xmlDoc) {
+        const x = xmlDoc.getElementsByTagName(`customer`);
+        const list = document.getElementById(`Customers`);
+
+        for (let index = 0; index < x.length; index++) {
+          const element = x[index];
+          const parsedCustomer = parseCustomers(element);
+
+          const customerElement = createCustomer(parsedCustomer);
+          list.appendChild(customerElement);
+        }
+      }
+
+      // -- Using promisified XHR
+
+      makeRequest("GET", "customers.xml")
+        .then(function (response) {
+          displayData(response);
+        })
+        .catch(function (error) {
+          console.error("Error:", error);
+        });
+
+      // - Using fetch API with .then()
+
+      fetch("customers.xml")
+        .then((response) => response.text())
+        .then((response) => {
+          const parser = new DOMParser();
+          const xmlDoc = parser.parseFromString(response, "text/xml");
+          displayData(xmlDoc);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+
+      // - Using fetch API with async/await
+
+      async function fetchData() {
+        const response = await fetch("customers.xml");
+        const xmlDoc = await response.text();
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(xmlDoc, "text/xml");
+        displayData(xml);
+      }
+      fetchData();
+    </script>
+  </body>
+</html>
