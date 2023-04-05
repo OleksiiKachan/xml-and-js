@@ -1,5 +1,5 @@
 const clientId = `8a18e251504f49e2a64cf56ab7711eb6`;
-const clientSecret = `a1ae20f2eed345ea847fc5d43de21e5f`;
+const clientSecret = `a1ae20f2eed345ea847fc5d43de21e5f`; 
 
 const getToken = async () => {
   const result = await fetch("https://accounts.spotify.com/api/token", {
