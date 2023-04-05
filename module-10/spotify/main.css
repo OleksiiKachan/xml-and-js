@@ -10,7 +10,6 @@
 .genre-card {
   max-width: 100%;
   overflow:atuo;
-  /* display: flex; */
   display:-webkit-inline-box;
   background-color: #e7f9eea7;
   color: white;
@@ -24,7 +23,6 @@
 
 .genre-card > div {
   padding: 10px 20px;
-  /* display: flex; */
   display:table-caption;
   flex-direction:column;
   overflow: auto;
@@ -39,7 +37,6 @@ ol {
   list-style:decimal-leading-zero;
   margin: 5;
   padding: 5;
-  /* display: flex; */
   display:inline-table;
   overflow: auto;
   max-width: 100%;
