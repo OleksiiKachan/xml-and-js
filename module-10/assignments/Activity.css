@@ -1,0 +1,43 @@
+.design{
+    background-color: rgb(144, 142, 142);
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.design:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.design > div {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.design > img{
+    display: block;
+    margin-left: 25%;
+    margin-right: 0%;
+    width: 30%;
+    height: 250px;
+
+}
+
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow: auto;
+  max-width: 100%;
+}
+
+h2{
+    padding-top: 50%;
+    font-size: 40px;
+    color: white;
+}
