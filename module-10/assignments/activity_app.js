@@ -55,7 +55,7 @@ const loadGenres = async () => {
         ({ name, external_urls: { spotify }, images: [image] }) => `
         <li>
           <a href="${spotify}" alt="${name}" target="_blank">
-            <img src="${image.url}" width="180" height="180"/>
+            <img class="first-img" src="${image.url}" width="180" height="180"/>
           </a>
         </li>`
       )
