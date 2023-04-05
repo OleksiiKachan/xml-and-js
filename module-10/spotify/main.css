@@ -2,24 +2,50 @@
   max-width: 100%;
   overflow: hidden;
   display: flex;
-  background-color: #4daf64;
-  color: white;
+  background-color: rgba(0, 0, 255, 0.2);
+  color: black;
 }
 
 .genre-card:not(:last-child) {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .genre-card > div {
-  padding: 10px 20px;
+  padding: 10px 25px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
+.genre-card > div > h2{
+  text-shadow: 2px 2px #ededed;
+}
+
+.genre-card > div> ol > li{
+  margin: 10px;
+  padding: 3px;
+  border-style: groove;
+  border-radius: 10px;
+}
+
 .genre-card > div > a {
   color: white;
   font-weight: bold;
+  padding: 10;
+}
+
+.genre-card > img {
+  height: 15%;
+  width: 15%;
+  border-style: inset;
+  border-radius: 10px;
+  transition: width 2s, height 2s, transform 2s;
+}
+
+.genre-card > img:hover {
+  width: 300px;
+  height: 300px;
+  transform:scaleX();
 }
 
 ol {
