@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(17, 15, 15);
+}
+.genre-card {
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    background-color: black;
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    border: rgb(10, 104, 6);
+    border-style: solid;
+    border-radius: 10px;
+    margin: 0px 35px;
+  }
+  
+  .genre-card:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  
+  .genre-card > div {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .genre-card > div > a {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+  }
+  
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    overflow: auto;
+    max-width: 100%;
+  }
+  
+  .genre-card > div > ol > li {
+    margin-right: 10px;
+}
