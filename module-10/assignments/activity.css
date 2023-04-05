@@ -1,0 +1,96 @@
+.genre-card {
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #e91e63;
+    color: white;
+    align-items: center;
+  }
+  
+  .genre-card:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  
+  .genre-card .image {
+    text-align: center;
+  }
+  
+  .genre-card h2 {
+    text-align: center;
+  }
+  
+  .genre-card > div {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex-grow: 1;
+  }
+  
+  .genre-card > div > a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  
+  .genre-card > div > a:hover {
+    text-decoration: underline;
+  }
+  
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+  }
+  
+  .genre-card > div > ol > li {
+    margin-right: 10px;
+    flex-shrink: 0;
+    width: 180px;
+    height: 180px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .genre-card > div > ol > li:hover {
+    background-color: #ffc107;
+    transform: scale(1.05);
+  }
+  
+  .genre-card:nth-child(odd) {
+    background-color: #2b67c2;
+  }
+  
+  .genre-card:nth-child(odd) > div > ol > li:hover {
+    background-color: #e91e63;
+  }
+  
+  .genre-card:nth-child(even) {
+    background-color: #eaf03a;
+  }
+  
+  .genre-card:nth-child(even) > div > ol > li:hover {
+    background-color: #2b67c2;
+  }
+  
+  .genre-card h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .genre-card .image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
