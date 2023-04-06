@@ -11,7 +11,7 @@ git checkout -b "<branch-name>"
 ```bash
 git checkout main
 git checkout -b "module-1/activity-1"
-git add *
+
 git commit -m "complete activity 1"
 git push
 ```

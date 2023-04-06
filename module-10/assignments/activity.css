@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 10px;
+    padding: 2px;
+  }
+
+  header {
+    background-color: #1db954;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+
+  h1 {
+    margin: 10px;
+    text-align: center;
+  }
+
+  main {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  #genres {
+    list-style: none;
+    padding: 2px;
+    margin: 10px;
+    display: block;
+    flex-direction: flex;
+  }
+
+  .genre-card {
+    display:inline-block;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+
+  .genre-card img {
+    margin-bottom: 10px;
+    border-radius: 50%;
+    object-fit:scale-down;
+  }
+
+  .genre-card h2 {
+    margin: 10px;
+    text-align: center
+  }
+
+  .genre-card ol {
+    list-style: none;
+    padding: 3px;
+    margin: 10px;
+  }
+
+  .genre-card li {
+    margin: 10px 0;
+  }
+
+  .genre-card a {
+    display: flex;
+    align-items: center;
+    color: #1db954;
+    text-decoration: none;
+  }
+
+  .genre-card a:hover {
+    color: #095028;
+  }
+
+  .genre-card img {
+    margin-right: 10px;
+  }
