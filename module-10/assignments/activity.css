@@ -1,0 +1,61 @@
+.genre-cards {
+  display: list-item;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 20px;
+}
+
+.genre-card {
+  background-color: #292F36;
+  color: white;
+  border-radius: 10px;
+  border: 10px solid #253bb8; 
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  font-family: 'Roboto', sans-serif;
+}
+
+.genre-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3);
+}
+
+.genre-card > div {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.genre-card > div > a {
+  color: #FFD700;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.genre-card > div > p {
+  color: #A5A5A5;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.genre-card > div > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.genre-card > div > ul > li {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow: auto;
+  max-width: 100%;
+}
