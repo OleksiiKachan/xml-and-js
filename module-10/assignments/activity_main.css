@@ -1,0 +1,63 @@
+.genre-card {
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  background-color: #ac1dbf;
+  color:  #150e0f;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.genre-card > img {
+  border-radius: 20px;
+  padding: .50em;
+}
+
+.genre-card:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.genre-card > div {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+ h2 {
+  margin: auto;
+  font-size: 21px;
+  font-weight: bold;
+  text-transform:initial ;
+  color: wheat;
+  padding-right: 2px;
+}
+
+
+ol > li > a > img {
+  border-radius: 25px;
+  width: auto;
+  border: 2.5px solid #1ccd22;
+  
+}
+
+ol > li > a:hover > img {
+  transform: scale(1.2);
+}
+
+ol {
+  display: flex;
+  flex-wrap: wrap;
+  padding: .50em;
+  max-height: 180px;
+  overflow-x: auto;
+  gap: 100px;
+  list-style: none;
+}
+
+.genre-card:nth-child(odd) {
+  background-color: #e91e63;
+}
+
+.genre-card:nth-child(even) {
+  background-color: #ac1dbf;
+}
+
