@@ -1,0 +1,59 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  background-color: #000000e7;
+  color: white;
+  text-align: center;
+  align-items: center;
+}
+
+.card:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.card > div {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card > div > a {
+  color: white;
+  font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+}
+
+.card .list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow: auto;
+  max-width: 100%;
+}
+
+.card .list img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+} 
+
+.list > li {
+  padding: 10px;
+}
+ol::-webkit-scrollbar {
+  display: none;
+}
