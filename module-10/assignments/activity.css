@@ -1,0 +1,50 @@
+body {
+  display: contents;
+}
+.genre-card {
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  background-color: #121212;
+  color:#ededed;
+  
+}
+
+.genre-card:not(:last-child) {
+  margin: 2px;
+}
+
+.genre-card > div {
+  padding: 10px 20px;
+  display: flex;
+  overflow: hidden;
+}
+
+
+.genre-card > div> ol > li{
+  margin: 10px;
+  padding: 3px;
+  border-style: groove;
+  border-radius: 10px;
+}
+
+
+.genre-card > img {
+  
+  border-style: inset;
+  border-radius: 10px;
+}
+
+ol {
+  list-style: none;
+  margin: 35px;
+  padding: 1px;
+  display: flex;
+  overflow: auto;
+  max-width: 100%;
+}
+
+ol::-webkit-scrollbar {
+  display:none;
+}
+
