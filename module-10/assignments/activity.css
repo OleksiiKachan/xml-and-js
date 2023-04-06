@@ -1,0 +1,124 @@
+.genre-card {
+    max-width: 100%;
+    overflow: hidden;
+    flex-wrap: wrap;
+    background-color: #1ee9c0;
+    color: rgb(221, 78, 87);
+    display: flex;
+
+    align-items: center;
+    /* align-content: center; */
+  }
+  .first-img {
+ align-items: center;
+ 
+ margin: auto;
+ border-radius: 9px;
+ color: black;
+ background-color: black;
+
+  }
+
+  .genre-card .image {
+    text-align: center;
+    color: black;
+    
+  }
+  
+  .genre-card:not(:last-child) {
+    margin-bottom: 11px;
+  }
+  
+ 
+  
+  .genre-card h1 {
+    text-align: left;
+  }
+  
+  .genre-card > div {
+    flex-direction: column;
+    overflow: hidden;
+    flex-grow: 1;
+    padding: 12px 22px;
+    display: flex;
+    /* margin-top: auto; */
+  
+  }
+  
+  .genre-card > div > a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-weight: bold;
+    
+  }
+  
+  .genre-card > div > a:hover {
+    text-decoration: underline;
+  }
+  
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    
+    max-width: 100%;
+  }
+  
+  
+  
+  .genre-card > div > ol > li:hover {
+    background-color: #ffc107;
+    transform: scale(1.05);
+  }
+  
+
+
+  .genre-card > div > ol > li {
+    margin-right: 10px;
+    flex-shrink: 0;
+    width: 180px;
+    
+    border-radius: 8px;
+    /* overflow: hidden; */
+    transition: all 0.2s ease-in-out;
+    height: 180px;
+    background-color: #fff;
+  }
+
+
+  .genre-card:nth-child(odd) {
+    background-color: #2b67c2;
+  }
+  
+  .genre-card:nth-child(odd) > div > ol > li:hover {
+    background-color: #e91e63;
+  }
+  
+  .genre-card:nth-child(even) {
+    background-color: #3af0c6;
+  }
+  
+  .genre-card:nth-child(even) > div > ol > li:hover {
+    background-color: #2b67c2;
+  }
+  
+  .genre-card .image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
+
+  .genre-card h1 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+
+
