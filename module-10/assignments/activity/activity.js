@@ -49,35 +49,38 @@ const loadGenres = async () => {
   const list = document.getElementById(`genres`);
   genres.map(async ({ name, id, icons: [icon], href }) => {
     const playlists = await getPlaylistByGenre(token, id);
-    const playlistsList = playlists
+    const playlistsRows = playlists
       .map(
         ({ name, external_urls: { spotify }, images: [image] }) => `
-        <li>
-          <a href="${spotify}" alt="${name}" target="_blank">
-            <img src="${image.url}" width="180" height="180"/>
-          </a>
-        </li>`
+        <div class="playlist-card">
+            <a href="${spotify}" alt="${name}" target="_blank">
+              <img src="${image.url}" width="180" height="180"/>
+            </a>
+            <div class="playlist-info">
+              <h3>${name}</h3>
+              <a href="${spotify}" alt="${name}" target="_blank">Play on Spotify</a>
+            </div>
+          </div>`
       )
       .join(``);
 
     if (playlists) {
       const html = `
         <article class="genre-card">
-          <div>
-            <h2>${name}</h2>
-            <ul>
-              ${playlistsList}
-            </ul>
-          </div>
-          <a href="${href}" target="_blank">
-            <img src="${icon.url}" alt="${name}"/>
-          </a>
-        </article>`;
-
+        <div class="genre-info">
+          <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
+          <h2>${name}</h2>
+          <a href="${href}" target="_blank">View all</a>
+        </div>
+        <div class="playlists">
+          ${playlistsRows}
+        </div>
+      </article>`;
 
       list.insertAdjacentHTML("beforeend", html);
     }
   });
 };
+
 
 loadGenres();

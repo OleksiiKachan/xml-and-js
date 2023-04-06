@@ -1,0 +1,302 @@
+/* Section containing all genres */
+#genres {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Individual genre card */
+.genre-card {
+  background-color: #4daf64;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Genre card header */
+.genre-info {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.genre-info > img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.genre-info > h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.genre-info > a {
+  margin-left: auto;
+  text-decoration: none;
+  color: white;
+}
+
+/* Playlist card container */
+.playlists {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px 20px;
+}
+
+/* Individual playlist card */
+.playlist-card {
+  flex-shrink: 0;
+  width: 180px;
+  height: 250px;
+  background-color: white;
+  border-radius: 10px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.playlist-card > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.playlist-card > img {
+  max-width: 100%;
+  height: auto;
+}
+
+.playlist-info > h3 {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.playlist-info > a {
+  display: inline-block;
+  background-color: #4daf64;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.playlist-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.playlist-card > a:hover {
+  transform: scale(1.1);
+}
+
+.playlist-info > a:hover {
+  background-color: white;
+  color: #4daf64;
+}
+
+
+/* .genre-card {
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #4daf64;
+  color: white;
+}
+
+.genre-card:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.genre-card > img {
+  max-width: 100%;
+  height: auto;
+}
+
+.genre-card > div {
+  padding: 10px 20px;
+  overflow: auto;
+  max-width: 100%;
+}
+
+.genre-card > div > h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.genre-card > div > ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.genre-card > div > ol > li {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.genre-card > div > ol > li:last-child {
+  margin-right: 0;
+}
+
+.playlist-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.playlist-card > a {
+  display: block;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.playlist-card > img {
+  max-width: 100%;
+  height: auto;
+}
+
+.playlist-info {
+  text-align: center;
+}
+
+.playlist-info > h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.playlist-info > a {
+  display: inline-block;
+  background-color: white;
+  color: #4daf64;
+  padding: 5px 10px;
+  border-radius: 20px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.playlist-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.playlist-card > a:hover {
+  transform: scale(1.1);
+}
+
+.playlist-info > a:hover {
+  background-color: #4daf64;
+  color: white;
+} */
+
+
+/* .genre-card {
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #4daf64;
+  color: white;
+  }
+  
+  .genre-card:not(:last-child) {
+  margin-bottom: 15px;
+  }
+  
+  .genre-card > img {
+  max-width: 100%;
+  height: auto;
+  }
+  
+  .genre-card > div {
+  padding: 10px 20px;
+  overflow: auto;
+  max-width: 100%;
+  }
+  
+  .genre-card > div > h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  }
+  
+  .genre-card > div > ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  }
+  
+  .genre-card > div > ol > li {
+  margin-right: 15px;
+  margin-bottom: 15px;
+  }
+  
+  .genre-card > div > ol > li:last-child {
+  margin-right: 0;
+  } */
+
+/* .genre-card {
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  background-color: #4daf64;
+  color: white;
+}
+
+.genre-card:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.genre-card > div {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.genre-card > div > a {
+  color: white;
+  font-weight: bold;
+}
+
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow: auto;
+  max-width: 100%;
+} */
+
+/* table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 16px;
+}
+
+table th,
+table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #4daf64;
+  color: white;
+  font-weight: bold;
+} */
