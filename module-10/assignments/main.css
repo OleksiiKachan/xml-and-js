@@ -1,0 +1,39 @@
+body {
+  background-color: #dff1e3;
+}
+.genre-card {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 10px 20px;
+  background-color: #75937b;
+  color: rgb(226, 244, 226);
+}
+
+.genre-card:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.card-title {
+  padding-left: 20px;
+  font-size: 40px;
+  width: 100%;
+}
+
+.item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow: auto;
+  max-width: 100%;
+}
+
+li.item {
+  padding: 5px 5px;
+}
