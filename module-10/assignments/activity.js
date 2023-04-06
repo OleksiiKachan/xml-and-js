@@ -1,5 +1,6 @@
 const clientId = `e42a2ffbbf9c41a18cbe878ab0e80756`;
 const clientSecret = `9f40bdb007ec4a0a9d8b6c386c354c85`;
+
 const getToken = async () => {
   const result = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
@@ -22,15 +23,13 @@ const getGenres = async (token) => {
       headers: { Authorization: "Bearer " + token },
     }
   );
-  console.log(result);
 
   const data = await result.json();
-  return data.categories.it;
+  return data.categories.items;
 };
 
 const getPlaylistByGenre = async (token, genreId) => {
   const limit = 10;
-
   const result = await fetch(
     `https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`,
     {
@@ -46,9 +45,8 @@ const getPlaylistByGenre = async (token, genreId) => {
 const loadGenres = async () => {
   const token = await getToken();
   const genres = await getGenres(token);
-  console.log(genres);
   const list = document.getElementById(`genres`);
-  genres.map(async ({ name, id, icons: [icon] }) => {
+  genres.map(async ({ name, id, icons: [icon], href }) => {
     const playlists = await getPlaylistByGenre(token, id);
     const playlistsList = playlists
       .map(
@@ -64,9 +62,11 @@ const loadGenres = async () => {
     if (playlists) {
       const html = `
       <article class="genre-card">
-        <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
-        <div>
-          <h2>${name}</h2>
+      <div class="genre-card-left">
+        <img id="main-img" src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
+        </div>
+        <div class="genre-card-right">
+          <h1>${name}</h1>
           <ol>
             ${playlistsList}
           </ol>
