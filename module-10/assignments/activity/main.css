@@ -1,0 +1,45 @@
+/*Activity Style*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #d4d4d4;
+  color: rgb(9, 188, 9);
+}
+h1 {
+  font-size: 56px;
+  color: black;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+.genre-card {
+  max-width: 100%;
+  display: flex;
+  background-color: #eae8e8;
+  color: white;
+}
+.genre-card h2 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 24px;
+  text-align: left;
+  padding: 10px;
+  background-color: rgb(9, 188, 9);
+}
+
+.genre-card ol {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.genre-card img {
+  max-width: 100%;
+  
+  background-color: #151414;
+}
+.genre-card li {
+  margin-left: 10px;
+}
