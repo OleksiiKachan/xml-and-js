@@ -10,6 +10,18 @@
 </head>
 <body>
 
+    <form id="genre-filter">
+        <label>
+          <input type="radio" name="playlist-filter" value="with-playlists" checked>
+          With Playlists
+        </label>
+        <label>
+          <input type="radio" name="playlist-filter" value="without-playlists">
+          Without Playlists
+        </label>
+        <button type="button" onclick="loadGenres()">Load Genres</button>
+      </form>
+      
     <div id="genres"> </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
