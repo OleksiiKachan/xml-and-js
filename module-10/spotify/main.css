@@ -56,3 +56,22 @@ ol {
   overflow: auto;
   max-width: 100%;
 }
+
+ol::-webkit-scrollbar{
+  display: none;
+}
+
+ol::-webkit
+.ts > li{
+  border-style: double;
+}
+
+.tracks {
+  display: flex;
+  flex-direction: column;
+}
+
+.tracks > li > a:-webkit-any-link, a:hover, a::after,a:active{
+  text-decoration: none;
+  color : black;
+}
