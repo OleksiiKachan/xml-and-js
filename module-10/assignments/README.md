@@ -1,13 +1,14 @@
-# Activity
+# Assignment
 
-## Leon Czarlinski
+## Leon Czarlinski - n01541167
 
-### Using your client id and client secret create html page
-- [X] Check the [JS](app.js)
-- [X] Check the [CSS](main.css)
-- [X] Check the [HTML](index.html)
-- [X] Check the [PRINT](/module-10/assignments/images/output.png)
+### Expend your activity to also show tracks for playlists
+- [X] Check the [JS](assignment.js)
+- [X] Check the [CSS](assignment.css)
+- [X] Check the [HTML](assignment.html)
+- [X] Check the [PRINT](/module-10/assignments/images/Assignment_output.png)
 
-- [X] I added the name of the playlist above the image
-- [X] I also customized the scroll bar based on the colors of the spotify
+- [X] For each Genre/Category, I did a block where the Image + Name are in the top as a header. The div genre-card is displaying as a block
+- [X] Below each Genre/Category, I display the Playlists image and name as a link and the top 5 songs and artits
 - [X] I added a svg icon next to the name of the playlist indicating that the link get the user to a new page
+- [X] I kept Spotify's pallette as the colors for the website.
