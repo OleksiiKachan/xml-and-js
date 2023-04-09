@@ -41,12 +41,13 @@ const getPlaylistByGenre = async (token, genreId) => {
     const data = await result.json();
     const playlists = data.playlists.items;
 
-    for (let i = 0; i < playlists.length; i++) {
-      const playlist = playlists[i];
+    const playlistsWithTracks = await Promise.all(playlists.map(async (playlist) => {
       playlist.tracks = await getTracksByPlaylist(token, playlist.id);
-    }
-  
-    return playlists;
+      return playlist;
+    }));
+    
+    return playlistsWithTracks;
+    
   };
 
   const getTracksByPlaylist = async (token, playlistId) => {
