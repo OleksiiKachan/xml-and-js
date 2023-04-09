@@ -1,43 +1,4 @@
-// function inc(a) {
-//     return a + 1;
-//   }
-
-// let myPromise = new Promise(function(myResolve, myReject) {
-//     let x = 0;
-  
-//   // The producing code (this may take some time)
-  
-//     if (x == 0) {
-//       myResolve("OK");
-//     } else {
-//       myReject("Error");
-//     }
-//   });
-  
-//   myPromise.then(
-//     function(value) {inc(value);},
-//     function(error) {inc(error);}
-//   );
-
-// function inc(a) {
-//     return new Promise(function(resolve, reject) {
-//       try {
-//         resolve(a + 1);
-//       } catch (error) {
-//         reject(error);
-//       }
-//     });
-//   }
-  
-//   inc(5)
-//     .then(function(result) {
-//       console.log("inc(5) =", result);
-//     })
-//     .catch(function(error) {
-//       console.error(error);
-//     });
-  
-const timeout = (ms = 500) => new Promise((resolve) => setTimeout(resolve, ms));
+const timeout = (ms = 1000) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function inc(a) {
   return timeout().then(() => a + 1);
@@ -73,16 +34,16 @@ class Person {
 }
 
 inc(5)
-  .then((v) => console.log("inc(5) =", v))
+  .then((k) => console.log("inc(5) =", k))
   .then(() => sum(1, 3))
-  .then((v) => console.log("sum(1, 3) =", v))
+  .then((k) => console.log("sum(1, 3) =", k))
   .then(() => max(8, 6))
-  .then((v) => console.log("max(8, 6) =", v))
+  .then((k) => console.log("max(8, 6) =", k))
   .then(() => avg(8, 6))
-  .then((v) => console.log("avg(8, 6) =", v))
+  .then((k) => console.log("avg(8, 6) =", k))
   .then(() => obj.split())
-  .then((v) => console.log("obj.split() =", v))
+  .then((k) => console.log("obj.split() =", k))
   .then(() => Person.of("Marcus Aurelius"))
   .then((p) => p.split())
-  .then((v) => console.log("person.split() =", v));
+  .then((k) => console.log("person.split() =", k));
   
