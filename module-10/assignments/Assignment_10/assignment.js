@@ -44,9 +44,8 @@ const getPlaylistByGenre = async (token, genreId) => {
 };
 
 
-const getPlaylistItems = async (token, playlistId) => {
+const getPlaylistByTracks = async (token, playlistId) => {
   const limit = 3;
-
   const result = await fetch(
     `https://api.spotify.com/v1/playlists/${playlistId}/tracks?limit=${limit}`,
     {
@@ -71,8 +70,8 @@ const loadGenres = async () => {
       const playlistsList = await Promise.all(
         playlists.map(
           async ({ name, id, images: [image], external_urls: { spotify } }) => {
-            const items = await getPlaylistItems(token, id);
-            const itemslist = items
+            const items = await getPlaylistByTracks(token, id);
+            const listItems = items
               .map(
                 ({ track: { name: trackName, artists } }) =>
                   `<div class="all-name">
@@ -92,7 +91,7 @@ const loadGenres = async () => {
                     <div class="play-name" > 
                         <a href="${spotify}" alt="${name}" target="_blank">${name}</a>
                     </div>
-              ${itemslist}
+              ${listItems}
             </li>`;
           }
         )
