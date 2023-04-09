@@ -77,7 +77,7 @@ const loadGenres = async () => {
   const genres = await getGenres(token);
   const list = document.getElementById(`genres`);
   const limit = 10;
-  const backoffTime = 5000; 
+  const backoffTime = 1000; 
 
   for (const { name, id, icons: [icon], href } of genres) {
     const playlists = await getPlaylistByGenre(token, id, limit, backoffTime);
