@@ -49,28 +49,45 @@ const loadGenres = async () => {
   const list = document.getElementById(`genres`);
   genres.map(async ({ name, id, icons: [icon], href }) => {
     const playlists = await getPlaylistByGenre(token, id);
-    const playlistsList = playlists
-      .map(
-        ({ name, external_urls: { spotify }, images: [image] }) => `
-        <li>
-          <a href="${spotify}" alt="${name}" target="_blank">
-            <img src="${image.url}" width="180" height="180"/>
-          </a>
-        </li>`
-      )
-      .join(``);
+    const playlistsList = await Promise.all(
+      playlists.map(async ({ name, external_urls: { spotify }, images: [image], tracks: { href } }) => {
+        const tracksResult = await fetch(href, {
+          method: "GET",
+          headers: { Authorization: "Bearer " + token },
+        });
+
+        const { items: tracks } = await tracksResult.json();
+
+        const tracksList = tracks
+          .map(({ track: { name, artists } }) => `<li>${name} - ${artists.map(a => a.name).join(', ')}</li>`)
+          .join('');
+
+        return `
+          <li>
+            <article class="playlist-card">
+              <a href="${spotify}" target="_blank">
+                <img src="${image.url}" width="180" height="180" alt="${name}" />
+              </a>
+              <h3>${name}</h3>
+              <ul class="tracks-list">
+                ${tracksList}
+              </ul>
+            </article>
+          </li>`;
+      })
+    );
 
     if (playlists) {
       const html = `
-      <article class="genre-card">
-        <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
-        <div>
-          <h2>${name}</h2>
-          <ol>
-            ${playlistsList}
-          </ol>
-        </div>
-      </article>`;
+        <article class="genre-card">
+          <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}" />
+          <div>
+            <h2>${name}</h2>
+            <ol>
+              ${playlistsList.join('')}
+            </ol>
+          </div>
+        </article>`;
 
       list.insertAdjacentHTML("beforeend", html);
     }

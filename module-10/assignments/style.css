@@ -1,70 +1,87 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background-color: #121212;
-    color: #fff;
-  }
-  
-  header {
-    background-color: #1db954;
-    color: #fff;
-    padding: 16px;
-    text-align: center;
-  }
-  
-  .main-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 16px;
-  }
-  
-  .genres-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
-    padding: 16px;
-  }
-  
-  .genre-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #1c1c1c;
-    border-color: #333;
-  }
-  
-  .genre-card img {
-    max-width: 100%;
-    height: auto;
-    background-color: #151414;
-  }
-  
-  .genre-card h2 {
-    margin-top: 16px;
-    margin-bottom: 8px;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  
-  .genre-card ol {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .genre-card li {
-    margin: 8px;
-  }
-  
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #121212;
+  color: #fff;
+}
+
+header {
+  background-color: #1db954;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.genres-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  align-items: flex-start; 
+}
+
+
+.genre-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1c1c1c;
+  border-color: #333;
+  height: 100%;
+}
+
+.genre-card img {
+  max-width: 100%;
+  height: auto;
+  background-color: #151414;
+}
+
+.genre-card h2 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.genre-card ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-top: 1px solid #ddd;
+}
+
+.genre-card li {
+  margin: 8px;
+}
+
+.tracks li:nth-child(n+6) {
+  display: none;
+}
+
+a {
+  color: #1db954;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}

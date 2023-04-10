@@ -13,7 +13,7 @@ git checkout main
 git checkout -b "module-1/activity-1"
 git add *
 git commit -m "complete activity 1"
-git push
+git 
 ```
 
 if `git push` gives you `fatal: The current branch <branch-name> has no upstream branch.`, then run the command suggested in the message. would look like
