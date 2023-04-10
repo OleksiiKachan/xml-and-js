@@ -34,7 +34,7 @@ const getToken = async () => {
     const limit = 10;
   
     const result = await fetch(
-      //spotufy documentation/categories/get several browse categories
+      
       `https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`,
       {
         method: "GET",
@@ -45,6 +45,9 @@ const getToken = async () => {
     const data = await result.json();
     return data.playlists.items;
   };
+
+
+
 
   const loadGenres = async () => {
     const token = await getToken();
