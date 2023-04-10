@@ -43,31 +43,65 @@ const getPlaylistByGenre = async (token, genreId) => {
   return data.playlists.items;
 };
 
+const getTrackByPlaylist = async (token, playlistId) => {
+  const limit = 5;
+  const result = await fetch(
+    `https://api.spotify.com/v1/playlists/${playlistId}/tracks?limit=${limit}`,
+    {
+      method: "GET",
+      headers: { Authorization: "Bearer " + token },
+    }
+  );
+  const data = await result.json();
+  return data.items;
+};
+
 const loadGenres = async () => {
   const token = await getToken();
   const genres = await getGenres(token);
   const list = document.getElementById(`genres`);
   genres.map(async ({ name, id, icons: [icon], href }) => {
     const playlists = await getPlaylistByGenre(token, id);
-    const playlistsList = playlists
-      .map(
-        ({ name, external_urls: { spotify }, images: [image] }) => `
+
+    const playlistsList = Promise.all(
+      playlists.map(
+        async ({ name, external_urls: { spotify }, images: [image], id }) => {
+          let output = "";
+          const trackList = await getTrackByPlaylist(token, id);
+
+          trackList?.map((item) => {
+            const artistName = item.track.artists[0].name;
+            const trackName = item.track.name;
+
+            output += `
+            
+            <span class="artist-name"> Artist Name: ${artistName}</span>
+            <span>Track Name ${trackName}</span>
+            `;
+          });
+
+          return `
         <li>
           <a href="${spotify}" alt="${name}" target="_blank">
             <img src="${image.url}" width="180" height="180"/>
+            <p>${output}</p>
           </a>
-        </li>`
+        </li>`;
+        }
       )
-      .join(``);
+    );
 
     if (playlists) {
       const html = `
       <article class="genre-card">
-        <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
-        <div>
-          <h2>${name}</h2>
+        <img src="${icon.url}" width="${icon.width}" height="${
+        icon.height
+      }" alt="${name}"/>
+      <h2>${name}</h2>
+        <div class="track-card">
+        
           <ol>
-            ${playlistsList}
+            ${await playlistsList}
           </ol>
         </div>
       </article>`;
