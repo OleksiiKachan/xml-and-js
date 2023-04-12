@@ -1,0 +1,137 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+form{
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  font-size:30px;
+}
+input{
+  font-size: 20px;
+}
+button{
+  font-size: 20px;
+}
+
+label{
+  color: white;
+}
+
+.card {
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  background-color: lightgoldenrodyellow;
+  color: black;
+  font-style: normal;
+  font-family: Garamond, serif;
+  font-weight: bold;
+}
+
+.card:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.card > div {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card > div > a {
+  color: white;
+  font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 30px;
+}
+
+.card .list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow: auto;
+  max-width: 100%;
+}
+.card .list .main-list{
+  margin: top 10px,bottom 0px,left 0px,right 0px ;
+}
+
+.card .list .main-list:hover{
+  transform: scale(0.9);
+  direction: unset;
+}
+
+.card .list img {
+  display: flex;
+  min-width: 40px;
+  min-width: 40px;
+  border-radius: 10px;
+}
+
+.main-list > .play-name {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.main-list > .play-name > a {
+  font-size: 14px;
+  text-decoration: none;
+  color: red;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.8px;
+}
+
+.main-img {
+  text-align: center;
+  max-width: 30%;
+  max-width: 30%;
+  margin: auto;
+  display: block;
+  border-radius: 35px;
+}
+
+.all-name{
+  padding: 5px;
+  color: white;
+  letter-spacing: 0.8px;
+}
+
+.track-name{
+ font-size: 13px;
+ color: black
+}
+
+.artist-name{
+  font-size: 12px;
+  color: blue;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+li {
+  padding: 5px;
+  font-size: 14px;
+}
+
+
+ol::-webkit-scrollbar {
+  display: none;
+}
