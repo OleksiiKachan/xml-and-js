@@ -1,0 +1,43 @@
+
+@keyframes animation {
+  0%   {background-color:rgb(255, 0, 187); left:0px; top:0px;}
+  25%  {background-color:rgb(254, 254, 101); left:200px; top:0px;}
+  50%  {background-color:rgb(174, 174, 252); left:200px; top:200px;}
+  75%  {background-color:hsl(89, 43%, 51%); left:0px; top:200px;}
+  100% {background-color:#e7f9eea7; left:0px; top:0px;}
+}
+
+.genre-card {
+  max-width: 100%;
+  overflow:atuo;
+  display:-webkit-inline-box;
+  background-color: #e7f9eea7;
+  color: black;
+  animation-name: animation;
+  animation-duration: 20s;
+}
+
+.genre-card:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.genre-card > div {
+  padding: 10px 20px;
+  display:table-caption;
+  flex-direction:column;
+  overflow: auto;
+}
+
+.genre-card > div > a {
+  color: white;
+  font-weight: bold;
+}
+
+ol {
+  list-style:decimal-leading-zero;
+  margin: 5;
+  padding: 5;
+  display:inline-table;
+  overflow: auto;
+  max-width: 100%;
+}

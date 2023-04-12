@@ -1,3 +1,5 @@
+let _data = [];
+
 const renderTable = (data) => {
   const tableBody = document.getElementById("table-body");
 
@@ -11,7 +13,10 @@ const renderTable = (data) => {
     const inputControl = document.getElementById(`input-name-term`);
     inputControl.value = nameTerm;
 
-    source = source.filter(({ name }) => name.toLowerCase().includes(nameTerm));
+    source = source.filter(({ name }) => 
+      name.toLowerCase().includes(nameTerm)
+      );
+    //case sensitive; use name.include can get the value just via partial letter of the name
   }
 
   const rows = source.reduce(
@@ -34,5 +39,13 @@ fetch(`./data.json`)
   });
 
 const onReset = () => {
-  window.location.replace(window.location.pathname);
+  // window.location.replace(window.location.pathname);
+  renderdata();
 };
+
+const onSubmit = (event) =>{
+  event.preventDefault();
+  console.log(event);
+  const nameTerm = event.target.name.value;
+  console.log(nameTerm)
+}

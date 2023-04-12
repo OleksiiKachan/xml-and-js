@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="project.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  </head>
+  <body>
+    <div class="container">
+      <header>Currency Converter</header>
+      <form action="#">
+        <div class="amount">
+          <p>Amount</p>
+          <input type="text" value="1">
+        </div>
+        <div class="drop-list">
+          <div class="from">
+            <p>From</p>
+            <div class="select-box">
+              <select id="from-currency-list"></select>
+            </div>
+          </div>
+          <div class="to">
+            <p>To</p>
+            <div class="select-box">
+              <select id="to-currency-list"></select>
+            </div>
+          </div>
+        </div>
+        <div class="exchange-rate">Retrieving current rate...</div>
+        <button>Calculate</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
