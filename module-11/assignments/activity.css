@@ -1,0 +1,57 @@
+.genre-card {
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    align-items: center;
+  }
+  
+  .genre-card:nth-child(odd) {
+    background-color: #eaf03a;
+    color: #2b67c2;
+  }
+  
+  .genre-card:nth-child(even) {
+    background-color: #2b67c2;
+    color:#eaf03a
+  }
+  
+  .genre-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgb(228, 121, 45);
+  }
+  
+  .genre-card > div > a {
+    color: rgb(19, 227, 103);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  .genre-card > div > p {
+    color: #c9c9c9;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  ol {
+    list-style: none;
+    margin: 10;
+    padding: 0;
+    display:inline-flex;
+    gap: 5px;
+    justify-content: space-between;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: space-around;
+  }
+  
