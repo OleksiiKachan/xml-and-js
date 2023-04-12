@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity Spotify API - Filter</title>
+    <link rel="stylesheet" type="text/css" href="activity.css" />
+  </head>
+  <body>
+    <header>
+        <img class = "logo" src="/module-11/assignments/spotify_logo.png" alt="spotify logo"/>
+        <h1>Welcome to the Spotify webpage designed by Leon Czarlinski! </h1>
+    </header>
+
+    <div class="filter-genres">
+      <form onsubmit="onSubmit(event)">
+        <label for="input-filter-term">Find genre: </label>
+        <input
+          type="text"
+          name="term"
+          id="input-filter-term"
+          placeholder="Enter value"
+        />
+        <button type="submit">Apply filters</button>
+      </form>
+    </div>
+
+    <div id="genres"></div>
+    
+    <script src="activity.js" type="text/javascript"></script>
+  </body>
+</html>
