@@ -43,6 +43,8 @@ const getPlaylistByGenre = async (token, genreId) => {
   return data.playlists.items;
 };
 
+
+
 const loadGenres = async () => {
   const token = await getToken();
   const genres = await getGenres(token);
