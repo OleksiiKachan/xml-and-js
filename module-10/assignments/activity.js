@@ -49,45 +49,28 @@ const loadGenres = async () => {
   const list = document.getElementById(`genres`);
   genres.map(async ({ name, id, icons: [icon], href }) => {
     const playlists = await getPlaylistByGenre(token, id);
-    const playlistsList = await Promise.all(
-      playlists.map(async ({ name, external_urls: { spotify }, images: [image], tracks: { href } }) => {
-        const tracksResult = await fetch(href, {
-          method: "GET",
-          headers: { Authorization: "Bearer " + token },
-        });
-
-        const { items: tracks } = await tracksResult.json();
-
-        const tracksList = tracks
-          .map(({ track: { name, artists } }) => `<li>${name} - ${artists.map(a => a.name).join(', ')}</li>`)
-          .join('');
-
-        return `
-          <li>
-            <article class="playlist-card">
-              <a href="${spotify}" target="_blank">
-                <img src="${image.url}" width="180" height="180" alt="${name}" />
-              </a>
-              <h3>${name}</h3>
-              <ul class="tracks-list">
-                ${tracksList}
-              </ul>
-            </article>
-          </li>`;
-      })
-    );
+    const playlistsList = playlists
+      .map(
+        ({ name, external_urls: { spotify }, images: [image] }) => `
+        <li>
+          <a href="${spotify}" alt="${name}" target="_blank">
+            <img src="${image.url}" width="180" height="180"/>
+          </a>
+        </li>`
+      )
+      .join(``);
 
     if (playlists) {
       const html = `
-        <article class="genre-card">
-          <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}" />
-          <div>
-            <h2>${name}</h2>
-            <ol>
-              ${playlistsList.join('')}
-            </ol>
-          </div>
-        </article>`;
+      <article class="genre-card">
+        <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
+        <div>
+          <h2>${name}</h2>
+          <ol>
+            ${playlistsList}
+          </ol>
+        </div>
+      </article>`;
 
       list.insertAdjacentHTML("beforeend", html);
     }
@@ -95,3 +78,62 @@ const loadGenres = async () => {
 };
 
 loadGenres();
+
+
+
+
+
+
+
+
+
+
+const filterForm = document.getElementById("genre-filter-form");
+
+filterForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const token = await getToken();
+  const genres = await getGenres(token);
+
+  const filteredGenres = genres.filter((genre) => {
+    if (document.getElementById("with-playlists").checked) {
+      return genre.href && genre.icons.length > 0;
+    }
+    if (document.getElementById("without-playlists").checked) {
+      return (!genre.href || genre.icons.length === 0);
+    }
+    return true;
+  });
+
+  const list = document.getElementById(`genres`);
+  list.innerHTML = "";
+
+  filteredGenres.map(async ({ name, id, icons: [icon], href }) => {
+    const playlists = await getPlaylistByGenre(token, id);
+    const playlistsList = playlists
+      .map(
+        ({ name, external_urls: { spotify }, images: [image] }) => `
+        <li>
+          <a href="${spotify}" alt="${name}" target="_blank">
+            <img src="${image.url}" width="180" height="180"/>
+          </a>
+        </li>`
+      )
+      .join(``);
+
+    if (playlists) {
+      const html = `
+      <article class="genre-card">
+        <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
+        <div>
+          <h2>${name}</h2>
+          <ol>
+            ${playlistsList}
+          </ol>
+        </div>
+      </article>`;
+
+      list.insertAdjacentHTML("beforeend", html);
+    }
+  });
+});

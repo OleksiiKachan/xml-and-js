@@ -10,8 +10,24 @@
     <header>
       <img src="logo.jpg" alt="Spotify Logo" width="350" height="120">
     </header>
-    
+
     <main>
+      <form id="filter-form" class="filter-form">
+        <div class="form-field">
+          <label for="name-filter">Filter by Genre Name:</label>
+          <input type="text" id="name-filter" name="name-filter">
+        </div>
+        <div class="form-field">
+          <label>Include genres with playlists:</label>
+          <input type="radio" id="playlist-yes" name="playlist" value="yes" checked>
+          <label for="playlist-yes">Yes</label>
+          <input type="radio" id="playlist-no" name="playlist" value="no">
+          <label for="playlist-no">No</label>
+        </div>
+        <div class="form-field">
+          <button type="submit">Filter Genres</button>
+        </div>
+      </form>
       <div id="genres" class="genres-container"></div>
     </main>
     <script src="activity.js"></script>
