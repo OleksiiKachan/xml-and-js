@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = () => {
+        console.log("load page");
+      };
+    </script>
+  </head>
+  <body>
+    <form action="" onreset="onReset()">
+      <input type="text" name="name" id="input-name" />
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>Name</td>
+          <td>Value</td>
+        </tr>
+      </thead>
+      <tbody id="tb-body"></tbody>
+    </table>
+
+    <script src="demo01.js"></script>
+  </body>
+</html>
