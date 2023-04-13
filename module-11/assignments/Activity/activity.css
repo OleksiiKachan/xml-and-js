@@ -1,0 +1,77 @@
+body {
+  background-color: #296a25;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  font-size: 2px;
+  font-weight: bolder;
+  margin: 2px 0;
+  text-align: center;
+}
+
+h3{
+  font-size: 12px;
+}
+
+.genre-card {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+  background-color: #cdcdcd;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  width: 250px;
+}
+
+.genre-card img {
+  margin-bottom: 10px;
+  border-radius: 50px;
+}
+
+.genre-card h2 {
+  margin-bottom: 10px;
+}
+
+.genre-card ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.genre-card ol li {
+  margin-bottom: 10px;
+}
+
+.genre-card ol li img {
+  border-radius: 5px;
+}  
+.genre-card li:last-child {
+  margin-right: 0;
+}
+
+.genre-card a {
+  color: inherit;
+  display: block;
+  text-decoration: none;
+}
+
+.genre-card a:hover {
+  text-decoration: underline;
+}
+
+.genre-card img.playlist-image {
+  border-radius: 8px;
+  display: block;
+  height: auto;
+  margin: 0;
+  max-width: 100%;
+}
+
+.genre-card h3 {
+  font-size: 5px;
+  font-weight: 700;
+  margin: 1px;
+}
