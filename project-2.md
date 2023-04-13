@@ -1,5 +1,5 @@
 # Project 2
-
+http://www.omdbapi.com/?i=tt3896198&apikey=1ff1050
 - Same groups as for project 1
 - Based on your project 1 topic you get 3rd party API. Using HTML, CSS, and JS create a page that uses data from your api
 - Documentation
