@@ -1,0 +1,121 @@
+
+ .card {
+    max-width: 120%;
+    margin: 0 auto;
+    background-color: lightblue;
+    color: #333333;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    }
+  .card > img{
+    margin-top: 1em;
+    display: block;
+    margin-left: auto;
+   margin-right: auto;
+    width: 20%;
+    height: 200px;
+  
+  }
+  .card:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  .genre-card > div {
+    padding: 20px;
+    }
+    
+    .genre-card > div > a {
+    color: #333333;
+    font-weight: bold;
+    text-decoration: none;
+    }
+  
+  
+  /* .card > div > a {
+    color: white;
+    font-weight: bold;
+  } */
+  
+  h2 {
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 30px;
+  }
+  
+  .card .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    overflow: auto;
+    max-width: 100%;
+  }
+  .card .list .main-list{
+    margin: top 10px,bottom 0px,left 0px,right 0px ;
+  }
+  
+  .card .list .main-list:hover{
+    transform: scale(0.9);
+    direction: unset;
+  }
+  
+  .card .list img {
+    display: flex;
+    min-width: 40px;
+    min-width: 40px;
+    border-radius: 10px;
+  }
+  
+  .main-list > .play-name {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .main-list > .play-name > a {
+    font-size: 14px;
+    text-decoration: none;
+    color:brown;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    letter-spacing: 0.8px;
+    }
+  
+  .main-img {
+    text-align: center;
+    max-width: 30%;
+    max-width: 30%;
+    margin: auto;
+    display: block;
+    border-radius: 35px;
+  }
+  
+  .artist-name {
+    font-size: 14px;
+    color: #666;
+    display: block;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .track-name {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 5px;
+  }
+  
+  h2{
+    margin-top: 3px;
+    padding-bottom: 1px;
+    text-align: center;
+    font-size: 25px;
+    color: darkblue;
+  }
+  
+  
