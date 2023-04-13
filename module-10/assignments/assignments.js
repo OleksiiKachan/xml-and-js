@@ -62,7 +62,7 @@ const getPlaylistByGenre = async (token, genreId) => {
     );
   
     const data = await result.json();
-    const items = data.items || []; // Check if `data.items` is undefined, and set it to an empty array if it is
+    const items = data.items || [];
     const tracks = items.map(({ track }) => {
       return { name: track.name, artist: track.artists.map((a) => a.name).join(", ") };
     });
