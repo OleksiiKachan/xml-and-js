@@ -61,11 +61,6 @@ ol::-webkit-scrollbar{
   display: none;
 }
 
-ol::-webkit
-.ts > li{
-  border-style: double;
-}
-
 .tracks {
   display: flex;
   flex-direction: column;
