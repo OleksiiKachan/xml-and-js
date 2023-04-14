@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Playlists</title>
+    <link rel="stylesheet" href="Assignment_11.css" />
+  </head>
+  <body>
+    <body>
+      <h1>Spotify Playlists</h1>
+      <form>
+        <label for="genre-name">Filter by genre name:</label>
+        <input type="text" id="genre-name" name="genre-name">
+        <button type="submit">Filter</button>
+      </form>
+      <label>
+        <input type="radio" name="playlist-filter" value="with-playlists" checked> With Playlists
+      </label>
+      <label>
+        <input type="radio" name="playlist-filter" value="without-playlists"> Without Playlists
+      </label>
+      
+      <div id="genres"></div>
+      <script src="Assignment_11.js"></script>
+    </body>    
+</html>
