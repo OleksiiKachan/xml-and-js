@@ -1,0 +1,107 @@
+body {
+  background-color: #dff1e3;
+}
+/* --------search bar-------- */
+
+.search-bar {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  padding: 10px 20px;
+  background-color: #3d453f;
+  color: rgb(226, 244, 226);
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+/* --------genre-------- */
+.genre {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 10px 20px;
+  background-color: #75937b;
+  color: rgb(226, 244, 226);
+}
+
+.genre:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.genre-header {
+  display: flex;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.genre-title {
+  font-family: "Helvetica";
+  font-weight: 600;
+  font-size: 30px;
+  padding-left: 10px;
+  width: 100%;
+}
+
+/* --------playlist-------- */
+
+.playlist-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow: auto;
+  max-width: 100%;
+}
+
+.playlist {
+  margin: 5px 5px;
+  display: flex;
+  flex-direction: column;
+  min-width: 33%;
+  background-color: #09200e9e;
+}
+
+.playlist-header {
+  display: flex;
+  align-items: center;
+  padding: 20px 20px;
+  background-color: #09200e;
+}
+
+.playlist-title {
+  font-family: "Franklin Gothic Medium";
+  font-weight: 400;
+  font-size: 25px;
+  color: rgb(188, 223, 223);
+  padding-left: 10px;
+  width: 100%;
+}
+
+/* --------track-------- */
+
+.track-list {
+  list-style: none;
+  padding-left: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.track {
+  padding: 20px 20px;
+}
+.track:not(:last-child) {
+  border-bottom: 1px solid wheat;
+}
+
+.track-name {
+  font-family: "Franklin Gothic Medium";
+  font-weight: 200;
+  font-size: 20px;
+  color: rgb(226, 244, 226);
+}
+
+.artist {
+  font-family: "Franklin Gothic Medium";
+  font-weight: 100;
+  font-size: 15px;
+  color: rgba(226, 244, 226, 0.47);
+}

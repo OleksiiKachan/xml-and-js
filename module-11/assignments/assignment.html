@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 11 - Assignment</title>
+    <link rel="stylesheet" href="assignment.css" />
+  </head>
+  <body>
+    <div class="search-bar">
+      <form onsubmit="onSubmit(event)" onreset="onReset()">
+        <label for="genreSearch">Input Genre Name</label>
+        <input type="text" name="genreSearch" id="genreSearch" />
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <div class="playlist-radio">
+          <input
+            type="radio"
+            id="showPlaylist"
+            name="isCheck"
+            value="true"
+            checked="true"
+          />
+          <label for="showPlaylist">Show Playlist</label>
+          <input type="radio" id="noPlaylist" name="isCheck" value="false" />
+          <label for="noPlaylist">No Playlist</label><br />
+        </div>
+      </form>
+    </div>
+    <div id="display"></div>
+
+    <script src="./assignment.js"></script>
+  </body>
+</html>
