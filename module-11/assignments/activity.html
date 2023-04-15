@@ -8,15 +8,21 @@
   </head>
   <body>
     <form onsubmit="onSubmit(event)">
+      <div id="b_body">
       <label for="input-filter-term">Find genre</label>
       <input
         type="text"
         name="term"
         id="input-filter-term"
-        placeholder="Enter value"
       />
+      <br><br>
+      <label><input type="radio" name="_radio"  value="true" checked>WithPlaylist</label>
+      <label><input type="radio" name="_radio" >WithoutPlaylist</label>
+      <br><br>
       <button type="submit">Apply filters</button>
+      </div>
     </form>
+   
     <div id="genres"></div>
     <script src="activity.js" type="text/javascript"></script>
   </body>
