@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spotify API</title>
-    <link rel="stylesheet" type="text/css" href="main.css" />
-  </head>
-  <body>
-      <h2>Spotify Playlists with tracks</h2>
-      <form onsubmit="onSubmit(event)">
-        <label for="genre_name">Filter genres</label>
-        <input type="text" name="genre_name" placeholder="Enter genere">
-        <button type="submit">Apply filters</button>
-      </form>
-      <div id="genres"></div>
-      <div id="tracks"></div>
-    <script src="assignment.js" type="text/javascript"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotify API</title>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+  <h2>Spotify Playlists with tracks</h2>
+  <form onsubmit="onSubmit(event)">
+    <label for="genre_name">Filter genres</label>
+    <input type="text" name="genre_name" placeholder="Enter genere"><br/>
+    <br/>
+    <input type="radio" id="With_playlist" name="showPlaylist" value="With_playlist" checked = "checked">
+    <label for="With_playlist">With playlist</label>
+    <input type="radio" id="Without_playlist" name="showPlaylist" value="Without_playlist">
+    <label for="Without_playlist">Without playlist</label><br>
+    <br/>
+    <button type="submit">Apply filters</button>
+  </form>
+  <div id="genres"></div>
+  <div id="tracks"></div>
+  <script src="assignment.js" type="text/javascript"></script>
+</body>
+
 </html>
