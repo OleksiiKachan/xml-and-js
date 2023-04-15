@@ -1,54 +1,38 @@
-.genre-cards {
-  display: list-item;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-  gap: 20px;
+body{
+  background-color: black;
+}
+.genre-card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: wheat;
+  color: #ffffff;
+  margin: 10px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  border-radius: 10px;
+  border: 2px solid black;
 }
 
 .genre-card {
-  background-color: #292F36;
-  color: white;
-  border-radius: 10px;
-  border: 10px solid #253bb8; 
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-  font-family: 'Roboto', sans-serif;
-}
-
-.genre-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
 }
 
 .genre-card > div {
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  text-align: center;
 }
 
 .genre-card > div > a {
-  color: #FFD700;
-  font-size: 20px;
-  font-weight: bold;
+  color: #ffffff;
   text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-.genre-card > div > p {
-  color: #A5A5A5;
-  font-size: 14px;
-  margin-top: 10px;
-  margin-bottom: 0;
-}
-
-.genre-card > div > ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.genre-card > div > ul > li {
-  font-size: 14px;
-  margin-bottom: 5px;
+h2{
+  color: rgb(61, 82, 224);
 }
 
 ol {
@@ -56,6 +40,47 @@ ol {
   margin: 0;
   padding: 0;
   display: flex;
-  overflow: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   max-width: 100%;
+}
+
+
+.track-name {
+  max-width: 220px; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+
+.title {
+color: #333;
+font-size: 2.5em;
+text-align: center;
+padding: 20px 0;
+border-bottom: 1px solid #ddd;
+}
+
+.rounded-img {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+ul{
+  padding: 0px;
+}
+
+ul> li> a{
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+ul li {
+  margin-bottom: 10px;
+  text-align: left;
 }

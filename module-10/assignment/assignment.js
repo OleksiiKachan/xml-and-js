@@ -30,7 +30,7 @@ const getToken = async () => {
   };
 
   const getPlaylistsByGenre = async(token,genreId)=>{
-    const limit = 10;
+    const limit = 5;
     const result = await fetch(
       `https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`,
       {
@@ -44,22 +44,29 @@ const getToken = async () => {
 
   };
 
+
+const getPlaylistTracks= async (token, playlistId) => {
+    const limit = 5;
+    const result = await fetch(
+      `https://api.spotify.com/v1/playlists/${playlistId}/tracks?limit=${limit}`,
+      {
+        method: "GET",
+        headers: { 
+          Authorization: "Bearer " + token },
+      },
+    );
+
+    const data = await result.json();
+    return data;
+  };
+
   const load = async()=>{
     const token = await getToken();
     const genres = await getGenres(token);
 
     const list = document.getElementById('genres');
     genres.map( async ({id,name,icons:[genreIcon]})=>{
-      const playlists = await getPlaylistsByGenre(token,id).then((data)=>
-      data.map(({name,images:[image],external_urls:{spotify}})=>
-        `<li>
-          <a href="${spotify}" target="_blank" >
-              <img src="${image.url}"  width="100" height="100" alt="${name}"/>
-          </a>
-        </li>`
-
-      ).join('')
-      );
+        const playlists = await getPlaylistsByGenre(token,id);
 
         const html = `
           <article class="genre-card">      
@@ -67,7 +74,21 @@ const getToken = async () => {
             <div>
               <h2>${name}</h2>
               <ol>
-               ${playlists}
+                ${await Promise.all(playlists.map(async ({name, images:[playlistImage], external_urls:{playlistUrl}, id}) => {
+                  const tracks = await getPlaylistTracks(token, id);
+                  return `
+                    <li>
+                      <a href="${playlistUrl}" target="_blank">
+                        <img src="${playlistImage.url}" width="180" height="180" class="rounded-img" alt="${name}"/>
+                      </a>
+                      <ul>
+                        ${tracks.items.map(({track:{name, external_urls:{trackUrl}}}) => `
+                          <li class="track-name"><a href="${trackUrl}" target="_blank">${name}</a></li>
+                        `).join('')}
+                      </ul>
+                    </li>
+                  `;
+                }))}
               </ol>
             </div>
           </article>
