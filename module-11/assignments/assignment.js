@@ -134,7 +134,12 @@ const htmlTrack = (trackName, artists) => {
 //#endregion
 
 //#region Render function
-const renderData = async (genreList, genreName = null, isPlaylist = true) => {
+const renderData = async (
+  genreList,
+  genreName = null,
+  isPlaylist = true,
+  isTrack = true
+) => {
   console.log("Reder Data");
 
   // filter genres with input genre name
@@ -179,17 +184,20 @@ const renderData = async (genreList, genreName = null, isPlaylist = true) => {
               );
               // console.log(trackList);
 
-              // 2. generate html of all tracks for this playlist
-              const trackListHtml = trackList.reduce(
-                (acc_trackHtml, { track: { artists, name } }) => {
-                  acc_trackHtml += htmlTrack(
-                    name,
-                    artists.map(({ name }) => name).join(", ")
-                  );
-                  return acc_trackHtml;
-                },
-                ""
-              );
+              let trackListHtml = "";
+              if (isTrack) {
+                // 2. generate html of all tracks for this playlist
+                trackListHtml = trackList.reduce(
+                  (acc_trackHtml, { track: { artists, name } }) => {
+                    acc_trackHtml += htmlTrack(
+                      name,
+                      artists.map(({ name }) => name).join(", ")
+                    );
+                    return acc_trackHtml;
+                  },
+                  ""
+                );
+              }
               // console.log(trackListHtml);
               //#endregion
 
@@ -227,10 +235,10 @@ const onSubmit = (event) => {
   // get genre Name
   const genreName = event.target.genreSearch.value;
   // get radio
-  const isShowPlaylist = event.target.isCheck.value === "true";
+  const isPlaylist = event.target.isCheck.value === "true";
 
   const filterGenreList = filterGenre(genreName, _genreData);
-  renderData(filterGenreList, genreName, isShowPlaylist);
+  renderData(filterGenreList, genreName, isPlaylist, false);
 };
 
 const onReset = () => {
