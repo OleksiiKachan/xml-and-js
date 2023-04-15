@@ -2,6 +2,7 @@ const clientID = "1cd4b8919a804e35af673e40b29986e6";
 const clientSecret = "a5bea6c96ef945ad813e33fb59919bb7";
 
 let _data = [];
+let playlistStatus = "all";
 
 const getToken = async () => {
   const result = await fetch(`https://accounts.spotify.com/api/token`, {
@@ -75,6 +76,13 @@ const loadGenres = async () => {
 
 const renderGenres = (filterTerm) => {
   let source = _data;
+  const playlistStatus = event.target["playlist-status"].value;
+
+  if (playlistStatus === "with") {
+    source = source.filter(({ playlists }) => playlists.length > 0);
+  } else if (playlistStatus === "without") {
+    source = source.filter(({ playlists }) => playlists.length === 0);
+  }
 
   if (filterTerm) {
     const term = filterTerm.toLowerCase();
@@ -132,6 +140,7 @@ const onSubmit = (event) => {
   event.preventDefault();
 
   const term = event.target.term.value;
+  const playlistStatus = event.target["playlist-status"].value;
 
-  renderGenres(term);
+  renderGenres(term, playlistStatus);
 };
