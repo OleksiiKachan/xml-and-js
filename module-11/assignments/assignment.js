@@ -1,148 +1,113 @@
-const clientId = `4f0ee450622444f8bcad18387a612856`;
-const clientSecret = `56eed039b5714a308243652bc83d2760`;
-
-let _data = [];
+const clientId = `e8f7a40db244452496dce721c4b3d784`;
+const clientSecret = `f6565ea2636b40deb9f436afb1c29134`;
 
 const getToken = async () => {
-  const result = await fetch("https://accounts.spotify.com/api/token", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-      Authorization: "Basic " + btoa(clientId + ":" + clientSecret),
-    },
-    body: "grant_type=client_credentials",
-  });
-
-  const data = await result.json();
-  return data.access_token;
-};
-
-const getGenres = async (token) => {
-  const result = await fetch(
-    `https://api.spotify.com/v1/browse/categories?locale=sv_US`,
-    {
-      method: "GET",
-      headers: { Authorization: "Bearer " + token },
-    }
-  );
-
-  const data = await result.json();
-  return data.categories.items;
-};
-
-const getPlaylistByGenre = async (token, genreId) => {
-  const limit = 5;
-
-  const result = await fetch(
-    `https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`,
-    {
-      method: "GET",
-      headers: { Authorization: "Bearer " + token },
-    }
-  );
-
-  const data = await result.json();
-  return data.playlists ? data.playlists.items : [];
-};
-
-const loadGenres = async () => {
-  const token = await getToken();
-  const genres = await getGenres(token);
-
-  _data = await Promise.all(
-    genres.map(async (genre) => {
-      const playlists = await getPlaylistByGenre(token, genre.id);
-      const playlistsList = await Promise.all(
-        playlists.map(async (playlist) => {
-          const tracks = await getTracksByPlaylist(token, playlist.id);
-            return { ...playlist, tracks };
-        })
-      );
-      return { ...genre, playlists: playlistsList };
-    })
-  );
-};
-
-const getTracksByPlaylist = async (token, playlist_id) => {
-  const limit = 5;
-  const result = await fetch(
-    `https://api.spotify.com/v1/playlists/${playlist_id}/tracks?limit=${limit}`,
-    {
-      method: "GET",
-      headers: { Authorization: "Bearer " + token },
-    }
-  );
-
-  const data = await result.json();
-  return data.items;
-};
-
-const renderGenres = async (filterTerm) => {
-  const token = await getToken();
-  const genres = await getGenres(token);
-  let source = _data;
-
-  if (filterTerm) {
-    const genre_name = filterTerm.toLowerCase();
-    source = source.filter(({ name }) => {
-      return name.toLowerCase().includes(genre_name);
+    const result = await fetch("https://accounts.spotify.com/api/token", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization: "Basic " + btoa(clientId + ":" + clientSecret),
+      },
+      body: "grant_type=client_credentials",
     });
-  }
-  const list = document.getElementById(`genres`);
-  const html = source.reduce((acc, { name, icons: [icon], playlists }) => {
-    const playlistsList = playlists
-      .map(({ name, external_urls: { spotify }, images: [image], tracks }) => {
 
-        const trackSongs = tracks.map(
-            ({
-              track: {
-                name: track_name,
-                artists,
-                external_urls: { spotify },
-              },
-            }) =>
-            `<div class="tracks">
-            <a href="${spotify}" target="_blank" class="trackname">${ track_name }</a></div>
-             <div class="artist">${artists.map((artist) => artist.name).join(" | ")} </div>
-            <br>`
-        ).join("");
+    const data = await result.json();
+    return data.access_token;
+  };
 
-      return `<li>
-        <a href="${spotify}" alt="${name}" target="_blank">
-        <div class="img_hover">
-    <figure><img class="img-icon" src="${image.url}" width="180" height="180"/></figure>
-    </div>
-    </a>
-          ${trackSongs}
-      </li>`;
+  const getGenres = async (token) => {
+    const limit = 5;
+    const result = await fetch(
+      `https://api.spotify.com/v1/browse/categories?locale=sv_US&limit=${limit}`,
+      {
+        method: "GET",
+        headers: { Authorization: "Bearer " + token },
       }
-      );
+    );
 
-    if (playlists) {
-      return (
-        acc +
-        `
-        <article class="genre-card">
-        <h2 class="title_playlist">${ name }</h2>
-        <img class="heading" src="${ icon.url }" width="150" height="150" alt="${ name }"/>
+    const data = await result.json();
+    return data.categories.items;
+  };
+
+  const getPlaylistsByGenre = async(token,genreId)=>{
+    const limit = 5;
+    const result = await fetch(
+      `https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`,
+      {
+        method: "GET",
+        headers: { Authorization: "Bearer " + token }
+      }
+    );
+
+    const data = await result.json();
+    return data.playlists.items;
+
+  };
+
+
+const getPlaylistTracks= async (token, playlistId) => {
+    const limit = 5;
+    const result = await fetch(
+      `https://api.spotify.com/v1/playlists/${playlistId}/tracks?limit=${limit}`,
+      {
+        method: "GET",
+        headers: { 
+          Authorization: "Bearer " + token },
+      },
+    );
+
+    const data = await result.json();
+    return data;
+  };
+
+  const load = async(filterValue = "", showPlaylists = "true")=>{
+    const token = await getToken();
+    const genres = await getGenres(token);
+
+    const list = document.getElementById('genres');
+    list.innerHTML = "";
+    const filteredGenres = genres.filter(g => g.name.toLowerCase().includes(filterValue));
+
+    filteredGenres.map( async ({id,name,icons:[genreIcon]})=>{
+        const playlists = await getPlaylistsByGenre(token,id);
+
+        const html = `
+          <article class="genre-card">      
+            <img src="${genreIcon.url}" width="${genreIcon.width}" height="${genreIcon.height}" class="rounded-img" alt="${name}"/>
             <div>
-                <ol>${ playlistsList }</ol>
-                
+              <h2>${name}</h2>
+              ${showPlaylists == "true" ? `<ol>
+                ${await Promise.all(playlists.map(async ({name, images:[playlistImage], external_urls:{playlistUrl}, id}) => {
+                  const tracks = await getPlaylistTracks(token, id);
+                  return `
+                    <li>
+                      <a href="${playlistUrl}" target="_blank">
+                        <img src="${playlistImage.url}" width="180" height="180" class="rounded-img" alt="${name}"/>
+                      </a>
+                      <ul>
+                        ${tracks.items.map(({track:{name, external_urls:{trackUrl}}}) => `
+                          <li class="track-name"><a href="${trackUrl}" target="_blank">${name}</a></li>
+                        `).join('')}
+                      </ul>
+                    </li>
+                  `;
+                }))}
+              </ol>` : ""}
             </div>
-        </article>`
-      );
-    }
-  }, ``);
+          </article>
+        `;
+        const div = document.createElement('div');
+        div.innerHTML = html;
+        list.appendChild(div.firstElementChild);
+    })
+  };
 
-  list.innerHTML = html;
-};
+  load();
 
-loadGenres().then(renderGenres);
+  const onSubmit = (event) => {
+    event.preventDefault();
 
-const onSubmit = (event) => {
-  event.preventDefault();
-
-  const genre_name = event.target.genre_name.value;
-
-  renderGenres(genre_name);
-};
+    const filterValue = event.target.filter.value;
+    showPlaylists = event.target.option.value;
+    load(filterValue, showPlaylists); 
+  };

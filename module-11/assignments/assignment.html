@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="assignment.css" />
+</head>
+<body>
+    <div>
+        <h1 class="title">Spotify Playlists with tracks</h1>
+        <form onsubmit="onSubmit(event)">
+            <label for="filter">Find genre</label>
+            <input
+            type="text"
+            name="filter"
+            id="filter"
+            placeholder="Enter value"
+            />
+            <label>Show Playlists</label>
+            <label for="yes">
+                <input type="radio" name="option" id="yes" value="true" checked>
+                Yes
+            </label>
+            <label for="no">
+                <input type="radio" name="option" id="no" value="false">
+                No
+            </label>
+            <br>
+            <button id="submit" type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="genres"></div>
+    <script src="assignment.js"></script>
+</body>
+</html>
