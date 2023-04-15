@@ -130,9 +130,8 @@ const renderGenres = async (filterTerm, showPlaylist) => {
           <div>
               <ol>
                 ${playlistsList}
-              </ol>
-              
-          </div>
+              </ol>    
+          </div> 
           </article>`
         );
       } else {
