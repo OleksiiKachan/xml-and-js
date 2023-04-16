@@ -19,7 +19,7 @@ const getToken = async () => {
 
 const getGenres = async (token) => {
   const result = await fetch(
-    `https://api.spotify.com/v1/browse/categories?locale=sv_US`,
+    `https://api.spotify.com/v1/browse/categories?locale=sv_SE`,
     {
       method: "GET",
       headers: { Authorization: "Bearer " + token },
@@ -76,21 +76,20 @@ const getPlaylistByGenre = async (token, genreId, limit, backoffTime) => {
 
 const loadGenres = async () => {
   const token = await getToken();
-  const genreId = await getGenres(token);
+  const genres = await getGenres(token);
   const limit = 10;
-  const backoffTime = 1000; 
+  const backoffTime = 1000;
 
   _data = await Promise.all(
-        geres.map(async (genre) => {
-          const playlists = await getPlaylistByGenre(token, genreId, limit, backoffTime);
+    genres.map(async (genre) => {
+      const playlists = await getPlaylistByGenre(token, genre.id, limit, backoffTime);
 
-          return {...genre,playlists,tracks};
-        })
-  
+      return { ...genre, playlists };
+    })
   );
 };
 
-const renderGenres = (filterTerm) =>{
+const renderGenres = async (filterTerm) => {
   let source = _data;
 
   if (filterTerm) {
@@ -100,15 +99,23 @@ const renderGenres = (filterTerm) =>{
       console.log(name.toLowerCase().includes(term));
       return name.toLowerCase().includes(term);
     });
-}
+  }
 
-const list = document.getElementById(`genres`);
+  const list = document.getElementById(`genres`);
+  const token = await getToken();
+  const limit = 10;
+  const backoffTime = 5000; 
 
-const html = source.reduce((acc, {name, id, icons: [icon], href } of genres) {
+  for (const { name, id, icons: [icon], href } of source) {
     const playlists = await getPlaylistByGenre(token, id, limit, backoffTime);
-    const playlistsList = playlists
-      .map(
-        ({ name, external_urls: { spotify }, images: [image], tracks }) => `
+
+    if (playlists) {
+      const playlistsList = await Promise.all(playlists.map(async ({ name, external_urls: { spotify }, images: [image], tracks }) => {
+        const trackList = await Promise.all(tracks.map(async ({ name, artist }) => {
+          const artistData = await getArtist(artist.id, token);
+          return `${name} - ${artistData.name}`;
+        }));
+        return `
           <li>
             <a href="${spotify}" alt="${name}" target="_blank">
               <img src="${image.url}" width="180" height="180"/>
@@ -119,32 +126,28 @@ const html = source.reduce((acc, {name, id, icons: [icon], href } of genres) {
           </li>
           <div>
             <ul>
-              ${tracks
-                .map(({ name, artist }) => `<li>${name} - ${artist}</li>`)
-                .join(``)}
+              ${trackList.join('')}
             </ul>
-          </div>`
-      )
-      .join(``);
+          </div>`;
+      }));
 
-    if (playlists) {
       const html = `
         <article class="genre-card">
           <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
           <div>
             <h2>${name}</h2>
             <ol>
-              ${playlistsList}
+              ${playlistsList.join('')}
             </ol>
           </div>
         </article>`;
 
       list.insertAdjacentHTML("beforeend", html);
     }
-  })
+  }
 };
 
-loadGenres();
+loadGenres().then(renderGenres);
 
 const onSubmit = (event) => {
   event.preventDefault();
