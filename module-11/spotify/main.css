@@ -4,6 +4,7 @@
   display: flex;
   background-color: rgba(0, 0, 255, 0.2);
   color: black;
+  display: flex;
 }
 
 .genre-card:not(:last-child) {

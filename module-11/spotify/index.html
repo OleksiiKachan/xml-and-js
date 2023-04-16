@@ -15,9 +15,24 @@
         id="input-filter-term"
         placeholder="Enter value"
       />
+      <span>Filter Genres:</span>
+      <input
+        type="radio"
+        id="with_playlist"
+        name="playlist_tracks"
+        value="true"
+        checked
+      /><label for="with_playlist">With Playlist</label>
+      <input
+        type="radio"
+        id="without_playlist"
+        name="playlist_tracks"
+        value="false"
+      /><label for="without_playlist">Without Playlist</label>
       <button type="submit">Apply filters</button>
     </form>
     <div id="genres"></div>
+    <div id="tracks"></div>
     <script src="app.js" type="text/javascript"></script>
   </body>
 </html>
