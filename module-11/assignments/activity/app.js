@@ -141,7 +141,7 @@ const html = source.reduce((acc, {name, id, icons: [icon], href } of genres) {
 
       list.insertAdjacentHTML("beforeend", html);
     }
-  }
+  })
 };
 
 loadGenres();
