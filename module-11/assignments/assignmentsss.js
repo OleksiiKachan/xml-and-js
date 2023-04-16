@@ -150,6 +150,5 @@ const onSubmit = (event) => {
   event.preventDefault();
 
   const term = event.target.term.value;
-
   renderGenres(term);
 };

@@ -1,4 +1,4 @@
-  body {
+body {
     margin: 0px;
     padding: 0px;
     background-color: rgb(198, 70, 143);
@@ -17,8 +17,7 @@
     font-family: "Playfair Display", serif;
     font-style: normal;
     font-weight: bold;
-}
-    
+}   
   .card:nth-child(odd) {
     max-width: 100%;
     overflow: hidden;
