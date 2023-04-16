@@ -78,7 +78,7 @@ const loadGenres = async () => {
   const token = await getToken();
   const genres = await getGenres(token);
   const limit = 10;
-  const backoffTime = 1000;
+  const backoffTime = 10000;
 
   _data = await Promise.all(
     genres.map(async (genre) => {
@@ -104,7 +104,7 @@ const renderGenres = async (filterTerm) => {
   const list = document.getElementById(`genres`);
   const token = await getToken();
   const limit = 10;
-  const backoffTime = 5000; 
+  const backoffTime = 10000; 
 
   for (const { name, id, icons: [icon], href } of source) {
     const playlists = await getPlaylistByGenre(token, id, limit, backoffTime);

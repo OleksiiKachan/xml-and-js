@@ -1,5 +1,5 @@
-const clientId = `a5f261df31334b54bbdaf6a8cf18327d`;
-const clientSecret = `72dce1229f33421988f780a020f146cb`;
+const clientId = `111524b3028646caaaa5acfd748f7a5e`;
+const clientSecret = `229a581847734e57b89e20775f954403`;
 
 let _data = [];
 
@@ -30,6 +30,19 @@ const getGenres = async (token) => {
   return data.categories.items;
 };
 
+const getTracksByPlaylist = async (token, playlistId) => {
+  const result = await fetch(
+    `https://api.spotify.com/v1/playlists/${playlistId}/tracks`,
+    {
+      method: "GET",
+      headers: { Authorization: "Bearer " + token },
+    }
+  );
+
+  const data = await result.json();
+  return data.items.map(({ track: { name, artists } }) => ({ name, artists }));
+};
+
 const getPlaylistByGenre = async (token, genreId) => {
   const limit = 10;
 
@@ -42,8 +55,20 @@ const getPlaylistByGenre = async (token, genreId) => {
   );
 
   const data = await result.json();
-  return data.playlists ? data.playlists.items : [];
+
+  const playlists = data.playlists ? data.playlists.items : [];
+
+  const playlistsWithTracks = await Promise.all(
+    playlists.map(async (playlist) => {
+      const tracks = await getTracksByPlaylist(token, playlist.id);
+
+      return { ...playlist, tracks };
+    })
+  );
+
+  return playlistsWithTracks;
 };
+
 
 const loadGenres = async () => {
   const token = await getToken();
