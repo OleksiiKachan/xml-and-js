@@ -1,0 +1,118 @@
+body{
+    background-color: black;
+    color: white;
+    font-weight:600;
+}
+.genre-card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: wheat;
+    color: #ffffff;
+    margin: 10px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    border: 2px solid black;
+    flex-direction: column;
+  }
+
+  .genre-card {
+    margin-top: 20px;
+  }
+
+  .genre-card > div {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .genre-card > div > a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  h2{
+    color: rgb(61, 82, 224);
+  }
+
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 100%;
+  }
+
+
+  .track-name {
+    max-width: 220px; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+  }
+
+  .title {
+	color: beige;
+    font-size: 40px;
+    padding: 30px;
+    text-align: center;
+ }
+
+.rounded-img {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  ul{
+    padding: 0px;
+  }
+
+  ul> li> a{
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  ul li {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+
+  button {
+    background-color: #4CAF50; /* Green */
+    border-radius: 25px;
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    cursor: pointer;
+
+  }
+
+  form{
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
+    font-size: 18px;
+    padding: 0;
+  }
+
+  
+
+  input[type=text] {
+    width: 20%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    box-sizing: border-box;
+  }
