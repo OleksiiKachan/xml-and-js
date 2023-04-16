@@ -21,7 +21,8 @@ const getGenres = async (token) => {
       `https://api.spotify.com/v1/browse/categories`,
       {
         method: "GET",
-        headers: { Authorization: "Bearer " + token },
+        headers: {'X-RapidAPI-Key': 'daa3cc9f26mshe489734f7b0a8f4p114ef1jsnc18eaa9e7ade',
+        'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com' },
       }
     );
   
@@ -57,47 +58,47 @@ const getTracksForPlaylists = async (token, playlistId) => {
     
     const data = await result.json();
     //console.log(data.items.name);
-    return data.items.map(({track}) => ({
-        name: track.name,
-        artists: track.artists.map(artist => artist.name),
-      })); 
+    return data.items || []; 
 };
 
 const displayTracks = async (token, playlists) =>{
 
     // for (const { name, id: playlistId } of playlists)
-    // playlists.map(async ({name , id: playlistId}) =>{
+    playlists.map(async ({name , id: playlistId}) =>{
 
-    //     const tracks  = await getTracksForPlaylists(token, playlistId);
+        const tracks  = await getTracksForPlaylists(token, playlistId);
 
-    //     const tracksList = tracks.map(
-    //         ({ name, artists }) => 
-    //         `
-    //         <li>
-    //           ${name} - ${artists}
-    //         </li>
-    //         `
-    //     ).join(``);
+        const tracksList = tracks.map(({track}) => ({
+            name: track.name,
+            artists: track.artists.map(artist => artist.name),
+          })).map(
+            ({ name, artists }) => 
+            `
+            <li>
+              ${name} - ${artists}
+            </li>
+            `
+        ).join(``);
 
-    //     return tracksList.join(``);
-    // });  
-
-    for (const { name, id: playlistId } of playlists) {
-        const tracks = await getTracksForPlaylists(token, playlistId);
-        const tracksList=`
-          <ul>
-            ${tracks
-              .map(
-                ({ name, artists }) => `
-                <li>
-                  ${name} - ${artists}
-                </li>
-                `)
-              .join('')}
-          </ul>
-        `;
         return tracksList;
-    }
+    });  
+
+    // for (const { name, id: playlistId } of playlists) {
+    //     const tracks = await getTracksForPlaylists(token, playlistId);
+    //     const tracksList=`
+    //       <ul>
+    //         ${tracks
+    //           .map(
+    //             ({ name, artists }) => `
+    //             <li>
+    //               ${name} - ${artists}
+    //             </li>
+    //             `)
+    //           .join('')}
+    //       </ul>
+    //     `;
+    //     return tracksList;
+    // }
 }
 
 const load = async () => {
