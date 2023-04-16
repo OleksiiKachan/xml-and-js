@@ -79,3 +79,4 @@ const loadGenres = async () => {
 };
 
 loadGenres();
+
