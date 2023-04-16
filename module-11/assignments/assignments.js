@@ -10,7 +10,6 @@ const getToken = async () => {
     },
     body: "grant_type=client_credentials",
   });
-
   const data = await result.json();
   return data.access_token;
 };

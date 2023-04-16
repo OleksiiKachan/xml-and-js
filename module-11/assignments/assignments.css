@@ -27,8 +27,7 @@ body {
     font-family: "Playfair Display", serif;
     font-style: normal;
     font-weight: bold;
-}
-  
+}  
   .card:not(:last-child) {
     margin-bottom: 10px;
   }
