@@ -1,0 +1,74 @@
+
+  .genre-card {
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    background-color: rgb(34, 3, 33);
+    color: white;
+  }
+  
+  .genre-card:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  
+  .genre-card > div {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 100px;
+  }
+  
+  .genre-card > div > a {
+    color: black;
+    font-weight: bolder;
+  }
+  
+  ol {
+    list-style: none;
+    margin: 2px;
+    padding: 5px;
+    display: flex;
+    overflow: auto;
+    max-width: 100%;
+  }
+  
+  ol::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .genre-card > .heading {
+    text-align: left;
+    vertical-align: middle;
+  }
+  
+  .genre-card > h2 {
+    align-content: center;
+    color: rgb(41, 133, 41);
+  }
+  
+  .tracks {
+    padding: 10px;
+    color: white;
+    letter-spacing: 1px;
+  }
+  
+  .tracks > .trackname {
+    font-size: 15px;
+    color: rgb(15, 139, 139);
+    text-decoration: none;
+  }
+  
+  .artist {
+    font-size: 15px;
+    padding-left: 15px;
+    color: #e07e7eba;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  body {
+    display: contents;
+  }
