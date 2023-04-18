@@ -1,0 +1,5 @@
+Name- Nitish Sharma
+Student ID - N01555110
+Contribution - Creating a CSS file. 
+
+In this project i have created a CSS file. I have added various styles  in the CSS file. For the psoter of a movie, i have added styles like transistion in and out. The .error class styles error messages in red and larger font size. The .type class styles a label for the type of search being performed (movie or series). The form element styles the search form with a margin at the bottom. The input elements for the search form are styled with padding, margin, and background color.  The .details class styles the container for the movie details, setting it to flex-grow to take up the remaining space in the container and adding padding to the top. The other classes style specific details about the movie, such as the title, year, rated, released date, runtime, genre, director, writer, actors, plot, and IMDB rating, with different font sizes.

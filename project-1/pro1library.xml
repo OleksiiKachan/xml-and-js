@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="pro1library.xsl"?>
+
 <root>
   <row>
     <id>844fbd8c-d73b-45bd-9eda-9123ee18864d</id>
