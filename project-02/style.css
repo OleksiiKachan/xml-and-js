@@ -1,0 +1,57 @@
+
+h1 {
+    font-size: 54px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: underline;
+    width: 100%;
+    color: brown;
+}
+
+#breeds {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#breeds li {
+    margin: 2px;
+}
+
+article {
+    border-radius: 4%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 4px solid black;
+    background-color: black;
+}
+
+article div {
+    padding: 8px;
+    border-top: 2px solid black;
+    background-color: white;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+}
+
+article img {
+    border-top-right-radius: 4%;
+    border-top-left-radius: 4%;
+}
+
+#breedDiv h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    text-align: center;
+}
+
+#breedDiv p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#breedDiv p b {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
