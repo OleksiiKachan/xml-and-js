@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: azure;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+blockquote {
+  margin: 4px;
+  background-color: azure;
+}
+blockquote p {
+  padding: 10px;
+  font-family: "Satisfy", cursive, sans-serif;
+  letter-spacing: 1px;
+}
+blockquote p::before {
+  content: "\201C";
+  font-size: 20px;
+  font-weight: bolder;
+}
+blockquote p::after {
+  content: "\201D";
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+h1 {
+  font-family: "Satisfy", cursive, sans-serif;
+  word-spacing: 2px;
+  letter-spacing: 4px;
+  margin: 10px 0px;
+}
+
+.image {
+  text-align: center;
+  margin: 2px;
+  padding: 2px;
+}
+
+.image > #dog-image {
+  width: 35%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+}
+
+.dog-info {
+  margin: 2px;
+}
+
+.dog-info > p > span {
+  color: #060606;
+  font-weight: bolder;
+  background-color: azure;
+}
+
+.dog-info > p {
+  font-family: "Satisfy", cursive, sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #0a0a0a99;
+  font-size: 16px;
+  margin-bottom: 1px;
+}
+
+.doghw > span {
+  color: #060606;
+  font-weight: bolder;
+  background-color: azure;
+}
+
+select {
+  color: black;
+  margin: 15px;
+  width: 250px;
+  font-family: "Satisfy", cursive, sans-serif;
+  padding: 5px 5px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #060606;
+  border-radius: 3px;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: white;
+}
+
+span {
+  color: blueviolet;
+  background-color: cornsilk;
+}
+
+.loading {
+  text-align: center;
+  font-size: 20px;
+  display: none;
+}
+
+.show-loading {
+  display: block;
+}
