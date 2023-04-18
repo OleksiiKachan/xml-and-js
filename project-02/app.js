@@ -30,7 +30,7 @@ fetch(URL)
       if (article.image) {
         imageHtml = `<img src="${article.image}" alt="${article.title}">`;
       }
-      const description = article.description.slice(0, 150); // Limit to 150 characters
+      const description = article.description.slice(0, 150);
       articlesHtml += `
         <div>
           <h2>${article.title}</h2>
