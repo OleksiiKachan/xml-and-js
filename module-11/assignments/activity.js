@@ -89,7 +89,6 @@ const getToken = async () => {
     _data = await Promise.all(   // after map and save to local
       genres.map(async (genre) => {
         const playlists = await getPlaylistByGenre(token, genre.id);
-  
         return { ...genre, playlists };    //... spread objects
       })
     );
