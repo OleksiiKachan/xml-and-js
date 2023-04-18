@@ -12,6 +12,6 @@
 - [X] In addition to this, I've also had to learn how to use the MediaStack API, how to make requests to the Mediastack using PHP REST API, and how to display the results on websites that are running on custom CMS.
 
 ## Conclusion
-- [X] Overall, We were able to overcome these challenges even though We can't contol the situation where the end point URL is forced to serve requests on HTTPS most times, becuase our type of subscription is a free plan which does not support HTTPS request.
+- [X] Overall, We were able to overcome these challenges even though We can't control the situation where the end point URL is forced to serve requests on HTTPS most times, becuase our type of subscription is a free plan which does not support HTTPS request.
 
 But all in all, We successfully created two different versions of the script that accesses the MediaStack API and displays the results on a webpage. As you can see in the images folder the results.
