@@ -1,0 +1,1 @@
+As a part of the team, i was responsible for creating the html and css for both products and stores where i have used the flexbox to display the stores and products as a card-view.
