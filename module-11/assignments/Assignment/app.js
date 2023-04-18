@@ -139,7 +139,6 @@ const renderGenres = async (filterTerm, playlists) => {
   list.innerHTML = html;  
   }
 
-
 loadGenres().then(renderGenres);
 
 const onSubmit = (event) => {
