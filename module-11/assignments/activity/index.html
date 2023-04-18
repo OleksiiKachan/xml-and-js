@@ -8,10 +8,15 @@
   </head>
   <body>
     <form onsubmit="onSubmit(event)">
-      <label for="term">Search Genres:</label>
-      <input type="text" id="term" name="term">
-      <input type="submit" value="Search">
-    </form>      
+      <label for="input-filter-term">Find genre</label>
+      <input
+        type="text"
+        name="term"
+        id="input-filter-term"
+        placeholder="Enter value"
+      />
+      <button type="submit">Apply filters</button>
+    </form>
     <div id="genres"></div>
     <script src="app.js" type="text/javascript"></script>
   </body>

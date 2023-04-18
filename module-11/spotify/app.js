@@ -30,19 +30,6 @@ const getGenres = async (token) => {
   return data.categories.items;
 };
 
-const getTracksByPlaylist = async (token, playlistId) => {
-  const result = await fetch(
-    `https://api.spotify.com/v1/playlists/${playlistId}/tracks`,
-    {
-      method: "GET",
-      headers: { Authorization: "Bearer " + token },
-    }
-  );
-
-  const data = await result.json();
-  return data.items.map(({ track: { name, artists } }) => ({ name, artists }));
-};
-
 const getPlaylistByGenre = async (token, genreId) => {
   const limit = 10;
 
@@ -55,20 +42,8 @@ const getPlaylistByGenre = async (token, genreId) => {
   );
 
   const data = await result.json();
-
-  const playlists = data.playlists ? data.playlists.items : [];
-
-  const playlistsWithTracks = await Promise.all(
-    playlists.map(async (playlist) => {
-      const tracks = await getTracksByPlaylist(token, playlist.id);
-
-      return { ...playlist, tracks };
-    })
-  );
-
-  return playlistsWithTracks;
+  return data.playlists ? data.playlists.items : [];
 };
-
 
 const loadGenres = async () => {
   const token = await getToken();
@@ -83,15 +58,23 @@ const loadGenres = async () => {
   );
 };
 
-const renderGenres = (filterTerm) => {
+const renderGenres = (filterTerm, playlists) => {
   let source = _data;
 
   if (filterTerm) {
-    console.log(filterTerm);
     const term = filterTerm.toLowerCase();
     source = source.filter(({ name }) => {
-      console.log(name.toLowerCase().includes(term));
       return name.toLowerCase().includes(term);
+    });
+  }
+
+  if (playlists === "with-playlists") {
+    source = source.filter(({ playlists }) => {
+      return playlists && playlists.length > 0;
+    });
+  } else if (playlists === "without-playlists") {
+    source = source.filter(({ playlists }) => {
+      return !playlists || playlists.length === 0;
     });
   }
 

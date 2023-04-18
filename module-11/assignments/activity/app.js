@@ -19,7 +19,7 @@ const getToken = async () => {
 
 const getGenres = async (token) => {
   const result = await fetch(
-    `https://api.spotify.com/v1/browse/categories?locale=sv_SE`,
+    `https://api.spotify.com/v1/browse/categories?locale=sv_US`,
     {
       method: "GET",
       headers: { Authorization: "Bearer " + token },
@@ -30,7 +30,25 @@ const getGenres = async (token) => {
   return data.categories.items;
 };
 
-const getPlaylistByGenre = async (token, genreId, limit, backoffTime) => {
+
+const getTracksByPlaylist = async (token, playlistId) => {
+  const limit = 5;
+
+  const result = await fetch(
+    `https://api.spotify.com/v1/playlists/${playlistId}/tracks?limit=${limit}`,
+    {
+      method: "GET",
+      headers: { Authorization: "Bearer " + token },
+    }
+  );
+
+  const data = await result.json();
+  return data.items ? data.items.map(item => item.track) : [];
+};
+
+const getPlaylistByGenre = async (token, genreId) => {
+  const limit = 10;
+
   const result = await fetch(
     `https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`,
     {
@@ -40,36 +58,14 @@ const getPlaylistByGenre = async (token, genreId, limit, backoffTime) => {
   );
 
   const data = await result.json();
-
-  const playlists = data.playlists.items;
+  const playlists = data.playlists ? data.playlists.items : [];
 
   const playlistsWithTracks = await Promise.all(
     playlists.map(async (playlist) => {
-      const result = await fetch(
-        `${playlist.tracks.href}?limit=${limit}`,
-        {
-          method: "GET",
-          headers: { Authorization: "Bearer " + token },
-        }
-      );
-
-      const data = await result.json();
-
-      const tracks = data.items.slice(0, limit).map((item) => {
-        return {
-          name: item.track.name,
-          artist: item.track.artists[0].name,
-        };
-      });
-
-      return {
-        ...playlist,
-        tracks,
-      };
+      const tracks = await getTracksByPlaylist(token, playlist.id);
+      return { ...playlist, tracks };
     })
   );
-
-  await new Promise((resolve) => setTimeout(resolve, backoffTime));
 
   return playlistsWithTracks;
 };
@@ -77,75 +73,72 @@ const getPlaylistByGenre = async (token, genreId, limit, backoffTime) => {
 const loadGenres = async () => {
   const token = await getToken();
   const genres = await getGenres(token);
-  const limit = 10;
-  const backoffTime = 10000;
 
   _data = await Promise.all(
     genres.map(async (genre) => {
-      const playlists = await getPlaylistByGenre(token, genre.id, limit, backoffTime);
+      const playlists = await getPlaylistByGenre(token, genre.id);
 
       return { ...genre, playlists };
     })
   );
 };
 
-const renderGenres = async (filterTerm) => {
+const renderGenres = async (filterTerm, playlists) => {
   let source = _data;
 
   if (filterTerm) {
-    console.log(filterTerm);
     const term = filterTerm.toLowerCase();
     source = source.filter(({ name }) => {
-      console.log(name.toLowerCase().includes(term));
       return name.toLowerCase().includes(term);
     });
   }
 
+  if (playlists === "with-playlists") {
+    source = source.filter(({ playlists }) => {
+      return playlists && playlists.length > 0;
+    });
+  } else if (playlists === "without-playlists") {
+    source = source.filter(({ playlists }) => {
+      return !playlists || playlists.length === 0;
+    });
+  }
+
   const list = document.getElementById(`genres`);
-  const token = await getToken();
-  const limit = 10;
-  const backoffTime = 10000; 
 
-  for (const { name, id, icons: [icon], href } of source) {
-    const playlists = await getPlaylistByGenre(token, id, limit, backoffTime);
-
-    if (playlists) {
-      const playlistsList = await Promise.all(playlists.map(async ({ name, external_urls: { spotify }, images: [image], tracks }) => {
-        const trackList = await Promise.all(tracks.map(async ({ name, artist }) => {
-          const artistData = await getArtist(artist.id, token);
-          return `${name} - ${artistData.name}`;
-        }));
+  const htmlPromises = source.map(async ({ name, icons: [icon], playlists }) => {
+    const playlistsList = await Promise.all(
+      playlists.map(async ({ name, external_urls: { spotify }, images: [image], tracks }) => {
+        const tracksList = tracks.map(({ name: trackName, artists }) => {
+          const artistNames = artists.map(({ name }) => name).join(", ");
+          return `<li>${trackName} - ${artistNames}</li>`;
+        }).join(``);
         return `
           <li>
             <a href="${spotify}" alt="${name}" target="_blank">
               <img src="${image.url}" width="180" height="180"/>
             </a>
-            <div>
-              <h3>${name}</h3>
-            </div>
-          </li>
-          <div>
-            <ul>
-              ${trackList.join('')}
-            </ul>
-          </div>`;
-      }));
-
-      const html = `
+            <h3>${name}</h3>
+            <ol>${tracksList}</ol>
+          </li>`;
+      })
+    ).then((playlistsList) => playlistsList.join(``));
+  
+    if (playlists) {
+      return `
         <article class="genre-card">
           <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
           <div>
             <h2>${name}</h2>
-            <ol>
-              ${playlistsList.join('')}
-            </ol>
+            <ul>${playlistsList}</ul>
           </div>
         </article>`;
-
-      list.insertAdjacentHTML("beforeend", html);
     }
+  });
+  
+  const html = (await Promise.all(htmlPromises)).join('');
+  list.innerHTML = html;  
   }
-};
+
 
 loadGenres().then(renderGenres);
 
