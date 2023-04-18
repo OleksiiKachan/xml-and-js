@@ -1,0 +1,1 @@
+I worked on deciding to create a little guessing game from retrieving the logo's from the API. After that I made a carousel using JS and also basic CSS in decorating the carousel to ensure its functionality.
