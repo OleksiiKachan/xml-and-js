@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    background-color: rgb(141, 189, 204);
+}
+form{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 60px;
+    background: beige;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+.form-group input{
+    padding: 10px;
+    border-radius: 25px;
+}
+.form-group button{
+    padding: 10px;
+    border-radius: 25px;
+    background-color: green;
+    color: white;
+}
+.content-group{
+    color: white;
+}
+#def,#rhyms{
+    background-color: beige;
+    margin: 10px;
+    border: 1px solid white;
+    border-radius: 15px;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px ;
+}
