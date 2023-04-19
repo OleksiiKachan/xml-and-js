@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: aqua;
+    }
+    
+    #form1{
+        margin: 0 auto;
+    background-color: black;
+        color: white;
+    }
+   
+    h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 0;
+    }
+    
+    form {
+    max-width: 800px;
+
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    select {
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    }
+    
+    div {
+    align-items: center;
+    margin-bottom: 1rem;
+    }
+    
+    label {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    }
+    
+    input[type="radio"] {
+    margin-right: 0.2rem;
+    }
+    
+    input[type="button"] {
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    }
+    
+    input[type="button"]:hover {
+    background-color: #3e8e41;
+    }
+    
+    .Result {
+        
+    max-width: 600px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    .Result h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    }
+    
+    .Result p {
+    font-size: 1rem;
+    margin: 0.5rem;
+    }
+    
+    #makex,
+    #modelx,
+    #distanceX,
+    #distanceV
+    #unitx,
+    #yearx,
+    #carbonx {
+    font-weight: bold;
+    margin-left: 0.5rem;
+    color: blue;
+    }
+

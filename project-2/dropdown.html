@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <div id="form1">
+      <h3>Please select your make and model</h3>
+      <form>
+        <select onchange="getMakes(this.value)" name="make">
+          <option value="">Choose a Make</option>
+        </select>
+        <select
+          onchange="getModels(this.value)"
+          name="models"
+          id="models"
+          disabled
+        >
+          <option value="">Choose a Model</option>
+        </select>
+
+        <div>
+          <label for="distance">Distance Travelled (in km):</label>
+          <input type="number" id="distance" name="distance" min="1" required />
+        </div>
+
+        <div>
+          <label>Select Unit of Measurement:</label>
+          <input
+            type="radio"
+            id="grams"
+            name="measurementUnit"
+            value="grams"
+            checked
+          />
+          <label for="grams">Grams</label>
+
+          <input type="radio" id="lbs" name="measurementUnit" value="lbs" />
+          <label for="lbs">Pounds</label>
+
+          <input type="radio" id="kgs" name="measurementUnit" value="kgs" />
+          <label for="kgs">Kilograms</label>
+
+          <input type="radio" id="mts" name="measurementUnit" value="mts" />
+          <label for="mts">Metric Tons</label>
+        </div>
+        <input type="button" onclick="Estimate()" value="Estimate" />
+      </form>
+    </div>
+
+    <div class="Result">
+      <h2>Carbon Emmissons For Vehicles</h2>
+      <p>Vehicle Make : <span id="makex"></span></p>
+      <p>Vehicle Model : <span id="modelx"></span></p>
+      <p>Distance Unit : <span id="distanceX">Distance in KM </span></p>
+      <p>Distance Value : <span id="distancex"></span></p>
+      <p>Vehicle Year : <span id="yearx"></span></p>
+      <p>Carbon Estimated : <span id="carbonx"></span> <span id="unitx"></span></p>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
