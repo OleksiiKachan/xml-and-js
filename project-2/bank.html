@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Currency Converter</title>
+    <!-- Link to CSS file for styling -->
+    <link rel="stylesheet" href="bank.css">
+  </head>
+  <body>
+    <!-- Container for the entire form -->
+    <div class="container">
+      <!-- Header for the currency converter -->
+      <header>Currency Converter</header>
+      <!-- Form for user input -->
+      <form action="#">
+        <!-- Input field for the amount to convert -->
+        <div class="amount">
+          <p>Amount</p>
+          <input type="text" value="1">
+        </div>
+        <!-- Drop-down lists for selecting currencies to convert from and to -->
+        <div class="drop-list">
+          <div class="from">
+            <p>From</p>
+            <!-- Select box for "from" currency -->
+            <div class="select-box">
+              <select id="from-currency-list"></select>
+            </div>
+          </div>
+          <div class="to">
+            <p>To</p>
+            <!-- Select box for "to" currency -->
+            <div class="select-box">
+              <select id="to-currency-list"></select>
+            </div>
+          </div>
+        </div> 
+        <!-- Placeholder for the current exchange rate, which will be fetched via JavaScript -->
+        <div class="exchange-rate">Fetching current rate...</div>
+        <!-- Button to initiate the conversion calculation -->
+        <button>Calculate</button>
+      </form>
+    </div>
+    <!-- Link to JavaScript file for dynamic functionality -->
+    <script src="bank.js"></script>
+  </body>
+</html>
