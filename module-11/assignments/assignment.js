@@ -15,6 +15,7 @@ const getToken = async () => {
   });
 
   const data = await result.json();
+
   return data.access_token;
 };
 
@@ -82,6 +83,7 @@ const loadGenres = async () => {
 
 const renderGenres = async (filterTerm) => {
   const token = await getToken();
+  console.log(token);
   const genres = await getGenres(token);
   let source = filter_data;
 

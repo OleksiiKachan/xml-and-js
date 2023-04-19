@@ -61,7 +61,9 @@ const getPlaylistByTracks = async (token, playlistId) => {
 const loadGenres = async () => {
   const token = await getToken();
   const genres = await getGenres(token);
+  console.log(genres);
   const list = document.getElementById(`genres`);
+  console.log(list);
   genres.map(async ({ name, id, icons: [icon], href }) => {
     const playlists = await getPlaylistByGenre(token, id);
     const playlistsList = await Promise.all(
