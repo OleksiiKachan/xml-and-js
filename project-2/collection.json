@@ -1,0 +1,12 @@
+[
+    { "name": "google", "domain": "google.com" },
+    { "name": "facebook", "domain": "facebook.com" },
+    { "name": "twitter", "domain": "twitter.com" },
+    { "name": "humber", "domain": "humber.ca" },
+    { "name": "ikea", "domain": "ikea.com" },
+    { "name": "dell", "domain": "dell.com" },
+    { "name": "hp", "domain": "hp.com" },
+    { "name": "yahoo", "domain": "yahoo.com" },
+    { "name": "wikipedia", "domain": "wikipedia.org" }
+  ]
+  
