@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #products {
+    padding: 20px;
+    background-color: #f2f2f2;
+    text-align: center;
+  }
+  
+  form {
+    padding: 20px;
+    background-color: #f2f2f2;
+    text-align: center;
+  }
+  
+  form input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+  }
+  
+  form button[type="submit"] {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .container {
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  #prod_lst {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
