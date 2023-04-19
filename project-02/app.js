@@ -9,7 +9,6 @@ const queryString = new URLSearchParams({
 
 const URL = `http://api.mediastack.com/v1/news?${queryString}`;
 
-
 fetch(URL)
   .then(response => {
     if (!response.ok) {
@@ -43,8 +42,6 @@ fetch(URL)
         </div>
       `;
     });
-    
-
     blogDiv.innerHTML = articlesHtml;
   })
   .catch(error => console.error(error));
