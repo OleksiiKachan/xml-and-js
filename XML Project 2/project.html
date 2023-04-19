@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify API</title>
+    <link rel="stylesheet" type="text/css" href="project.css" />
+  </head>
+  <body>
+    <div class="form-group">
+      <form onsubmit="onSubmit(event)">   
+        <label for="input-filter-term">Find word definition</label>    
+        <input
+          type="text"
+          name="term"
+          id="input-filter-term"
+          placeholder="Enter value"
+        />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+     <div class="content-group">
+      <h2>Definitions</h2>
+      <div id="def"></div>
+      <h2>Rhymes</h2>
+      <div id="rhyms">
+        
+      </div>
+     </div>
+    <script src="project.js" type="text/javascript"></script>
+  </body>
+</html>
