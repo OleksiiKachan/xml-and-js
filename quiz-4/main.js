@@ -5,7 +5,7 @@ const getActiveUsers = require("./questions/2");
 const getUserNameAndVehicleAge = require("./questions/3");
 const getByVIN = require("./questions/4");
 
-const loadData = () => {
+const loadData = async() => {
   /**
    * fetch data from https://6253799f90266e3d0e0373e6.mockapi.io/ok/user
    *
@@ -14,8 +14,14 @@ const loadData = () => {
    *
    * fix this function to return data
    */
-  const data = fetch(`https://6253799f90266e3d0e0373e6.mockapi.io/ok/user`);
+  // const data = fetch(`https://6253799f90266e3d0e0373e6.mockapi.io/ok/user`);
 
+  // return data;
+
+  const response = await fetch(
+    `https://6253799f90266e3d0e0373e6.mockapi.io/ok/user`
+  );
+  const data = await response.json();
   return data;
 };
 
