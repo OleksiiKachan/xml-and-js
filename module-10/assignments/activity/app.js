@@ -1,10 +1,11 @@
-const clientId = `a5f261df31334b54bbdaf6a8cf18327d`;
-const clientSecret = `72dce1229f33421988f780a020f146cb`;
-
-let _data = [];
+/**
+ * actvity 10 js file
+ */
+const clientId = `04f80d2757bd490d844a91526f988b99`;
+const clientSecret = `5a41fa0063df482f95cb1a1ef4d6a87e`;
 
 const getToken = async () => {
-  const result = await fetch("https://accounts.spotify.com/api/v2", {
+  const result = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
@@ -17,7 +18,7 @@ const getToken = async () => {
   return data.access_token;
 };
 
-const getCountries = async (token) => {
+const getGenres = async (token) => {
   const result = await fetch(
     `https://api.spotify.com/v1/browse/categories?locale=sv_US`,
     {
@@ -31,7 +32,7 @@ const getCountries = async (token) => {
 };
 
 const getPlaylistByGenre = async (token, genreId) => {
-  const limit = 10;
+  const limit = 5;
 
   const result = await fetch(
     `https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`,
@@ -42,74 +43,41 @@ const getPlaylistByGenre = async (token, genreId) => {
   );
 
   const data = await result.json();
-  return data.playlists ? data.playlists.items : [];
+  return data.playlists.items;
 };
 
 const loadGenres = async () => {
   const token = await getToken();
   const genres = await getGenres(token);
-
-  _data = await Promise.all(
-    genres.map(async (genre) => {
-      const playlists = await getPlaylistByGenre(token, genre.id);
-
-      return { ...genre, playlists };
-    })
-  );
-};
-
-const renderGenres = (filterTerm) => {
-  let source = _data;
-
-  if (filterTerm) {
-    console.log(filterTerm);
-    const term = filterTerm.toLowerCase();
-    source = source.filter(({ name }) => {
-      console.log(name.toLowerCase().includes(term));
-      return name.toLowerCase().includes(term);
-    });
-  }
-
   const list = document.getElementById(`genres`);
-
-  const html = source.reduce((acc, { name, icons: [icon], playlists }) => {
+  genres.map(async ({ name, id, icons: [icon], href }) => {
+    const playlists = await getPlaylistByGenre(token, id);
     const playlistsList = playlists
       .map(
         ({ name, external_urls: { spotify }, images: [image] }) => `
-         <li>
+        <li>
           <a href="${spotify}" alt="${name}" target="_blank">
-            <img src="${image.url}" width="180" height="180"/>
+            <img class="img-icon" src="${image.url}" width="180" height="180"/>
           </a>
         </li>`
       )
       .join(``);
 
     if (playlists) {
-      return (
-        acc +
-        `
+      const html = `
       <article class="genre-card">
-        <img src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
+        <img class="img-ic" src="${icon.url}" width="${icon.width}" height="${icon.height}" alt="${name}"/>
         <div>
           <h2>${name}</h2>
           <ol>
             ${playlistsList}
           </ol>
         </div>
-      </article>`
-      );
+      </article>`;
+
+      list.insertAdjacentHTML("beforeend", html);
     }
-  }, ``);
-
-  list.innerHTML = html;
+  });
 };
 
-loadGenres().then(renderGenres);
-
-const onSubmit = (event) => {
-  event.preventDefault();
-
-  const term = event.target.term.value;
-
-  renderGenres(term);
-};
+loadGenres();
