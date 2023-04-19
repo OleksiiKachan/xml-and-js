@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="airlines.css">
+    <title>Air Quality Control</title>
+</head>
+<body >
+    <form id="formData">
+        <h1 class="heading" style="color: lavender">Air Quality Control</h1>
+
+        <input type="radio" id="aiqselect" name="aiqselect" value="custom" checked>
+<label for="custom">Custom city</label><br>
+
+<!-- <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+<label for="javascript">JavaScript</label> -->
+
+        <select onchange ="getStatesByCountry(this.value)" name="country" id="country">
+
+            <option value="">--select country--</option>
+        </select>
+        <select onchange="getCitiesByState(this.value,this.options[this.selectedIndex].getAttribute('id'))" name="state" id="state">
+            <option value="">--select state--</option>
+        </select>
+
+        <select  name="city" id="city">
+            <option value="">--select city--</option>
+        </select><br>
+        <input type="radio" id="aiqselect" name="aiqselect" value="nearest">
+<label for="nearest">Nearest city</label><br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+    <div class="container" id="result"></div>
+    <script src="airlines.js"></script>
+</body>
+</html>
