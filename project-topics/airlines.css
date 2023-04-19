@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0;
+    margin:inherit;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 10px 10px;
+    background-image: url("airlines.jpeg");
+    background-position: left left;
+    background-size: cover;
+  }
+.container{
+    width: 70%;
+    border: 1px solid;
+    height: 800px;
+    background: lightblue;
+    display: flex;
+}
+
+
+.location{
+    padding: 1em 0;
+    color: white;
+    background-color: palevioletred;
+}
+
+.location .location-city{
+    font-size: 2em;
+    color: #76cee9;
+
+}
+.location .location-state{
+    font-size: 1.5em;
+}
+.aqi{
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+}
+.aqi .aqi-value{
+    font-size: 6em;
+    color:gray;
+}
+.aqi .aqi-temp{
+    font-size: 3em;
+    color:gray;
+}
