@@ -64,6 +64,7 @@ const getCountries = async () => {
     
     }
     
+    //async function parameter is state,country i.e for the selected state and country which city data is to be fetched
     const getCitiesByState = async (state,country) => {
     
       document.getElementById("city").innerHTML = "";
