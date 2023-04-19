@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Air Quality Checker-->
+
+<head class="main-header">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Air Quality Index API</title>
+    <link rel="stylesheet" type="text/css" href="project.css" />
+</head>
+
+<body>
+    <div class="head">
+        <h2>Air Quality Index Checker</h2>
+    </div>
+    
+    <div class="main">
+
+        <button id="nearest-city" onclick="getCityUsingIP()">Nearest City Air Quality</button><!---->
+        <div class="container">
+            <select class="country-btn" name="country" id="country-select" onchange="getStatesData(this.value)">
+                <option value="">Country</option>
+            </select>
+            <select class="state-btn" id="state-select" onchange="getCitiesData(this.value,document.getElementById('country-select').value)">
+                <option value="">State</option>
+            </select>
+            <select class="city-btn" id="city-select" onchange="getAirQualityData(this.value,document.getElementById('state-select').value,document.getElementById('country-select').value)">
+                <option value="">City</option>
+            </select>
+        </div>
+
+        <div class="content" id="resultData">
+          
+           
+        </div>
+
+
+    </div>
+    <script src="project.js" type="text/javascript"></script>
+</body>
+
+</html>
